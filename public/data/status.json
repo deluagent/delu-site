@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-21T19:11:19.532Z",
-  "regime": "BEAR",
-  "btcPrice": 70429,
+  "updatedAt": "2026-03-21T19:28:23.133Z",
+  "regime": "RANGE_TIGHT",
+  "btcPrice": 70440,
   "pctFrom200": "-1.9%",
-  "breadth": "2/37",
-  "nextCycle": "in 28 min",
+  "breadth": "BTC:RANGE ETH:RANGE",
+  "nextCycle": "in 30 min",
   "positions": [
     {
       "sym": "SOL",
@@ -39,40 +39,14 @@
     "note": "Capital parked here while in BEAR regime — earning yield while waiting for signal"
   },
   "lastCycle": {
-    "ts": "2026-03-21T19:09:13.231Z",
-    "regime": "BEAR",
+    "ts": "2026-03-21T19:28:00.847Z",
+    "regime": "RANGE_TIGHT",
     "screened": 37,
     "action": "hold",
     "asset": "USDC",
     "confidence": null,
-    "reasoning": "Liquid USDC ($0.00) at or below 25% reserve — keeping capital available for trades",
-    "topScores": [
-      {
-        "sym": "BTC",
-        "score": 0,
-        "template": "none"
-      },
-      {
-        "sym": "ETH",
-        "score": 0,
-        "template": "none"
-      },
-      {
-        "sym": "SOL",
-        "score": 0,
-        "template": "none"
-      },
-      {
-        "sym": "BNB",
-        "score": 0,
-        "template": "none"
-      },
-      {
-        "sym": "DOGE",
-        "score": 0,
-        "template": "none"
-      }
-    ]
+    "reasoning": "No token clears the signal threshold, and there are no high-conviction trending entries this cycle.",
+    "topScores": []
   },
   "performance": {
     "closedTrades": 0,
@@ -80,6 +54,21 @@
     "recentTrades": []
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-21T19:28:00.847Z",
+      "regime": "RANGE_TIGHT",
+      "action": "hold",
+      "asset": "USDC",
+      "reasoning": "No token clears the signal threshold, and there are no high-conviction trending entries this cycle.",
+      "confidence": null,
+      "screened": 0,
+      "topToken": null,
+      "trendingEntries": [],
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ]
+    },
     {
       "ts": "2026-03-21T19:09:13.231Z",
       "regime": "BEAR",
@@ -373,21 +362,6 @@
       },
       "trendingEntries": [],
       "layers": []
-    },
-    {
-      "ts": "2026-03-21T12:33:00.557Z",
-      "regime": "BEAR",
-      "action": "smart_yield",
-      "asset": "USDC",
-      "reasoning": "BEAR regime, no oversold signals — yield only",
-      "confidence": null,
-      "screened": 17,
-      "topToken": {
-        "sym": "BTC",
-        "score": 0
-      },
-      "trendingEntries": [],
-      "layers": []
     }
   ],
   "reasoningTraces": [
@@ -437,18 +411,18 @@
   ],
   "autoresearch": {
     "daily": {
-      "expCount": 667,
+      "expCount": 677,
       "bestValSharpe": 4.393,
       "bestAudSharpe": 2.176,
       "bestScore": 3.728,
-      "spend": 1.384
+      "spend": 1.414
     },
     "hourly": {
-      "expCount": 170,
+      "expCount": 180,
       "bestValSharpe": 5.785,
       "bestAudSharpe": 10.56,
       "bestScore": 8.172,
-      "spend": 0.51
+      "spend": 0.54
     }
   },
   "stack": {
