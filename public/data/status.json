@@ -1,31 +1,18 @@
 {
-  "updatedAt": "2026-03-21T19:44:23.442Z",
+  "updatedAt": "2026-03-21T19:44:58.332Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 70353,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 70348,
+  "pctFrom200": "-2.0%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 25 min",
+  "nextCycle": "in 30 min",
   "wallet": {
-    "totalUSD": 19.55,
-    "positionsUSD": 14.2,
+    "totalUSD": 5.35,
+    "positionsUSD": 0,
     "yieldUSD": 5.35,
-    "unrealPnlUSD": 0.3,
-    "unrealPnlPct": 2.1
+    "unrealPnlUSD": 0,
+    "unrealPnlPct": 0
   },
-  "positions": [
-    {
-      "sym": "SOL",
-      "entryPrice": 88.38,
-      "sizeUSD": 14.2,
-      "peakPct": 2.1,
-      "trailStop": 5,
-      "openedAt": "2026-03-20T18:30:00.000Z",
-      "entryTx": null,
-      "contractAddress": null,
-      "source": "universe",
-      "chain": "base"
-    }
-  ],
+  "positions": [],
   "yield": {
     "protocol": "Morpho",
     "vault": "Moonwell Flagship USDC",
@@ -35,21 +22,46 @@
     "note": "Capital parked here while in BEAR regime — earning yield while waiting for signal"
   },
   "lastCycle": {
-    "ts": "2026-03-21T19:38:59.288Z",
+    "ts": "2026-03-21T19:44:33.386Z",
     "regime": "RANGE_TIGHT",
     "screened": 37,
     "action": "hold",
     "asset": "USDC",
     "confidence": null,
-    "reasoning": "No high-conviction trending entries this cycle and no token clears the signal threshold, therefore holding the current position.",
+    "reasoning": "No high-conviction trending entries this cycle and no token clears the signal threshold, thus holding the current position.",
     "topScores": []
   },
   "performance": {
-    "closedTrades": 0,
-    "winRate": null,
-    "recentTrades": []
+    "closedTrades": 1,
+    "winRate": "0/1",
+    "recentTrades": [
+      {
+        "sym": "MOLT",
+        "pnlPct": -5.2,
+        "won": false,
+        "regime": "unknown",
+        "entryTx": null,
+        "exitTx": null,
+        "closedAt": "2026-03-21T19:44:01.587Z"
+      }
+    ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-21T19:44:33.386Z",
+      "regime": "RANGE_TIGHT",
+      "action": "hold",
+      "asset": "USDC",
+      "reasoning": "No high-conviction trending entries this cycle and no token clears the signal threshold, thus holding the current position.",
+      "confidence": null,
+      "screened": 0,
+      "topToken": null,
+      "trendingEntries": [],
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ]
+    },
     {
       "ts": "2026-03-21T19:38:59.288Z",
       "regime": "RANGE_TIGHT",
@@ -343,21 +355,6 @@
       },
       "trendingEntries": [],
       "layers": []
-    },
-    {
-      "ts": "2026-03-21T13:04:02.340Z",
-      "regime": "BEAR",
-      "action": "smart_yield",
-      "asset": "USDC",
-      "reasoning": "BEAR regime, no oversold signals — yield only",
-      "confidence": null,
-      "screened": 37,
-      "topToken": {
-        "sym": "BTC",
-        "score": 0
-      },
-      "trendingEntries": [],
-      "layers": []
     }
   ],
   "reasoningTraces": [
@@ -407,11 +404,11 @@
   ],
   "autoresearch": {
     "daily": {
-      "expCount": 687,
+      "expCount": 688,
       "bestValSharpe": 4.393,
       "bestAudSharpe": 2.176,
       "bestScore": 3.728,
-      "spend": 1.444
+      "spend": 1.447
     },
     "hourly": {
       "expCount": 190,
