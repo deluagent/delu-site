@@ -605,7 +605,7 @@ export default function Home() {
         {/* Last Cycle Card */}
         <Card>
           <SectionLabel>Intelligence Cycle</SectionLabel>
-          {status && (
+          {status && status.lastCycle && (
             <div className="flex flex-col h-full">
               {/* Header: ago + action badge */}
               <div className="flex items-center gap-2 mb-4">
@@ -782,14 +782,14 @@ export default function Home() {
               {((status as any)?.performance?.recentTrades?.length ?? 0) > 0 ? (
                 ((status as any)?.performance?.recentTrades ?? []).map((t: any, i: number) => (
                   <tr key={i} className="border-b border-[#1e1e2e]/50 last:border-0">
-                    <td className="py-4 font-bold text-sm">{t.sym}</td>
-                    <td className="py-4 mono text-xs">${t.entryPrice.toLocaleString()}</td>
-                    <td className="py-4 mono text-xs">${t.exitPrice?.toLocaleString()}</td>
+                    <td className="py-4 font-bold text-sm">{t.sym ?? '—'}</td>
+                    <td className="py-4 mono text-xs">{t.entryPrice != null ? `$${Number(t.entryPrice).toLocaleString()}` : '—'}</td>
+                    <td className="py-4 mono text-xs">{t.exitPrice != null ? `$${Number(t.exitPrice).toLocaleString()}` : '—'}</td>
                     <td className="py-4"><PnlChip pct={t.pnlPct} /></td>
                     <td className="py-4"><RegimeBadge regime={t.regime || "BEAR"} /></td>
                     <td className="py-4"><TxLink hash={t.exitTx || t.entryTx} /></td>
                     <td className="py-4 text-right text-[10px] text-[#6b7280] mono">
-                      {new Date(t.closedAt || t.openedAt).toLocaleDateString()}
+                      {t.closedAt || t.openedAt ? new Date(t.closedAt || t.openedAt).toLocaleDateString() : '—'}
                     </td>
                   </tr>
                 ))
