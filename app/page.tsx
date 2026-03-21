@@ -99,6 +99,63 @@ const StepRow = ({ step }: { step: StreamStep }) => {
 
 // --- Page Component ---
 
+// Typing intro lines — delu speaks
+const INTRO_LINES = [
+  "I'm delu. An autonomous onchain trading agent.",
+  "Every 30 minutes I scan 37+ tokens across Base and Ethereum.",
+  "I fetch onchain DEX flows, social attention, funding rates.",
+  "Venice reasons privately over all of it — no one sees my logic.",
+  "I pay for real-time intelligence autonomously via x402.",
+  "Right now: BEAR regime. Capital is in Morpho yield while I wait for signal.",
+  "When I see it — I execute. With a trailing stop. No emotions.",
+];
+
+function TypingIntro() {
+  const [lineIdx, setLineIdx] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
+  const [displayed, setDisplayed] = useState<string[]>([]);
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    if (done) return;
+    if (lineIdx >= INTRO_LINES.length) { setDone(true); return; }
+    const line = INTRO_LINES[lineIdx];
+    if (charIdx < line.length) {
+      const t = setTimeout(() => setCharIdx(c => c + 1), 22);
+      return () => clearTimeout(t);
+    } else {
+      const t = setTimeout(() => {
+        setDisplayed(d => [...d, line]);
+        setLineIdx(l => l + 1);
+        setCharIdx(0);
+      }, 600);
+      return () => clearTimeout(t);
+    }
+  }, [lineIdx, charIdx, done]);
+
+  const currentLine = lineIdx < INTRO_LINES.length ? INTRO_LINES[lineIdx].slice(0, charIdx) : "";
+
+  return (
+    <div className="mb-10 bg-[#111118] border border-[#1e1e2e] rounded-2xl p-6 card-glow">
+      <div className="flex items-center gap-2 mb-4">
+        <div className="w-2 h-2 rounded-full bg-green-400 pulse-live" />
+        <span className="mono text-xs text-[#6b7280]">delu is online</span>
+      </div>
+      <div className="mono text-sm text-[#e2e8f0] leading-relaxed space-y-1 min-h-[80px]">
+        {displayed.map((line, i) => (
+          <p key={i} className="text-[#6b7280]">{line}</p>
+        ))}
+        {!done && (
+          <p>
+            {currentLine}
+            <span className="inline-block w-[2px] h-[14px] bg-indigo-400 ml-0.5 animate-pulse align-middle" />
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [status, setStatus] = useState<AgentStatus | null>(null);
   const [loading, setLoading] = useState(true);
@@ -189,8 +246,16 @@ export default function Home() {
     }
   };
 
+  // Flatten autoresearch for display (new nested shape)
+  const ar = (status as any)?.autoresearch;
+  const arDaily  = ar?.daily  ?? ar ?? {};
+  const arHourly = ar?.hourly ?? {};
+  const yieldPos = (status as any)?.yield;
+  const lastReason = (status as any)?.lastCycle?.reasoning ?? (status as any)?.lastCycle?.reason ?? "";
+
   return (
     <main className="min-h-screen p-4 md:p-8 max-w-7xl mx-auto relative z-10">
+      <TypingIntro />
       {/* Header */}
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div className="flex items-center gap-3">
@@ -255,7 +320,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-sm">{p.sym}</span>
-                        <PnlChip pct={p.pnlPct} />
+                        <PnlChip pct={(p as any).peakPct ?? p.pnlPct} />
                       </div>
                       <div className="text-[10px] text-[#6b7280] mono">
                         In: ${p.entryPrice.toLocaleString()}
@@ -269,12 +334,26 @@ export default function Home() {
                 </div>
               ))
             ) : (
-              <div className="flex flex-col items-center justify-center py-8 text-center">
+              <div className="flex flex-col items-center justify-center py-4 text-center">
                 <div className="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center mb-3">
                   <Shield className="text-indigo-500" size={24} />
                 </div>
                 <h3 className="text-sm font-bold">Capital in Yield</h3>
                 <p className="text-xs text-[#6b7280] mt-1">No risk signals currently justify exposure.</p>
+              </div>
+            )}
+            {/* Yield position — always shown */}
+            {yieldPos && (
+              <div className="mt-3 p-3 bg-emerald-500/5 border border-emerald-500/20 rounded-xl">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-xs font-bold text-emerald-400">{yieldPos.protocol} Yield</span>
+                  <span className="mono text-xs font-bold text-emerald-400">+{yieldPos.apy}% APY</span>
+                </div>
+                <div className="text-[10px] text-[#6b7280] mono">{yieldPos.vault} · {yieldPos.chain}</div>
+                <div className="flex items-center justify-between mt-1.5">
+                  <span className="text-[10px] text-[#6b7280]">Deployed</span>
+                  <span className="mono text-sm font-bold text-[#e2e8f0]">${yieldPos.amountUSD?.toFixed(2)} USDC</span>
+                </div>
               </div>
             )}
           </div>
@@ -292,17 +371,17 @@ export default function Home() {
                 </div>
                 <div className="bg-[#0a0a0f] p-2 rounded-lg border border-[#1e1e2e] text-center">
                   <div className="text-[10px] text-[#6b7280] font-bold uppercase mb-1">Flag</div>
-                  <div className="mono font-bold text-indigo-400">{status.lastCycle.flagged.length}</div>
+                  <div className="mono font-bold text-indigo-400">{(status.lastCycle.flagged?.length ?? 0)}</div>
                 </div>
                 <div className="bg-[#0a0a0f] p-2 rounded-lg border border-[#1e1e2e] text-center">
                   <div className="text-[10px] text-[#6b7280] font-bold uppercase mb-1">Trade</div>
-                  <div className="mono font-bold text-green-500">{status.lastCycle.traded.length}</div>
+                  <div className="mono font-bold text-green-500">{(status.lastCycle.traded?.length ?? 0)}</div>
                 </div>
               </div>
               
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${status.lastCycle.traded.length > 0 ? 'bg-green-500/10 text-green-500' : 'bg-[#1e1e2e] text-[#6b7280]'}`}>
+                  <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${(status.lastCycle.traded?.length ?? 0) > 0 ? 'bg-green-500/10 text-green-500' : 'bg-[#1e1e2e] text-[#6b7280]'}`}>
                     {status.lastCycle.action.replace('_', ' ')}
                   </span>
                   <span className="text-[10px] text-[#6b7280] mono flex items-center gap-1">
@@ -310,16 +389,18 @@ export default function Home() {
                   </span>
                 </div>
                 <p className="text-xs text-[#e2e8f0] leading-relaxed mb-4 italic">
-                  "{status.lastCycle.reason}"
+                  "{lastReason}"
                 </p>
               </div>
 
-              <div className="mt-auto pt-4 border-t border-[#1e1e2e] flex items-center justify-between">
-                <div className="text-[10px] mono text-[#6b7280]">
-                  Exp {status.autoresearch.expCount} · Sharpe {status.autoresearch.bestValSharpe.toFixed(2)}
+              <div className="mt-auto pt-4 border-t border-[#1e1e2e] space-y-1">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] mono text-[#6b7280]">Daily · Exp {arDaily.expCount ?? 0} · Sharpe {(arDaily.bestValSharpe ?? 0).toFixed(2)}</span>
+                  <span className="text-[10px] mono text-indigo-400">↑ improving</span>
                 </div>
-                <div className="text-[10px] mono text-[#6b7280]">
-                  Cost ${status.autoresearch.spend.toFixed(3)}
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] mono text-[#6b7280]">Hourly · Exp {arHourly.expCount ?? 0} · Sharpe {(arHourly.bestValSharpe ?? 0).toFixed(2)}</span>
+                  <span className="text-[10px] mono text-emerald-400">↑ {(arHourly.bestScore ?? 0).toFixed(2)} score</span>
                 </div>
               </div>
             </div>
@@ -403,8 +484,8 @@ export default function Home() {
               </tr>
             </thead>
             <tbody>
-              {status?.recentTrades && status.recentTrades.length > 0 ? (
-                status.recentTrades.map((t, i) => (
+              {((status as any)?.performance?.recentTrades?.length ?? 0) > 0 ? (
+                ((status as any)?.performance?.recentTrades ?? []).map((t: any, i: number) => (
                   <tr key={i} className="border-b border-[#1e1e2e]/50 last:border-0">
                     <td className="py-4 font-bold text-sm">{t.sym}</td>
                     <td className="py-4 mono text-xs">${t.entryPrice.toLocaleString()}</td>
