@@ -540,6 +540,11 @@ export default function Home() {
           </div>
           <div className="w-px h-8 bg-[#1e1e2e]" />
           <div className="flex flex-col">
+            <span className="text-[9px] text-[#6b7280] font-bold uppercase tracking-wider">Liquid USDC</span>
+            <span className="mono text-sm font-bold text-emerald-400">${((status as any)?.wallet?.liquidUSDC ?? (status as any)?.usdc ?? 0).toFixed(2)}</span>
+          </div>
+          <div className="w-px h-8 bg-[#1e1e2e]" />
+          <div className="flex flex-col">
             <span className="text-[9px] text-[#6b7280] font-bold uppercase tracking-wider">Unrealised P&L</span>
             <span className={`mono text-sm font-bold ${((status as any)?.wallet?.unrealPnlUSD ?? 0) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
               {((status as any)?.wallet?.unrealPnlUSD ?? 0) >= 0 ? '+' : ''}${((status as any)?.wallet?.unrealPnlUSD ?? 0).toFixed(2)}
@@ -614,7 +619,11 @@ export default function Home() {
                     <div className={`text-[10px] mono font-semibold ${((p as any).pnlUSD ?? 0) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                       {((p as any).pnlUSD ?? 0) >= 0 ? '+' : ''}${((p as any).pnlUSD ?? 0).toFixed(2)}
                     </div>
-                    <div className="text-[10px] text-[#6b7280] mono">SL: -{p.trailStop}%</div>
+                    <div className="text-[10px] text-[#6b7280] mono">
+                      {(p as any).peakPct >= 1 
+                        ? `Trail: -${p.trailStop}% (active ✓)` 
+                        : `HardSL: -${(p as any).hardSlPct ?? 3}% | Trail at +1%`}
+                    </div>
                   </div>
                 </div>
               ))
