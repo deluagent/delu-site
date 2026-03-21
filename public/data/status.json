@@ -1,18 +1,35 @@
 {
-  "updatedAt": "2026-03-21T20:13:22.157Z",
+  "updatedAt": "2026-03-21T20:15:17.277Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 70348,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 70428,
+  "pctFrom200": "-1.9%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 1 min",
+  "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 34.94,
-    "positionsUSD": 0,
+    "totalUSD": 44.94,
+    "positionsUSD": 10,
     "yieldUSD": 34.94,
     "unrealPnlUSD": 0,
     "unrealPnlPct": 0
   },
-  "positions": [],
+  "positions": [
+    {
+      "sym": "KTA",
+      "entryPrice": 0.1693,
+      "currentPrice": null,
+      "sizeUSD": 10,
+      "currentUSD": 10,
+      "pnlUSD": 0,
+      "pnlPct": 0,
+      "peakPct": 0,
+      "trailStop": 5,
+      "openedAt": "2026-03-21T20:15:17.265Z",
+      "entryTx": null,
+      "contractAddress": "0xc0634090f2fe6c6d75e61be2b949464abb498973",
+      "source": "universe",
+      "chain": "base"
+    }
+  ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
@@ -22,37 +39,57 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-21T19:44:33.386Z",
-    "ago": "29m ago",
+    "ts": "2026-03-21T20:13:33.231Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 70347.63,
-      "sma200": 71810.43950000005,
-      "pctFrom200": -0.020370429566860478,
-      "volRatio": 0.7450845150036797,
+      "btcNow": 70427.75,
+      "sma200": 71798.89645000003,
+      "pctFrom200": -0.019097040731745518,
+      "volRatio": 0.7449840474363546,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 0,
-    "screened": 0,
+    "seenCount": 1,
+    "screened": 1,
     "flagged": [],
-    "traded": [],
-    "action": "hold",
-    "asset": "USDC",
-    "confidence": null,
-    "reasoning": "No high-conviction trending entries this cycle and no token clears the signal threshold, thus holding the current position.",
-    "topSignal": null,
-    "trendingEntries": [],
+    "traded": [
+      "KTA"
+    ],
+    "action": "buy",
+    "asset": "KTA",
+    "confidence": 70,
+    "reasoning": "KTA token is trending onchain with a score of 0.40 and a significant return in the last 24 hours, indicating strong cross-sectional alpha.",
+    "topSignal": "KTA score=0.40 ret1h=5.9%",
+    "trendingEntries": [
+      {
+        "symbol": "KTA",
+        "score": 0.40427209783048046,
+        "rank": 7,
+        "ret1h": 0.05880909256408732,
+        "moveFrac": 0.9402390857355271,
+        "quantScore": 0.05693488509442299
+      }
+    ],
     "positionUpdates": [],
     "topScores": []
   },
   "performance": {
-    "closedTrades": 1,
-    "winRate": "0/1",
+    "closedTrades": 2,
+    "winRate": "0/2",
     "recentTrades": [
+      {
+        "sym": "MOLT",
+        "pnlPct": -5.2,
+        "won": false,
+        "regime": "unknown",
+        "entryTx": null,
+        "exitTx": null,
+        "closedAt": "2026-03-21T19:44:01.587Z"
+      },
       {
         "sym": "MOLT",
         "pnlPct": -5.2,
@@ -65,6 +102,30 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-21T20:13:33.231Z",
+      "regime": "RANGE_TIGHT",
+      "action": "buy",
+      "asset": "KTA",
+      "reasoning": "KTA token is trending onchain with a score of 0.40 and a significant return in the last 24 hours, indicating strong cross-sectional alpha.",
+      "confidence": 70,
+      "screened": 0,
+      "topToken": null,
+      "trendingEntries": [
+        {
+          "symbol": "KTA",
+          "score": 0.40427209783048046,
+          "rank": 7,
+          "ret1h": 0.05880909256408732,
+          "moveFrac": 0.9402390857355271,
+          "quantScore": 0.05693488509442299
+        }
+      ],
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ]
+    },
     {
       "ts": "2026-03-21T19:44:33.386Z",
       "regime": "RANGE_TIGHT",
@@ -358,21 +419,6 @@
       },
       "trendingEntries": [],
       "layers": []
-    },
-    {
-      "ts": "2026-03-21T13:11:55.731Z",
-      "regime": "BEAR",
-      "action": "smart_yield",
-      "asset": "USDC",
-      "reasoning": "BEAR regime, no oversold signals — yield only",
-      "confidence": null,
-      "screened": 37,
-      "topToken": {
-        "sym": "BTC",
-        "score": 0
-      },
-      "trendingEntries": [],
-      "layers": []
     }
   ],
   "reasoningTraces": [
@@ -422,18 +468,18 @@
   ],
   "autoresearch": {
     "daily": {
-      "expCount": 705,
+      "expCount": 706,
       "bestValSharpe": 4.393,
       "bestAudSharpe": 2.176,
       "bestScore": 3.728,
-      "spend": 1.498
+      "spend": 1.501
     },
     "hourly": {
-      "expCount": 206,
+      "expCount": 207,
       "bestValSharpe": 5.785,
       "bestAudSharpe": 10.56,
       "bestScore": 8.172,
-      "spend": 0.618
+      "spend": 0.621
     }
   },
   "stack": {
