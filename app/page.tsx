@@ -110,6 +110,119 @@ const INTRO_LINES = [
   "When I see it — I execute. With a trailing stop. No emotions.",
 ];
 
+function CycleHistoryFeed({ cycles }: { cycles: any[] }) {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
+  const actionColor = (action: string) => {
+    if (action === 'buy' || action === 'long') return 'text-green-400';
+    if (action === 'yield') return 'text-blue-400';
+    if (action === 'hold') return 'text-[#6b7280]';
+    return 'text-yellow-400';
+  };
+
+  const actionIcon = (action: string) => {
+    if (action === 'buy' || action === 'long') return '↑';
+    if (action === 'yield') return '⊕';
+    if (action === 'hold') return '—';
+    if (action === 'smart_yield') return '⊕';
+    return '?';
+  };
+
+  return (
+    <Card>
+      <SectionLabel>Cycle History</SectionLabel>
+      <div className="space-y-1">
+        {cycles.map((c: any, i: number) => {
+          const isOpen = expanded === i;
+          const time = new Date(c.ts);
+          const timeStr = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          const dateStr = time.toLocaleDateString([], { month: 'short', day: 'numeric' });
+          const action = c.action || 'hold';
+
+          return (
+            <div key={i}>
+              {/* Row — always visible, click to expand */}
+              <button
+                onClick={() => setExpanded(isOpen ? null : i)}
+                className="w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#1e1e2e] transition-colors group"
+              >
+                {/* Time */}
+                <span className="mono text-[10px] text-[#6b7280] w-20 shrink-0">{dateStr} {timeStr}</span>
+
+                {/* Action icon */}
+                <span className={`font-bold text-sm w-4 shrink-0 ${actionColor(action)}`}>{actionIcon(action)}</span>
+
+                {/* Action + asset */}
+                <span className={`text-xs font-bold uppercase w-20 shrink-0 ${actionColor(action)}`}>
+                  {action === 'smart_yield' ? 'YIELD' : action}{c.asset && c.asset !== 'USDC' ? ` ${c.asset}` : ''}
+                </span>
+
+                {/* Reasoning preview */}
+                <span className="text-[11px] text-[#6b7280] truncate flex-1">
+                  {c.reasoning
+                    ? c.reasoning.slice(0, 90)
+                    : c.screened ? `${c.screened} tokens screened — no signal` : '—'}
+                </span>
+
+                {/* Regime badge */}
+                <span className="shrink-0"><RegimeBadge regime={c.regime || 'BEAR'} /></span>
+
+                {/* Expand arrow */}
+                <span className={`text-[10px] text-[#6b7280] transition-transform ${isOpen ? 'rotate-180' : ''}`}>▼</span>
+              </button>
+
+              {/* Expanded detail */}
+              {isOpen && (
+                <div className="mx-3 mb-2 p-3 bg-[#0d0d1a] border border-[#1e1e2e] rounded-lg space-y-3">
+                  {/* Full reasoning */}
+                  {c.reasoning && (
+                    <div>
+                      <div className="text-[10px] font-bold text-indigo-400 uppercase tracking-wider mb-1">Venice Reasoning (E2EE private)</div>
+                      <p className="text-xs text-[#e2e8f0] leading-relaxed">{c.reasoning}</p>
+                      {c.confidence && (
+                        <span className="mono text-[10px] text-[#6b7280] mt-1 block">confidence={c.confidence}%</span>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Top scored tokens */}
+                  {c.topToken && (
+                    <div>
+                      <div className="text-[10px] font-bold text-[#6b7280] uppercase tracking-wider mb-1">Top Signal</div>
+                      <span className="mono text-xs text-[#9ca3af]">{c.topToken.sym} — score {c.topToken.score?.toFixed(3)}</span>
+                    </div>
+                  )}
+
+                  {/* Trending entries this cycle */}
+                  {c.trendingEntries?.length > 0 && (
+                    <div>
+                      <div className="text-[10px] font-bold text-orange-400 uppercase tracking-wider mb-1">🔥 Onchain Trending</div>
+                      {c.trendingEntries.map((t: any, ti: number) => (
+                        <div key={ti} className="mono text-[10px] text-[#9ca3af]">
+                          {t.symbol} score={t.score?.toFixed(2)} quant={t.quantScore?.toFixed(4)} rank={t.rank} ret1h={((t.ret1h||0)*100).toFixed(1)}% move={((t.moveFrac||0)*100).toFixed(0)}%done
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Signal layers */}
+                  {c.layers?.length > 0 && (
+                    <div className="flex gap-2 flex-wrap">
+                      {c.layers.map((l: string, li: number) => (
+                        <span key={li} className="px-2 py-0.5 rounded text-[9px] bg-[#1e1e2e] text-[#6b7280]">{l}</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </Card>
+  );
+}
+
 function TypingIntro() {
   const [lineIdx, setLineIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
@@ -513,6 +626,11 @@ export default function Home() {
             ))}
           </div>
         </Card>
+      )}
+
+      {/* Cycle History Feed */}
+      {((status as any)?.cycleHistory?.length ?? 0) > 0 && (
+        <CycleHistoryFeed cycles={(status as any).cycleHistory} />
       )}
 
       {/* Trade History */}
