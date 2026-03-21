@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-21T19:47:19.208Z",
+  "updatedAt": "2026-03-21T19:49:33.708Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70348,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 27 min",
+  "nextCycle": "in 25 min",
   "wallet": {
     "totalUSD": 0,
     "positionsUSD": 0,
@@ -23,12 +23,19 @@
   },
   "lastCycle": {
     "ts": "2026-03-21T19:44:33.386Z",
+    "ago": "5m ago",
     "regime": "RANGE_TIGHT",
-    "screened": 37,
+    "seenCount": 0,
+    "screened": 0,
+    "flagged": [],
+    "traded": [],
     "action": "hold",
     "asset": "USDC",
     "confidence": null,
     "reasoning": "No high-conviction trending entries this cycle and no token clears the signal threshold, thus holding the current position.",
+    "topSignal": null,
+    "trendingEntries": [],
+    "positionUpdates": [],
     "topScores": []
   },
   "performance": {
@@ -404,18 +411,18 @@
   ],
   "autoresearch": {
     "daily": {
-      "expCount": 689,
+      "expCount": 690,
       "bestValSharpe": 4.393,
       "bestAudSharpe": 2.176,
       "bestScore": 3.728,
-      "spend": 1.45
+      "spend": 1.453
     },
     "hourly": {
-      "expCount": 191,
+      "expCount": 192,
       "bestValSharpe": 5.785,
       "bestAudSharpe": 10.56,
       "bestScore": 8.172,
-      "spend": 0.573
+      "spend": 0.576
     }
   },
   "stack": {
