@@ -410,6 +410,7 @@ function TypingIntro() {
 
 export default function Home() {
   const [status, setStatus] = useState<AgentStatus | null>(null);
+  const [research, setResearch] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const [asking, setAsking] = useState(false);
@@ -435,6 +436,10 @@ export default function Home() {
     fetchStatus();
     const interval = setInterval(fetchStatus, 30000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    fetch('/api/research').then(r => r.json()).then(setResearch).catch(() => {});
   }, []);
 
   const handleAsk = async (e: React.FormEvent) => {
@@ -746,10 +751,72 @@ export default function Home() {
         </Card>
       </div>
 
-      {/* Reasoning Traces */}
       {/* Cycle History Feed */}
       {((status as any)?.cycleHistory?.length ?? 0) > 0 && (
         <CycleHistoryFeed cycles={(status as any).cycleHistory} />
+      )}
+
+      {/* Autoresearch Section */}
+      {research && (
+        <Card>
+          <SectionLabel>Autoresearch — Self-Improving Strategy</SectionLabel>
+          <p className="text-[11px] text-[#6b7280] mb-4">
+            An LLM autonomously modifies the scoring function, backtests each change, and keeps only improvements — no human intervention. Inspired by Karpathy&apos;s autoresearch pattern.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { key: 'daily',  data: research.daily  },
+              { key: 'hourly', data: research.hourly },
+              { key: 'fivem',  data: research.fivem  },
+            ].map(({ key, data }) => data && (
+              <div key={key} className="bg-[#0a0a0f] border border-[#1e1e2e] rounded-xl p-4">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] font-bold text-[#e2e8f0]">{data.label}</span>
+                  <span className="mono text-[10px] text-indigo-400">{data.total?.toLocaleString()} exp</span>
+                </div>
+
+                {/* Key metric */}
+                <div className="mb-3">
+                  <div className="text-[10px] text-[#6b7280] mb-1">Val Sharpe progression</div>
+                  <div className="flex items-end gap-2">
+                    <span className="mono text-[#6b7280] text-sm">{data.baseline?.toFixed(2)}</span>
+                    <span className="text-[#6b7280]">→</span>
+                    <span className="mono text-green-400 text-lg font-bold">{data.bestVal?.toFixed(2)}</span>
+                    <span className="text-[10px] text-emerald-400 font-bold">{data.improvement}</span>
+                  </div>
+                </div>
+
+                {/* Dot progress — last 100 experiments */}
+                <div className="flex flex-wrap gap-0.5 mb-3">
+                  {(data.progressSeries || []).slice(-80).map((e: any, i: number) => (
+                    <div
+                      key={i}
+                      title={`exp ${e.n}: val=${e.val}`}
+                      className={`w-1.5 h-1.5 rounded-full ${
+                        e.accepted ? 'bg-green-400' : 'bg-[#2e2e3e]'
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                {/* Accepted breakthroughs */}
+                <div className="text-[10px] font-bold text-[#6b7280] uppercase tracking-wider mb-2">
+                  Breakthroughs ({data.accepted})
+                </div>
+                <div className="space-y-1 max-h-[120px] overflow-y-auto scrollbar-hide">
+                  {(data.acceptedExps || []).slice(-6).reverse().map((e: any, i: number) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <span className="mono text-[9px] text-[#6b7280] shrink-0 w-10">exp{e.n}</span>
+                      <span className="mono text-[9px] text-green-400 shrink-0">{e.val?.toFixed(2)}</span>
+                      <span className="text-[9px] text-[#9ca3af] truncate">{e.description}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
       )}
 
       {/* Trade History */}
