@@ -147,28 +147,29 @@ function ReasoningTimeline({ cycle, positions }: { cycle: any, positions: any[] 
     },
     {
       id: 'checkr',
-      label: 'Checkr 1h Social Intelligence',
+      label: 'Onchain Discovery (Bankr + Checkr 1h)',
       icon: '📡',
       detail: (() => {
         const entries = cycle.trendingEntries || [];
-        const top = entries.slice(0, 3).map((t: any) =>
-          `${t.symbol} score=${t.score?.toFixed(2)} ret1h=${((t.ret1h||0)*100).toFixed(1)}%`
+        if (!entries.length) return 'No trending tokens discovered this cycle';
+        const top = entries.slice(0, 4).map((t: any) =>
+          `${t.symbol} rank=${t.rank} ret1h=${((t.ret1h||0)*100).toFixed(1)}% ret6h=${((t.ret6h||0)*100).toFixed(1)}%`
         );
-        if (!top.length) return 'No high-velocity signals this cycle';
-        return top.join('\n');
+        return `${entries.length} token${entries.length > 1 ? 's' : ''} discovered onchain:\n${top.join('\n')}`;
       })(),
       status: 'done',
     },
     {
       id: 'quant',
-      label: 'Alchemy Quant Brain',
-      icon: '🧠',
+      label: 'Quant Scoring (local evolved model)',
+      icon: '📐',
       detail: (() => {
         const entries = cycle.trendingEntries || [];
         const flagged = entries.filter((t: any) => (t.score || 0) >= 0.65);
-        if (!flagged.length) return `Evaluated ${entries.length} tokens — none cleared 0.65 threshold`;
+        if (!entries.length) return 'No candidates to score this cycle';
+        if (!flagged.length) return `${entries.length} token${entries.length > 1 ? 's' : ''} scored — none cleared 0.65 threshold\n${entries.slice(0,3).map((t:any) => `${t.symbol} score=${t.score?.toFixed(2)}`).join(' · ')}`;
         return flagged.map((t: any) =>
-          `${t.symbol} ✓ score=${t.score?.toFixed(2)} move=${t.moveFrac != null ? Math.round(t.moveFrac*100)+'%done' : '?'}`
+          `${t.symbol} ✓ score=${t.score?.toFixed(2)} move=${t.moveFrac != null ? Math.round(t.moveFrac*100)+'% done' : '?'}`
         ).join('\n');
       })(),
       status: 'done',
