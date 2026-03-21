@@ -1,23 +1,11 @@
 {
-  "updatedAt": "2026-03-21T19:00:19.946Z",
+  "updatedAt": "2026-03-21T19:11:08.994Z",
   "regime": "BEAR",
   "btcPrice": 70422,
-  "pctFrom200": "-1.9%",
+  "pctFrom200": "-4.2%",
   "breadth": "2/37",
-  "nextCycle": "in 28 min",
+  "nextCycle": "in 17 min",
   "positions": [
-    {
-      "sym": "cbBTC",
-      "entryPrice": 69698,
-      "sizeUSD": 7.2,
-      "peakPct": 1.63,
-      "trailStop": 5,
-      "openedAt": "2026-03-20T18:30:00.000Z",
-      "entryTx": null,
-      "contractAddress": null,
-      "source": "universe",
-      "chain": "base"
-    },
     {
       "sym": "SOL",
       "entryPrice": 88.38,
@@ -91,6 +79,314 @@
     "winRate": null,
     "recentTrades": []
   },
+  "cycleHistory": [
+    {
+      "ts": "2026-03-21T18:58:17.555Z",
+      "regime": "BEAR",
+      "action": "hold",
+      "asset": "USDC",
+      "reasoning": "Insufficient liquid USDC ($0.00) to yield — keeping reserve for trade opportunities",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ]
+    },
+    {
+      "ts": "2026-03-21T18:52:24.369Z",
+      "regime": "BEAR",
+      "action": "yield",
+      "asset": "USDC",
+      "reasoning": "The current market regime is BEAR, and there are no tokens with a score ≥ 0.65 and move < 50% done, so yielding to USDC is the best option.",
+      "confidence": 100,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ]
+    },
+    {
+      "ts": "2026-03-21T18:16:01.484Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T18:15:09.327Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T18:12:36.210Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T17:44:10.811Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T17:14:10.809Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T16:44:10.809Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T16:14:10.807Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T15:44:10.801Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T15:14:10.796Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T14:44:10.791Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T14:14:10.781Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T13:44:10.772Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T13:11:55.731Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T13:04:02.340Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T12:46:14.895Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T12:41:21.282Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T12:33:00.557Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 17,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    },
+    {
+      "ts": "2026-03-21T12:29:03.001Z",
+      "regime": "BEAR",
+      "action": "smart_yield",
+      "asset": "USDC",
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "confidence": null,
+      "screened": 17,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": []
+    }
+  ],
   "reasoningTraces": [
     {
       "sym": "MOLT",
@@ -138,18 +434,18 @@
   ],
   "autoresearch": {
     "daily": {
-      "expCount": 660,
+      "expCount": 667,
       "bestValSharpe": 4.393,
       "bestAudSharpe": 2.176,
       "bestScore": 3.728,
-      "spend": 1.363
+      "spend": 1.384
     },
     "hourly": {
-      "expCount": 164,
+      "expCount": 170,
       "bestValSharpe": 5.785,
       "bestAudSharpe": 10.56,
       "bestScore": 8.172,
-      "spend": 0.492
+      "spend": 0.51
     }
   },
   "stack": {
