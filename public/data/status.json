@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-21T19:49:33.708Z",
+  "updatedAt": "2026-03-21T19:52:04.010Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70348,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 25 min",
+  "nextCycle": "in 23 min",
   "wallet": {
     "totalUSD": 0,
     "positionsUSD": 0,
@@ -23,8 +23,19 @@
   },
   "lastCycle": {
     "ts": "2026-03-21T19:44:33.386Z",
-    "ago": "5m ago",
+    "ago": "8m ago",
     "regime": "RANGE_TIGHT",
+    "regime_detail": {
+      "state": "RANGE_TIGHT",
+      "btcNow": 70347.63,
+      "sma200": 71810.43950000005,
+      "pctFrom200": -0.020370429566860478,
+      "volRatio": 0.7450845150036797,
+      "btcState": "RANGE",
+      "ethState": "RANGE",
+      "breadthFraction": "BTC:RANGE ETH:RANGE",
+      "breadth": 0.5
+    },
     "seenCount": 0,
     "screened": 0,
     "flagged": [],
@@ -411,18 +422,18 @@
   ],
   "autoresearch": {
     "daily": {
-      "expCount": 690,
+      "expCount": 692,
       "bestValSharpe": 4.393,
       "bestAudSharpe": 2.176,
       "bestScore": 3.728,
-      "spend": 1.453
+      "spend": 1.459
     },
     "hourly": {
-      "expCount": 192,
+      "expCount": 194,
       "bestValSharpe": 5.785,
       "bestAudSharpe": 10.56,
       "bestScore": 8.172,
-      "spend": 0.576
+      "spend": 0.582
     }
   },
   "stack": {
