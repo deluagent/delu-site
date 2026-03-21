@@ -110,6 +110,125 @@ const INTRO_LINES = [
   "When I see it — I execute. With a trailing stop. No emotions.",
 ];
 
+// ── Reasoning Timeline ──────────────────────────────────────────────────────
+function ReasoningTimeline({ cycle, positions }: { cycle: any, positions: any[] }) {
+  if (!cycle) return null;
+
+  const steps = [
+    {
+      id: 'regime',
+      label: 'Regime Detection',
+      icon: '🌐',
+      detail: (() => {
+        const r = cycle.regime_detail || {};
+        const state = cycle.regime || 'BEAR';
+        const btc = r.btcNow ? `BTC $${Math.round(r.btcNow).toLocaleString()}` : '';
+        const pct = r.pctFrom200 != null ? ` · ${(r.pctFrom200 * 100).toFixed(1)}% from 200d MA` : '';
+        const btcState = r.btcState ? ` · BTC:${r.btcState}` : '';
+        const ethState = r.ethState ? ` ETH:${r.ethState}` : '';
+        return `${state}  ${btc}${pct}${btcState}${ethState}`;
+      })(),
+      status: 'done',
+    },
+    {
+      id: 'positions',
+      label: 'Position Check',
+      icon: '📊',
+      detail: (() => {
+        const pa = cycle.positionUpdates || [];
+        if (!pa.length && positions.filter((p:any) => p.status === 'open').length === 0) return 'No open positions';
+        if (!pa.length) return positions.filter((p:any) => p.status === 'open').map((p:any) =>
+          `${p.sym} ${p.pnlPct != null ? (p.pnlPct >= 0 ? '+' : '') + p.pnlPct.toFixed(1) + '%' : '?'}`).join(' · ');
+        return pa.map((p: any) =>
+          `${p.sym} ${p.pnlPct != null ? (p.pnlPct >= 0 ? '+' : '') + p.pnlPct.toFixed(1) + '%' : '?'} vol=${p.volumeTrend} → ${p.recommendation}`
+        ).join('\n');
+      })(),
+      status: 'done',
+    },
+    {
+      id: 'checkr',
+      label: 'Checkr 1h Social Intelligence',
+      icon: '📡',
+      detail: (() => {
+        const entries = cycle.trendingEntries || [];
+        const top = entries.slice(0, 3).map((t: any) =>
+          `${t.symbol} score=${t.score?.toFixed(2)} ret1h=${((t.ret1h||0)*100).toFixed(1)}%`
+        );
+        if (!top.length) return 'No high-velocity signals this cycle';
+        return top.join('\n');
+      })(),
+      status: 'done',
+    },
+    {
+      id: 'quant',
+      label: 'Alchemy Quant Brain',
+      icon: '🧠',
+      detail: (() => {
+        const entries = cycle.trendingEntries || [];
+        const flagged = entries.filter((t: any) => (t.score || 0) >= 0.65);
+        if (!flagged.length) return `Evaluated ${entries.length} tokens — none cleared 0.65 threshold`;
+        return flagged.map((t: any) =>
+          `${t.symbol} ✓ score=${t.score?.toFixed(2)} move=${t.moveFrac != null ? Math.round(t.moveFrac*100)+'%done' : '?'}`
+        ).join('\n');
+      })(),
+      status: 'done',
+    },
+    {
+      id: 'venice',
+      label: 'Venice E2EE Reasoning',
+      icon: '🔒',
+      detail: cycle.reasoning || 'No reasoning logged',
+      status: 'done',
+      highlight: true,
+    },
+    {
+      id: 'action',
+      label: 'Decision',
+      icon: cycle.traded?.length > 0 ? '✅' : '⏸',
+      detail: (() => {
+        const action = (cycle.action || 'hold').toUpperCase().replace('_', ' ');
+        const asset = cycle.asset && cycle.asset !== 'USDC' ? ` ${cycle.asset}` : '';
+        const conf = cycle.confidence > 0 ? ` · ${cycle.confidence}% confidence` : '';
+        return `${action}${asset}${conf}`;
+      })(),
+      status: cycle.traded?.length > 0 ? 'trade' : 'hold',
+    },
+  ];
+
+  return (
+    <div className="space-y-0">
+      {steps.map((step, i) => (
+        <div key={step.id} className="relative flex gap-3">
+          {/* Vertical line */}
+          {i < steps.length - 1 && (
+            <div className="absolute left-[11px] top-6 bottom-0 w-px bg-[#1e1e2e]" />
+          )}
+          {/* Dot */}
+          <div className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center text-[11px] shrink-0 mt-0.5 ${
+            step.status === 'trade' ? 'bg-green-500/20 border border-green-500/50' :
+            step.id === 'venice' ? 'bg-indigo-500/20 border border-indigo-500/50' :
+            'bg-[#1e1e2e] border border-[#2e2e3e]'
+          }`}>
+            {step.icon}
+          </div>
+          {/* Content */}
+          <div className="pb-4 min-w-0 flex-1">
+            <div className={`text-[11px] font-bold mb-0.5 ${
+              step.status === 'trade' ? 'text-green-400' :
+              step.id === 'venice' ? 'text-indigo-300' :
+              'text-[#e2e8f0]'
+            }`}>{step.label}</div>
+            <div className={`text-[10px] mono leading-relaxed whitespace-pre-line ${
+              step.id === 'venice' ? 'text-[#a5b4fc] italic' : 'text-[#6b7280]'
+            }`}>{step.detail}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ── Cycle History Feed ───────────────────────────────────────────────────────
 function CycleHistoryFeed({ cycles }: { cycles: any[] }) {
   const [expanded, setExpanded] = useState<number | null>(null);
 
@@ -488,72 +607,35 @@ export default function Home() {
           <SectionLabel>Intelligence Cycle</SectionLabel>
           {status && (
             <div className="flex flex-col h-full">
-              {/* Stats row */}
-              <div className="grid grid-cols-3 gap-2 mb-4">
-                <div className="bg-[#0a0a0f] p-2 rounded-lg border border-[#1e1e2e] text-center">
-                  <div className="text-[10px] text-[#6b7280] font-bold uppercase mb-1">Seen</div>
-                  <div className="mono font-bold">{(status.lastCycle as any).seenCount ?? status.lastCycle.screened ?? 0}</div>
-                </div>
-                <div className="bg-[#0a0a0f] p-2 rounded-lg border border-[#1e1e2e] text-center">
-                  <div className="text-[10px] text-[#6b7280] font-bold uppercase mb-1">Flagged</div>
-                  <div className="mono font-bold text-indigo-400">{(status.lastCycle as any).flagged?.length ?? 0}</div>
-                </div>
-                <div className="bg-[#0a0a0f] p-2 rounded-lg border border-[#1e1e2e] text-center">
-                  <div className="text-[10px] text-[#6b7280] font-bold uppercase mb-1">Traded</div>
-                  <div className="mono font-bold text-green-500">{(status.lastCycle as any).traded?.length ?? 0}</div>
-                </div>
-              </div>
-
-              {/* Action + ago */}
-              <div className="flex items-center gap-2 mb-2">
-                <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${
+              {/* Header: ago + action badge */}
+              <div className="flex items-center gap-2 mb-4">
+                <span className={`px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider ${
                   ((status.lastCycle as any).traded?.length ?? 0) > 0
-                    ? 'bg-green-500/10 text-green-500'
-                    : status.lastCycle.action === 'yield'
-                    ? 'bg-indigo-500/10 text-indigo-400'
-                    : 'bg-[#1e1e2e] text-[#6b7280]'
+                    ? 'bg-green-500/10 text-green-500 border border-green-500/20'
+                    : status.lastCycle.action === 'yield' || status.lastCycle.action === 'smart_yield'
+                    ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'
+                    : 'bg-[#1e1e2e] text-[#6b7280] border border-[#2e2e3e]'
                 }`}>
-                  {status.lastCycle.action?.replace('_', ' ') ?? 'hold'}
+                  {status.lastCycle.action?.replace('_', ' ')?.toUpperCase() ?? 'HOLD'}
                 </span>
                 <span className="text-[10px] text-[#6b7280] mono flex items-center gap-1">
                   <Clock size={10} /> {(status.lastCycle as any).ago ?? '—'}
                 </span>
-                {(status.lastCycle as any).confidence > 0 && (
-                  <span className="text-[10px] text-emerald-400 mono ml-auto">{(status.lastCycle as any).confidence}% conf</span>
-                )}
+                <span className="text-[10px] text-[#6b7280] mono ml-auto">
+                  seen {(status.lastCycle as any).seenCount ?? 0} · flagged {(status.lastCycle as any).flagged?.length ?? 0}
+                </span>
               </div>
 
-              {/* Reasoning */}
-              <p className="text-xs text-[#e2e8f0] leading-relaxed mb-3 italic opacity-80">
-                &ldquo;{lastReason}&rdquo;
-              </p>
-
-              {/* Top signal this cycle */}
-              {(status.lastCycle as any).topSignal && (
-                <div className="bg-[#0a0a0f] border border-[#1e1e2e] rounded-lg px-3 py-2 mb-3">
-                  <div className="text-[9px] text-[#6b7280] font-bold uppercase mb-1">Top Signal</div>
-                  <div className="text-[11px] mono text-indigo-300">{(status.lastCycle as any).topSignal}</div>
-                </div>
-              )}
-
-              {/* Position updates */}
-              {((status.lastCycle as any).positionUpdates?.length ?? 0) > 0 && (
-                <div className="mb-3 space-y-1">
-                  {((status.lastCycle as any).positionUpdates as any[]).map((p: any, i: number) => (
-                    <div key={i} className="flex items-center justify-between text-[10px] mono">
-                      <span className="text-[#6b7280]">{p.sym}</span>
-                      <span className={p.pnlPct >= 0 ? 'text-green-400' : 'text-red-400'}>
-                        {p.pnlPct != null ? (p.pnlPct >= 0 ? '+' : '') + p.pnlPct.toFixed(1) + '%' : '?'}
-                      </span>
-                      <span className="text-[#6b7280]">{p.volumeTrend}</span>
-                      <span className="text-indigo-300">{p.recommendation}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+              {/* Reasoning timeline */}
+              <div className="flex-1 overflow-y-auto max-h-[420px] scrollbar-hide">
+                <ReasoningTimeline
+                  cycle={status.lastCycle as any}
+                  positions={status.positions ?? []}
+                />
+              </div>
 
               {/* Autoresearch footer */}
-              <div className="mt-auto pt-3 border-t border-[#1e1e2e] space-y-1">
+              <div className="mt-4 pt-3 border-t border-[#1e1e2e] space-y-1">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] mono text-[#6b7280]">Daily · Exp {arDaily.expCount ?? 0} · Sharpe {(arDaily.bestValSharpe ?? 0).toFixed(2)}</span>
                   <span className="text-[10px] mono text-indigo-400">↑ improving</span>
