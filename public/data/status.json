@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-21T19:35:08.256Z",
+  "updatedAt": "2026-03-21T19:39:29.259Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 70434,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 70353,
+  "pctFrom200": "-2.0%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 24 min",
+  "nextCycle": "in 30 min",
   "wallet": {
     "totalUSD": 31.43,
     "positionsUSD": 26.08,
@@ -46,13 +46,13 @@
     "note": "Capital parked here while in BEAR regime — earning yield while waiting for signal"
   },
   "lastCycle": {
-    "ts": "2026-03-21T19:28:52.005Z",
+    "ts": "2026-03-21T19:38:59.288Z",
     "regime": "RANGE_TIGHT",
     "screened": 37,
     "action": "hold",
     "asset": "USDC",
     "confidence": null,
-    "reasoning": "No high-conviction trending entries this cycle and no token clears the signal threshold, thus holding the current position.",
+    "reasoning": "No high-conviction trending entries this cycle and no token clears the signal threshold, therefore holding the current position.",
     "topScores": []
   },
   "performance": {
@@ -61,6 +61,21 @@
     "recentTrades": []
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-21T19:38:59.288Z",
+      "regime": "RANGE_TIGHT",
+      "action": "hold",
+      "asset": "USDC",
+      "reasoning": "No high-conviction trending entries this cycle and no token clears the signal threshold, therefore holding the current position.",
+      "confidence": null,
+      "screened": 0,
+      "topToken": null,
+      "trendingEntries": [],
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ]
+    },
     {
       "ts": "2026-03-21T19:28:52.005Z",
       "regime": "RANGE_TIGHT",
@@ -354,21 +369,6 @@
       },
       "trendingEntries": [],
       "layers": []
-    },
-    {
-      "ts": "2026-03-21T12:46:14.895Z",
-      "regime": "BEAR",
-      "action": "smart_yield",
-      "asset": "USDC",
-      "reasoning": "BEAR regime, no oversold signals — yield only",
-      "confidence": null,
-      "screened": 37,
-      "topToken": {
-        "sym": "BTC",
-        "score": 0
-      },
-      "trendingEntries": [],
-      "layers": []
     }
   ],
   "reasoningTraces": [
@@ -418,18 +418,18 @@
   ],
   "autoresearch": {
     "daily": {
-      "expCount": 681,
+      "expCount": 684,
       "bestValSharpe": 4.393,
       "bestAudSharpe": 2.176,
       "bestScore": 3.728,
-      "spend": 1.429
+      "spend": 1.435
     },
     "hourly": {
-      "expCount": 184,
+      "expCount": 187,
       "bestValSharpe": 5.785,
       "bestAudSharpe": 10.56,
       "bestScore": 8.172,
-      "spend": 0.552
+      "spend": 0.561
     }
   },
   "stack": {
