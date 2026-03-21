@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-21T19:28:23.133Z",
+  "updatedAt": "2026-03-21T19:29:39.056Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 70440,
+  "btcPrice": 70434,
   "pctFrom200": "-1.9%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 30 min",
+  "nextCycle": "in 29 min",
   "positions": [
     {
       "sym": "SOL",
@@ -39,13 +39,13 @@
     "note": "Capital parked here while in BEAR regime — earning yield while waiting for signal"
   },
   "lastCycle": {
-    "ts": "2026-03-21T19:28:00.847Z",
+    "ts": "2026-03-21T19:28:52.005Z",
     "regime": "RANGE_TIGHT",
     "screened": 37,
     "action": "hold",
     "asset": "USDC",
     "confidence": null,
-    "reasoning": "No token clears the signal threshold, and there are no high-conviction trending entries this cycle.",
+    "reasoning": "No high-conviction trending entries this cycle and no token clears the signal threshold, thus holding the current position.",
     "topScores": []
   },
   "performance": {
@@ -54,6 +54,21 @@
     "recentTrades": []
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-21T19:28:52.005Z",
+      "regime": "RANGE_TIGHT",
+      "action": "hold",
+      "asset": "USDC",
+      "reasoning": "No high-conviction trending entries this cycle and no token clears the signal threshold, thus holding the current position.",
+      "confidence": null,
+      "screened": 0,
+      "topToken": null,
+      "trendingEntries": [],
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ]
+    },
     {
       "ts": "2026-03-21T19:28:00.847Z",
       "regime": "RANGE_TIGHT",
@@ -347,21 +362,6 @@
       },
       "trendingEntries": [],
       "layers": []
-    },
-    {
-      "ts": "2026-03-21T12:41:21.282Z",
-      "regime": "BEAR",
-      "action": "smart_yield",
-      "asset": "USDC",
-      "reasoning": "BEAR regime, no oversold signals — yield only",
-      "confidence": null,
-      "screened": 37,
-      "topToken": {
-        "sym": "BTC",
-        "score": 0
-      },
-      "trendingEntries": [],
-      "layers": []
     }
   ],
   "reasoningTraces": [
@@ -411,18 +411,18 @@
   ],
   "autoresearch": {
     "daily": {
-      "expCount": 677,
+      "expCount": 678,
       "bestValSharpe": 4.393,
       "bestAudSharpe": 2.176,
       "bestScore": 3.728,
-      "spend": 1.414
+      "spend": 1.417
     },
     "hourly": {
-      "expCount": 180,
+      "expCount": 181,
       "bestValSharpe": 5.785,
       "bestAudSharpe": 10.56,
       "bestScore": 8.172,
-      "spend": 0.54
+      "spend": 0.543
     }
   },
   "stack": {
