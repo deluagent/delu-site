@@ -467,6 +467,54 @@ export default function Home() {
         </Card>
       </div>
 
+      {/* Reasoning Traces */}
+      {((status as any)?.reasoningTraces?.length ?? 0) > 0 && (
+        <Card>
+          <SectionLabel>Why I Traded — Signal Chain</SectionLabel>
+          <div className="space-y-6">
+            {((status as any)?.reasoningTraces ?? []).slice(-3).reverse().map((trace: any, ti: number) => (
+              <div key={ti} className="border border-[#1e1e2e] rounded-xl p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <span className="font-bold text-sm">{trace.sym}</span>
+                    <TxLink hash={trace.txHash} />
+                  </div>
+                  <span className="mono text-[10px] text-[#6b7280]">{new Date(trace.ts).toLocaleString()}</span>
+                </div>
+                {/* Step-by-step signal chain */}
+                <div className="space-y-2 mb-3">
+                  {(trace.steps || []).map((step: any, si: number) => (
+                    <div key={si} className="flex gap-3">
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center mt-0.5">
+                        <span className="text-[9px] font-bold text-indigo-400">{step.step}</span>
+                      </div>
+                      <div>
+                        <div className="text-[10px] font-bold text-indigo-400 mb-0.5">{step.layer}</div>
+                        <div className="text-[11px] text-[#9ca3af] leading-relaxed">{step.signal}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Decision box */}
+                <div className="bg-green-500/5 border border-green-500/20 rounded-lg p-3">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[10px] font-bold text-green-400 uppercase tracking-wider">Decision</span>
+                    <span className="mono text-[10px] text-[#6b7280]">confidence={trace.decision?.confidence}%</span>
+                    {trace.execution?.via && (
+                      <span className="px-1.5 py-0.5 rounded text-[9px] bg-[#1e1e2e] text-[#6b7280]">via {trace.execution.via}</span>
+                    )}
+                  </div>
+                  <p className="text-xs text-[#e2e8f0] leading-relaxed">{trace.decision?.reasoning}</p>
+                  {trace.execution?.result && (
+                    <p className="text-[10px] text-[#6b7280] mt-1 mono">{trace.execution.result}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+
       {/* Trade History */}
       <Card>
         <SectionLabel>Trade History</SectionLabel>
