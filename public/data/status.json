@@ -1,28 +1,16 @@
 {
-  "updatedAt": "2026-03-21T18:29:15.135Z",
+  "updatedAt": "2026-03-21T18:54:32.913Z",
   "regime": "BEAR",
-  "btcPrice": 70361,
-  "pctFrom200": "-4.2%",
-  "breadth": "3/37",
-  "nextCycle": "in 17 min",
+  "btcPrice": 70412,
+  "pctFrom200": "-2.0%",
+  "breadth": "2/37",
+  "nextCycle": "in 28 min",
   "positions": [
     {
       "sym": "cbBTC",
       "entryPrice": 69698,
       "sizeUSD": 7.2,
       "peakPct": 1.63,
-      "trailStop": 5,
-      "openedAt": "2026-03-20T18:30:00.000Z",
-      "entryTx": null,
-      "contractAddress": null,
-      "source": "universe",
-      "chain": "base"
-    },
-    {
-      "sym": "ETH",
-      "entryPrice": 2124,
-      "sizeUSD": 21.6,
-      "peakPct": 1.66,
       "trailStop": 5,
       "openedAt": "2026-03-20T18:30:00.000Z",
       "entryTx": null,
@@ -63,13 +51,13 @@
     "note": "Capital parked here while in BEAR regime — earning yield while waiting for signal"
   },
   "lastCycle": {
-    "ts": "2026-03-21T18:16:01.484Z",
+    "ts": "2026-03-21T18:52:24.369Z",
     "regime": "BEAR",
     "screened": 37,
-    "action": "smart_yield",
+    "action": "yield",
     "asset": "USDC",
-    "confidence": null,
-    "reasoning": "BEAR regime — monitoring market, capital in yield",
+    "confidence": 100,
+    "reasoning": "The current market regime is BEAR, and there are no tokens with a score ≥ 0.65 and move < 50% done, so yielding to USDC is the best option.",
     "topScores": [
       {
         "sym": "BTC",
@@ -150,18 +138,18 @@
   ],
   "autoresearch": {
     "daily": {
-      "expCount": 643,
+      "expCount": 657,
       "bestValSharpe": 4.393,
       "bestAudSharpe": 2.176,
       "bestScore": 3.728,
-      "spend": 1.312
+      "spend": 1.354
     },
     "hourly": {
-      "expCount": 147,
+      "expCount": 161,
       "bestValSharpe": 5.785,
       "bestAudSharpe": 10.56,
       "bestScore": 8.172,
-      "spend": 0.441
+      "spend": 0.483
     }
   },
   "stack": {
