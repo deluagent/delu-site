@@ -305,11 +305,23 @@ function CycleHistoryFeed({ cycles }: { cycles: any[] }) {
                     </div>
                   )}
 
-                  {/* Top scored tokens */}
-                  {c.topToken && (
+                  {/* Top signal */}
+                  {(c.topSignal || c.topToken) && (
                     <div>
                       <div className="text-[10px] font-bold text-[#6b7280] uppercase tracking-wider mb-1">Top Signal</div>
-                      <span className="mono text-xs text-[#9ca3af]">{c.topToken.sym} — score {c.topToken.score?.toFixed(3)}</span>
+                      <span className="mono text-xs text-[#9ca3af]">{c.topSignal || `${c.topToken?.sym} score=${c.topToken?.score?.toFixed(3)}`}</span>
+                    </div>
+                  )}
+
+                  {/* Position updates */}
+                  {c.positionUpdates?.length > 0 && (
+                    <div>
+                      <div className="text-[10px] font-bold text-[#6b7280] uppercase tracking-wider mb-1">Position Check</div>
+                      {c.positionUpdates.map((p: any, pi: number) => (
+                        <div key={pi} className="mono text-[10px] text-[#9ca3af]">
+                          {p.sym} {p.pnlPct != null ? (p.pnlPct >= 0 ? '+' : '') + p.pnlPct.toFixed(1) + '%' : '?'} · vol={p.volumeTrend} · {p.recommendation}
+                        </div>
+                      ))}
                     </div>
                   )}
 
