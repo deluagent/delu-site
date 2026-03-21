@@ -152,10 +152,17 @@ function ReasoningTimeline({ cycle, positions }: { cycle: any, positions: any[] 
       detail: (() => {
         const entries = cycle.trendingEntries || [];
         if (!entries.length) return 'No trending tokens discovered this cycle';
-        const top = entries.slice(0, 4).map((t: any) =>
-          `${t.symbol} rank=${t.rank} ret1h=${((t.ret1h||0)*100).toFixed(1)}% ret6h=${((t.ret6h||0)*100).toFixed(1)}%`
-        );
-        return `${entries.length} token${entries.length > 1 ? 's' : ''} discovered onchain:\n${top.join('\n')}`;
+
+        // Separate Bankr (onchain txn rank) vs Checkr (social attention spike)
+        const bankr   = entries.filter((t: any) => t.source === 'bankr_trending' || t.rank != null);
+        const checkr  = entries.filter((t: any) => t.source === 'checkr' || t.velocity != null);
+        const other   = entries.filter((t: any) => !bankr.includes(t) && !checkr.includes(t));
+
+        const lines: string[] = [];
+        if (bankr.length)  lines.push(`Bankr trending (onchain txns): ${bankr.map((t: any)  => `${t.symbol} rank=${t.rank} ret1h=${((t.ret1h||0)*100).toFixed(1)}%`).join(' · ')}`);
+        if (checkr.length) lines.push(`Checkr 1h (social velocity):   ${checkr.map((t: any) => `${t.symbol} vel=${t.velocity?.toFixed(1)} Δ${(t.attentionDelta||0).toFixed(2)}pp`).join(' · ')}`);
+        if (other.length)  lines.push(`Other: ${other.map((t: any) => `${t.symbol} score=${t.score?.toFixed(2)}`).join(' · ')}`);
+        return lines.join('\n') || `${entries.length} token${entries.length > 1 ? 's' : ''} — source unknown`;
       })(),
       status: 'done',
     },
