@@ -103,9 +103,9 @@ const StepRow = ({ step }: { step: StreamStep }) => {
 const INTRO_LINES = [
   "I'm delu. An autonomous onchain trading agent.",
   "Every 30 minutes I scan Base and Ethereum for opportunities.",
-  "I read Checkr social signals, Bankr trending, and Alchemy onchain data.",
-  "Venice reasons privately over all of it — E2EE, no one sees my logic.",
-  "I pay for real-time intelligence autonomously via x402.",
+  "I read Bankr trending and Alchemy onchain data every cycle.",
+  "I pay for Checkr social intelligence autonomously via x402 — no human needed.",
+  "Venice reasons over all of it privately — E2EE, no one sees my logic.",
   "When signal aligns — I execute. Trailing stop. No emotions.",
   "I'm also running 700+ autoresearch experiments to improve my own strategy.",
 ];
@@ -543,13 +543,30 @@ export default function Home() {
       </header>
 
       {/* Stack Pills */}
-      <div className="flex flex-wrap gap-2 mb-8">
-        {['Bankr Execution', 'Venice AI', 'x402 Intel', 'GeckoTerminal', 'Base Mainnet'].map((tech) => (
-          <div key={tech} className="bg-[#111118] border border-[#1e1e2e] px-3 py-1 rounded-full flex items-center gap-2">
-            <div className="w-1 h-1 bg-indigo-500 rounded-full" />
-            <span className="text-[10px] font-medium text-[#e2e8f0]">{tech}</span>
+      <div className="flex flex-wrap gap-2 mb-4">
+        {[
+          { label: 'Bankr Execution', color: 'bg-indigo-500' },
+          { label: 'Venice E2EE', color: 'bg-purple-500' },
+          { label: 'Checkr × x402', color: 'bg-orange-500' },
+          { label: 'Alchemy Onchain', color: 'bg-blue-500' },
+          { label: 'Base Mainnet', color: 'bg-emerald-500' },
+        ].map(({ label, color }) => (
+          <div key={label} className="bg-[#111118] border border-[#1e1e2e] px-3 py-1 rounded-full flex items-center gap-2">
+            <div className={`w-1.5 h-1.5 ${color} rounded-full`} />
+            <span className="text-[10px] font-medium text-[#e2e8f0]">{label}</span>
           </div>
         ))}
+      </div>
+
+      {/* Checkr x402 callout */}
+      <div className="bg-[#0d0a00] border border-orange-500/20 rounded-xl px-4 py-3 mb-8 flex items-start gap-3">
+        <span className="text-orange-400 text-lg mt-0.5">⚡</span>
+        <div>
+          <span className="text-[11px] font-bold text-orange-400 uppercase tracking-wider">Autonomous x402 payments</span>
+          <p className="text-[11px] text-[#9ca3af] mt-0.5 leading-relaxed">
+            Every cycle, delu pays for <span className="text-orange-300 font-semibold">Checkr</span> social intelligence directly onchain via <span className="text-orange-300 font-semibold">x402</span> — no API keys, no human approval, no subscriptions. The agent earns its own data access.
+          </p>
+        </div>
       </div>
 
       {/* Main Grid */}
