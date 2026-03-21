@@ -391,8 +391,16 @@ export default function Home() {
           </div>
           <div className="w-px h-8 bg-[#1e1e2e]" />
           <div className="flex flex-col">
-            <span className="text-[9px] text-[#6b7280] font-bold uppercase tracking-wider">BTC Price</span>
-            <span className="mono text-sm font-bold">${status?.btcPrice.toLocaleString()}</span>
+            <span className="text-[9px] text-[#6b7280] font-bold uppercase tracking-wider">Portfolio</span>
+            <span className="mono text-sm font-bold">${((status as any)?.wallet?.totalUSD ?? 0).toFixed(2)}</span>
+          </div>
+          <div className="w-px h-8 bg-[#1e1e2e]" />
+          <div className="flex flex-col">
+            <span className="text-[9px] text-[#6b7280] font-bold uppercase tracking-wider">Unrealised P&L</span>
+            <span className={`mono text-sm font-bold ${((status as any)?.wallet?.unrealPnlUSD ?? 0) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+              {((status as any)?.wallet?.unrealPnlUSD ?? 0) >= 0 ? '+' : ''}${((status as any)?.wallet?.unrealPnlUSD ?? 0).toFixed(2)}
+              <span className="text-[10px] ml-1 opacity-60">({((status as any)?.wallet?.unrealPnlPct ?? 0) >= 0 ? '+' : ''}{((status as any)?.wallet?.unrealPnlPct ?? 0).toFixed(1)}%)</span>
+            </span>
           </div>
           <div className="w-px h-8 bg-[#1e1e2e]" />
           <div className="flex flex-col">
