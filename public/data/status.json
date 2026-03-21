@@ -1,0 +1,112 @@
+{
+  "updatedAt": "2026-03-21T14:42:47.592Z",
+  "regime": "BEAR",
+  "btcPrice": 70993,
+  "pctFrom200": "-4.2%",
+  "breadth": "2/37",
+  "nextCycle": "in 1 min",
+  "positions": [
+    {
+      "sym": "cbBTC",
+      "entryPrice": 69698,
+      "sizeUSD": 7.2,
+      "peakPct": 1.63,
+      "trailStop": 5,
+      "openedAt": "2026-03-20T18:30:00.000Z",
+      "entryTx": null
+    },
+    {
+      "sym": "ETH",
+      "entryPrice": 2124,
+      "sizeUSD": 21.6,
+      "peakPct": 1.66,
+      "trailStop": 5,
+      "openedAt": "2026-03-20T18:30:00.000Z",
+      "entryTx": null
+    },
+    {
+      "sym": "SOL",
+      "entryPrice": 88.38,
+      "sizeUSD": 14.2,
+      "peakPct": 2.1,
+      "trailStop": 5,
+      "openedAt": "2026-03-20T18:30:00.000Z",
+      "entryTx": null
+    }
+  ],
+  "yield": {
+    "protocol": "Morpho",
+    "vault": "Moonwell Flagship USDC",
+    "chain": "Base",
+    "amountUSD": 5.35,
+    "apy": 3.91,
+    "note": "Capital parked here while in BEAR regime — earning yield while waiting for signal"
+  },
+  "lastCycle": {
+    "ts": "2026-03-21T14:14:10.781Z",
+    "regime": "BEAR",
+    "screened": 37,
+    "action": "smart_yield",
+    "asset": "USDC",
+    "confidence": null,
+    "reasoning": "BEAR regime — monitoring market, capital in yield",
+    "topScores": [
+      {
+        "sym": "BTC",
+        "score": 0,
+        "template": "none"
+      },
+      {
+        "sym": "ETH",
+        "score": 0,
+        "template": "none"
+      },
+      {
+        "sym": "SOL",
+        "score": 0,
+        "template": "none"
+      },
+      {
+        "sym": "BNB",
+        "score": 0,
+        "template": "none"
+      },
+      {
+        "sym": "DOGE",
+        "score": 0,
+        "template": "none"
+      }
+    ]
+  },
+  "performance": {
+    "closedTrades": 0,
+    "winRate": null,
+    "recentTrades": []
+  },
+  "autoresearch": {
+    "daily": {
+      "expCount": 525,
+      "bestValSharpe": 3.888,
+      "bestAudSharpe": 1.858,
+      "bestScore": 3.28,
+      "spend": 0.964
+    },
+    "hourly": {
+      "expCount": 31,
+      "bestValSharpe": 5.455,
+      "bestAudSharpe": 10.696,
+      "bestScore": 8.075,
+      "spend": 0.093
+    }
+  },
+  "stack": {
+    "execution": "Bankr API (Base)",
+    "reasoning": "Venice llama-3.3-70b (E2EE private inference)",
+    "screening": "Bankr LLM gemini-2.5-flash",
+    "research": "Bankr LLM claude-sonnet-4-5",
+    "socialData": "Checkr (x402 micropayments)",
+    "onchainData": "GeckoTerminal DEX flows",
+    "priceData": "Binance OHLCV + funding rates",
+    "stopMgmt": "Bankr native trailing stops"
+  }
+}
