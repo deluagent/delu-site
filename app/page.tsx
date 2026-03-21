@@ -488,43 +488,79 @@ export default function Home() {
           <SectionLabel>Intelligence Cycle</SectionLabel>
           {status && (
             <div className="flex flex-col h-full">
+              {/* Stats row */}
               <div className="grid grid-cols-3 gap-2 mb-4">
                 <div className="bg-[#0a0a0f] p-2 rounded-lg border border-[#1e1e2e] text-center">
                   <div className="text-[10px] text-[#6b7280] font-bold uppercase mb-1">Seen</div>
-                  <div className="mono font-bold">{status.lastCycle.screened}</div>
+                  <div className="mono font-bold">{(status.lastCycle as any).seenCount ?? status.lastCycle.screened ?? 0}</div>
                 </div>
                 <div className="bg-[#0a0a0f] p-2 rounded-lg border border-[#1e1e2e] text-center">
-                  <div className="text-[10px] text-[#6b7280] font-bold uppercase mb-1">Flag</div>
-                  <div className="mono font-bold text-indigo-400">{(status.lastCycle.flagged?.length ?? 0)}</div>
+                  <div className="text-[10px] text-[#6b7280] font-bold uppercase mb-1">Flagged</div>
+                  <div className="mono font-bold text-indigo-400">{(status.lastCycle as any).flagged?.length ?? 0}</div>
                 </div>
                 <div className="bg-[#0a0a0f] p-2 rounded-lg border border-[#1e1e2e] text-center">
-                  <div className="text-[10px] text-[#6b7280] font-bold uppercase mb-1">Trade</div>
-                  <div className="mono font-bold text-green-500">{(status.lastCycle.traded?.length ?? 0)}</div>
+                  <div className="text-[10px] text-[#6b7280] font-bold uppercase mb-1">Traded</div>
+                  <div className="mono font-bold text-green-500">{(status.lastCycle as any).traded?.length ?? 0}</div>
                 </div>
-              </div>
-              
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${(status.lastCycle.traded?.length ?? 0) > 0 ? 'bg-green-500/10 text-green-500' : 'bg-[#1e1e2e] text-[#6b7280]'}`}>
-                    {status.lastCycle.action.replace('_', ' ')}
-                  </span>
-                  <span className="text-[10px] text-[#6b7280] mono flex items-center gap-1">
-                    <Clock size={10} /> 12m ago
-                  </span>
-                </div>
-                <p className="text-xs text-[#e2e8f0] leading-relaxed mb-4 italic">
-                  "{lastReason}"
-                </p>
               </div>
 
-              <div className="mt-auto pt-4 border-t border-[#1e1e2e] space-y-1">
+              {/* Action + ago */}
+              <div className="flex items-center gap-2 mb-2">
+                <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${
+                  ((status.lastCycle as any).traded?.length ?? 0) > 0
+                    ? 'bg-green-500/10 text-green-500'
+                    : status.lastCycle.action === 'yield'
+                    ? 'bg-indigo-500/10 text-indigo-400'
+                    : 'bg-[#1e1e2e] text-[#6b7280]'
+                }`}>
+                  {status.lastCycle.action?.replace('_', ' ') ?? 'hold'}
+                </span>
+                <span className="text-[10px] text-[#6b7280] mono flex items-center gap-1">
+                  <Clock size={10} /> {(status.lastCycle as any).ago ?? '—'}
+                </span>
+                {(status.lastCycle as any).confidence > 0 && (
+                  <span className="text-[10px] text-emerald-400 mono ml-auto">{(status.lastCycle as any).confidence}% conf</span>
+                )}
+              </div>
+
+              {/* Reasoning */}
+              <p className="text-xs text-[#e2e8f0] leading-relaxed mb-3 italic opacity-80">
+                &ldquo;{lastReason}&rdquo;
+              </p>
+
+              {/* Top signal this cycle */}
+              {(status.lastCycle as any).topSignal && (
+                <div className="bg-[#0a0a0f] border border-[#1e1e2e] rounded-lg px-3 py-2 mb-3">
+                  <div className="text-[9px] text-[#6b7280] font-bold uppercase mb-1">Top Signal</div>
+                  <div className="text-[11px] mono text-indigo-300">{(status.lastCycle as any).topSignal}</div>
+                </div>
+              )}
+
+              {/* Position updates */}
+              {((status.lastCycle as any).positionUpdates?.length ?? 0) > 0 && (
+                <div className="mb-3 space-y-1">
+                  {((status.lastCycle as any).positionUpdates as any[]).map((p: any, i: number) => (
+                    <div key={i} className="flex items-center justify-between text-[10px] mono">
+                      <span className="text-[#6b7280]">{p.sym}</span>
+                      <span className={p.pnlPct >= 0 ? 'text-green-400' : 'text-red-400'}>
+                        {p.pnlPct != null ? (p.pnlPct >= 0 ? '+' : '') + p.pnlPct.toFixed(1) + '%' : '?'}
+                      </span>
+                      <span className="text-[#6b7280]">{p.volumeTrend}</span>
+                      <span className="text-indigo-300">{p.recommendation}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Autoresearch footer */}
+              <div className="mt-auto pt-3 border-t border-[#1e1e2e] space-y-1">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] mono text-[#6b7280]">Daily · Exp {arDaily.expCount ?? 0} · Sharpe {(arDaily.bestValSharpe ?? 0).toFixed(2)}</span>
                   <span className="text-[10px] mono text-indigo-400">↑ improving</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] mono text-[#6b7280]">Hourly · Exp {arHourly.expCount ?? 0} · Sharpe {(arHourly.bestValSharpe ?? 0).toFixed(2)}</span>
-                  <span className="text-[10px] mono text-emerald-400">↑ {(arHourly.bestScore ?? 0).toFixed(2)} score</span>
+                  <span className="text-[10px] mono text-emerald-400">↑ {(arHourly.bestScore ?? 0).toFixed(2)}</span>
                 </div>
               </div>
             </div>
