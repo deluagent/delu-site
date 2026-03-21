@@ -441,15 +441,18 @@ export default function Home() {
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-sm">{p.sym}</span>
-                        <PnlChip pct={(p as any).peakPct ?? p.pnlPct} />
+                        <PnlChip pct={(p as any).pnlPct ?? (p as any).peakPct} />
                       </div>
                       <div className="text-[10px] text-[#6b7280] mono">
-                        In: ${p.entryPrice.toLocaleString()}
+                        In: ${p.entryPrice?.toLocaleString() ?? '—'}{(p as any).currentPrice ? ` → $${(p as any).currentPrice?.toLocaleString()}` : ''}
                       </div>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-xs font-bold mono">${p.sizeUSD.toFixed(2)}</div>
+                    <div className="text-xs font-bold mono">${((p as any).currentUSD ?? p.sizeUSD ?? 0).toFixed(2)}</div>
+                    <div className={`text-[10px] mono font-semibold ${((p as any).pnlUSD ?? 0) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                      {((p as any).pnlUSD ?? 0) >= 0 ? '+' : ''}${((p as any).pnlUSD ?? 0).toFixed(2)}
+                    </div>
                     <div className="text-[10px] text-[#6b7280] mono">SL: -{p.trailStop}%</div>
                   </div>
                 </div>
