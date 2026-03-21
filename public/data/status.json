@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-21T19:11:08.994Z",
+  "updatedAt": "2026-03-21T19:11:19.532Z",
   "regime": "BEAR",
-  "btcPrice": 70422,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 70429,
+  "pctFrom200": "-1.9%",
   "breadth": "2/37",
-  "nextCycle": "in 17 min",
+  "nextCycle": "in 28 min",
   "positions": [
     {
       "sym": "SOL",
@@ -39,13 +39,13 @@
     "note": "Capital parked here while in BEAR regime — earning yield while waiting for signal"
   },
   "lastCycle": {
-    "ts": "2026-03-21T18:58:17.555Z",
+    "ts": "2026-03-21T19:09:13.231Z",
     "regime": "BEAR",
     "screened": 37,
     "action": "hold",
     "asset": "USDC",
     "confidence": null,
-    "reasoning": "Insufficient liquid USDC ($0.00) to yield — keeping reserve for trade opportunities",
+    "reasoning": "Liquid USDC ($0.00) at or below 25% reserve — keeping capital available for trades",
     "topScores": [
       {
         "sym": "BTC",
@@ -80,6 +80,24 @@
     "recentTrades": []
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-21T19:09:13.231Z",
+      "regime": "BEAR",
+      "action": "hold",
+      "asset": "USDC",
+      "reasoning": "Liquid USDC ($0.00) at or below 25% reserve — keeping capital available for trades",
+      "confidence": null,
+      "screened": 37,
+      "topToken": {
+        "sym": "BTC",
+        "score": 0
+      },
+      "trendingEntries": [],
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ]
+    },
     {
       "ts": "2026-03-21T18:58:17.555Z",
       "regime": "BEAR",
@@ -358,21 +376,6 @@
     },
     {
       "ts": "2026-03-21T12:33:00.557Z",
-      "regime": "BEAR",
-      "action": "smart_yield",
-      "asset": "USDC",
-      "reasoning": "BEAR regime, no oversold signals — yield only",
-      "confidence": null,
-      "screened": 17,
-      "topToken": {
-        "sym": "BTC",
-        "score": 0
-      },
-      "trendingEntries": [],
-      "layers": []
-    },
-    {
-      "ts": "2026-03-21T12:29:03.001Z",
       "regime": "BEAR",
       "action": "smart_yield",
       "asset": "USDC",
