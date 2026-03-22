@@ -160,7 +160,11 @@ function ReasoningTimeline({ cycle, positions }: { cycle: any, positions: any[] 
 
         const lines: string[] = [];
         if (bankr.length)  lines.push(`Bankr trending (onchain txns): ${bankr.map((t: any)  => `${t.symbol} rank=${t.rank} ret1h=${((t.ret1h||0)*100).toFixed(1)}%`).join(' · ')}`);
-        if (checkr.length) lines.push(`Checkr 1h (social velocity):   ${checkr.map((t: any) => `${t.symbol} vel=${t.velocity?.toFixed(1)} Δ${(t.attentionDelta||0).toFixed(2)}pp`).join(' · ')}`);
+        if (checkr.length) lines.push(`Checkr social attention:   ${checkr.map((t: any) => {
+          const mom = t.sustainedMomentum ? ` 🔥${t.momentumWindows}w` : '';
+          const multi = !t.sustainedMomentum && (t.att_4h > 0) ? ` 4h=${t.att_4h?.toFixed(2)}` : '';
+          return `${t.symbol} vel=${t.velocity?.toFixed(1)} Δ1h=${(t.attentionDelta||0).toFixed(2)}pp${mom}${multi}`;
+        }).join(' · ')}`);
         if (other.length)  lines.push(`Other: ${other.map((t: any) => `${t.symbol} score=${t.score?.toFixed(2)}`).join(' · ')}`);
         return lines.join('\n') || `${entries.length} token${entries.length > 1 ? 's' : ''} — source unknown`;
       })(),
