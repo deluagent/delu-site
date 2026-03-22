@@ -118,7 +118,7 @@ function PositionsCard({ positions, loading, yieldPos }: { positions: any[]; loa
               {isExp && (
                 <div className="px-3 pb-3 space-y-2">
                   <div className="grid grid-cols-3 gap-1.5">
-                    {p.quantScore != null && (
+                    {p.quantScore != null && p.quantScore !== 0 && (
                       <div className="p-2 bg-[#111118] border border-[#1e1e2e] rounded-lg text-center">
                         <div className="text-[8px] text-[#6b7280]">Quant</div>
                         <div className={`mono text-xs font-bold ${p.quantScore > 0 ? 'text-green-400' : 'text-red-400'}`}>{p.quantScore > 0 ? '+' : ''}{p.quantScore.toFixed(3)}</div>
