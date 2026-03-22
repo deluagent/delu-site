@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-22T12:12:53.600Z",
+  "updatedAt": "2026-03-22T12:15:08.754Z",
   "regime": "BEAR",
   "btcPrice": 68259,
-  "pctFrom200": "NaN%",
+  "pctFrom200": "-4.3%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 19 min",
+  "nextCycle": "in 17 min",
   "wallet": {
     "totalUSD": 70,
     "positionsUSD": 70,
@@ -151,7 +151,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-22T12:02:01.275Z",
-    "ago": "11m ago",
+    "ago": "13m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -2590,16 +2590,29 @@
       "bestAudSharpe": 10.917,
       "bestScore": 8.457,
       "spend": 0.786
+    },
+    "onchain": {
+      "expCount": 3566,
+      "bestValSharpe": 10.319,
+      "bestAudSharpe": 30.485,
+      "bestScore": 20.402
+    },
+    "fiveMin": {
+      "expCount": 568,
+      "bestValSharpe": 36.637,
+      "bestAudSharpe": 19.387,
+      "bestScore": 28.012
     }
   },
   "stack": {
-    "execution": "Bankr API (Base)",
-    "reasoning": "Venice llama-3.3-70b (E2EE private inference)",
-    "screening": "Bankr LLM gemini-2.5-flash",
-    "research": "Bankr LLM claude-sonnet-4-5",
+    "execution": "Bankr API (Base mainnet)",
+    "reasoning": "Venice llama-3.3-70b (private inference)",
     "socialData": "Checkr (x402 micropayments)",
-    "onchainData": "GeckoTerminal DEX flows",
-    "priceData": "Binance OHLCV + funding rates",
-    "stopMgmt": "Bankr native trailing stops"
+    "onchainData": "Alchemy — Base token prices, transfer stats, wallet signals",
+    "rugDetection": "Alchemy transfers — liquidity, bot ratio, whale concentration, dev dumps",
+    "priceData": "Alchemy Prices API (1h bars, 30d history)",
+    "research": "Anthropic Haiku — 3 parallel self-improving loops (onchain/hourly/5m)",
+    "stopMgmt": "ATR-based trailing stops (2.5× ATR14) + hard SL -3%",
+    "discovery": "Bankr trending + Checkr social (1h/4h/8h/12h windows)"
   }
 }
