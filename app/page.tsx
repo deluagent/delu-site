@@ -319,26 +319,21 @@ function CycleTimeline({ cycle, positions }: { cycle: any; positions: any[] }) {
     {
       id: 'positions', icon: '📊', label: 'Portfolio Check',
       content: (
-        <div>
-          {cycle.positionUpdates?.length > 0 ? (
-            <div className="space-y-1">
-              {cycle.positionUpdates.map((p: any) => (
-                <div key={p.sym} className="flex items-center justify-between text-[10px] mono">
-                  <span className="font-bold">{p.sym}</span>
-                  {p.pnlPct != null && (
-                    <span className={pnlColor(p.pnlPct)}>{p.pnlPct >= 0 ? '+' : ''}{p.pnlPct.toFixed(1)}%</span>
-                  )}
-                  {p.volumeTrend && <span className="text-[#6b7280]">vol:{p.volumeTrend}</span>}
-                  <span className={`font-bold ${p.recommendation === 'exit' ? 'text-red-400' : p.recommendation === 'tighten' ? 'text-yellow-400' : 'text-[#6b7280]'}`}>
-                    → {p.recommendation || 'hold'}
-                  </span>
-                </div>
-              ))}
-            </div>
-          ) : openPos.length === 0 ? (
-            <p className="text-[10px] text-[#6b7280] mono">No open positions</p>
+        <div className="text-[10px] mono text-[#6b7280]">
+          {cycle.positionUpdates?.length > 0 ? (() => {
+            const updates = cycle.positionUpdates;
+            const holding = updates.filter((p: any) => !p.recommendation || p.recommendation === 'hold');
+            const tighten = updates.filter((p: any) => p.recommendation === 'tighten');
+            const exit    = updates.filter((p: any) => p.recommendation === 'exit');
+            const parts: string[] = [];
+            if (holding.length) parts.push(`${holding.map((p: any) => `${p.sym}${p.pnlPct != null ? ` ${p.pnlPct >= 0 ? '+' : ''}${p.pnlPct.toFixed(1)}%` : ''}`).join(', ')} holding`);
+            if (tighten.length) parts.push(`⚡ tighten: ${tighten.map((p: any) => p.sym).join(', ')}`);
+            if (exit.length)    parts.push(`⚠️ exit signal: ${exit.map((p: any) => p.sym).join(', ')}`);
+            return <span>{parts.join(' · ')}</span>;
+          })() : openPos.length === 0 ? (
+            <span>No open positions</span>
           ) : (
-            <p className="text-[10px] text-[#6b7280] mono">{openPos.length} open — awaiting fresh assessment</p>
+            <span>{openPos.length} positions holding</span>
           )}
         </div>
       ),
