@@ -1,15 +1,26 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Shield, ExternalLink, Zap, ChevronDown } from 'lucide-react';
+import { Shield, ExternalLink, Zap, ChevronDown, TrendingUp, TrendingDown, Minus } from 'lucide-react';
 
-const pnlColor = (n?: number) => !n || n === 0 ? 'text-[#6b7280]' : n > 0 ? 'text-green-400' : 'text-red-400';
+// ── Helpers ──────────────────────────────────────────────────────────────────
+const pnlColor = (n?: number | null) => !n || n === 0 ? 'text-[#6b7280]' : n > 0 ? 'text-green-400' : 'text-red-400';
+const pnlSign  = (n: number) => n >= 0 ? '+' : '';
 
 const shortTime = (ts: string) => {
   const d = new Date(ts);
   return d.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 };
 
+const fmtPrice = (p?: number | null) => {
+  if (p == null) return '—';
+  if (p < 0.0001) return `$${p.toExponential(2)}`;
+  if (p < 0.01)   return `$${p.toFixed(6)}`;
+  if (p < 1)      return `$${p.toFixed(4)}`;
+  return `$${p.toFixed(2)}`;
+};
+
+// ── Base components ───────────────────────────────────────────────────────────
 const Card = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
   <div className={`bg-[#111118] border border-[#1e1e2e] rounded-2xl p-5 card-glow relative overflow-hidden ${className}`}>{children}</div>
 );
@@ -23,120 +34,338 @@ const ActionBadge = ({ action }: { action: string }) => {
   const isBuy = a === 'buy' || a === 'long';
   const isYield = a.includes('yield');
   return (
-    <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider border ${isBuy ? 'bg-green-500/10 text-green-400 border-green-500/20' : isYield ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' : 'bg-[#1e1e2e] text-[#6b7280] border-[#2e2e3e]'}`}>
+    <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider border ${
+      isBuy   ? 'bg-green-500/10 text-green-400 border-green-500/20' :
+      isYield ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' :
+                'bg-[#1e1e2e] text-[#6b7280] border-[#2e2e3e]'
+    }`}>
       {isBuy ? 'BUY ✓' : isYield ? 'YIELD' : 'HOLD'}
     </span>
   );
 };
 
-// ── How It Works pipeline card ───────────────────────────────────────────────
-function PipelineCard() {
-  const steps = [
-    { icon: '🏦', label: 'Bankr LLM Gateway', detail: 'Regime detection · Trending token discovery (Base top 10)', color: 'border-indigo-500/30 bg-indigo-500/5' },
-    { icon: '⚡', label: 'Checkr × x402', detail: '4-window social attention (1h/4h/8h/12h) · Spike detection', color: 'border-orange-500/30 bg-orange-500/5', parallel: true },
-    { icon: '🔗', label: 'Alchemy Onchain', detail: 'Hourly prices · Transfer stats · Rug check', color: 'border-blue-500/30 bg-blue-500/5', parallel: true },
-    { icon: '🧠', label: 'Quant Brain', detail: 'Self-evolved scoring model — improved 3,500+ times by Bankr LLM', color: 'border-purple-500/30 bg-purple-500/5' },
-    { icon: '🔒', label: 'Venice E2EE', detail: 'Private reasoning — no logs, no data retention', color: 'border-violet-500/30 bg-violet-500/5' },
-    { icon: '✅', label: 'Bankr Execute', detail: 'Swap + ATR trailing stop — fully autonomous', color: 'border-green-500/30 bg-green-500/5' },
-  ];
+const VolTag = ({ trend }: { trend?: string | null }) => {
+  if (!trend || trend === 'unknown') return null;
+  return (
+    <span className={`flex items-center gap-0.5 text-[9px] font-bold ${
+      trend === 'increasing' ? 'text-green-400' :
+      trend === 'declining'  ? 'text-red-400' :
+                               'text-[#6b7280]'
+    }`}>
+      {trend === 'increasing' ? <TrendingUp size={9}/> : trend === 'declining' ? <TrendingDown size={9}/> : <Minus size={9}/>}
+      {trend}
+    </span>
+  );
+};
+
+const RecoBadge = ({ reco }: { reco?: string | null }) => {
+  if (!reco || reco === 'hold') return null;
+  return (
+    <span className={`px-1.5 py-0.5 rounded text-[9px] font-bold border ${
+      reco === 'exit'    ? 'bg-red-500/10 text-red-400 border-red-500/30' :
+      reco === 'tighten' ? 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30' :
+                           'bg-green-500/10 text-green-400 border-green-500/30'
+    }`}>{reco.toUpperCase()}</span>
+  );
+};
+
+// ── Positions card ────────────────────────────────────────────────────────────
+function PositionsCard({ positions, loading, yieldPos }: { positions: any[]; loading: boolean; yieldPos?: any }) {
+  const [expanded, setExpanded] = useState<string | null>(null);
+  const open = positions.filter((p: any) => !p.closedAt);
 
   return (
     <Card>
-      <Label>How It Works — every 30 min</Label>
-      <div className="space-y-0">
-        {steps.map((step, i) => {
-          const isParallel = step.parallel;
-          const nextIsParallel = steps[i + 1]?.parallel;
-          const prevIsParallel = steps[i - 1]?.parallel;
+      <Label>Active Positions ({open.length})</Label>
+      <div className="space-y-2">
+        {loading ? (
+          [1,2,3].map(i => <div key={i} className="h-14 bg-[#1a1a24] rounded-xl animate-pulse" />)
+        ) : open.length > 0 ? open.map((p: any) => {
+          const hasPnl   = p.currentPrice != null;
+          const pnlPct   = hasPnl ? (p.pnlPct ?? 0) : null;
+          const pnlUSD   = hasPnl ? (p.pnlUSD ?? 0) : null;
+          const curUSD   = p.currentUSD ?? p.sizeUSD ?? 0;
+          const trailOn  = (p.peakPct ?? 0) >= 1 || p.trailActivated;
+          const isExp    = expanded === p.sym;
+
+          // Checkr signal strength
+          const hasSocial = p.transferStats || p.volumeTrend || p.quantScore != null;
 
           return (
-            <div key={i} className="relative">
-              {/* Connector line */}
-              {i < steps.length - 1 && !isParallel && !nextIsParallel && (
-                <div className="absolute left-[15px] top-8 w-px h-3 bg-[#2e2e3e]" />
-              )}
-              {/* Parallel bracket — opening */}
-              {isParallel && !prevIsParallel && (
-                <div className="flex items-center gap-2 mb-1 ml-6">
-                  <div className="w-px h-3 bg-[#2e2e3e]" />
-                  <span className="text-[9px] text-[#4b5563] tracking-wider">parallel</span>
-                  <div className="flex-1 h-px bg-[#1e1e2e]" />
+            <div key={p.sym} className={`rounded-xl border transition-all ${isExp ? 'border-indigo-500/20 bg-[#0d0d1a]' : 'border-[#1e1e2e] hover:border-indigo-500/20'}`}>
+              {/* Row */}
+              <button onClick={() => setExpanded(isExp ? null : p.sym)} className="w-full text-left flex items-center gap-3 p-3">
+                <div className="w-7 h-7 rounded-lg bg-[#0a0a0f] border border-[#1e1e2e] flex items-center justify-center mono text-xs font-bold text-indigo-400 shrink-0">
+                  {(p.sym || '?')[0]}
                 </div>
-              )}
-
-              <div className={`flex items-start gap-3 p-2.5 rounded-xl border mb-1 ${step.color}`}>
-                <span className="text-sm shrink-0 mt-0.5">{step.icon}</span>
-                <div className="min-w-0">
-                  <div className="text-[11px] font-bold text-[#e2e8f0]">{step.label}</div>
-                  <div className="text-[10px] text-[#6b7280] mono mt-0.5">{step.detail}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-sm">{p.sym}</span>
+                    {pnlPct != null ? (
+                      <span className={`mono text-xs font-bold ${pnlColor(pnlPct)}`}>{pnlSign(pnlPct)}{pnlPct.toFixed(2)}%</span>
+                    ) : (
+                      <span className="mono text-xs text-[#6b7280]">—</span>
+                    )}
+                    {p.peakPct > 0 && <span className="mono text-[9px] text-[#6b7280]">peak +{p.peakPct.toFixed(1)}%</span>}
+                    <RecoBadge reco={p.recommendation} />
+                  </div>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <span className="text-[10px] text-[#6b7280] mono">{fmtPrice(p.entryPrice)}{p.currentPrice ? ` → ${fmtPrice(p.currentPrice)}` : ''}</span>
+                    <VolTag trend={p.volumeTrend} />
+                  </div>
                 </div>
-              </div>
+                <div className="text-right shrink-0">
+                  <div className="text-xs font-bold mono">${curUSD.toFixed(2)}</div>
+                  {pnlUSD != null ? (
+                    <div className={`text-[10px] mono ${pnlColor(pnlUSD)}`}>{pnlSign(pnlUSD)}${Math.abs(pnlUSD).toFixed(2)}</div>
+                  ) : <div className="text-[10px] text-[#6b7280] mono">—</div>}
+                  <div className="text-[9px] text-[#6b7280] mono">{trailOn ? `Trail -${p.trailStop ?? 5}% ✓` : `SL -${p.hardSlPct ?? 3}%`}</div>
+                </div>
+                <ChevronDown size={11} className={`text-[#6b7280] shrink-0 transition-transform ${isExp ? 'rotate-180' : ''}`} />
+              </button>
 
-              {/* Parallel bracket — closing */}
-              {isParallel && !nextIsParallel && (
-                <div className="flex items-center gap-2 mt-1 mb-1 ml-6">
-                  <div className="w-px h-3 bg-[#2e2e3e]" />
+              {/* Expanded: position intelligence */}
+              {isExp && (
+                <div className="px-3 pb-3 space-y-2">
+                  {/* Signal grid */}
+                  <div className="grid grid-cols-2 gap-2">
+                    {p.quantScore != null && (
+                      <div className="p-2 bg-[#111118] border border-[#1e1e2e] rounded-lg">
+                        <div className="text-[9px] text-[#6b7280] mb-0.5">Quant Score</div>
+                        <div className={`mono text-sm font-bold ${p.quantScore > 0 ? 'text-green-400' : p.quantScore < 0 ? 'text-red-400' : 'text-[#6b7280]'}`}>
+                          {p.quantScore > 0 ? '+' : ''}{p.quantScore.toFixed(3)}
+                        </div>
+                      </div>
+                    )}
+                    {p.ret1h != null && (
+                      <div className="p-2 bg-[#111118] border border-[#1e1e2e] rounded-lg">
+                        <div className="text-[9px] text-[#6b7280] mb-0.5">1h Return</div>
+                        <div className={`mono text-sm font-bold ${pnlColor(p.ret1h)}`}>{pnlSign(p.ret1h)}{p.ret1h.toFixed(2)}%</div>
+                      </div>
+                    )}
+                    {p.volumeTrend && p.volumeTrend !== 'unknown' && (
+                      <div className="p-2 bg-[#111118] border border-[#1e1e2e] rounded-lg">
+                        <div className="text-[9px] text-[#6b7280] mb-0.5">Volume Trend</div>
+                        <div className="flex items-center gap-1"><VolTag trend={p.volumeTrend} /></div>
+                      </div>
+                    )}
+                    {p.peakPct > 0 && (
+                      <div className="p-2 bg-[#111118] border border-[#1e1e2e] rounded-lg">
+                        <div className="text-[9px] text-[#6b7280] mb-0.5">Peak Gain</div>
+                        <div className="mono text-sm font-bold text-emerald-400">+{p.peakPct.toFixed(2)}%</div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Transfer stats */}
+                  {p.transferStats && (
+                    <div className="p-2 bg-[#0d0d1a] border border-[#1e1e2e] rounded-lg">
+                      <div className="text-[9px] font-bold text-blue-400 uppercase tracking-wider mb-1.5">Alchemy Onchain</div>
+                      <div className="grid grid-cols-3 gap-2">
+                        {p.transferStats.uniqueBuyers != null && (
+                          <div>
+                            <div className="text-[8px] text-[#6b7280]">Unique buyers</div>
+                            <div className="mono text-xs font-bold">{p.transferStats.uniqueBuyers}</div>
+                          </div>
+                        )}
+                        {p.transferStats.repeatBuyers != null && (
+                          <div>
+                            <div className="text-[8px] text-[#6b7280]">Repeat buyers</div>
+                            <div className={`mono text-xs font-bold ${p.transferStats.repeatBuyers > 3 ? 'text-green-400' : ''}`}>{p.transferStats.repeatBuyers}</div>
+                          </div>
+                        )}
+                        {p.transferStats.topBuyerConcentration != null && (
+                          <div>
+                            <div className="text-[8px] text-[#6b7280]">Whale conc.</div>
+                            <div className={`mono text-xs font-bold ${p.transferStats.topBuyerConcentration > 0.4 ? 'text-red-400' : 'text-green-400'}`}>{(p.transferStats.topBuyerConcentration * 100).toFixed(0)}%</div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Recommendation reasoning */}
+                  <div className={`p-2 rounded-lg border text-[10px] ${
+                    p.recommendation === 'exit'    ? 'bg-red-500/5 border-red-500/20 text-red-300' :
+                    p.recommendation === 'tighten' ? 'bg-yellow-500/5 border-yellow-500/20 text-yellow-300' :
+                    'bg-[#0d0d1a] border-[#1e1e2e] text-[#6b7280]'
+                  }`}>
+                    {p.recommendation === 'exit'
+                      ? '⚠️ Strong reversal signal detected — momentum fading + volume declining. Stop may trigger.'
+                      : p.recommendation === 'tighten'
+                      ? '⚡ Momentum fading — consider tightening stop to protect gains.'
+                      : p.quantScore != null && p.volumeTrend === 'increasing'
+                      ? '✅ Thesis intact — volume expanding, positive quant signal. Let it run.'
+                      : '📊 Position monitoring — holding per stop rules.'}
+                  </div>
+
+                  {/* Stop details */}
+                  <div className="flex items-center justify-between text-[9px] text-[#4b5563] mono">
+                    <span>Entry: {fmtPrice(p.entryPrice)}</span>
+                    {p.currentPrice && <span>Now: {fmtPrice(p.currentPrice)}</span>}
+                    <span>{trailOn ? `Trail stop: -${p.trailStop ?? 5}% from peak` : `Hard SL: -${p.hardSlPct ?? 3}%`}</span>
+                  </div>
                 </div>
               )}
             </div>
           );
-        })}
+        }) : (
+          <div className="flex flex-col items-center justify-center py-6 text-center">
+            <div className="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center mb-2">
+              <Shield className="text-indigo-500" size={20} />
+            </div>
+            <h3 className="text-sm font-bold">Capital in Yield</h3>
+            <p className="text-xs text-[#6b7280] mt-1">No signal justifies exposure right now.</p>
+          </div>
+        )}
+        {yieldPos && (
+          <div className="p-3 bg-emerald-500/5 border border-emerald-500/20 rounded-xl">
+            <div className="flex justify-between items-center mb-1">
+              <span className="text-xs font-bold text-emerald-400">{yieldPos.protocol} Yield</span>
+              <span className="mono text-xs text-emerald-400">+{yieldPos.apy}% APY</span>
+            </div>
+            <div className="text-[10px] text-[#6b7280] mono">{yieldPos.vault}</div>
+            <div className="flex justify-between mt-1">
+              <span className="text-[10px] text-[#6b7280]">Deployed</span>
+              <span className="mono text-xs font-bold">${yieldPos.amountUSD?.toFixed(2)}</span>
+            </div>
+          </div>
+        )}
       </div>
     </Card>
   );
 }
 
-// ── Cycle Timeline (expanded view) ───────────────────────────────────────────
+// ── Token signal row (inside cycle log) ──────────────────────────────────────
+function TokenSignalRow({ t }: { t: any }) {
+  const hasCheckr = t.attentionDelta > 0 || t.velocity > 0 || t.momentumWindows > 0;
+  return (
+    <div className="flex items-start justify-between gap-2 py-1.5 border-b border-[#1e1e2e] last:border-0">
+      <div className="min-w-0">
+        <div className="flex items-center gap-1.5 flex-wrap">
+          <span className="mono text-xs font-bold text-[#e2e8f0]">{t.symbol}</span>
+          {t.rank != null && <span className="text-[9px] text-[#6b7280]">#{t.rank}</span>}
+          {t.source === 'checkr' && <span className="text-[9px] text-orange-400">checkr</span>}
+          {t.rugVerdict && t.rugVerdict !== 'SAFE' && <span className="text-[9px] text-red-400">rug:{t.rugVerdict}</span>}
+          {t.sustainedMomentum && <span className="text-[9px] text-orange-400">🔥{t.momentumWindows}w</span>}
+        </div>
+        <div className="flex items-center gap-2 mt-0.5 flex-wrap">
+          {t.ret1h != null && (
+            <span className={`mono text-[9px] ${t.ret1h >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+              {t.ret1h >= 0 ? '+' : ''}{(t.ret1h * 100).toFixed(1)}% 1h
+            </span>
+          )}
+          {hasCheckr && (
+            <span className="text-[9px] text-orange-300">
+              ⚡ att={t.attentionDelta?.toFixed(1)} vel={t.velocity?.toFixed(1)}
+            </span>
+          )}
+          {t.att_1h > 0 && (
+            <span className="mono text-[9px] text-[#6b7280]">
+              1h={t.att_1h?.toFixed(1)} 4h={t.att_4h?.toFixed(1)}
+            </span>
+          )}
+        </div>
+      </div>
+      <div className="text-right shrink-0">
+        <div className={`mono text-xs font-bold ${(t.score || 0) >= 0.8 ? 'text-green-400' : (t.score || 0) >= 0.5 ? 'text-indigo-400' : 'text-[#6b7280]'}`}>
+          {(t.score || 0).toFixed(2)}
+        </div>
+        {t.quantScore != null && (
+          <div className="mono text-[9px] text-[#6b7280]">q={t.quantScore.toFixed(2)}</div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── Cycle Timeline ────────────────────────────────────────────────────────────
 function CycleTimeline({ cycle, positions }: { cycle: any; positions: any[] }) {
   if (!cycle) return null;
+  const entries = cycle.trendingEntries || [];
+  const flagged = entries.filter((t: any) => (t.score || 0) >= 0.65);
   const openPos = positions.filter((p: any) => !p.closedAt);
+
   const steps = [
     {
       id: 'discovery', icon: '📡', label: 'Discovery',
-      detail: (() => {
-        const entries = cycle.trendingEntries || [];
-        if (!entries.length) return 'No trending tokens this cycle';
-        const bankr = entries.filter((t: any) => t.rank != null);
-        const checkr = entries.filter((t: any) => t.velocity != null || t.attentionDelta != null);
-        const lines: string[] = [];
-        if (bankr.length) lines.push(`Bankr trending: ${bankr.slice(0, 5).map((t: any) => t.symbol).join(', ')}`);
-        if (checkr.length) lines.push(`Checkr attention: ${checkr.slice(0, 4).map((t: any) => `${t.symbol}${t.sustainedMomentum ? ' 🔥' : ''}`).join(', ')}`);
-        if (!lines.length) lines.push(`${entries.length} tokens discovered`);
-        return lines.join('\n');
-      })(),
+      content: (
+        <div>
+          {entries.length === 0 ? (
+            <p className="text-[10px] text-[#6b7280] mono">No tokens discovered this cycle</p>
+          ) : (
+            <div className="space-y-0">
+              {entries.slice(0, 8).map((t: any) => <TokenSignalRow key={t.symbol} t={t} />)}
+              {entries.length > 8 && <p className="text-[9px] text-[#6b7280] mt-1">+{entries.length - 8} more</p>}
+            </div>
+          )}
+        </div>
+      ),
     },
     {
-      id: 'scoring', icon: '📐', label: 'Signal Scoring',
-      detail: (() => {
-        const entries = cycle.trendingEntries || [];
-        const flagged = entries.filter((t: any) => (t.score || 0) >= 0.65);
-        if (!entries.length) return 'No candidates';
-        if (!flagged.length) return `${entries.length} scored — none cleared threshold`;
-        return flagged.map((t: any) => `${t.symbol} score=${t.score?.toFixed(2)}${t.rugVerdict ? ` rug=${t.rugVerdict}` : ''}`).join('\n');
-      })(),
+      id: 'scoring', icon: '📐', label: `Signal Scoring — ${flagged.length} cleared threshold`,
+      content: (
+        <div>
+          {flagged.length === 0 ? (
+            <p className="text-[10px] text-[#6b7280] mono">{entries.length} scored — none cleared 0.65 threshold</p>
+          ) : (
+            <div className="space-y-0">
+              {flagged.map((t: any) => <TokenSignalRow key={t.symbol} t={t} />)}
+            </div>
+          )}
+        </div>
+      ),
     },
     {
       id: 'positions', icon: '📊', label: 'Portfolio Check',
-      detail: (() => {
-        const pa = cycle.positionUpdates || [];
-        if (!pa.length && openPos.length === 0) return 'No open positions';
-        if (!pa.length) return openPos.map((p: any) => `${p.sym} ${p.pnlPct != null && p.currentPrice != null ? (p.pnlPct >= 0 ? '+' : '') + p.pnlPct.toFixed(1) + '%' : '—'}`).join(' · ');
-        return pa.map((p: any) => `${p.sym} ${p.pnlPct != null ? (p.pnlPct >= 0 ? '+' : '') + p.pnlPct.toFixed(1) + '%' : '—'} → ${p.recommendation}`).join('\n');
-      })(),
+      content: (
+        <div>
+          {cycle.positionUpdates?.length > 0 ? (
+            <div className="space-y-1">
+              {cycle.positionUpdates.map((p: any) => (
+                <div key={p.sym} className="flex items-center justify-between text-[10px] mono">
+                  <span className="font-bold">{p.sym}</span>
+                  {p.pnlPct != null && (
+                    <span className={pnlColor(p.pnlPct)}>{p.pnlPct >= 0 ? '+' : ''}{p.pnlPct.toFixed(1)}%</span>
+                  )}
+                  {p.volumeTrend && <span className="text-[#6b7280]">vol:{p.volumeTrend}</span>}
+                  <span className={`font-bold ${p.recommendation === 'exit' ? 'text-red-400' : p.recommendation === 'tighten' ? 'text-yellow-400' : 'text-[#6b7280]'}`}>
+                    → {p.recommendation || 'hold'}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : openPos.length === 0 ? (
+            <p className="text-[10px] text-[#6b7280] mono">No open positions</p>
+          ) : (
+            <p className="text-[10px] text-[#6b7280] mono">{openPos.length} open — awaiting fresh assessment</p>
+          )}
+        </div>
+      ),
     },
     {
       id: 'venice', icon: '🔒', label: 'Venice Reasoning (at decision time)', highlight: true,
-      detail: cycle.reasoning || cycle.reason || 'No reasoning logged',
+      content: (
+        <div>
+          <p className="text-[10px] text-[#a5b4fc] italic mono leading-relaxed">
+            {cycle.reasoning || cycle.reason || 'No reasoning logged'}
+          </p>
+          {cycle.confidence > 0 && <span className="mono text-[9px] text-[#6b7280] mt-1 block">confidence: {cycle.confidence}%</span>}
+        </div>
+      ),
     },
     {
-      id: 'action', icon: (cycle.action === 'buy' || cycle.action === 'long') ? '✅' : '⏸', label: 'Decision',
+      id: 'action', label: 'Decision',
+      icon: (cycle.action === 'buy' || cycle.action === 'long') ? '✅' : '⏸',
       trade: cycle.action === 'buy' || cycle.action === 'long',
-      detail: (() => {
-        const action = (cycle.action || 'hold').toUpperCase().replace('_', ' ');
-        const asset = cycle.asset && cycle.asset !== 'USDC' ? ` ${cycle.asset}` : '';
-        const conf = cycle.confidence > 0 ? ` · ${cycle.confidence}% conf` : '';
-        return `${action}${asset}${conf}`;
-      })(),
+      content: (
+        <p className="text-[10px] mono text-[#e2e8f0]">
+          {(cycle.action || 'HOLD').toUpperCase().replace('_', ' ')}
+          {cycle.asset && cycle.asset !== 'USDC' ? ` ${cycle.asset}` : ''}
+          {cycle.confidence > 0 ? ` · ${cycle.confidence}% conf` : ''}
+          {cycle.regime ? ` · ${cycle.regime}` : ''}
+        </p>
+      ),
     },
   ];
 
@@ -145,10 +374,17 @@ function CycleTimeline({ cycle, positions }: { cycle: any; positions: any[] }) {
       {steps.map((step, i) => (
         <div key={step.id} className="relative flex gap-3">
           {i < steps.length - 1 && <div className="absolute left-[11px] top-6 bottom-0 w-px bg-[#1e1e2e]" />}
-          <div className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center text-[10px] shrink-0 mt-0.5 ${(step as any).trade ? 'bg-green-500/20 border border-green-500/40' : (step as any).highlight ? 'bg-indigo-500/20 border border-indigo-500/40' : 'bg-[#1e1e2e] border border-[#2e2e3e]'}`}>{step.icon}</div>
+          <div className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center text-[10px] shrink-0 mt-0.5 ${
+            (step as any).trade     ? 'bg-green-500/20 border border-green-500/40' :
+            (step as any).highlight ? 'bg-indigo-500/20 border border-indigo-500/40' :
+                                      'bg-[#1e1e2e] border border-[#2e2e3e]'
+          }`}>{step.icon}</div>
           <div className="pb-4 min-w-0 flex-1">
-            <div className={`text-[11px] font-bold mb-0.5 ${(step as any).trade ? 'text-green-400' : (step as any).highlight ? 'text-indigo-300' : 'text-[#e2e8f0]'}`}>{step.label}</div>
-            <div className={`text-[10px] mono leading-relaxed whitespace-pre-line ${(step as any).highlight ? 'text-[#a5b4fc] italic' : 'text-[#6b7280]'}`}>{step.detail}</div>
+            <div className={`text-[11px] font-bold mb-1 ${
+              (step as any).trade     ? 'text-green-400' :
+              (step as any).highlight ? 'text-indigo-300' : 'text-[#e2e8f0]'
+            }`}>{step.label}</div>
+            {step.content}
           </div>
         </div>
       ))}
@@ -156,7 +392,7 @@ function CycleTimeline({ cycle, positions }: { cycle: any; positions: any[] }) {
   );
 }
 
-// ── Cycle Log ────────────────────────────────────────────────────────────────
+// ── Cycle Log ─────────────────────────────────────────────────────────────────
 function CycleLog({ cycles, positions }: { cycles: any[]; positions: any[] }) {
   const [expanded, setExpanded] = useState<number | null>(0);
   if (!cycles.length) return (
@@ -165,35 +401,34 @@ function CycleLog({ cycles, positions }: { cycles: any[]; positions: any[] }) {
   return (
     <Card>
       <Label>Cycle Log — every 30 min</Label>
-      <div className="space-y-0.5 overflow-y-auto max-h-[720px] scrollbar-hide">
+      <div className="space-y-0.5 overflow-y-auto max-h-[760px] scrollbar-hide">
         {cycles.map((c: any, i: number) => {
-          const isOpen = expanded === i;
+          const isOpen  = expanded === i;
           const isTrade = c.action === 'buy' || c.action === 'long';
+          const entries = c.trendingEntries || [];
+          const topScore = entries.length ? Math.max(...entries.map((t: any) => t.score || 0)) : 0;
           return (
-            <div key={i} className={`rounded-xl border transition-all ${isOpen ? 'border-indigo-500/20 bg-[#0d0d1a]' : isTrade ? 'border-green-500/10' : 'border-transparent hover:border-[#1e1e2e]'}`}>
+            <div key={i} className={`rounded-xl border transition-all ${isOpen ? 'border-indigo-500/20 bg-[#0d0d1a]' : isTrade ? 'border-green-500/10 bg-green-500/3' : 'border-transparent hover:border-[#1e1e2e]'}`}>
               <button onClick={() => setExpanded(isOpen ? null : i)} className="w-full text-left flex items-center gap-2 px-3 py-2">
                 <span className="mono text-[9px] text-[#6b7280] w-[82px] shrink-0">{c.ts ? shortTime(c.ts) : '—'}</span>
                 <span className="shrink-0"><ActionBadge action={c.action || 'hold'} /></span>
                 {isTrade && c.asset && c.asset !== 'USDC' && (
                   <span className="mono text-xs font-bold text-green-300 shrink-0">{c.asset}</span>
                 )}
+                {!isTrade && entries.length > 0 && (
+                  <span className="mono text-[9px] text-[#6b7280] shrink-0">{entries.length} tokens</span>
+                )}
                 <span className="text-[10px] text-[#6b7280] truncate flex-1 min-w-0">
-                  {c.reasoning ? c.reasoning.slice(0, 80) : c.seenCount ? `${c.seenCount} tokens screened` : '—'}
+                  {c.reasoning ? c.reasoning.slice(0, 72) : '—'}
                 </span>
+                {topScore >= 0.8 && !isTrade && (
+                  <span className="text-[9px] text-indigo-400 shrink-0">top {topScore.toFixed(2)}</span>
+                )}
                 {isTrade && <span className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0" />}
                 <ChevronDown size={11} className={`text-[#6b7280] shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
               </button>
               {isOpen && (
                 <div className="px-3 pb-4">
-                  {c.reasoning && (
-                    <div className="mb-2 p-3 bg-[#111118] rounded-lg border border-indigo-500/10">
-                      <div className="text-[9px] font-bold text-indigo-400 uppercase tracking-wider mb-1.5">
-                        Venice Reasoning (at decision time)
-                      </div>
-                      <p className="text-xs text-[#e2e8f0] leading-relaxed italic">{c.reasoning}</p>
-                      {c.confidence > 0 && <span className="mono text-[10px] text-[#6b7280] mt-1 block">confidence: {c.confidence}%</span>}
-                    </div>
-                  )}
                   <CycleTimeline cycle={c} positions={positions} />
                 </div>
               )}
@@ -205,18 +440,55 @@ function CycleLog({ cycles, positions }: { cycles: any[]; positions: any[] }) {
   );
 }
 
-// ── Main ─────────────────────────────────────────────────────────────────────
+// ── Pipeline card ─────────────────────────────────────────────────────────────
+function PipelineCard() {
+  const rows = [
+    { icon: '🏦', label: 'Bankr LLM', detail: 'Regime detection · trending token universe', color: 'border-indigo-500/20 bg-indigo-500/5' },
+    { icon: '⚡', label: 'Checkr × x402', detail: '4-window attention (1h/4h/8h/12h) · spikes · rotation', color: 'border-orange-500/20 bg-orange-500/5', parallel: true },
+    { icon: '🔗', label: 'Alchemy', detail: 'Hourly OHLCV · transfer stats · whale concentration', color: 'border-blue-500/20 bg-blue-500/5', parallel: true },
+    { icon: '🧠', label: 'Quant Brain', detail: 'Self-evolved scoring — 3,500+ experiments by Bankr LLM', color: 'border-purple-500/20 bg-purple-500/5' },
+    { icon: '🔒', label: 'Venice E2EE', detail: 'Private reasoning — no logs, no data retention', color: 'border-violet-500/20 bg-violet-500/5' },
+    { icon: '✅', label: 'Bankr Execute', detail: 'Swap + ATR trailing stop — fully autonomous', color: 'border-green-500/20 bg-green-500/5' },
+  ];
+  return (
+    <Card>
+      <Label>How It Works — every 30 min</Label>
+      <div className="space-y-1">
+        {rows.map((r, i) => (
+          <div key={i}>
+            {r.parallel && i > 0 && !rows[i-1].parallel && (
+              <div className="flex items-center gap-2 my-1 ml-4">
+                <div className="w-px h-2 bg-[#2e2e3e]" />
+                <span className="text-[8px] text-[#4b5563] tracking-widest uppercase">parallel</span>
+                <div className="flex-1 h-px bg-[#1e1e2e]" />
+              </div>
+            )}
+            <div className={`flex items-center gap-3 p-2 rounded-lg border ${r.color}`}>
+              <span className="text-base shrink-0">{r.icon}</span>
+              <div>
+                <div className="text-[11px] font-bold text-[#e2e8f0]">{r.label}</div>
+                <div className="text-[9px] text-[#6b7280] mono">{r.detail}</div>
+              </div>
+            </div>
+            {r.parallel && !rows[i+1]?.parallel && (
+              <div className="ml-4 mt-1 mb-1"><div className="w-px h-2 bg-[#2e2e3e]" /></div>
+            )}
+          </div>
+        ))}
+      </div>
+    </Card>
+  );
+}
+
+// ── Main ──────────────────────────────────────────────────────────────────────
 export default function Home() {
   const [status, setStatus] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const load = async () => {
-      try {
-        const res = await fetch('/api/status');
-        const data = await res.json();
-        setStatus(data);
-      } catch {}
+      try { const r = await fetch('/api/status'); setStatus(await r.json()); }
+      catch {}
       finally { setLoading(false); }
     };
     load();
@@ -224,20 +496,17 @@ export default function Home() {
     return () => clearInterval(iv);
   }, []);
 
-  const wallet   = status?.wallet || {};
+  const wallet    = status?.wallet    || {};
   const positions = status?.positions || [];
-  const cycles   = status?.cycleHistory || [];
-  const ar       = status?.autoresearch || {};
-  const arOnchain = ar.onchain || {};
-  const arHourly  = ar.hourly  || {};
-  const ar5m      = ar.fiveMin || {};
+  const cycles    = status?.cycleHistory || [];
+  const ar        = status?.autoresearch || {};
   const yieldPos  = status?.yield;
   const openPos   = positions.filter((p: any) => !p.closedAt);
 
   return (
     <main className="min-h-screen p-4 md:p-6 max-w-7xl mx-auto relative z-10">
 
-      {/* ── Header ── */}
+      {/* Header */}
       <header className="flex items-center justify-between gap-4 mb-5 bg-[#111118] border border-[#1e1e2e] rounded-2xl px-4 py-3">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20">
@@ -250,15 +519,9 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center gap-3 flex-wrap">
-          <div className="text-[11px] mono">
-            <span className="text-[#6b7280]">Portfolio </span>
-            <span className="font-bold">${(wallet.totalUSD || 0).toFixed(2)}</span>
-          </div>
+          <div className="text-[11px] mono"><span className="text-[#6b7280]">Portfolio </span><span className="font-bold">${(wallet.totalUSD || 0).toFixed(2)}</span></div>
           <div className="w-px h-4 bg-[#1e1e2e]" />
-          <div className="text-[11px] mono">
-            <span className="text-[#6b7280]">Liquid </span>
-            <span className="font-bold text-emerald-400">${(wallet.liquidUSDC || 0).toFixed(2)}</span>
-          </div>
+          <div className="text-[11px] mono"><span className="text-[#6b7280]">Liquid </span><span className="font-bold text-emerald-400">${(wallet.liquidUSDC || 0).toFixed(2)}</span></div>
           <div className="w-px h-4 bg-[#1e1e2e]" />
           <div className="text-[11px] mono">
             <span className="text-[#6b7280]">P&amp;L </span>
@@ -268,21 +531,18 @@ export default function Home() {
             </span>
           </div>
           <div className="w-px h-4 bg-[#1e1e2e]" />
-          <div className="text-[11px] mono">
-            <span className="text-[#6b7280]">Next cycle </span>
-            <span className="font-bold text-indigo-400">{status?.nextCycle || '—'}</span>
-          </div>
+          <div className="text-[11px] mono"><span className="text-[#6b7280]">Next </span><span className="font-bold text-indigo-400">{status?.nextCycle || '—'}</span></div>
         </div>
       </header>
 
-      {/* ── Stack pills ── */}
+      {/* Stack pills */}
       <div className="flex flex-wrap gap-2 mb-5">
         {[
           { label: 'Bankr LLM Gateway', color: 'bg-indigo-500' },
-          { label: 'Venice E2EE', color: 'bg-purple-500' },
-          { label: 'Checkr × x402', color: 'bg-orange-500' },
-          { label: 'Alchemy Onchain', color: 'bg-blue-500' },
-          { label: 'Base Mainnet', color: 'bg-emerald-500' },
+          { label: 'Venice E2EE',        color: 'bg-purple-500' },
+          { label: 'Checkr × x402',      color: 'bg-orange-500' },
+          { label: 'Alchemy Onchain',     color: 'bg-blue-500'   },
+          { label: 'Base Mainnet',        color: 'bg-emerald-500' },
         ].map(({ label, color }) => (
           <div key={label} className="bg-[#111118] border border-[#1e1e2e] px-3 py-1 rounded-full flex items-center gap-2">
             <div className={`w-1.5 h-1.5 ${color} rounded-full`} />
@@ -295,127 +555,41 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ── 2-column layout ── */}
+      {/* 2-col layout */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
-
-        {/* ── LEFT ── */}
         <div className="lg:col-span-2 flex flex-col gap-4">
+          <PositionsCard positions={positions} loading={loading} yieldPos={yieldPos} />
 
-          {/* Positions */}
-          <Card>
-            <Label>Active Positions ({openPos.length})</Label>
-            <div className="space-y-3">
-              {loading ? (
-                [1,2,3].map(i => <div key={i} className="h-14 bg-[#1a1a24] rounded-xl animate-pulse" />)
-              ) : openPos.length > 0 ? openPos.map((p: any, i: number) => {
-                const hasPnl = p.currentPrice != null;
-                const pnlPct = hasPnl ? (p.pnlPct ?? 0) : null;
-                const pnlUSD = hasPnl ? (p.pnlUSD ?? 0) : null;
-                const curUSD = p.currentUSD ?? p.sizeUSD ?? 0;
-                const trailActive = (p.peakPct ?? 0) >= 1 || p.trailActivated;
-                return (
-                  <div key={i} className="flex items-center justify-between p-3 bg-[#1a1a24]/60 border border-[#1e1e2e] rounded-xl hover:border-indigo-500/20 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-[#0a0a0f] border border-[#1e1e2e] flex items-center justify-center mono text-xs font-bold text-indigo-400">
-                        {(p.sym || '?')[0]}
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-sm">{p.sym}</span>
-                          {pnlPct != null ? (
-                            <span className={`mono text-xs font-bold ${pnlColor(pnlPct)}`}>
-                              {pnlPct >= 0 ? '+' : ''}{pnlPct.toFixed(2)}%
-                            </span>
-                          ) : (
-                            <span className="mono text-xs text-[#6b7280]">—</span>
-                          )}
-                        </div>
-                        <div className="text-[10px] text-[#6b7280] mono">
-                          {p.entryPrice ? `$${Number(p.entryPrice).toPrecision(4)}` : '—'}
-                          {p.currentPrice ? ` → $${Number(p.currentPrice).toPrecision(4)}` : ''}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs font-bold mono">${curUSD.toFixed(2)}</div>
-                      {pnlUSD != null ? (
-                        <div className={`text-[10px] mono font-semibold ${pnlColor(pnlUSD)}`}>
-                          {pnlUSD >= 0 ? '+' : ''}${Math.abs(pnlUSD).toFixed(2)}
-                        </div>
-                      ) : (
-                        <div className="text-[10px] text-[#6b7280] mono">—</div>
-                      )}
-                      <div className="text-[10px] text-[#6b7280] mono">
-                        {trailActive ? `Trail -${p.trailStop ?? 5}% ✓` : `SL -${p.hardSlPct ?? 3}%`}
-                      </div>
-                    </div>
-                  </div>
-                );
-              }) : (
-                <div className="flex flex-col items-center justify-center py-6 text-center">
-                  <div className="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center mb-2">
-                    <Shield className="text-indigo-500" size={20} />
-                  </div>
-                  <h3 className="text-sm font-bold">Capital in Yield</h3>
-                  <p className="text-xs text-[#6b7280] mt-1">No signal justifies exposure right now.</p>
-                </div>
-              )}
-              {yieldPos && (
-                <div className="p-3 bg-emerald-500/5 border border-emerald-500/20 rounded-xl">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-bold text-emerald-400">{yieldPos.protocol} Yield</span>
-                    <span className="mono text-xs font-bold text-emerald-400">+{yieldPos.apy}% APY</span>
-                  </div>
-                  <div className="text-[10px] text-[#6b7280] mono">{yieldPos.vault}</div>
-                  <div className="flex justify-between mt-1">
-                    <span className="text-[10px] text-[#6b7280]">Deployed</span>
-                    <span className="mono text-sm font-bold">${yieldPos.amountUSD?.toFixed(2)}</span>
-                  </div>
-                </div>
-              )}
-            </div>
-          </Card>
-
-          {/* Self-improving brain */}
+          {/* Autoresearch */}
           <Card>
             <Label>Self-Improving Brain</Label>
-            <p className="text-[10px] text-[#6b7280] mb-4 leading-relaxed">
-              3 autoresearch loops run 24/7 via Bankr LLM. Each proposes scoring changes, backtests on real Base token data, and auto-promotes improvements to the live agent — no human required.
+            <p className="text-[10px] text-[#6b7280] mb-3 leading-relaxed">
+              Bankr LLM rewrites the quant scoring function 24/7. Each experiment backtests on real Base token data and auto-promotes improvements — no human required.
             </p>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {[
-                { name: 'Onchain (Base)', data: arOnchain, color: 'text-indigo-400' },
-                { name: 'Hourly (1h bars)', data: arHourly, color: 'text-emerald-400' },
-                { name: '5-minute', data: ar5m, color: 'text-orange-400' },
+                { name: 'Onchain (Base)', data: ar.onchain  || {}, color: 'text-indigo-400' },
+                { name: 'Hourly (1h)',    data: ar.hourly   || {}, color: 'text-emerald-400' },
+                { name: '5-minute',       data: ar.fiveMin  || {}, color: 'text-orange-400' },
               ].map(({ name, data, color }) => (
-                <div key={name} className="p-3 bg-[#0a0a0f] border border-[#1e1e2e] rounded-xl">
-                  <div className="flex items-center justify-between mb-2">
+                <div key={name} className="p-2.5 bg-[#0a0a0f] border border-[#1e1e2e] rounded-xl">
+                  <div className="flex items-center justify-between mb-1.5">
                     <span className={`text-[11px] font-bold ${color}`}>{name}</span>
-                    <span className="mono text-[10px] text-[#6b7280]">{(data.expCount || 0).toLocaleString()} exp</span>
+                    <span className="mono text-[10px] text-[#6b7280]">{((data as any).expCount || 0).toLocaleString()} exp</span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <div>
-                      <div className="text-[9px] text-[#6b7280] mb-0.5">Best Sharpe</div>
-                      <div className="mono text-sm font-bold text-white">{(data.bestValSharpe || 0).toFixed(2)}</div>
-                    </div>
-                    <div>
-                      <div className="text-[9px] text-[#6b7280] mb-0.5">Score</div>
-                      <div className="mono text-sm font-bold text-white">{(data.bestScore || 0).toFixed(2)}</div>
-                    </div>
-                    {(data.expCount || 0) > 0 && (
-                      <div className={`ml-auto text-[10px] font-bold ${color}`}>↑ live</div>
-                    )}
+                  <div className="flex gap-4">
+                    <div><div className="text-[8px] text-[#6b7280]">Best Sharpe</div><div className="mono text-sm font-bold">{((data as any).bestValSharpe || 0).toFixed(2)}</div></div>
+                    <div><div className="text-[8px] text-[#6b7280]">Score</div><div className="mono text-sm font-bold">{((data as any).bestScore || 0).toFixed(2)}</div></div>
+                    {((data as any).expCount || 0) > 0 && <div className={`ml-auto self-end text-[9px] font-bold ${color}`}>↑ live</div>}
                   </div>
                 </div>
               ))}
             </div>
           </Card>
 
-          {/* Pipeline */}
           <PipelineCard />
         </div>
 
-        {/* ── RIGHT — Cycle Log ── */}
         <div className="lg:col-span-3">
           <CycleLog cycles={cycles} positions={positions} />
         </div>
