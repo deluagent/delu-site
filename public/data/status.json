@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-03-22T21:08:16.170Z",
+  "updatedAt": "2026-03-22T21:15:16.462Z",
   "regime": "BEAR",
-  "btcPrice": 67603,
-  "pctFrom200": "-5.5%",
+  "btcPrice": 67726,
+  "pctFrom200": "-5.3%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 27 min",
+  "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 99.71,
-    "positionsUSD": 80.43,
-    "liquidUSDC": 9.64,
-    "yieldUSD": 9.64,
+    "totalUSD": 170.89,
+    "positionsUSD": 80.47,
+    "liquidUSDC": 45.21,
+    "yieldUSD": 45.21,
     "unrealPnlUSD": -0.26,
     "unrealPnlPct": -0.52
   },
@@ -36,8 +36,8 @@
       "quantScore": null,
       "ret1h": -0.27,
       "transferStats": {
-        "uniqueBuyers": 46,
-        "buyRatio": 0.5287356321839081
+        "uniqueBuyers": 43,
+        "buyRatio": 0.524390243902439
       }
     },
     {
@@ -111,7 +111,7 @@
     },
     {
       "sym": "ROBOTMONEY",
-      "entryPrice": 0.0000133,
+      "entryPrice": 0.00001312,
       "currentPrice": null,
       "sizeUSD": 10,
       "currentUSD": 10,
@@ -121,13 +121,13 @@
       "trailStop": 5,
       "hardSlPct": 3,
       "trailActivated": false,
-      "openedAt": "2026-03-22T21:08:16.164Z",
+      "openedAt": "2026-03-22T21:15:16.453Z",
       "entryTx": null,
-      "contractAddress": "0x... (not provided, assume ROBOTMONEY contract address)",
+      "contractAddress": "0x... (not provided, assume available via Bankr)",
       "source": "universe",
       "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
+      "volumeTrend": "unknown",
+      "recommendation": "hold",
       "quantScore": null,
       "ret1h": null,
       "transferStats": null
@@ -137,27 +137,27 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
     "chain": "Base",
-    "amountUSD": 9.64,
+    "amountUSD": 45.21,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-22T21:05:44.326Z",
-    "ago": "3m ago",
+    "ts": "2026-03-22T21:13:42.053Z",
+    "ago": "2m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
-      "btcNow": 67603.3,
-      "sma200": 71521.89280000003,
-      "pctFrom200": -0.05478871778404648,
-      "volRatio": 0.7895945413559716,
+      "btcNow": 67726,
+      "sma200": 71522.50630000002,
+      "pctFrom200": -0.05308128163288402,
+      "volRatio": 0.7868059230824721,
       "btcState": "BEAR",
       "ethState": "BEAR",
       "breadthFraction": "BTC:BEAR ETH:BEAR",
       "breadth": 0
     },
-    "seenCount": 10,
-    "screened": 10,
+    "seenCount": 13,
+    "screened": 13,
     "flagged": [
       "ROBOTMONEY"
     ],
@@ -167,7 +167,7 @@
     "action": "buy",
     "asset": "ROBOTMONEY",
     "confidence": 80,
-    "reasoning": "ROBOTMONEY has a high onchain trend score of 0.69 and sustained social attention, indicating strong cross-sectional alpha and potential for further growth.",
+    "reasoning": "ROBOTMONEY has a high onchain trend score of 0.69 and sustained social attention, indicating strong cross-sectional alpha and a potential buying opportunity in the current BEAR regime.",
     "topSignal": "ROBOTMONEY score=0.69 ret1h=0.0%",
     "trendingEntries": [
       {
@@ -180,18 +180,24 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 9.752518545799406,
+        "attentionDelta": 11.210498776044654,
         "velocity": 10.29,
-        "att_1h": 8.4,
+        "att_1h": 9.8,
         "att_4h": 0,
-        "att_8h": 0.9,
+        "att_8h": 1,
         "att_12h": 0.5,
         "momentumWindows": 3,
         "sustainedMomentum": true,
         "rotatingFrom": [
           "DRB",
           "BOTCOIN"
-        ]
+        ],
+        "multiTFScore": null,
+        "scoreH": null,
+        "score5m": null,
+        "scoreOnchain": null,
+        "score4h": null,
+        "multiTFBreakdown": null
       },
       {
         "symbol": "TIBBIR",
@@ -203,22 +209,28 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 1.9,
+        "attentionDelta": 1.1,
         "velocity": 7.45,
-        "att_1h": 1.9,
+        "att_1h": 1.1,
         "att_4h": -0.8,
-        "att_8h": -1.2,
+        "att_8h": -1.1,
         "att_12h": -1.2,
         "momentumWindows": 1,
         "sustainedMomentum": false,
         "rotatingFrom": [
           "DRB",
           "BOTCOIN"
-        ]
+        ],
+        "multiTFScore": null,
+        "scoreH": null,
+        "score5m": null,
+        "scoreOnchain": null,
+        "score4h": null,
+        "multiTFBreakdown": null
       },
       {
-        "symbol": "SAIMMY",
-        "score": 0.3173333333333333,
+        "symbol": "DRB",
+        "score": 0.3426666666666666,
         "rank": null,
         "source": "checkr",
         "ret1h": null,
@@ -226,41 +238,24 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 5.3,
-        "velocity": 4.76,
-        "att_1h": 5.3,
+        "attentionDelta": 0.514,
+        "velocity": 5.14,
+        "att_1h": -0.7,
         "att_4h": 0,
-        "att_8h": 0,
-        "att_12h": 0,
-        "momentumWindows": 1,
+        "att_8h": -1.1,
+        "att_12h": -1,
+        "momentumWindows": 0,
         "sustainedMomentum": false,
         "rotatingFrom": [
-          "DRB",
-          "BOTCOIN"
-        ]
-      },
-      {
-        "symbol": "TOSHI",
-        "score": 0.4,
-        "rank": null,
-        "source": "checkr",
-        "ret1h": null,
-        "moveFrac": null,
-        "quantScore": null,
-        "rugVerdict": null,
-        "rugScore": null,
-        "attentionDelta": 1.4,
-        "velocity": 6,
-        "att_1h": 1.4,
-        "att_4h": 0.1,
-        "att_8h": -0.3,
-        "att_12h": -0.3,
-        "momentumWindows": 2,
-        "sustainedMomentum": false,
-        "rotatingFrom": [
-          "DRB",
-          "BOTCOIN"
-        ]
+          "BOTCOIN",
+          "KTA"
+        ],
+        "multiTFScore": null,
+        "scoreH": null,
+        "score5m": null,
+        "scoreOnchain": null,
+        "score4h": null,
+        "multiTFBreakdown": null
       },
       {
         "symbol": "VVV",
@@ -283,7 +278,42 @@
         "rotatingFrom": [
           "DRB",
           "BOTCOIN"
-        ]
+        ],
+        "multiTFScore": null,
+        "scoreH": null,
+        "score5m": null,
+        "scoreOnchain": null,
+        "score4h": null,
+        "multiTFBreakdown": null
+      },
+      {
+        "symbol": "ODAI",
+        "score": 0.4,
+        "rank": null,
+        "source": "checkr",
+        "ret1h": null,
+        "moveFrac": null,
+        "quantScore": null,
+        "rugVerdict": null,
+        "rugScore": null,
+        "attentionDelta": 0.6000000000000001,
+        "velocity": 6,
+        "att_1h": 0,
+        "att_4h": 1,
+        "att_8h": 0.2,
+        "att_12h": 0.1,
+        "momentumWindows": 3,
+        "sustainedMomentum": true,
+        "rotatingFrom": [
+          "DRB",
+          "BOTCOIN"
+        ],
+        "multiTFScore": null,
+        "scoreH": null,
+        "score5m": null,
+        "scoreOnchain": null,
+        "score4h": null,
+        "multiTFBreakdown": null
       }
     ],
     "positionUpdates": [
@@ -298,8 +328,8 @@
         "ret1h": -0.002664940467964639,
         "ret6h": -0.012131987960226525,
         "transferStats": {
-          "uniqueBuyers": 46,
-          "buyRatio": 0.5287356321839081
+          "uniqueBuyers": 43,
+          "buyRatio": 0.524390243902439
         }
       },
       {
@@ -337,13 +367,25 @@
         "ret1h": null,
         "ret6h": null,
         "transferStats": null
+      },
+      {
+        "sym": "ROBOTMONEY",
+        "currentPrice": 0,
+        "entryPrice": 0.0000133,
+        "pnlPct": null,
+        "quantScore": null,
+        "volumeTrend": "unknown",
+        "recommendation": "hold",
+        "ret1h": null,
+        "ret6h": null,
+        "transferStats": null
       }
     ],
     "topScores": []
   },
   "performance": {
-    "closedTrades": 9,
-    "winRate": "1/9",
+    "closedTrades": 10,
+    "winRate": "1/10",
     "recentTrades": [
       {
         "sym": "MOLT",
@@ -432,10 +474,264 @@
         "exitTx": null,
         "openedAt": "2026-03-22T19:04:50.123Z",
         "closedAt": "2026-03-22T21:06:22.705Z"
+      },
+      {
+        "sym": "BLUEAGENT",
+        "pnlPct": -14.1,
+        "won": false,
+        "regime": "BEAR",
+        "entryTx": null,
+        "exitTx": null,
+        "openedAt": "2026-03-22T19:04:50.123Z",
+        "closedAt": "2026-03-22T21:06:22.705Z"
       }
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-22T21:13:42.053Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 67726,
+        "sma200": 71522.50630000002,
+        "pctFrom200": -0.05308128163288402,
+        "volRatio": 0.7868059230824721,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "buy",
+      "asset": "ROBOTMONEY",
+      "confidence": 80,
+      "reasoning": "ROBOTMONEY has a high onchain trend score of 0.69 and sustained social attention, indicating strong cross-sectional alpha and a potential buying opportunity in the current BEAR regime.",
+      "seenCount": 10,
+      "flagged": [
+        "ROBOTMONEY"
+      ],
+      "traded": [
+        "ROBOTMONEY"
+      ],
+      "trendingEntries": [
+        {
+          "symbol": "ROBOTMONEY",
+          "score": 0.6859999999999999,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 11.210498776044654,
+          "velocity": 10.29,
+          "att_1h": 9.8,
+          "att_4h": 0,
+          "att_8h": 1,
+          "att_12h": 0.5,
+          "momentumWindows": 3,
+          "sustainedMomentum": true,
+          "rotatingFrom": [
+            "DRB",
+            "BOTCOIN"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "TIBBIR",
+          "score": 0.4966666666666667,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 1.1,
+          "velocity": 7.45,
+          "att_1h": 1.1,
+          "att_4h": -0.8,
+          "att_8h": -1.1,
+          "att_12h": -1.2,
+          "momentumWindows": 1,
+          "sustainedMomentum": false,
+          "rotatingFrom": [
+            "DRB",
+            "BOTCOIN"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "DRB",
+          "score": 0.3426666666666666,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 0.514,
+          "velocity": 5.14,
+          "att_1h": -0.7,
+          "att_4h": 0,
+          "att_8h": -1.1,
+          "att_12h": -1,
+          "momentumWindows": 0,
+          "sustainedMomentum": false,
+          "rotatingFrom": [
+            "BOTCOIN",
+            "KTA"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "VVV",
+          "score": 0.64,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 0.96,
+          "velocity": 9.6,
+          "att_1h": 0,
+          "att_4h": 1.4,
+          "att_8h": 0.6,
+          "att_12h": 0.7,
+          "momentumWindows": 3,
+          "sustainedMomentum": true,
+          "rotatingFrom": [
+            "DRB",
+            "BOTCOIN"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "ODAI",
+          "score": 0.4,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 0.6000000000000001,
+          "velocity": 6,
+          "att_1h": 0,
+          "att_4h": 1,
+          "att_8h": 0.2,
+          "att_12h": 0.1,
+          "momentumWindows": 3,
+          "sustainedMomentum": true,
+          "rotatingFrom": [
+            "DRB",
+            "BOTCOIN"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        }
+      ],
+      "positionUpdates": [
+        {
+          "sym": "DRB",
+          "currentPrice": 0.0000685613,
+          "entryPrice": 0.00007041,
+          "pnlPct": -2.63,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": -0.002664940467964639,
+          "ret6h": -0.012131987960226525,
+          "transferStats": {
+            "uniqueBuyers": 43,
+            "buyRatio": 0.524390243902439
+          }
+        },
+        {
+          "sym": "JUNO",
+          "currentPrice": 0,
+          "entryPrice": 0.02528,
+          "pnlPct": null,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": null,
+          "ret6h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "MOLTEN",
+          "currentPrice": 0,
+          "entryPrice": 5.66,
+          "pnlPct": null,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": null,
+          "ret6h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "VVV",
+          "currentPrice": 0,
+          "entryPrice": 0.00010536,
+          "pnlPct": null,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": null,
+          "ret6h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "ROBOTMONEY",
+          "currentPrice": 0,
+          "entryPrice": 0.0000133,
+          "pnlPct": null,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": null,
+          "ret6h": null,
+          "transferStats": null
+        }
+      ],
+      "topSignal": "ROBOTMONEY score=0.69 ret1h=0.0%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "anthropic-fallback"
+    },
     {
       "ts": "2026-03-22T21:05:44.326Z",
       "regime": "BEAR",
@@ -4245,33 +4541,6 @@
         "sma200": 71773.45710000003,
         "pctFrom200": -0.020613847511046463,
         "volRatio": 0.745249516496593,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "Tight range market with low volatility ratio (0.75) and no signal scores provided above threshold (0.05) indicates insufficient momentum for reliable trade entry.",
-      "seenCount": 0,
-      "flagged": [],
-      "traded": [],
-      "trendingEntries": [],
-      "positionUpdates": [],
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "bankr-llm"
-    },
-    {
-      "ts": "2026-03-21T22:26:03.122Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 70305.35,
-        "sma200": 71773.51420000003,
-        "pctFrom200": -0.020455515051261454,
-        "volRatio": 0.7452260678912898,
         "btcState": "RANGE",
         "ethState": "RANGE",
         "breadthFraction": "BTC:RANGE ETH:RANGE",
