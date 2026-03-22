@@ -41,12 +41,12 @@ const VolTag = ({ trend }: { trend?: string | null }) => {
 };
 
 // ── Stats bar ─────────────────────────────────────────────────────────────────
-function StatsBar({ cycles, arOnchain }: { cycles: any[]; arOnchain: any }) {
+function StatsBar({ cycles, arOnchain, brain }: { cycles: any[]; arOnchain: any; brain?: any }) {
   const trades     = cycles.filter(c => c.action === 'buy' || c.action === 'long').length;
   const allTokens  = cycles.flatMap(c => c.trendingEntries || []);
   const screened   = new Set(allTokens.map((t: any) => t.symbol)).size;
-  const expCount   = arOnchain.expCount || 0;
-  const brainScore = arOnchain.bestScore || 0;
+  const expCount   = brain?.totalExp || arOnchain.expCount || 0;
+  const brainScore = brain?.topScore || arOnchain.bestScore || 0;
 
   const stats = [
     { label: 'Tokens discovered', value: screened.toString(), sub: 'last 50 cycles', color: 'text-blue-400' },
@@ -168,52 +168,123 @@ function PositionsCard({ positions, loading, yieldPos }: { positions: any[]; loa
 }
 
 // ── Brain card ────────────────────────────────────────────────────────────────
-function BrainCard({ ar }: { ar: any }) {
-  const onchain = ar.onchain  || {};
-  const hourly  = ar.hourly   || {};
-  const fiveMin = ar.fiveMin  || {};
+const LOOP_COLORS: Record<string, string> = {
+  '5m':      'text-orange-400',
+  'Onchain': 'text-indigo-400',
+  'Hourly':  'text-emerald-400',
+  'Daily':   'text-blue-400',
+};
+const LOOP_BG: Record<string, string> = {
+  '5m':      'bg-orange-500',
+  'Onchain': 'bg-indigo-500',
+  'Hourly':  'bg-emerald-500',
+  'Daily':   'bg-blue-500',
+};
 
-  const totalExp = (onchain.expCount||0) + (hourly.expCount||0) + (fiveMin.expCount||0);
-  const topScore = Math.max(onchain.bestScore||0, hourly.bestScore||0, fiveMin.bestScore||0);
+function BrainCard({ ar, brain }: { ar: any; brain: any }) {
+  const [showTimeline, setShowTimeline] = useState(false);
 
-  // Progress bar: score 0→30 = 0→100%
-  const pct = Math.min(100, (topScore / 30) * 100);
+  const totalExp = brain?.totalExp || Object.values(ar).reduce((s: number, l: any) => s + (l?.expCount || 0), 0);
+  const topScore = brain?.topScore || Math.max(...Object.values(ar).map((l: any) => l?.bestScore || 0));
+  const topLoop  = brain?.topLoop || '5m';
+  const pct      = Math.min(100, (topScore / 30) * 100);
+
+  const loops = brain?.loops || [];
+  const breakthroughs: any[] = brain?.breakthroughs || [];
+  // Key milestones: first, big jumps, last 3
+  const withDesc  = breakthroughs.filter((b: any) => b.description);
+  const keySteps  = breakthroughs.filter((b: any, i: number) => {
+    if (i === 0 || i === breakthroughs.length - 1) return true;
+    const prev = breakthroughs[i-1];
+    return (b.score - prev.score) > 1.5; // big jump
+  }).slice(-6);
 
   return (
     <Card className="p-4">
-      <SectionLabel>Self-Improving Brain</SectionLabel>
+      <div className="flex items-center justify-between mb-3">
+        <SectionLabel>Self-Improving Brain</SectionLabel>
+        {breakthroughs.length > 0 && (
+          <button onClick={() => setShowTimeline(v => !v)} className="text-[8px] text-indigo-400 border border-indigo-500/20 px-1.5 py-0.5 rounded hover:bg-indigo-500/10">
+            {showTimeline ? 'hide' : 'evolution ↗'}
+          </button>
+        )}
+      </div>
 
-      {/* Narrative headline */}
+      {/* Score + progress */}
       <div className="mb-3">
         <div className="flex items-end gap-2 mb-1">
           <span className="mono text-2xl font-bold text-indigo-400">{topScore.toFixed(1)}</span>
-          <span className="text-[10px] text-[#6b7280] mb-0.5">score · was 0.0 at start</span>
+          <span className={`text-[10px] font-bold mb-0.5 ${LOOP_COLORS[topLoop] || 'text-indigo-400'}`}>{topLoop} best</span>
+          <span className="text-[10px] text-[#6b7280] mb-0.5">· started at 0</span>
         </div>
         <div className="w-full h-1.5 bg-[#1e1e2e] rounded-full overflow-hidden">
           <div className="h-full bg-gradient-to-r from-indigo-600 to-purple-500 rounded-full transition-all" style={{ width: `${pct}%` }} />
         </div>
         <div className="flex justify-between mt-0.5">
-          <span className="text-[8px] text-[#4b5563]">baseline 0</span>
-          <span className="text-[8px] text-[#4b5563]">{totalExp.toLocaleString()} experiments by Bankr LLM</span>
-          <span className="text-[8px] text-[#4b5563]">target 30</span>
+          <span className="text-[8px] text-[#4b5563]">0</span>
+          <span className="text-[8px] text-[#4b5563]">{Number(totalExp).toLocaleString()} experiments total</span>
+          <span className="text-[8px] text-[#4b5563]">30 target</span>
         </div>
       </div>
 
+      {/* Evolution timeline */}
+      {showTimeline && keySteps.length > 0 && (
+        <div className="mb-3 space-y-0">
+          {keySteps.map((bt: any, i: number) => (
+            <div key={i} className="relative flex gap-2.5">
+              {i < keySteps.length-1 && <div className="absolute left-[8px] top-5 bottom-0 w-px bg-[#1e1e2e]" />}
+              <div className={`relative z-10 w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${LOOP_BG[bt.loop] || 'bg-indigo-500'}`}>
+                <span className="text-[7px] font-bold text-white">{i+1}</span>
+              </div>
+              <div className="pb-2.5 min-w-0">
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className={`mono text-[10px] font-bold ${LOOP_COLORS[bt.loop] || 'text-indigo-400'}`}>{bt.score.toFixed(1)}</span>
+                  <span className="text-[8px] text-[#4b5563]">{bt.loop} exp{bt.n}</span>
+                </div>
+                {bt.description && (
+                  <p className="text-[9px] text-[#9ca3af] italic leading-snug mt-0.5">{bt.description.slice(0, 80)}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Loop rows */}
-      <div className="space-y-1.5">
-        {[
-          { name: 'Onchain (Base)', data: onchain,  color: 'text-indigo-400', dot: 'bg-indigo-500', live: true  },
-          { name: 'Hourly (1h)',    data: hourly,   color: 'text-emerald-400', dot: 'bg-emerald-500', live: false },
-          { name: '5-minute',       data: fiveMin,  color: 'text-orange-400',  dot: 'bg-orange-500', live: false },
-        ].map(({ name, data, color, dot, live }) => (
-          <div key={name} className={`flex items-center gap-2 px-2.5 py-2 rounded-lg border ${live ? 'border-indigo-500/15 bg-indigo-500/3' : 'border-[#1e1e2e]'}`}>
-            <div className={`w-1.5 h-1.5 rounded-full ${dot} shrink-0 ${live ? 'pulse-live' : ''}`} />
-            <span className={`text-[10px] font-bold ${color} flex-1`}>{name}</span>
-            {live && <span className="text-[8px] text-green-400 border border-green-500/20 px-1 rounded">→ live</span>}
-            <span className="mono text-[9px] text-[#6b7280]">{(data.expCount||0).toLocaleString()} exp</span>
-            <span className={`mono text-xs font-bold ${color}`}>{(data.bestScore||0).toFixed(1)}</span>
+      <div className="space-y-1">
+        {loops.length > 0 ? loops.map((l: any) => (
+          <div key={l.name} className={`px-2.5 py-2 rounded-lg border ${l.name === 'Onchain' ? 'border-indigo-500/15 bg-indigo-500/3' : 'border-[#1e1e2e]'}`}>
+            <div className="flex items-center gap-2 mb-1">
+              <div className={`w-1.5 h-1.5 rounded-full ${LOOP_BG[l.name] || 'bg-indigo-500'} shrink-0`} />
+              <span className={`text-[10px] font-bold ${LOOP_COLORS[l.name] || 'text-indigo-400'} flex-1`}>{l.name}</span>
+              {l.name === 'Onchain' && <span className="text-[8px] text-green-400 border border-green-500/20 px-1 rounded">→ live</span>}
+              <span className="mono text-[9px] text-[#6b7280]">{l.expCount.toLocaleString()} exp</span>
+              <span className={`mono text-xs font-bold ${LOOP_COLORS[l.name] || 'text-indigo-400'}`}>{l.bestScore.toFixed(1)}</span>
+            </div>
+            {l.signals?.length > 0 && (
+              <div className="flex flex-wrap gap-1 ml-3.5">
+                {l.signals.slice(0,4).map((s: string) => (
+                  <span key={s} className="text-[7px] text-[#6b7280] bg-[#1e1e2e] px-1 py-0.5 rounded">{s}</span>
+                ))}
+              </div>
+            )}
           </div>
-        ))}
+        )) : (
+          // Fallback to ar data
+          [
+            { name: 'Onchain', data: ar.onchain||{}, live: true },
+            { name: 'Hourly',  data: ar.hourly||{},  live: false },
+            { name: '5m',      data: ar.fiveMin||{}, live: false },
+          ].map(({ name, data, live }) => (
+            <div key={name} className={`flex items-center gap-2 px-2.5 py-2 rounded-lg border ${live ? 'border-indigo-500/15 bg-indigo-500/3' : 'border-[#1e1e2e]'}`}>
+              <div className={`w-1.5 h-1.5 rounded-full ${LOOP_BG[name]||'bg-indigo-500'} shrink-0`} />
+              <span className={`text-[10px] font-bold ${LOOP_COLORS[name]||'text-indigo-400'} flex-1`}>{name}</span>
+              {live && <span className="text-[8px] text-green-400 border border-green-500/20 px-1 rounded">→ live</span>}
+              <span className="mono text-[9px] text-[#6b7280]">{((data as any).expCount||0).toLocaleString()} exp</span>
+              <span className={`mono text-xs font-bold ${LOOP_COLORS[name]||'text-indigo-400'}`}>{((data as any).bestScore||0).toFixed(1)}</span>
+            </div>
+          ))
+        )}
       </div>
       <p className="text-[9px] text-[#4b5563] mt-2 leading-relaxed">
         Best onchain scoring function auto-promoted to live agent every cycle. Brain rewrites itself. Humans not involved.
@@ -499,6 +570,7 @@ function CycleLog({ cycles, positions }: { cycles: any[]; positions: any[] }) {
 // ── Main ──────────────────────────────────────────────────────────────────────
 export default function Home() {
   const [status, setStatus] = useState<any>(null);
+  const [brain,  setBrain]  = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -507,8 +579,12 @@ export default function Home() {
       catch {}
       finally { setLoading(false); }
     };
-    load();
-    const iv = setInterval(load, 30000);
+    const loadBrain = async () => {
+      try { const r = await fetch('/api/brain'); setBrain(await r.json()); }
+      catch {}
+    };
+    load(); loadBrain();
+    const iv = setInterval(() => { load(); loadBrain(); }, 30000);
     return () => clearInterval(iv);
   }, []);
 
@@ -575,7 +651,7 @@ export default function Home() {
       </header>
 
       {/* ── Stats bar ── */}
-      <StatsBar cycles={cycles} arOnchain={ar.onchain || {}} />
+      <StatsBar cycles={cycles} arOnchain={ar.onchain || {}} brain={brain} />
 
       {/* ── 2-col ── */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-3">
@@ -583,7 +659,7 @@ export default function Home() {
         {/* LEFT */}
         <div className="lg:col-span-2 flex flex-col gap-3">
           <PositionsCard positions={positions} loading={loading} yieldPos={yieldPos} />
-          <BrainCard ar={ar} />
+          <BrainCard ar={ar} brain={brain} />
           <PipelineCard />
         </div>
 

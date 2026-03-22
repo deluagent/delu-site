@@ -1,0 +1,301 @@
+{
+  "generatedAt": "2026-03-22T17:16:05.960Z",
+  "totalExp": 9834,
+  "totalAccepted": 33,
+  "topScore": 28.012,
+  "topLoop": "5m",
+  "loops": [
+    {
+      "name": "5m",
+      "color": "orange",
+      "expCount": 1484,
+      "acceptedCount": 10,
+      "acceptRate": 0.7,
+      "bestScore": 28.012,
+      "breakthroughCount": 10,
+      "signals": [
+        "Relative strength vs BTC",
+        "Volatility filter",
+        "Trend (EMA/SMA crossover)",
+        "BTC correlation context"
+      ],
+      "latestDescription": null
+    },
+    {
+      "name": "Onchain",
+      "color": "indigo",
+      "expCount": 5119,
+      "acceptedCount": 3,
+      "acceptRate": 0.1,
+      "bestScore": 20.402,
+      "breakthroughCount": 3,
+      "signals": [
+        "RSI(8) momentum zone",
+        "RSI oversold bounce",
+        "Relative strength vs BTC",
+        "Smart wallet accumulation (Alchemy)",
+        "Whale concentration penalty",
+        "Momentum regime detection"
+      ],
+      "latestDescription": "Implement dual-regime detection (momentum vs mean-reversion) with adaptive weighting based on recent"
+    },
+    {
+      "name": "Hourly",
+      "color": "emerald",
+      "expCount": 299,
+      "acceptedCount": 6,
+      "acceptRate": 2,
+      "bestScore": 9.306,
+      "breakthroughCount": 6,
+      "signals": [
+        "Volume burst detection",
+        "Volatility filter",
+        "Trend (EMA/SMA crossover)",
+        "BTC correlation context"
+      ],
+      "latestDescription": "Add 4h close above 20-SMA filter to avoid mean-reversion traps and prioritize uptrend alignment in b"
+    },
+    {
+      "name": "Daily",
+      "color": "blue",
+      "expCount": 2932,
+      "acceptedCount": 14,
+      "acceptRate": 0.5,
+      "bestScore": 3.888,
+      "breakthroughCount": 9,
+      "signals": [
+        "Mean-reversion filter",
+        "Volatility filter",
+        "Trend (EMA/SMA crossover)",
+        "BTC correlation context"
+      ],
+      "latestDescription": null
+    }
+  ],
+  "breakthroughs": [
+    {
+      "n": 3,
+      "score": 2.399,
+      "ts": 1773865661311,
+      "description": null,
+      "loop": "Daily",
+      "color": "blue"
+    },
+    {
+      "n": 99,
+      "score": 2.837,
+      "ts": 1773881904529,
+      "description": null,
+      "loop": "Daily",
+      "color": "blue"
+    },
+    {
+      "n": 55,
+      "score": 3.126,
+      "ts": 1774054715721,
+      "description": null,
+      "loop": "Daily",
+      "color": "blue"
+    },
+    {
+      "n": 56,
+      "score": 3.385,
+      "ts": 1774055409235,
+      "description": null,
+      "loop": "Daily",
+      "color": "blue"
+    },
+    {
+      "n": 57,
+      "score": 3.392,
+      "ts": 1774055636051,
+      "description": null,
+      "loop": "Daily",
+      "color": "blue"
+    },
+    {
+      "n": 242,
+      "score": 3.703,
+      "ts": 1774074121009,
+      "description": null,
+      "loop": "Daily",
+      "color": "blue"
+    },
+    {
+      "n": 252,
+      "score": 3.719,
+      "ts": 1774075112822,
+      "description": null,
+      "loop": "Daily",
+      "color": "blue"
+    },
+    {
+      "n": 418,
+      "score": 3.78,
+      "ts": 1774092071346,
+      "description": null,
+      "loop": "Daily",
+      "color": "blue"
+    },
+    {
+      "n": 461,
+      "score": 3.888,
+      "ts": 1774097329259,
+      "description": null,
+      "loop": "Daily",
+      "color": "blue"
+    },
+    {
+      "n": 2,
+      "score": 8,
+      "ts": "2026-03-21T13:50:09.994Z",
+      "description": null,
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 29,
+      "score": 8.075,
+      "ts": "2026-03-21T14:38:39.794Z",
+      "description": null,
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 30,
+      "score": 0.544,
+      "ts": "2026-03-21T15:58:06.050Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 32,
+      "score": 0.978,
+      "ts": "2026-03-21T16:01:28.416Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 37,
+      "score": 1.798,
+      "ts": "2026-03-21T16:28:56.912Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 39,
+      "score": 2.043,
+      "ts": "2026-03-21T16:32:18.191Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 41,
+      "score": 2.878,
+      "ts": "2026-03-21T16:38:48.059Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 102,
+      "score": 8.172,
+      "ts": "2026-03-21T16:51:06.277Z",
+      "description": null,
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 48,
+      "score": 5.524,
+      "ts": "2026-03-21T16:55:16.441Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 71,
+      "score": 9.245,
+      "ts": "2026-03-21T18:15:29.274Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 73,
+      "score": 16.972,
+      "ts": "2026-03-21T18:18:52.821Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 84,
+      "score": 19.88,
+      "ts": "2026-03-21T18:52:42.588Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 89,
+      "score": 28.012,
+      "ts": "2026-03-21T19:01:21.642Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 212,
+      "score": 8.215,
+      "ts": "2026-03-21T20:22:28.658Z",
+      "description": null,
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 219,
+      "score": 8.457,
+      "ts": "2026-03-21T20:34:33.918Z",
+      "description": null,
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 1748,
+      "score": 13.637,
+      "ts": "2026-03-22T05:34:20.627Z",
+      "description": null,
+      "loop": "Onchain",
+      "color": "indigo"
+    },
+    {
+      "n": 1984,
+      "score": 17.931,
+      "ts": "2026-03-22T06:37:28.442Z",
+      "description": "Implement dual-regime detection (momentum vs mean-reversion) with adaptive weighting based on recent",
+      "loop": "Onchain",
+      "color": "indigo"
+    },
+    {
+      "n": 2302,
+      "score": 20.402,
+      "ts": "2026-03-22T07:57:30.329Z",
+      "description": null,
+      "loop": "Onchain",
+      "color": "indigo"
+    },
+    {
+      "n": 269,
+      "score": 9.306,
+      "ts": "2026-03-22T17:05:29.438Z",
+      "description": "Add 4h close above 20-SMA filter to avoid mean-reversion traps and prioritize uptrend alignment in b",
+      "loop": "Hourly",
+      "color": "emerald"
+    }
+  ]
+}
