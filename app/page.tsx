@@ -36,14 +36,15 @@ const wallet = '0xed2ceca9de162c4f2337d7c1ab44ee9c427709da';
 const walletShort = `${wallet.slice(0, 6)}…${wallet.slice(-4)}`;
 
 // ─── learnings map (real post-trade insights from our autoresearch) ────────────
+// key = SYM or SYM_win / SYM_loss for trades that appear multiple times
 const LEARNINGS: Record<string, string> = {
-  ROBOTMONEY: 'High onchain trend score + sustained social spike = strongest signal combination. RSI momentum zone confirmed.',
-  BLUEAGENT:  'Hard SL -3% too tight for micro-caps. Price wicked -21% before recovery. ATR-based floor now mandatory.',
-  KTA:        'RANGE_TIGHT regime + low confidence = marginal entry. Wider ATR stop would have avoided early exit.',
-  BNKR:       'ATR hard SL -3% fired at noise level. Widened to 3×ATR (min -8%) after this trade.',
-  MOLT:       'Stale price data caused ATR stop to see -5% as -3%. Added freshness check to OHLCV pipeline.',
-  CLAWNCH:    'Social signal decayed mid-hold. Checkr multi-window (1h/4h/8h) now weighted for sustained attention.',
-  MOLTEN:     'Volume burst confirmed by onchain flow but social signal was lagging. Multi-TF now cross-validates.',
+  'BLUEAGENT_win':  'Real winner: onchain trend + social spike both sustained. Bought ~$20, sold ~$44. +121% in 90 min. Strongest signal combination confirmed.',
+  'BLUEAGENT_loss': 'Mass ATR stop at 14:37 UTC — price data delay caused -21% reading instead of catching at -3%. All positions stopped simultaneously.',
+  KTA:       'RANGE_TIGHT regime + marginal signal = weak entry. ATR hard SL -3% fired at noise level. Regime filter now stricter.',
+  BNKR:      'ATR hard SL -3% fired at noise level for micro-cap. Widened to 3×ATR (min -8%) after this trade.',
+  MOLT:      'Stale OHLCV data caused ATR stop to fire too early. Price freshness check added to pipeline.',
+  CLAWNCH:   'Social signal decayed mid-hold. Checkr multi-window (1h/4h/8h/12h) now required to sustain before entry.',
+  MOLTEN:    'Volume burst confirmed by onchain flow but social lagging. Multi-TF cross-validation added.',
 };
 
 // ─── Section: Hero ────────────────────────────────────────────────────────────
@@ -523,7 +524,8 @@ function TradeHistory({ status }: { status: any }) {
         </div>
 
         {trades.map((t, i) => {
-          const learning = LEARNINGS[t.sym] ?? 'Signal parameters updated based on this outcome.';
+          const learningKey = `${t.sym}_${t.won ? 'win' : 'loss'}`;
+          const learning = LEARNINGS[learningKey] ?? LEARNINGS[t.sym] ?? 'Signal parameters updated based on this outcome.';
           const isWin = t.won;
           return (
             <div key={i}
