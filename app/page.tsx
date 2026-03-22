@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Shield, ArrowRight, Search, ExternalLink, Cpu, Zap, CheckCircle2, Circle, Loader2, ChevronDown } from 'lucide-react';
-import { StreamStep } from '@/lib/types';
+import { Shield, ExternalLink, Zap, ChevronDown } from 'lucide-react';
 
 const pnlColor = (n?: number) => !n || n === 0 ? 'text-[#6b7280]' : n > 0 ? 'text-green-400' : 'text-red-400';
 
@@ -25,25 +24,69 @@ const ActionBadge = ({ action }: { action: string }) => {
   const isYield = a.includes('yield');
   return (
     <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider border ${isBuy ? 'bg-green-500/10 text-green-400 border-green-500/20' : isYield ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' : 'bg-[#1e1e2e] text-[#6b7280] border-[#2e2e3e]'}`}>
-      {isBuy ? 'BUY' : isYield ? 'YIELD' : 'HOLD'}
+      {isBuy ? 'BUY ✓' : isYield ? 'YIELD' : 'HOLD'}
     </span>
   );
 };
 
-const StepRow = ({ step }: { step: StreamStep }) => (
-  <div className={`mb-2 ${step.status === 'pending' ? 'opacity-40' : 'opacity-100'}`}>
-    <div className="flex items-center gap-2">
-      {step.status === 'pending' && <Circle size={12} className="text-[#6b7280]" />}
-      {step.status === 'running' && <Loader2 size={12} className="text-indigo-500 animate-spin" />}
-      {step.status === 'done' && <CheckCircle2 size={12} className="text-green-500" />}
-      <span className={`text-xs ${step.status === 'running' ? 'text-indigo-400' : step.status === 'done' ? 'text-white' : 'text-[#6b7280]'}`}>{step.label}</span>
-    </div>
-    {step.status === 'done' && step.detail && (
-      <div className="ml-5 mt-0.5 text-[10px] mono text-[#6b7280] leading-relaxed">{step.detail}</div>
-    )}
-  </div>
-);
+// ── How It Works pipeline card ───────────────────────────────────────────────
+function PipelineCard() {
+  const steps = [
+    { icon: '🏦', label: 'Bankr LLM Gateway', detail: 'Regime detection · Trending token discovery (Base top 10)', color: 'border-indigo-500/30 bg-indigo-500/5' },
+    { icon: '⚡', label: 'Checkr × x402', detail: '4-window social attention (1h/4h/8h/12h) · Spike detection', color: 'border-orange-500/30 bg-orange-500/5', parallel: true },
+    { icon: '🔗', label: 'Alchemy Onchain', detail: 'Hourly prices · Transfer stats · Rug check', color: 'border-blue-500/30 bg-blue-500/5', parallel: true },
+    { icon: '🧠', label: 'Quant Brain', detail: 'Self-evolved scoring model — improved 3,500+ times by Bankr LLM', color: 'border-purple-500/30 bg-purple-500/5' },
+    { icon: '🔒', label: 'Venice E2EE', detail: 'Private reasoning — no logs, no data retention', color: 'border-violet-500/30 bg-violet-500/5' },
+    { icon: '✅', label: 'Bankr Execute', detail: 'Swap + ATR trailing stop — fully autonomous', color: 'border-green-500/30 bg-green-500/5' },
+  ];
 
+  return (
+    <Card>
+      <Label>How It Works — every 30 min</Label>
+      <div className="space-y-0">
+        {steps.map((step, i) => {
+          const isParallel = step.parallel;
+          const nextIsParallel = steps[i + 1]?.parallel;
+          const prevIsParallel = steps[i - 1]?.parallel;
+
+          return (
+            <div key={i} className="relative">
+              {/* Connector line */}
+              {i < steps.length - 1 && !isParallel && !nextIsParallel && (
+                <div className="absolute left-[15px] top-8 w-px h-3 bg-[#2e2e3e]" />
+              )}
+              {/* Parallel bracket — opening */}
+              {isParallel && !prevIsParallel && (
+                <div className="flex items-center gap-2 mb-1 ml-6">
+                  <div className="w-px h-3 bg-[#2e2e3e]" />
+                  <span className="text-[9px] text-[#4b5563] tracking-wider">parallel</span>
+                  <div className="flex-1 h-px bg-[#1e1e2e]" />
+                </div>
+              )}
+
+              <div className={`flex items-start gap-3 p-2.5 rounded-xl border mb-1 ${step.color}`}>
+                <span className="text-sm shrink-0 mt-0.5">{step.icon}</span>
+                <div className="min-w-0">
+                  <div className="text-[11px] font-bold text-[#e2e8f0]">{step.label}</div>
+                  <div className="text-[10px] text-[#6b7280] mono mt-0.5">{step.detail}</div>
+                </div>
+              </div>
+
+              {/* Parallel bracket — closing */}
+              {isParallel && !nextIsParallel && (
+                <div className="flex items-center gap-2 mt-1 mb-1 ml-6">
+                  <div className="w-px h-3 bg-[#2e2e3e]" />
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </Card>
+  );
+}
+
+// ── Cycle Timeline (expanded view) ───────────────────────────────────────────
 function CycleTimeline({ cycle, positions }: { cycle: any; positions: any[] }) {
   if (!cycle) return null;
   const openPos = positions.filter((p: any) => !p.closedAt);
@@ -77,12 +120,12 @@ function CycleTimeline({ cycle, positions }: { cycle: any; positions: any[] }) {
       detail: (() => {
         const pa = cycle.positionUpdates || [];
         if (!pa.length && openPos.length === 0) return 'No open positions';
-        if (!pa.length) return openPos.map((p: any) => `${p.sym} ${p.pnlPct != null ? (p.pnlPct >= 0 ? '+' : '') + p.pnlPct.toFixed(1) + '%' : '—'}`).join(' · ');
+        if (!pa.length) return openPos.map((p: any) => `${p.sym} ${p.pnlPct != null && p.currentPrice != null ? (p.pnlPct >= 0 ? '+' : '') + p.pnlPct.toFixed(1) + '%' : '—'}`).join(' · ');
         return pa.map((p: any) => `${p.sym} ${p.pnlPct != null ? (p.pnlPct >= 0 ? '+' : '') + p.pnlPct.toFixed(1) + '%' : '—'} → ${p.recommendation}`).join('\n');
       })(),
     },
     {
-      id: 'venice', icon: '🔒', label: 'Venice Private Reasoning', highlight: true,
+      id: 'venice', icon: '🔒', label: 'Venice Reasoning (at decision time)', highlight: true,
       detail: cycle.reasoning || cycle.reason || 'No reasoning logged',
     },
     {
@@ -113,6 +156,7 @@ function CycleTimeline({ cycle, positions }: { cycle: any; positions: any[] }) {
   );
 }
 
+// ── Cycle Log ────────────────────────────────────────────────────────────────
 function CycleLog({ cycles, positions }: { cycles: any[]; positions: any[] }) {
   const [expanded, setExpanded] = useState<number | null>(0);
   if (!cycles.length) return (
@@ -130,7 +174,9 @@ function CycleLog({ cycles, positions }: { cycles: any[]; positions: any[] }) {
               <button onClick={() => setExpanded(isOpen ? null : i)} className="w-full text-left flex items-center gap-2 px-3 py-2">
                 <span className="mono text-[9px] text-[#6b7280] w-[82px] shrink-0">{c.ts ? shortTime(c.ts) : '—'}</span>
                 <span className="shrink-0"><ActionBadge action={c.action || 'hold'} /></span>
-                {c.asset && c.asset !== 'USDC' && <span className="mono text-xs font-bold text-indigo-300 shrink-0">{c.asset}</span>}
+                {isTrade && c.asset && c.asset !== 'USDC' && (
+                  <span className="mono text-xs font-bold text-green-300 shrink-0">{c.asset}</span>
+                )}
                 <span className="text-[10px] text-[#6b7280] truncate flex-1 min-w-0">
                   {c.reasoning ? c.reasoning.slice(0, 80) : c.seenCount ? `${c.seenCount} tokens screened` : '—'}
                 </span>
@@ -141,7 +187,9 @@ function CycleLog({ cycles, positions }: { cycles: any[]; positions: any[] }) {
                 <div className="px-3 pb-4">
                   {c.reasoning && (
                     <div className="mb-2 p-3 bg-[#111118] rounded-lg border border-indigo-500/10">
-                      <div className="text-[9px] font-bold text-indigo-400 uppercase tracking-wider mb-1.5">Venice Private Reasoning</div>
+                      <div className="text-[9px] font-bold text-indigo-400 uppercase tracking-wider mb-1.5">
+                        Venice Reasoning (at decision time)
+                      </div>
                       <p className="text-xs text-[#e2e8f0] leading-relaxed italic">{c.reasoning}</p>
                       {c.confidence > 0 && <span className="mono text-[10px] text-[#6b7280] mt-1 block">confidence: {c.confidence}%</span>}
                     </div>
@@ -157,14 +205,10 @@ function CycleLog({ cycles, positions }: { cycles: any[]; positions: any[] }) {
   );
 }
 
+// ── Main ─────────────────────────────────────────────────────────────────────
 export default function Home() {
   const [status, setStatus] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [query, setQuery] = useState("");
-  const [asking, setAsking] = useState(false);
-  const [steps, setSteps] = useState<StreamStep[]>([]);
-  const [verdict, setVerdict] = useState<string | null>(null);
-  const [verdictType, setVerdictType] = useState<"buy" | "pass" | "watch" | null>(null);
 
   useEffect(() => {
     const load = async () => {
@@ -180,53 +224,20 @@ export default function Home() {
     return () => clearInterval(iv);
   }, []);
 
-  const handleAsk = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!query || asking) return;
-    setAsking(true); setVerdict(null); setVerdictType(null);
-    const init: StreamStep[] = [
-      { id: 1, label: "Market Intelligence", status: "pending" },
-      { id: 2, label: "Technical Analysis", status: "pending" },
-      { id: 3, label: "Risk Calibration", status: "pending" },
-      { id: 4, label: "Social Sentiment", status: "pending" },
-      { id: 5, label: "Autonomous Reasoning", status: "pending" },
-    ];
-    setSteps(init);
-    try {
-      const res = await fetch('/api/ask', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ query }) });
-      if (!res.body) return;
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      while (true) {
-        const { value, done } = await reader.read();
-        if (done) break;
-        const chunk = decoder.decode(value);
-        for (const line of chunk.split('\n')) {
-          if (line.startsWith('data: ')) {
-            const data = JSON.parse(line.slice(6));
-            if (data.step) setSteps(prev => prev.map(s => s.id === data.step ? { ...s, status: data.status, detail: data.detail || s.detail } : s));
-            if (data.verdict) { setVerdict(data.verdict); setVerdictType(data.verdictType); }
-          }
-        }
-      }
-    } catch {}
-    finally { setAsking(false); }
-  };
-
-  const wallet    = status?.wallet || {};
+  const wallet   = status?.wallet || {};
   const positions = status?.positions || [];
-  const cycles    = status?.cycleHistory || [];
-  const ar        = status?.autoresearch || {};
-  const arOnchain = ar.onchain  || {};
-  const arHourly  = ar.hourly   || {};
-  const ar5m      = ar.fiveMin  || {};
+  const cycles   = status?.cycleHistory || [];
+  const ar       = status?.autoresearch || {};
+  const arOnchain = ar.onchain || {};
+  const arHourly  = ar.hourly  || {};
+  const ar5m      = ar.fiveMin || {};
   const yieldPos  = status?.yield;
   const openPos   = positions.filter((p: any) => !p.closedAt);
 
   return (
     <main className="min-h-screen p-4 md:p-6 max-w-7xl mx-auto relative z-10">
 
-      {/* ── Compact Header ── */}
+      {/* ── Header ── */}
       <header className="flex items-center justify-between gap-4 mb-5 bg-[#111118] border border-[#1e1e2e] rounded-2xl px-4 py-3">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20">
@@ -267,7 +278,7 @@ export default function Home() {
       {/* ── Stack pills ── */}
       <div className="flex flex-wrap gap-2 mb-5">
         {[
-          { label: 'Bankr Execution', color: 'bg-indigo-500' },
+          { label: 'Bankr LLM Gateway', color: 'bg-indigo-500' },
           { label: 'Venice E2EE', color: 'bg-purple-500' },
           { label: 'Checkr × x402', color: 'bg-orange-500' },
           { label: 'Alchemy Onchain', color: 'bg-blue-500' },
@@ -278,17 +289,16 @@ export default function Home() {
             <span className="text-[10px] font-medium text-[#e2e8f0]">{label}</span>
           </div>
         ))}
-        {/* Checkr x402 one-liner */}
         <div className="bg-[#0d0a00] border border-orange-500/20 px-3 py-1 rounded-full flex items-center gap-2">
           <span className="text-orange-400 text-xs">⚡</span>
-          <span className="text-[10px] text-orange-300">Pays Checkr onchain via x402 every cycle — no API key, no human approval</span>
+          <span className="text-[10px] text-orange-300">Pays Checkr autonomously via x402 — no API key, no human approval</span>
         </div>
       </div>
 
       {/* ── 2-column layout ── */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
 
-        {/* ── LEFT: 2/5 width ── */}
+        {/* ── LEFT ── */}
         <div className="lg:col-span-2 flex flex-col gap-4">
 
           {/* Positions */}
@@ -298,8 +308,9 @@ export default function Home() {
               {loading ? (
                 [1,2,3].map(i => <div key={i} className="h-14 bg-[#1a1a24] rounded-xl animate-pulse" />)
               ) : openPos.length > 0 ? openPos.map((p: any, i: number) => {
-                const pnlPct = p.pnlPct ?? 0;
-                const pnlUSD = p.pnlUSD ?? 0;
+                const hasPnl = p.currentPrice != null;
+                const pnlPct = hasPnl ? (p.pnlPct ?? 0) : null;
+                const pnlUSD = hasPnl ? (p.pnlUSD ?? 0) : null;
                 const curUSD = p.currentUSD ?? p.sizeUSD ?? 0;
                 const trailActive = (p.peakPct ?? 0) >= 1 || p.trailActivated;
                 return (
@@ -311,9 +322,13 @@ export default function Home() {
                       <div>
                         <div className="flex items-center gap-2">
                           <span className="font-bold text-sm">{p.sym}</span>
-                          <span className={`mono text-xs font-bold ${pnlColor(pnlPct)}`}>
-                            {pnlPct >= 0 ? '+' : ''}{pnlPct.toFixed(2)}%
-                          </span>
+                          {pnlPct != null ? (
+                            <span className={`mono text-xs font-bold ${pnlColor(pnlPct)}`}>
+                              {pnlPct >= 0 ? '+' : ''}{pnlPct.toFixed(2)}%
+                            </span>
+                          ) : (
+                            <span className="mono text-xs text-[#6b7280]">—</span>
+                          )}
                         </div>
                         <div className="text-[10px] text-[#6b7280] mono">
                           {p.entryPrice ? `$${Number(p.entryPrice).toPrecision(4)}` : '—'}
@@ -323,11 +338,15 @@ export default function Home() {
                     </div>
                     <div className="text-right">
                       <div className="text-xs font-bold mono">${curUSD.toFixed(2)}</div>
-                      <div className={`text-[10px] mono font-semibold ${pnlColor(pnlUSD)}`}>
-                        {pnlUSD >= 0 ? '+' : ''}${Math.abs(pnlUSD).toFixed(2)}
-                      </div>
+                      {pnlUSD != null ? (
+                        <div className={`text-[10px] mono font-semibold ${pnlColor(pnlUSD)}`}>
+                          {pnlUSD >= 0 ? '+' : ''}${Math.abs(pnlUSD).toFixed(2)}
+                        </div>
+                      ) : (
+                        <div className="text-[10px] text-[#6b7280] mono">—</div>
+                      )}
                       <div className="text-[10px] text-[#6b7280] mono">
-                        {trailActive ? `Trail: -${p.trailStop ?? 5}% ✓` : `HardSL -${p.hardSlPct ?? 3}%`}
+                        {trailActive ? `Trail -${p.trailStop ?? 5}% ✓` : `SL -${p.hardSlPct ?? 3}%`}
                       </div>
                     </div>
                   </div>
@@ -357,11 +376,11 @@ export default function Home() {
             </div>
           </Card>
 
-          {/* Autoresearch */}
+          {/* Self-improving brain */}
           <Card>
             <Label>Self-Improving Brain</Label>
             <p className="text-[10px] text-[#6b7280] mb-4 leading-relaxed">
-              3 parallel loops run 24/7 via Bankr LLM. Each loop proposes scoring changes, backtests on real Base token data, and auto-promotes improvements to the live agent — no human intervention.
+              3 autoresearch loops run 24/7 via Bankr LLM. Each proposes scoring changes, backtests on real Base token data, and auto-promotes improvements to the live agent — no human required.
             </p>
             <div className="space-y-3">
               {[
@@ -374,7 +393,7 @@ export default function Home() {
                     <span className={`text-[11px] font-bold ${color}`}>{name}</span>
                     <span className="mono text-[10px] text-[#6b7280]">{(data.expCount || 0).toLocaleString()} exp</span>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-4">
                     <div>
                       <div className="text-[9px] text-[#6b7280] mb-0.5">Best Sharpe</div>
                       <div className="mono text-sm font-bold text-white">{(data.bestValSharpe || 0).toFixed(2)}</div>
@@ -384,7 +403,7 @@ export default function Home() {
                       <div className="mono text-sm font-bold text-white">{(data.bestScore || 0).toFixed(2)}</div>
                     </div>
                     {(data.expCount || 0) > 0 && (
-                      <div className={`ml-auto text-[10px] font-bold ${color}`}>↑ improving</div>
+                      <div className={`ml-auto text-[10px] font-bold ${color}`}>↑ live</div>
                     )}
                   </div>
                 </div>
@@ -392,40 +411,11 @@ export default function Home() {
             </div>
           </Card>
 
-          {/* Talk to delu */}
-          <Card>
-            <Label>Ask delu</Label>
-            <form onSubmit={handleAsk} className="relative mb-3">
-              <input
-                type="text" value={query} onChange={e => setQuery(e.target.value)}
-                placeholder="Any token... e.g. VIRTUAL"
-                className="w-full bg-[#0a0a0f] border border-[#1e1e2e] rounded-xl py-2.5 pl-9 pr-10 text-sm focus:outline-none focus:border-indigo-500 transition-colors"
-              />
-              <Search className="absolute left-3 top-3 text-[#6b7280]" size={14} />
-              <button type="submit" disabled={asking || !query}
-                className="absolute right-2 top-1.5 w-7 h-7 bg-indigo-600 rounded-lg flex items-center justify-center hover:bg-indigo-500 disabled:opacity-50 transition-all">
-                {asking ? <Loader2 size={12} className="text-white animate-spin" /> : <ArrowRight size={12} className="text-white" />}
-              </button>
-            </form>
-            <div className="space-y-1 min-h-[60px]">
-              {steps.length > 0 ? steps.map(s => <StepRow key={s.id} step={s} />) : (
-                <div className="flex items-center justify-center py-4 opacity-30">
-                  <Cpu size={24} className="text-indigo-500" />
-                </div>
-              )}
-            </div>
-            {verdict && (
-              <div className={`mt-3 p-3 rounded-xl border ${verdictType === 'buy' ? 'bg-green-500/5 border-green-500/20' : verdictType === 'pass' ? 'bg-red-500/5 border-red-500/20' : 'bg-yellow-500/5 border-yellow-500/20'}`}>
-                <div className={`text-sm font-mono font-bold mb-1 ${verdictType === 'buy' ? 'text-green-500' : verdictType === 'pass' ? 'text-red-500' : 'text-yellow-500'}`}>
-                  {verdictType?.toUpperCase()}
-                </div>
-                <p className="text-xs text-[#e2e8f0] leading-relaxed">{verdict}</p>
-              </div>
-            )}
-          </Card>
+          {/* Pipeline */}
+          <PipelineCard />
         </div>
 
-        {/* ── RIGHT: 3/5 width — Merged Cycle Log ── */}
+        {/* ── RIGHT — Cycle Log ── */}
         <div className="lg:col-span-3">
           <CycleLog cycles={cycles} positions={positions} />
         </div>
