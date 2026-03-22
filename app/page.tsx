@@ -303,7 +303,7 @@ function PipelineCard() {
     { icon: '🧠', label: 'Quant Brain',      detail: `Self-evolved scoring — 10,000+ experiments, rewrites itself`, color: 'text-purple-400'  },
     { icon: '🛡️', label: 'Rug filter',       detail: 'Liquidity · FDV · age · buy ratio · whale concentration',   color: 'text-yellow-400'  },
     { icon: '🔒', label: 'Venice E2EE',      detail: 'Private reasoning — encrypted inference, no logs retained',  color: 'text-violet-400'  },
-    { icon: '✅', label: 'Bankr Execute',    detail: 'Onchain swap + ATR trailing stop (2.5× ATR, activates +1%)', color: 'text-green-400'   },
+    { icon: '✅', label: 'Bankr Execute',    detail: 'Onchain swap + ATR trailing stop (auto-evolved, activates +0.5%)', color: 'text-green-400'   },
   ];
   return (
     <Card className="p-4">
