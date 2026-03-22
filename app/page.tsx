@@ -368,7 +368,10 @@ function TokenSignalRow({ t }: { t: any }) {
               ⚡{t.velocity?.toFixed(1)} att{t.attentionDelta?.toFixed(1)}
             </span>
           )}
-          {t.att_1h != null && t.att_1h !== 0 && (
+          {t.multiTFBreakdown && (
+            <span className="text-[8px] text-blue-300 mono">MTF:{t.multiTFBreakdown.replace(/ \| /g,' ')}</span>
+          )}
+          {!t.multiTFBreakdown && t.att_1h != null && t.att_1h !== 0 && (
             <span className="mono text-[8px] text-[#4b5563]">
               {t.att_1h?.toFixed(1)}/{t.att_4h?.toFixed(1)}
             </span>

@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-03-22T17:16:05.960Z",
-  "totalExp": 9834,
-  "totalAccepted": 33,
+  "generatedAt": "2026-03-22T21:08:18.423Z",
+  "totalExp": 11263,
+  "totalAccepted": 47,
   "topScore": 28.012,
   "topLoop": "5m",
   "loops": [
     {
       "name": "5m",
       "color": "orange",
-      "expCount": 1484,
+      "expCount": 1781,
       "acceptedCount": 10,
-      "acceptRate": 0.7,
+      "acceptRate": 0.6,
       "bestScore": 28.012,
       "breakthroughCount": 10,
       "signals": [
@@ -24,7 +24,7 @@
     {
       "name": "Onchain",
       "color": "indigo",
-      "expCount": 5119,
+      "expCount": 5494,
       "acceptedCount": 3,
       "acceptRate": 0.1,
       "bestScore": 20.402,
@@ -42,25 +42,25 @@
     {
       "name": "Hourly",
       "color": "emerald",
-      "expCount": 299,
-      "acceptedCount": 6,
-      "acceptRate": 2,
-      "bestScore": 9.306,
-      "breakthroughCount": 6,
+      "expCount": 538,
+      "acceptedCount": 20,
+      "acceptRate": 3.7,
+      "bestScore": 11.012,
+      "breakthroughCount": 20,
       "signals": [
         "Volume burst detection",
         "Volatility filter",
         "Trend (EMA/SMA crossover)",
         "BTC correlation context"
       ],
-      "latestDescription": "Add 4h close above 20-SMA filter to avoid mean-reversion traps and prioritize uptrend alignment in b"
+      "latestDescription": "Replace fixed 1.3x volume spike threshold with momentum-adaptive scaling (1.2x + 0.3x * momentum str"
     },
     {
       "name": "Daily",
       "color": "blue",
-      "expCount": 2932,
+      "expCount": 3450,
       "acceptedCount": 14,
-      "acceptRate": 0.5,
+      "acceptRate": 0.4,
       "bestScore": 3.888,
       "breakthroughCount": 9,
       "signals": [
@@ -294,6 +294,118 @@
       "score": 9.306,
       "ts": "2026-03-22T17:05:29.438Z",
       "description": "Add 4h close above 20-SMA filter to avoid mean-reversion traps and prioritize uptrend alignment in b",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 333,
+      "score": 9.378,
+      "ts": "2026-03-22T17:27:36.722Z",
+      "description": "Replace OBV microstructure with hourly close-above-open ratio (last 4 bars) weighted by volume momen",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 334,
+      "score": 9.491,
+      "ts": "2026-03-22T17:28:00.965Z",
+      "description": "Replace close-above-open ratio with hourly close-above-midpoint ratio (high+low)/2 to capture true d",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 335,
+      "score": 9.505,
+      "ts": "2026-03-22T17:28:22.610Z",
+      "description": "Add hourly close-above-open momentum (last 4 bars) as dedicated signal to capture intraday direction",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 408,
+      "score": 9.668,
+      "ts": "2026-03-22T17:57:50.193Z",
+      "description": "Replace close-above-midpoint and close-above-open signals with hourly oversold zScore bounce on 4h m",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 428,
+      "score": 9.749,
+      "ts": "2026-03-22T18:04:57.790Z",
+      "description": "Add intraday volume-weighted momentum confirmation to oversold bounce signal, requiring both negativ",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 433,
+      "score": 9.965,
+      "ts": "2026-03-22T18:06:42.358Z",
+      "description": "Replace hourly oversold zScore bounce with 4h close pullback from recent 4h high (range compression ",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 456,
+      "score": 10.172,
+      "ts": "2026-03-22T18:14:49.117Z",
+      "description": "Reduce coilBreakout pullback upper bound from 0.08 to 0.05 to filter out weak signals and require ti",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 467,
+      "score": 10.354,
+      "ts": "2026-03-22T18:18:34.882Z",
+      "description": "Add 4h volume confirmation (vol4h > vol24h) to coilBreakout signal to filter false breakouts in low-",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 474,
+      "score": 10.497,
+      "ts": "2026-03-22T18:21:02.545Z",
+      "description": "Add 1h oversold bounce filter (z-score < -1.5 on last 1h return) with volume spike confirmation to c",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 476,
+      "score": 10.597,
+      "ts": "2026-03-22T18:21:45.637Z",
+      "description": "Increase 1h oversold bounce z-score threshold from -1.5 to -1.2 to catch earlier mean reversion sign",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 499,
+      "score": 10.667,
+      "ts": "2026-03-22T18:30:26.205Z",
+      "description": "Replace fixed 1h z-score threshold -1.2 with adaptive threshold scaled by 4h momentum strength and v",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 501,
+      "score": 10.705,
+      "ts": "2026-03-22T18:31:10.818Z",
+      "description": "Replace adaptive threshold scaling with fixed -1.5 and boost oversoldBounce weight from 0.15 to 0.22",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 503,
+      "score": 10.887,
+      "ts": "2026-03-22T18:31:55.898Z",
+      "description": "Replace fixed -1.5 z-score threshold with dynamic threshold scaled by 4h momentum strength to reduce",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 512,
+      "score": 11.012,
+      "ts": "2026-03-22T18:35:49.968Z",
+      "description": "Replace fixed 1.3x volume spike threshold with momentum-adaptive scaling (1.2x + 0.3x * momentum str",
       "loop": "Hourly",
       "color": "emerald"
     }
