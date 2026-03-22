@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-22T21:15:18.623Z",
+  "generatedAt": "2026-03-22T23:39:43.798Z",
   "totalExp": 11263,
   "totalAccepted": 47,
   "topScore": 28.012,
@@ -14,10 +14,11 @@
       "bestScore": 28.012,
       "breakthroughCount": 10,
       "signals": [
-        "Relative strength vs BTC",
-        "Volatility filter",
-        "Trend (EMA/SMA crossover)",
-        "BTC correlation context"
+        "Relative strength vs BTC (4h)",
+        "Realized volatility regime filter",
+        "Volume burst (directional-filtered)",
+        "EMA/SMA trend filter",
+        "BTC gate (blocks entry on BTC breakdown)"
       ],
       "latestDescription": null
     },
@@ -30,12 +31,13 @@
       "bestScore": 20.402,
       "breakthroughCount": 3,
       "signals": [
+        "Relative strength vs BTC (4h)",
         "RSI(8) momentum zone",
-        "RSI oversold bounce",
-        "Relative strength vs BTC",
-        "Smart wallet accumulation (Alchemy)",
-        "Whale concentration penalty",
-        "Momentum regime detection"
+        "RSI(8) oversold bounce",
+        "Smart wallet accumulation (unique + repeat buyers)",
+        "Whale concentration penalty (>50% = red flag)",
+        "Transfer velocity burst detection",
+        "Momentum acceleration vs BTC"
       ],
       "latestDescription": "Implement dual-regime detection (momentum vs mean-reversion) with adaptive weighting based on recent"
     },
@@ -48,10 +50,13 @@
       "bestScore": 11.012,
       "breakthroughCount": 20,
       "signals": [
-        "Volume burst detection",
-        "Volatility filter",
-        "Trend (EMA/SMA crossover)",
-        "BTC correlation context"
+        "Relative strength vs BTC (7d)",
+        "RSI oversold bounce + volume confirmation",
+        "Range coil + breakout detection",
+        "Realized volatility regime filter",
+        "Adaptive volume threshold (momentum-scaled)",
+        "Momentum acceleration vs BTC",
+        "EMA/SMA trend filter"
       ],
       "latestDescription": "Replace fixed 1.3x volume spike threshold with momentum-adaptive scaling (1.2x + 0.3x * momentum str"
     },
@@ -64,9 +69,9 @@
       "bestScore": 3.888,
       "breakthroughCount": 9,
       "signals": [
-        "Mean-reversion filter",
-        "Volatility filter",
-        "Trend (EMA/SMA crossover)",
+        "Realized volatility regime filter",
+        "Mean-reversion Z-score filter",
+        "EMA/SMA trend filter",
         "BTC correlation context"
       ],
       "latestDescription": null
