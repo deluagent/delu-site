@@ -370,13 +370,14 @@ function CycleTimeline({ cycle, positions }: { cycle: any; positions: any[] }) {
       ),
     },
     {
-      id: 'discovery', icon: '📡', label: `Discovery — ${entries.length} tokens`,
+      id: 'discovery', icon: '📡', label: `All tokens screened this cycle (${entries.length})`,
       content: (
         <div>
           {entries.length === 0 ? (
             <p className="text-[9px] text-[#6b7280] mono">No tokens discovered this cycle</p>
           ) : (
             <div>
+              <p className="text-[8px] text-[#4b5563] mb-1">Discovered via Bankr trending + Checkr spikes + Alchemy onchain. Venice picks one.</p>
               {entries.slice(0, 6).map((t: any) => <TokenSignalRow key={t.symbol} t={t} />)}
               {entries.length > 6 && <p className="text-[8px] text-[#4b5563] mt-1">+{entries.length-6} more</p>}
             </div>
