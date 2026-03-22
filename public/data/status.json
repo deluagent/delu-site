@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-03-22T22:54:15.957Z",
+  "updatedAt": "2026-03-22T23:36:08.081Z",
   "regime": "BEAR",
-  "btcPrice": 68176,
+  "btcPrice": 68296,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 21 min",
+  "nextCycle": "in 12 min",
   "wallet": {
-    "totalUSD": 76.22,
+    "totalUSD": 76.16,
     "positionsUSD": 0,
     "liquidUSDC": 45.21,
     "yieldUSD": 45.21,
@@ -23,15 +23,15 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-22T22:45:25.324Z",
-    "ago": "9m ago",
+    "ts": "2026-03-22T23:18:11.010Z",
+    "ago": "18m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
-      "btcNow": 68176.48,
-      "sma200": 71511.26245000002,
-      "pctFrom200": -0.04663296851082269,
-      "volRatio": 0.7762904840273829,
+      "btcNow": 68296.48,
+      "sma200": 71500.65885000002,
+      "pctFrom200": -0.044813277269542595,
+      "volRatio": 0.7789596955468325,
       "btcState": "BEAR",
       "ethState": "BEAR",
       "breadthFraction": "BTC:BEAR ETH:BEAR",
@@ -51,25 +51,17 @@
     "topScores": []
   },
   "performance": {
-    "closedTrades": 10,
-    "winRate": "1/10",
+    "closedTrades": 7,
+    "winRate": "1/7",
     "recentTrades": [
       {
         "sym": "MOLT",
         "pnlPct": -5.2,
         "won": false,
-        "regime": "unknown",
+        "regime": "BEAR",
         "entryTx": null,
         "exitTx": null,
-        "closedAt": "2026-03-21T19:44:01.587Z"
-      },
-      {
-        "sym": "MOLT",
-        "pnlPct": -5.2,
-        "won": false,
-        "regime": "unknown",
-        "entryTx": null,
-        "exitTx": null,
+        "openedAt": "2026-03-21T20:15:00.000Z",
         "closedAt": "2026-03-21T19:44:01.587Z"
       },
       {
@@ -123,38 +115,126 @@
         "closedAt": "2026-03-22T17:14:44.979Z"
       },
       {
-        "sym": "ROBOTMONEY",
-        "pnlPct": 102.61,
+        "sym": "BLUEAGENT",
+        "pnlPct": 121,
         "won": true,
         "regime": "BEAR",
         "entryTx": null,
         "exitTx": null,
-        "openedAt": "2026-03-22T17:16:23.147Z",
-        "closedAt": "2026-03-22T19:13:50.381Z"
-      },
-      {
-        "sym": "BLUEAGENT",
-        "pnlPct": -14.1,
-        "won": false,
-        "regime": "BEAR",
-        "entryTx": null,
-        "exitTx": null,
         "openedAt": "2026-03-22T19:04:50.123Z",
-        "closedAt": "2026-03-22T21:06:22.705Z"
-      },
-      {
-        "sym": "BLUEAGENT",
-        "pnlPct": -14.1,
-        "won": false,
-        "regime": "BEAR",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-22T19:04:50.123Z",
-        "closedAt": "2026-03-22T21:06:22.705Z"
+        "closedAt": "2026-03-22T20:32:00.000Z"
       }
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-22T23:18:11.010Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 68296.48,
+        "sma200": 71500.65885000002,
+        "pctFrom200": -0.044813277269542595,
+        "volRatio": 0.7789596955468325,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "seenCount": 0,
+      "flagged": [],
+      "traded": [],
+      "trendingEntries": [],
+      "positionUpdates": [],
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "hardcoded"
+    },
+    {
+      "ts": "2026-03-22T23:11:08.645Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 68320.18,
+        "sma200": 71500.77735000002,
+        "pctFrom200": -0.044483395396260325,
+        "volRatio": 0.7789270074029069,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "seenCount": 0,
+      "flagged": [],
+      "traded": [],
+      "trendingEntries": [],
+      "positionUpdates": [],
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "hardcoded"
+    },
+    {
+      "ts": "2026-03-22T23:05:55.829Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 68372.41,
+        "sma200": 71501.03850000002,
+        "pctFrom200": -0.04375640641918816,
+        "volRatio": 0.7789430538314437,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "seenCount": 0,
+      "flagged": [],
+      "traded": [],
+      "trendingEntries": [],
+      "positionUpdates": [],
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "hardcoded"
+    },
+    {
+      "ts": "2026-03-22T22:59:07.543Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 68302.12,
+        "sma200": 71511.89065000002,
+        "pctFrom200": -0.04488443279607263,
+        "volRatio": 0.778199955823555,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "seenCount": 0,
+      "flagged": [],
+      "traded": [],
+      "trendingEntries": [],
+      "positionUpdates": [],
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "hardcoded"
+    },
     {
       "ts": "2026-03-22T22:45:25.324Z",
       "regime": "BEAR",
@@ -3828,293 +3908,6 @@
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded"
-    },
-    {
-      "ts": "2026-03-22T03:14:35.339Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 69321.3,
-        "sma200": 71715.54500000001,
-        "pctFrom200": -0.03338530021629215,
-        "volRatio": 0.7757409990586634,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "BEAR regime, no oversold signals — yield only",
-      "seenCount": 0,
-      "flagged": [],
-      "traded": [],
-      "trendingEntries": [],
-      "positionUpdates": [],
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "hardcoded"
-    },
-    {
-      "ts": "2026-03-22T02:44:35.314Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 69247.35,
-        "sma200": 71724.73440000002,
-        "pctFrom200": -0.03454016833556946,
-        "volRatio": 0.7754442827915062,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "buy",
-      "asset": "MOLT",
-      "confidence": 80,
-      "reasoning": "MOLT has a high onchain trend score of 0.47 and a strong buyer ratio of 0.57, indicating a potential for further price increase. The token's liquidity of $1870K and safe rug score of 80/100 also support this decision.",
-      "seenCount": 10,
-      "flagged": [
-        "DRB",
-        "BNKR",
-        "BOTCOIN"
-      ],
-      "traded": [
-        "MOLT"
-      ],
-      "trendingEntries": [
-        {
-          "symbol": "MOLT",
-          "score": 0.475,
-          "rank": 2,
-          "ret1h": 0.010870320063726683,
-          "moveFrac": 0,
-          "quantScore": 0
-        },
-        {
-          "symbol": "KTA",
-          "score": 0.475,
-          "rank": 4,
-          "ret1h": -0.00144393345488513,
-          "moveFrac": 0,
-          "quantScore": 0
-        },
-        {
-          "symbol": "BLUEAGENT",
-          "score": 0.475,
-          "rank": 7,
-          "ret1h": 0.0033198081888601884,
-          "moveFrac": 0,
-          "quantScore": 0
-        },
-        {
-          "symbol": "VVV",
-          "score": 0.475,
-          "rank": 10,
-          "ret1h": -0.004284753311266017,
-          "moveFrac": 0,
-          "quantScore": 0
-        },
-        {
-          "symbol": "TOSHI",
-          "score": 0.22866666666666668,
-          "rank": null,
-          "ret1h": null,
-          "moveFrac": null,
-          "quantScore": null
-        }
-      ],
-      "positionUpdates": [
-        {
-          "sym": "KTA",
-          "pnlPct": -5.53,
-          "quantScore": 0,
-          "volumeTrend": "declining",
-          "recommendation": "hold"
-        },
-        {
-          "sym": "BNKR",
-          "pnlPct": -93.98,
-          "quantScore": 0,
-          "volumeTrend": "stable",
-          "recommendation": "hold"
-        }
-      ],
-      "topSignal": "MOLT score=0.47 ret1h=1.1%",
-      "layers": [
-        "bankr-screen",
-        "venice-e2ee"
-      ],
-      "screenLayer": "fallback"
-    },
-    {
-      "ts": "2026-03-22T02:14:35.287Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 69066.59,
-        "sma200": 71723.83060000003,
-        "pctFrom200": -0.03704822480577372,
-        "volRatio": 0.7739231758062103,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "buy",
-      "asset": "BNKR",
-      "confidence": 80,
-      "reasoning": "BNKR has a high velocity score and sustained social attention, indicating strong cross-sectional alpha in the current BEAR regime.",
-      "seenCount": 9,
-      "flagged": [
-        "BOTCOIN",
-        "BNKR",
-        "DRB"
-      ],
-      "traded": [
-        "BNKR"
-      ],
-      "trendingEntries": [
-        {
-          "symbol": "MOLT",
-          "score": 0.475,
-          "rank": 2,
-          "ret1h": 0.010870320063726683,
-          "moveFrac": 0,
-          "quantScore": 0
-        },
-        {
-          "symbol": "KTA",
-          "score": 0.475,
-          "rank": 4,
-          "ret1h": -0.00144393345488513,
-          "moveFrac": 0,
-          "quantScore": 0
-        },
-        {
-          "symbol": "VVV",
-          "score": 0.475,
-          "rank": 10,
-          "ret1h": -0.004284753311266017,
-          "moveFrac": 0,
-          "quantScore": 0
-        },
-        {
-          "symbol": "TIBBIR",
-          "score": 0.4126666666666667,
-          "rank": null,
-          "ret1h": null,
-          "moveFrac": null,
-          "quantScore": null
-        },
-        {
-          "symbol": "BOTCOIN",
-          "score": 0.9600000000000001,
-          "rank": null,
-          "ret1h": null,
-          "moveFrac": null,
-          "quantScore": null
-        }
-      ],
-      "positionUpdates": [
-        {
-          "sym": "KTA",
-          "pnlPct": -5.53,
-          "quantScore": 0,
-          "volumeTrend": "declining",
-          "recommendation": "hold"
-        }
-      ],
-      "topSignal": "MOLT score=0.47 ret1h=1.1%",
-      "layers": [
-        "bankr-screen",
-        "venice-e2ee"
-      ],
-      "screenLayer": "fallback"
-    },
-    {
-      "ts": "2026-03-22T01:44:35.262Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 68845.5,
-        "sma200": 71733.19040000002,
-        "pctFrom200": -0.04025598727587084,
-        "volRatio": 0.7789928009628405,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "hold",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "No token clears the signal threshold, and confidence is below the required level for a buy decision.",
-      "seenCount": 8,
-      "flagged": [
-        "BOTCOIN",
-        "DRB",
-        "BNKR"
-      ],
-      "traded": [],
-      "trendingEntries": [
-        {
-          "symbol": "MOLT",
-          "score": 0.475,
-          "rank": 2,
-          "ret1h": 0.05711929109376079,
-          "moveFrac": 0,
-          "quantScore": 0
-        },
-        {
-          "symbol": "KTA",
-          "score": 0.475,
-          "rank": 5,
-          "ret1h": -0.02309664226721842,
-          "moveFrac": 0,
-          "quantScore": 0
-        },
-        {
-          "symbol": "VVV",
-          "score": 0.475,
-          "rank": 10,
-          "ret1h": -0.018189602519481308,
-          "moveFrac": 0,
-          "quantScore": 0
-        },
-        {
-          "symbol": "TIBBIR",
-          "score": 0.31,
-          "rank": null,
-          "ret1h": null,
-          "moveFrac": null,
-          "quantScore": null
-        },
-        {
-          "symbol": "BOTCOIN",
-          "score": 0.9600000000000001,
-          "rank": null,
-          "ret1h": null,
-          "moveFrac": null,
-          "quantScore": null
-        }
-      ],
-      "positionUpdates": [
-        {
-          "sym": "KTA",
-          "pnlPct": -5.39,
-          "quantScore": 0,
-          "volumeTrend": "increasing",
-          "recommendation": "hold"
-        }
-      ],
-      "topSignal": "MOLT score=0.47 ret1h=5.7%",
-      "layers": [
-        "bankr-screen",
-        "venice-e2ee"
-      ],
-      "screenLayer": "fallback"
     }
   ],
   "reasoningTraces": [
