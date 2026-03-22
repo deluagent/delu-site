@@ -1,143 +1,113 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { ExternalLink, ChevronDown, ChevronRight, TrendingUp, TrendingDown, Minus, Zap, Brain, BarChart2, Eye, RefreshCw, ArrowUpRight } from 'lucide-react';
+import {
+  ExternalLink, ChevronDown, ChevronRight, ArrowUpRight, ArrowDownRight,
+  Brain, Eye, Zap, RefreshCw, TrendingUp, TrendingDown, Minus,
+} from 'lucide-react';
+import {
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
+  RadialBarChart, RadialBar, PolarAngleAxis,
+} from 'recharts';
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// ─── types ────────────────────────────────────────────────────────────────────
+interface Trade {
+  sym: string; pnlPct: number; won: boolean; regime: string;
+  openedAt?: string; closedAt?: string; entryTx?: string; exitTx?: string;
+}
+
+// ─── helpers ──────────────────────────────────────────────────────────────────
+const mono  = (...c: string[]) => ['font-mono', ...c].join(' ');
+const dim   = 'text-[#6b7280]';
+const label = 'text-[8px] uppercase tracking-[.18em] text-[#4b5563] font-semibold';
+const card  = 'bg-[#0f0f17] border border-[#1c1c28] rounded-lg';
+
 const pnlColor = (n?: number | null) =>
-  !n || n === 0 ? 'text-[#6b7280]' : n > 0 ? 'text-emerald-400' : 'text-red-400';
+  !n || n === 0 ? 'text-[#6b7280]' : n > 0 ? 'text-[#22c55e]' : 'text-[#ef4444]';
 
-const mono = (...cls: string[]) => ['font-mono tracking-tight', ...cls].join(' ');
-
-const shortDate = (ts: string) => {
+const fmtDate = (ts?: string) => {
+  if (!ts) return '—';
   const d = new Date(ts);
-  return d.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ' ' +
-    d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }) + ' ' +
+    d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
 };
 
-const walletShort = (addr?: string) =>
-  addr ? `${addr.slice(0, 6)}…${addr.slice(-4)}` : '0xed2c…09da';
+const wallet = '0xed2ceca9de162c4f2337d7c1ab44ee9c427709da';
+const walletShort = `${wallet.slice(0, 6)}…${wallet.slice(-4)}`;
 
-// ── Design tokens ─────────────────────────────────────────────────────────────
-const BG   = 'bg-[#0a0a0f]';
-const CARD = 'bg-[#0f0f17] border border-[#1e1e2e]';
-const DIM  = 'text-[#6b7280]';
-const LABEL = 'text-[9px] uppercase tracking-[0.2em] text-[#4b5563] font-bold';
-
-// ── Sub-components ────────────────────────────────────────────────────────────
-const Pill = ({ color, label }: { color: string; label: string }) => (
-  <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-medium border ${color}`}>
-    <span className="w-1.5 h-1.5 rounded-full bg-current opacity-80" />
-    {label}
-  </span>
-);
-
-const StatBox = ({ label, value, sub, accent }: { label: string; value: string; sub?: string; accent?: string }) => (
-  <div className="flex flex-col gap-0.5">
-    <div className={LABEL}>{label}</div>
-    <div className={mono('text-lg font-bold', accent || 'text-[#e2e8f0]')}>{value}</div>
-    {sub && <div className={`text-[10px] ${DIM}`}>{sub}</div>}
-  </div>
-);
-
-const LoopBadge = ({ name, color }: { name: string; color: string }) => {
-  const colors: Record<string, string> = {
-    orange: 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-    indigo: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
-    emerald: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-    blue: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-  };
-  return (
-    <span className={`text-[9px] px-1.5 py-0.5 rounded border font-bold uppercase tracking-wider ${colors[color] || colors.blue}`}>
-      {name}
-    </span>
-  );
+// ─── learnings map (real post-trade insights from our autoresearch) ────────────
+const LEARNINGS: Record<string, string> = {
+  ROBOTMONEY: 'High onchain trend score + sustained social spike = strongest signal combination. RSI momentum zone confirmed.',
+  BLUEAGENT:  'Hard SL -3% too tight for micro-caps. Price wicked -21% before recovery. ATR-based floor now mandatory.',
+  KTA:        'RANGE_TIGHT regime + low confidence = marginal entry. Wider ATR stop would have avoided early exit.',
+  BNKR:       'ATR hard SL -3% fired at noise level. Widened to 3×ATR (min -8%) after this trade.',
+  MOLT:       'Stale price data caused ATR stop to see -5% as -3%. Added freshness check to OHLCV pipeline.',
+  CLAWNCH:    'Social signal decayed mid-hold. Checkr multi-window (1h/4h/8h) now weighted for sustained attention.',
+  MOLTEN:     'Volume burst confirmed by onchain flow but social signal was lagging. Multi-TF now cross-validates.',
 };
 
-// Action badge for cycle rows
-const ActionBadge = ({ action, asset }: { action: string; asset?: string }) => {
-  if (action === 'buy' || action === 'long') {
-    return (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase">
-        <ArrowUpRight size={9} />
-        BUY {asset || ''}
-      </span>
-    );
-  }
-  if (action === 'sell') {
-    return (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-400 border border-red-500/20 uppercase">
-        SELL {asset || ''}
-      </span>
-    );
-  }
-  return (
-    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-medium bg-[#111118] text-[#6b7280] border border-[#1e1e2e] uppercase">
-      HOLD
-    </span>
-  );
-};
-
-// ── Sections ──────────────────────────────────────────────────────────────────
-
-function HeroSection({ status, brain }: { status: any; brain: any }) {
+// ─── Section: Hero ────────────────────────────────────────────────────────────
+function Hero({ status }: { status: any }) {
   const w = status?.wallet || {};
-  const pnl = w.unrealPnlUSD || 0;
+  const pnl = w.unrealPnlUSD ?? 0;
   const integrations = [
-    { label: 'Bankr',        live: true  },
-    { label: 'Venice AI',    live: true  },
-    { label: 'Checkr x402',  live: true  },
-    { label: 'Alchemy',      live: true  },
+    { name: 'Bankr',       live: true },
+    { name: 'Venice AI',   live: true },
+    { name: 'Checkr x402', live: true },
+    { name: 'Alchemy',     live: true },
   ];
 
   return (
-    <section className="border-b border-[#1e1e2e] pb-8 mb-8">
-      {/* Name + wallet */}
-      <div className="flex items-start justify-between mb-6">
+    <section className="mb-10">
+      {/* Identity */}
+      <div className="flex items-start justify-between flex-wrap gap-4 mb-6">
         <div>
-          <div className="flex items-center gap-3 mb-1">
-            <h1 className="text-3xl font-bold tracking-tight text-[#e2e8f0]">delu</h1>
-            <span className="text-xs px-2 py-0.5 rounded-full border border-[#1e1e2e] text-[#6b7280] font-mono">Base mainnet</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className={mono('text-xs', DIM)}>
-              {walletShort('0xed2ceca9de162c4f2337d7c1ab44ee9c427709da')}
+          <div className="flex items-baseline gap-3 mb-1">
+            <h1 className="text-[2rem] font-bold tracking-tight text-white">delu</h1>
+            <span className={`${mono()} text-[10px] text-[#6b7280] border border-[#1c1c28] px-2 py-0.5 rounded`}>
+              Base mainnet
             </span>
-            <a href="https://basescan.org/address/0xed2ceca9de162c4f2337d7c1ab44ee9c427709da"
-               target="_blank" rel="noopener noreferrer"
-               className={`${DIM} hover:text-[#e2e8f0] transition-colors`}>
-              <ExternalLink size={11} />
+          </div>
+          <div className="flex items-center gap-1.5 mb-2">
+            <span className={mono('text-[11px]', dim)}>{walletShort}</span>
+            <a href={`https://basescan.org/address/${wallet}`} target="_blank" rel="noopener noreferrer"
+               className="text-[#4b5563] hover:text-white transition-colors">
+              <ExternalLink size={10} />
             </a>
           </div>
-          <p className="mt-2 text-sm text-[#9ca3af] max-w-md">
-            Autonomous onchain trading agent. Learns from every trade. Earns yield when idle.
+          <p className="text-[13px] text-[#9ca3af] leading-relaxed max-w-lg">
+            Autonomous onchain trading agent — learns from every trade, earns yield when idle,
+            pays for its own data with x402 micropayments.
           </p>
         </div>
-
-        {/* Integration pills */}
-        <div className="flex flex-col gap-1.5 items-end">
+        {/* Live integrations */}
+        <div className="flex flex-wrap gap-1.5">
           {integrations.map(i => (
-            <Pill key={i.label}
-              color={i.live
-                ? 'border-emerald-500/20 text-emerald-400'
-                : 'border-amber-500/20 text-amber-400'}
-              label={i.label}
-            />
+            <span key={i.name}
+              className={`flex items-center gap-1.5 text-[10px] px-2.5 py-1 rounded-full border font-medium
+                ${i.live
+                  ? 'border-[#22c55e]/20 text-[#22c55e] bg-[#22c55e]/5'
+                  : 'border-[#f59e0b]/20 text-[#f59e0b] bg-[#f59e0b]/5'}`}>
+              <span className={`w-1.5 h-1.5 rounded-full ${i.live ? 'bg-[#22c55e]' : 'bg-[#f59e0b]'}`} />
+              {i.name}
+            </span>
           ))}
         </div>
       </div>
 
-      {/* Key stats */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-[#1e1e2e] rounded-xl overflow-hidden">
+      {/* Stats bar */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-[#1c1c28] border border-[#1c1c28] rounded-lg overflow-hidden">
         {[
-          { label: 'Portfolio',    value: `$${(w.totalUSD || 0).toFixed(2)}`,   sub: 'total wallet value' },
-          { label: 'Liquid USDC',  value: `$${(w.liquidUSDC || 0).toFixed(2)}`, sub: 'ready to trade' },
-          { label: 'Unrealised P&L', value: `${pnl >= 0 ? '+' : ''}$${pnl.toFixed(2)}`,
-            sub: `${(w.unrealPnlPct || 0).toFixed(2)}%`, accent: pnlColor(pnl) },
-          { label: 'Next Cycle',   value: status?.nextCycle || '—', sub: 'every 30 min' },
+          { l: 'Portfolio',      v: `$${(w.totalUSD    ?? 0).toFixed(2)}`, s: 'total wallet value' },
+          { l: 'Liquid USDC',    v: `$${(w.liquidUSDC  ?? 0).toFixed(2)}`, s: 'ready to trade' },
+          { l: 'Unrealised P&L', v: `${pnl >= 0 ? '+' : ''}$${pnl.toFixed(2)}`,
+            s: `${(w.unrealPnlPct ?? 0).toFixed(2)}%`, accent: pnlColor(pnl) },
+          { l: 'Next Cycle',     v: status?.nextCycle ?? '—', s: 'runs every 30 min' },
         ].map(s => (
-          <div key={s.label} className="bg-[#0a0a0f] px-4 py-3">
-            <StatBox {...s} />
+          <div key={s.l} className="bg-[#0a0a0f] px-4 py-3">
+            <div className={`${label} mb-1`}>{s.l}</div>
+            <div className={mono('text-base font-bold', s.accent ?? 'text-white')}>{s.v}</div>
+            <div className={`text-[10px] ${dim} mt-0.5`}>{s.s}</div>
           </div>
         ))}
       </div>
@@ -145,50 +115,41 @@ function HeroSection({ status, brain }: { status: any; brain: any }) {
   );
 }
 
-function HowItWorksSection() {
+// ─── Section: How It Works ────────────────────────────────────────────────────
+function HowItWorks() {
   const steps = [
     {
-      icon: <Eye size={16} />,
-      title: 'Observe',
-      color: 'text-blue-400',
-      bg: 'bg-blue-500/5 border-blue-500/15',
-      body: 'Pulls onchain data via Alchemy — price bars, transfer stats, wallet accumulation, whale concentration. Social signals from Checkr (x402 micropayments) — attention scores, spikes, narrative rotation across 1h/4h/8h/12h windows.',
+      n: '01', icon: <Eye size={14}/>, title: 'Observe',
+      color: 'text-[#60a5fa]', border: 'border-[#60a5fa]/15', bg: 'bg-[#60a5fa]/3',
+      body: 'Pulls 30d price bars, transfer stats, whale concentration, and smart wallet accumulation via Alchemy. Buys social attention scores from Checkr using x402 micropayments — 1h, 4h, 8h, 12h windows.',
     },
     {
-      icon: <Brain size={16} />,
-      title: 'Think',
-      color: 'text-indigo-400',
-      bg: 'bg-indigo-500/5 border-indigo-500/15',
-      body: 'Quant brain scores each token across four timeframe strategies (5m, hourly, onchain, daily). Each strategy has its own evolved parameters — RSI zones, volume burst thresholds, BTC correlation, smart wallet signals.',
+      n: '02', icon: <Brain size={14}/>, title: 'Think',
+      color: 'text-[#a855f7]', border: 'border-[#a855f7]/15', bg: 'bg-[#a855f7]/3',
+      body: 'Quant brain scores each token across four evolved strategies (5m, hourly, onchain, daily). Each uses its own learned parameters — RSI zones, volume burst thresholds, BTC correlation, momentum regime.',
     },
     {
-      icon: <Zap size={16} />,
-      title: 'Decide',
-      color: 'text-amber-400',
-      bg: 'bg-amber-500/5 border-amber-500/15',
-      body: 'Produces a confidence score. Above threshold → buy with Kelly-sized position. Below threshold → hold and deploy surplus USDC to the best yield vault (Aave v3, Morpho, Moonwell). Capital is never idle by accident.',
+      n: '03', icon: <Zap size={14}/>, title: 'Decide',
+      color: 'text-[#f59e0b]', border: 'border-[#f59e0b]/15', bg: 'bg-[#f59e0b]/3',
+      body: 'Venice AI (private inference) synthesises signals into a confidence score. ≥65% → Kelly-sized buy via Bankr. <65% → hold and route surplus USDC to best yield vault (Aave v3, Morpho, Moonwell).',
     },
     {
-      icon: <RefreshCw size={16} />,
-      title: 'Learn',
-      color: 'text-emerald-400',
-      bg: 'bg-emerald-500/5 border-emerald-500/15',
-      body: 'After every trade, the brain runs experiments — mutating strategy parameters, evaluating against real outcomes. Bad trades lower scores, good trades reinforce them. 11,000+ experiments run so far.',
+      n: '04', icon: <RefreshCw size={14}/>, title: 'Learn',
+      color: 'text-[#22c55e]', border: 'border-[#22c55e]/15', bg: 'bg-[#22c55e]/3',
+      body: 'After every trade, 4 parallel LLM loops run experiments — mutating strategy parameters, evaluating against real outcomes on 27 Base tokens. 11,000+ experiments completed. Parameters auto-promote when score improves.',
     },
   ];
 
   return (
-    <section className="mb-8">
-      <div className={`${LABEL} mb-4`}>How It Works</div>
+    <section className="mb-10">
+      <div className={`${label} mb-4`}>How It Works</div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-        {steps.map((s, i) => (
-          <div key={s.title} className={`rounded-xl border p-4 ${s.bg}`}>
-            <div className="flex items-center gap-2 mb-2">
-              <span className={`${s.color}`}>{s.icon}</span>
-              <div className="flex items-center gap-2">
-                <span className={`text-[10px] font-bold ${DIM}`}>{i + 1}</span>
-                <span className={`text-sm font-semibold ${s.color}`}>{s.title}</span>
-              </div>
+        {steps.map(s => (
+          <div key={s.n} className={`rounded-lg border p-4 ${s.border} ${s.bg}`}>
+            <div className="flex items-center gap-2 mb-3">
+              <span className={s.color}>{s.icon}</span>
+              <span className={`text-xs font-semibold ${s.color}`}>{s.title}</span>
+              <span className={`${mono()} text-[9px] ${dim} ml-auto`}>{s.n}</span>
             </div>
             <p className="text-[11px] text-[#9ca3af] leading-relaxed">{s.body}</p>
           </div>
@@ -198,90 +159,112 @@ function HowItWorksSection() {
   );
 }
 
-function BrainSection({ brain, ar }: { brain: any; ar: any }) {
-  const totalExp    = brain?.totalExp || 0;
-  const topScore    = brain?.topScore || 0;
-  const TARGET      = 35;
-  const progress    = Math.min(100, (topScore / TARGET) * 100);
+// ─── Section: Brain ───────────────────────────────────────────────────────────
+const LOOP_COLORS: Record<string, { text: string; bar: string; badge: string }> = {
+  orange:  { text: 'text-[#f97316]', bar: '#f97316', badge: 'border-[#f97316]/20 bg-[#f97316]/5 text-[#f97316]' },
+  indigo:  { text: 'text-[#818cf8]', bar: '#818cf8', badge: 'border-[#818cf8]/20 bg-[#818cf8]/5 text-[#818cf8]' },
+  emerald: { text: 'text-[#34d399]', bar: '#34d399', badge: 'border-[#34d399]/20 bg-[#34d399]/5 text-[#34d399]' },
+  blue:    { text: 'text-[#60a5fa]', bar: '#60a5fa', badge: 'border-[#60a5fa]/20 bg-[#60a5fa]/5 text-[#60a5fa]' },
+};
 
-  const loops = brain?.loops || [];
+function BrainSection({ brain }: { brain: any }) {
+  const loops     = brain?.loops ?? [];
+  const topScore  = brain?.topScore ?? 0;
+  const totalExp  = brain?.totalExp ?? 0;
+  const TARGET    = 35;
+  const progress  = Math.min(100, (topScore / TARGET) * 100);
 
-  const loopColorMap: Record<string, string> = {
-    orange:  'text-orange-400 bg-orange-500/10 border-orange-500/20',
-    indigo:  'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
-    emerald: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
-    blue:    'text-blue-400 bg-blue-500/10 border-blue-500/20',
-  };
-  const barColorMap: Record<string, string> = {
-    orange:  'bg-orange-500',
-    indigo:  'bg-indigo-500',
-    emerald: 'bg-emerald-500',
-    blue:    'bg-blue-500',
-  };
+  // Recharts data for bar chart
+  const barData = loops.map((l: any) => ({
+    name: l.name,
+    score: +(l.bestScore ?? 0).toFixed(1),
+    color: LOOP_COLORS[l.color]?.bar ?? '#818cf8',
+  }));
 
   return (
-    <section className={`${CARD} rounded-2xl p-5 mb-4`}>
-      <div className="flex items-start justify-between mb-5">
-        <div>
-          <div className={`${LABEL} mb-1`}>Self-Improving Brain</div>
-          <div className="flex items-end gap-3">
-            <span className={mono('text-4xl font-bold text-[#e2e8f0]')}>{topScore.toFixed(1)}</span>
-            <span className={`${DIM} text-sm mb-1`}>/ {TARGET} target</span>
-          </div>
-          <p className="text-[10px] text-[#6b7280] mt-1 max-w-xs">
-            Brain score reflects cumulative learning. Higher = more refined signal extraction. Each experiment tweaks strategy parameters and is evaluated against real Base token outcomes.
-          </p>
-        </div>
-        <div className="text-right">
-          <div className={`${LABEL} mb-1`}>Total Experiments</div>
-          <div className={mono('text-2xl font-bold text-[#e2e8f0]')}>{totalExp.toLocaleString()}</div>
-          <div className={`text-[10px] ${DIM} mt-0.5`}>{brain?.totalAccepted || 0} improvements accepted</div>
-        </div>
-      </div>
+    <section className="mb-10">
+      <div className={`${label} mb-4`}>Self-Improving Brain</div>
 
-      {/* Overall progress bar */}
-      <div className="mb-5">
-        <div className="h-1.5 bg-[#1e1e2e] rounded-full overflow-hidden">
-          <div className="h-full bg-indigo-500 rounded-full transition-all duration-700"
-               style={{ width: `${progress}%` }} />
-        </div>
-        <div className="flex justify-between mt-1">
-          <span className={`text-[9px] ${DIM}`}>0</span>
-          <span className={`text-[9px] ${DIM}`}>Target {TARGET}</span>
+      {/* Top card — score + chart */}
+      <div className={`${card} p-5 mb-3`}>
+        <div className="flex flex-col sm:flex-row sm:items-start gap-6">
+          {/* Score + progress */}
+          <div className="flex-1">
+            <div className="flex items-end gap-2 mb-1">
+              <span className={mono('text-[2.5rem] font-bold text-[#a855f7] leading-none')}>
+                {topScore.toFixed(1)}
+              </span>
+              <span className={`text-sm ${dim} mb-1`}>/ {TARGET}</span>
+            </div>
+            <div className="text-[11px] text-[#9ca3af] mb-3 max-w-xs">
+              Brain score = combined Sharpe across all evolved strategies. Higher means more refined signal extraction.
+            </div>
+            {/* Progress bar */}
+            <div className="mb-1">
+              <div className="h-1 bg-[#1c1c28] rounded-full overflow-hidden">
+                <div className="h-full bg-[#a855f7] rounded-full transition-all duration-700"
+                     style={{ width: `${progress}%` }} />
+              </div>
+              <div className="flex justify-between mt-1">
+                <span className={`text-[9px] ${dim}`}>0</span>
+                <span className={`text-[9px] ${dim}`}>Target {TARGET}</span>
+              </div>
+            </div>
+            <div className={`text-[10px] ${dim} mt-2`}>
+              {totalExp.toLocaleString()} experiments · {brain?.totalAccepted ?? 0} improvements accepted
+            </div>
+          </div>
+
+          {/* Bar chart */}
+          <div className="w-full sm:w-56 h-28">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={barData} barSize={18} margin={{ top: 4, right: 0, bottom: 0, left: -24 }}>
+                <XAxis dataKey="name" tick={{ fill: '#6b7280', fontSize: 9 }} axisLine={false} tickLine={false} />
+                <YAxis tick={{ fill: '#6b7280', fontSize: 9 }} axisLine={false} tickLine={false} />
+                <Tooltip
+                  contentStyle={{ background: '#0f0f17', border: '1px solid #1c1c28', borderRadius: 6, fontSize: 10 }}
+                  labelStyle={{ color: '#9ca3af' }}
+                  itemStyle={{ color: '#a855f7' }}
+                />
+                <Bar dataKey="score" radius={[3, 3, 0, 0]}>
+                  {barData.map((entry: any, i: number) => (
+                    <Cell key={i} fill={entry.color} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
 
       {/* Strategy cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {loops.map((loop: any) => {
-          const maxScore = brain?.topScore || 1;
-          const barPct = Math.min(100, (loop.bestScore / maxScore) * 100);
-          const cmap = loopColorMap[loop.color] || loopColorMap.blue;
-          const bmap = barColorMap[loop.color] || barColorMap.blue;
-
+          const c = LOOP_COLORS[loop.color] ?? LOOP_COLORS.blue;
+          const barPct = topScore > 0 ? Math.min(100, (loop.bestScore / topScore) * 100) : 0;
           return (
-            <div key={loop.name} className="bg-[#0a0a0f] border border-[#1e1e2e] rounded-xl p-3.5">
-              <div className="flex items-center justify-between mb-2">
-                <LoopBadge name={loop.name} color={loop.color} />
-                <span className={mono('text-xs font-bold', cmap.split(' ')[0])}>{loop.bestScore?.toFixed(1)}</span>
+            <div key={loop.name} className={`${card} p-4`}>
+              <div className="flex items-center justify-between mb-2.5">
+                <span className={`text-[9px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${c.badge}`}>
+                  {loop.name}
+                </span>
+                <span className={mono('text-sm font-bold', c.text)}>{loop.bestScore?.toFixed(1)}</span>
               </div>
-              {/* Mini bar */}
-              <div className="h-0.5 bg-[#1e1e2e] rounded-full mb-2.5">
-                <div className={`h-full rounded-full ${bmap}`} style={{ width: `${barPct}%` }} />
+              <div className="h-0.5 bg-[#1c1c28] rounded-full mb-2.5">
+                <div className="h-full rounded-full transition-all" style={{ width: `${barPct}%`, backgroundColor: c.bar }} />
               </div>
-              <div className={`text-[10px] ${DIM} mb-2`}>
-                {loop.expCount?.toLocaleString()} experiments · {loop.acceptedCount} accepted
+              <div className={`text-[10px] ${dim} mb-2.5`}>
+                {(loop.expCount ?? 0).toLocaleString()} experiments · {loop.acceptedCount ?? 0} accepted
               </div>
-              {/* Signal tags */}
               <div className="flex flex-wrap gap-1">
-                {(loop.signals || []).map((sig: string) => (
-                  <span key={sig} className="text-[9px] px-1.5 py-0.5 rounded bg-[#111118] border border-[#1e1e2e] text-[#9ca3af]">
+                {(loop.signals ?? []).map((sig: string) => (
+                  <span key={sig} className="text-[9px] px-1.5 py-0.5 rounded bg-[#0a0a0f] border border-[#1c1c28] text-[#9ca3af]">
                     {sig}
                   </span>
                 ))}
               </div>
               {loop.latestDescription && (
-                <div className="mt-2 text-[9px] text-[#4b5563] italic leading-relaxed line-clamp-2">
+                <div className={`mt-2.5 text-[9px] ${dim} italic leading-relaxed line-clamp-2 border-t border-[#1c1c28] pt-2`}>
                   Latest: {loop.latestDescription}
                 </div>
               )}
@@ -293,158 +276,177 @@ function BrainSection({ brain, ar }: { brain: any; ar: any }) {
   );
 }
 
+// ─── Section: Capital Allocation ──────────────────────────────────────────────
 function CapitalSection({ status }: { status: any }) {
-  const w        = status?.wallet  || {};
-  const yld      = status?.yield   || {};
-  const total    = w.totalUSD    || 0;
-  const liquid   = w.liquidUSDC  || 0;
-  const yieldAmt = yld.amountUSD || 0;
-  const posAmt   = w.positionsUSD || 0;
-  const ethBtc   = Math.max(0, total - liquid - posAmt);
+  const w      = status?.wallet   ?? {};
+  const yld    = status?.yield    ?? {};
+  const total  = w.totalUSD       ?? 0;
+  const liquid = w.liquidUSDC     ?? 0;
+  const posAmt = w.positionsUSD   ?? 0;
+  const yldAmt = yld.amountUSD    ?? 0;
+  const other  = Math.max(0, total - liquid - posAmt);
 
-  // Compute proportions
-  const safe     = total > 0 ? (liquid / total)  * 100 : 0;
-  const yldPct   = total > 0 ? (yieldAmt / total) * 100 : 0;
-  const posPct   = total > 0 ? (posAmt / total)   * 100 : 0;
-  const otherPct = Math.max(0, 100 - safe - yldPct - posPct);
+  const segments = [
+    { label: 'Liquid USDC',   val: liquid,       color: '#818cf8', desc: 'Ready to trade' },
+    { label: 'Active Trades', val: posAmt,        color: '#22c55e', desc: 'Open positions' },
+    { label: 'ETH / cbBTC',   val: other,         color: '#374151', desc: 'Reserve assets' },
+  ].filter(s => s.val > 0);
 
-  const bars = [
-    { label: 'Liquid USDC',    pct: safe,     color: 'bg-indigo-500',  val: liquid   },
-    { label: 'Active Trades',  pct: posPct,   color: 'bg-emerald-500', val: posAmt   },
-    { label: 'ETH / cbBTC',    pct: otherPct, color: 'bg-[#374151]',   val: ethBtc   },
-  ].filter(b => b.val > 0 || b.label === 'Liquid USDC');
+  const openPos = status?.positions ?? [];
 
-  const openPos = status?.positions || [];
+  // Recharts radial data
+  const radialData = segments.map(s => ({
+    name:  s.label,
+    value: total > 0 ? parseFloat(((s.val / total) * 100).toFixed(1)) : 0,
+    fill:  s.color,
+  }));
 
   return (
-    <section className={`${CARD} rounded-2xl p-5 mb-4`}>
-      <div className={`${LABEL} mb-4`}>Capital Allocation</div>
-
-      {/* Stacked bar */}
-      <div className="h-2 flex rounded-full overflow-hidden gap-0.5 mb-3">
-        {bars.map(b => (
-          <div key={b.label} className={`${b.color} h-full transition-all`}
-               style={{ width: `${Math.max(b.pct, 0.5)}%` }} />
-        ))}
-      </div>
-
-      {/* Legend */}
-      <div className="flex flex-wrap gap-4 mb-4">
-        {bars.map(b => (
-          <div key={b.label} className="flex items-center gap-1.5">
-            <span className={`w-2 h-2 rounded-sm ${b.color}`} />
-            <span className="text-[10px] text-[#9ca3af]">{b.label}</span>
-            <span className={mono('text-[10px] text-[#e2e8f0]')}>${b.val.toFixed(2)}</span>
-            <span className={`text-[9px] ${DIM}`}>({b.pct.toFixed(0)}%)</span>
+    <section className="mb-10">
+      <div className={`${label} mb-4`}>Capital Allocation</div>
+      <div className={`${card} p-5`}>
+        <div className="flex flex-col sm:flex-row gap-6">
+          {/* Donut */}
+          <div className="w-full sm:w-40 h-40 shrink-0">
+            <ResponsiveContainer width="100%" height="100%">
+              <RadialBarChart cx="50%" cy="50%" innerRadius="55%" outerRadius="90%"
+                              data={radialData} startAngle={90} endAngle={-270}>
+                <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
+                <RadialBar dataKey="value" cornerRadius={4} />
+                <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle"
+                      fill="#e2e8f0" fontSize={14} fontWeight={700} fontFamily="monospace">
+                  ${total.toFixed(0)}
+                </text>
+              </RadialBarChart>
+            </ResponsiveContainer>
           </div>
-        ))}
-      </div>
 
-      {/* Yield detail */}
-      <div className="bg-[#0a0a0f] border border-[#1e1e2e] rounded-xl p-3 mb-3">
-        <div className="flex items-center justify-between mb-1">
-          <span className="text-xs text-[#9ca3af] font-medium">Yield Position</span>
-          {yld.apy > 0
-            ? <span className="text-[10px] text-emerald-400 font-mono">{yld.apy?.toFixed(2)}% APY</span>
-            : <span className={`text-[10px] ${DIM}`}>deploying next cycle</span>
-          }
-        </div>
-        <div className={mono('text-sm font-bold text-[#e2e8f0]')}>${yieldAmt.toFixed(2)}</div>
-        <div className={`text-[10px] ${DIM} mt-0.5`}>{yld.protocol || 'Bankr Wallet'} · {yld.vault || 'Liquid USDC'}</div>
-      </div>
-
-      {/* Open positions or empty state */}
-      {openPos.length > 0 ? (
-        <div className="space-y-2">
-          {openPos.map((p: any, i: number) => {
-            const pnl = p.currentUSD && p.sizeUSD ? ((p.currentUSD - p.sizeUSD) / p.sizeUSD * 100) : null;
-            return (
-              <div key={i} className="flex items-center justify-between bg-[#0a0a0f] border border-[#1e1e2e] rounded-lg px-3 py-2">
-                <span className="text-xs font-semibold text-[#e2e8f0]">{p.sym}</span>
-                <span className={mono('text-xs', pnlColor(pnl))}>
-                  {pnl != null ? `${pnl >= 0 ? '+' : ''}${pnl.toFixed(2)}%` : '—'}
+          {/* Legend + detail */}
+          <div className="flex-1 space-y-3">
+            {segments.map(s => (
+              <div key={s.label} className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-sm shrink-0" style={{ background: s.color }} />
+                <div className="flex-1">
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-[11px] text-[#9ca3af]">{s.label}</span>
+                    <span className={mono('text-[11px] font-semibold text-white')}>${s.val.toFixed(2)}</span>
+                  </div>
+                  <div className="h-0.5 bg-[#1c1c28] rounded-full mt-1">
+                    <div className="h-full rounded-full" style={{
+                      width: `${total > 0 ? Math.max(2, (s.val / total) * 100) : 2}%`,
+                      background: s.color,
+                    }} />
+                  </div>
+                </div>
+                <span className={`${mono()} text-[9px] ${dim} w-8 text-right`}>
+                  {total > 0 ? ((s.val / total) * 100).toFixed(0) : 0}%
                 </span>
-                <span className={mono('text-xs text-[#9ca3af]')}>${(p.currentUSD || p.sizeUSD || 0).toFixed(2)}</span>
               </div>
-            );
-          })}
+            ))}
+
+            {/* Yield detail */}
+            <div className="border-t border-[#1c1c28] pt-3 mt-3">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] text-[#9ca3af]">
+                  {yld.protocol ?? 'Bankr Wallet'} · {yld.vault ?? 'Liquid USDC'}
+                </span>
+                {yld.apy > 0
+                  ? <span className={mono('text-[10px] text-[#22c55e]')}>{yld.apy.toFixed(2)}% APY</span>
+                  : <span className={`text-[10px] ${dim}`}>deploying surplus next cycle</span>
+                }
+              </div>
+            </div>
+
+            {/* Philosophy */}
+            <p className={`text-[10px] ${dim} italic border-t border-[#1c1c28] pt-2`}>
+              Capital is never idle by accident. When conviction is below threshold, surplus earns yield.
+              The agent only deploys when the brain is confident — most cycles result in HOLD.
+            </p>
+          </div>
         </div>
-      ) : (
-        <p className={`text-[11px] ${DIM} italic`}>
-          No active positions. Capital deployed when conviction ≥ 65%. Most cycles result in HOLD — this is by design.
-        </p>
-      )}
+
+        {/* Open positions */}
+        {openPos.length > 0 && (
+          <div className="mt-4 border-t border-[#1c1c28] pt-4 space-y-2">
+            <div className={`${label} mb-2`}>Open Positions</div>
+            {openPos.map((p: any, i: number) => {
+              const pnl = p.currentUSD && p.sizeUSD ? ((p.currentUSD - p.sizeUSD) / p.sizeUSD * 100) : null;
+              return (
+                <div key={i} className="flex items-center gap-3 text-[11px] bg-[#0a0a0f] border border-[#1c1c28] rounded px-3 py-2">
+                  <span className="font-semibold text-white w-24 truncate">{p.sym}</span>
+                  <span className={mono('', pnlColor(pnl))}>
+                    {pnl != null ? `${pnl >= 0 ? '+' : ''}${pnl.toFixed(2)}%` : '—'}
+                  </span>
+                  <span className={mono('text-[#9ca3af] ml-auto')}>${(p.currentUSD ?? p.sizeUSD ?? 0).toFixed(2)}</span>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </section>
   );
 }
 
-function CycleRow({ cycle, idx }: { cycle: any; idx: number }) {
+// ─── Section: Intelligence Cycles ─────────────────────────────────────────────
+function CycleRow({ cycle }: { cycle: any }) {
   const [open, setOpen] = useState(false);
-  const isTrade = cycle.action === 'buy' || cycle.action === 'long' || cycle.action === 'sell';
+  const isBuy  = cycle.action === 'buy' || cycle.action === 'long';
+  const isSell = cycle.action === 'sell';
+
+  const badgeCls = isBuy
+    ? 'bg-[#22c55e]/10 text-[#22c55e] border-[#22c55e]/20'
+    : isSell
+    ? 'bg-[#ef4444]/10 text-[#ef4444] border-[#ef4444]/20'
+    : 'bg-[#0a0a0f] text-[#6b7280] border-[#1c1c28]';
+
+  const badgeText = isBuy ? `BUY ${cycle.asset ?? ''}` : isSell ? `SELL ${cycle.asset ?? ''}` : 'HOLD';
 
   return (
-    <div className={`border-b border-[#1e1e2e] last:border-0 ${isTrade ? 'bg-emerald-500/2' : ''}`}>
-      <button
-        onClick={() => setOpen(o => !o)}
-        className="w-full text-left flex items-center gap-3 px-4 py-3 hover:bg-[#111118] transition-colors"
-      >
-        {/* Timestamp */}
-        <span className={mono('text-[10px] shrink-0 w-28', DIM)}>
-          {shortDate(cycle.ts)}
+    <div className={`border-b border-[#1c1c28] last:border-0 ${isBuy ? 'bg-[#22c55e]/[0.015]' : ''}`}>
+      <button onClick={() => setOpen(o => !o)}
+        className="w-full text-left flex items-center gap-3 px-4 py-2.5 hover:bg-[#111118] transition-colors">
+        <span className={mono('text-[10px] shrink-0 w-28', dim)}>{fmtDate(cycle.ts)}</span>
+        <span className={`shrink-0 text-[9px] font-bold px-2 py-0.5 rounded border uppercase ${badgeCls}`}>
+          {badgeText}
         </span>
-
-        {/* Badge */}
-        <span className="shrink-0">
-          <ActionBadge action={cycle.action} asset={cycle.asset} />
+        <span className={`text-[10px] ${dim} flex-1 truncate`}>
+          {cycle.reasoning?.slice(0, 90) ?? '—'}
         </span>
-
-        {/* Reasoning */}
-        <span className={`text-[11px] ${DIM} flex-1 truncate`}>
-          {cycle.reasoning?.slice(0, 100) || '—'}
-        </span>
-
-        {/* Expand */}
-        <span className={`${DIM} shrink-0`}>
-          {open ? <ChevronDown size={12} /> : <ChevronRight size={12} />}
+        <span className={dim}>
+          {open ? <ChevronDown size={11}/> : <ChevronRight size={11}/>}
         </span>
       </button>
 
       {open && (
-        <div className="px-4 pb-3 pt-0">
-          <div className="bg-[#0a0a0f] border border-[#1e1e2e] rounded-xl p-3 text-[11px] text-[#9ca3af] leading-relaxed">
-            <div className="mb-2 font-semibold text-[#e2e8f0]">Full Reasoning</div>
-            <div className="mb-2">{cycle.reasoning || '—'}</div>
+        <div className="px-4 pb-3">
+          <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3 text-[10px]">
+            <div className="text-[#9ca3af] leading-relaxed mb-3">{cycle.reasoning ?? '—'}</div>
 
-            {/* Trending entries */}
-            {(cycle.trendingEntries || []).length > 0 && (
-              <div className="mt-3 border-t border-[#1e1e2e] pt-2">
-                <div className={`${LABEL} mb-1.5`}>Screened Tokens</div>
-                <div className="space-y-1">
-                  {cycle.trendingEntries.slice(0, 5).map((t: any) => (
-                    <div key={t.symbol} className="flex items-center gap-2">
-                      <span className="font-mono text-[10px] text-[#e2e8f0] w-20">{t.symbol}</span>
-                      <span className={mono('text-[10px]', t.score >= 0.65 ? 'text-emerald-400' : DIM)}>
-                        score {(t.score || 0).toFixed(2)}
+            {(cycle.trendingEntries ?? []).length > 0 && (
+              <div className="border-t border-[#1c1c28] pt-2 mt-2">
+                <div className={`${label} mb-1.5`}>Tokens Screened</div>
+                {(cycle.trendingEntries as any[]).slice(0, 6).map((t: any) => (
+                  <div key={t.symbol} className="flex items-center gap-3 py-0.5">
+                    <span className={mono('text-white w-20')}>{t.symbol}</span>
+                    <span className={mono('', t.score >= 0.65 ? 'text-[#22c55e]' : dim)}>
+                      score {(t.score ?? 0).toFixed(2)}
+                    </span>
+                    {t.ret1h != null && (
+                      <span className={mono('', pnlColor(t.ret1h))}>
+                        1h {t.ret1h >= 0 ? '+' : ''}{(t.ret1h * 100).toFixed(1)}%
                       </span>
-                      {t.ret1h != null && (
-                        <span className={mono('text-[10px]', pnlColor(t.ret1h))}>
-                          1h {t.ret1h >= 0 ? '+' : ''}{(t.ret1h * 100).toFixed(1)}%
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                    )}
+                  </div>
+                ))}
               </div>
             )}
 
-            {/* Position updates */}
-            {(cycle.positionUpdates || []).length > 0 && (
-              <div className="mt-3 border-t border-[#1e1e2e] pt-2">
-                <div className={`${LABEL} mb-1.5`}>Position Updates</div>
-                {cycle.positionUpdates.slice(0, 3).map((p: any, i: number) => (
-                  <div key={i} className="text-[10px] text-[#9ca3af]">
-                    {p.sym}: {p.reasoning?.slice(0, 80) || '—'}
-                  </div>
+            {(cycle.positionUpdates ?? []).length > 0 && (
+              <div className="border-t border-[#1c1c28] pt-2 mt-2">
+                <div className={`${label} mb-1.5`}>Position Updates</div>
+                {(cycle.positionUpdates as any[]).slice(0, 3).map((p: any, i: number) => (
+                  <div key={i} className={`${dim} py-0.5`}>{p.sym}: {p.reasoning?.slice(0, 100) ?? '—'}</div>
                 ))}
               </div>
             )}
@@ -457,114 +459,148 @@ function CycleRow({ cycle, idx }: { cycle: any; idx: number }) {
 
 function CyclesSection({ cycles }: { cycles: any[] }) {
   const [showAll, setShowAll] = useState(false);
-  const display = showAll ? cycles : cycles.slice(0, 15);
+  const display = showAll ? cycles : cycles.slice(0, 12);
+  const buys = cycles.filter(c => c.action === 'buy' || c.action === 'long').length;
+  const holds = cycles.length - buys;
 
   return (
-    <section className={`${CARD} rounded-2xl overflow-hidden mb-4`}>
-      <div className="flex items-center justify-between px-4 py-3 border-b border-[#1e1e2e]">
-        <div className={LABEL}>Intelligence Cycles</div>
-        <span className={`text-[10px] ${DIM}`}>{cycles.length} cycles · every 30 min</span>
+    <section className="mb-10">
+      <div className="flex items-center justify-between mb-4">
+        <div className={label}>Intelligence Cycles</div>
+        <div className={`text-[10px] ${dim} flex gap-3`}>
+          <span><span className="text-[#22c55e]">{buys}</span> trades</span>
+          <span><span className="text-[#6b7280]">{holds}</span> holds</span>
+        </div>
       </div>
-
-      <div>
-        {display.map((c, i) => <CycleRow key={i} cycle={c} idx={i} />)}
+      <div className={`${card} overflow-hidden`}>
+        {display.map((c: any, i: number) => <CycleRow key={i} cycle={c} />)}
+        {cycles.length > 12 && (
+          <button onClick={() => setShowAll(s => !s)}
+            className={`w-full py-2.5 text-[10px] ${dim} hover:text-white border-t border-[#1c1c28] transition-colors`}>
+            {showAll ? 'Show less ↑' : `Show all ${cycles.length} cycles ↓`}
+          </button>
+        )}
       </div>
-
-      {cycles.length > 15 && (
-        <button
-          onClick={() => setShowAll(s => !s)}
-          className={`w-full py-2.5 text-[10px] ${DIM} hover:text-[#e2e8f0] border-t border-[#1e1e2e] transition-colors`}
-        >
-          {showAll ? 'Show less' : `Show all ${cycles.length} cycles`}
-        </button>
-      )}
     </section>
   );
 }
 
-function PerformanceSection({ status }: { status: any }) {
-  const perf = status?.performance || {};
-  const trades = perf.recentTrades || [];
+// ─── Section: Trade History & Learnings ────────────────────────────────
+function TradeHistory({ status }: { status: any }) {
+  const perf   = status?.performance ?? {};
+  const trades: Trade[] = (perf.recentTrades ?? []).slice(0, 8);
   if (trades.length === 0) return null;
 
-  const closed = perf.closedTrades || 0;
-  const winStr = perf.winRate || '0/0';
-  const wins = parseInt(winStr.split('/')[0]) || 0;
-  const winPct = closed > 0 ? ((wins / closed) * 100).toFixed(0) : '0';
+  const closed  = perf.closedTrades ?? 0;
+  const winStr  = perf.winRate ?? '0/0';
+  const wins    = parseInt(winStr.split('/')[0]) ?? 0;
+  const winPct  = closed > 0 ? ((wins / closed) * 100).toFixed(0) : '0';
+  const avgPnl  = trades.reduce((s, t) => s + (t.pnlPct ?? 0), 0) / Math.max(1, trades.length);
 
   return (
-    <section className={`${CARD} rounded-2xl p-5 mb-4`}>
-      <div className="flex items-center justify-between mb-4">
-        <div className={LABEL}>Trade History</div>
-        <div className="flex items-center gap-3">
-          <span className={`text-[10px] ${DIM}`}>{closed} closed</span>
-          <span className={mono('text-[10px]', parseInt(winPct) >= 50 ? 'text-emerald-400' : 'text-red-400')}>
+    <section className="mb-10">
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+        <div className={label}>Trade History & Learnings</div>
+        <div className={`flex gap-4 text-[10px] ${dim}`}>
+          <span>{closed} closed trades</span>
+          <span className={mono('', parseInt(winPct) >= 50 ? 'text-[#22c55e]' : 'text-[#ef4444]')}>
             {winPct}% win rate
+          </span>
+          <span className={mono('', pnlColor(avgPnl))}>
+            avg {avgPnl >= 0 ? '+' : ''}{avgPnl.toFixed(2)}%
           </span>
         </div>
       </div>
-      <div className="space-y-1.5">
-        {trades.slice(0, 8).map((t: any, i: number) => (
-          <div key={i} className="flex items-center gap-3 py-1.5 border-b border-[#1e1e2e] last:border-0">
-            <span className={mono('text-xs font-semibold text-[#e2e8f0] w-24 truncate')}>{t.sym}</span>
-            <span className={mono('text-xs', t.won ? 'text-emerald-400' : 'text-red-400')}>
-              {t.pnlPct >= 0 ? '+' : ''}{t.pnlPct?.toFixed(2)}%
-            </span>
-            <span className={`text-[10px] px-1.5 py-0.5 rounded border ${
-              t.regime === 'BEAR' ? 'border-red-500/20 text-red-400 bg-red-500/5' :
-              t.regime === 'BULL' ? 'border-emerald-500/20 text-emerald-400 bg-emerald-500/5' :
-              'border-[#1e1e2e] text-[#6b7280] bg-[#0a0a0f]'
-            }`}>{t.regime || '—'}</span>
-            {t.closedAt && (
-              <span className={`text-[10px] ${DIM} ml-auto`}>
-                {shortDate(t.closedAt)}
-              </span>
-            )}
-          </div>
-        ))}
+
+      <div className={`${card} overflow-hidden`}>
+        {/* Header row */}
+        <div className={`grid grid-cols-[2fr_1fr_1fr_1fr_3fr] gap-3 px-4 py-2 border-b border-[#1c1c28] ${label}`}>
+          <span>Token</span>
+          <span>P&amp;L</span>
+          <span>Regime</span>
+          <span>Closed</span>
+          <span>Brain Learning</span>
+        </div>
+
+        {trades.map((t, i) => {
+          const learning = LEARNINGS[t.sym] ?? 'Signal parameters updated based on this outcome.';
+          const isWin = t.won;
+          return (
+            <div key={i}
+              className={`grid grid-cols-[2fr_1fr_1fr_1fr_3fr] gap-3 px-4 py-3 border-b border-[#1c1c28] last:border-0 items-start
+                ${isWin ? 'bg-[#22c55e]/[0.02]' : ''}`}>
+              {/* Token */}
+              <div className="flex items-center gap-2">
+                <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${isWin ? 'bg-[#22c55e]' : 'bg-[#ef4444]'}`} />
+                <span className="text-xs font-semibold text-white">{t.sym}</span>
+              </div>
+              {/* P&L */}
+              <div className={mono('text-xs font-semibold', isWin ? 'text-[#22c55e]' : 'text-[#ef4444]')}>
+                {(t.pnlPct ?? 0) >= 0 ? '+' : ''}{(t.pnlPct ?? 0).toFixed(2)}%
+              </div>
+              {/* Regime */}
+              <div>
+                <span className={`text-[9px] px-1.5 py-0.5 rounded border
+                  ${t.regime === 'BEAR' ? 'border-[#ef4444]/20 text-[#ef4444] bg-[#ef4444]/5' :
+                    t.regime === 'BULL' ? 'border-[#22c55e]/20 text-[#22c55e] bg-[#22c55e]/5' :
+                    'border-[#1c1c28] text-[#6b7280] bg-[#0a0a0f]'}`}>
+                  {t.regime ?? '—'}
+                </span>
+              </div>
+              {/* Date */}
+              <div className={`text-[9px] ${dim}`}>{fmtDate(t.closedAt)}</div>
+              {/* Learning */}
+              <div className="text-[10px] text-[#9ca3af] leading-relaxed">{learning}</div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
 }
 
-// ── Stack footer ──────────────────────────────────────────────────────────────
-function StackSection({ stack }: { stack: any }) {
-  if (!stack) return null;
-  const items = [
-    { label: 'Execution',    val: stack.execution },
-    { label: 'Reasoning',    val: stack.reasoning },
-    { label: 'Social Data',  val: stack.socialData },
-    { label: 'Onchain Data', val: stack.onchainData },
-    { label: 'Research',     val: stack.research },
-    { label: 'Stop Mgmt',    val: stack.stopMgmt },
+// ─── Section: Footer ──────────────────────────────────────────────────────────
+function Footer({ stack }: { stack: any }) {
+  const links = [
+    { label: 'Built on Base', href: 'https://base.org' },
+    { label: 'delu-agent', href: 'https://github.com/deluagent/delu-agent' },
+    { label: 'Hackathon submission', href: 'https://synthesis.devfolio.co/projects/delu-autonomous-agent-with-skin-in-the-game-7115' },
+    { label: 'Basescan', href: `https://basescan.org/address/${wallet}` },
   ];
+  const sources = ['Alchemy', 'Checkr x402', 'Bankr API', 'Venice AI'];
+
   return (
-    <section className="border-t border-[#1e1e2e] pt-6 pb-8">
-      <div className={`${LABEL} mb-3`}>Tech Stack</div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-        {items.map(i => i.val ? (
-          <div key={i.label} className="flex gap-2 text-[10px]">
-            <span className={`${DIM} shrink-0 w-24`}>{i.label}</span>
-            <span className="text-[#9ca3af]">{i.val}</span>
+    <footer className="border-t border-[#1c1c28] pt-6 pb-10">
+      <div className="flex flex-col sm:flex-row gap-6 justify-between">
+        <div>
+          <div className={`${label} mb-2`}>Links</div>
+          <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+            {links.map(l => (
+              <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
+                 className={`flex items-center gap-1 text-[11px] ${dim} hover:text-white transition-colors`}>
+                <ExternalLink size={9} /> {l.label}
+              </a>
+            ))}
           </div>
-        ) : null)}
+        </div>
+        <div>
+          <div className={`${label} mb-2`}>Data Sources</div>
+          <div className="flex flex-wrap gap-1.5">
+            {sources.map(s => (
+              <span key={s} className={`text-[9px] px-2 py-0.5 rounded border border-[#1c1c28] ${dim}`}>{s}</span>
+            ))}
+          </div>
+        </div>
+        <div className="text-right">
+          <div className={mono('text-[9px]', dim)}>{walletShort}</div>
+          <div className={`text-[9px] ${dim} mt-0.5`}>Base mainnet · delu autonomous agent</div>
+        </div>
       </div>
-      <div className="mt-4 flex items-center gap-4">
-        <a href="https://github.com/deluagent/delu-agent" target="_blank" rel="noopener noreferrer"
-           className={`flex items-center gap-1.5 text-[10px] ${DIM} hover:text-[#e2e8f0] transition-colors`}>
-          <ExternalLink size={10} /> delu-agent on GitHub
-        </a>
-        <a href="https://synthesis.devfolio.co/projects/delu-autonomous-agent-with-skin-in-the-game-7115"
-           target="_blank" rel="noopener noreferrer"
-           className={`flex items-center gap-1.5 text-[10px] ${DIM} hover:text-[#e2e8f0] transition-colors`}>
-          <ExternalLink size={10} /> Hackathon Submission
-        </a>
-      </div>
-    </section>
+    </footer>
   );
 }
 
-// ── Root page ─────────────────────────────────────────────────────────────────
+// ─── Root ─────────────────────────────────────────────────────────────────────
 export default function Page() {
   const [status, setStatus] = useState<any>(null);
   const [brain,  setBrain]  = useState<any>(null);
@@ -578,48 +614,40 @@ export default function Page() {
       ]);
       setStatus(s);
       setBrain(b);
-    } catch (e: any) {
-      setError(e.message);
-    }
+    } catch (e: any) { setError(e.message); }
   }, []);
 
-  useEffect(() => { load(); const t = setInterval(load, 60_000); return () => clearInterval(t); }, [load]);
-
-  const cycles = status?.cycleHistory || [];
-  const ar     = status?.autoresearch  || {};
+  useEffect(() => {
+    load();
+    const t = setInterval(load, 60_000);
+    return () => clearInterval(t);
+  }, [load]);
 
   if (error) return (
-    <div className={`min-h-screen ${BG} flex items-center justify-center`}>
-      <p className="text-red-400 text-sm font-mono">{error}</p>
+    <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center">
+      <p className="text-[#ef4444] text-sm font-mono">{error}</p>
     </div>
   );
 
   if (!status) return (
-    <div className={`min-h-screen ${BG} flex items-center justify-center`}>
+    <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center">
       <div className="flex items-center gap-2 text-[#6b7280] text-sm">
-        <div className="w-3 h-3 rounded-full border-2 border-indigo-500 border-t-transparent animate-spin" />
-        Loading delu…
+        <div className="w-3 h-3 rounded-full border-2 border-[#a855f7] border-t-transparent animate-spin" />
+        loading delu…
       </div>
     </div>
   );
 
   return (
-    <main className={`min-h-screen ${BG} text-[#e2e8f0]`}>
+    <main className="min-h-screen bg-[#0a0a0f] text-[#e2e8f0]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
-        <HeroSection   status={status} brain={brain} />
-        <HowItWorksSection />
-        <BrainSection  brain={brain}   ar={ar} />
-        <CapitalSection status={status} />
-        <CyclesSection  cycles={cycles} />
-        <PerformanceSection status={status} />
-        <StackSection  stack={status?.stack} />
-
-        {/* Footer */}
-        <div className="text-center pt-4 pb-2">
-          <span className={`text-[10px] ${DIM}`}>
-            delu · updated {status?.updatedAt ? shortDate(status.updatedAt) : '—'} · Base mainnet
-          </span>
-        </div>
+        <Hero             status={status} />
+        <HowItWorks />
+        <BrainSection     brain={brain ?? status?.autoresearch} />
+        <CapitalSection   status={status} />
+        <CyclesSection    cycles={status?.cycleHistory ?? []} />
+        <TradeHistory     status={status} />
+        <Footer           stack={status?.stack} />
       </div>
     </main>
   );
