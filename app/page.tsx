@@ -51,7 +51,7 @@ function StatsBar({ cycles, arOnchain, brain }: { cycles: any[]; arOnchain: any;
   const stats = [
     { label: 'Tokens discovered', value: screened.toString(), sub: 'last 50 cycles', color: 'text-blue-400' },
     { label: 'Trades fired',      value: trades.toString(),   sub: 'autonomous',     color: 'text-green-400' },
-    { label: 'Brain experiments', value: expCount >= 1000 ? `${(expCount/1000).toFixed(1)}k` : expCount.toString(), sub: 'Bankr LLM', color: 'text-indigo-400' },
+    { label: 'Brain experiments', value: expCount >= 1000 ? `${(expCount/1000).toFixed(1)}k` : expCount.toString(), sub: '4 parallel loops', color: 'text-indigo-400' },
     { label: 'Brain score',       value: brainScore.toFixed(1), sub: `vs 0.0 baseline`, color: 'text-purple-400' },
   ];
 
@@ -297,12 +297,13 @@ function BrainCard({ ar, brain }: { ar: any; brain: any }) {
 function PipelineCard() {
   const [open, setOpen] = useState(false);
   const rows = [
-    { icon: '🏦', label: 'Bankr LLM',     detail: 'Regime · trending token universe',              color: 'text-indigo-400'  },
-    { icon: '⚡', label: 'Checkr × x402', detail: '4-window attention · spikes · rotation',        color: 'text-orange-400', parallel: true },
-    { icon: '🔗', label: 'Alchemy',        detail: 'Hourly OHLCV · transfer stats · whale conc.',   color: 'text-blue-400',   parallel: true },
-    { icon: '🧠', label: 'Quant Brain',    detail: 'Self-evolved scoring (3,500+ experiments)',      color: 'text-purple-400'  },
-    { icon: '🔒', label: 'Venice E2EE',    detail: 'Private reasoning — no logs, no retention',     color: 'text-violet-400'  },
-    { icon: '✅', label: 'Bankr Execute',  detail: 'Swap + ATR trailing stop',                       color: 'text-green-400'   },
+    { icon: '🏦', label: 'Bankr LLM',        detail: 'Market regime · Base trending tokens (meme/micro-cap only)', color: 'text-indigo-400'  },
+    { icon: '⚡', label: 'Checkr × x402',    detail: '4-window CT attention · spikes · rotation arrows',          color: 'text-orange-400', parallel: true },
+    { icon: '🔗', label: 'Alchemy onchain',  detail: 'Scans 1000 raw Base ERC20 transfers · finds unusual buy pressure before CT notices', color: 'text-blue-400', parallel: true },
+    { icon: '🧠', label: 'Quant Brain',      detail: `Self-evolved scoring — 10,000+ experiments, rewrites itself`, color: 'text-purple-400'  },
+    { icon: '🛡️', label: 'Rug filter',       detail: 'Liquidity · FDV · age · buy ratio · whale concentration',   color: 'text-yellow-400'  },
+    { icon: '🔒', label: 'Venice E2EE',      detail: 'Private reasoning — encrypted inference, no logs retained',  color: 'text-violet-400'  },
+    { icon: '✅', label: 'Bankr Execute',    detail: 'Onchain swap + ATR trailing stop (2.5× ATR, activates +1%)', color: 'text-green-400'   },
   ];
   return (
     <Card className="p-4">
@@ -350,7 +351,8 @@ function TokenSignalRow({ t }: { t: any }) {
           <span className="mono text-[11px] font-bold">{t.symbol}</span>
           {t.rank != null && <span className="text-[8px] text-[#6b7280]">#{t.rank}</span>}
           {t.source === 'checkr' && <span className="text-[8px] text-orange-400 border border-orange-500/20 px-1 rounded">checkr</span>}
-          {t.source !== 'checkr' && t.rank != null && <span className="text-[8px] text-indigo-400 border border-indigo-500/20 px-1 rounded">bankr</span>}
+          {t.source === 'alchemy_discover' && <span className="text-[8px] text-blue-400 border border-blue-500/20 px-1 rounded">alchemy</span>}
+          {t.source !== 'checkr' && t.source !== 'alchemy_discover' && t.rank != null && <span className="text-[8px] text-indigo-400 border border-indigo-500/20 px-1 rounded">bankr</span>}
           {t.sustainedMomentum && <span className="text-[8px] text-orange-400">🔥{t.momentumWindows}w</span>}
           {hasRotation && <span className="text-[8px] text-purple-400">↩{t.rotatingFrom.slice(0,2).join(',')}</span>}
           {t.rugVerdict && t.rugVerdict !== 'SAFE' && <span className="text-[8px] text-red-400 border border-red-500/20 px-1 rounded">rug</span>}
@@ -448,7 +450,7 @@ function CycleTimeline({ cycle, positions }: { cycle: any; positions: any[] }) {
             <p className="text-[9px] text-[#6b7280] mono">No tokens discovered this cycle</p>
           ) : (
             <div>
-              <p className="text-[8px] text-[#4b5563] mb-1">Discovered via Bankr trending + Checkr spikes + Alchemy onchain. Venice picks one.</p>
+              <p className="text-[8px] text-[#4b5563] mb-1">3 parallel sources: <span className="text-orange-400">Checkr</span> CT attention · <span className="text-indigo-400">Bankr</span> Base DEX trending · <span className="text-blue-400">Alchemy</span> raw ERC20 transfer scan. Venice picks one.</p>
               {entries.slice(0, 6).map((t: any) => <TokenSignalRow key={t.symbol} t={t} />)}
               {entries.length > 6 && <p className="text-[8px] text-[#4b5563] mt-1">+{entries.length-6} more</p>}
             </div>
@@ -652,6 +654,31 @@ export default function Home() {
 
       {/* ── Stats bar ── */}
       <StatsBar cycles={cycles} arOnchain={ar.onchain || {}} brain={brain} />
+
+      {/* ── System health bar ── */}
+      <div className="flex items-center gap-2 mb-3 px-1 flex-wrap">
+        <span className="text-[8px] text-[#4b5563] uppercase tracking-widest">Live systems</span>
+        {[
+          { label: 'Agent',          color: 'bg-green-500' },
+          { label: 'Checkr x402',    color: 'bg-orange-500' },
+          { label: 'Alchemy',        color: 'bg-blue-500' },
+          { label: 'Venice E2EE',    color: 'bg-violet-500' },
+          { label: 'Bankr Execute',  color: 'bg-indigo-500' },
+          { label: 'Brain 5m',       color: 'bg-orange-400' },
+          { label: 'Brain Onchain',  color: 'bg-indigo-400' },
+          { label: 'Brain Hourly',   color: 'bg-emerald-400' },
+        ].map(s => (
+          <div key={s.label} className="flex items-center gap-1">
+            <div className={`w-1.5 h-1.5 rounded-full ${s.color} pulse-live`} />
+            <span className="text-[8px] text-[#6b7280]">{s.label}</span>
+          </div>
+        ))}
+        {status?.generatedAt && (
+          <span className="ml-auto text-[8px] text-[#4b5563] mono">
+            updated {new Date(status.generatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+          </span>
+        )}
+      </div>
 
       {/* ── 2-col ── */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-3">
