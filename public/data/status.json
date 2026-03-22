@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-03-22T20:07:17.951Z",
+  "updatedAt": "2026-03-22T20:37:26.836Z",
   "regime": "BEAR",
-  "btcPrice": 68322,
+  "btcPrice": 68292,
   "pctFrom200": "-4.5%",
   "breadth": "BTC:BEAR ETH:BEAR",
   "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 109.48,
-    "positionsUSD": 107.4,
-    "liquidUSDC": 1.04,
-    "yieldUSD": 1.04,
-    "unrealPnlUSD": 8.59,
-    "unrealPnlPct": 21.47
+    "totalUSD": 127.3,
+    "positionsUSD": 108.02,
+    "liquidUSDC": 9.64,
+    "yieldUSD": 9.64,
+    "unrealPnlUSD": -0.68,
+    "unrealPnlPct": -1.36
   },
   "positions": [
     {
@@ -36,8 +36,8 @@
       "quantScore": null,
       "ret1h": -0.25,
       "transferStats": {
-        "uniqueBuyers": 51,
-        "buyRatio": 0.5543478260869565
+        "uniqueBuyers": 48,
+        "buyRatio": 0.5517241379310345
       }
     },
     {
@@ -68,9 +68,9 @@
       "entryPrice": 0.000001026,
       "currentPrice": 0.000001,
       "sizeUSD": 10,
-      "currentUSD": 18.83,
-      "pnlUSD": 8.83,
-      "pnlPct": 88.3,
+      "currentUSD": 9.56,
+      "pnlUSD": -0.44,
+      "pnlPct": -4.4,
       "peakPct": 4.49,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -85,8 +85,8 @@
       "quantScore": null,
       "ret1h": -6.89,
       "transferStats": {
-        "uniqueBuyers": 36,
-        "buyRatio": 0.5625
+        "uniqueBuyers": 32,
+        "buyRatio": 0.5423728813559322
       }
     },
     {
@@ -111,26 +111,49 @@
       "quantScore": null,
       "ret1h": null,
       "transferStats": null
+    },
+    {
+      "sym": "VVV",
+      "entryPrice": 0.00010536,
+      "currentPrice": null,
+      "sizeUSD": 10,
+      "currentUSD": 10,
+      "pnlUSD": 0,
+      "pnlPct": 0,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-03-22T20:37:26.831Z",
+      "entryTx": null,
+      "contractAddress": "0x... (not provided, assume VVV contract address)",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
     }
   ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
     "chain": "Base",
-    "amountUSD": 1.04,
+    "amountUSD": 9.64,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-22T20:05:44.286Z",
+    "ts": "2026-03-22T20:35:44.307Z",
     "ago": "2m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
-      "btcNow": 68322.46,
-      "sma200": 71538.84305000002,
-      "pctFrom200": -0.04495995340254552,
-      "volRatio": 0.7857037790153221,
+      "btcNow": 68291.95,
+      "sma200": 71538.69050000001,
+      "pctFrom200": -0.04538439936917791,
+      "volRatio": 0.7855595792339557,
       "btcState": "BEAR",
       "ethState": "BEAR",
       "breadthFraction": "BTC:BEAR ETH:BEAR",
@@ -138,22 +161,19 @@
     },
     "seenCount": 13,
     "screened": 13,
-    "flagged": [
-      "BOTCOIN",
-      "MOLTEN"
-    ],
+    "flagged": [],
     "traded": [
-      "MOLTEN"
+      "VVV"
     ],
     "action": "buy",
-    "asset": "MOLTEN",
+    "asset": "VVV",
     "confidence": 80,
-    "reasoning": "MOLTEN has a high onchain trend score of 1.00 and move is 0% done, indicating strong momentum and potential for further growth. The BEAR regime context does not gate this trade, as cross-sectional alpha can work in any regime.",
-    "topSignal": "TIBBIR score=0.53 ret1h=0.0%",
+    "reasoning": "VVV has a high onchain trend score of 0.64 and sustained social attention, indicating strong cross-sectional alpha and potential for further growth.",
+    "topSignal": "TIBBIR score=0.34 ret1h=0.0%",
     "trendingEntries": [
       {
         "symbol": "TIBBIR",
-        "score": 0.5333333333333333,
+        "score": 0.3426666666666666,
         "rank": null,
         "source": "checkr",
         "ret1h": null,
@@ -161,86 +181,17 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 1,
-        "velocity": 8,
-        "att_1h": 1,
+        "attentionDelta": 6.3,
+        "velocity": 5.14,
+        "att_1h": 6.3,
         "att_4h": -0.8,
-        "att_8h": -1,
-        "att_12h": -1.4,
+        "att_8h": -1.4,
+        "att_12h": -1.1,
         "momentumWindows": 1,
         "sustainedMomentum": false,
         "rotatingFrom": [
-          "JUNO",
-          "VIRTUAL"
-        ]
-      },
-      {
-        "symbol": "DRB",
-        "score": 0.5713333333333334,
-        "rank": null,
-        "source": "checkr",
-        "ret1h": null,
-        "moveFrac": null,
-        "quantScore": null,
-        "rugVerdict": null,
-        "rugScore": null,
-        "attentionDelta": 1.6,
-        "velocity": 8.57,
-        "att_1h": 1.6,
-        "att_4h": 0,
-        "att_8h": -0.6,
-        "att_12h": -0.7,
-        "momentumWindows": 1,
-        "sustainedMomentum": false,
-        "rotatingFrom": [
-          "JUNO",
-          "VIRTUAL"
-        ]
-      },
-      {
-        "symbol": "ROBOTMONEY",
-        "score": 0.5333333333333333,
-        "rank": null,
-        "source": "checkr",
-        "ret1h": null,
-        "moveFrac": null,
-        "quantScore": null,
-        "rugVerdict": null,
-        "rugScore": null,
-        "attentionDelta": 3.412,
-        "velocity": 8,
-        "att_1h": 3.4,
-        "att_4h": 0,
-        "att_8h": 0.2,
-        "att_12h": 0,
-        "momentumWindows": 2,
-        "sustainedMomentum": false,
-        "rotatingFrom": [
-          "JUNO",
-          "VIRTUAL"
-        ]
-      },
-      {
-        "symbol": "TOSHI",
-        "score": 0.4,
-        "rank": null,
-        "source": "checkr",
-        "ret1h": null,
-        "moveFrac": null,
-        "quantScore": null,
-        "rugVerdict": null,
-        "rugScore": null,
-        "attentionDelta": 2.7,
-        "velocity": 6,
-        "att_1h": 2.7,
-        "att_4h": 0.1,
-        "att_8h": -0.3,
-        "att_12h": -0.2,
-        "momentumWindows": 2,
-        "sustainedMomentum": false,
-        "rotatingFrom": [
-          "JUNO",
-          "VIRTUAL"
+          "BNKR",
+          "MOLTEN"
         ]
       },
       {
@@ -253,17 +204,86 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 2.7,
+        "attentionDelta": 4.9,
         "velocity": 9.6,
-        "att_1h": 2.7,
+        "att_1h": 4.9,
         "att_4h": 1.4,
-        "att_8h": 0.7,
-        "att_12h": 0.9,
+        "att_8h": 0.8,
+        "att_12h": 1,
         "momentumWindows": 4,
         "sustainedMomentum": true,
         "rotatingFrom": [
-          "JUNO",
-          "VIRTUAL"
+          "BNKR",
+          "TIBBIR"
+        ]
+      },
+      {
+        "symbol": "TOSHI",
+        "score": 0.4,
+        "rank": null,
+        "source": "checkr",
+        "ret1h": null,
+        "moveFrac": null,
+        "quantScore": null,
+        "rugVerdict": null,
+        "rugScore": null,
+        "attentionDelta": 4.3,
+        "velocity": 6,
+        "att_1h": 4.3,
+        "att_4h": 0.1,
+        "att_8h": -0.3,
+        "att_12h": -0.3,
+        "momentumWindows": 2,
+        "sustainedMomentum": false,
+        "rotatingFrom": [
+          "BNKR",
+          "TIBBIR"
+        ]
+      },
+      {
+        "symbol": "ROBOTMONEY",
+        "score": 0.5333333333333333,
+        "rank": null,
+        "source": "checkr",
+        "ret1h": null,
+        "moveFrac": null,
+        "quantScore": null,
+        "rugVerdict": null,
+        "rugScore": null,
+        "attentionDelta": 3.9773181958497608,
+        "velocity": 8,
+        "att_1h": 3.8,
+        "att_4h": 0,
+        "att_8h": 0.2,
+        "att_12h": 0,
+        "momentumWindows": 2,
+        "sustainedMomentum": false,
+        "rotatingFrom": [
+          "BNKR",
+          "TIBBIR"
+        ]
+      },
+      {
+        "symbol": "BOTCOIN",
+        "score": 0.5333333333333333,
+        "rank": null,
+        "source": "checkr",
+        "ret1h": null,
+        "moveFrac": null,
+        "quantScore": null,
+        "rugVerdict": null,
+        "rugScore": null,
+        "attentionDelta": 0.8,
+        "velocity": 8,
+        "att_1h": 0,
+        "att_4h": 0.1,
+        "att_8h": 0,
+        "att_12h": 0,
+        "momentumWindows": 1,
+        "sustainedMomentum": false,
+        "rotatingFrom": [
+          "AXOBOTL",
+          "REPPO"
         ]
       }
     ],
@@ -279,8 +299,8 @@
         "ret1h": -0.0024566922735359035,
         "ret6h": 0.00007710302127468527,
         "transferStats": {
-          "uniqueBuyers": 51,
-          "buyRatio": 0.5543478260869565
+          "uniqueBuyers": 48,
+          "buyRatio": 0.5517241379310345
         }
       },
       {
@@ -306,14 +326,14 @@
         "ret1h": -0.06893013711407522,
         "ret6h": 0.09837147887323949,
         "transferStats": {
-          "uniqueBuyers": 36,
-          "buyRatio": 0.5625
+          "uniqueBuyers": 32,
+          "buyRatio": 0.5423728813559322
         }
       },
       {
         "sym": "MOLTEN",
         "currentPrice": 0,
-        "entryPrice": 0.000008799698808,
+        "entryPrice": 5.66,
         "pnlPct": null,
         "quantScore": null,
         "volumeTrend": "unknown",
@@ -410,6 +430,209 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-22T20:35:44.307Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 68291.95,
+        "sma200": 71538.69050000001,
+        "pctFrom200": -0.04538439936917791,
+        "volRatio": 0.7855595792339557,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "buy",
+      "asset": "VVV",
+      "confidence": 80,
+      "reasoning": "VVV has a high onchain trend score of 0.64 and sustained social attention, indicating strong cross-sectional alpha and potential for further growth.",
+      "seenCount": 10,
+      "flagged": [],
+      "traded": [
+        "VVV"
+      ],
+      "trendingEntries": [
+        {
+          "symbol": "TIBBIR",
+          "score": 0.3426666666666666,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 6.3,
+          "velocity": 5.14,
+          "att_1h": 6.3,
+          "att_4h": -0.8,
+          "att_8h": -1.4,
+          "att_12h": -1.1,
+          "momentumWindows": 1,
+          "sustainedMomentum": false,
+          "rotatingFrom": [
+            "BNKR",
+            "MOLTEN"
+          ]
+        },
+        {
+          "symbol": "VVV",
+          "score": 0.64,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 4.9,
+          "velocity": 9.6,
+          "att_1h": 4.9,
+          "att_4h": 1.4,
+          "att_8h": 0.8,
+          "att_12h": 1,
+          "momentumWindows": 4,
+          "sustainedMomentum": true,
+          "rotatingFrom": [
+            "BNKR",
+            "TIBBIR"
+          ]
+        },
+        {
+          "symbol": "TOSHI",
+          "score": 0.4,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 4.3,
+          "velocity": 6,
+          "att_1h": 4.3,
+          "att_4h": 0.1,
+          "att_8h": -0.3,
+          "att_12h": -0.3,
+          "momentumWindows": 2,
+          "sustainedMomentum": false,
+          "rotatingFrom": [
+            "BNKR",
+            "TIBBIR"
+          ]
+        },
+        {
+          "symbol": "ROBOTMONEY",
+          "score": 0.5333333333333333,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 3.9773181958497608,
+          "velocity": 8,
+          "att_1h": 3.8,
+          "att_4h": 0,
+          "att_8h": 0.2,
+          "att_12h": 0,
+          "momentumWindows": 2,
+          "sustainedMomentum": false,
+          "rotatingFrom": [
+            "BNKR",
+            "TIBBIR"
+          ]
+        },
+        {
+          "symbol": "BOTCOIN",
+          "score": 0.5333333333333333,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 0.8,
+          "velocity": 8,
+          "att_1h": 0,
+          "att_4h": 0.1,
+          "att_8h": 0,
+          "att_12h": 0,
+          "momentumWindows": 1,
+          "sustainedMomentum": false,
+          "rotatingFrom": [
+            "AXOBOTL",
+            "REPPO"
+          ]
+        }
+      ],
+      "positionUpdates": [
+        {
+          "sym": "DRB",
+          "currentPrice": 0.0000687445,
+          "entryPrice": 0.00007041,
+          "pnlPct": -2.37,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": -0.0024566922735359035,
+          "ret6h": 0.00007710302127468527,
+          "transferStats": {
+            "uniqueBuyers": 48,
+            "buyRatio": 0.5517241379310345
+          }
+        },
+        {
+          "sym": "JUNO",
+          "currentPrice": 0,
+          "entryPrice": 0.02528,
+          "pnlPct": null,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": null,
+          "ret6h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "BLUEAGENT",
+          "currentPrice": 9.982e-7,
+          "entryPrice": 0.000001026,
+          "pnlPct": -2.71,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": -0.06893013711407522,
+          "ret6h": 0.09837147887323949,
+          "transferStats": {
+            "uniqueBuyers": 32,
+            "buyRatio": 0.5423728813559322
+          }
+        },
+        {
+          "sym": "MOLTEN",
+          "currentPrice": 0,
+          "entryPrice": 5.66,
+          "pnlPct": null,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": null,
+          "ret6h": null,
+          "transferStats": null
+        }
+      ],
+      "topSignal": "TIBBIR score=0.34 ret1h=0.0%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "anthropic-fallback"
+    },
     {
       "ts": "2026-03-22T20:05:44.286Z",
       "regime": "BEAR",
@@ -3885,47 +4108,6 @@
       "topSignal": null,
       "layers": [],
       "screenLayer": "bankr-llm"
-    },
-    {
-      "ts": "2026-03-21T20:13:33.231Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 70427.75,
-        "sma200": 71798.89645000003,
-        "pctFrom200": -0.019097040731745518,
-        "volRatio": 0.7449840474363546,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "buy",
-      "asset": "KTA",
-      "confidence": 70,
-      "reasoning": "KTA token is trending onchain with a score of 0.40 and a significant return in the last 24 hours, indicating strong cross-sectional alpha.",
-      "seenCount": 1,
-      "flagged": [],
-      "traded": [
-        "KTA"
-      ],
-      "trendingEntries": [
-        {
-          "symbol": "KTA",
-          "score": 0.40427209783048046,
-          "rank": 7,
-          "ret1h": 0.05880909256408732,
-          "moveFrac": 0.9402390857355271,
-          "quantScore": 0.05693488509442299
-        }
-      ],
-      "positionUpdates": [],
-      "topSignal": "KTA score=0.40 ret1h=5.9%",
-      "layers": [
-        "bankr-screen",
-        "venice-e2ee"
-      ],
-      "screenLayer": "fallback"
     }
   ],
   "reasoningTraces": [
