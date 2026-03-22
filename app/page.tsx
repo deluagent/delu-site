@@ -239,15 +239,18 @@ function PositionsCard({ positions, loading, yieldPos }: { positions: any[]; loa
 // ── Token signal row (inside cycle log) ──────────────────────────────────────
 function TokenSignalRow({ t }: { t: any }) {
   const hasCheckr = t.attentionDelta > 0 || t.velocity > 0 || t.momentumWindows > 0;
+  const hasRotation = t.rotatingFrom?.length > 0;
   return (
     <div className="flex items-start justify-between gap-2 py-1.5 border-b border-[#1e1e2e] last:border-0">
       <div className="min-w-0">
         <div className="flex items-center gap-1.5 flex-wrap">
           <span className="mono text-xs font-bold text-[#e2e8f0]">{t.symbol}</span>
           {t.rank != null && <span className="text-[9px] text-[#6b7280]">#{t.rank}</span>}
-          {t.source === 'checkr' && <span className="text-[9px] text-orange-400">checkr</span>}
-          {t.rugVerdict && t.rugVerdict !== 'SAFE' && <span className="text-[9px] text-red-400">rug:{t.rugVerdict}</span>}
+          {t.source === 'checkr' && <span className="text-[9px] text-orange-400 border border-orange-500/20 px-1 rounded">checkr</span>}
+          {t.source === 'bankr' && t.rank != null && <span className="text-[9px] text-indigo-400 border border-indigo-500/20 px-1 rounded">bankr</span>}
+          {t.rugVerdict && t.rugVerdict !== 'SAFE' && <span className="text-[9px] text-red-400 border border-red-500/20 px-1 rounded">rug:{t.rugVerdict}</span>}
           {t.sustainedMomentum && <span className="text-[9px] text-orange-400">🔥{t.momentumWindows}w</span>}
+          {hasRotation && <span className="text-[9px] text-purple-400">↩ from {t.rotatingFrom.slice(0,2).join(',')}</span>}
         </div>
         <div className="flex items-center gap-2 mt-0.5 flex-wrap">
           {t.ret1h != null && (
@@ -416,6 +419,12 @@ function CycleLog({ cycles, positions }: { cycles: any[]; positions: any[] }) {
                 <span className="text-[10px] text-[#6b7280] truncate flex-1 min-w-0">
                   {c.reasoning ? c.reasoning.slice(0, 72) : '—'}
                 </span>
+                {c.screenLayer === 'anthropic-fallback' && (
+                  <span className="text-[8px] text-yellow-500/70 shrink-0 border border-yellow-500/20 px-1 rounded">haiku</span>
+                )}
+                {c.screenLayer === 'bankr-llm' && (
+                  <span className="text-[8px] text-indigo-400/60 shrink-0 border border-indigo-500/20 px-1 rounded">bankr</span>
+                )}
                 {topScore >= 0.8 && !isTrade && (
                   <span className="text-[9px] text-indigo-400 shrink-0">top {topScore.toFixed(2)}</span>
                 )}
@@ -558,24 +567,32 @@ export default function Home() {
           {/* Autoresearch */}
           <Card>
             <Label>Self-Improving Brain</Label>
-            <p className="text-[10px] text-[#6b7280] mb-3 leading-relaxed">
-              Bankr LLM rewrites the quant scoring function 24/7. Each experiment backtests on real Base token data and auto-promotes improvements — no human required.
+            <p className="text-[10px] text-[#6b7280] mb-1 leading-relaxed">
+              Bankr LLM runs 4 parallel loops 24/7 — each proposes a code change to the quant scoring function, backtests it on real Base token data, and auto-promotes winners to the live agent. No human in the loop.
             </p>
+            <div className="flex items-center gap-2 mb-3 p-2 bg-green-500/5 border border-green-500/15 rounded-lg">
+              <span className="text-green-400 text-xs">→</span>
+              <span className="text-[10px] text-green-300">Best onchain candidate promoted to live trading every cycle</span>
+            </div>
             <div className="space-y-2">
               {[
-                { name: 'Onchain (Base)', data: ar.onchain  || {}, color: 'text-indigo-400' },
-                { name: 'Hourly (1h)',    data: ar.hourly   || {}, color: 'text-emerald-400' },
-                { name: '5-minute',       data: ar.fiveMin  || {}, color: 'text-orange-400' },
-              ].map(({ name, data, color }) => (
-                <div key={name} className="p-2.5 bg-[#0a0a0f] border border-[#1e1e2e] rounded-xl">
+                { name: 'Onchain (Base)', data: ar.onchain  || {}, color: 'text-indigo-400',  dot: 'bg-indigo-500',  live: true },
+                { name: 'Hourly (1h)',    data: ar.hourly   || {}, color: 'text-emerald-400', dot: 'bg-emerald-500', live: false },
+                { name: '5-minute',       data: ar.fiveMin  || {}, color: 'text-orange-400',  dot: 'bg-orange-500',  live: false },
+              ].map(({ name, data, color, dot, live }) => (
+                <div key={name} className={`p-2.5 bg-[#0a0a0f] border rounded-xl ${live ? 'border-indigo-500/20' : 'border-[#1e1e2e]'}`}>
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className={`text-[11px] font-bold ${color}`}>{name}</span>
+                    <div className="flex items-center gap-2">
+                      <div className={`w-1.5 h-1.5 rounded-full ${dot} ${live ? 'pulse-live' : ''}`} />
+                      <span className={`text-[11px] font-bold ${color}`}>{name}</span>
+                      {live && <span className="text-[8px] text-green-400 border border-green-500/20 px-1 rounded">→ live</span>}
+                    </div>
                     <span className="mono text-[10px] text-[#6b7280]">{((data as any).expCount || 0).toLocaleString()} exp</span>
                   </div>
-                  <div className="flex gap-4">
-                    <div><div className="text-[8px] text-[#6b7280]">Best Sharpe</div><div className="mono text-sm font-bold">{((data as any).bestValSharpe || 0).toFixed(2)}</div></div>
-                    <div><div className="text-[8px] text-[#6b7280]">Score</div><div className="mono text-sm font-bold">{((data as any).bestScore || 0).toFixed(2)}</div></div>
-                    {((data as any).expCount || 0) > 0 && <div className={`ml-auto self-end text-[9px] font-bold ${color}`}>↑ live</div>}
+                  <div className="flex gap-4 items-end">
+                    <div><div className="text-[8px] text-[#6b7280]">Val Sharpe</div><div className="mono text-sm font-bold">{((data as any).bestValSharpe || 0).toFixed(2)}</div></div>
+                    <div><div className="text-[8px] text-[#6b7280]">Aud Sharpe</div><div className="mono text-sm font-bold">{((data as any).bestAudSharpe || 0).toFixed(2)}</div></div>
+                    <div><div className="text-[8px] text-[#6b7280]">Score</div><div className={`mono text-sm font-bold ${color}`}>{((data as any).bestScore || 0).toFixed(2)}</div></div>
                   </div>
                 </div>
               ))}
