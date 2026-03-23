@@ -3,13 +3,24 @@ import { NextResponse } from "next/server";
 export const revalidate = 0; // always fresh
 
 export async function GET() {
-  // Primary: fetch live status.json directly from GitHub (raw) — always latest agent data
-  // Agent commits to delu-site repo every 30min; GitHub raw is always up to date
+  // Primary: read from local public/data/status.json (bundled with Vercel deploy)
+  // price_updater pushes every 5min → triggers Vercel redeploy → always fresh
+  try {
+    const fs = await import("fs");
+    const path = await import("path");
+    const filePath = path.join(process.cwd(), "public", "data", "status.json");
+    const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    return NextResponse.json(data, {
+      headers: { "Cache-Control": "no-store, max-age=0" }
+    });
+  } catch {}
+
+  // Fallback: GitHub raw (has ~5min CDN cache but better than nothing)
   try {
     const controller = new AbortController();
     const t = setTimeout(() => controller.abort(), 6000);
     const res = await fetch(
-      "https://raw.githubusercontent.com/deluagent/delu-site/main/public/data/status.json",
+      `https://raw.githubusercontent.com/deluagent/delu-site/main/public/data/status.json?t=${Date.now()}`,
       { signal: controller.signal, cache: "no-store" }
     );
     clearTimeout(t);
