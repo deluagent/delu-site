@@ -547,22 +547,22 @@ function CapitalSection({ status }: { status: any }) {
               </div>
             ))}
 
-            {/* Yield detail */}
+            {/* Yield detail — optional, shows when active */}
             <div className="border-t border-[#1c1c28] pt-3 mt-1">
               <div className="flex items-center justify-between mb-0.5">
-                <span className="text-[10px] font-medium text-[#9ca3af]">Yield Position</span>
+                <span className="text-[10px] font-medium text-[#9ca3af]">Yield</span>
                 {yld.apy > 0
                   ? <span className={mono('text-[10px] text-[#22c55e] font-bold')}>{yld.apy.toFixed(2)}% APY</span>
-                  : <span className={`text-[10px] ${dim}`}>deploying surplus next cycle</span>
+                  : <span className={`text-[10px] ${dim}`}>inactive — capital kept liquid for trades</span>
                 }
               </div>
-              <div className="flex items-center justify-between">
-                <span className={`text-[9px] ${dim}`}>{yld.protocol ?? 'Bankr Wallet'} · {yld.vault ?? 'Liquid USDC'}</span>
+              {yld.apy > 0 && <div className="flex items-center justify-between">
+                <span className={`text-[9px] ${dim}`}>{yld.protocol} · {yld.vault}</span>
                 <span className={mono('text-[9px] text-white')}>${yldAmt.toFixed(2)}</span>
-              </div>
+              </div>}
               {yld.apy === 0 && liquid >= 27 && (
                 <div className={`text-[9px] ${dim} mt-0.5`}>
-                  ${(liquid - 27).toFixed(2)} surplus above $27 tranche → will deploy to best APY vault next cycle
+                  activates automatically when win rate reaches 70%
                 </div>
               )}
               {yld.apy === 0 && liquid < 27 && (
