@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-03-23T19:30:58.781Z",
+  "updatedAt": "2026-03-23T19:35:50.629Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71119,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 4 min",
+  "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 116.84,
-    "positionsUSD": 50.22,
-    "liquidUSDC": 4.67,
+    "totalUSD": 166.62,
+    "positionsUSD": 49.8,
+    "liquidUSDC": 0,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.19,
-    "unrealPnlPct": -0.38
+    "unrealPnlUSD": -0.2,
+    "unrealPnlPct": -0.4
   },
   "positions": [
     {
       "sym": "VVV",
       "entryPrice": 6.1,
-      "currentPrice": 6.08504129,
+      "currentPrice": 6.08228369,
       "sizeUSD": 20,
-      "currentUSD": 19.68,
-      "pnlUSD": -0.32,
-      "pnlPct": -1.6,
+      "currentUSD": 19.67,
+      "pnlUSD": -0.33,
+      "pnlPct": -1.65,
       "peakPct": 0.78,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -123,13 +123,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
     "chain": "Base",
-    "amountUSD": 4.67,
+    "amountUSD": 0,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-23T19:05:00.008Z",
-    "ago": "26m ago",
+    "ago": "31m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -153,9 +153,9 @@
     "positionUpdates": [
       {
         "sym": "VVV",
-        "currentPrice": 6.08504129,
-        "pnlPct": -1.6,
-        "pnlUSD": -0.32,
+        "currentPrice": 6.08228369,
+        "pnlPct": -1.65,
+        "pnlUSD": -0.33,
         "quantScore": 0.0275,
         "volumeTrend": "increasing",
         "recommendation": "hold",
@@ -211,9 +211,9 @@
     "positionAssessments": [
       {
         "sym": "VVV",
-        "currentPrice": 6.08504129,
-        "pnlPct": -1.6,
-        "pnlUSD": -0.32,
+        "currentPrice": 6.08228369,
+        "pnlPct": -1.65,
+        "pnlUSD": -0.33,
         "quantScore": 0.0275,
         "volumeTrend": "increasing",
         "recommendation": "hold",
@@ -451,9 +451,9 @@
       "positionUpdates": [
         {
           "sym": "VVV",
-          "currentPrice": 6.08504129,
-          "pnlPct": -1.6,
-          "pnlUSD": -0.32,
+          "currentPrice": 6.08228369,
+          "pnlPct": -1.65,
+          "pnlUSD": -0.33,
           "quantScore": 0.0275,
           "volumeTrend": "increasing",
           "recommendation": "hold",
@@ -509,9 +509,9 @@
       "positionAssessments": [
         {
           "sym": "VVV",
-          "currentPrice": 6.08504129,
-          "pnlPct": -1.6,
-          "pnlUSD": -0.32,
+          "currentPrice": 6.08228369,
+          "pnlPct": -1.65,
+          "pnlUSD": -0.33,
           "quantScore": 0.0275,
           "volumeTrend": "increasing",
           "recommendation": "hold",
@@ -9411,7 +9411,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 14385,
+      "expCount": 14420,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
