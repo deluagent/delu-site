@@ -678,21 +678,30 @@ function CycleRow({ cycle }: { cycle: any }) {
             {/* Asset-specific signals — only shown for the traded asset */}
             {cycle.traded?.length > 0 && (() => {
               const asset = cycle.traded[0];
+              // Look in trendingEntries AND checkrSustained for the asset
               const entry = (cycle.trendingEntries as any[] ?? []).find((t: any) => t.symbol === asset);
-              const checkrEntry = cycle.dataSources?.checkrSustained?.find((t: any) => t.sym === asset);
+              const checkrEntry = (cycle.dataSources?.checkrSustained as any[] ?? []).find((t: any) => t.sym === asset);
+              // Fallback: positionAssessments has real onchain data even if not in trendingEntries
+              const assessment = (cycle.positionAssessments as any[] ?? []).find((p: any) => p.sym === asset);
+              // Quant score: prefer entry.score (trending), fallback to assessment.quantScore
+              const quantScore = entry?.score ?? assessment?.quantScore ?? null;
+              const ret1h = entry?.ret1h ?? assessment?.ret1h ?? null;
+              const buyRatio = entry?.buyRatio ?? assessment?.transferStats?.buyRatio ?? null;
+              const uniqueBuyers = entry?.buyers ?? assessment?.transferStats?.uniqueBuyers ?? null;
+
               return (
                 <div className="border-t border-[#1c1c28] pt-2 space-y-2">
                   <div className={`${label} text-[#f59e0b]`}>Why {asset}</div>
 
                   {/* Onchain signals */}
-                  {entry && (
+                  {(quantScore != null || ret1h != null || buyRatio != null) && (
                     <div>
                       <div className={`text-[9px] ${dim} mb-1`}>Onchain · Alchemy + GeckoTerminal</div>
                       <div className="flex flex-wrap gap-x-4 gap-y-0.5">
-                        <span className={dim}>Quant score <span className="text-white">{(entry.score ?? 0).toFixed(2)}</span></span>
-                        {entry.ret1h != null && <span className={dim}>1h <span className={mono('', pnlColor(entry.ret1h * 100))}>{entry.ret1h >= 0 ? '+' : ''}{(entry.ret1h * 100).toFixed(1)}%</span></span>}
-                        {entry.buyers != null && <span className={dim}>buyers <span className="text-white">{entry.buyers}</span></span>}
-                        {entry.buyRatio != null && <span className={dim}>buy ratio <span className="text-white">{(entry.buyRatio * 100).toFixed(0)}%</span></span>}
+                        {quantScore != null && <span className={dim}>Quant score <span className="text-white">{(quantScore).toFixed(2)}</span></span>}
+                        {ret1h != null && <span className={dim}>1h <span className={mono('', pnlColor(ret1h * 100))}>{ret1h >= 0 ? '+' : ''}{(ret1h * 100).toFixed(1)}%</span></span>}
+                        {uniqueBuyers != null && <span className={dim}>buyers <span className="text-white">{uniqueBuyers}</span></span>}
+                        {buyRatio != null && <span className={dim}>buy ratio <span className="text-white">{(buyRatio * 100).toFixed(0)}%</span></span>}
                       </div>
                     </div>
                   )}
@@ -702,9 +711,10 @@ function CycleRow({ cycle }: { cycle: any }) {
                     <div>
                       <div className={`text-[9px] ${dim} mb-1`}>Social · Checkr (paid via x402)</div>
                       <div className="flex flex-wrap gap-x-4 gap-y-0.5">
-                        <span className={dim}>Attention <span className="text-white">+{checkrEntry.att1h?.toFixed(1)}pp</span></span>
-                        <span className={dim}>Velocity <span className="text-white">{checkrEntry.velocity?.toFixed(0)}</span></span>
-                        <span className={dim}>Windows <span className="text-white">{checkrEntry.windows ?? '—'}</span></span>
+                        {checkrEntry.att1h != null && <span className={dim}>1h attention <span className="text-white">+{checkrEntry.att1h?.toFixed(1)}pp</span></span>}
+                        {checkrEntry.att4h != null && <span className={dim}>4h <span className="text-white">+{checkrEntry.att4h?.toFixed(1)}pp</span></span>}
+                        {checkrEntry.velocity != null && <span className={dim}>velocity <span className="text-white">{checkrEntry.velocity?.toFixed(1)}</span></span>}
+                        {checkrEntry.windows != null && <span className={dim}>windows <span className="text-white">{checkrEntry.windows}</span></span>}
                       </div>
                     </div>
                   )}
