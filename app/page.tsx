@@ -166,6 +166,7 @@ const LOOP_COLORS: Record<string, { text: string; bar: string; badge: string }> 
   indigo:  { text: 'text-[#818cf8]', bar: '#818cf8', badge: 'border-[#818cf8]/20 bg-[#818cf8]/5 text-[#818cf8]' },
   emerald: { text: 'text-[#34d399]', bar: '#34d399', badge: 'border-[#34d399]/20 bg-[#34d399]/5 text-[#34d399]' },
   blue:    { text: 'text-[#60a5fa]', bar: '#60a5fa', badge: 'border-[#60a5fa]/20 bg-[#60a5fa]/5 text-[#60a5fa]' },
+  purple:  { text: 'text-[#a855f7]', bar: '#a855f7', badge: 'border-[#a855f7]/20 bg-[#a855f7]/5 text-[#a855f7]' },
 };
 
 function BrainSection({ brain }: { brain: any }) {
