@@ -499,15 +499,16 @@ function CyclesSection({ cycles }: { cycles: any[] }) {
   }, []);
 
   const display = showAll ? deduped : deduped.slice(0, 15);
-  const buys = deduped.filter(c => c.action === 'buy' || c.action === 'long').length;
-  const holds = deduped.length - buys;
+  // Count only cycles with confirmed trade (traded array non-empty)
+  const confirmed = deduped.filter(c => (c.traded ?? []).length > 0).length;
+  const holds = deduped.filter(c => c.action === 'hold' || c.action === 'smart_yield').length;
 
   return (
     <section className="mb-10">
       <div className="flex items-center justify-between mb-4">
         <div className={label}>Intelligence Cycles</div>
         <div className={`text-[10px] ${dim} flex gap-3`}>
-          <span><span className="text-[#22c55e]">{buys}</span> trades</span>
+          <span><span className="text-[#22c55e]">{confirmed}</span> confirmed trades</span>
           <span><span className="text-[#6b7280]">{holds}</span> holds</span>
         </div>
       </div>
