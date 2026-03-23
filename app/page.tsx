@@ -661,96 +661,90 @@ function CycleRow({ cycle }: { cycle: any }) {
         <div className="px-4 pb-3">
           <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3 text-[10px] space-y-3">
 
-            {/* Venice AI reasoning — private inference output only */}
+            {/* Venice AI reasoning — shown only for the asset that was bought/held */}
             {cycle.reasoning && !cycle.reasoning.startsWith('Venice unavailable') && !cycle.reasoning.includes('"error"') && (
               <div>
-                <div className="flex items-center gap-1.5 mb-1.5">
+                <div className="flex items-center gap-1.5 mb-1">
                   <span className="w-1 h-1 rounded-full bg-[#a855f7]" />
-                  <span className={`${label} text-[#a855f7]`}>Venice AI · Private Inference</span>
+                  <span className={`${label} text-[#a855f7]`}>Venice AI · Private Inference (E2EE)</span>
+                </div>
+                <div className={`text-[9px] ${dim} mb-1.5`}>
+                  Full model weights and reasoning are encrypted end-to-end — only the summary is visible.
                 </div>
                 <div className="text-[#d1d5db] leading-relaxed italic">&ldquo;{cycle.reasoning}&rdquo;</div>
               </div>
             )}
 
-            {/* Data pipeline summary */}
-            {cycle.dataSources && (
-              <div className="border-t border-[#1c1c28] pt-2">
-                <div className={`${label} mb-1.5`}>Data Pipeline</div>
-                <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 mb-2">
-                  {cycle.dataSources.checkrTokens > 0 && (
-                    <div className="flex justify-between">
-                      <span className={dim}>Checkr (4 windows + spikes + rotation)</span>
-                      <span className={mono('text-white')}>{cycle.dataSources.checkrTokens} tokens</span>
-                    </div>
-                  )}
-                  {cycle.dataSources.discoveryPassed >= 0 && (
-                    <div className="flex justify-between">
-                      <span className={dim}>Alchemy + Bankr discovery</span>
-                      <span className={mono('text-white')}>{cycle.dataSources.discoveryPassed} passed vetting</span>
-                    </div>
-                  )}
-                </div>
-                {(cycle.dataSources.checkrSustained ?? []).length > 0 && (
-                  <div>
-                    <div className={`text-[9px] ${dim} mb-1`}>Sustained momentum (3+ windows):</div>
-                    <div className="flex flex-wrap gap-1">
-                      {(cycle.dataSources.checkrSustained as any[]).map((t: any) => (
-                        <span key={t.sym} className="text-[9px] px-1.5 py-0.5 rounded bg-[#1c1c28] text-[#9ca3af]">
-                          {t.sym} {t.att1h?.toFixed(1)}pp vel={t.velocity?.toFixed(0)}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
+            {/* Asset-specific signals — only shown for the traded asset */}
+            {cycle.traded?.length > 0 && (() => {
+              const asset = cycle.traded[0];
+              const entry = (cycle.trendingEntries as any[] ?? []).find((t: any) => t.symbol === asset);
+              const checkrEntry = cycle.dataSources?.checkrSustained?.find((t: any) => t.sym === asset);
+              return (
+                <div className="border-t border-[#1c1c28] pt-2 space-y-2">
+                  <div className={`${label} text-[#f59e0b]`}>Why {asset}</div>
 
-            {/* Tokens screened */}
-            {(cycle.trendingEntries ?? []).length > 0 && (
-              <div className="border-t border-[#1c1c28] pt-2">
-                <div className={`${label} mb-1.5`}>Tokens Screened This Cycle</div>
-                <div className="space-y-0.5">
-                  {(cycle.trendingEntries as any[]).slice(0, 6).map((t: any) => (
-                    <div key={t.symbol} className="flex items-center gap-3 py-0.5">
-                      <span className={mono('text-white w-20 font-semibold')}>{t.symbol}</span>
-                      <span className={mono('', (t.score ?? 0) >= 0.65 ? 'text-[#22c55e]' : (t.score ?? 0) >= 0.40 ? 'text-[#f59e0b]' : dim)}>
-                        score {(t.score ?? 0).toFixed(2)}
+                  {/* Onchain signals */}
+                  {entry && (
+                    <div>
+                      <div className={`text-[9px] ${dim} mb-1`}>Onchain · Alchemy + GeckoTerminal</div>
+                      <div className="flex flex-wrap gap-x-4 gap-y-0.5">
+                        <span className={dim}>Quant score <span className="text-white">{(entry.score ?? 0).toFixed(2)}</span></span>
+                        {entry.ret1h != null && <span className={dim}>1h <span className={mono('', pnlColor(entry.ret1h * 100))}>{entry.ret1h >= 0 ? '+' : ''}{(entry.ret1h * 100).toFixed(1)}%</span></span>}
+                        {entry.buyers != null && <span className={dim}>buyers <span className="text-white">{entry.buyers}</span></span>}
+                        {entry.buyRatio != null && <span className={dim}>buy ratio <span className="text-white">{(entry.buyRatio * 100).toFixed(0)}%</span></span>}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Checkr social signals */}
+                  {checkrEntry && (
+                    <div>
+                      <div className={`text-[9px] ${dim} mb-1`}>Social · Checkr (paid via x402)</div>
+                      <div className="flex flex-wrap gap-x-4 gap-y-0.5">
+                        <span className={dim}>Attention <span className="text-white">+{checkrEntry.att1h?.toFixed(1)}pp</span></span>
+                        <span className={dim}>Velocity <span className="text-white">{checkrEntry.velocity?.toFixed(0)}</span></span>
+                        <span className={dim}>Windows <span className="text-white">{checkrEntry.windows ?? '—'}</span></span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Conviction */}
+                  {cycle.confidence != null && (
+                    <div className="flex items-center gap-2 pt-0.5">
+                      <span className={dim}>Conviction</span>
+                      <span className={mono('font-bold', cycle.confidence >= 65 ? 'text-[#22c55e]' : 'text-[#f59e0b]')}>
+                        {cycle.confidence}%
                       </span>
-                      {t.ret1h != null && (
-                        <span className={mono('', pnlColor(t.ret1h))}>
-                          1h {t.ret1h >= 0 ? '+' : ''}{(t.ret1h * 100).toFixed(1)}%
-                        </span>
-                      )}
-                      {(t.score ?? 0) >= 0.65 && <span className="text-[#22c55e] text-[9px]">↑ shortlisted</span>}
+                      <span className={`text-[9px] ${dim}`}>(threshold 65%)</span>
                     </div>
-                  ))}
+                  )}
                 </div>
-              </div>
-            )}
+              );
+            })()}
 
-            {/* Confidence + action */}
-            {cycle.confidence != null && (
-              <div className="border-t border-[#1c1c28] pt-2 flex items-center gap-3">
-                <span className={dim}>Conviction</span>
-                <span className={mono('font-bold', cycle.confidence >= 65 ? 'text-[#22c55e]' : 'text-[#f59e0b]')}>
-                  {cycle.confidence}%
-                </span>
-                <span className={dim}>threshold 65%</span>
+            {/* HOLD cycle — show pipeline summary only, no token leaderboard */}
+            {(cycle.traded?.length === 0 || !cycle.traded) && cycle.dataSources && (
+              <div className="border-t border-[#1c1c28] pt-2">
+                <div className={`${label} mb-1`}>Pipeline</div>
+                <div className={`${dim}`}>
+                  {cycle.dataSources.checkrTokens > 0 && `${cycle.dataSources.checkrTokens} social tokens · `}
+                  {cycle.dataSources.discoveryPassed != null && `${cycle.dataSources.discoveryPassed} passed vetting · `}
+                  no entry above conviction threshold
+                </div>
               </div>
             )}
 
             {/* Position updates */}
             {(cycle.positionUpdates ?? []).length > 0 && (
               <div className="border-t border-[#1c1c28] pt-2">
-                <div className={`${label} mb-1.5`}>Position Updates</div>
+                <div className={`${label} mb-1.5`}>Open Positions</div>
                 {(cycle.positionUpdates as any[]).slice(0, 4).map((p: any, i: number) => {
                   const pnl = p.pnlPct ?? 0;
-                  const r1h = p.ret1h != null ? (p.ret1h * 100).toFixed(1) : null;
                   return (
                     <div key={i} className="flex items-center gap-2 py-0.5">
                       <span className={mono('font-bold text-white')}>{p.sym}</span>
                       <span className={mono('', pnlColor(pnl))}>{pnl >= 0 ? '+' : ''}{pnl.toFixed(2)}%</span>
-                      {r1h && <span className={`${dim} text-[9px]`}>1h {parseFloat(r1h) >= 0 ? '+' : ''}{r1h}%</span>}
                       <span className={`${dim} text-[9px]`}>{p.recommendation ?? 'hold'}</span>
                     </div>
                   );
