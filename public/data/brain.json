@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-03-23T00:22:20.133Z",
-  "totalExp": 8008,
-  "totalAccepted": 35,
+  "generatedAt": "2026-03-23T00:42:12.932Z",
+  "totalExp": 8645,
+  "totalAccepted": 36,
   "topScore": 28.012,
   "topLoop": "5m",
   "loops": [
     {
       "name": "5m",
       "color": "orange",
-      "expCount": 1781,
+      "expCount": 1840,
       "acceptedCount": 10,
-      "acceptRate": 0.6,
+      "acceptRate": 0.5,
       "bestScore": 28.012,
       "breakthroughCount": 10,
       "signals": [
@@ -25,7 +25,7 @@
     {
       "name": "Onchain",
       "color": "indigo",
-      "expCount": 5494,
+      "expCount": 5557,
       "acceptedCount": 3,
       "acceptRate": 0.1,
       "bestScore": 20.402,
@@ -44,9 +44,9 @@
     {
       "name": "Hourly",
       "color": "emerald",
-      "expCount": 538,
+      "expCount": 581,
       "acceptedCount": 20,
-      "acceptRate": 3.7,
+      "acceptRate": 3.4,
       "bestScore": 11.012,
       "breakthroughCount": 20,
       "signals": [
@@ -63,11 +63,11 @@
     {
       "name": "Fusion",
       "color": "purple",
-      "expCount": 195,
-      "acceptedCount": 2,
-      "acceptRate": 1,
-      "bestScore": 0.439,
-      "breakthroughCount": 2,
+      "expCount": 415,
+      "acceptedCount": 3,
+      "acceptRate": 0.7,
+      "bestScore": 0.442,
+      "breakthroughCount": 3,
       "signals": [
         "Evolves blend weights: 5m + Onchain + Hourly + 4h",
         "Per-regime weights (BEAR / BULL / RANGE)",
@@ -76,6 +76,32 @@
         "Entry score threshold (minScore) auto-evolved"
       ],
       "latestDescription": null
+    },
+    {
+      "name": "Stops",
+      "color": "rose",
+      "expCount": 252,
+      "acceptedCount": 0,
+      "acceptRate": 0,
+      "bestScore": 0,
+      "breakthroughCount": 0,
+      "signals": [
+        "Evolves blend weights: 5m + Onchain + Hourly + 4h",
+        "Per-regime weights (BEAR / BULL / RANGE)",
+        "Onchain veto — blocks entry if smart wallet negative",
+        "Whale concentration veto (evolved threshold)",
+        "Entry score threshold (minScore) auto-evolved"
+      ],
+      "latestDescription": null,
+      "bestParams": {
+        "atrMult": 2.7,
+        "hardSlAtrMult": 2.4,
+        "hardSlMinPct": 10,
+        "hardSlMaxPct": 14.98,
+        "activateAt": 0.69
+      },
+      "bestWinRate": 0.5723849372384937,
+      "bestAvgPnl": 0.4195738971507442
     }
   ],
   "breakthroughs": [
@@ -353,6 +379,13 @@
     {
       "score": 0.439,
       "ts": "2026-03-23T00:09:20.002Z",
+      "description": null,
+      "loop": "Fusion",
+      "color": "purple"
+    },
+    {
+      "score": 0.442,
+      "ts": "2026-03-23T00:34:53.654Z",
       "description": null,
       "loop": "Fusion",
       "color": "purple"

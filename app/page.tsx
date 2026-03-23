@@ -175,6 +175,7 @@ const LOOP_COLORS: Record<string, { text: string; bar: string; badge: string }> 
   emerald: { text: 'text-[#34d399]', bar: '#34d399', badge: 'border-[#34d399]/20 bg-[#34d399]/5 text-[#34d399]' },
   blue:    { text: 'text-[#60a5fa]', bar: '#60a5fa', badge: 'border-[#60a5fa]/20 bg-[#60a5fa]/5 text-[#60a5fa]' },
   purple:  { text: 'text-[#a855f7]', bar: '#a855f7', badge: 'border-[#a855f7]/20 bg-[#a855f7]/5 text-[#a855f7]' },
+  rose:    { text: 'text-[#fb7185]', bar: '#fb7185', badge: 'border-[#fb7185]/20 bg-[#fb7185]/5 text-[#fb7185]' },
 };
 
 function BrainSection({ brain }: { brain: any }) {
@@ -276,6 +277,27 @@ function BrainSection({ brain }: { brain: any }) {
               {loop.latestDescription && (
                 <div className={`mt-2.5 text-[9px] ${dim} italic leading-relaxed line-clamp-2 border-t border-[#1c1c28] pt-2`}>
                   Latest: {loop.latestDescription}
+                </div>
+              )}
+              {/* Stops loop — show evolved ATR params */}
+              {loop.name === 'Stops' && loop.bestParams && (
+                <div className="mt-2.5 border-t border-[#1c1c28] pt-2 space-y-1">
+                  <div className={`text-[9px] ${dim} mb-1`}>Evolved stop parameters:</div>
+                  <div className="grid grid-cols-2 gap-x-3 gap-y-0.5">
+                    {[
+                      ['ATR trail ×', loop.bestParams.atrMult?.toFixed(1)],
+                      ['Hard SL ×', loop.bestParams.hardSlAtrMult?.toFixed(1)],
+                      ['Min SL', `${loop.bestParams.hardSlMinPct?.toFixed(0)}%`],
+                      ['Max SL', `${loop.bestParams.hardSlMaxPct?.toFixed(0)}%`],
+                      ['Activate at', `+${loop.bestParams.activateAt?.toFixed(1)}%`],
+                      ['Win rate', `${((loop.bestWinRate ?? 0) * 100).toFixed(0)}%`],
+                    ].map(([k, v]) => (
+                      <div key={k} className="flex justify-between">
+                        <span className={`text-[9px] ${dim}`}>{k}</span>
+                        <span className={mono('text-[9px] text-white')}>{v}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
