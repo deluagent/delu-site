@@ -586,7 +586,10 @@ function CapitalSection({ status }: { status: any }) {
           <div className="mt-4 border-t border-[#1c1c28] pt-4 space-y-2">
             <div className={`${label} mb-2`}>Open Positions</div>
             {openPos.map((p: any, i: number) => {
-              const pnl = p.currentUSD && p.sizeUSD ? ((p.currentUSD - p.sizeUSD) / p.sizeUSD * 100) : null;
+              // Use pnlPct directly (always set by price_updater) — don't depend on currentUSD
+              const pnl: number | null = p.pnlPct != null ? p.pnlPct : 
+                (p.currentUSD && p.sizeUSD ? ((p.currentUSD - p.sizeUSD) / p.sizeUSD * 100) : null);
+              const currentVal = p.currentUSD ?? (pnl != null && p.sizeUSD ? p.sizeUSD * (1 + pnl / 100) : p.sizeUSD ?? 0);
               return (
                 <div key={i} className="bg-[#0a0a0f] border border-[#1c1c28] rounded px-3 py-2.5">
                   <div className="flex items-center justify-between mb-1">
@@ -597,7 +600,7 @@ function CapitalSection({ status }: { status: any }) {
                   </div>
                   <div className="flex items-center justify-between text-[9px]">
                     <span className={dim}>entry ${p.entryPrice?.toFixed(6) ?? '—'} · size ${(p.sizeUSD ?? 0).toFixed(2)}</span>
-                    <span className={mono('', pnlColor(pnl))}>${(p.currentUSD ?? p.sizeUSD ?? 0).toFixed(2)}</span>
+                    <span className={mono('', pnlColor(pnl))}>${currentVal.toFixed(2)}</span>
                   </div>
                   {p.openedAt && <div className={`text-[9px] ${dim} mt-0.5`}>opened {fmtDate(p.openedAt)}</div>}
                 </div>
