@@ -340,38 +340,46 @@ function SelfImprovementSection({ brain }: { brain: any }) {
   const totalAccepted = brain?.totalAccepted ?? 51;
 
   // Human-readable loop outcomes
+  const l5m     = loops.find((l:any)=>l.name==='5m');
+  const lHourly = loops.find((l:any)=>l.name==='Hourly');
+  const lOnchain= loops.find((l:any)=>l.name==='Onchain');
+
   const outcomes = [
     {
       loop: '5m Scalp',
       color: '#f97316',
       before: 'Random entry timing',
-      after: 'Buys on momentum confirmation + volume burst',
-      metric: `${loops.find((l:any)=>l.name==='5m')?.bestScore?.toFixed(0) ?? 28} combined score`,
-      exp: loops.find((l:any)=>l.name==='5m')?.expCount ?? 1945,
+      after: 'Momentum confirmation + volume burst',
+      metric: `${l5m?.bestScore?.toFixed(0) ?? 28} combined score`,
+      exp: l5m?.expCount ?? 1945,
+      curve: l5m?.scoreCurve ?? [],
     },
     {
       loop: 'Hourly Trend',
       color: '#818cf8',
       before: 'Equal weight all signals',
       after: 'OBV + RSI divergence weighted 3×',
-      metric: `${loops.find((l:any)=>l.name==='Hourly')?.bestScore?.toFixed(0) ?? 11} combined score`,
-      exp: loops.find((l:any)=>l.name==='Hourly')?.expCount ?? 656,
+      metric: `${lHourly?.bestScore?.toFixed(0) ?? 11} combined score`,
+      exp: lHourly?.expCount ?? 656,
+      curve: lHourly?.scoreCurve ?? [],
     },
     {
       loop: 'Onchain',
       color: '#34d399',
       before: 'Raw transfer count only',
-      after: 'Unique buyers + whale concentration filter',
-      metric: `${loops.find((l:any)=>l.name==='Onchain')?.bestScore?.toFixed(0) ?? 20} combined score`,
-      exp: loops.find((l:any)=>l.name==='Onchain')?.expCount ?? 5825,
+      after: 'Unique buyers + whale filter',
+      metric: `${lOnchain?.bestScore?.toFixed(0) ?? 20} combined score`,
+      exp: lOnchain?.expCount ?? 5825,
+      curve: lOnchain?.scoreCurve ?? [],
     },
     {
       loop: 'Exit Stops',
       color: '#fb7185',
       before: 'Fixed −3% stop loss',
-      after: `ATR-based trail (${stopsLoop?.bestParams?.atrMult?.toFixed(1) ?? '2.7'}×) + hard floor`,
+      after: `ATR trail (${stopsLoop?.bestParams?.atrMult?.toFixed(1) ?? '2.7'}×) · ${winRatePct}% win rate`,
       metric: `${winRatePct}% win rate`,
       exp: stopsLoop?.expCount ?? 500,
+      curve: stopsLoop?.scoreCurve ?? [],
     },
   ];
 
@@ -437,6 +445,22 @@ function SelfImprovementSection({ brain }: { brain: any }) {
             <div className={`text-[9px] ${dim} mt-2.5 pt-2 border-t border-[#1c1c28]`}>
               {o.exp.toLocaleString()} experiments run for this strategy
             </div>
+            {/* Score improvement sparkline */}
+            {o.curve && o.curve.length > 2 && (
+              <div className="mt-2 h-10">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={o.curve.map((v: number, i: number) => ({ i, v }))}>
+                    <Line type="monotone" dataKey="v" stroke={o.color} strokeWidth={1.5} dot={false} />
+                    <Tooltip
+                      contentStyle={{ background: '#0f0f17', border: '1px solid #1c1c28', borderRadius: 4, fontSize: 9, padding: '2px 6px' }}
+                      formatter={(v: any) => [v, 'score']}
+                      labelFormatter={() => ''}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+                <div className={`text-[8px] ${dim} text-center -mt-1`}>score improvement over {o.exp.toLocaleString()} experiments →</div>
+              </div>
+            )}
           </div>
         ))}
       </div>
