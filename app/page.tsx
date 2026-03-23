@@ -44,6 +44,7 @@ const LEARNINGS: Record<string, string> = {
   BNKR:      'ATR hard SL -3% fired at noise level for micro-cap. Widened to 3×ATR (min -8%) after this trade.',
   MOLT:      'Stale OHLCV data caused ATR stop to fire too early. Price freshness check added to pipeline.',
   CLAWNCH:   'Social signal decayed mid-hold. Checkr multi-window (1h/4h/8h/12h) now required to sustain before entry.',
+  FELIX:     'Whale concentration flag present at entry — rug gate threshold raised to 65. Hard SL fired at -14.98% max, contained loss.',
   MOLTEN:    'Volume burst confirmed by onchain flow but social lagging. Multi-TF cross-validation added.',
 };
 
