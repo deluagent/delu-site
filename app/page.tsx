@@ -740,15 +740,62 @@ function CycleRow({ cycle }: { cycle: any }) {
               );
             })()}
 
-            {/* HOLD cycle — show pipeline summary only, no token leaderboard */}
+            {/* HOLD cycle — show pipeline + discovery */}
             {(cycle.traded?.length === 0 || !cycle.traded) && cycle.dataSources && (
-              <div className="border-t border-[#1c1c28] pt-2">
+              <div className="border-t border-[#1c1c28] pt-2 space-y-2">
                 <div className={`${label} mb-1`}>Pipeline</div>
                 <div className={`${dim}`}>
                   {cycle.dataSources.checkrTokens > 0 && `${cycle.dataSources.checkrTokens} social tokens · `}
                   {cycle.dataSources.discoveryPassed != null && `${cycle.dataSources.discoveryPassed} passed vetting · `}
                   no entry above conviction threshold
                 </div>
+
+                {/* Onchain discovery — Alchemy unusual activity */}
+                {(cycle.dataSources.alchemyDiscovered ?? cycle.alchemyDiscovered ?? []).length > 0 && (
+                  <div>
+                    <div className={`text-[9px] ${dim} mb-1`}>⛓ Onchain Discovery · Alchemy unusual activity</div>
+                    <div className="flex flex-wrap gap-x-3 gap-y-0.5">
+                      {(cycle.dataSources.alchemyDiscovered ?? cycle.alchemyDiscovered ?? []).map((t: any, i: number) => (
+                        <span key={i} className={dim}>
+                          <span className="text-white font-mono">{t.sym}</span>
+                          {t.liq != null && <span> liq=${Math.round((t.liq||0)/1000)}K</span>}
+                          {t.score != null && <span> q={t.score.toFixed(2)}</span>}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Social discovery — Checkr velocity spikes */}
+                {(cycle.dataSources.checkrSustained ?? cycle.checkrSustained ?? []).length > 0 && (
+                  <div>
+                    <div className={`text-[9px] ${dim} mb-1`}>📡 Social Discovery · Checkr sustained momentum</div>
+                    <div className="flex flex-wrap gap-x-3 gap-y-0.5">
+                      {(cycle.dataSources.checkrSustained ?? cycle.checkrSustained ?? []).slice(0,5).map((t: any, i: number) => (
+                        <span key={i} className={dim}>
+                          <span className="text-white font-mono">{t.sym}</span>
+                          {t.velocity != null && <span> vel={t.velocity.toFixed(1)}</span>}
+                          {t.windows != null && <span> {t.windows}w</span>}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Quant top picks */}
+                {(cycle.dataSources.quantTop5 ?? []).length > 0 && (
+                  <div>
+                    <div className={`text-[9px] ${dim} mb-1`}>🧠 Quant Brain · Top scored candidates</div>
+                    <div className="flex flex-wrap gap-x-3 gap-y-0.5">
+                      {(cycle.dataSources.quantTop5 ?? []).map((t: any, i: number) => (
+                        <span key={i} className={dim}>
+                          <span className="text-white font-mono">{t.sym}</span>
+                          {t.score != null && <span> {t.score.toFixed(3)}</span>}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 
