@@ -6,7 +6,7 @@ import {
   Brain, Eye, Zap, RefreshCw, TrendingUp, TrendingDown, Minus,
 } from 'lucide-react';
 import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
+  BarChart, Bar, LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
   RadialBarChart, RadialBar, PolarAngleAxis,
 } from 'recharts';
 
@@ -107,7 +107,7 @@ function Hero({ status }: { status: any }) {
       {status?.updatedAt && (
         <div className={`flex items-center gap-1.5 text-[9px] ${dim} mb-3`}>
           <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
-          Live · data from {fmtDate(status.updatedAt)} · fetched {lastFetch > 0 ? `${Math.round((Date.now()-lastFetch)/1000)}s ago` : 'now'} · #{fetchCount}
+          Live · updated {fmtDate(status.updatedAt)} · auto-refreshes every 30s
         </div>
       )}
 
@@ -120,7 +120,7 @@ function Hero({ status }: { status: any }) {
             ? { l: 'Unrealised P&L', v: `${pnl >= 0 ? '+' : ''}$${pnl.toFixed(2)}`, s: `${(w.unrealPnlPct ?? 0).toFixed(2)}%`, accent: pnlColor(pnl) }
             : { l: 'Realised P&L',   v: `${realisedPnl >= 0 ? '+' : ''}$${realisedPnl.toFixed(2)}`, s: `${wins}/${closed} trades · est. from %`, accent: pnlColor(realisedPnl) },
           { l: 'Next Cycle',     v: (() => {
-              void tick; // depend on tick so countdown re-renders every 10s
+              void Date.now(); // force re-render for countdown
               const now = new Date();
               const m = now.getUTCMinutes();
               const s2 = now.getUTCSeconds();
