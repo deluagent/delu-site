@@ -412,9 +412,14 @@ function CapitalSection({ status }: { status: any }) {
                 <span className={`text-[9px] ${dim}`}>{yld.protocol ?? 'Bankr Wallet'} · {yld.vault ?? 'Liquid USDC'}</span>
                 <span className={mono('text-[9px] text-white')}>${yldAmt.toFixed(2)}</span>
               </div>
-              {yld.apy === 0 && (
+              {yld.apy === 0 && liquid >= 27 && (
                 <div className={`text-[9px] ${dim} mt-0.5`}>
-                  ${Math.max(0, liquid - 27).toFixed(2)} surplus above $27 tranche → will deploy to best APY vault
+                  ${(liquid - 27).toFixed(2)} surplus above $27 tranche → will deploy to best APY vault next cycle
+                </div>
+              )}
+              {yld.apy === 0 && liquid < 27 && (
+                <div className={`text-[9px] ${dim} mt-0.5`}>
+                  USDC below $27 trading tranche — keeping liquid for next trade entry
                 </div>
               )}
             </div>
