@@ -147,12 +147,12 @@ function HowItWorks() {
     {
       n: '01', icon: <Eye size={14}/>, title: 'Observe',
       color: 'text-[#60a5fa]', border: 'border-[#60a5fa]/15', bg: 'bg-[#60a5fa]/3',
-      body: 'Pulls 30d price bars, transfer stats, whale concentration, and smart wallet accumulation via Alchemy. Buys social attention scores from Checkr using x402 micropayments — 1h, 4h, 8h, 12h windows.',
+      body: 'Pulls hourly price bars, transfer stats, whale concentration, and smart wallet accumulation via Alchemy. Buys social attention from Checkr via x402 micropayments — 4 time windows (1h/4h/8h/12h) + spike detection + creator rotation graph.',
     },
     {
       n: '02', icon: <Brain size={14}/>, title: 'Think',
       color: 'text-[#a855f7]', border: 'border-[#a855f7]/15', bg: 'bg-[#a855f7]/3',
-      body: 'Quant brain scores each token across five evolved strategies (5m, hourly, onchain, fusion, stops). Reasoning routed through Bankr LLM Gateway — one API for 20+ models, paid autonomously from the agent\'s own wallet.',
+      body: 'Quant brain scores each token across five evolved strategies (5m, hourly, onchain, fusion, stops). Multi-timeframe fusion blends signals. Pre-screening via Bankr LLM Gateway filters to a shortlist before private inference.',
     },
     {
       n: '03', icon: <Zap size={14}/>, title: 'Decide',
@@ -162,7 +162,7 @@ function HowItWorks() {
     {
       n: '04', icon: <RefreshCw size={14}/>, title: 'Learn & Self-Fund',
       color: 'text-[#22c55e]', border: 'border-[#22c55e]/15', bg: 'bg-[#22c55e]/3',
-      body: 'Five parallel LLM loops run 2,600+ experiments/hour via Bankr LLM Gateway — funded by yield the agent earns when not trading. The agent pays for its own compute. Parameters auto-promote when backtested score improves.',
+      body: 'Five parallel LLM loops run 24/7 via Bankr LLM Gateway — the agent tops up its own compute credits from its trading wallet. Parameters auto-promote when backtested score improves. No human needed to keep research running.',
     },
   ];
 
