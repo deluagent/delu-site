@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-03-23T05:30:40.742Z",
+  "updatedAt": "2026-03-23T05:33:01.666Z",
   "regime": "BEAR",
   "btcPrice": 68738,
-  "pctFrom200": "-3.8%",
+  "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 29 min",
+  "nextCycle": "in 27 min",
   "wallet": {
-    "totalUSD": 141.36,
+    "totalUSD": 141.29,
     "positionsUSD": 0,
     "liquidUSDC": 62.29,
     "yieldUSD": 62.29,
@@ -74,10 +74,10 @@
       "currentUSD": 10.97,
       "pnlUSD": 0.97,
       "pnlPct": 9.7,
-      "peakPct": 9.75,
+      "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": true,
+      "trailActivated": false,
       "openedAt": "2026-03-23T04:19:23.254Z",
       "entryTx": null,
       "contractAddress": "0xe2aa4a1251864d3001b472c1d346e0382a3a41af",
@@ -100,7 +100,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-23T05:28:31.613Z",
-    "ago": "2m ago",
+    "ago": "5m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -313,21 +313,9 @@
     "topScores": []
   },
   "performance": {
-    "closedTrades": 6,
-    "winRate": "1/6",
+    "closedTrades": 5,
+    "winRate": "1/5",
     "recentTrades": [
-      {
-        "sym": "FELIX",
-        "pnlPct": -95.46,
-        "pnlUSD": -9.55,
-        "sizeUsd": 10,
-        "won": false,
-        "regime": "BEAR",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-23T05:07:54.517Z",
-        "closedAt": "2026-03-23T05:18:11.196Z"
-      },
       {
         "sym": "BLUEAGENT",
         "pnlPct": 121,
@@ -8403,7 +8391,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 7515,
+      "expCount": 7045,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
