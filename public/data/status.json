@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-03-23T02:48:07.457Z",
+  "updatedAt": "2026-03-23T02:49:43.248Z",
   "regime": "BEAR",
   "btcPrice": 68235,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 17 min",
+  "nextCycle": "in 15 min",
   "wallet": {
-    "totalUSD": 153.33,
-    "positionsUSD": 10,
+    "totalUSD": 143.33,
+    "positionsUSD": 0,
     "liquidUSDC": 92.77,
     "yieldUSD": 92.77,
-    "unrealPnlUSD": 0,
-    "unrealPnlPct": 0
+    "unrealPnlUSD": -60.61,
+    "unrealPnlPct": -67.34
   },
   "positions": [
     {
       "sym": "VVV",
       "entryPrice": 6.1,
-      "currentPrice": null,
+      "currentPrice": 6.1061,
       "sizeUSD": 10,
-      "currentUSD": 10,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 10.01,
+      "pnlUSD": 0.01,
+      "pnlPct": 0.1,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -29,6 +29,29 @@
       "openedAt": "2026-03-23T02:36:13.686Z",
       "entryTx": null,
       "contractAddress": "0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
+    },
+    {
+      "sym": "SAIRI",
+      "entryPrice": 0.00000993,
+      "currentPrice": 0.00000241,
+      "sizeUSD": 80,
+      "currentUSD": 19.38,
+      "pnlUSD": -60.62,
+      "pnlPct": -75.77,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-03-23T00:52:00.000Z",
+      "entryTx": null,
+      "contractAddress": "0xde61878b0b21ce395266c44d4d548d1c72a3eb07",
       "source": "universe",
       "chain": "base",
       "volumeTrend": null,
@@ -48,7 +71,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-23T02:34:02.493Z",
-    "ago": "14m ago",
+    "ago": "16m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -6196,7 +6219,7 @@
       "spend": 1.968
     },
     "onchain": {
-      "expCount": 6170,
+      "expCount": 6180,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
