@@ -561,7 +561,15 @@ function CyclesSection({ cycles }: { cycles: any[] }) {
   // Dedupe cycles within 3 min of each other (keep newest) — avoids showing sub-30min duplicates
   const deduped = cycles.reduce((acc: any[], c: any) => {
     const last = acc[acc.length - 1];
-    if (last && Math.abs(new Date(c.ts).getTime() - new Date(last.ts).getTime()) < 3 * 60 * 1000) return acc;
+    // Dedupe: same time window OR consecutive same-asset BUY that wasn't confirmed on-chain
+    const sameTimeWindow = last && Math.abs(new Date(c.ts).getTime() - new Date(last.ts).getTime()) < 3 * 60 * 1000;
+    const repeatedFailedBuy = last &&
+      (c.action === 'buy' || c.action === 'long') &&
+      (last.action === 'buy' || last.action === 'long') &&
+      c.asset === last.asset &&
+      (c.traded ?? []).length === 0 &&
+      (last.traded ?? []).length === 0;
+    if (sameTimeWindow || repeatedFailedBuy) return acc;
     acc.push(c);
     return acc;
   }, []);
