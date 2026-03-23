@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-03-23T16:46:51.537Z",
+  "updatedAt": "2026-03-23T16:49:17.214Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70415,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 23 min",
+  "nextCycle": "in 20 min",
   "wallet": {
-    "totalUSD": 124.62,
-    "positionsUSD": 49.06,
+    "totalUSD": 124.81,
+    "positionsUSD": 59.13,
     "liquidUSDC": 23.62,
     "yieldUSD": 0,
     "unrealPnlUSD": -0.62,
-    "unrealPnlPct": -1.25
+    "unrealPnlPct": -1.04
   },
   "positions": [
     {
@@ -91,6 +91,29 @@
         "uniqueBuyers": 2,
         "buyRatio": 0.5
       }
+    },
+    {
+      "sym": "ROBOTMONEY",
+      "entryPrice": 0.00001428,
+      "currentPrice": 0.00001428,
+      "sizeUSD": 10,
+      "currentUSD": 10,
+      "pnlUSD": 0,
+      "pnlPct": 0,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 10,
+      "trailActivated": false,
+      "openedAt": "2026-03-23T16:33:37.000Z",
+      "entryTx": null,
+      "contractAddress": "0x65021a79aeef22b17cdc1b768f5e79a8618beba3",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
     }
   ],
   "yield": {
@@ -103,7 +126,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-23T16:39:00.588Z",
-    "ago": "8m ago",
+    "ago": "10m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -126,7 +149,9 @@
       "KELLYCLAUDE",
       "ODAI"
     ],
-    "traded": [],
+    "traded": [
+      "ROBOTMONEY"
+    ],
     "action": "buy",
     "asset": "ROBOTMONEY",
     "confidence": 80,
@@ -13103,7 +13128,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 13055,
+      "expCount": 13075,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
