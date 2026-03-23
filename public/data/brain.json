@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-23T05:35:58.167Z",
-  "totalExp": 13711,
-  "totalAccepted": 44,
+  "generatedAt": "2026-03-23T12:42:23.063Z",
+  "totalExp": 21626,
+  "totalAccepted": 40,
   "topScore": 28.012,
   "topLoop": "5m",
   "loops": [
@@ -48,15 +48,15 @@
     {
       "name": "Onchain",
       "color": "indigo",
-      "expCount": 6064,
-      "acceptedCount": 3,
-      "acceptRate": 0,
-      "bestScore": 20.402,
-      "breakthroughCount": 3,
+      "expCount": 6764,
+      "acceptedCount": 4,
+      "acceptRate": 0.1,
+      "bestScore": 24.642,
+      "breakthroughCount": 4,
       "signals": [
         "Relative strength vs BTC (4h)",
-        "RSI(8) momentum zone",
-        "RSI(8) oversold bounce",
+        "RSI(14) momentum zone",
+        "RSI(14) oversold bounce",
         "Smart wallet accumulation (unique + repeat buyers)",
         "Whale concentration penalty (>50% = red flag)",
         "Transfer velocity burst detection",
@@ -69,7 +69,6 @@
         0,
         0,
         0,
-        13.637,
         17.931,
         20.402,
         20.402,
@@ -83,7 +82,8 @@
         20.402,
         20.402,
         20.402,
-        20.402
+        24.642,
+        24.642
       ],
       "latestDescription": "Implement dual-regime detection (momentum vs mean-reversion) with adaptive weighting based on recent"
     },
@@ -132,9 +132,9 @@
     {
       "name": "Fusion",
       "color": "purple",
-      "expCount": 4860,
-      "acceptedCount": 2,
-      "acceptRate": 0.4,
+      "expCount": 12075,
+      "acceptedCount": 1,
+      "acceptRate": 0.2,
       "bestScore": 0.767,
       "breakthroughCount": 0,
       "signals": [
@@ -145,7 +145,7 @@
         "Entry score threshold (minScore) auto-evolved"
       ],
       "scoreCurve": [
-        0.711,
+        0.767,
         0.767,
         0.767,
         0.767,
@@ -189,8 +189,8 @@
       "name": "Stops",
       "color": "rose",
       "expCount": 186,
-      "acceptedCount": 8,
-      "acceptRate": 1.6,
+      "acceptedCount": 4,
+      "acceptRate": 0.8,
       "bestScore": 6.383,
       "breakthroughCount": 0,
       "signals": [
@@ -201,16 +201,16 @@
         "Entry score threshold (minScore) auto-evolved"
       ],
       "scoreCurve": [
-        5.853,
-        6.045,
+        6.064,
+        6.064,
         6.068,
         6.068,
         6.068,
-        6.071,
-        6.13,
-        6.13,
-        6.13,
-        6.13,
+        6.14,
+        6.14,
+        6.14,
+        6.14,
+        6.14,
         6.14,
         6.14,
         6.14,
@@ -498,6 +498,14 @@
       "description": "Replace fixed 1.3x volume spike threshold with momentum-adaptive scaling (1.2x + 0.3x * momentum str",
       "loop": "Hourly",
       "color": "emerald"
+    },
+    {
+      "n": 9305,
+      "score": 24.642,
+      "ts": "2026-03-23T09:07:57.595Z",
+      "description": null,
+      "loop": "Onchain",
+      "color": "indigo"
     }
   ]
 }
