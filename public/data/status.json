@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-03-23T03:38:33.177Z",
+  "updatedAt": "2026-03-23T04:07:58.927Z",
   "regime": "BEAR",
   "btcPrice": 68227,
-  "pctFrom200": "-4.5%",
+  "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 28 min",
+  "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 152.63,
-    "positionsUSD": 10,
-    "liquidUSDC": 82.8,
-    "yieldUSD": 82.8,
-    "unrealPnlUSD": 9.17,
-    "unrealPnlPct": 23.19
+    "totalUSD": 142.26,
+    "positionsUSD": 0,
+    "liquidUSDC": 62.87,
+    "yieldUSD": 62.87,
+    "unrealPnlUSD": -0.3,
+    "unrealPnlPct": -1.02
   },
   "positions": [
     {
@@ -19,9 +19,9 @@
       "entryPrice": 6.1,
       "currentPrice": 6.13114077,
       "sizeUSD": 10,
-      "currentUSD": 19.78,
-      "pnlUSD": 9.78,
-      "pnlPct": 97.8,
+      "currentUSD": 10.05,
+      "pnlUSD": 0.05,
+      "pnlPct": 0.5,
       "peakPct": 0.51,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -45,9 +45,9 @@
       "entryPrice": 0.00000983,
       "currentPrice": 0.00000965,
       "sizeUSD": 19.55,
-      "currentUSD": 18.94,
-      "pnlUSD": -0.61,
-      "pnlPct": -3.12,
+      "currentUSD": 19.2,
+      "pnlUSD": -0.35,
+      "pnlPct": -1.79,
       "peakPct": -1.79,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -65,42 +65,19 @@
         "uniqueBuyers": 23,
         "buyRatio": 0.4791666666666667
       }
-    },
-    {
-      "sym": "CASHCLAW",
-      "entryPrice": 0.000003946,
-      "currentPrice": null,
-      "sizeUSD": 10,
-      "currentUSD": 10,
-      "pnlUSD": 0,
-      "pnlPct": 0,
-      "peakPct": 0,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": false,
-      "openedAt": "2026-03-23T03:37:14.039Z",
-      "entryTx": null,
-      "contractAddress": "0x45b9a03a05f86088cd1a00874a05dda2c6915ba3",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
-      "quantScore": null,
-      "ret1h": null,
-      "transferStats": null
     }
   ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
     "chain": "Base",
-    "amountUSD": 82.8,
+    "amountUSD": 62.87,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-23T03:35:00.007Z",
-    "ago": "4m ago",
+    "ago": "33m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -314,6 +291,8 @@
       {
         "sym": "MOLT",
         "pnlPct": -5.2,
+        "pnlUSD": -0.52,
+        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -324,6 +303,8 @@
       {
         "sym": "KTA",
         "pnlPct": -4.36,
+        "pnlUSD": -0.44,
+        "sizeUsd": 10,
         "won": false,
         "regime": "RANGE_TIGHT",
         "entryTx": null,
@@ -334,6 +315,8 @@
       {
         "sym": "BNKR",
         "pnlPct": -5.47,
+        "pnlUSD": -0.55,
+        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -344,6 +327,8 @@
       {
         "sym": "MOLT",
         "pnlPct": -5.04,
+        "pnlUSD": -0.5,
+        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -354,6 +339,8 @@
       {
         "sym": "BLUEAGENT",
         "pnlPct": -21.66,
+        "pnlUSD": -2.17,
+        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -364,6 +351,8 @@
       {
         "sym": "CLAWNCH",
         "pnlPct": -4.8,
+        "pnlUSD": -0.48,
+        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -374,6 +363,8 @@
       {
         "sym": "BLUEAGENT",
         "pnlPct": 121,
+        "pnlUSD": 12.1,
+        "sizeUsd": 10,
         "won": true,
         "regime": "BEAR",
         "entryTx": null,
@@ -6783,7 +6774,7 @@
       "spend": 1.968
     },
     "onchain": {
-      "expCount": 6585,
+      "expCount": 6830,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
