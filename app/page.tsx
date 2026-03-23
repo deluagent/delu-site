@@ -680,7 +680,9 @@ function CycleRow({ cycle }: { cycle: any }) {
               const asset = cycle.traded[0];
               // Look in trendingEntries AND checkrSustained for the asset
               const entry = (cycle.trendingEntries as any[] ?? []).find((t: any) => t.symbol === asset);
-              const checkrEntry = (cycle.dataSources?.checkrSustained as any[] ?? []).find((t: any) => t.sym === asset);
+              const checkrEntry = (cycle.dataSources?.checkrSustained as any[] ?? []).find((t: any) => t.sym === asset)
+                ?? (cycle.checkrSustained as any[] ?? []).find((t: any) => t.sym === asset)
+                ?? (cycle.checkrTraded?.sym === asset ? cycle.checkrTraded : null);
               // Fallback: positionAssessments has real onchain data even if not in trendingEntries
               const assessment = (cycle.positionAssessments as any[] ?? []).find((p: any) => p.sym === asset);
               // Quant score: prefer entry.score (trending), fallback to assessment.quantScore
