@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-23T16:15:51.398Z",
+  "updatedAt": "2026-03-23T16:16:26.305Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70310,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 18 min",
+  "nextCycle": "in 17 min",
   "wallet": {
     "totalUSD": 125.87,
     "positionsUSD": 49.84,
@@ -103,7 +103,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-23T16:03:27.781Z",
-    "ago": "12m ago",
+    "ago": "13m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -541,8 +541,8 @@
         "breadthFraction": "BTC:RANGE ETH:RANGE",
         "breadth": 0.5
       },
-      "action": "buy",
-      "asset": "JUNO",
+      "action": "hold",
+      "asset": null,
       "confidence": 80,
       "reasoning": "JUNO has a high onchain trend score of 1.00 and a velocity spike, indicating strong momentum and social attention, with a sustained velocity score over the past 4 weeks",
       "seenCount": 13,
@@ -551,9 +551,7 @@
         "TIBBIR",
         "JUNO"
       ],
-      "traded": [
-        "JUNO"
-      ],
+      "traded": [],
       "trendingEntries": [
         {
           "symbol": "BNKR",
@@ -903,8 +901,8 @@
         "breadthFraction": "BTC:RANGE ETH:RANGE",
         "breadth": 0.5
       },
-      "action": "buy",
-      "asset": "JUNO",
+      "action": "hold",
+      "asset": null,
       "confidence": 80,
       "reasoning": "JUNO has a high score of 0.95 and is trending onchain, indicating strong conviction and potential for further growth.",
       "seenCount": 11,
@@ -914,9 +912,7 @@
         "JUNO",
         "TIBBIR"
       ],
-      "traded": [
-        "JUNO"
-      ],
+      "traded": [],
       "trendingEntries": [
         {
           "symbol": "ROBOTMONEY",
@@ -12158,7 +12154,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 12800,
+      "expCount": 12805,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
