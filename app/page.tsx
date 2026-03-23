@@ -630,9 +630,12 @@ function CycleRow({ cycle }: { cycle: any }) {
   const isCollapsedHold = holdCount > 1;
 
   // For collapsed HOLDs show top tokens screened instead of long reason
+  const rawReason = cycle.reasoning?.includes('"error"') || cycle.reasoning?.startsWith('Venice unavailable')
+    ? 'Private inference temporarily unavailable — held this cycle'
+    : cycle.reasoning;
   const holdSummary = isCollapsedHold
     ? `${holdCount} cycles — no entry signal`
-    : (cycle.reasoning?.slice(0, 90) ?? (cycle.screen?.reason?.slice(0, 90)) ?? '—');
+    : (rawReason?.slice(0, 90) ?? (cycle.screen?.reason?.slice(0, 90)) ?? '—');
 
   return (
     <div className={`border-b border-[#1c1c28] last:border-0 ${isBuy ? 'bg-[#22c55e]/[0.015]' : ''}`}>
@@ -655,7 +658,7 @@ function CycleRow({ cycle }: { cycle: any }) {
           <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3 text-[10px] space-y-3">
 
             {/* Venice AI reasoning — private inference output only */}
-            {cycle.reasoning && (
+            {cycle.reasoning && !cycle.reasoning.startsWith('Venice unavailable') && !cycle.reasoning.includes('"error"') && (
               <div>
                 <div className="flex items-center gap-1.5 mb-1.5">
                   <span className="w-1 h-1 rounded-full bg-[#a855f7]" />
