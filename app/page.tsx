@@ -626,7 +626,14 @@ function CycleRow({ cycle }: { cycle: any }) {
     ? 'bg-[#ef4444]/10 text-[#ef4444] border-[#ef4444]/20'
     : 'bg-[#0a0a0f] text-[#6b7280] border-[#1c1c28]';
 
+  const holdCount = cycle._holdCount || 0;
   const badgeText = isBuy ? `BUY ${cycle.asset ?? ''}` : isSell ? `SELL ${cycle.asset ?? ''}` : 'HOLD';
+  const isCollapsedHold = holdCount > 1;
+
+  // For collapsed HOLDs show top tokens screened instead of long reason
+  const holdSummary = isCollapsedHold
+    ? `${holdCount} cycles — no entry signal`
+    : (cycle.reasoning?.slice(0, 90) ?? (cycle.screen?.reason?.slice(0, 90)) ?? '—');
 
   return (
     <div className={`border-b border-[#1c1c28] last:border-0 ${isBuy ? 'bg-[#22c55e]/[0.015]' : ''}`}>
@@ -634,10 +641,10 @@ function CycleRow({ cycle }: { cycle: any }) {
         className="w-full text-left flex items-center gap-3 px-4 py-2.5 hover:bg-[#111118] transition-colors">
         <span className={mono('text-[10px] shrink-0 w-28', dim)}>{fmtDate(cycle.ts)}</span>
         <span className={`shrink-0 text-[9px] font-bold px-2 py-0.5 rounded border uppercase ${badgeCls}`}>
-          {badgeText}
+          {badgeText}{isCollapsedHold ? ` ×${holdCount}` : ''}
         </span>
         <span className={`text-[10px] ${dim} flex-1 truncate`}>
-          {cycle.reasoning?.slice(0, 90) ?? '—'}
+          {holdSummary}
         </span>
         <span className={dim}>
           {open ? <ChevronDown size={11}/> : <ChevronRight size={11}/>}
@@ -767,7 +774,20 @@ function CyclesSection({ cycles }: { cycles: any[] }) {
     return true;
   }).reverse();
 
-  const display = showAll ? deduped : deduped.slice(0, 15);
+  // Collapse consecutive HOLD/smart_yield cycles into one row with count
+  const collapsed: any[] = [];
+  for (const c of deduped) {
+    const isHold = c.action === 'hold' || c.action === 'smart_yield';
+    const lastC  = collapsed[collapsed.length - 1];
+    const lastIsHold = lastC && (lastC.action === 'hold' || lastC.action === 'smart_yield' || lastC._holdCount);
+    if (isHold && lastIsHold) {
+      lastC._holdCount = (lastC._holdCount || 1) + 1;
+    } else {
+      collapsed.push({ ...c, _holdCount: isHold ? 1 : 0 });
+    }
+  }
+
+  const display = showAll ? collapsed : collapsed.slice(0, 15);
   // Count only cycles with confirmed trade (traded array non-empty)
   const confirmed = deduped.filter(c => (c.traded ?? []).length > 0).length;
   const holds = deduped.filter(c => c.action === 'hold' || c.action === 'smart_yield').length;
