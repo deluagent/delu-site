@@ -119,8 +119,17 @@ function Hero({ status }: { status: any }) {
           { l: 'Liquid USDC',    v: `$${(w.liquidUSDC  ?? 0).toFixed(2)}`, s: 'ready to trade' },
           hasOpenPos
             ? { l: 'Unrealised P&L', v: `${pnl >= 0 ? '+' : ''}$${pnl.toFixed(2)}`, s: `${(w.unrealPnlPct ?? 0).toFixed(2)}%`, accent: pnlColor(pnl) }
-            : { l: 'Realised P&L',   v: `${realisedPnl >= 0 ? '+' : ''}$${realisedPnl.toFixed(2)}`, s: `${wins}/${closed} trades won`, accent: pnlColor(realisedPnl) },
-          { l: 'Next Cycle',     v: status?.nextCycle ?? '—', s: 'runs every 30 min' },
+            : { l: 'Realised P&L',   v: `${realisedPnl >= 0 ? '+' : ''}$${realisedPnl.toFixed(2)}`, s: `${wins}/${closed} trades · est. from %`, accent: pnlColor(realisedPnl) },
+          { l: 'Next Cycle',     v: (() => {
+              void tick; // depend on tick so countdown re-renders every 10s
+              const now = new Date();
+              const m = now.getUTCMinutes();
+              const s2 = now.getUTCSeconds();
+              const nextMin = m < 5 ? 5 : m < 35 ? 35 : 65;
+              const diffSec = (nextMin - m) * 60 - s2;
+              const diffMin = Math.ceil(diffSec / 60);
+              return diffMin <= 1 ? 'any moment' : `in ${diffMin} min`;
+            })(), s: 'runs every 30 min · :05 and :35 UTC' },
         ].map(s => (
           <div key={s.l} className="bg-[#0a0a0f] px-4 py-3">
             <div className={`${label} mb-1`}>{s.l}</div>
@@ -921,10 +930,12 @@ export default function Page() {
     } catch (e: any) { setError(e.message); }
   }, []);
 
+  const [tick, setTick] = useState(0);
   useEffect(() => {
     load();
     const t = setInterval(load, 60_000);
-    return () => clearInterval(t);
+    const t2 = setInterval(() => setTick(n => n + 1), 10_000); // refresh countdown every 10s
+    return () => { clearInterval(t); clearInterval(t2); };
   }, [load]);
 
   if (error) return (

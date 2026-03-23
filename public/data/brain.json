@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-23T02:16:43.794Z",
-  "totalExp": 9336,
-  "totalAccepted": 35,
+  "generatedAt": "2026-03-23T02:33:10.401Z",
+  "totalExp": 9363,
+  "totalAccepted": 33,
   "topScore": 28.012,
   "topLoop": "5m",
   "loops": [
@@ -48,7 +48,7 @@
     {
       "name": "Onchain",
       "color": "indigo",
-      "expCount": 5735,
+      "expCount": 5762,
       "acceptedCount": 3,
       "acceptRate": 0.1,
       "bestScore": 20.402,
@@ -71,7 +71,7 @@
         0,
         0,
         17.931,
-        17.931,
+        20.402,
         20.402,
         20.402,
         20.402,
@@ -133,10 +133,10 @@
       "name": "Fusion",
       "color": "purple",
       "expCount": 500,
-      "acceptedCount": 2,
-      "acceptRate": 0.4,
+      "acceptedCount": 0,
+      "acceptRate": 0,
       "bestScore": 0.767,
-      "breakthroughCount": 2,
+      "breakthroughCount": 0,
       "signals": [
         "Evolves blend weights: 5m + Onchain + Hourly + 4h",
         "Per-regime weights (BEAR / BULL / RANGE)",
@@ -145,13 +145,13 @@
         "Entry score threshold (minScore) auto-evolved"
       ],
       "scoreCurve": [
-        0.758,
-        0.761,
-        0.761,
-        0.761,
-        0.761,
-        0.761,
-        0.761,
+        0.767,
+        0.767,
+        0.767,
+        0.767,
+        0.767,
+        0.767,
+        0.767,
         0.767,
         0.767,
         0.767,
@@ -201,26 +201,26 @@
         "Entry score threshold (minScore) auto-evolved"
       ],
       "scoreCurve": [
-        5.885,
-        6.064,
-        6.111,
-        6.111,
-        6.111,
-        6.111,
-        6.111,
-        6.111,
-        6.111,
-        6.111,
-        6.111,
-        6.138,
-        6.138,
+        5.92,
+        6.027,
         6.139,
         6.139,
         6.139,
         6.139,
         6.139,
         6.139,
-        6.139
+        6.139,
+        6.139,
+        6.139,
+        6.139,
+        6.14,
+        6.14,
+        6.14,
+        6.14,
+        6.14,
+        6.14,
+        6.14,
+        6.14
       ],
       "latestDescription": null,
       "bestParams": {
@@ -498,20 +498,6 @@
       "description": "Replace fixed 1.3x volume spike threshold with momentum-adaptive scaling (1.2x + 0.3x * momentum str",
       "loop": "Hourly",
       "color": "emerald"
-    },
-    {
-      "score": 0.761,
-      "ts": "2026-03-23T01:47:55.042Z",
-      "description": null,
-      "loop": "Fusion",
-      "color": "purple"
-    },
-    {
-      "score": 0.767,
-      "ts": "2026-03-23T01:56:47.498Z",
-      "description": null,
-      "loop": "Fusion",
-      "color": "purple"
     }
   ]
 }
