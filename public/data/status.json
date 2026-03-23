@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-23T02:59:20.847Z",
+  "updatedAt": "2026-03-23T03:09:58.101Z",
   "regime": "BEAR",
   "btcPrice": 68235,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 12 min",
+  "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 143.29,
+    "totalUSD": 143.14,
     "positionsUSD": 0,
     "liquidUSDC": 92.77,
     "yieldUSD": 92.77,
-    "unrealPnlUSD": -0.2,
-    "unrealPnlPct": -0.68
+    "unrealPnlUSD": -0.43,
+    "unrealPnlPct": -1.46
   },
   "positions": [
     {
       "sym": "VVV",
       "entryPrice": 6.1,
-      "currentPrice": 6.0817,
+      "currentPrice": 6.1366,
       "sizeUSD": 10,
-      "currentUSD": 9.97,
-      "pnlUSD": -0.03,
-      "pnlPct": -0.3,
-      "peakPct": 0,
+      "currentUSD": 10.06,
+      "pnlUSD": 0.06,
+      "pnlPct": 0.6,
+      "peakPct": 0.51,
       "trailStop": 5,
       "hardSlPct": 3,
       "trailActivated": false,
@@ -40,11 +40,11 @@
     {
       "sym": "SAIRI",
       "entryPrice": 0.00000983,
-      "currentPrice": 0.00000974,
+      "currentPrice": 0.00000958,
       "sizeUSD": 19.55,
-      "currentUSD": 19.38,
-      "pnlUSD": -0.17,
-      "pnlPct": -0.87,
+      "currentUSD": 19.06,
+      "pnlUSD": -0.49,
+      "pnlPct": -2.51,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -71,7 +71,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-23T02:34:02.493Z",
-    "ago": "20m ago",
+    "ago": "36m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -6219,7 +6219,7 @@
       "spend": 1.968
     },
     "onchain": {
-      "expCount": 6210,
+      "expCount": 6350,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
