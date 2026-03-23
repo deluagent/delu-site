@@ -695,31 +695,36 @@ function CycleRow({ cycle }: { cycle: any }) {
                 <div className="border-t border-[#1c1c28] pt-2 space-y-2">
                   <div className={`${label} text-[#f59e0b]`}>Why {asset}</div>
 
-                  {/* Onchain signals */}
-                  {(quantScore != null || ret1h != null || buyRatio != null) && (
-                    <div>
-                      <div className={`text-[9px] ${dim} mb-1`}>Onchain · Alchemy + GeckoTerminal</div>
+                  {/* Onchain signals — always shown */}
+                  <div>
+                    <div className={`text-[9px] ${dim} mb-1`}>Onchain · Alchemy + GeckoTerminal</div>
+                    {(quantScore != null || ret1h != null || buyRatio != null) ? (
                       <div className="flex flex-wrap gap-x-4 gap-y-0.5">
-                        {quantScore != null && <span className={dim}>Quant score <span className="text-white">{(quantScore).toFixed(2)}</span></span>}
+                        {quantScore != null && <span className={dim}>Quant score <span className="text-white">{quantScore.toFixed(2)}</span></span>}
                         {ret1h != null && <span className={dim}>1h <span className={mono('', pnlColor(ret1h * 100))}>{ret1h >= 0 ? '+' : ''}{(ret1h * 100).toFixed(1)}%</span></span>}
                         {uniqueBuyers != null && <span className={dim}>buyers <span className="text-white">{uniqueBuyers}</span></span>}
                         {buyRatio != null && <span className={dim}>buy ratio <span className="text-white">{(buyRatio * 100).toFixed(0)}%</span></span>}
                       </div>
-                    </div>
-                  )}
+                    ) : (
+                      <span className={`text-[9px] ${dim} italic`}>no onchain data available this cycle</span>
+                    )}
+                  </div>
 
-                  {/* Checkr social signals */}
-                  {checkrEntry && (
-                    <div>
-                      <div className={`text-[9px] ${dim} mb-1`}>Social · Checkr (paid via x402)</div>
+                  {/* Social signals — always shown */}
+                  <div>
+                    <div className={`text-[9px] ${dim} mb-1`}>Social · Checkr</div>
+                    {checkrEntry ? (
                       <div className="flex flex-wrap gap-x-4 gap-y-0.5">
                         {checkrEntry.att1h != null && <span className={dim}>1h attention <span className="text-white">+{checkrEntry.att1h?.toFixed(1)}pp</span></span>}
                         {checkrEntry.att4h != null && <span className={dim}>4h <span className="text-white">+{checkrEntry.att4h?.toFixed(1)}pp</span></span>}
                         {checkrEntry.velocity != null && <span className={dim}>velocity <span className="text-white">{checkrEntry.velocity?.toFixed(1)}</span></span>}
                         {checkrEntry.windows != null && <span className={dim}>windows <span className="text-white">{checkrEntry.windows}</span></span>}
+                        {checkrEntry.spike && <span className="text-[9px] text-[#f59e0b]">⚡ spike</span>}
                       </div>
-                    </div>
-                  )}
+                    ) : (
+                      <span className={`text-[9px] ${dim} italic`}>no social signal above threshold this cycle</span>
+                    )}
+                  </div>
 
                   {/* Conviction */}
                   {cycle.confidence != null && (
