@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-03-23T05:09:26.552Z",
+  "updatedAt": "2026-03-23T05:11:00.419Z",
   "regime": "BEAR",
   "btcPrice": 68700,
-  "pctFrom200": "-3.8%",
+  "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 27 min",
+  "nextCycle": "in 25 min",
   "wallet": {
-    "totalUSD": 151.62,
-    "positionsUSD": 10,
-    "liquidUSDC": 62.44,
-    "yieldUSD": 62.44,
-    "unrealPnlUSD": -10.27,
-    "unrealPnlPct": -17.25
+    "totalUSD": 141.51,
+    "positionsUSD": 0,
+    "liquidUSDC": 52.43,
+    "yieldUSD": 52.43,
+    "unrealPnlUSD": -10.38,
+    "unrealPnlPct": -17.43
   },
   "positions": [
     {
@@ -19,9 +19,9 @@
       "entryPrice": 6.1,
       "currentPrice": 6.14738441,
       "sizeUSD": 20,
-      "currentUSD": 20.16,
-      "pnlUSD": 0.16,
-      "pnlPct": 0.8,
+      "currentUSD": 20.19,
+      "pnlUSD": 0.19,
+      "pnlPct": 0.95,
       "peakPct": 0.78,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -92,11 +92,11 @@
     {
       "sym": "FELIX",
       "entryPrice": 0.0003714,
-      "currentPrice": null,
+      "currentPrice": 0.0003662,
       "sizeUSD": 10,
-      "currentUSD": 10,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 9.86,
+      "pnlUSD": -0.14,
+      "pnlPct": -1.4,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -117,13 +117,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
     "chain": "Base",
-    "amountUSD": 62.44,
+    "amountUSD": 52.43,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-23T05:05:00.017Z",
-    "ago": "4m ago",
+    "ago": "6m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -341,56 +341,20 @@
     "topScores": []
   },
   "performance": {
-    "closedTrades": 10,
-    "winRate": "1/10",
+    "closedTrades": 5,
+    "winRate": "1/5",
     "recentTrades": [
       {
-        "sym": "KTA",
-        "pnlPct": -4.36,
-        "pnlUSD": -0.44,
-        "sizeUsd": 10,
-        "won": false,
-        "regime": "RANGE_TIGHT",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-21T20:15:17.265Z",
-        "closedAt": "2026-03-22T14:35:27.647Z"
-      },
-      {
-        "sym": "BNKR",
-        "pnlPct": -5.47,
-        "pnlUSD": -0.55,
-        "sizeUsd": 10,
-        "won": false,
-        "regime": "BEAR",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-22T02:16:27.722Z",
-        "closedAt": "2026-03-22T14:36:06.033Z"
-      },
-      {
-        "sym": "MOLT",
-        "pnlPct": -5.04,
-        "pnlUSD": -0.5,
-        "sizeUsd": 10,
-        "won": false,
-        "regime": "BEAR",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-22T02:47:16.740Z",
-        "closedAt": "2026-03-22T14:36:44.304Z"
-      },
-      {
         "sym": "BLUEAGENT",
-        "pnlPct": -21.66,
-        "pnlUSD": -2.17,
+        "pnlPct": 121,
+        "pnlUSD": 12.1,
         "sizeUsd": 10,
-        "won": false,
+        "won": true,
         "regime": "BEAR",
         "entryTx": null,
         "exitTx": null,
-        "openedAt": "2026-03-22T05:46:30.619Z",
-        "closedAt": "2026-03-22T14:37:22.529Z"
+        "openedAt": "2026-03-22T19:04:50.123Z",
+        "closedAt": "2026-03-22T20:32:00.000Z"
       },
       {
         "sym": "CLAWNCH",
@@ -405,64 +369,40 @@
         "closedAt": "2026-03-22T17:14:44.979Z"
       },
       {
-        "sym": "BLUEAGENT",
-        "pnlPct": 121,
-        "pnlUSD": 12.1,
-        "sizeUsd": 10,
-        "won": true,
-        "regime": "BEAR",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-22T19:04:50.123Z",
-        "closedAt": "2026-03-22T20:32:00.000Z"
-      },
-      {
-        "sym": "CASHCLAW",
-        "pnlPct": -75.9,
-        "pnlUSD": -7.59,
+        "sym": "MOLT",
+        "pnlPct": -5.04,
+        "pnlUSD": -0.5,
         "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
         "exitTx": null,
-        "openedAt": "2026-03-23T03:37:14.039Z",
-        "closedAt": "2026-03-23T04:05:48.245Z"
+        "openedAt": "2026-03-22T02:47:16.740Z",
+        "closedAt": "2026-03-22T14:36:44.304Z"
       },
       {
-        "sym": "CASHCLAW",
-        "pnlPct": -60.94,
-        "pnlUSD": -6.09,
+        "sym": "BNKR",
+        "pnlPct": -5.47,
+        "pnlUSD": -0.55,
         "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
         "exitTx": null,
-        "openedAt": "2026-03-23T03:37:14.039Z",
-        "closedAt": "2026-03-23T04:17:22.899Z"
+        "openedAt": "2026-03-22T02:16:27.722Z",
+        "closedAt": "2026-03-22T14:36:06.033Z"
       },
       {
-        "sym": "CASHCLAW",
-        "pnlPct": -60.94,
-        "pnlUSD": -6.09,
+        "sym": "KTA",
+        "pnlPct": -4.36,
+        "pnlUSD": -0.44,
         "sizeUsd": 10,
         "won": false,
-        "regime": "BEAR",
+        "regime": "RANGE_TIGHT",
         "entryTx": null,
         "exitTx": null,
-        "openedAt": "2026-03-23T03:37:14.039Z",
-        "closedAt": "2026-03-23T04:17:22.899Z"
-      },
-      {
-        "sym": "CASHCLAW",
-        "pnlPct": -60.94,
-        "pnlUSD": -6.09,
-        "sizeUsd": 10,
-        "won": false,
-        "regime": "BEAR",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-23T03:37:14.039Z",
-        "closedAt": "2026-03-23T04:17:22.899Z"
+        "openedAt": "2026-03-21T20:15:17.265Z",
+        "closedAt": "2026-03-22T14:35:27.647Z"
       }
     ]
   },
@@ -7759,7 +7699,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 7335,
+      "expCount": 7350,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
