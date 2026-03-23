@@ -948,7 +948,8 @@ export default function Page() {
   const [brain,  setBrain]  = useState<any>(null);
   const [error,  setError]  = useState<string | null>(null);
 
-  const RAW = 'https://raw.githubusercontent.com/deluagent/delu-site/main/public/data';
+  // Use Next.js API routes as proxy — avoids CORS issues with raw.githubusercontent.com
+  const RAW = '';
 
   const [lastFetch, setLastFetch] = useState(0);
   const [fetchCount, setFetchCount] = useState(0);
@@ -957,8 +958,8 @@ export default function Page() {
     try {
       const ts = Date.now();
       const [s, b] = await Promise.all([
-        fetch(`${RAW}/status.json?t=${ts}`, { cache: 'no-store', headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' } }).then(r => r.json()),
-        fetch(`${RAW}/brain.json?t=${ts}`,  { cache: 'no-store', headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' } }).then(r => r.json()).catch(() => null),
+        fetch(`/api/status?t=${ts}`, { cache: 'no-store' }).then(r => r.json()),
+        fetch(`/api/brain?t=${ts}`,  { cache: 'no-store' }).then(r => r.json()).catch(() => null),
       ]);
       setStatus(s);
       setBrain(b);
