@@ -230,7 +230,11 @@ function BrainSection({ brain }: { brain: any }) {
               </div>
             </div>
             <div className={`text-[10px] ${dim} mt-2`}>
-              {totalExp.toLocaleString()} experiments · {brain?.totalAccepted ?? 0} improvements accepted
+              <span className="text-white font-semibold">{totalExp.toLocaleString()}</span> experiments run ·{' '}
+              <span className="text-[#22c55e] font-semibold">{brain?.totalAccepted ?? 0}</span> improvements accepted
+            </div>
+            <div className={`text-[9px] ${dim} mt-1`}>
+              ~2,600 tests/hour · running continuously until deadline
             </div>
           </div>
 
@@ -272,8 +276,16 @@ function BrainSection({ brain }: { brain: any }) {
               <div className="h-0.5 bg-[#1c1c28] rounded-full mb-2.5">
                 <div className="h-full rounded-full transition-all" style={{ width: `${barPct}%`, backgroundColor: c.bar }} />
               </div>
-              <div className={`text-[10px] ${dim} mb-2.5`}>
-                {(loop.expCount ?? 0).toLocaleString()} experiments · {loop.acceptedCount ?? 0} accepted
+              <div className={`text-[10px] ${dim} mb-1.5`}>
+                {(loop.expCount ?? 0).toLocaleString()} experiments
+              </div>
+              <div className="flex items-center gap-2 mb-2.5">
+                <span className={`text-[9px] font-semibold ${loop.acceptedCount > 0 ? 'text-[#22c55e]' : dim}`}>
+                  ↑ {loop.acceptedCount ?? 0} param improvements found
+                </span>
+                <span className={`text-[9px] ${dim}`}>
+                  ({loop.acceptRate ?? 0}% acceptance rate)
+                </span>
               </div>
               <div className="flex flex-wrap gap-1">
                 {(loop.signals ?? []).map((sig: string) => (
@@ -480,33 +492,59 @@ function CycleRow({ cycle }: { cycle: any }) {
 
       {open && (
         <div className="px-4 pb-3">
-          <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3 text-[10px]">
-            <div className="text-[#9ca3af] leading-relaxed mb-3">{cycle.reasoning ?? '—'}</div>
+          <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3 text-[10px] space-y-3">
 
-            {(cycle.trendingEntries ?? []).length > 0 && (
-              <div className="border-t border-[#1c1c28] pt-2 mt-2">
-                <div className={`${label} mb-1.5`}>Tokens Screened</div>
-                {(cycle.trendingEntries as any[]).slice(0, 6).map((t: any) => (
-                  <div key={t.symbol} className="flex items-center gap-3 py-0.5">
-                    <span className={mono('text-white w-20')}>{t.symbol}</span>
-                    <span className={mono('', t.score >= 0.65 ? 'text-[#22c55e]' : dim)}>
-                      score {(t.score ?? 0).toFixed(2)}
-                    </span>
-                    {t.ret1h != null && (
-                      <span className={mono('', pnlColor(t.ret1h))}>
-                        1h {t.ret1h >= 0 ? '+' : ''}{(t.ret1h * 100).toFixed(1)}%
-                      </span>
-                    )}
-                  </div>
-                ))}
+            {/* Venice AI reasoning — private inference output only */}
+            {cycle.reasoning && (
+              <div>
+                <div className="flex items-center gap-1.5 mb-1.5">
+                  <span className="w-1 h-1 rounded-full bg-[#a855f7]" />
+                  <span className={`${label} text-[#a855f7]`}>Venice AI · Private Inference</span>
+                </div>
+                <div className="text-[#d1d5db] leading-relaxed italic">&ldquo;{cycle.reasoning}&rdquo;</div>
               </div>
             )}
 
+            {/* Tokens screened */}
+            {(cycle.trendingEntries ?? []).length > 0 && (
+              <div className="border-t border-[#1c1c28] pt-2">
+                <div className={`${label} mb-1.5`}>Tokens Screened This Cycle</div>
+                <div className="space-y-0.5">
+                  {(cycle.trendingEntries as any[]).slice(0, 6).map((t: any) => (
+                    <div key={t.symbol} className="flex items-center gap-3 py-0.5">
+                      <span className={mono('text-white w-20 font-semibold')}>{t.symbol}</span>
+                      <span className={mono('', (t.score ?? 0) >= 0.65 ? 'text-[#22c55e]' : (t.score ?? 0) >= 0.40 ? 'text-[#f59e0b]' : dim)}>
+                        score {(t.score ?? 0).toFixed(2)}
+                      </span>
+                      {t.ret1h != null && (
+                        <span className={mono('', pnlColor(t.ret1h))}>
+                          1h {t.ret1h >= 0 ? '+' : ''}{(t.ret1h * 100).toFixed(1)}%
+                        </span>
+                      )}
+                      {(t.score ?? 0) >= 0.65 && <span className="text-[#22c55e] text-[9px]">↑ flagged</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Confidence + action */}
+            {cycle.confidence != null && (
+              <div className="border-t border-[#1c1c28] pt-2 flex items-center gap-3">
+                <span className={dim}>Conviction</span>
+                <span className={mono('font-bold', cycle.confidence >= 65 ? 'text-[#22c55e]' : 'text-[#f59e0b]')}>
+                  {cycle.confidence}%
+                </span>
+                <span className={dim}>threshold 65%</span>
+              </div>
+            )}
+
+            {/* Position updates */}
             {(cycle.positionUpdates ?? []).length > 0 && (
-              <div className="border-t border-[#1c1c28] pt-2 mt-2">
+              <div className="border-t border-[#1c1c28] pt-2">
                 <div className={`${label} mb-1.5`}>Position Updates</div>
                 {(cycle.positionUpdates as any[]).slice(0, 3).map((p: any, i: number) => (
-                  <div key={i} className={`${dim} py-0.5`}>{p.sym}: {p.reasoning?.slice(0, 100) ?? '—'}</div>
+                  <div key={i} className={`${dim} py-0.5`}>{p.sym}: {p.reasoning?.slice(0, 120) ?? '—'}</div>
                 ))}
               </div>
             )}
@@ -538,8 +576,8 @@ function CyclesSection({ cycles }: { cycles: any[] }) {
       <div className="flex items-center justify-between mb-4">
         <div className={label}>Intelligence Cycles</div>
         <div className={`text-[10px] ${dim} flex gap-3`}>
-          <span><span className="text-[#22c55e]">{confirmed}</span> confirmed trades</span>
-          <span><span className="text-[#6b7280]">{holds}</span> holds</span>
+          <span><span className="text-[#22c55e]">{confirmed}</span> on-chain trades</span>
+          <span><span className="text-[#6b7280]">{holds}</span> HOLD cycles</span>
         </div>
       </div>
       <div className={`${card} overflow-hidden`}>
