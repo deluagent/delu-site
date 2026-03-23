@@ -605,17 +605,13 @@ function CyclesSection({ cycles }: { cycles: any[] }) {
     return acc;
   }, []);
 
-  // Second pass: for failed BUY attempts of same asset, keep only the LATEST one
-  const failedBuyAssets = new Set<string>();
-  // Find which assets have a confirmed trade (traded[] non-empty)
-  const confirmedAssets = new Set(timeDeduped.filter(c => (c.traded??[]).length > 0).map(c => c.asset));
-  // Walk newest→oldest, mark first seen failed buy per asset
-  const seenFailedBuy = new Set<string>();
+  // Second pass: for ANY BUY (confirmed or not) of the same asset, keep only the LATEST one
+  const seenBuyAsset = new Set<string>();
   const deduped = [...timeDeduped].reverse().filter(c => {
-    const isFailed = (c.action === 'buy' || c.action === 'long') && (c.traded??[]).length === 0 && !confirmedAssets.has(c.asset);
-    if (isFailed) {
-      if (seenFailedBuy.has(c.asset)) return false; // already kept newest, drop older
-      seenFailedBuy.add(c.asset);
+    const isBuy = c.action === 'buy' || c.action === 'long';
+    if (isBuy) {
+      if (seenBuyAsset.has(c.asset)) return false;
+      seenBuyAsset.add(c.asset);
     }
     return true;
   }).reverse();
