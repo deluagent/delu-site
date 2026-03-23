@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-03-23T16:00:51.024Z",
+  "updatedAt": "2026-03-23T16:01:37.126Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70778,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 19 min",
+  "nextCycle": "in 18 min",
   "wallet": {
-    "totalUSD": 50.57,
-    "positionsUSD": 50.57,
+    "totalUSD": 69.74,
+    "positionsUSD": 69.74,
     "liquidUSDC": 0,
     "yieldUSD": 0,
     "unrealPnlUSD": 1.02,
-    "unrealPnlPct": 2.06
+    "unrealPnlPct": 1.48
   },
   "positions": [
     {
@@ -91,6 +91,29 @@
         "uniqueBuyers": 10,
         "buyRatio": 0.5263157894736842
       }
+    },
+    {
+      "sym": "MOLTEN",
+      "entryPrice": 0.00000754,
+      "currentPrice": 0.00000754,
+      "sizeUSD": 19.17,
+      "currentUSD": 19.17,
+      "pnlUSD": 0,
+      "pnlPct": 0,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-03-23T16:00:56.659Z",
+      "entryTx": null,
+      "contractAddress": "0x59c0d5c34c301ac0600147924d6c9be22a2f0b07",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
     }
   ],
   "yield": {
@@ -11797,7 +11820,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 12675,
+      "expCount": 12685,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
