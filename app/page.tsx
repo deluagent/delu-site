@@ -782,20 +782,7 @@ function CycleRow({ cycle }: { cycle: any }) {
                   </div>
                 )}
 
-                {/* Quant top picks */}
-                {(cycle.dataSources.quantTop5 ?? []).length > 0 && (
-                  <div>
-                    <div className={`text-[9px] ${dim} mb-1`}>🧠 Quant Brain · Top scored candidates</div>
-                    <div className="flex flex-wrap gap-x-3 gap-y-0.5">
-                      {(cycle.dataSources.quantTop5 ?? []).map((t: any, i: number) => (
-                        <span key={i} className={dim}>
-                          <span className="text-white font-mono">{t.sym}</span>
-                          {t.score != null && <span> {t.score.toFixed(3)}</span>}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
+
               </div>
             )}
 
