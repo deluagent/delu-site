@@ -510,6 +510,39 @@ function CycleRow({ cycle }: { cycle: any }) {
               </div>
             )}
 
+            {/* Data pipeline summary */}
+            {cycle.dataSources && (
+              <div className="border-t border-[#1c1c28] pt-2">
+                <div className={`${label} mb-1.5`}>Data Pipeline</div>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 mb-2">
+                  {cycle.dataSources.checkrTokens > 0 && (
+                    <div className="flex justify-between">
+                      <span className={dim}>Checkr attention</span>
+                      <span className={mono('text-white')}>{cycle.dataSources.checkrTokens} tokens</span>
+                    </div>
+                  )}
+                  {cycle.dataSources.discoveryPassed >= 0 && (
+                    <div className="flex justify-between">
+                      <span className={dim}>Alchemy + Bankr discovery</span>
+                      <span className={mono('text-white')}>{cycle.dataSources.discoveryPassed} passed vetting</span>
+                    </div>
+                  )}
+                </div>
+                {(cycle.dataSources.checkrSustained ?? []).length > 0 && (
+                  <div>
+                    <div className={`text-[9px] ${dim} mb-1`}>Sustained momentum (3+ windows):</div>
+                    <div className="flex flex-wrap gap-1">
+                      {(cycle.dataSources.checkrSustained as any[]).map((t: any) => (
+                        <span key={t.sym} className="text-[9px] px-1.5 py-0.5 rounded bg-[#1c1c28] text-[#9ca3af]">
+                          {t.sym} {t.att1h?.toFixed(1)}pp vel={t.velocity?.toFixed(0)}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Tokens screened */}
             {(cycle.trendingEntries ?? []).length > 0 && (
               <div className="border-t border-[#1c1c28] pt-2">
