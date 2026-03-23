@@ -107,7 +107,7 @@ function Hero({ status }: { status: any }) {
       {status?.updatedAt && (
         <div className={`flex items-center gap-1.5 text-[9px] ${dim} mb-3`}>
           <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
-          Live · updated {fmtDate(status.updatedAt)} · auto-refreshes every 30s
+          Live · updated {fmtDate(status.updatedAt)} · prices refresh every 5 min
         </div>
       )}
 
