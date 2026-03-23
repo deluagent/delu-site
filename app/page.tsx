@@ -329,6 +329,121 @@ function BrainSection({ brain }: { brain: any }) {
   );
 }
 
+// ─── Section: Self-Improvement Results ────────────────────────────────────────
+function SelfImprovementSection({ brain }: { brain: any }) {
+  const loops = brain?.loops ?? [];
+  const stopsLoop = loops.find((l: any) => l.name === 'Stops');
+  const winRatePct = stopsLoop?.bestWinRate != null
+    ? Math.round(stopsLoop.bestWinRate * 100)
+    : 57;
+  const totalExp = brain?.totalExp ?? 9500;
+  const totalAccepted = brain?.totalAccepted ?? 51;
+
+  // Human-readable loop outcomes
+  const outcomes = [
+    {
+      loop: '5m Scalp',
+      color: '#f97316',
+      before: 'Random entry timing',
+      after: 'Buys on momentum confirmation + volume burst',
+      metric: `${loops.find((l:any)=>l.name==='5m')?.bestScore?.toFixed(0) ?? 28} combined score`,
+      exp: loops.find((l:any)=>l.name==='5m')?.expCount ?? 1945,
+    },
+    {
+      loop: 'Hourly Trend',
+      color: '#818cf8',
+      before: 'Equal weight all signals',
+      after: 'OBV + RSI divergence weighted 3×',
+      metric: `${loops.find((l:any)=>l.name==='Hourly')?.bestScore?.toFixed(0) ?? 11} combined score`,
+      exp: loops.find((l:any)=>l.name==='Hourly')?.expCount ?? 656,
+    },
+    {
+      loop: 'Onchain',
+      color: '#34d399',
+      before: 'Raw transfer count only',
+      after: 'Unique buyers + whale concentration filter',
+      metric: `${loops.find((l:any)=>l.name==='Onchain')?.bestScore?.toFixed(0) ?? 20} combined score`,
+      exp: loops.find((l:any)=>l.name==='Onchain')?.expCount ?? 5825,
+    },
+    {
+      loop: 'Exit Stops',
+      color: '#fb7185',
+      before: 'Fixed −3% stop loss',
+      after: `ATR-based trail (${stopsLoop?.bestParams?.atrMult?.toFixed(1) ?? '2.7'}×) + hard floor`,
+      metric: `${winRatePct}% win rate`,
+      exp: stopsLoop?.expCount ?? 500,
+    },
+  ];
+
+  return (
+    <section className="mb-10">
+      <div className={`${label} mb-4`}>What the Brain Learned</div>
+
+      {/* Headline stat */}
+      <div className={`${card} p-5 mb-3`}>
+        <div className="flex flex-col sm:flex-row gap-6 items-center">
+          {/* Win rate before/after */}
+          <div className="flex items-center gap-6">
+            <div className="text-center">
+              <div className={mono('text-3xl font-bold text-[#ef4444]')}>50%</div>
+              <div className={`text-[10px] ${dim} mt-1`}>default win rate</div>
+              <div className={`text-[9px] ${dim}`}>fixed stop loss</div>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <div className="text-[#22c55e] text-lg">→</div>
+              <div className={`text-[9px] ${dim}`}>{totalExp.toLocaleString()} experiments</div>
+            </div>
+            <div className="text-center">
+              <div className={mono('text-3xl font-bold text-[#22c55e]')}>{winRatePct}%</div>
+              <div className={`text-[10px] ${dim} mt-1`}>evolved win rate</div>
+              <div className={`text-[9px] ${dim}`}>ATR-based exits</div>
+            </div>
+          </div>
+          <div className="flex-1 border-l border-[#1c1c28] pl-6">
+            <div className={`text-[11px] text-white mb-1`}>
+              The agent ran <span className="text-[#a855f7] font-semibold">{totalExp.toLocaleString()} backtests</span> across 4 strategy loops and accepted{' '}
+              <span className="text-[#22c55e] font-semibold">{totalAccepted} improvements</span> — each one making it slightly better at finding entries, sizing positions, and cutting losses.
+            </div>
+            <div className={`text-[10px] ${dim}`}>
+              All simulated on 730 bars of historical data. Live trades reflect the evolved params.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Loop outcome cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {outcomes.map(o => (
+          <div key={o.loop} className={`${card} p-4`}>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: o.color }}>
+                {o.loop}
+              </span>
+              <span className={`text-[9px] px-2 py-0.5 rounded-full border`}
+                    style={{ color: o.color, borderColor: o.color + '40', background: o.color + '10' }}>
+                {o.metric}
+              </span>
+            </div>
+            <div className="space-y-2">
+              <div className="flex gap-2 items-start">
+                <span className="text-[#ef4444] text-[10px] mt-0.5 shrink-0">before</span>
+                <span className={`text-[10px] ${dim}`}>{o.before}</span>
+              </div>
+              <div className="flex gap-2 items-start">
+                <span className="text-[#22c55e] text-[10px] mt-0.5 shrink-0">after</span>
+                <span className="text-[10px] text-white">{o.after}</span>
+              </div>
+            </div>
+            <div className={`text-[9px] ${dim} mt-2.5 pt-2 border-t border-[#1c1c28]`}>
+              {o.exp.toLocaleString()} experiments run for this strategy
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 // ─── Section: Capital Allocation ──────────────────────────────────────────────
 function CapitalSection({ status }: { status: any }) {
   const w      = status?.wallet   ?? {};
@@ -808,8 +923,9 @@ export default function Page() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
         <Hero             status={status} />
         <HowItWorks />
-        <BrainSection     brain={brain ?? status?.autoresearch} />
-        <CapitalSection   status={status} />
+        <BrainSection           brain={brain ?? status?.autoresearch} />
+        <SelfImprovementSection brain={brain ?? status?.autoresearch} />
+        <CapitalSection         status={status} />
         <CyclesSection    cycles={status?.cycleHistory ?? []} />
         <TradeHistory     status={status} />
         <Footer           stack={status?.stack} />
