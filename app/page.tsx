@@ -108,7 +108,7 @@ function Hero({ status }: { status: any }) {
       {status?.updatedAt && (
         <div className={`flex items-center gap-1.5 text-[9px] ${dim} mb-3`}>
           <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
-          Live · updated {fmtDate(status.updatedAt)} · auto-refreshes every 60s
+          Live · data from {fmtDate(status.updatedAt)} · fetched {lastFetch > 0 ? `${Math.round((Date.now()-lastFetch)/1000)}s ago` : 'now'} · #{fetchCount}
         </div>
       )}
 
@@ -948,24 +948,30 @@ export default function Page() {
 
   const RAW = 'https://raw.githubusercontent.com/deluagent/delu-site/main/public/data';
 
+  const [lastFetch, setLastFetch] = useState(0);
+  const [fetchCount, setFetchCount] = useState(0);
+
   const load = useCallback(async () => {
     try {
+      const ts = Date.now();
       const [s, b] = await Promise.all([
-        fetch(`${RAW}/status.json?t=${Date.now()}`, { cache: 'no-store' }).then(r => r.json()),
-        fetch(`${RAW}/brain.json?t=${Date.now()}`,  { cache: 'no-store' }).then(r => r.json()).catch(() => null),
+        fetch(`${RAW}/status.json?t=${ts}`, { cache: 'no-store', headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' } }).then(r => r.json()),
+        fetch(`${RAW}/brain.json?t=${ts}`,  { cache: 'no-store', headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' } }).then(r => r.json()).catch(() => null),
       ]);
       setStatus(s);
       setBrain(b);
+      setLastFetch(Date.now());
+      setFetchCount(n => n + 1);
     } catch (e: any) { setError(e.message); }
-  }, []);
+  }, []); // eslint-disable-line
 
   const [tick, setTick] = useState(0);
   useEffect(() => {
     load();
-    const t = setInterval(load, 60_000);
-    const t2 = setInterval(() => setTick(n => n + 1), 10_000); // refresh countdown every 10s
+    const t  = setInterval(load, 30_000); // fetch every 30s (was 60s)
+    const t2 = setInterval(() => setTick(n => n + 1), 5_000); // tick every 5s for countdown
     return () => { clearInterval(t); clearInterval(t2); };
-  }, [load]);
+  }, []); // eslint-disable-line
 
   if (error) return (
     <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center">
