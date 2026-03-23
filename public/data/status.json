@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-03-23T16:34:30.256Z",
+  "updatedAt": "2026-03-23T16:35:04.545Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 70496,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 70248,
+  "pctFrom200": "-1.5%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 12 min",
+  "nextCycle": "in 27 min",
   "wallet": {
-    "totalUSD": 124.73,
-    "positionsUSD": 49.36,
+    "totalUSD": 153.47,
+    "positionsUSD": 48.91,
     "liquidUSDC": 33.62,
     "yieldUSD": 0,
     "unrealPnlUSD": -0.62,
@@ -36,8 +36,8 @@
       "quantScore": -0.0229,
       "ret1h": -2.1,
       "transferStats": {
-        "uniqueBuyers": 12,
-        "buyRatio": 0.5
+        "uniqueBuyers": 4,
+        "buyRatio": 0.4444444444444444
       }
     },
     {
@@ -62,8 +62,8 @@
       "quantScore": 0.1354,
       "ret1h": -4.65,
       "transferStats": {
-        "uniqueBuyers": 21,
-        "buyRatio": 0.5526315789473685
+        "uniqueBuyers": 23,
+        "buyRatio": 0.5897435897435898
       }
     },
     {
@@ -88,8 +88,8 @@
       "quantScore": 0.1123,
       "ret1h": -2.55,
       "transferStats": {
-        "uniqueBuyers": 24,
-        "buyRatio": 0.5581395348837209
+        "uniqueBuyers": 3,
+        "buyRatio": 0.5
       }
     }
   ],
@@ -102,15 +102,15 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-23T16:15:58.780Z",
-    "ago": "19m ago",
+    "ts": "2026-03-23T16:32:03.495Z",
+    "ago": "3m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 70496.11,
-      "sma200": 71331.82515000002,
-      "pctFrom200": -0.011715880649943217,
-      "volRatio": 0.8626326626004811,
+      "btcNow": 70247.76,
+      "sma200": 71330.58340000003,
+      "pctFrom200": -0.01518035249940262,
+      "volRatio": 0.8605830595420803,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
@@ -119,20 +119,23 @@
     "seenCount": 12,
     "screened": 12,
     "flagged": [
-      "JUNO",
       "ROBOTMONEY",
-      "TIBBIR"
+      "JUNO",
+      "TIBBIR",
+      "SAIMMY",
+      "KELLYCLAUDE",
+      "ODAI"
     ],
     "traded": [],
     "action": "buy",
-    "asset": "JUNO",
+    "asset": "ROBOTMONEY",
     "confidence": 80,
-    "reasoning": "JUNO has a high score of 1.00 and a velocity spike, indicating strong momentum and potential for further growth. The move is not yet complete, and the token has a high buy ratio, suggesting a strong conviction to buy.",
-    "topSignal": "JUNO score=1.00 ret1h=0.0%",
+    "reasoning": "ROBOTMONEY has a high score of 1.00, indicating strong onchain momentum, and its move is not yet complete, suggesting potential for further growth.",
+    "topSignal": "ROBOTMONEY score=1.18 ret1h=0.0%",
     "trendingEntries": [
       {
-        "symbol": "JUNO",
-        "score": 1,
+        "symbol": "ROBOTMONEY",
+        "score": 1.1818333333333333,
         "rank": null,
         "source": "checkr",
         "ret1h": null,
@@ -140,17 +143,17 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 4.8,
-        "velocity": 19.05,
-        "att_1h": 4.8,
-        "att_4h": 0,
-        "att_8h": -1.4,
-        "att_12h": -1.3,
-        "momentumWindows": 1,
+        "attentionDelta": 2.0355344345289446,
+        "velocity": 18.67,
+        "att_1h": 0.3,
+        "att_4h": 0.1,
+        "att_8h": -0.9,
+        "att_12h": -1.1,
+        "momentumWindows": 2,
         "sustainedMomentum": false,
         "rotatingFrom": [
-          "BV7X",
-          "CLANKER"
+          "CLAWNCH",
+          "VVV"
         ],
         "multiTFScore": null,
         "scoreH": null,
@@ -160,8 +163,8 @@
         "multiTFBreakdown": null
       },
       {
-        "symbol": "ROBOTMONEY",
-        "score": 0.8726666666666667,
+        "symbol": "JUNO",
+        "score": 1.1210666666666667,
         "rank": null,
         "source": "checkr",
         "ret1h": null,
@@ -169,17 +172,17 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 1.423210804762867,
-        "velocity": 13.09,
-        "att_1h": 0.6,
-        "att_4h": 0.1,
-        "att_8h": -0.8,
-        "att_12h": -1,
-        "momentumWindows": 2,
+        "attentionDelta": 2.1,
+        "velocity": 14.29,
+        "att_1h": 2.1,
+        "att_4h": 0,
+        "att_8h": -1.5,
+        "att_12h": -1.4,
+        "momentumWindows": 1,
         "sustainedMomentum": false,
         "rotatingFrom": [
-          "BV7X",
-          "CLANKER"
+          "CLAWNCH",
+          "VVV"
         ],
         "multiTFScore": null,
         "scoreH": null,
@@ -190,7 +193,7 @@
       },
       {
         "symbol": "TIBBIR",
-        "score": 0.7313333333333334,
+        "score": 0.8316666666666667,
         "rank": null,
         "source": "checkr",
         "ret1h": null,
@@ -198,46 +201,17 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 14,
-        "velocity": 10.97,
-        "att_1h": 14,
+        "attentionDelta": 1.77,
+        "velocity": 10,
+        "att_1h": 0,
         "att_4h": 6,
         "att_8h": 5.9,
-        "att_12h": 5.5,
-        "momentumWindows": 4,
+        "att_12h": 5.6,
+        "momentumWindows": 3,
         "sustainedMomentum": true,
         "rotatingFrom": [
-          "BV7X",
-          "CLANKER"
-        ],
-        "multiTFScore": null,
-        "scoreH": null,
-        "score5m": null,
-        "scoreOnchain": null,
-        "score4h": null,
-        "multiTFBreakdown": null
-      },
-      {
-        "symbol": "ODAI",
-        "score": 0.64,
-        "rank": null,
-        "source": "checkr",
-        "ret1h": null,
-        "moveFrac": null,
-        "quantScore": null,
-        "rugVerdict": null,
-        "rugScore": null,
-        "attentionDelta": 0.96,
-        "velocity": 9.6,
-        "att_1h": 0,
-        "att_4h": -3.4,
-        "att_8h": -2.9,
-        "att_12h": -2.9,
-        "momentumWindows": 0,
-        "sustainedMomentum": false,
-        "rotatingFrom": [
-          "BV7X",
-          "CLANKER"
+          "CLAWNCH",
+          "VVV"
         ],
         "multiTFScore": null,
         "scoreH": null,
@@ -248,7 +222,7 @@
       },
       {
         "symbol": "SAIMMY",
-        "score": 0.6346666666666666,
+        "score": 0.7538666666666666,
         "rank": null,
         "source": "checkr",
         "ret1h": null,
@@ -256,17 +230,46 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 5.6,
+        "attentionDelta": 0.952,
         "velocity": 9.52,
-        "att_1h": 5.6,
+        "att_1h": 0,
         "att_4h": 2.7,
         "att_8h": 0,
         "att_12h": 0,
-        "momentumWindows": 2,
+        "momentumWindows": 1,
         "sustainedMomentum": false,
         "rotatingFrom": [
-          "BV7X",
-          "CLANKER"
+          "CLAWNCH",
+          "VVV"
+        ],
+        "multiTFScore": null,
+        "scoreH": null,
+        "score5m": null,
+        "scoreOnchain": null,
+        "score4h": null,
+        "multiTFBreakdown": null
+      },
+      {
+        "symbol": "KELLYCLAUDE",
+        "score": 0.6799999999999999,
+        "rank": null,
+        "source": "checkr",
+        "ret1h": null,
+        "moveFrac": null,
+        "quantScore": null,
+        "rugVerdict": null,
+        "rugScore": null,
+        "attentionDelta": 2.8,
+        "velocity": 8,
+        "att_1h": 2.8,
+        "att_4h": 0.8,
+        "att_8h": 0.4,
+        "att_12h": 0.3,
+        "momentumWindows": 4,
+        "sustainedMomentum": true,
+        "rotatingFrom": [
+          "CLAWNCH",
+          "VVV"
         ],
         "multiTFScore": null,
         "scoreH": null,
@@ -288,8 +291,8 @@
         "ret1h": -0.0209662589291395,
         "ret6h": -0.007004763937211598,
         "transferStats": {
-          "uniqueBuyers": 12,
-          "buyRatio": 0.5
+          "uniqueBuyers": 4,
+          "buyRatio": 0.4444444444444444
         }
       },
       {
@@ -303,8 +306,8 @@
         "ret1h": -0.046521553563807064,
         "ret6h": 0.07592362686758855,
         "transferStats": {
-          "uniqueBuyers": 21,
-          "buyRatio": 0.5526315789473685
+          "uniqueBuyers": 23,
+          "buyRatio": 0.5897435897435898
         }
       },
       {
@@ -318,8 +321,8 @@
         "ret1h": -0.02547423266747054,
         "ret6h": 0.026751031400763837,
         "transferStats": {
-          "uniqueBuyers": 24,
-          "buyRatio": 0.5581395348837209
+          "uniqueBuyers": 3,
+          "buyRatio": 0.5
         }
       }
     ],
@@ -335,8 +338,8 @@
         "ret1h": -0.0209662589291395,
         "ret6h": -0.007004763937211598,
         "transferStats": {
-          "uniqueBuyers": 12,
-          "buyRatio": 0.5
+          "uniqueBuyers": 4,
+          "buyRatio": 0.4444444444444444
         }
       },
       {
@@ -350,8 +353,8 @@
         "ret1h": -0.046521553563807064,
         "ret6h": 0.07592362686758855,
         "transferStats": {
-          "uniqueBuyers": 21,
-          "buyRatio": 0.5526315789473685
+          "uniqueBuyers": 23,
+          "buyRatio": 0.5897435897435898
         }
       },
       {
@@ -365,48 +368,48 @@
         "ret1h": -0.02547423266747054,
         "ret6h": 0.026751031400763837,
         "transferStats": {
-          "uniqueBuyers": 24,
-          "buyRatio": 0.5581395348837209
+          "uniqueBuyers": 3,
+          "buyRatio": 0.5
         }
       }
     ],
     "checkrSustained": [
       {
-        "sym": "TIBBIR",
-        "att1h": 14,
-        "att4h": 6,
-        "velocity": 10.97,
+        "sym": "KELLYCLAUDE",
+        "att1h": 2.8,
+        "att4h": 0.8,
+        "velocity": 8,
         "windows": 4
       },
       {
         "sym": "ROBOTMONEY",
-        "att1h": 0.6,
+        "att1h": 0.3,
         "att4h": 0.1,
-        "velocity": 13.09,
+        "velocity": 18.67,
         "windows": 2
       },
       {
-        "sym": "SAIMMY",
-        "att1h": 5.6,
-        "att4h": 2.7,
-        "velocity": 9.52,
+        "sym": "DRB",
+        "att1h": 1.9,
+        "att4h": 0.2,
+        "velocity": 7.2,
         "windows": 2
       },
       {
-        "sym": "KELLYCLAUDE",
+        "sym": "TIBBIR",
         "att1h": 0,
-        "att4h": 0.8,
-        "velocity": 8,
+        "att4h": 6,
+        "velocity": 10,
         "windows": 3
       }
     ],
     "checkrTraded": {
-      "sym": "JUNO",
-      "att1h": 4.8,
-      "att4h": 0,
-      "att8h": -1.4,
-      "velocity": 19.05,
-      "windows": 1
+      "sym": "ROBOTMONEY",
+      "att1h": 0.3,
+      "att4h": 0.1,
+      "att8h": -0.9,
+      "velocity": 18.67,
+      "windows": 2
     },
     "topScores": []
   },
@@ -501,6 +504,362 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-23T16:32:03.495Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 70247.76,
+        "sma200": 71330.58340000003,
+        "pctFrom200": -0.01518035249940262,
+        "volRatio": 0.8605830595420803,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": 80,
+      "reasoning": "ROBOTMONEY has a high score of 1.00, indicating strong onchain momentum, and its move is not yet complete, suggesting potential for further growth.",
+      "seenCount": 10,
+      "flagged": [
+        "ROBOTMONEY",
+        "JUNO",
+        "TIBBIR",
+        "SAIMMY",
+        "KELLYCLAUDE",
+        "ODAI"
+      ],
+      "traded": [],
+      "trendingEntries": [
+        {
+          "symbol": "ROBOTMONEY",
+          "score": 1.1818333333333333,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 2.0355344345289446,
+          "velocity": 18.67,
+          "att_1h": 0.3,
+          "att_4h": 0.1,
+          "att_8h": -0.9,
+          "att_12h": -1.1,
+          "momentumWindows": 2,
+          "sustainedMomentum": false,
+          "rotatingFrom": [
+            "CLAWNCH",
+            "VVV"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "JUNO",
+          "score": 1.1210666666666667,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 2.1,
+          "velocity": 14.29,
+          "att_1h": 2.1,
+          "att_4h": 0,
+          "att_8h": -1.5,
+          "att_12h": -1.4,
+          "momentumWindows": 1,
+          "sustainedMomentum": false,
+          "rotatingFrom": [
+            "CLAWNCH",
+            "VVV"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "TIBBIR",
+          "score": 0.8316666666666667,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 1.77,
+          "velocity": 10,
+          "att_1h": 0,
+          "att_4h": 6,
+          "att_8h": 5.9,
+          "att_12h": 5.6,
+          "momentumWindows": 3,
+          "sustainedMomentum": true,
+          "rotatingFrom": [
+            "CLAWNCH",
+            "VVV"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "SAIMMY",
+          "score": 0.7538666666666666,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 0.952,
+          "velocity": 9.52,
+          "att_1h": 0,
+          "att_4h": 2.7,
+          "att_8h": 0,
+          "att_12h": 0,
+          "momentumWindows": 1,
+          "sustainedMomentum": false,
+          "rotatingFrom": [
+            "CLAWNCH",
+            "VVV"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "KELLYCLAUDE",
+          "score": 0.6799999999999999,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 2.8,
+          "velocity": 8,
+          "att_1h": 2.8,
+          "att_4h": 0.8,
+          "att_8h": 0.4,
+          "att_12h": 0.3,
+          "momentumWindows": 4,
+          "sustainedMomentum": true,
+          "rotatingFrom": [
+            "CLAWNCH",
+            "VVV"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        }
+      ],
+      "positionUpdates": [
+        {
+          "sym": "VVV",
+          "currentPrice": 5.9860056694,
+          "entryPrice": 6.1,
+          "pnlPct": -1.87,
+          "quantScore": -0.0229,
+          "volumeTrend": "stable",
+          "recommendation": "hold",
+          "ret1h": -0.0209662589291395,
+          "ret6h": -0.007004763937211598,
+          "transferStats": {
+            "uniqueBuyers": 4,
+            "buyRatio": 0.4444444444444444
+          }
+        },
+        {
+          "sym": "SAIRI",
+          "currentPrice": 0.000010053,
+          "entryPrice": 0.00000983,
+          "pnlPct": 2.27,
+          "quantScore": 0.1354,
+          "volumeTrend": "increasing",
+          "recommendation": "hold",
+          "ret1h": -0.046521553563807064,
+          "ret6h": 0.07592362686758855,
+          "transferStats": {
+            "uniqueBuyers": 23,
+            "buyRatio": 0.5897435897435898
+          }
+        },
+        {
+          "sym": "BNKR",
+          "currentPrice": 0.0004019796,
+          "entryPrice": 0.0004196,
+          "pnlPct": -4.2,
+          "quantScore": 0.1123,
+          "volumeTrend": "increasing",
+          "recommendation": "hold",
+          "ret1h": -0.02547423266747054,
+          "ret6h": 0.026751031400763837,
+          "transferStats": {
+            "uniqueBuyers": 3,
+            "buyRatio": 0.5
+          }
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "VVV",
+          "currentPrice": 5.9860056694,
+          "entryPrice": 6.1,
+          "pnlPct": -1.87,
+          "quantScore": -0.0229,
+          "volumeTrend": "stable",
+          "recommendation": "hold",
+          "ret1h": -0.0209662589291395,
+          "ret6h": -0.007004763937211598,
+          "transferStats": {
+            "uniqueBuyers": 4,
+            "buyRatio": 0.4444444444444444
+          }
+        },
+        {
+          "sym": "SAIRI",
+          "currentPrice": 0.000010053,
+          "entryPrice": 0.00000983,
+          "pnlPct": 2.27,
+          "quantScore": 0.1354,
+          "volumeTrend": "increasing",
+          "recommendation": "hold",
+          "ret1h": -0.046521553563807064,
+          "ret6h": 0.07592362686758855,
+          "transferStats": {
+            "uniqueBuyers": 23,
+            "buyRatio": 0.5897435897435898
+          }
+        },
+        {
+          "sym": "BNKR",
+          "currentPrice": 0.0004019796,
+          "entryPrice": 0.0004196,
+          "pnlPct": -4.2,
+          "quantScore": 0.1123,
+          "volumeTrend": "increasing",
+          "recommendation": "hold",
+          "ret1h": -0.02547423266747054,
+          "ret6h": 0.026751031400763837,
+          "transferStats": {
+            "uniqueBuyers": 3,
+            "buyRatio": 0.5
+          }
+        }
+      ],
+      "checkrSustained": [
+        {
+          "sym": "KELLYCLAUDE",
+          "att1h": 2.8,
+          "att4h": 0.8,
+          "velocity": 8,
+          "windows": 4
+        },
+        {
+          "sym": "ROBOTMONEY",
+          "att1h": 0.3,
+          "att4h": 0.1,
+          "velocity": 18.67,
+          "windows": 2
+        },
+        {
+          "sym": "DRB",
+          "att1h": 1.9,
+          "att4h": 0.2,
+          "velocity": 7.2,
+          "windows": 2
+        },
+        {
+          "sym": "TIBBIR",
+          "att1h": 0,
+          "att4h": 6,
+          "velocity": 10,
+          "windows": 3
+        }
+      ],
+      "checkrTraded": {
+        "sym": "ROBOTMONEY",
+        "att1h": 0.3,
+        "att4h": 0.1,
+        "att8h": -0.9,
+        "velocity": 18.67,
+        "windows": 2
+      },
+      "topSignal": "ROBOTMONEY score=1.18 ret1h=0.0%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "bankr-llm",
+      "dataSources": {
+        "checkrTokens": 33,
+        "checkrSustained": [
+          {
+            "sym": "KELLYCLAUDE",
+            "att1h": 2.8,
+            "att4h": 0.8,
+            "velocity": 8,
+            "windows": 4
+          },
+          {
+            "sym": "ROBOTMONEY",
+            "att1h": 0.3,
+            "att4h": 0.1,
+            "velocity": 18.67,
+            "windows": 2
+          },
+          {
+            "sym": "DRB",
+            "att1h": 1.9,
+            "att4h": 0.2,
+            "velocity": 7.2,
+            "windows": 2
+          },
+          {
+            "sym": "TIBBIR",
+            "att1h": 0,
+            "att4h": 6,
+            "velocity": 10,
+            "windows": 3
+          }
+        ],
+        "checkrTraded": {
+          "sym": "ROBOTMONEY",
+          "att1h": 0.3,
+          "att4h": 0.1,
+          "att8h": -0.9,
+          "velocity": 18.67,
+          "windows": 2
+        },
+        "discoveryPassed": 12
+      }
+    },
     {
       "ts": "2026-03-23T16:15:58.780Z",
       "regime": "RANGE_TIGHT",
@@ -12356,37 +12715,6 @@
       "layers": [],
       "screenLayer": "hardcoded",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-22T21:42:11.865Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 67910.76,
-        "sma200": 71523.43010000003,
-        "pctFrom200": -0.05051030263717778,
-        "volRatio": 0.7838598032259496,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. BEAR regime, no oversold signals — yield only",
-      "seenCount": 0,
-      "flagged": [],
-      "traded": [],
-      "trendingEntries": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "hardcoded",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -12450,7 +12778,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 12955,
+      "expCount": 12960,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
