@@ -915,6 +915,7 @@ function Footer({ stack }: { stack: any }) {
     { label: 'delu-agent', href: 'https://github.com/deluagent/delu-agent' },
     { label: 'Hackathon submission', href: 'https://synthesis.devfolio.co/projects/delu-autonomous-agent-with-skin-in-the-game-7115' },
     { label: 'Basescan', href: `https://basescan.org/address/${wallet}` },
+    { label: 'Moltbook @delu_agent', href: 'https://www.moltbook.com/u/delu_agent' },
   ];
   const sources = ['Alchemy', 'Checkr x402', 'Bankr API', 'Venice AI'];
 
