@@ -493,7 +493,7 @@ function CapitalSection({ status }: { status: any }) {
   const segments = [
     { label: 'Liquid USDC',   val: liquid,       color: '#818cf8', desc: 'Ready to trade' },
     { label: 'Active Trades', val: posAmt,        color: '#22c55e', desc: 'Open positions' },
-    { label: 'ETH / cbBTC',   val: other,         color: '#374151', desc: 'Reserve assets' },
+    { label: 'ETH',            val: other,         color: '#374151', desc: 'Reserve assets' },
   ].filter(s => s.val > 0);
 
   const openPos = status?.positions ?? [];
