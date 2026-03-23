@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-03-23T19:29:48.312Z",
+  "updatedAt": "2026-03-23T19:30:58.781Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71119,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 6 min",
+  "nextCycle": "in 4 min",
   "wallet": {
     "totalUSD": 116.84,
     "positionsUSD": 50.22,
     "liquidUSDC": 4.67,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0,
-    "unrealPnlPct": 0
+    "unrealPnlUSD": -0.19,
+    "unrealPnlPct": -0.38
   },
   "positions": [
     {
       "sym": "VVV",
       "entryPrice": 6.1,
-      "currentPrice": 6.08991153,
+      "currentPrice": 6.08504129,
       "sizeUSD": 20,
-      "currentUSD": 19.69,
-      "pnlUSD": -0.31,
-      "pnlPct": -1.55,
+      "currentUSD": 19.68,
+      "pnlUSD": -0.32,
+      "pnlPct": -1.6,
       "peakPct": 0.78,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -69,11 +69,11 @@
     {
       "sym": "ROBOTMONEY",
       "entryPrice": 0.00001428,
-      "currentPrice": 0.00001468,
+      "currentPrice": 0.00001442,
       "sizeUSD": 10,
-      "currentUSD": 10.28,
-      "pnlUSD": 0.28,
-      "pnlPct": 2.8,
+      "currentUSD": 10.1,
+      "pnlUSD": 0.1,
+      "pnlPct": 1,
       "peakPct": 3.09,
       "trailStop": 5,
       "hardSlPct": 10,
@@ -129,7 +129,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-23T19:05:00.008Z",
-    "ago": "25m ago",
+    "ago": "26m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -153,9 +153,9 @@
     "positionUpdates": [
       {
         "sym": "VVV",
-        "currentPrice": 6.08991153,
-        "pnlPct": -1.55,
-        "pnlUSD": -0.31,
+        "currentPrice": 6.08504129,
+        "pnlPct": -1.6,
+        "pnlUSD": -0.32,
         "quantScore": 0.0275,
         "volumeTrend": "increasing",
         "recommendation": "hold",
@@ -181,9 +181,9 @@
       },
       {
         "sym": "ROBOTMONEY",
-        "currentPrice": 0.00001468,
-        "pnlPct": 2.8,
-        "pnlUSD": 0.28,
+        "currentPrice": 0.00001442,
+        "pnlPct": 1,
+        "pnlUSD": 0.1,
         "quantScore": -0.0153,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -211,9 +211,9 @@
     "positionAssessments": [
       {
         "sym": "VVV",
-        "currentPrice": 6.08991153,
-        "pnlPct": -1.55,
-        "pnlUSD": -0.31,
+        "currentPrice": 6.08504129,
+        "pnlPct": -1.6,
+        "pnlUSD": -0.32,
         "quantScore": 0.0275,
         "volumeTrend": "increasing",
         "recommendation": "hold",
@@ -239,9 +239,9 @@
       },
       {
         "sym": "ROBOTMONEY",
-        "currentPrice": 0.00001468,
-        "pnlPct": 2.8,
-        "pnlUSD": 0.28,
+        "currentPrice": 0.00001442,
+        "pnlPct": 1,
+        "pnlUSD": 0.1,
         "quantScore": -0.0153,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -451,9 +451,9 @@
       "positionUpdates": [
         {
           "sym": "VVV",
-          "currentPrice": 6.08991153,
-          "pnlPct": -1.55,
-          "pnlUSD": -0.31,
+          "currentPrice": 6.08504129,
+          "pnlPct": -1.6,
+          "pnlUSD": -0.32,
           "quantScore": 0.0275,
           "volumeTrend": "increasing",
           "recommendation": "hold",
@@ -479,9 +479,9 @@
         },
         {
           "sym": "ROBOTMONEY",
-          "currentPrice": 0.00001468,
-          "pnlPct": 2.8,
-          "pnlUSD": 0.28,
+          "currentPrice": 0.00001442,
+          "pnlPct": 1,
+          "pnlUSD": 0.1,
           "quantScore": -0.0153,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -509,9 +509,9 @@
       "positionAssessments": [
         {
           "sym": "VVV",
-          "currentPrice": 6.08991153,
-          "pnlPct": -1.55,
-          "pnlUSD": -0.31,
+          "currentPrice": 6.08504129,
+          "pnlPct": -1.6,
+          "pnlUSD": -0.32,
           "quantScore": 0.0275,
           "volumeTrend": "increasing",
           "recommendation": "hold",
@@ -537,9 +537,9 @@
         },
         {
           "sym": "ROBOTMONEY",
-          "currentPrice": 0.00001468,
-          "pnlPct": 2.8,
-          "pnlUSD": 0.28,
+          "currentPrice": 0.00001442,
+          "pnlPct": 1,
+          "pnlUSD": 0.1,
           "quantScore": -0.0153,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -9411,7 +9411,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 14375,
+      "expCount": 14385,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
