@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-03-23T13:55:32.258Z",
+  "updatedAt": "2026-03-23T14:15:46.458Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70770,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 10 min",
+  "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 154.38,
+    "totalUSD": 153.25,
     "positionsUSD": 0,
     "liquidUSDC": 62.29,
     "yieldUSD": 62.29,
@@ -48,10 +48,10 @@
       "currentUSD": 18.99,
       "pnlUSD": -0.56,
       "pnlPct": -2.86,
-      "peakPct": -1.79,
+      "peakPct": 1.26,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": false,
+      "trailActivated": true,
       "openedAt": "2026-03-23T00:52:00.000Z",
       "entryTx": null,
       "contractAddress": "0xde61878b0b21ce395266c44d4d548d1c72a3eb07",
@@ -103,7 +103,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-23T13:35:00.026Z",
-    "ago": "21m ago",
+    "ago": "41m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -121,9 +121,7 @@
     "flagged": [
       "MOLTEN"
     ],
-    "traded": [
-      "MOLTEN"
-    ],
+    "traded": [],
     "action": "buy",
     "asset": "MOLTEN",
     "confidence": 80,
@@ -407,6 +405,7 @@
         "windows": 2
       }
     ],
+    "checkrTraded": null,
     "topScores": []
   },
   "performance": {
@@ -791,6 +790,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "MOLTEN score=0.96 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -1149,6 +1149,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "MOLTEN score=0.96 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -1467,6 +1468,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "MOLTEN score=0.96 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -1814,6 +1816,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.80 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -2171,6 +2174,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.80 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -2528,6 +2532,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "FELIX score=0.77 ret1h=-0.8%",
       "layers": [
         "bankr-screen",
@@ -2885,6 +2890,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.80 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -3244,6 +3250,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.80 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -3598,6 +3605,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.80 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -3928,6 +3936,7 @@
           "windows": 4
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.80 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -4258,6 +4267,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.80 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -4593,6 +4603,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "CASHCLAW score=0.58 ret1h=-18.9%",
       "layers": [
         "bankr-screen",
@@ -4924,6 +4935,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.96 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -5257,6 +5269,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "VVV score=0.73 ret1h=-0.5%",
       "layers": [
         "bankr-screen",
@@ -5528,6 +5541,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "VVV score=0.73 ret1h=0.7%",
       "layers": [
         "bankr-screen",
@@ -5796,6 +5810,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.96 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -6064,6 +6079,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.96 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -6332,6 +6348,7 @@
           "windows": 2
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.96 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -6600,6 +6617,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=0.96 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -6868,6 +6886,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "SAIRI score=1.00 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -7141,6 +7160,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.30 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -7414,6 +7434,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.30 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -7687,6 +7708,7 @@
           "windows": 3
         }
       ],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.30 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -7917,6 +7939,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.30 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -8100,6 +8123,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.25 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -8283,6 +8307,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.25 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -8466,6 +8491,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.25 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -8649,6 +8675,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.25 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -8833,6 +8860,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.34 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -8866,6 +8894,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -8896,6 +8925,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -8926,6 +8956,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -8956,6 +8987,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -8986,6 +9018,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -9016,6 +9049,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -9046,6 +9080,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -9076,6 +9111,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -9106,6 +9142,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -9136,6 +9173,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -9166,6 +9204,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -9196,6 +9235,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -9226,6 +9266,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -9256,6 +9297,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -9564,6 +9606,7 @@
         }
       ],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "ROBOTMONEY score=0.69 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -9821,6 +9864,7 @@
         }
       ],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "ROBOTMONEY score=0.69 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -10082,6 +10126,7 @@
         }
       ],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.34 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -10346,6 +10391,7 @@
         }
       ],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "TIBBIR score=0.53 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -10379,6 +10425,7 @@
       "positionUpdates": [],
       "positionAssessments": [],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded",
@@ -10648,6 +10695,7 @@
         }
       ],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "BOTCOIN score=0.80 ret1h=0.0%",
       "layers": [
         "bankr-screen",
@@ -10917,6 +10965,7 @@
         }
       ],
       "checkrSustained": [],
+      "checkrTraded": null,
       "topSignal": "BLUEAGENT score=0.47 ret1h=2.3%",
       "layers": [
         "bankr-screen",
@@ -10987,7 +11036,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 11645,
+      "expCount": 11810,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
