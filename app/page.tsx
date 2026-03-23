@@ -761,15 +761,22 @@ function CyclesSection({ cycles }: { cycles: any[] }) {
     return acc;
   }, []);
 
-  // Second pass: collapse only FAILED (unconfirmed) buys of same asset — keep latest failed attempt
-  // Confirmed buys (traded[] non-empty) always show — they are real trades
+  // Second pass:
+  // - Failed buys: keep only the latest attempt per asset
+  // - Confirmed buys: keep only the FIRST (oldest) entry per asset — it's the position open event
+  //   subsequent confirmed buys of same asset = averaging in, show only latest of those too
   const seenFailedAsset = new Set<string>();
+  const seenConfirmedAsset = new Set<string>();
   const deduped = [...timeDeduped].reverse().filter(c => {
     const isBuy = c.action === 'buy' || c.action === 'long';
     const isConfirmed = (c.traded ?? []).length > 0;
     if (isBuy && !isConfirmed) {
-      if (seenFailedAsset.has(c.asset)) return false; // drop older failed attempt
+      if (seenFailedAsset.has(c.asset)) return false;
       seenFailedAsset.add(c.asset);
+    }
+    if (isBuy && isConfirmed) {
+      if (seenConfirmedAsset.has(c.asset)) return false; // only show first buy per asset
+      seenConfirmedAsset.add(c.asset);
     }
     return true;
   }).reverse();
