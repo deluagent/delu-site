@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-23T00:59:58.552Z",
-  "totalExp": 9113,
+  "generatedAt": "2026-03-23T01:10:58.203Z",
+  "totalExp": 9254,
   "totalAccepted": 51,
   "topScore": 28.012,
   "topLoop": "5m",
@@ -8,7 +8,7 @@
     {
       "name": "5m",
       "color": "orange",
-      "expCount": 1902,
+      "expCount": 1941,
       "acceptedCount": 10,
       "acceptRate": 0.5,
       "bestScore": 28.012,
@@ -25,7 +25,7 @@
     {
       "name": "Onchain",
       "color": "indigo",
-      "expCount": 5621,
+      "expCount": 5660,
       "acceptedCount": 3,
       "acceptRate": 0.1,
       "bestScore": 20.402,
@@ -44,9 +44,9 @@
     {
       "name": "Hourly",
       "color": "emerald",
-      "expCount": 625,
+      "expCount": 653,
       "acceptedCount": 20,
-      "acceptRate": 3.2,
+      "acceptRate": 3.1,
       "bestScore": 11.012,
       "breakthroughCount": 20,
       "signals": [
@@ -64,10 +64,10 @@
       "name": "Fusion",
       "color": "purple",
       "expCount": 500,
-      "acceptedCount": 1,
-      "acceptRate": 0.2,
-      "bestScore": 0.442,
-      "breakthroughCount": 1,
+      "acceptedCount": 5,
+      "acceptRate": 1,
+      "bestScore": 0.744,
+      "breakthroughCount": 5,
       "signals": [
         "Evolves blend weights: 5m + Onchain + Hourly + 4h",
         "Per-regime weights (BEAR / BULL / RANGE)",
@@ -80,11 +80,11 @@
     {
       "name": "Stops",
       "color": "rose",
-      "expCount": 465,
-      "acceptedCount": 17,
-      "acceptRate": 3.7,
+      "expCount": 500,
+      "acceptedCount": 13,
+      "acceptRate": 2.6,
       "bestScore": 6.383,
-      "breakthroughCount": 17,
+      "breakthroughCount": 13,
       "signals": [
         "Evolves blend weights: 5m + Onchain + Hourly + 4h",
         "Per-regime weights (BEAR / BULL / RANGE)",
@@ -377,28 +377,32 @@
       "color": "purple"
     },
     {
-      "score": 6.123,
+      "score": 0.608,
+      "ts": "2026-03-23T01:07:00.444Z",
       "description": null,
-      "loop": "Stops",
-      "color": "rose"
+      "loop": "Fusion",
+      "color": "purple"
     },
     {
-      "score": 6.125,
+      "score": 0.711,
+      "ts": "2026-03-23T01:10:09.867Z",
       "description": null,
-      "loop": "Stops",
-      "color": "rose"
+      "loop": "Fusion",
+      "color": "purple"
     },
     {
-      "score": 6.181,
+      "score": 0.741,
+      "ts": "2026-03-23T01:10:52.293Z",
       "description": null,
-      "loop": "Stops",
-      "color": "rose"
+      "loop": "Fusion",
+      "color": "purple"
     },
     {
-      "score": 6.182,
+      "score": 0.744,
+      "ts": "2026-03-23T01:10:57.045Z",
       "description": null,
-      "loop": "Stops",
-      "color": "rose"
+      "loop": "Fusion",
+      "color": "purple"
     },
     {
       "score": 6.201,

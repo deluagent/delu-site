@@ -85,7 +85,7 @@ function Hero({ status }: { status: any }) {
           </div>
           <p className="text-[13px] text-[#9ca3af] leading-relaxed max-w-lg">
             Autonomous onchain trading agent — learns from every trade, earns yield when idle,
-            pays for its own data with x402 micropayments.
+            and pays for its own AI compute via Bankr LLM Gateway. Fully self-funding.
           </p>
         </div>
         {/* Live integrations */}
@@ -143,17 +143,17 @@ function HowItWorks() {
     {
       n: '02', icon: <Brain size={14}/>, title: 'Think',
       color: 'text-[#a855f7]', border: 'border-[#a855f7]/15', bg: 'bg-[#a855f7]/3',
-      body: 'Quant brain scores each token across four evolved strategies (5m, hourly, onchain, daily). Each uses its own learned parameters — RSI zones, volume burst thresholds, BTC correlation, momentum regime.',
+      body: 'Quant brain scores each token across five evolved strategies (5m, hourly, onchain, fusion, stops). Reasoning routed through Bankr LLM Gateway — one API for 20+ models, paid autonomously from the agent\'s own wallet.',
     },
     {
       n: '03', icon: <Zap size={14}/>, title: 'Decide',
       color: 'text-[#f59e0b]', border: 'border-[#f59e0b]/15', bg: 'bg-[#f59e0b]/3',
-      body: 'Venice AI (private inference) synthesises signals into a confidence score. ≥65% → Kelly-sized buy via Bankr. <65% → hold and route surplus USDC to best yield vault (Aave v3, Morpho, Moonwell).',
+      body: 'Venice AI (private inference) synthesises signals into a conviction score. ≥65% → Kelly-sized buy via Bankr. <65% → surplus USDC deployed to best yield vault (Morpho, Moonwell, Aave v3) — capital never idle.',
     },
     {
-      n: '04', icon: <RefreshCw size={14}/>, title: 'Learn',
+      n: '04', icon: <RefreshCw size={14}/>, title: 'Learn & Self-Fund',
       color: 'text-[#22c55e]', border: 'border-[#22c55e]/15', bg: 'bg-[#22c55e]/3',
-      body: 'After every trade, 4 parallel LLM loops run experiments — mutating strategy parameters, evaluating against real outcomes on 27 Base tokens. 11,000+ experiments completed. Parameters auto-promote when score improves.',
+      body: 'Five parallel LLM loops run 2,600+ experiments/hour via Bankr LLM Gateway — funded by yield the agent earns when not trading. The agent pays for its own compute. Parameters auto-promote when backtested score improves.',
     },
   ];
 
