@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-03-23T16:06:01.829Z",
+  "updatedAt": "2026-03-23T16:08:36.409Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70310,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 28 min",
+  "nextCycle": "in 25 min",
   "wallet": {
-    "totalUSD": 110.44,
-    "positionsUSD": 19.13,
+    "totalUSD": 91.62,
+    "positionsUSD": 0,
     "liquidUSDC": 34.07,
     "yieldUSD": 34.07,
-    "unrealPnlUSD": -0.66,
-    "unrealPnlPct": -0.96
+    "unrealPnlUSD": -0.62,
+    "unrealPnlPct": -1.25
   },
   "positions": [
     {
@@ -91,32 +91,6 @@
         "uniqueBuyers": 8,
         "buyRatio": 0.6153846153846154
       }
-    },
-    {
-      "sym": "MOLTEN",
-      "entryPrice": 0.00000754,
-      "currentPrice": 0.00000753,
-      "sizeUSD": 19.17,
-      "currentUSD": 19.13,
-      "pnlUSD": -0.04,
-      "pnlPct": -0.21,
-      "peakPct": 0,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": false,
-      "openedAt": "2026-03-23T16:00:56.659Z",
-      "entryTx": null,
-      "contractAddress": "0x59c0d5c34c301ac0600147924d6c9be22a2f0b07",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": "increasing",
-      "recommendation": "hold",
-      "quantScore": 0.0267,
-      "ret1h": -8.5,
-      "transferStats": {
-        "uniqueBuyers": 18,
-        "buyRatio": 0.5806451612903226
-      }
     }
   ],
   "yield": {
@@ -129,7 +103,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-23T16:03:27.781Z",
-    "ago": "3m ago",
+    "ago": "5m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -453,9 +427,21 @@
     "topScores": []
   },
   "performance": {
-    "closedTrades": 7,
-    "winRate": "1/7",
+    "closedTrades": 8,
+    "winRate": "1/8",
     "recentTrades": [
+      {
+        "sym": "MOLTEN",
+        "pnlPct": -96.35,
+        "pnlUSD": -18.47,
+        "sizeUsd": 19.17,
+        "won": false,
+        "regime": "RANGE_TIGHT",
+        "entryTx": null,
+        "exitTx": null,
+        "openedAt": "2026-03-23T16:07:26.928Z",
+        "closedAt": "2026-03-23T16:07:26.929Z"
+      },
       {
         "sym": "JUNO",
         "pnlPct": -1.42,
@@ -12174,7 +12160,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 12720,
+      "expCount": 12740,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
