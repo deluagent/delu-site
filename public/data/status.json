@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-03-23T03:25:04.194Z",
+  "updatedAt": "2026-03-23T03:38:33.177Z",
   "regime": "BEAR",
-  "btcPrice": 68255,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 68227,
+  "pctFrom200": "-4.5%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 21 min",
+  "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 152.76,
-    "positionsUSD": 10.05,
+    "totalUSD": 152.63,
+    "positionsUSD": 10,
     "liquidUSDC": 82.8,
     "yieldUSD": 82.8,
-    "unrealPnlUSD": -0.53,
-    "unrealPnlPct": -1.79
+    "unrealPnlUSD": 9.17,
+    "unrealPnlPct": 23.19
   },
   "positions": [
     {
@@ -19,9 +19,9 @@
       "entryPrice": 6.1,
       "currentPrice": 6.13114077,
       "sizeUSD": 10,
-      "currentUSD": 10.05,
-      "pnlUSD": 0.05,
-      "pnlPct": 0.5,
+      "currentUSD": 19.78,
+      "pnlUSD": 9.78,
+      "pnlPct": 97.8,
       "peakPct": 0.51,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -36,19 +36,19 @@
       "quantScore": null,
       "ret1h": -0.45,
       "transferStats": {
-        "uniqueBuyers": 8,
-        "buyRatio": 0.5
+        "uniqueBuyers": 11,
+        "buyRatio": 0.4782608695652174
       }
     },
     {
       "sym": "SAIRI",
       "entryPrice": 0.00000983,
-      "currentPrice": 0.00000954,
+      "currentPrice": 0.00000965,
       "sizeUSD": 19.55,
-      "currentUSD": 18.97,
-      "pnlUSD": -0.58,
-      "pnlPct": -2.97,
-      "peakPct": 0,
+      "currentUSD": 18.94,
+      "pnlUSD": -0.61,
+      "pnlPct": -3.12,
+      "peakPct": -1.79,
       "trailStop": 5,
       "hardSlPct": 3,
       "trailActivated": false,
@@ -60,11 +60,34 @@
       "volumeTrend": "unknown",
       "recommendation": "hold",
       "quantScore": null,
-      "ret1h": -0.45,
+      "ret1h": -2.5,
       "transferStats": {
-        "uniqueBuyers": 8,
-        "buyRatio": 0.5
+        "uniqueBuyers": 23,
+        "buyRatio": 0.4791666666666667
       }
+    },
+    {
+      "sym": "CASHCLAW",
+      "entryPrice": 0.000003946,
+      "currentPrice": null,
+      "sizeUSD": 10,
+      "currentUSD": 10,
+      "pnlUSD": 0,
+      "pnlPct": 0,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-03-23T03:37:14.039Z",
+      "entryTx": null,
+      "contractAddress": "0x45b9a03a05f86088cd1a00874a05dda2c6915ba3",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
     }
   ],
   "yield": {
@@ -76,35 +99,66 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-23T03:14:22.496Z",
-    "ago": "11m ago",
+    "ts": "2026-03-23T03:35:00.007Z",
+    "ago": "4m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
-      "btcNow": 68255.17,
-      "sma200": 71445.93700000003,
-      "pctFrom200": -0.04465988037920245,
-      "volRatio": 0.7608481036796098,
+      "btcNow": 68226.71,
+      "sma200": 71445.79470000003,
+      "pctFrom200": -0.045056321558419446,
+      "volRatio": 0.76095198740199,
       "btcState": "BEAR",
       "ethState": "BEAR",
       "breadthFraction": "BTC:BEAR ETH:BEAR",
       "breadth": 0
     },
-    "seenCount": 14,
-    "screened": 14,
+    "seenCount": 9,
+    "screened": 9,
     "flagged": [
       "SAIRI"
     ],
-    "traded": [],
-    "action": "hold",
-    "asset": "USDC",
-    "confidence": null,
-    "reasoning": "Venice unavailable: Venice error: {\"error\":\"The model is currently overloaded. Please try again later.\"}",
-    "topSignal": "SAIRI score=0.96 ret1h=0.0%",
+    "traded": [
+      "CASHCLAW"
+    ],
+    "action": "buy",
+    "asset": "CASHCLAW",
+    "confidence": 70,
+    "reasoning": "CASHCLAW has a score of 0.58 and a buyRatio of 0.60, indicating strong onchain activity and buyer interest. Although the token has a high rug pull risk, the current market regime is BEAR and the token's score is above the threshold for consideration.",
+    "topSignal": "CASHCLAW score=0.58 ret1h=-18.9%",
     "trendingEntries": [
       {
+        "symbol": "CASHCLAW",
+        "score": 0.58,
+        "rank": 9,
+        "source": "bankr_trending",
+        "ret1h": -0.18927357884103224,
+        "moveFrac": 0,
+        "quantScore": null,
+        "rugVerdict": "RISKY",
+        "rugScore": 55,
+        "attentionDelta": 1.9549999999999998,
+        "velocity": 3.4799999999999995,
+        "att_1h": 0,
+        "att_4h": 0,
+        "att_8h": 0,
+        "att_12h": 0,
+        "momentumWindows": 0,
+        "sustainedMomentum": false,
+        "rotatingFrom": [
+          "REPPO",
+          "EDEL"
+        ],
+        "multiTFScore": null,
+        "scoreH": null,
+        "score5m": null,
+        "scoreOnchain": null,
+        "score4h": null,
+        "multiTFBreakdown": null
+      },
+      {
         "symbol": "SAIRI",
-        "score": 0.9600000000000001,
+        "score": 0.8,
         "rank": null,
         "source": "checkr",
         "ret1h": null,
@@ -112,17 +166,46 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 1.4400000000000002,
-        "velocity": 14.4,
-        "att_1h": 0,
+        "attentionDelta": 13.5,
+        "velocity": 12,
+        "att_1h": 13.5,
         "att_4h": 2.7,
         "att_8h": 2.8,
-        "att_12h": 1.1,
+        "att_12h": 1.4,
+        "momentumWindows": 4,
+        "sustainedMomentum": true,
+        "rotatingFrom": [
+          "CLAWD",
+          "CHARLES"
+        ],
+        "multiTFScore": null,
+        "scoreH": null,
+        "score5m": null,
+        "scoreOnchain": null,
+        "score4h": null,
+        "multiTFBreakdown": null
+      },
+      {
+        "symbol": "TOSHI",
+        "score": 0.21333333333333335,
+        "rank": null,
+        "source": "checkr",
+        "ret1h": null,
+        "moveFrac": null,
+        "quantScore": null,
+        "rugVerdict": null,
+        "rugScore": null,
+        "attentionDelta": 8.4,
+        "velocity": 3.2,
+        "att_1h": 8.4,
+        "att_4h": 1.5,
+        "att_8h": 1.5,
+        "att_12h": 0,
         "momentumWindows": 3,
         "sustainedMomentum": true,
         "rotatingFrom": [
-          "BEAN",
-          "QR"
+          "CLAWD",
+          "CHARLES"
         ],
         "multiTFScore": null,
         "scoreH": null,
@@ -133,7 +216,7 @@
       },
       {
         "symbol": "DRB",
-        "score": 0.5333333333333333,
+        "score": 0.4,
         "rank": null,
         "source": "checkr",
         "ret1h": null,
@@ -141,73 +224,17 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 7.3,
-        "velocity": 8,
-        "att_1h": 7.3,
+        "attentionDelta": 8.7,
+        "velocity": 6,
+        "att_1h": 8.7,
         "att_4h": 5.7,
         "att_8h": 0,
-        "att_12h": 3.7,
+        "att_12h": 3.8,
         "momentumWindows": 3,
         "sustainedMomentum": true,
         "rotatingFrom": [
-          "BEAN",
-          "QR"
-        ],
-        "multiTFScore": null,
-        "scoreH": null,
-        "score5m": null,
-        "scoreOnchain": null,
-        "score4h": null,
-        "multiTFBreakdown": null
-      },
-      {
-        "symbol": "KELLYCLAUDE",
-        "score": 0.5333333333333333,
-        "rank": null,
-        "source": "checkr",
-        "ret1h": null,
-        "moveFrac": null,
-        "quantScore": null,
-        "rugVerdict": null,
-        "rugScore": null,
-        "attentionDelta": 0.8,
-        "velocity": 8,
-        "att_1h": 0,
-        "att_4h": 0,
-        "att_8h": -0.2,
-        "att_12h": -0.2,
-        "momentumWindows": 0,
-        "sustainedMomentum": false,
-        "rotatingFrom": [
-          "BEAN",
-          "QR"
-        ],
-        "multiTFScore": null,
-        "scoreH": null,
-        "score5m": null,
-        "scoreOnchain": null,
-        "score4h": null,
-        "multiTFBreakdown": null
-      },
-      {
-        "symbol": "BNKR",
-        "score": 0.46540000000000004,
-        "source": "checkr",
-        "ret1h": null,
-        "quantScore": null,
-        "rugVerdict": null,
-        "rugScore": null,
-        "attentionDelta": 11.609,
-        "velocity": 2.18,
-        "att_1h": 11.6,
-        "att_4h": 0.7,
-        "att_8h": 2.3,
-        "att_12h": 0.6,
-        "momentumWindows": 4,
-        "sustainedMomentum": true,
-        "rotatingFrom": [
-          "BEAN",
-          "QR"
+          "CLAWD",
+          "CHARLES"
         ],
         "multiTFScore": null,
         "scoreH": null,
@@ -226,17 +253,17 @@
         "quantScore": null,
         "rugVerdict": null,
         "rugScore": null,
-        "attentionDelta": 0.9065669178793626,
+        "attentionDelta": 0.7955441252472216,
         "velocity": 6,
         "att_1h": 0,
         "att_4h": 3.3,
-        "att_8h": 2.3,
-        "att_12h": 0.9,
+        "att_8h": 2.4,
+        "att_12h": 1,
         "momentumWindows": 3,
         "sustainedMomentum": true,
         "rotatingFrom": [
-          "BEAN",
-          "QR"
+          "CLAWD",
+          "CHARLES"
         ],
         "multiTFScore": null,
         "scoreH": null,
@@ -258,23 +285,23 @@
         "ret1h": -0.0045038841945402195,
         "ret6h": 0.04203496124702481,
         "transferStats": {
-          "uniqueBuyers": 8,
-          "buyRatio": 0.5
+          "uniqueBuyers": 11,
+          "buyRatio": 0.4782608695652174
         }
       },
       {
         "sym": "SAIRI",
-        "currentPrice": 6.1311407667,
-        "entryPrice": 0.00000968,
-        "pnlPct": 63338131.06,
+        "currentPrice": 0.0000096545,
+        "entryPrice": 0.00000983,
+        "pnlPct": -1.79,
         "quantScore": null,
         "volumeTrend": "unknown",
         "recommendation": "hold",
-        "ret1h": -0.0045038841945402195,
-        "ret6h": 0.04203496124702481,
+        "ret1h": -0.02496540998010442,
+        "ret6h": 0.14327499230277338,
         "transferStats": {
-          "uniqueBuyers": 8,
-          "buyRatio": 0.5
+          "uniqueBuyers": 23,
+          "buyRatio": 0.4791666666666667
         }
       }
     ],
@@ -287,8 +314,6 @@
       {
         "sym": "MOLT",
         "pnlPct": -5.2,
-        "pnlUSD": -0.52,
-        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -299,8 +324,6 @@
       {
         "sym": "KTA",
         "pnlPct": -4.36,
-        "pnlUSD": -0.44,
-        "sizeUsd": 10,
         "won": false,
         "regime": "RANGE_TIGHT",
         "entryTx": null,
@@ -311,8 +334,6 @@
       {
         "sym": "BNKR",
         "pnlPct": -5.47,
-        "pnlUSD": -0.55,
-        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -323,8 +344,6 @@
       {
         "sym": "MOLT",
         "pnlPct": -5.04,
-        "pnlUSD": -0.5,
-        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -335,8 +354,6 @@
       {
         "sym": "BLUEAGENT",
         "pnlPct": -21.66,
-        "pnlUSD": -2.17,
-        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -347,8 +364,6 @@
       {
         "sym": "CLAWNCH",
         "pnlPct": -4.8,
-        "pnlUSD": -0.48,
-        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -359,8 +374,6 @@
       {
         "sym": "BLUEAGENT",
         "pnlPct": 121,
-        "pnlUSD": 12.1,
-        "sizeUsd": 10,
         "won": true,
         "regime": "BEAR",
         "entryTx": null,
@@ -371,6 +384,265 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-23T03:35:00.007Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 68226.71,
+        "sma200": 71445.79470000003,
+        "pctFrom200": -0.045056321558419446,
+        "volRatio": 0.76095198740199,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "buy",
+      "asset": "CASHCLAW",
+      "confidence": 70,
+      "reasoning": "CASHCLAW has a score of 0.58 and a buyRatio of 0.60, indicating strong onchain activity and buyer interest. Although the token has a high rug pull risk, the current market regime is BEAR and the token's score is above the threshold for consideration.",
+      "seenCount": 9,
+      "flagged": [
+        "SAIRI"
+      ],
+      "traded": [
+        "CASHCLAW"
+      ],
+      "trendingEntries": [
+        {
+          "symbol": "CASHCLAW",
+          "score": 0.58,
+          "rank": 9,
+          "source": "bankr_trending",
+          "ret1h": -0.18927357884103224,
+          "moveFrac": 0,
+          "quantScore": null,
+          "rugVerdict": "RISKY",
+          "rugScore": 55,
+          "attentionDelta": 1.9549999999999998,
+          "velocity": 3.4799999999999995,
+          "att_1h": 0,
+          "att_4h": 0,
+          "att_8h": 0,
+          "att_12h": 0,
+          "momentumWindows": 0,
+          "sustainedMomentum": false,
+          "rotatingFrom": [
+            "REPPO",
+            "EDEL"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "SAIRI",
+          "score": 0.8,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 13.5,
+          "velocity": 12,
+          "att_1h": 13.5,
+          "att_4h": 2.7,
+          "att_8h": 2.8,
+          "att_12h": 1.4,
+          "momentumWindows": 4,
+          "sustainedMomentum": true,
+          "rotatingFrom": [
+            "CLAWD",
+            "CHARLES"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "TOSHI",
+          "score": 0.21333333333333335,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 8.4,
+          "velocity": 3.2,
+          "att_1h": 8.4,
+          "att_4h": 1.5,
+          "att_8h": 1.5,
+          "att_12h": 0,
+          "momentumWindows": 3,
+          "sustainedMomentum": true,
+          "rotatingFrom": [
+            "CLAWD",
+            "CHARLES"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "DRB",
+          "score": 0.4,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 8.7,
+          "velocity": 6,
+          "att_1h": 8.7,
+          "att_4h": 5.7,
+          "att_8h": 0,
+          "att_12h": 3.8,
+          "momentumWindows": 3,
+          "sustainedMomentum": true,
+          "rotatingFrom": [
+            "CLAWD",
+            "CHARLES"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        },
+        {
+          "symbol": "ROBOTMONEY",
+          "score": 0.4,
+          "rank": null,
+          "source": "checkr",
+          "ret1h": null,
+          "moveFrac": null,
+          "quantScore": null,
+          "rugVerdict": null,
+          "rugScore": null,
+          "attentionDelta": 0.7955441252472216,
+          "velocity": 6,
+          "att_1h": 0,
+          "att_4h": 3.3,
+          "att_8h": 2.4,
+          "att_12h": 1,
+          "momentumWindows": 3,
+          "sustainedMomentum": true,
+          "rotatingFrom": [
+            "CLAWD",
+            "CHARLES"
+          ],
+          "multiTFScore": null,
+          "scoreH": null,
+          "score5m": null,
+          "scoreOnchain": null,
+          "score4h": null,
+          "multiTFBreakdown": null
+        }
+      ],
+      "positionUpdates": [
+        {
+          "sym": "VVV",
+          "currentPrice": 6.1311407667,
+          "entryPrice": 6.1,
+          "pnlPct": 0.51,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": -0.0045038841945402195,
+          "ret6h": 0.04203496124702481,
+          "transferStats": {
+            "uniqueBuyers": 11,
+            "buyRatio": 0.4782608695652174
+          }
+        },
+        {
+          "sym": "SAIRI",
+          "currentPrice": 0.0000096545,
+          "entryPrice": 0.00000983,
+          "pnlPct": -1.79,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": -0.02496540998010442,
+          "ret6h": 0.14327499230277338,
+          "transferStats": {
+            "uniqueBuyers": 23,
+            "buyRatio": 0.4791666666666667
+          }
+        }
+      ],
+      "topSignal": "CASHCLAW score=0.58 ret1h=-18.9%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "fallback",
+      "dataSources": {
+        "checkrTokens": 35,
+        "checkrSustained": [
+          {
+            "sym": "SAIRI",
+            "att1h": 13.5,
+            "att4h": 2.7,
+            "velocity": 12,
+            "windows": 4
+          },
+          {
+            "sym": "BNKR",
+            "att1h": 8.9,
+            "att4h": 0.7,
+            "velocity": 0,
+            "windows": 4
+          },
+          {
+            "sym": "TOSHI",
+            "att1h": 8.4,
+            "att4h": 1.5,
+            "velocity": 3.2,
+            "windows": 3
+          },
+          {
+            "sym": "DRB",
+            "att1h": 8.7,
+            "att4h": 5.7,
+            "velocity": 6,
+            "windows": 3
+          },
+          {
+            "sym": "ROBOTMONEY",
+            "att1h": 0,
+            "att4h": 3.3,
+            "velocity": 6,
+            "windows": 3
+          },
+          {
+            "sym": "NOOK",
+            "att1h": 0,
+            "att4h": 2,
+            "velocity": 0,
+            "windows": 2
+          }
+        ],
+        "discoveryPassed": 9
+      }
+    },
     {
       "ts": "2026-03-23T03:14:22.496Z",
       "regime": "BEAR",
@@ -6448,122 +6720,6 @@
       ],
       "screenLayer": "fallback",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-22T13:47:00.484Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 68609.96,
-        "sma200": 71609.53680000003,
-        "pctFrom200": -0.04188795143833444,
-        "volRatio": 0.7882191413154263,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "hold",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "No token clears the signal threshold, and confidence is below 65, so holding is the best option.",
-      "seenCount": 4,
-      "flagged": [
-        "JUNO"
-      ],
-      "traded": [],
-      "trendingEntries": [
-        {
-          "symbol": "TIBBIR",
-          "score": 0.31133333333333335,
-          "rank": null,
-          "ret1h": null,
-          "moveFrac": null,
-          "quantScore": null
-        },
-        {
-          "symbol": "JUNO",
-          "score": 0.9526666666666667,
-          "rank": null,
-          "ret1h": null,
-          "moveFrac": null,
-          "quantScore": null
-        },
-        {
-          "symbol": "BNKR",
-          "score": 0.2826666666666667,
-          "rank": null,
-          "ret1h": null,
-          "moveFrac": null,
-          "quantScore": null
-        },
-        {
-          "symbol": "CLAWD",
-          "score": 0.3173333333333333,
-          "rank": null,
-          "ret1h": null,
-          "moveFrac": null,
-          "quantScore": null
-        }
-      ],
-      "positionUpdates": [
-        {
-          "sym": "KTA",
-          "pnlPct": -4.33,
-          "quantScore": -0.0483,
-          "volumeTrend": "stable",
-          "recommendation": "hold"
-        },
-        {
-          "sym": "BNKR",
-          "pnlPct": -5.89,
-          "quantScore": -0.0107,
-          "volumeTrend": "increasing",
-          "recommendation": "hold"
-        },
-        {
-          "sym": "MOLT",
-          "pnlPct": -2.38,
-          "quantScore": -0.038,
-          "volumeTrend": "declining",
-          "recommendation": "hold"
-        },
-        {
-          "sym": "BLUEAGENT",
-          "pnlPct": -20.02,
-          "quantScore": -0.0393,
-          "volumeTrend": "declining",
-          "recommendation": "hold"
-        },
-        {
-          "sym": "CLAWNCH",
-          "pnlPct": -0.72,
-          "quantScore": -0.0237,
-          "volumeTrend": "increasing",
-          "recommendation": "hold"
-        },
-        {
-          "sym": "MOLTEN",
-          "pnlPct": -100,
-          "quantScore": -0.0236,
-          "volumeTrend": "increasing",
-          "recommendation": "hold"
-        },
-        {
-          "sym": "DRB",
-          "pnlPct": -0.72,
-          "quantScore": -0.0274,
-          "volumeTrend": "increasing",
-          "recommendation": "hold"
-        }
-      ],
-      "topSignal": "TIBBIR score=0.31 ret1h=0.0%",
-      "layers": [
-        "bankr-screen",
-        "venice-e2ee"
-      ],
-      "screenLayer": "fallback",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -6627,7 +6783,7 @@
       "spend": 1.968
     },
     "onchain": {
-      "expCount": 6470,
+      "expCount": 6585,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
