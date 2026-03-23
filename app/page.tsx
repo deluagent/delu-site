@@ -157,7 +157,7 @@ function HowItWorks() {
     {
       n: '03', icon: <Zap size={14}/>, title: 'Decide',
       color: 'text-[#f59e0b]', border: 'border-[#f59e0b]/15', bg: 'bg-[#f59e0b]/3',
-      body: 'Venice AI (private inference) synthesises signals into a conviction score. ≥65% → Kelly-sized buy via Bankr. <65% → surplus USDC deployed to best yield vault (Morpho, Moonwell, Aave v3) — capital never idle.',
+      body: 'Venice AI (private inference) synthesises all signals into a conviction score. ≥65% confidence → Kelly-sized buy executed via Bankr. <65% → hold USDC liquid for the next opportunity.',
     },
     {
       n: '04', icon: <RefreshCw size={14}/>, title: 'Learn & Self-Fund',
@@ -675,7 +675,7 @@ function CycleRow({ cycle }: { cycle: any }) {
                 <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 mb-2">
                   {cycle.dataSources.checkrTokens > 0 && (
                     <div className="flex justify-between">
-                      <span className={dim}>Checkr attention</span>
+                      <span className={dim}>Checkr (4 windows + spikes + rotation)</span>
                       <span className={mono('text-white')}>{cycle.dataSources.checkrTokens} tokens</span>
                     </div>
                   )}
@@ -717,7 +717,7 @@ function CycleRow({ cycle }: { cycle: any }) {
                           1h {t.ret1h >= 0 ? '+' : ''}{(t.ret1h * 100).toFixed(1)}%
                         </span>
                       )}
-                      {(t.score ?? 0) >= 0.65 && <span className="text-[#22c55e] text-[9px]">↑ flagged</span>}
+                      {(t.score ?? 0) >= 0.65 && <span className="text-[#22c55e] text-[9px]">↑ shortlisted</span>}
                     </div>
                   ))}
                 </div>
@@ -739,9 +739,18 @@ function CycleRow({ cycle }: { cycle: any }) {
             {(cycle.positionUpdates ?? []).length > 0 && (
               <div className="border-t border-[#1c1c28] pt-2">
                 <div className={`${label} mb-1.5`}>Position Updates</div>
-                {(cycle.positionUpdates as any[]).slice(0, 3).map((p: any, i: number) => (
-                  <div key={i} className={`${dim} py-0.5`}>{p.sym}: {p.reasoning?.slice(0, 120) ?? '—'}</div>
-                ))}
+                {(cycle.positionUpdates as any[]).slice(0, 4).map((p: any, i: number) => {
+                  const pnl = p.pnlPct ?? 0;
+                  const r1h = p.ret1h != null ? (p.ret1h * 100).toFixed(1) : null;
+                  return (
+                    <div key={i} className="flex items-center gap-2 py-0.5">
+                      <span className={mono('font-bold text-white')}>{p.sym}</span>
+                      <span className={mono('', pnlColor(pnl))}>{pnl >= 0 ? '+' : ''}{pnl.toFixed(2)}%</span>
+                      {r1h && <span className={`${dim} text-[9px]`}>1h {parseFloat(r1h) >= 0 ? '+' : ''}{r1h}%</span>}
+                      <span className={`${dim} text-[9px]`}>{p.recommendation ?? 'hold'}</span>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>
