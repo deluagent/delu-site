@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-03-23T16:51:28.090Z",
+  "updatedAt": "2026-03-23T16:52:37.986Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70683,
-  "pctFrom200": "-0.9%",
+  "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 28 min",
+  "nextCycle": "in 27 min",
   "wallet": {
-    "totalUSD": 124.82,
-    "positionsUSD": 59.14,
-    "liquidUSDC": 23.62,
+    "totalUSD": 124.5,
+    "positionsUSD": 68.82,
+    "liquidUSDC": 13.62,
     "yieldUSD": 0,
     "unrealPnlUSD": -10.82,
     "unrealPnlPct": -15.56
@@ -146,13 +146,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
     "chain": "Base",
-    "amountUSD": 23.62,
+    "amountUSD": 13.62,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-23T16:48:52.874Z",
-    "ago": "3m ago",
+    "ago": "4m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -1322,8 +1322,8 @@
         "breadthFraction": "BTC:RANGE ETH:RANGE",
         "breadth": 0.5
       },
-      "action": "hold",
-      "asset": null,
+      "action": "buy",
+      "asset": "ROBOTMONEY",
       "confidence": 80,
       "reasoning": "ROBOTMONEY has a high score of 1.00, indicating strong onchain momentum, and its move is not yet complete, suggesting potential for further growth.",
       "seenCount": 10,
@@ -1335,7 +1335,9 @@
         "KELLYCLAUDE",
         "ODAI"
       ],
-      "traded": [],
+      "traded": [
+        "ROBOTMONEY"
+      ],
       "trendingEntries": [
         {
           "symbol": "ROBOTMONEY",
@@ -13520,7 +13522,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 13095,
+      "expCount": 13100,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
