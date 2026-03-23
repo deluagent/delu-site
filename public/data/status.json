@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-03-23T00:22:30.411Z",
+  "updatedAt": "2026-03-23T00:45:47.287Z",
   "regime": "BEAR",
-  "btcPrice": 67927,
+  "btcPrice": 67936,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 28 min",
+  "nextCycle": "in 7 min",
   "wallet": {
-    "totalUSD": 76.1,
+    "totalUSD": 80,
     "positionsUSD": 0,
-    "liquidUSDC": 45.21,
-    "yieldUSD": 45.21,
+    "liquidUSDC": 49.21,
+    "yieldUSD": 49.21,
     "unrealPnlUSD": 0,
     "unrealPnlPct": 0
   },
@@ -18,20 +18,20 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
     "chain": "Base",
-    "amountUSD": 45.21,
+    "amountUSD": 49.21,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-23T00:20:36.266Z",
-    "ago": "2m ago",
+    "ts": "2026-03-23T00:22:52.646Z",
+    "ago": "23m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
-      "btcNow": 67927.35,
-      "sma200": 71484.74555000002,
-      "pctFrom200": -0.049764401098858144,
-      "volRatio": 0.7823692068022505,
+      "btcNow": 67935.59,
+      "sma200": 71484.78675000003,
+      "pctFrom200": -0.049649679482327486,
+      "volRatio": 0.7823958424813094,
       "btcState": "BEAR",
       "ethState": "BEAR",
       "breadthFraction": "BTC:BEAR ETH:BEAR",
@@ -127,6 +127,33 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-23T00:22:52.646Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 67935.59,
+        "sma200": 71484.78675000003,
+        "pctFrom200": -0.049649679482327486,
+        "volRatio": 0.7823958424813094,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "BEAR regime, no oversold signals — yield only",
+      "seenCount": 0,
+      "flagged": [],
+      "traded": [],
+      "trendingEntries": [],
+      "positionUpdates": [],
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "hardcoded"
+    },
     {
       "ts": "2026-03-23T00:20:36.266Z",
       "regime": "BEAR",
@@ -3881,33 +3908,6 @@
       "topSignal": null,
       "layers": [],
       "screenLayer": "hardcoded"
-    },
-    {
-      "ts": "2026-03-22T04:44:35.408Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 69344.84,
-        "sma200": 71705.62845000002,
-        "pctFrom200": -0.032923335322919425,
-        "volRatio": 0.7754137686185057,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "BEAR regime, no oversold signals — yield only",
-      "seenCount": 0,
-      "flagged": [],
-      "traded": [],
-      "trendingEntries": [],
-      "positionUpdates": [],
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "hardcoded"
     }
   ],
   "reasoningTraces": [
@@ -3964,20 +3964,20 @@
       "spend": 4.741
     },
     "hourly": {
-      "expCount": 538,
+      "expCount": 589,
       "bestValSharpe": 7.188,
       "bestAudSharpe": 14.835,
       "bestScore": 11.012,
-      "spend": 1.614
+      "spend": 1.767
     },
     "onchain": {
-      "expCount": 5395,
+      "expCount": 5470,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
     },
     "fiveMin": {
-      "expCount": 1781,
+      "expCount": 1852,
       "bestValSharpe": 36.637,
       "bestAudSharpe": 19.387,
       "bestScore": 28.012
