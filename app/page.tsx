@@ -954,6 +954,16 @@ function Footer({ stack }: { stack: any }) {
         <div className="text-right">
           <div className={mono('text-[9px]', dim)}>{walletShort}</div>
           <div className={`text-[9px] ${dim} mt-0.5`}>Base mainnet · delu autonomous agent</div>
+          <div className="flex gap-3 justify-end mt-2">
+            <a href="https://x.com/david_tomu" target="_blank" rel="noopener noreferrer"
+               className={`text-[9px] ${dim} hover:text-white transition-colors`}>
+              human: @david_tomu
+            </a>
+            <a href="https://www.moltbook.com/u/delu_agent" target="_blank" rel="noopener noreferrer"
+               className={`text-[9px] ${dim} hover:text-white transition-colors`}>
+              agent: @delu_agent
+            </a>
+          </div>
         </div>
       </div>
     </footer>
