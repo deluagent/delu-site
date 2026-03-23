@@ -51,6 +51,13 @@ const LEARNINGS: Record<string, string> = {
 function Hero({ status }: { status: any }) {
   const w = status?.wallet || {};
   const pnl = w.unrealPnlUSD ?? 0;
+  const hasOpenPos = (w.positionsUSD ?? 0) > 0;
+  const perf = status?.performance ?? {};
+  const trades = perf.recentTrades ?? [];
+  const realisedPnl = trades.reduce((s: number, t: any) => s + (t.pnlUSD ?? 0), 0);
+  const winStr = perf.winRate ?? '0/0';
+  const wins = parseInt(winStr.split('/')[0]) || 0;
+  const closed = perf.closedTrades ?? 0;
   const integrations = [
     { name: 'Bankr',       live: true },
     { name: 'Venice AI',   live: true },
@@ -109,8 +116,9 @@ function Hero({ status }: { status: any }) {
         {[
           { l: 'Portfolio',      v: `$${(w.totalUSD    ?? 0).toFixed(2)}`, s: 'total wallet value' },
           { l: 'Liquid USDC',    v: `$${(w.liquidUSDC  ?? 0).toFixed(2)}`, s: 'ready to trade' },
-          { l: 'Unrealised P&L', v: `${pnl >= 0 ? '+' : ''}$${pnl.toFixed(2)}`,
-            s: `${(w.unrealPnlPct ?? 0).toFixed(2)}%`, accent: pnlColor(pnl) },
+          hasOpenPos
+            ? { l: 'Unrealised P&L', v: `${pnl >= 0 ? '+' : ''}$${pnl.toFixed(2)}`, s: `${(w.unrealPnlPct ?? 0).toFixed(2)}%`, accent: pnlColor(pnl) }
+            : { l: 'Realised P&L',   v: `${realisedPnl >= 0 ? '+' : ''}$${realisedPnl.toFixed(2)}`, s: `${wins}/${closed} trades won`, accent: pnlColor(realisedPnl) },
           { l: 'Next Cycle',     v: status?.nextCycle ?? '—', s: 'runs every 30 min' },
         ].map(s => (
           <div key={s.l} className="bg-[#0a0a0f] px-4 py-3">
@@ -672,11 +680,13 @@ export default function Page() {
   const [brain,  setBrain]  = useState<any>(null);
   const [error,  setError]  = useState<string | null>(null);
 
+  const RAW = 'https://raw.githubusercontent.com/deluagent/delu-site/main/public/data';
+
   const load = useCallback(async () => {
     try {
       const [s, b] = await Promise.all([
-        fetch('/data/status.json', { cache: 'no-store' }).then(r => r.json()),
-        fetch('/data/brain.json',  { cache: 'no-store' }).then(r => r.json()).catch(() => null),
+        fetch(`${RAW}/status.json?t=${Date.now()}`, { cache: 'no-store' }).then(r => r.json()),
+        fetch(`${RAW}/brain.json?t=${Date.now()}`,  { cache: 'no-store' }).then(r => r.json()).catch(() => null),
       ]);
       setStatus(s);
       setBrain(b);
