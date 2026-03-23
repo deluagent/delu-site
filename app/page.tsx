@@ -54,7 +54,8 @@ function Hero({ status }: { status: any }) {
   const hasOpenPos = (w.positionsUSD ?? 0) > 0;
   const perf = status?.performance ?? {};
   const trades = perf.recentTrades ?? [];
-  const realisedPnl = trades.reduce((s: number, t: any) => s + (t.pnlUSD ?? 0), 0);
+  // pnlUSD not stored — estimate from pnlPct × ~$10 avg trade size
+  const realisedPnl = trades.reduce((s: number, t: any) => s + (t.pnlUSD ?? (t.pnlPct ?? 0) / 100 * 10), 0);
   const winStr = perf.winRate ?? '0/0';
   const wins = parseInt(winStr.split('/')[0]) || 0;
   const closed = perf.closedTrades ?? 0;
