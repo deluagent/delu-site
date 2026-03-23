@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-23T02:14:17.888Z",
-  "totalExp": 9332,
+  "generatedAt": "2026-03-23T02:16:06.819Z",
+  "totalExp": 9335,
   "totalAccepted": 35,
   "topScore": 28.012,
   "topLoop": "5m",
@@ -48,7 +48,7 @@
     {
       "name": "Onchain",
       "color": "indigo",
-      "expCount": 5731,
+      "expCount": 5734,
       "acceptedCount": 3,
       "acceptRate": 0.1,
       "bestScore": 20.402,
@@ -146,14 +146,14 @@
       ],
       "scoreCurve": [
         0.758,
-        0.758,
         0.761,
         0.761,
         0.761,
         0.761,
         0.761,
         0.761,
-        0.761,
+        0.767,
+        0.767,
         0.767,
         0.767,
         0.767,
@@ -166,7 +166,24 @@
         0.767,
         0.767
       ],
-      "latestDescription": null
+      "latestDescription": null,
+      "bestParams": {
+        "bear_w1h": 0.36363636363636365,
+        "bear_w5m": 0.3181818181818182,
+        "bear_wOC": 0.2272727272727273,
+        "bear_w4h": 0.09090909090909088,
+        "bull_w1h": 0.25,
+        "bull_w5m": 0.4,
+        "bull_wOC": 0.2,
+        "bull_w4h": 0.15,
+        "range_w1h": 0.3793714899351167,
+        "range_w5m": 0.35193618148443284,
+        "range_wOC": 0.17287732278574058,
+        "range_w4h": 0.09581500579470986,
+        "minScore": 0.058,
+        "onchainVeto": 0.4,
+        "whaleVeto": 0.5
+      }
     },
     {
       "name": "Stops",
@@ -174,7 +191,7 @@
       "expCount": 500,
       "acceptedCount": 0,
       "acceptRate": 0,
-      "bestScore": 0,
+      "bestScore": 6.383,
       "breakthroughCount": 0,
       "signals": [
         "Evolves blend weights: 5m + Onchain + Hourly + 4h",
@@ -184,8 +201,7 @@
         "Entry score threshold (minScore) auto-evolved"
       ],
       "scoreCurve": [
-        5.877,
-        6.045,
+        5.788,
         6.064,
         6.064,
         6.111,
@@ -196,9 +212,10 @@
         6.111,
         6.111,
         6.111,
-        6.111,
         6.138,
         6.138,
+        6.138,
+        6.139,
         6.139,
         6.139,
         6.139,
