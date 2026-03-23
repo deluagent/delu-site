@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-23T00:06:45.633Z",
-  "totalExp": 11298,
-  "totalAccepted": 47,
+  "generatedAt": "2026-03-23T00:22:20.133Z",
+  "totalExp": 8008,
+  "totalAccepted": 35,
   "topScore": 28.012,
   "topLoop": "5m",
   "loops": [
@@ -63,11 +63,11 @@
     {
       "name": "Fusion",
       "color": "purple",
-      "expCount": 35,
-      "acceptedCount": 0,
-      "acceptRate": 0,
-      "bestScore": 0,
-      "breakthroughCount": 0,
+      "expCount": 195,
+      "acceptedCount": 2,
+      "acceptRate": 1,
+      "bestScore": 0.439,
+      "breakthroughCount": 2,
       "signals": [
         "Evolves blend weights: 5m + Onchain + Hourly + 4h",
         "Per-regime weights (BEAR / BULL / RANGE)",
@@ -76,97 +76,9 @@
         "Entry score threshold (minScore) auto-evolved"
       ],
       "latestDescription": null
-    },
-    {
-      "name": "Daily",
-      "color": "blue",
-      "expCount": 3450,
-      "acceptedCount": 14,
-      "acceptRate": 0.4,
-      "bestScore": 3.888,
-      "breakthroughCount": 9,
-      "signals": [
-        "Realized volatility regime filter",
-        "Mean-reversion Z-score filter",
-        "EMA/SMA trend filter",
-        "BTC correlation context"
-      ],
-      "latestDescription": null
     }
   ],
   "breakthroughs": [
-    {
-      "n": 3,
-      "score": 2.399,
-      "ts": 1773865661311,
-      "description": null,
-      "loop": "Daily",
-      "color": "blue"
-    },
-    {
-      "n": 99,
-      "score": 2.837,
-      "ts": 1773881904529,
-      "description": null,
-      "loop": "Daily",
-      "color": "blue"
-    },
-    {
-      "n": 55,
-      "score": 3.126,
-      "ts": 1774054715721,
-      "description": null,
-      "loop": "Daily",
-      "color": "blue"
-    },
-    {
-      "n": 56,
-      "score": 3.385,
-      "ts": 1774055409235,
-      "description": null,
-      "loop": "Daily",
-      "color": "blue"
-    },
-    {
-      "n": 57,
-      "score": 3.392,
-      "ts": 1774055636051,
-      "description": null,
-      "loop": "Daily",
-      "color": "blue"
-    },
-    {
-      "n": 242,
-      "score": 3.703,
-      "ts": 1774074121009,
-      "description": null,
-      "loop": "Daily",
-      "color": "blue"
-    },
-    {
-      "n": 252,
-      "score": 3.719,
-      "ts": 1774075112822,
-      "description": null,
-      "loop": "Daily",
-      "color": "blue"
-    },
-    {
-      "n": 418,
-      "score": 3.78,
-      "ts": 1774092071346,
-      "description": null,
-      "loop": "Daily",
-      "color": "blue"
-    },
-    {
-      "n": 461,
-      "score": 3.888,
-      "ts": 1774097329259,
-      "description": null,
-      "loop": "Daily",
-      "color": "blue"
-    },
     {
       "n": 2,
       "score": 8,
@@ -430,6 +342,20 @@
       "description": "Replace fixed 1.3x volume spike threshold with momentum-adaptive scaling (1.2x + 0.3x * momentum str",
       "loop": "Hourly",
       "color": "emerald"
+    },
+    {
+      "score": 0.418,
+      "ts": "2026-03-23T00:08:42.795Z",
+      "description": null,
+      "loop": "Fusion",
+      "color": "purple"
+    },
+    {
+      "score": 0.439,
+      "ts": "2026-03-23T00:09:20.002Z",
+      "description": null,
+      "loop": "Fusion",
+      "color": "purple"
     }
   ]
 }

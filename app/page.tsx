@@ -96,6 +96,14 @@ function Hero({ status }: { status: any }) {
         </div>
       </div>
 
+      {/* Last updated */}
+      {status?.updatedAt && (
+        <div className={`flex items-center gap-1.5 text-[9px] ${dim} mb-3`}>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
+          Live · updated {fmtDate(status.updatedAt)} · auto-refreshes every 60s
+        </div>
+      )}
+
       {/* Stats bar */}
       <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-[#1c1c28] border border-[#1c1c28] rounded-lg overflow-hidden">
         {[
@@ -285,8 +293,11 @@ function CapitalSection({ status }: { status: any }) {
   const total  = w.totalUSD       ?? 0;
   const liquid = w.liquidUSDC     ?? 0;
   const posAmt = w.positionsUSD   ?? 0;
-  const yldAmt = yld.amountUSD    ?? 0;
+  // ETH + cbBTC = total minus USDC minus open positions
   const other  = Math.max(0, total - liquid - posAmt);
+  // Yield is a subset of liquid USDC deployed to protocol — show separately
+  const yldAmt = yld.amountUSD ?? 0;
+  const yldInYield = Math.min(yldAmt, liquid); // how much of liquid is actually in yield vault
 
   const segments = [
     { label: 'Liquid USDC',   val: liquid,       color: '#818cf8', desc: 'Ready to trade' },
@@ -347,42 +358,59 @@ function CapitalSection({ status }: { status: any }) {
             ))}
 
             {/* Yield detail */}
-            <div className="border-t border-[#1c1c28] pt-3 mt-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] text-[#9ca3af]">
-                  {yld.protocol ?? 'Bankr Wallet'} · {yld.vault ?? 'Liquid USDC'}
-                </span>
+            <div className="border-t border-[#1c1c28] pt-3 mt-1">
+              <div className="flex items-center justify-between mb-0.5">
+                <span className="text-[10px] font-medium text-[#9ca3af]">Yield Position</span>
                 {yld.apy > 0
-                  ? <span className={mono('text-[10px] text-[#22c55e]')}>{yld.apy.toFixed(2)}% APY</span>
+                  ? <span className={mono('text-[10px] text-[#22c55e] font-bold')}>{yld.apy.toFixed(2)}% APY</span>
                   : <span className={`text-[10px] ${dim}`}>deploying surplus next cycle</span>
                 }
               </div>
+              <div className="flex items-center justify-between">
+                <span className={`text-[9px] ${dim}`}>{yld.protocol ?? 'Bankr Wallet'} · {yld.vault ?? 'Liquid USDC'}</span>
+                <span className={mono('text-[9px] text-white')}>${yldAmt.toFixed(2)}</span>
+              </div>
+              {yld.apy === 0 && (
+                <div className={`text-[9px] ${dim} mt-0.5`}>
+                  ${Math.max(0, liquid - 27).toFixed(2)} surplus above $27 tranche → will deploy to best APY vault
+                </div>
+              )}
             </div>
 
             {/* Philosophy */}
-            <p className={`text-[10px] ${dim} italic border-t border-[#1c1c28] pt-2`}>
-              Capital is never idle by accident. When conviction is below threshold, surplus earns yield.
-              The agent only deploys when the brain is confident — most cycles result in HOLD.
+            <p className={`text-[10px] ${dim} italic border-t border-[#1c1c28] pt-2 mt-1`}>
+              Capital is never idle by accident. Surplus above trading tranche earns yield.
+              The agent only deploys when conviction ≥ 65% — most cycles are HOLD.
             </p>
           </div>
         </div>
 
         {/* Open positions */}
-        {openPos.length > 0 && (
+        {openPos.length > 0 ? (
           <div className="mt-4 border-t border-[#1c1c28] pt-4 space-y-2">
             <div className={`${label} mb-2`}>Open Positions</div>
             {openPos.map((p: any, i: number) => {
               const pnl = p.currentUSD && p.sizeUSD ? ((p.currentUSD - p.sizeUSD) / p.sizeUSD * 100) : null;
               return (
-                <div key={i} className="flex items-center gap-3 text-[11px] bg-[#0a0a0f] border border-[#1c1c28] rounded px-3 py-2">
-                  <span className="font-semibold text-white w-24 truncate">{p.sym}</span>
-                  <span className={mono('', pnlColor(pnl))}>
-                    {pnl != null ? `${pnl >= 0 ? '+' : ''}${pnl.toFixed(2)}%` : '—'}
-                  </span>
-                  <span className={mono('text-[#9ca3af] ml-auto')}>${(p.currentUSD ?? p.sizeUSD ?? 0).toFixed(2)}</span>
+                <div key={i} className="bg-[#0a0a0f] border border-[#1c1c28] rounded px-3 py-2.5">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-xs font-semibold text-white">{p.sym}</span>
+                    <span className={mono('text-xs font-bold', pnlColor(pnl))}>
+                      {pnl != null ? `${pnl >= 0 ? '+' : ''}${pnl.toFixed(2)}%` : '—'}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-[9px]">
+                    <span className={dim}>entry ${p.entryPrice?.toFixed(6) ?? '—'} · size ${(p.sizeUSD ?? 0).toFixed(2)}</span>
+                    <span className={mono('', pnlColor(pnl))}>${(p.currentUSD ?? p.sizeUSD ?? 0).toFixed(2)}</span>
+                  </div>
+                  {p.openedAt && <div className={`text-[9px] ${dim} mt-0.5`}>opened {fmtDate(p.openedAt)}</div>}
                 </div>
               );
             })}
+          </div>
+        ) : (
+          <div className="mt-4 border-t border-[#1c1c28] pt-3">
+            <span className={`text-[10px] ${dim} italic`}>No open positions — capital in yield + reserve</span>
           </div>
         )}
       </div>
@@ -461,9 +489,18 @@ function CycleRow({ cycle }: { cycle: any }) {
 
 function CyclesSection({ cycles }: { cycles: any[] }) {
   const [showAll, setShowAll] = useState(false);
-  const display = showAll ? cycles : cycles.slice(0, 12);
-  const buys = cycles.filter(c => c.action === 'buy' || c.action === 'long').length;
-  const holds = cycles.length - buys;
+
+  // Dedupe cycles within 3 min of each other (keep newest) — avoids showing sub-30min duplicates
+  const deduped = cycles.reduce((acc: any[], c: any) => {
+    const last = acc[acc.length - 1];
+    if (last && Math.abs(new Date(c.ts).getTime() - new Date(last.ts).getTime()) < 3 * 60 * 1000) return acc;
+    acc.push(c);
+    return acc;
+  }, []);
+
+  const display = showAll ? deduped : deduped.slice(0, 15);
+  const buys = deduped.filter(c => c.action === 'buy' || c.action === 'long').length;
+  const holds = deduped.length - buys;
 
   return (
     <section className="mb-10">
@@ -476,10 +513,10 @@ function CyclesSection({ cycles }: { cycles: any[] }) {
       </div>
       <div className={`${card} overflow-hidden`}>
         {display.map((c: any, i: number) => <CycleRow key={i} cycle={c} />)}
-        {cycles.length > 12 && (
+        {deduped.length > 15 && (
           <button onClick={() => setShowAll(s => !s)}
             className={`w-full py-2.5 text-[10px] ${dim} hover:text-white border-t border-[#1c1c28] transition-colors`}>
-            {showAll ? 'Show less ↑' : `Show all ${cycles.length} cycles ↓`}
+            {showAll ? 'Show less ↑' : `Show all ${deduped.length} cycles ↓`}
           </button>
         )}
       </div>
@@ -490,7 +527,10 @@ function CyclesSection({ cycles }: { cycles: any[] }) {
 // ─── Section: Trade History & Learnings ────────────────────────────────
 function TradeHistory({ status }: { status: any }) {
   const perf   = status?.performance ?? {};
-  const trades: Trade[] = (perf.recentTrades ?? []).slice(0, 8);
+  // Sort by closedAt descending (most recent first)
+  const trades: Trade[] = [...(perf.recentTrades ?? [])]
+    .sort((a, b) => new Date(b.closedAt ?? 0).getTime() - new Date(a.closedAt ?? 0).getTime())
+    .slice(0, 10);
   if (trades.length === 0) return null;
 
   const closed  = perf.closedTrades ?? 0;
