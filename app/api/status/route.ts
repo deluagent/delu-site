@@ -3,22 +3,11 @@ import { NextResponse } from "next/server";
 export const revalidate = 0; // always fresh
 
 export async function GET() {
-  // Primary: read from local public/data/status.json (bundled with Vercel deploy)
-  // price_updater pushes every 5min → triggers Vercel redeploy → always fresh
-  try {
-    const fs = await import("fs");
-    const path = await import("path");
-    const filePath = path.join(process.cwd(), "public", "data", "status.json");
-    const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    return NextResponse.json(data, {
-      headers: { "Cache-Control": "no-store, max-age=0" }
-    });
-  } catch {}
-
-  // Fallback: GitHub raw (has ~5min CDN cache but better than nothing)
+  // Primary: GitHub raw — always reflects latest push within seconds
+  // Cache-busted with timestamp to bypass GitHub CDN cache
   try {
     const controller = new AbortController();
-    const t = setTimeout(() => controller.abort(), 6000);
+    const t = setTimeout(() => controller.abort(), 8000);
     const res = await fetch(
       `https://raw.githubusercontent.com/deluagent/delu-site/main/public/data/status.json?t=${Date.now()}`,
       { signal: controller.signal, cache: "no-store" }
@@ -30,6 +19,17 @@ export async function GET() {
         headers: { "Cache-Control": "no-store, max-age=0" }
       });
     }
+  } catch {}
+
+  // Fallback: bundled file from deploy (may be up to 5min stale)
+  try {
+    const fs = await import("fs");
+    const path = await import("path");
+    const filePath = path.join(process.cwd(), "public", "data", "status.json");
+    const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    return NextResponse.json(data, {
+      headers: { "Cache-Control": "no-store, max-age=0" }
+    });
   } catch {}
 
   // Fallback: try live agent API (works when running locally)
