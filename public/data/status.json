@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-03-23T03:15:58.582Z",
+  "updatedAt": "2026-03-23T03:21:41.277Z",
   "regime": "BEAR",
   "btcPrice": 68255,
-  "pctFrom200": "-4.5%",
+  "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 29 min",
+  "nextCycle": "in 24 min",
   "wallet": {
-    "totalUSD": 152.9,
-    "positionsUSD": 10.05,
+    "totalUSD": 142.72,
+    "positionsUSD": 0,
     "liquidUSDC": 82.8,
     "yieldUSD": 82.8,
-    "unrealPnlUSD": 9.04,
-    "unrealPnlPct": 45.2
+    "unrealPnlUSD": 9.23,
+    "unrealPnlPct": 31.24
   },
   "positions": [
     {
@@ -19,9 +19,9 @@
       "entryPrice": 6.1,
       "currentPrice": 6.13114077,
       "sizeUSD": 10,
-      "currentUSD": 10.05,
-      "pnlUSD": 0.05,
-      "pnlPct": 0.5,
+      "currentUSD": 19.81,
+      "pnlUSD": 9.81,
+      "pnlPct": 98.1,
       "peakPct": 0.51,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -42,19 +42,19 @@
     },
     {
       "sym": "SAIRI",
-      "entryPrice": 0.00000968,
+      "entryPrice": 0.00000983,
       "currentPrice": 6.13114077,
-      "sizeUSD": 10,
-      "currentUSD": 18.99,
-      "pnlUSD": 8.99,
-      "pnlPct": 89.9,
-      "peakPct": 63338131.06,
+      "sizeUSD": 19.55,
+      "currentUSD": 18.97,
+      "pnlUSD": -0.58,
+      "pnlPct": -2.97,
+      "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": true,
-      "openedAt": "2026-03-23T03:10:24.419Z",
+      "trailActivated": false,
+      "openedAt": "2026-03-23T00:52:00.000Z",
       "entryTx": null,
-      "contractAddress": "0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+      "contractAddress": "0xde61878b0b21ce395266c44d4d548d1c72a3eb07",
       "source": "universe",
       "chain": "base",
       "volumeTrend": "unknown",
@@ -77,7 +77,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-23T03:14:22.496Z",
-    "ago": "2m ago",
+    "ago": "7m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -287,6 +287,8 @@
       {
         "sym": "MOLT",
         "pnlPct": -5.2,
+        "pnlUSD": -0.52,
+        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -297,6 +299,8 @@
       {
         "sym": "KTA",
         "pnlPct": -4.36,
+        "pnlUSD": -0.44,
+        "sizeUsd": 10,
         "won": false,
         "regime": "RANGE_TIGHT",
         "entryTx": null,
@@ -307,6 +311,8 @@
       {
         "sym": "BNKR",
         "pnlPct": -5.47,
+        "pnlUSD": -0.55,
+        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -317,6 +323,8 @@
       {
         "sym": "MOLT",
         "pnlPct": -5.04,
+        "pnlUSD": -0.5,
+        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -327,6 +335,8 @@
       {
         "sym": "BLUEAGENT",
         "pnlPct": -21.66,
+        "pnlUSD": -2.17,
+        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -337,6 +347,8 @@
       {
         "sym": "CLAWNCH",
         "pnlPct": -4.8,
+        "pnlUSD": -0.48,
+        "sizeUsd": 10,
         "won": false,
         "regime": "BEAR",
         "entryTx": null,
@@ -347,6 +359,8 @@
       {
         "sym": "BLUEAGENT",
         "pnlPct": 121,
+        "pnlUSD": 12.1,
+        "sizeUsd": 10,
         "won": true,
         "regime": "BEAR",
         "entryTx": null,
@@ -6613,7 +6627,7 @@
       "spend": 1.968
     },
     "onchain": {
-      "expCount": 6405,
+      "expCount": 6445,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
