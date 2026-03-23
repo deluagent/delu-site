@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-03-23T17:10:55.717Z",
+  "updatedAt": "2026-03-23T17:12:25.988Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70505,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 22 min",
+  "nextCycle": "in 21 min",
   "wallet": {
-    "totalUSD": 145.07,
-    "positionsUSD": 70.87,
-    "liquidUSDC": 13.13,
+    "totalUSD": 115.75,
+    "positionsUSD": 40.01,
+    "liquidUSDC": 14.67,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0.2,
-    "unrealPnlPct": 0.25
+    "unrealPnlUSD": -1.1,
+    "unrealPnlPct": -2.75
   },
   "positions": [
     {
@@ -38,32 +38,6 @@
       "transferStats": {
         "uniqueBuyers": 15,
         "buyRatio": 0.5
-      }
-    },
-    {
-      "sym": "SAIRI",
-      "entryPrice": 0.00000983,
-      "currentPrice": 0.00001005,
-      "sizeUSD": 19.55,
-      "currentUSD": 19.99,
-      "pnlUSD": 0.44,
-      "pnlPct": 2.25,
-      "peakPct": 7.26,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": true,
-      "openedAt": "2026-03-23T00:52:00.000Z",
-      "entryTx": null,
-      "contractAddress": "0xde61878b0b21ce395266c44d4d548d1c72a3eb07",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": "increasing",
-      "recommendation": "hold",
-      "quantScore": 0.1354,
-      "ret1h": -4.65,
-      "transferStats": {
-        "uniqueBuyers": 21,
-        "buyRatio": 0.5675675675675675
       }
     },
     {
@@ -117,68 +91,19 @@
         "uniqueBuyers": 28,
         "buyRatio": 0.5185185185185185
       }
-    },
-    {
-      "sym": "JUNO",
-      "entryPrice": 0.000014,
-      "currentPrice": 0.00001519,
-      "sizeUSD": 10,
-      "currentUSD": 10.85,
-      "pnlUSD": 0.85,
-      "pnlPct": 8.5,
-      "peakPct": 8.52,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": true,
-      "openedAt": "2026-03-23T16:51:05.701Z",
-      "entryTx": null,
-      "contractAddress": "0x4e6c9f48f73e54ee5f3ab7e2992b2d733d0d0b07",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": "increasing",
-      "recommendation": "hold",
-      "quantScore": 0.0816,
-      "ret1h": 9.12,
-      "transferStats": {
-        "uniqueBuyers": 20,
-        "buyRatio": 0.5263157894736842
-      }
-    },
-    {
-      "sym": "SAIMMY",
-      "entryPrice": 0.00043,
-      "currentPrice": 0.0004306,
-      "sizeUSD": 10,
-      "currentUSD": 10.01,
-      "pnlUSD": 0.01,
-      "pnlPct": 0.1,
-      "peakPct": 0.14,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": false,
-      "openedAt": "2026-03-23T16:56:33.761Z",
-      "entryTx": null,
-      "contractAddress": "0xa2b7bad58135b99183c71b0b9970525b8e3d251b",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": "unknown",
-      "recommendation": "hold",
-      "quantScore": null,
-      "ret1h": null,
-      "transferStats": null
     }
   ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
     "chain": "Base",
-    "amountUSD": 13.13,
+    "amountUSD": 14.67,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-23T17:03:00.725Z",
-    "ago": "8m ago",
+    "ago": "9m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -14402,7 +14327,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 13250,
+      "expCount": 13260,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
