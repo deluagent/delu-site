@@ -706,7 +706,7 @@ function CycleRow({ cycle }: { cycle: any }) {
                         {buyRatio != null && <span className={dim}>buy ratio <span className="text-white">{(buyRatio * 100).toFixed(0)}%</span></span>}
                       </div>
                     ) : (
-                      <span className={`text-[9px] ${dim} italic`}>no onchain data available this cycle</span>
+                      <span className={`text-[9px] ${dim} italic`}>no onchain threshold met this cycle</span>
                     )}
                   </div>
 
