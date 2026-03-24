@@ -889,16 +889,18 @@ function CyclesSection({ cycles }: { cycles: any[] }) {
 
 // ─── Section: Trade History & Learnings ────────────────────────────────
 function TradeHistory({ status }: { status: any }) {
+  const [showAll, setShowAll] = useState(false);
   const perf   = status?.performance ?? {};
   // Sort by closedAt descending (most recent first)
-  const trades: Trade[] = [...(perf.recentTrades ?? [])]
-    .sort((a, b) => new Date(b.closedAt ?? 0).getTime() - new Date(a.closedAt ?? 0).getTime())
-    .slice(0, 20);
+  const allTrades: Trade[] = [...(perf.recentTrades ?? [])]
+    .sort((a, b) => new Date(b.closedAt ?? 0).getTime() - new Date(a.closedAt ?? 0).getTime());
+
+  const trades = showAll ? allTrades : allTrades.slice(0, 10);
   if (trades.length === 0) return null;
 
   const closed = perf.totalTrades ?? perf.closedTrades ?? 0;
-  const winPct = perf.winRatePct ?? (closed > 0 ? (trades.filter((t: any) => t.won).length / trades.length * 100).toFixed(0) : '0');
-  const avgPnl = perf.avgPnlPct ?? (trades.reduce((s: number, t: any) => s + (t.pnlPct ?? 0), 0) / Math.max(1, trades.length));
+  const winPct = perf.winRatePct ?? (closed > 0 ? (allTrades.filter((t: any) => t.won).length / allTrades.length * 100).toFixed(0) : '0');
+  const avgPnl = perf.avgPnlPct ?? (allTrades.reduce((s: number, t: any) => s + (t.pnlPct ?? 0), 0) / Math.max(1, allTrades.length));
 
   return (
     <section className="mb-10">
@@ -906,7 +908,7 @@ function TradeHistory({ status }: { status: any }) {
         <div className={label}>Trade History & Learnings</div>
         <div className={`flex gap-4 text-[10px] ${dim}`}>
           <span>{closed} closed trades</span>
-          <span className={mono('', parseInt(winPct) >= 50 ? 'text-[#22c55e]' : 'text-[#ef4444]')}>
+          <span className={mono('', parseFloat(winPct.toString()) >= 50 ? 'text-[#22c55e]' : 'text-[#ef4444]')}>
             {winPct}% win rate
           </span>
           <span className={mono('', pnlColor(avgPnl))}>
@@ -958,6 +960,13 @@ function TradeHistory({ status }: { status: any }) {
             </div>
           );
         })}
+
+        {allTrades.length > 10 && (
+          <button onClick={() => setShowAll(s => !s)}
+            className={`w-full py-2.5 text-[10px] ${dim} hover:text-white border-t border-[#1c1c28] transition-colors`}>
+            {showAll ? 'Show less ↑' : `Show all ${allTrades.length} trades ↓`}
+          </button>
+        )}
       </div>
     </section>
   );
