@@ -678,8 +678,9 @@ function CycleRow({ cycle }: { cycle: any }) {
             {/* Asset-specific signals — only shown for the traded asset */}
             {cycle.traded?.length > 0 && (() => {
               const asset = cycle.traded[0];
-              // Look in trendingEntries AND checkrSustained for the asset
-              const entry = (cycle.trendingEntries as any[] ?? []).find((t: any) => t.symbol === asset);
+              // Look in trendingEntries, alchemyDiscovered, and checkrSustained for the asset
+              const entry = (cycle.trendingEntries as any[] ?? []).find((t: any) => t.symbol === asset)
+                ?? (cycle.dataSources?.alchemyDiscovered as any[] ?? cycle.alchemyDiscovered as any[] ?? []).find((t: any) => t.sym === asset);
               const checkrEntry = (cycle.dataSources?.checkrSustained as any[] ?? []).find((t: any) => t.sym === asset)
                 ?? (cycle.checkrSustained as any[] ?? []).find((t: any) => t.sym === asset)
                 ?? (cycle.checkrTraded?.sym === asset ? cycle.checkrTraded : null);
@@ -688,8 +689,9 @@ function CycleRow({ cycle }: { cycle: any }) {
               // Quant score: prefer entry.score (trending), fallback to assessment.quantScore
               const quantScore = entry?.score ?? assessment?.quantScore ?? null;
               const ret1h = entry?.ret1h ?? assessment?.ret1h ?? null;
-              const buyRatio = entry?.buyRatio ?? assessment?.transferStats?.buyRatio ?? null;
-              const uniqueBuyers = entry?.buyers ?? assessment?.transferStats?.uniqueBuyers ?? null;
+              const buyRatio = entry?.buyRatio ?? entry?.transferStats?.buyRatio ?? assessment?.transferStats?.buyRatio ?? null;
+              const uniqueBuyers = entry?.buyers ?? entry?.transferStats?.uniqueBuyers ?? assessment?.transferStats?.uniqueBuyers ?? null;
+              const entryLiq = entry?.liq ?? entry?.liquidity ?? null;
 
               return (
                 <div className="border-t border-[#1c1c28] pt-2 space-y-2">
@@ -697,16 +699,16 @@ function CycleRow({ cycle }: { cycle: any }) {
 
                   {/* Onchain signals — always shown */}
                   <div>
-                    <div className={`text-[9px] ${dim} mb-1`}>Onchain · Alchemy + GeckoTerminal</div>
-                    {(quantScore != null || ret1h != null || buyRatio != null) ? (
+                    <div className={`text-[9px] ${dim} mb-1`}>Onchain · transfer activity + pool data</div>
+                    {(quantScore != null || ret1h != null || buyRatio != null || entryLiq != null) ? (
                       <div className="flex flex-wrap gap-x-4 gap-y-0.5">
-                        {quantScore != null && <span className={dim}>Quant score <span className="text-white">{quantScore.toFixed(2)}</span></span>}
+                        {entryLiq != null && <span className={dim}>liq <span className="text-white">${Math.round(entryLiq/1000)}K</span></span>}
                         {ret1h != null && <span className={dim}>1h <span className={mono('', pnlColor(ret1h * 100))}>{ret1h >= 0 ? '+' : ''}{(ret1h * 100).toFixed(1)}%</span></span>}
                         {uniqueBuyers != null && <span className={dim}>buyers <span className="text-white">{uniqueBuyers}</span></span>}
                         {buyRatio != null && <span className={dim}>buy ratio <span className="text-white">{(buyRatio * 100).toFixed(0)}%</span></span>}
                       </div>
                     ) : (
-                      <span className={`text-[9px] ${dim} italic`}>no onchain threshold met this cycle</span>
+                      <span className={`text-[9px] ${dim} italic`}>onchain data not available</span>
                     )}
                   </div>
 
@@ -753,7 +755,7 @@ function CycleRow({ cycle }: { cycle: any }) {
                 {/* Onchain discovery — Alchemy unusual activity */}
                 {(cycle.dataSources.alchemyDiscovered ?? cycle.alchemyDiscovered ?? []).length > 0 && (
                   <div>
-                    <div className={`text-[9px] ${dim} mb-1`}>⛓ Onchain Discovery · Alchemy unusual activity</div>
+                    <div className={`text-[9px] ${dim} mb-1`}>⛓ Onchain Discovery · unusual transfer activity</div>
                     <div className="flex flex-wrap gap-x-3 gap-y-0.5">
                       {(cycle.dataSources.alchemyDiscovered ?? cycle.alchemyDiscovered ?? []).map((t: any, i: number) => (
                         <span key={i} className={dim}>
