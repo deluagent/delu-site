@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-03-24T16:34:49.012Z",
+  "updatedAt": "2026-03-24T16:37:39.807Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 69831,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
   "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 63.06,
-    "positionsUSD": 60.52,
+    "totalUSD": 76.63,
+    "positionsUSD": 60.48,
     "liquidUSDC": 2.54,
-    "ethUSD": 0,
+    "ethUSD": 12.75,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0.7,
-    "unrealPnlPct": 1.17
+    "unrealPnlUSD": 0.32,
+    "unrealPnlPct": 0.53
   },
   "positions": [
     {
@@ -44,7 +44,7 @@
     {
       "sym": "VIRTUAL",
       "entryPrice": 0.6833,
-      "currentPrice": 0.70839225,
+      "currentPrice": 0.70840815,
       "sizeUSD": 10,
       "currentUSD": 10.33,
       "pnlUSD": 0.33,
@@ -70,11 +70,11 @@
     {
       "sym": "ROBOTMONEY",
       "entryPrice": 0.00001507906285,
-      "currentPrice": 0.00001627,
+      "currentPrice": 0.00001583,
       "sizeUSD": 13.2,
-      "currentUSD": 14.33,
-      "pnlUSD": 1.13,
-      "pnlPct": 8.56,
+      "currentUSD": 13.95,
+      "pnlUSD": 0.75,
+      "pnlPct": 5.68,
       "peakPct": 4.72,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -127,7 +127,7 @@
       "currentUSD": 9.9,
       "pnlUSD": -0.1,
       "pnlPct": -1,
-      "peakPct": 0,
+      "peakPct": 0.46,
       "trailStop": 5,
       "hardSlPct": 3,
       "trailActivated": false,
@@ -153,7 +153,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-24T16:05:00.030Z",
-    "ago": "30m ago",
+    "ago": "33m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -193,7 +193,7 @@
       },
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.70839225,
+        "currentPrice": 0.70840815,
         "pnlPct": 3.3,
         "pnlUSD": 0.33,
         "quantScore": -0.0161,
@@ -207,9 +207,9 @@
       },
       {
         "sym": "ROBOTMONEY",
-        "currentPrice": 0.00001627,
-        "pnlPct": 8.56,
-        "pnlUSD": 1.13,
+        "currentPrice": 0.00001583,
+        "pnlPct": 5.68,
+        "pnlUSD": 0.75,
         "quantScore": 0.0628,
         "volumeTrend": "declining",
         "recommendation": "hold",
@@ -262,7 +262,7 @@
       },
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.70839225,
+        "currentPrice": 0.70840815,
         "pnlPct": 3.3,
         "pnlUSD": 0.33,
         "quantScore": -0.0161,
@@ -276,9 +276,9 @@
       },
       {
         "sym": "ROBOTMONEY",
-        "currentPrice": 0.00001627,
-        "pnlPct": 8.56,
-        "pnlUSD": 1.13,
+        "currentPrice": 0.00001583,
+        "pnlPct": 5.68,
+        "pnlUSD": 0.75,
         "quantScore": 0.0628,
         "volumeTrend": "declining",
         "recommendation": "hold",
@@ -500,7 +500,7 @@
         },
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.70839225,
+          "currentPrice": 0.70840815,
           "pnlPct": 3.3,
           "pnlUSD": 0.33,
           "quantScore": -0.0161,
@@ -514,9 +514,9 @@
         },
         {
           "sym": "ROBOTMONEY",
-          "currentPrice": 0.00001627,
-          "pnlPct": 8.56,
-          "pnlUSD": 1.13,
+          "currentPrice": 0.00001583,
+          "pnlPct": 5.68,
+          "pnlUSD": 0.75,
           "quantScore": 0.0628,
           "volumeTrend": "declining",
           "recommendation": "hold",
@@ -569,7 +569,7 @@
         },
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.70839225,
+          "currentPrice": 0.70840815,
           "pnlPct": 3.3,
           "pnlUSD": 0.33,
           "quantScore": -0.0161,
@@ -583,9 +583,9 @@
         },
         {
           "sym": "ROBOTMONEY",
-          "currentPrice": 0.00001627,
-          "pnlPct": 8.56,
-          "pnlUSD": 1.13,
+          "currentPrice": 0.00001583,
+          "pnlPct": 5.68,
+          "pnlUSD": 0.75,
           "quantScore": 0.0628,
           "volumeTrend": "declining",
           "recommendation": "hold",
@@ -9040,7 +9040,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 24745,
+      "expCount": 24770,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
