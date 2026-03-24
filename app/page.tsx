@@ -712,10 +712,11 @@ function CycleRow({ cycle }: { cycle: any }) {
                     )}
                   </div>
 
-                  {/* Social signals — always shown */}
+                  {/* Social signals — only shown if token actually appeared in Checkr */}
+                  {(checkrEntry?.checkrSource !== false) && (
                   <div>
                     <div className={`text-[9px] ${dim} mb-1`}>Social · Checkr</div>
-                    {checkrEntry ? (
+                    {(checkrEntry && checkrEntry.checkrSource !== false) ? (
                       <div className="flex flex-wrap gap-x-4 gap-y-0.5">
                         {checkrEntry.att1h != null && <span className={dim}>1h attention <span className="text-white">+{checkrEntry.att1h?.toFixed(1)}pp</span></span>}
                         {checkrEntry.att4h != null && <span className={dim}>4h <span className="text-white">+{checkrEntry.att4h?.toFixed(1)}pp</span></span>}
@@ -724,9 +725,10 @@ function CycleRow({ cycle }: { cycle: any }) {
                         {checkrEntry.spike && <span className="text-[9px] text-[#f59e0b]">⚡ spike</span>}
                       </div>
                     ) : (
-                      <span className={`text-[9px] ${dim} italic`}>no social signal above threshold this cycle</span>
+                      <span className={`text-[9px] ${dim} italic`}>no social signal this cycle</span>
                     )}
                   </div>
+                  )}
 
                   {/* Conviction */}
                   {cycle.confidence != null && (
