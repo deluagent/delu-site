@@ -484,8 +484,9 @@ function CapitalSection({ status }: { status: any }) {
   const total  = w.totalUSD       ?? 0;
   const liquid = w.liquidUSDC     ?? 0;
   const posAmt = w.positionsUSD   ?? 0;
-  // ETH + cbBTC = total minus USDC minus open positions
-  const other  = Math.max(0, total - liquid - posAmt);
+  // ETH = explicitly tracked, fallback to total minus USDC minus positions
+  const ethUSD = w.ethUSD ?? 0;
+  const other  = ethUSD > 0 ? ethUSD : Math.max(0, total - liquid - posAmt);
   // Yield is a subset of liquid USDC deployed to protocol — show separately
   const yldAmt = yld.amountUSD ?? 0;
   const yldInYield = Math.min(yldAmt, liquid); // how much of liquid is actually in yield vault
@@ -678,9 +679,10 @@ function CycleRow({ cycle }: { cycle: any }) {
             {/* Asset-specific signals — only shown for the traded asset */}
             {cycle.traded?.length > 0 && (() => {
               const asset = cycle.traded[0];
-              // Look in trendingEntries, alchemyDiscovered, and checkrSustained for the asset
-              const entry = (cycle.trendingEntries as any[] ?? []).find((t: any) => t.symbol === asset)
-                ?? (cycle.dataSources?.alchemyDiscovered as any[] ?? cycle.alchemyDiscovered as any[] ?? []).find((t: any) => t.sym === asset);
+              // Look in tradedEntry first (full onchain data), then alchemyDiscovered, then trendingEntries
+              const entry = cycle.dataSources?.tradedEntry?.sym === asset ? cycle.dataSources.tradedEntry
+                : (cycle.trendingEntries as any[] ?? []).find((t: any) => t.symbol === asset)
+                ?? (cycle.dataSources?.alchemyDiscovered as any[] ?? []).find((t: any) => t.sym === asset);
               const checkrEntry = (cycle.dataSources?.checkrSustained as any[] ?? []).find((t: any) => t.sym === asset)
                 ?? (cycle.checkrSustained as any[] ?? []).find((t: any) => t.sym === asset)
                 ?? (cycle.checkrTraded?.sym === asset ? cycle.checkrTraded : null);
