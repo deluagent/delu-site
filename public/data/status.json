@@ -1,58 +1,31 @@
 {
-  "updatedAt": "2026-03-24T17:46:39.518Z",
+  "updatedAt": "2026-03-24T17:47:44.488Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 69120,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "in 19 min",
+  "nextCycle": "in 18 min",
   "wallet": {
-    "totalUSD": 73.15,
-    "positionsUSD": 12.22,
-    "liquidUSDC": 2.54,
-    "ethUSD": 12.63,
+    "totalUSD": 72.9,
+    "positionsUSD": 0,
+    "liquidUSDC": 0,
+    "ethUSD": 0,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.82,
-    "unrealPnlPct": -6.21
+    "unrealPnlUSD": 0,
+    "unrealPnlPct": 0
   },
-  "positions": [
-    {
-      "sym": "ROBOTMONEY",
-      "entryPrice": 0.00001507906285,
-      "currentPrice": 0.00001405,
-      "sizeUSD": 13.2,
-      "currentUSD": 12.38,
-      "pnlUSD": -0.82,
-      "pnlPct": -6.21,
-      "peakPct": 4.72,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": true,
-      "openedAt": "2026-03-24T13:37:37.991Z",
-      "entryTx": null,
-      "contractAddress": "0x65021a79aeef22b17cdc1b768f5e79a8618beba3",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": "declining",
-      "recommendation": "hold",
-      "quantScore": 0.0553,
-      "ret1h": -2.8,
-      "transferStats": {
-        "uniqueBuyers": 33,
-        "buyRatio": 0.5409836065573771
-      }
-    }
-  ],
+  "positions": [],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
     "chain": "Base",
-    "amountUSD": 2.54,
+    "amountUSD": 0,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-24T17:35:00.025Z",
-    "ago": "12m ago",
+    "ago": "13m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -73,38 +46,8 @@
     "confidence": 95,
     "reasoning": "FELIX has the highest quant score of 0.953, indicating strong social velocity and potential for growth, with a high conviction BUY signal",
     "topSignal": "FELIX score=1.12 ret1h=0.0%",
-    "positionUpdates": [
-      {
-        "sym": "ROBOTMONEY",
-        "currentPrice": 0.00001405,
-        "pnlPct": -6.21,
-        "pnlUSD": -0.82,
-        "quantScore": 0.0553,
-        "volumeTrend": "declining",
-        "recommendation": "hold",
-        "ret1h": -2.8,
-        "transferStats": {
-          "uniqueBuyers": 33,
-          "buyRatio": 0.5409836065573771
-        }
-      }
-    ],
-    "positionAssessments": [
-      {
-        "sym": "ROBOTMONEY",
-        "currentPrice": 0.00001405,
-        "pnlPct": -6.21,
-        "pnlUSD": -0.82,
-        "quantScore": 0.0553,
-        "volumeTrend": "declining",
-        "recommendation": "hold",
-        "ret1h": -2.8,
-        "transferStats": {
-          "uniqueBuyers": 33,
-          "buyRatio": 0.5409836065573771
-        }
-      }
-    ],
+    "positionUpdates": [],
+    "positionAssessments": [],
     "checkrSustained": [
       {
         "sym": "TIBBIR",
@@ -140,12 +83,12 @@
     "topScores": []
   },
   "performance": {
-    "totalTrades": 22,
-    "winCount": 8,
-    "winRatePct": 36.4,
-    "avgPnlPct": 2.74,
-    "closedTrades": 22,
-    "winRate": "8/22 (36.4%)",
+    "totalTrades": 14,
+    "winCount": 5,
+    "winRatePct": 35.7,
+    "avgPnlPct": 5.15,
+    "closedTrades": 14,
+    "winRate": "5/14 (35.7%)",
     "recentTrades": [
       {
         "sym": "SURGE",
@@ -342,33 +285,155 @@
       ],
       "positionUpdates": [
         {
+          "sym": "BNKR",
+          "currentPrice": 0.0003929169,
+          "entryPrice": 0.0004196,
+          "pnlPct": -6.36,
+          "quantScore": -0.0158,
+          "volumeTrend": "increasing",
+          "recommendation": "hold",
+          "ret1h": -0.007438961637359593,
+          "ret6h": -0.008391588978452475,
+          "transferStats": {
+            "uniqueBuyers": 15,
+            "buyRatio": 0.4166666666666667
+          }
+        },
+        {
+          "sym": "VIRTUAL",
+          "currentPrice": 0.7069142649,
+          "entryPrice": 0.6833,
+          "pnlPct": 3.46,
+          "quantScore": -0.0333,
+          "volumeTrend": "declining",
+          "recommendation": "hold",
+          "ret1h": 0.004063797112058862,
+          "ret6h": -0.006016568569938723,
+          "transferStats": {
+            "uniqueBuyers": 42,
+            "buyRatio": 0.525
+          }
+        },
+        {
           "sym": "ROBOTMONEY",
-          "currentPrice": 0.00001405,
-          "pnlPct": -6.21,
-          "pnlUSD": -0.82,
+          "currentPrice": 0.0000153485,
+          "entryPrice": 0.00001507906285,
+          "pnlPct": 1.79,
           "quantScore": 0.0553,
           "volumeTrend": "declining",
           "recommendation": "hold",
-          "ret1h": -2.8,
+          "ret1h": -0.02798535819231938,
+          "ret6h": 0.10552094212554473,
           "transferStats": {
             "uniqueBuyers": 33,
             "buyRatio": 0.5409836065573771
+          }
+        },
+        {
+          "sym": "JUNO",
+          "currentPrice": 0.0000127507,
+          "entryPrice": 0.00001306478793,
+          "pnlPct": -2.4,
+          "quantScore": 0.1231,
+          "volumeTrend": "stable",
+          "recommendation": "hold",
+          "ret1h": 0.038229163273947125,
+          "ret6h": -0.007472736189060259,
+          "transferStats": {
+            "uniqueBuyers": 26,
+            "buyRatio": 0.5652173913043478
+          }
+        },
+        {
+          "sym": "CLAWD",
+          "currentPrice": 0.0000390123,
+          "entryPrice": 0.00003887677489,
+          "pnlPct": 0.35,
+          "quantScore": -0.0337,
+          "volumeTrend": "increasing",
+          "recommendation": "hold",
+          "ret1h": -0.001080541294857127,
+          "ret6h": -0.09377620542029724,
+          "transferStats": {
+            "uniqueBuyers": 4,
+            "buyRatio": 0.5
           }
         }
       ],
       "positionAssessments": [
         {
+          "sym": "BNKR",
+          "currentPrice": 0.0003929169,
+          "entryPrice": 0.0004196,
+          "pnlPct": -6.36,
+          "quantScore": -0.0158,
+          "volumeTrend": "increasing",
+          "recommendation": "hold",
+          "ret1h": -0.007438961637359593,
+          "ret6h": -0.008391588978452475,
+          "transferStats": {
+            "uniqueBuyers": 15,
+            "buyRatio": 0.4166666666666667
+          }
+        },
+        {
+          "sym": "VIRTUAL",
+          "currentPrice": 0.7069142649,
+          "entryPrice": 0.6833,
+          "pnlPct": 3.46,
+          "quantScore": -0.0333,
+          "volumeTrend": "declining",
+          "recommendation": "hold",
+          "ret1h": 0.004063797112058862,
+          "ret6h": -0.006016568569938723,
+          "transferStats": {
+            "uniqueBuyers": 42,
+            "buyRatio": 0.525
+          }
+        },
+        {
           "sym": "ROBOTMONEY",
-          "currentPrice": 0.00001405,
-          "pnlPct": -6.21,
-          "pnlUSD": -0.82,
+          "currentPrice": 0.0000153485,
+          "entryPrice": 0.00001507906285,
+          "pnlPct": 1.79,
           "quantScore": 0.0553,
           "volumeTrend": "declining",
           "recommendation": "hold",
-          "ret1h": -2.8,
+          "ret1h": -0.02798535819231938,
+          "ret6h": 0.10552094212554473,
           "transferStats": {
             "uniqueBuyers": 33,
             "buyRatio": 0.5409836065573771
+          }
+        },
+        {
+          "sym": "JUNO",
+          "currentPrice": 0.0000127507,
+          "entryPrice": 0.00001306478793,
+          "pnlPct": -2.4,
+          "quantScore": 0.1231,
+          "volumeTrend": "stable",
+          "recommendation": "hold",
+          "ret1h": 0.038229163273947125,
+          "ret6h": -0.007472736189060259,
+          "transferStats": {
+            "uniqueBuyers": 26,
+            "buyRatio": 0.5652173913043478
+          }
+        },
+        {
+          "sym": "CLAWD",
+          "currentPrice": 0.0000390123,
+          "entryPrice": 0.00003887677489,
+          "pnlPct": 0.35,
+          "quantScore": -0.0337,
+          "volumeTrend": "increasing",
+          "recommendation": "hold",
+          "ret1h": -0.001080541294857127,
+          "ret6h": -0.09377620542029724,
+          "transferStats": {
+            "uniqueBuyers": 4,
+            "buyRatio": 0.5
           }
         }
       ],
@@ -9049,7 +9114,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 25345,
+      "expCount": 25355,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
