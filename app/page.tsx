@@ -893,14 +893,12 @@ function TradeHistory({ status }: { status: any }) {
   // Sort by closedAt descending (most recent first)
   const trades: Trade[] = [...(perf.recentTrades ?? [])]
     .sort((a, b) => new Date(b.closedAt ?? 0).getTime() - new Date(a.closedAt ?? 0).getTime())
-    .slice(0, 10);
+    .slice(0, 20);
   if (trades.length === 0) return null;
 
-  const closed  = perf.closedTrades ?? 0;
-  const winStr  = perf.winRate ?? '0/0';
-  const wins    = parseInt(winStr.split('/')[0]) ?? 0;
-  const winPct  = closed > 0 ? ((wins / closed) * 100).toFixed(0) : '0';
-  const avgPnl  = trades.reduce((s, t) => s + (t.pnlPct ?? 0), 0) / Math.max(1, trades.length);
+  const closed = perf.totalTrades ?? perf.closedTrades ?? 0;
+  const winPct = perf.winRatePct ?? (closed > 0 ? (trades.filter((t: any) => t.won).length / trades.length * 100).toFixed(0) : '0');
+  const avgPnl = perf.avgPnlPct ?? (trades.reduce((s: number, t: any) => s + (t.pnlPct ?? 0), 0) / Math.max(1, trades.length));
 
   return (
     <section className="mb-10">
