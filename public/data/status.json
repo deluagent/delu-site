@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-24T14:03:17.410Z",
+  "updatedAt": "2026-03-24T14:04:40.934Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70301,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 18 min",
+  "nextCycle": "in 16 min",
   "wallet": {
-    "totalUSD": 82.94,
-    "positionsUSD": 74.81,
-    "liquidUSDC": 5.94,
+    "totalUSD": 82.56,
+    "positionsUSD": 65.5,
+    "liquidUSDC": 14.87,
     "ethUSD": 1.32,
     "yieldUSD": 0,
-    "unrealPnlUSD": -14.27,
-    "unrealPnlPct": -17.84
+    "unrealPnlUSD": -14.63,
+    "unrealPnlPct": -18.29
   },
   "positions": [
     {
       "sym": "VVV",
       "entryPrice": 6.1,
-      "currentPrice": 5.58909124,
+      "currentPrice": 5.5942443,
       "sizeUSD": 20,
-      "currentUSD": 9.11,
-      "pnlUSD": -10.89,
-      "pnlPct": -54.45,
+      "currentUSD": 9.12,
+      "pnlUSD": -10.88,
+      "pnlPct": -54.4,
       "peakPct": 0.78,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -96,7 +96,7 @@
     {
       "sym": "SURGE",
       "entryPrice": 0.01592058143,
-      "currentPrice": 0.0171418,
+      "currentPrice": 0.01713071,
       "sizeUSD": 10,
       "currentUSD": 10.74,
       "pnlUSD": 0.74,
@@ -124,9 +124,9 @@
       "entryPrice": 0.6833,
       "currentPrice": null,
       "sizeUSD": 10,
-      "currentUSD": 10.24,
-      "pnlUSD": 0.24,
-      "pnlPct": 2.4,
+      "currentUSD": 10.3,
+      "pnlUSD": 0.3,
+      "pnlPct": 3,
       "peakPct": 3.84,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -176,9 +176,9 @@
       "entryPrice": 0.00001507906285,
       "currentPrice": null,
       "sizeUSD": 10,
-      "currentUSD": 14.62,
-      "pnlUSD": 4.62,
-      "pnlPct": 46.2,
+      "currentUSD": 14.19,
+      "pnlUSD": 4.19,
+      "pnlPct": 41.9,
       "peakPct": 1.03,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -202,13 +202,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid USDC",
     "chain": "Base",
-    "amountUSD": 5.94,
+    "amountUSD": 14.87,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-24T13:50:21.071Z",
-    "ago": "13m ago",
+    "ago": "14m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -232,9 +232,9 @@
     "positionUpdates": [
       {
         "sym": "VVV",
-        "currentPrice": 5.58909124,
-        "pnlPct": -54.45,
-        "pnlUSD": -10.89,
+        "currentPrice": 5.5942443,
+        "pnlPct": -54.4,
+        "pnlUSD": -10.88,
         "quantScore": 0.0189,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -274,7 +274,7 @@
       },
       {
         "sym": "SURGE",
-        "currentPrice": 0.0171418,
+        "currentPrice": 0.01713071,
         "pnlPct": 7.4,
         "pnlUSD": 0.74,
         "quantScore": 0.0756,
@@ -289,8 +289,8 @@
       {
         "sym": "VIRTUAL",
         "currentPrice": null,
-        "pnlPct": 2.4,
-        "pnlUSD": 0.24,
+        "pnlPct": 3,
+        "pnlUSD": 0.3,
         "quantScore": 0.0145,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -317,8 +317,8 @@
       {
         "sym": "ROBOTMONEY",
         "currentPrice": null,
-        "pnlPct": 46.2,
-        "pnlUSD": 4.62,
+        "pnlPct": 41.9,
+        "pnlUSD": 4.19,
         "quantScore": 0.1403,
         "volumeTrend": "increasing",
         "recommendation": "hold",
@@ -332,9 +332,9 @@
     "positionAssessments": [
       {
         "sym": "VVV",
-        "currentPrice": 5.58909124,
-        "pnlPct": -54.45,
-        "pnlUSD": -10.89,
+        "currentPrice": 5.5942443,
+        "pnlPct": -54.4,
+        "pnlUSD": -10.88,
         "quantScore": 0.0189,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -374,7 +374,7 @@
       },
       {
         "sym": "SURGE",
-        "currentPrice": 0.0171418,
+        "currentPrice": 0.01713071,
         "pnlPct": 7.4,
         "pnlUSD": 0.74,
         "quantScore": 0.0756,
@@ -389,8 +389,8 @@
       {
         "sym": "VIRTUAL",
         "currentPrice": null,
-        "pnlPct": 2.4,
-        "pnlUSD": 0.24,
+        "pnlPct": 3,
+        "pnlUSD": 0.3,
         "quantScore": 0.0145,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -417,8 +417,8 @@
       {
         "sym": "ROBOTMONEY",
         "currentPrice": null,
-        "pnlPct": 46.2,
-        "pnlUSD": 4.62,
+        "pnlPct": 41.9,
+        "pnlUSD": 4.19,
         "quantScore": 0.1403,
         "volumeTrend": "increasing",
         "recommendation": "hold",
@@ -613,9 +613,9 @@
       "positionUpdates": [
         {
           "sym": "VVV",
-          "currentPrice": 5.58909124,
-          "pnlPct": -54.45,
-          "pnlUSD": -10.89,
+          "currentPrice": 5.5942443,
+          "pnlPct": -54.4,
+          "pnlUSD": -10.88,
           "quantScore": 0.0189,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -655,7 +655,7 @@
         },
         {
           "sym": "SURGE",
-          "currentPrice": 0.0171418,
+          "currentPrice": 0.01713071,
           "pnlPct": 7.4,
           "pnlUSD": 0.74,
           "quantScore": 0.0756,
@@ -670,8 +670,8 @@
         {
           "sym": "VIRTUAL",
           "currentPrice": null,
-          "pnlPct": 2.4,
-          "pnlUSD": 0.24,
+          "pnlPct": 3,
+          "pnlUSD": 0.3,
           "quantScore": 0.0145,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -698,8 +698,8 @@
         {
           "sym": "ROBOTMONEY",
           "currentPrice": null,
-          "pnlPct": 46.2,
-          "pnlUSD": 4.62,
+          "pnlPct": 41.9,
+          "pnlUSD": 4.19,
           "quantScore": 0.1403,
           "volumeTrend": "increasing",
           "recommendation": "hold",
@@ -713,9 +713,9 @@
       "positionAssessments": [
         {
           "sym": "VVV",
-          "currentPrice": 5.58909124,
-          "pnlPct": -54.45,
-          "pnlUSD": -10.89,
+          "currentPrice": 5.5942443,
+          "pnlPct": -54.4,
+          "pnlUSD": -10.88,
           "quantScore": 0.0189,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -755,7 +755,7 @@
         },
         {
           "sym": "SURGE",
-          "currentPrice": 0.0171418,
+          "currentPrice": 0.01713071,
           "pnlPct": 7.4,
           "pnlUSD": 0.74,
           "quantScore": 0.0756,
@@ -770,8 +770,8 @@
         {
           "sym": "VIRTUAL",
           "currentPrice": null,
-          "pnlPct": 2.4,
-          "pnlUSD": 0.24,
+          "pnlPct": 3,
+          "pnlUSD": 0.3,
           "quantScore": 0.0145,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -798,8 +798,8 @@
         {
           "sym": "ROBOTMONEY",
           "currentPrice": null,
-          "pnlPct": 46.2,
-          "pnlUSD": 4.62,
+          "pnlPct": 41.9,
+          "pnlUSD": 4.19,
           "quantScore": 0.1403,
           "volumeTrend": "increasing",
           "recommendation": "hold",
@@ -8817,7 +8817,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 23505,
+      "expCount": 23515,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
