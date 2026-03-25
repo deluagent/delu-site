@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-25T08:04:47.941Z",
+  "updatedAt": "2026-03-25T08:05:41.464Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71179,
   "pctFrom200": "-4.2%",
@@ -11,18 +11,18 @@
     "liquidUSDC": 4.7,
     "ethUSD": 12.85,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.11,
-    "unrealPnlPct": -0.55
+    "unrealPnlUSD": -0.08,
+    "unrealPnlPct": -0.4
   },
   "positions": [
     {
       "sym": "BNKR",
       "entryPrice": 0.0004196,
-      "currentPrice": 0.0003967,
+      "currentPrice": null,
       "sizeUSD": 10,
-      "currentUSD": 9.78,
-      "pnlUSD": -0.22,
-      "pnlPct": -2.2,
+      "currentUSD": 9.68,
+      "pnlUSD": -0.32,
+      "pnlPct": -3.2,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -44,11 +44,11 @@
     {
       "sym": "CLAWD",
       "entryPrice": 0.00003887677489,
-      "currentPrice": 0.00004018,
+      "currentPrice": null,
       "sizeUSD": 10,
-      "currentUSD": 10.11,
-      "pnlUSD": 0.11,
-      "pnlPct": 1.1,
+      "currentUSD": 10.24,
+      "pnlUSD": 0.24,
+      "pnlPct": 2.4,
       "peakPct": 7.07,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -78,7 +78,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-25T07:34:59.999Z",
-    "ago": "30m ago",
+    "ago": "31m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -102,9 +102,9 @@
     "positionUpdates": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.0003967,
-        "pnlPct": -2.2,
-        "pnlUSD": -0.22,
+        "currentPrice": null,
+        "pnlPct": -3.2,
+        "pnlUSD": -0.32,
         "quantScore": 0.0149,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -116,9 +116,9 @@
       },
       {
         "sym": "CLAWD",
-        "currentPrice": 0.00004018,
-        "pnlPct": 1.1,
-        "pnlUSD": 0.11,
+        "currentPrice": null,
+        "pnlPct": 2.4,
+        "pnlUSD": 0.24,
         "quantScore": 0.0318,
         "volumeTrend": "declining",
         "recommendation": "hold",
@@ -132,9 +132,9 @@
     "positionAssessments": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.0003967,
-        "pnlPct": -2.2,
-        "pnlUSD": -0.22,
+        "currentPrice": null,
+        "pnlPct": -3.2,
+        "pnlUSD": -0.32,
         "quantScore": 0.0149,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -146,9 +146,9 @@
       },
       {
         "sym": "CLAWD",
-        "currentPrice": 0.00004018,
-        "pnlPct": 1.1,
-        "pnlUSD": 0.11,
+        "currentPrice": null,
+        "pnlPct": 2.4,
+        "pnlUSD": 0.24,
         "quantScore": 0.0318,
         "volumeTrend": "declining",
         "recommendation": "hold",
@@ -381,9 +381,9 @@
       "positionUpdates": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.0003967,
-          "pnlPct": -2.2,
-          "pnlUSD": -0.22,
+          "currentPrice": null,
+          "pnlPct": -3.2,
+          "pnlUSD": -0.32,
           "quantScore": 0.0149,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -395,9 +395,9 @@
         },
         {
           "sym": "CLAWD",
-          "currentPrice": 0.00004018,
-          "pnlPct": 1.1,
-          "pnlUSD": 0.11,
+          "currentPrice": null,
+          "pnlPct": 2.4,
+          "pnlUSD": 0.24,
           "quantScore": 0.0318,
           "volumeTrend": "declining",
           "recommendation": "hold",
@@ -411,9 +411,9 @@
       "positionAssessments": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.0003967,
-          "pnlPct": -2.2,
-          "pnlUSD": -0.22,
+          "currentPrice": null,
+          "pnlPct": -3.2,
+          "pnlUSD": -0.32,
           "quantScore": 0.0149,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -425,9 +425,9 @@
         },
         {
           "sym": "CLAWD",
-          "currentPrice": 0.00004018,
-          "pnlPct": 1.1,
-          "pnlUSD": 0.11,
+          "currentPrice": null,
+          "pnlPct": 2.4,
+          "pnlUSD": 0.24,
           "quantScore": 0.0318,
           "volumeTrend": "declining",
           "recommendation": "hold",
@@ -13623,7 +13623,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 32420,
+      "expCount": 32430,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
