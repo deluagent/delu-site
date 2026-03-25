@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-25T06:30:19.842Z",
+  "updatedAt": "2026-03-25T06:34:49.083Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71067,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 5 min",
+  "nextCycle": "< 1 min",
   "wallet": {
     "totalUSD": 38.48,
     "positionsUSD": 20.04,
     "liquidUSDC": 4.7,
     "ethUSD": 12.89,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0,
-    "unrealPnlPct": 0
+    "unrealPnlUSD": 0.22,
+    "unrealPnlPct": 1.1
   },
   "positions": [
     {
       "sym": "BNKR",
       "entryPrice": 0.0004196,
-      "currentPrice": 0.00038849,
+      "currentPrice": 0.00039765,
       "sizeUSD": 10,
-      "currentUSD": 9.58,
-      "pnlUSD": -0.42,
-      "pnlPct": -4.2,
+      "currentUSD": 9.8,
+      "pnlUSD": -0.2,
+      "pnlPct": -2,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -78,7 +78,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-25T06:05:00.001Z",
-    "ago": "25m ago",
+    "ago": "30m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -102,9 +102,9 @@
     "positionUpdates": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.00038849,
-        "pnlPct": -4.2,
-        "pnlUSD": -0.42,
+        "currentPrice": 0.00039765,
+        "pnlPct": -2,
+        "pnlUSD": -0.2,
         "quantScore": 0.0253,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -132,9 +132,9 @@
     "positionAssessments": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.00038849,
-        "pnlPct": -4.2,
-        "pnlUSD": -0.42,
+        "currentPrice": 0.00039765,
+        "pnlPct": -2,
+        "pnlUSD": -0.2,
         "quantScore": 0.0253,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -421,9 +421,9 @@
       "positionUpdates": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00038849,
-          "pnlPct": -4.2,
-          "pnlUSD": -0.42,
+          "currentPrice": 0.00039765,
+          "pnlPct": -2,
+          "pnlUSD": -0.2,
           "quantScore": 0.0253,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -451,9 +451,9 @@
       "positionAssessments": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00038849,
-          "pnlPct": -4.2,
-          "pnlUSD": -0.42,
+          "currentPrice": 0.00039765,
+          "pnlPct": -2,
+          "pnlUSD": -0.2,
           "quantScore": 0.0253,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -12937,7 +12937,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 31640,
+      "expCount": 31680,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
