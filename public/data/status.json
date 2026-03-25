@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-25T18:35:38.956Z",
+  "updatedAt": "2026-03-25T18:40:00.611Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 70848,
+  "btcPrice": 70921,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 25 min",
   "wallet": {
-    "totalUSD": 63.2,
-    "positionsUSD": 9.67,
+    "totalUSD": 72.88,
+    "positionsUSD": 9.76,
     "liquidUSDC": 40.2,
-    "ethUSD": 12.53,
+    "ethUSD": 12.51,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.33,
-    "unrealPnlPct": -3.3
+    "unrealPnlUSD": -0.24,
+    "unrealPnlPct": -2.4
   },
   "positions": [
     {
       "sym": "BNKR",
       "entryPrice": 0.0004196,
-      "currentPrice": null,
+      "currentPrice": 0.00039595,
       "sizeUSD": 10,
-      "currentUSD": 9.67,
-      "pnlUSD": -0.33,
-      "pnlPct": -3.3,
+      "currentUSD": 9.76,
+      "pnlUSD": -0.24,
+      "pnlPct": -2.4,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -43,39 +43,39 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 52.73,
+    "amountUSD": 52.71,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-25T18:05:00.029Z",
-    "ago": "31m ago",
+    "ts": "2026-03-25T18:35:00.025Z",
+    "ago": "5m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 70847.78,
-      "sma200": 70685.85405000001,
-      "pctFrom200": 0.002290782960413135,
-      "volRatio": 0.8602903882874665,
+      "btcNow": 70921.18,
+      "sma200": 70686.22105000001,
+      "pctFrom200": 0.003323971015988916,
+      "volRatio": 0.8605658781683313,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 1,
-    "screened": 1,
+    "seenCount": 2,
+    "screened": 2,
     "traded": [],
     "action": "smart_yield",
     "asset": "USDC",
     "confidence": null,
     "reasoning": "RANGE_TIGHT regime — monitoring market",
-    "topSignal": "VIRTUAL score=0.28 ret1h=0.0%",
+    "topSignal": "LITCOIN score=0.33 ret1h=0.0%",
     "positionUpdates": [
       {
         "sym": "BNKR",
-        "currentPrice": null,
-        "pnlPct": -3.3,
-        "pnlUSD": -0.33,
+        "currentPrice": 0.00039595,
+        "pnlPct": -2.4,
+        "pnlUSD": -0.24,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -86,9 +86,9 @@
     "positionAssessments": [
       {
         "sym": "BNKR",
-        "currentPrice": null,
-        "pnlPct": -3.3,
-        "pnlUSD": -0.33,
+        "currentPrice": 0.00039595,
+        "pnlPct": -2.4,
+        "pnlUSD": -0.24,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -292,6 +292,63 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-25T18:35:00.025Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 70921.18,
+        "sma200": 70686.22105000001,
+        "pctFrom200": 0.003323971015988916,
+        "volRatio": 0.8605658781683313,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "Scanned 2 tokens [LITCOIN(0.33), THENICKSHIRLEY(0.27)]. Both tokens lack quant scores (new/unproven), velocity signals are modest (4.2, 3.5) without sustained onchain confirmation, and social attention metrics (1.7, 1.4) are weak — insufficient signal strength to warrant deeper analysis even in a range-bound environment.",
+      "seenCount": 2,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "BNKR",
+          "currentPrice": 0.00039595,
+          "pnlPct": -2.4,
+          "pnlUSD": -0.24,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "BNKR",
+          "currentPrice": 0.00039595,
+          "pnlPct": -2.4,
+          "pnlUSD": -0.24,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "LITCOIN score=0.33 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": "bankr-llm",
+      "dataSources": null
+    },
+    {
       "ts": "2026-03-25T18:05:00.029Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -311,32 +368,8 @@
       "reasoning": "Scanned 1 tokens [VIRTUAL(0.28)]. VIRTUAL lacks quant score (new token), velocity of 3.6 is marginal without quant confirmation, and attention of 1.5 is modest; no sustained momentum or onchain strength signal to justify deeper analysis in tight range conditions.",
       "seenCount": 1,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "BNKR",
-          "currentPrice": null,
-          "pnlPct": -3.3,
-          "pnlUSD": -0.33,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "BNKR",
-          "currentPrice": null,
-          "pnlPct": -3.3,
-          "pnlUSD": -0.33,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -10923,341 +10956,6 @@
           {
             "sym": "NOOK",
             "score": 0.5333333333333333,
-            "source": "checkr"
-          }
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-24T19:35:00.004Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 69408.33,
-        "sma200": 71064.07715000001,
-        "pctFrom200": -0.023299354841477878,
-        "volRatio": 0.8595390222815117,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": 80,
-      "reasoning": "No high-conviction entry this cycle — holding current positions",
-      "seenCount": 12,
-      "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.0003907051,
-          "entryPrice": 0.0004196,
-          "pnlPct": -6.89,
-          "quantScore": -0.0183,
-          "volumeTrend": "increasing",
-          "recommendation": "hold",
-          "ret1h": 0.005324004981525209,
-          "ret6h": -0.01641040048718139,
-          "transferStats": {
-            "uniqueBuyers": 3,
-            "buyRatio": 0.5
-          }
-        },
-        {
-          "sym": "CLAWD",
-          "currentPrice": 0.0000373222,
-          "entryPrice": 0.00003887677489,
-          "pnlPct": -4,
-          "quantScore": -0.0074,
-          "volumeTrend": "increasing",
-          "recommendation": "hold",
-          "ret1h": 0.008476431090154874,
-          "ret6h": -0.14318444783191614,
-          "transferStats": {
-            "uniqueBuyers": 2,
-            "buyRatio": 0.5
-          }
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.0003907051,
-          "entryPrice": 0.0004196,
-          "pnlPct": -6.89,
-          "quantScore": -0.0183,
-          "volumeTrend": "increasing",
-          "recommendation": "hold",
-          "ret1h": 0.005324004981525209,
-          "ret6h": -0.01641040048718139,
-          "transferStats": {
-            "uniqueBuyers": 3,
-            "buyRatio": 0.5
-          }
-        },
-        {
-          "sym": "CLAWD",
-          "currentPrice": 0.0000373222,
-          "entryPrice": 0.00003887677489,
-          "pnlPct": -4,
-          "quantScore": -0.0074,
-          "volumeTrend": "increasing",
-          "recommendation": "hold",
-          "ret1h": 0.008476431090154874,
-          "ret6h": -0.14318444783191614,
-          "transferStats": {
-            "uniqueBuyers": 2,
-            "buyRatio": 0.5
-          }
-        }
-      ],
-      "checkrSustained": [
-        {
-          "sym": "TIBBIR",
-          "att1h": 3.6,
-          "att4h": -0.3,
-          "velocity": 8.67,
-          "windows": 3
-        },
-        {
-          "sym": "DRB",
-          "att1h": 5.3,
-          "att4h": 0,
-          "velocity": 0,
-          "windows": 3
-        },
-        {
-          "sym": "TOSHI",
-          "att1h": 3.9,
-          "att4h": 0.3,
-          "velocity": 0,
-          "windows": 4
-        },
-        {
-          "sym": "KTA",
-          "att1h": 2.1,
-          "att4h": 0.2,
-          "velocity": 10.5,
-          "windows": 3
-        },
-        {
-          "sym": "VVV",
-          "att1h": 0,
-          "att4h": 0.7,
-          "velocity": 8,
-          "windows": 3
-        }
-      ],
-      "checkrTraded": {
-        "sym": "ROBOTMONEY",
-        "att1h": -0.1,
-        "att4h": -0.4,
-        "att8h": -1.8,
-        "velocity": 17.45,
-        "windows": 0,
-        "checkrSource": true
-      },
-      "alchemyDiscovered": [
-        {
-          "sym": "ZED",
-          "liq": 42314.2946,
-          "score": 0.43936854147315646,
-          "address": "0xa7921e4c3dc8e38069061a07c08fc0d2a35b9e6f"
-        }
-      ],
-      "socialCandidates": [
-        {
-          "sym": "ROBOTMONEY",
-          "velocity": 17.45,
-          "score": 1
-        },
-        {
-          "sym": "JUNO",
-          "velocity": 17.14,
-          "score": 1
-        },
-        {
-          "sym": "FELIX",
-          "velocity": 14.29,
-          "score": 0.9526666666666667
-        },
-        {
-          "sym": "ODAI",
-          "velocity": 12,
-          "score": 0.8
-        },
-        {
-          "sym": "KTA",
-          "velocity": 10.5,
-          "score": 0.7
-        },
-        {
-          "sym": "TIBBIR",
-          "velocity": 8.67,
-          "score": 0.578
-        }
-      ],
-      "quantTop5": [
-        {
-          "sym": "ROBOTMONEY",
-          "score": 1,
-          "source": "checkr"
-        },
-        {
-          "sym": "JUNO",
-          "score": 1,
-          "source": "checkr"
-        },
-        {
-          "sym": "FELIX",
-          "score": 0.9526666666666667,
-          "source": "checkr"
-        },
-        {
-          "sym": "ODAI",
-          "score": 0.8,
-          "source": "checkr"
-        },
-        {
-          "sym": "KTA",
-          "score": 0.7,
-          "source": "checkr"
-        }
-      ],
-      "tradedEntry": {
-        "sym": "ROBOTMONEY",
-        "ret1h": null,
-        "score": 1,
-        "source": "checkr",
-        "unusualActivity": false
-      },
-      "topSignal": "JUNO score=1.17 ret1h=0.0%",
-      "layers": [
-        "bankr-screen",
-        "venice-e2ee"
-      ],
-      "screenLayer": "bankr-llm",
-      "dataSources": {
-        "checkrTokens": 33,
-        "checkrSustained": [
-          {
-            "sym": "TIBBIR",
-            "att1h": 3.6,
-            "att4h": -0.3,
-            "velocity": 8.67,
-            "windows": 3
-          },
-          {
-            "sym": "DRB",
-            "att1h": 5.3,
-            "att4h": 0,
-            "velocity": 0,
-            "windows": 3
-          },
-          {
-            "sym": "TOSHI",
-            "att1h": 3.9,
-            "att4h": 0.3,
-            "velocity": 0,
-            "windows": 4
-          },
-          {
-            "sym": "KTA",
-            "att1h": 2.1,
-            "att4h": 0.2,
-            "velocity": 10.5,
-            "windows": 3
-          },
-          {
-            "sym": "VVV",
-            "att1h": 0,
-            "att4h": 0.7,
-            "velocity": 8,
-            "windows": 3
-          }
-        ],
-        "checkrTraded": {
-          "sym": "ROBOTMONEY",
-          "att1h": -0.1,
-          "att4h": -0.4,
-          "att8h": -1.8,
-          "velocity": 17.45,
-          "windows": 0,
-          "checkrSource": true
-        },
-        "tradedEntry": {
-          "sym": "ROBOTMONEY",
-          "ret1h": null,
-          "score": 1,
-          "source": "checkr",
-          "unusualActivity": false
-        },
-        "discoveryPassed": 10,
-        "alchemyDiscovered": [
-          {
-            "sym": "ZED",
-            "liq": 42314.2946,
-            "score": 0.43936854147315646,
-            "address": "0xa7921e4c3dc8e38069061a07c08fc0d2a35b9e6f"
-          }
-        ],
-        "socialCandidates": [
-          {
-            "sym": "ROBOTMONEY",
-            "velocity": 17.45,
-            "score": 1
-          },
-          {
-            "sym": "JUNO",
-            "velocity": 17.14,
-            "score": 1
-          },
-          {
-            "sym": "FELIX",
-            "velocity": 14.29,
-            "score": 0.9526666666666667
-          },
-          {
-            "sym": "ODAI",
-            "velocity": 12,
-            "score": 0.8
-          },
-          {
-            "sym": "KTA",
-            "velocity": 10.5,
-            "score": 0.7
-          },
-          {
-            "sym": "TIBBIR",
-            "velocity": 8.67,
-            "score": 0.578
-          }
-        ],
-        "quantTop5": [
-          {
-            "sym": "ROBOTMONEY",
-            "score": 1,
-            "source": "checkr"
-          },
-          {
-            "sym": "JUNO",
-            "score": 1,
-            "source": "checkr"
-          },
-          {
-            "sym": "FELIX",
-            "score": 0.9526666666666667,
-            "source": "checkr"
-          },
-          {
-            "sym": "ODAI",
-            "score": 0.8,
-            "source": "checkr"
-          },
-          {
-            "sym": "KTA",
-            "score": 0.7,
             "source": "checkr"
           }
         ]
