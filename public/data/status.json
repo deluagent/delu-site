@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-25T10:04:53.168Z",
+  "updatedAt": "2026-03-25T10:05:53.874Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71260,
   "pctFrom200": "-4.2%",
@@ -11,18 +11,18 @@
     "liquidUSDC": 4.95,
     "ethUSD": 7.66,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0.13,
-    "unrealPnlPct": 0.65
+    "unrealPnlUSD": 0.11,
+    "unrealPnlPct": 0.55
   },
   "positions": [
     {
       "sym": "BNKR",
       "entryPrice": 0.0004196,
-      "currentPrice": 0.00039139,
+      "currentPrice": null,
       "sizeUSD": 10,
-      "currentUSD": 9.65,
-      "pnlUSD": -0.35,
-      "pnlPct": -3.5,
+      "currentUSD": 9.75,
+      "pnlUSD": -0.25,
+      "pnlPct": -2.5,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -41,11 +41,11 @@
     {
       "sym": "CLAWD",
       "entryPrice": 0.00003887677489,
-      "currentPrice": 0.00004165,
+      "currentPrice": null,
       "sizeUSD": 10,
-      "currentUSD": 10.48,
-      "pnlUSD": 0.48,
-      "pnlPct": 4.8,
+      "currentUSD": 10.36,
+      "pnlUSD": 0.36,
+      "pnlPct": 3.6,
       "peakPct": 7.07,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -72,7 +72,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-25T09:35:00.024Z",
-    "ago": "30m ago",
+    "ago": "31m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -96,9 +96,9 @@
     "positionUpdates": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.00039139,
-        "pnlPct": -3.5,
-        "pnlUSD": -0.35,
+        "currentPrice": null,
+        "pnlPct": -2.5,
+        "pnlUSD": -0.25,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -107,9 +107,9 @@
       },
       {
         "sym": "CLAWD",
-        "currentPrice": 0.00004165,
-        "pnlPct": 4.8,
-        "pnlUSD": 0.48,
+        "currentPrice": null,
+        "pnlPct": 3.6,
+        "pnlUSD": 0.36,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -120,9 +120,9 @@
     "positionAssessments": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.00039139,
-        "pnlPct": -3.5,
-        "pnlUSD": -0.35,
+        "currentPrice": null,
+        "pnlPct": -2.5,
+        "pnlUSD": -0.25,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -131,9 +131,9 @@
       },
       {
         "sym": "CLAWD",
-        "currentPrice": 0.00004165,
-        "pnlPct": 4.8,
-        "pnlUSD": 0.48,
+        "currentPrice": null,
+        "pnlPct": 3.6,
+        "pnlUSD": 0.36,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -359,9 +359,9 @@
       "positionUpdates": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00039139,
-          "pnlPct": -3.5,
-          "pnlUSD": -0.35,
+          "currentPrice": null,
+          "pnlPct": -2.5,
+          "pnlUSD": -0.25,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -370,9 +370,9 @@
         },
         {
           "sym": "CLAWD",
-          "currentPrice": 0.00004165,
-          "pnlPct": 4.8,
-          "pnlUSD": 0.48,
+          "currentPrice": null,
+          "pnlPct": 3.6,
+          "pnlUSD": 0.36,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -383,9 +383,9 @@
       "positionAssessments": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00039139,
-          "pnlPct": -3.5,
-          "pnlUSD": -0.35,
+          "currentPrice": null,
+          "pnlPct": -2.5,
+          "pnlUSD": -0.25,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -394,9 +394,9 @@
         },
         {
           "sym": "CLAWD",
-          "currentPrice": 0.00004165,
-          "pnlPct": 4.8,
-          "pnlUSD": 0.48,
+          "currentPrice": null,
+          "pnlPct": 3.6,
+          "pnlUSD": 0.36,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -14027,7 +14027,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 33410,
+      "expCount": 33420,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
