@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-03-25T09:34:13.678Z",
+  "updatedAt": "2026-03-25T09:34:45.540Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71255,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 1 min",
+  "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 32.69,
+    "totalUSD": 33.64,
     "positionsUSD": 20.08,
     "liquidUSDC": 4.95,
     "ethUSD": 7.65,
@@ -72,13 +72,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 4.95,
+    "amountUSD": 12.6,
     "apy": 0,
-    "note": "Liquid USDC available for next trade entry"
+    "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
     "ts": "2026-03-25T09:05:00.026Z",
-    "ago": "29m ago",
+    "ago": "30m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -13999,7 +13999,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 33155,
+      "expCount": 33165,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
