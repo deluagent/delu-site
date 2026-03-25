@@ -1,24 +1,24 @@
 {
-  "updatedAt": "2026-03-25T11:05:03.078Z",
+  "updatedAt": "2026-03-25T11:09:48.858Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 71362,
+  "btcPrice": 71503,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 26 min",
   "wallet": {
-    "totalUSD": 32.71,
-    "positionsUSD": 20.1,
-    "liquidUSDC": 4.95,
-    "ethUSD": 7.66,
+    "totalUSD": 28.43,
+    "positionsUSD": 9.76,
+    "liquidUSDC": 5.2,
+    "ethUSD": 12.62,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0.12,
-    "unrealPnlPct": 0.6
+    "unrealPnlUSD": -0.14,
+    "unrealPnlPct": -1.4
   },
   "positions": [
     {
       "sym": "BNKR",
       "entryPrice": 0.0004196,
-      "currentPrice": 0.0004001,
+      "currentPrice": 0.00039981,
       "sizeUSD": 10,
       "currentUSD": 9.86,
       "pnlUSD": -0.14,
@@ -37,79 +37,45 @@
       "quantScore": null,
       "ret1h": null,
       "transferStats": null
-    },
-    {
-      "sym": "CLAWD",
-      "entryPrice": 0.00003887677489,
-      "currentPrice": 0.00004079,
-      "sizeUSD": 10,
-      "currentUSD": 10.26,
-      "pnlUSD": 0.26,
-      "pnlPct": 2.6,
-      "peakPct": 7.07,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": true,
-      "openedAt": "2026-03-24T16:08:02.275Z",
-      "entryTx": null,
-      "contractAddress": "0x9f86db9fc6f7c9408e8fda3ff8ce4e78ac7a6b07",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
-      "quantScore": null,
-      "ret1h": null,
-      "transferStats": null
     }
   ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 4.95,
+    "amountUSD": 17.82,
     "apy": 0,
-    "note": "Liquid USDC available for next trade entry"
+    "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-25T10:35:00.022Z",
-    "ago": "30m ago",
+    "ts": "2026-03-25T11:05:00.019Z",
+    "ago": "5m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 71361.96,
-      "sma200": 70799.90090000002,
-      "pctFrom200": 0.007938698965043097,
-      "volRatio": 0.8963480316660434,
+      "btcNow": 71503.31,
+      "sma200": 70785.79470000003,
+      "pctFrom200": 0.010136430664385403,
+      "volRatio": 0.8775907148790592,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 1,
-    "screened": 1,
+    "seenCount": 2,
+    "screened": 2,
     "traded": [],
     "action": "smart_yield",
     "asset": "USDC",
     "confidence": null,
     "reasoning": "RANGE_TIGHT regime — monitoring market",
-    "topSignal": "THENICKSHIRLEY score=0.25 ret1h=0.0%",
+    "topSignal": "TORIVA score=0.34 ret1h=0.0%",
     "positionUpdates": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.0004001,
+        "currentPrice": 0.00039981,
         "pnlPct": -1.4,
         "pnlUSD": -0.14,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
-        "sym": "CLAWD",
-        "currentPrice": 0.00004079,
-        "pnlPct": 2.6,
-        "pnlUSD": 0.26,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -120,20 +86,9 @@
     "positionAssessments": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.0004001,
+        "currentPrice": 0.00039981,
         "pnlPct": -1.4,
         "pnlUSD": -0.14,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
-        "sym": "CLAWD",
-        "currentPrice": 0.00004079,
-        "pnlPct": 2.6,
-        "pnlUSD": 0.26,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -337,6 +292,63 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-25T11:05:00.019Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 71503.31,
+        "sma200": 70785.79470000003,
+        "pctFrom200": 0.010136430664385403,
+        "volRatio": 0.8775907148790592,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "Scanned 2 tokens [TORIVA(0.34), THENICKSHIRLEY(0.27)]. Both tokens are new (quant=n/a) with marginal velocity (4.4, 3.5) and weak attention scores (1.8, 1.4); no sustained momentum or onchain confirmation to justify deeper analysis in tight range conditions.",
+      "seenCount": 2,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "BNKR",
+          "currentPrice": 0.00039981,
+          "pnlPct": -1.4,
+          "pnlUSD": -0.14,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "BNKR",
+          "currentPrice": 0.00039981,
+          "pnlPct": -1.4,
+          "pnlUSD": -0.14,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "TORIVA score=0.34 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": "bankr-llm",
+      "dataSources": null
+    },
+    {
       "ts": "2026-03-25T10:35:00.022Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -356,54 +368,8 @@
       "reasoning": "Scanned 1 tokens [THENICKSHIRLEY(0.25)]. THENICKSHIRLEY lacks quant score (new token), velocity of 3.3 is marginal without confirmation, and attention of 1.3 is insufficient to demonstrate genuine strength against tight range conditions.",
       "seenCount": 1,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.0004001,
-          "pnlPct": -1.4,
-          "pnlUSD": -0.14,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "CLAWD",
-          "currentPrice": 0.00004079,
-          "pnlPct": 2.6,
-          "pnlUSD": 0.26,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.0004001,
-          "pnlPct": -1.4,
-          "pnlUSD": -0.14,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "CLAWD",
-          "currentPrice": 0.00004079,
-          "pnlPct": 2.6,
-          "pnlUSD": 0.26,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -14126,39 +14092,6 @@
       "layers": [],
       "screenLayer": "bankr-llm",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-24T12:17:10.926Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 71045.03,
-        "sma200": 71203.08660000002,
-        "pctFrom200": -0.002219799836599012,
-        "volRatio": 0.8605566367321918,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "Scanned 1 tokens [THENICKSHIRLEY(0.27)]. THENICKSHIRLEY lacks quant score (new token), velocity of 3.6 is marginal without confirmation, and attention of 1.4 is weak; no sustained momentum or positive 1h return data provided to justify deeper analysis in tight range conditions.",
-      "seenCount": 1,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "THENICKSHIRLEY score=0.27 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": "bankr-llm",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -14217,7 +14150,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 33910,
+      "expCount": 33950,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
