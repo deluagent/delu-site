@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-03-25T05:33:06.801Z",
+  "updatedAt": "2026-03-25T05:34:56.920Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70983,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 2 min",
+  "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 38.43,
+    "totalUSD": 37.63,
     "positionsUSD": 20.05,
     "liquidUSDC": 4.7,
     "ethUSD": 12.89,
@@ -18,7 +18,7 @@
     {
       "sym": "BNKR",
       "entryPrice": 0.0004196,
-      "currentPrice": 0.00039118,
+      "currentPrice": 0.00039105,
       "sizeUSD": 10,
       "currentUSD": 9.64,
       "pnlUSD": -0.36,
@@ -72,13 +72,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 17.59,
+    "amountUSD": 4.7,
     "apy": 0,
-    "note": "USDC low — using ETH reserve for high-conviction trades"
+    "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-25T05:05:00.006Z",
-    "ago": "28m ago",
+    "ago": "30m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -102,7 +102,7 @@
     "positionUpdates": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.00039118,
+        "currentPrice": 0.00039105,
         "pnlPct": -3.6,
         "pnlUSD": -0.36,
         "quantScore": 0.0206,
@@ -132,7 +132,7 @@
     "positionAssessments": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.00039118,
+        "currentPrice": 0.00039105,
         "pnlPct": -3.6,
         "pnlUSD": -0.36,
         "quantScore": 0.0206,
@@ -421,7 +421,7 @@
       "positionUpdates": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00039118,
+          "currentPrice": 0.00039105,
           "pnlPct": -3.6,
           "pnlUSD": -0.36,
           "quantScore": 0.0206,
@@ -451,7 +451,7 @@
       "positionAssessments": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00039118,
+          "currentPrice": 0.00039105,
           "pnlPct": -3.6,
           "pnlUSD": -0.36,
           "quantScore": 0.0206,
@@ -12375,7 +12375,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 31165,
+      "expCount": 31180,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
