@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-03-25T05:45:42.706Z",
+  "updatedAt": "2026-03-25T05:49:51.173Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71134,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 20 min",
+  "nextCycle": "in 16 min",
   "wallet": {
-    "totalUSD": 58.46,
-    "positionsUSD": 20.05,
-    "liquidUSDC": 0,
-    "ethUSD": 0,
+    "totalUSD": 38.43,
+    "positionsUSD": 20.03,
+    "liquidUSDC": 4.7,
+    "ethUSD": 12.89,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0.05,
-    "unrealPnlPct": 0.25
+    "unrealPnlUSD": 0.03,
+    "unrealPnlPct": 0.15
   },
   "positions": [
     {
@@ -44,11 +44,11 @@
     {
       "sym": "CLAWD",
       "entryPrice": 0.00003887677489,
-      "currentPrice": 0.00004059,
+      "currentPrice": 0.00004143,
       "sizeUSD": 10,
-      "currentUSD": 10.44,
-      "pnlUSD": 0.44,
-      "pnlPct": 4.4,
+      "currentUSD": 10.42,
+      "pnlUSD": 0.42,
+      "pnlPct": 4.2,
       "peakPct": 7.07,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -72,13 +72,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 0,
+    "amountUSD": 17.59,
     "apy": 0,
-    "note": "Liquid USDC available for next trade entry"
+    "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
     "ts": "2026-03-25T05:35:00.005Z",
-    "ago": "11m ago",
+    "ago": "15m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -116,9 +116,9 @@
       },
       {
         "sym": "CLAWD",
-        "currentPrice": 0.00004059,
-        "pnlPct": 4.4,
-        "pnlUSD": 0.44,
+        "currentPrice": 0.00004143,
+        "pnlPct": 4.2,
+        "pnlUSD": 0.42,
         "quantScore": 0.0045,
         "volumeTrend": "declining",
         "recommendation": "hold",
@@ -146,9 +146,9 @@
       },
       {
         "sym": "CLAWD",
-        "currentPrice": 0.00004059,
-        "pnlPct": 4.4,
-        "pnlUSD": 0.44,
+        "currentPrice": 0.00004143,
+        "pnlPct": 4.2,
+        "pnlUSD": 0.42,
         "quantScore": 0.0045,
         "volumeTrend": "declining",
         "recommendation": "hold",
@@ -428,9 +428,9 @@
         },
         {
           "sym": "CLAWD",
-          "currentPrice": 0.00004059,
-          "pnlPct": 4.4,
-          "pnlUSD": 0.44,
+          "currentPrice": 0.00004143,
+          "pnlPct": 4.2,
+          "pnlUSD": 0.42,
           "quantScore": 0.0045,
           "volumeTrend": "declining",
           "recommendation": "hold",
@@ -458,9 +458,9 @@
         },
         {
           "sym": "CLAWD",
-          "currentPrice": 0.00004059,
-          "pnlPct": 4.4,
-          "pnlUSD": 0.44,
+          "currentPrice": 0.00004143,
+          "pnlPct": 4.2,
+          "pnlUSD": 0.42,
           "quantScore": 0.0045,
           "volumeTrend": "declining",
           "recommendation": "hold",
@@ -12642,7 +12642,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 31270,
+      "expCount": 31305,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
