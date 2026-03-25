@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-25T12:04:52.920Z",
+  "updatedAt": "2026-03-25T12:06:36.005Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 71937,
+  "btcPrice": 71795,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 29 min",
   "wallet": {
     "totalUSD": 28.45,
     "positionsUSD": 9.77,
@@ -32,14 +32,11 @@
       "contractAddress": "0x22af33fe49fd1fa80c7149773dde5890d3c76f3b",
       "source": "universe",
       "chain": "base",
-      "volumeTrend": "declining",
-      "recommendation": "hold",
-      "quantScore": 0.0297,
-      "ret1h": 0.42,
-      "transferStats": {
-        "uniqueBuyers": 11,
-        "buyRatio": 0.55
-      }
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
     }
   ],
   "yield": {
@@ -51,42 +48,39 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-25T11:35:00.010Z",
-    "ago": "30m ago",
+    "ts": "2026-03-25T12:05:00.016Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 71937.06,
-      "sma200": 70787.96345000002,
-      "pctFrom200": 0.01623293698527744,
-      "volRatio": 0.8807869151906796,
+      "btcNow": 71795.04,
+      "sma200": 70774.38815000003,
+      "pctFrom200": 0.01442120344208112,
+      "volRatio": 0.8714021979742701,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 6,
-    "screened": 6,
+    "seenCount": 3,
+    "screened": 3,
     "traded": [],
-    "action": "hold",
-    "asset": "DINO",
-    "confidence": 80,
-    "reasoning": "No high-conviction entry this cycle — holding current positions",
-    "topSignal": "DINO score=0.34 ret1h=0.0%",
+    "action": "smart_yield",
+    "asset": "USDC",
+    "confidence": null,
+    "reasoning": "RANGE_TIGHT regime — monitoring market",
+    "topSignal": "OWB score=0.29 ret1h=0.0%",
     "positionUpdates": [
       {
         "sym": "BNKR",
         "currentPrice": 0.00039291,
         "pnlPct": -3.1,
         "pnlUSD": -0.31,
-        "quantScore": 0.0297,
-        "volumeTrend": "declining",
-        "recommendation": "hold",
-        "ret1h": 0.42,
-        "transferStats": {
-          "uniqueBuyers": 11,
-          "buyRatio": 0.55
-        }
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
       }
     ],
     "positionAssessments": [
@@ -95,22 +89,15 @@
         "currentPrice": 0.00039291,
         "pnlPct": -3.1,
         "pnlUSD": -0.31,
-        "quantScore": 0.0297,
-        "volumeTrend": "declining",
-        "recommendation": "hold",
-        "ret1h": 0.42,
-        "transferStats": {
-          "uniqueBuyers": 11,
-          "buyRatio": 0.55
-        }
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
       }
     ],
     "checkrSustained": [],
-    "checkrTraded": {
-      "sym": "DINO",
-      "velocity": 4.375,
-      "checkrSource": false
-    },
+    "checkrTraded": null,
     "topScores": []
   },
   "performance": {
@@ -305,6 +292,63 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-25T12:05:00.016Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 71795.04,
+        "sma200": 70774.38815000003,
+        "pctFrom200": 0.01442120344208112,
+        "volRatio": 0.8714021979742701,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "Scanned 3 tokens [OWB(0.29), VIRTUAL(0.29), THENICKSHIRLEY(0.27)]. All three tokens are new (quant=n/a) with marginal scores below 0.3, velocity at threshold but lacking sustained onchain confirmation, and no positive 1h return data to demonstrate strength against tight range regime.",
+      "seenCount": 3,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "BNKR",
+          "currentPrice": 0.00039291,
+          "pnlPct": -3.1,
+          "pnlUSD": -0.31,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "BNKR",
+          "currentPrice": 0.00039291,
+          "pnlPct": -3.1,
+          "pnlUSD": -0.31,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "OWB score=0.29 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": "bankr-llm",
+      "dataSources": null
+    },
+    {
       "ts": "2026-03-25T11:35:00.010Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -327,13 +371,14 @@
       "positionUpdates": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00039291,
-          "pnlPct": -3.1,
-          "pnlUSD": -0.31,
+          "currentPrice": 0.0003967037,
+          "entryPrice": 0.0004196,
+          "pnlPct": -5.46,
           "quantScore": 0.0297,
           "volumeTrend": "declining",
           "recommendation": "hold",
-          "ret1h": 0.42,
+          "ret1h": 0.004154533562293014,
+          "ret6h": 0.014154053344465787,
           "transferStats": {
             "uniqueBuyers": 11,
             "buyRatio": 0.55
@@ -343,13 +388,14 @@
       "positionAssessments": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00039291,
-          "pnlPct": -3.1,
-          "pnlUSD": -0.31,
+          "currentPrice": 0.0003967037,
+          "entryPrice": 0.0004196,
+          "pnlPct": -5.46,
           "quantScore": 0.0297,
           "volumeTrend": "declining",
           "recommendation": "hold",
-          "ret1h": 0.42,
+          "ret1h": 0.004154533562293014,
+          "ret6h": 0.014154053344465787,
           "transferStats": {
             "uniqueBuyers": 11,
             "buyRatio": 0.55
@@ -14194,39 +14240,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-24T13:05:00.012Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 70979.32,
-        "sma200": 71186.50300000003,
-        "pctFrom200": -0.002910425309135062,
-        "volRatio": 0.8609080826475635,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "Scanned 1 tokens [FLOCK(0.30)]. FLOCK has quant=n/a (new token, no historical data), velocity=3.9 is marginal without quant confirmation, and single attention metric (1.6) insufficient to establish genuine strength against tight range regime without sustained momentum evidence.",
-      "seenCount": 1,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "FLOCK score=0.30 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": "bankr-llm",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -14285,7 +14298,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 34400,
+      "expCount": 34415,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
