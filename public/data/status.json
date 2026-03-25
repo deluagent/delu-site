@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-03-25T22:30:21.469Z",
+  "updatedAt": "2026-03-25T22:34:46.389Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71095,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 5 min",
+  "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 62.46,
-    "positionsUSD": 19.79,
+    "totalUSD": 62.55,
+    "positionsUSD": 19.88,
     "liquidUSDC": 30.17,
     "ethUSD": 12.5,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.01,
-    "unrealPnlPct": -0.05
+    "unrealPnlUSD": 0.02,
+    "unrealPnlPct": 0.1
   },
   "positions": [
     {
@@ -44,11 +44,11 @@
     {
       "sym": "TREX",
       "entryPrice": 0.2426561449,
-      "currentPrice": 0.25104462,
+      "currentPrice": 0.25174648,
       "sizeUSD": 10,
-      "currentUSD": 10.25,
-      "pnlUSD": 0.25,
-      "pnlPct": 2.5,
+      "currentUSD": 10.28,
+      "pnlUSD": 0.28,
+      "pnlPct": 2.8,
       "peakPct": 3.92,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -75,7 +75,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-25T22:05:00.016Z",
-    "ago": "25m ago",
+    "ago": "30m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -113,9 +113,9 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": 0.25104462,
-        "pnlPct": 2.5,
-        "pnlUSD": 0.25,
+        "currentPrice": 0.25174648,
+        "pnlPct": 2.8,
+        "pnlUSD": 0.28,
         "quantScore": null,
         "volumeTrend": "unknown",
         "recommendation": "hold",
@@ -140,9 +140,9 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": 0.25104462,
-        "pnlPct": 2.5,
-        "pnlUSD": 0.25,
+        "currentPrice": 0.25174648,
+        "pnlPct": 2.8,
+        "pnlUSD": 0.28,
         "quantScore": null,
         "volumeTrend": "unknown",
         "recommendation": "hold",
@@ -386,9 +386,9 @@
         },
         {
           "sym": "TREX",
-          "currentPrice": 0.25104462,
-          "pnlPct": 2.5,
-          "pnlUSD": 0.25,
+          "currentPrice": 0.25174648,
+          "pnlPct": 2.8,
+          "pnlUSD": 0.28,
           "quantScore": null,
           "volumeTrend": "unknown",
           "recommendation": "hold",
@@ -413,9 +413,9 @@
         },
         {
           "sym": "TREX",
-          "currentPrice": 0.25104462,
-          "pnlPct": 2.5,
-          "pnlUSD": 0.25,
+          "currentPrice": 0.25174648,
+          "pnlPct": 2.8,
+          "pnlUSD": 0.28,
           "quantScore": null,
           "volumeTrend": "unknown",
           "recommendation": "hold",
@@ -9716,7 +9716,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 35390,
+      "expCount": 35395,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
