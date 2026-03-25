@@ -1,24 +1,24 @@
 {
-  "updatedAt": "2026-03-25T19:45:50.559Z",
+  "updatedAt": "2026-03-25T19:50:04.377Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70932,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 20 min",
+  "nextCycle": "in 15 min",
   "wallet": {
-    "totalUSD": 63.24,
-    "positionsUSD": 19.72,
+    "totalUSD": 63.19,
+    "positionsUSD": 19.69,
     "liquidUSDC": 30.17,
-    "ethUSD": 12.55,
+    "ethUSD": 12.53,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.42,
-    "unrealPnlPct": -2.1
+    "unrealPnlUSD": -0.44,
+    "unrealPnlPct": -2.2
   },
   "positions": [
     {
       "sym": "BNKR",
       "entryPrice": 0.0004196,
-      "currentPrice": 0.00038777,
+      "currentPrice": 0.00038795,
       "sizeUSD": 10,
       "currentUSD": 9.56,
       "pnlUSD": -0.44,
@@ -41,11 +41,11 @@
     {
       "sym": "TREX",
       "entryPrice": 0.2426561449,
-      "currentPrice": 0.24521007,
+      "currentPrice": 0.24477924,
       "sizeUSD": 10,
-      "currentUSD": 10.02,
-      "pnlUSD": 0.02,
-      "pnlPct": 0.2,
+      "currentUSD": 10,
+      "pnlUSD": 0,
+      "pnlPct": 0,
       "peakPct": 0.86,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -66,13 +66,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 42.72,
+    "amountUSD": 42.7,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-25T19:35:00.021Z",
-    "ago": "11m ago",
+    "ago": "15m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -96,7 +96,7 @@
     "positionUpdates": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.00038777,
+        "currentPrice": 0.00038795,
         "pnlPct": -4.4,
         "pnlUSD": -0.44,
         "quantScore": null,
@@ -107,9 +107,9 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": 0.24521007,
-        "pnlPct": 0.2,
-        "pnlUSD": 0.02,
+        "currentPrice": 0.24477924,
+        "pnlPct": 0,
+        "pnlUSD": 0,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -120,7 +120,7 @@
     "positionAssessments": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.00038777,
+        "currentPrice": 0.00038795,
         "pnlPct": -4.4,
         "pnlUSD": -0.44,
         "quantScore": null,
@@ -131,9 +131,9 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": 0.24521007,
-        "pnlPct": 0.2,
-        "pnlUSD": 0.02,
+        "currentPrice": 0.24477924,
+        "pnlPct": 0,
+        "pnlUSD": 0,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -359,7 +359,7 @@
       "positionUpdates": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00038777,
+          "currentPrice": 0.00038795,
           "pnlPct": -4.4,
           "pnlUSD": -0.44,
           "quantScore": null,
@@ -370,9 +370,9 @@
         },
         {
           "sym": "TREX",
-          "currentPrice": 0.24521007,
-          "pnlPct": 0.2,
-          "pnlUSD": 0.02,
+          "currentPrice": 0.24477924,
+          "pnlPct": 0,
+          "pnlUSD": 0,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -383,7 +383,7 @@
       "positionAssessments": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00038777,
+          "currentPrice": 0.00038795,
           "pnlPct": -4.4,
           "pnlUSD": -0.44,
           "quantScore": null,
@@ -394,9 +394,9 @@
         },
         {
           "sym": "TREX",
-          "currentPrice": 0.24521007,
-          "pnlPct": 0.2,
-          "pnlUSD": 0.02,
+          "currentPrice": 0.24477924,
+          "pnlPct": 0,
+          "pnlUSD": 0,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -10661,7 +10661,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 35240,
+      "expCount": 35245,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
