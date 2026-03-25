@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-03-25T11:35:49.856Z",
+  "updatedAt": "2026-03-25T11:37:27.838Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 71503,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 71937,
+  "pctFrom200": "1.6%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 28.57,
-    "positionsUSD": 9.82,
+    "totalUSD": 28.53,
+    "positionsUSD": 9.8,
     "liquidUSDC": 5.2,
-    "ethUSD": 12.69,
+    "ethUSD": 12.67,
     "yieldUSD": 0,
     "unrealPnlUSD": -0.14,
     "unrealPnlPct": -1.4
@@ -32,55 +32,61 @@
       "contractAddress": "0x22af33fe49fd1fa80c7149773dde5890d3c76f3b",
       "source": "universe",
       "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
-      "quantScore": null,
-      "ret1h": null,
-      "transferStats": null
+      "volumeTrend": "declining",
+      "recommendation": "hold",
+      "quantScore": 0.0297,
+      "ret1h": 0.42,
+      "transferStats": {
+        "uniqueBuyers": 11,
+        "buyRatio": 0.55
+      }
     }
   ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 17.89,
+    "amountUSD": 17.87,
     "apy": 0,
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-25T11:05:00.019Z",
-    "ago": "31m ago",
+    "ts": "2026-03-25T11:35:00.010Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 71503.31,
-      "sma200": 70785.79470000003,
-      "pctFrom200": 0.010136430664385403,
-      "volRatio": 0.8775907148790592,
+      "btcNow": 71937.06,
+      "sma200": 70787.96345000002,
+      "pctFrom200": 0.01623293698527744,
+      "volRatio": 0.8807869151906796,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 2,
-    "screened": 2,
+    "seenCount": 6,
+    "screened": 6,
     "traded": [],
-    "action": "smart_yield",
-    "asset": "USDC",
-    "confidence": null,
-    "reasoning": "RANGE_TIGHT regime — monitoring market",
-    "topSignal": "TORIVA score=0.34 ret1h=0.0%",
+    "action": "hold",
+    "asset": "DINO",
+    "confidence": 80,
+    "reasoning": "No high-conviction entry this cycle — holding current positions",
+    "topSignal": "DINO score=0.34 ret1h=0.0%",
     "positionUpdates": [
       {
         "sym": "BNKR",
         "currentPrice": 0.00039981,
         "pnlPct": -1.4,
         "pnlUSD": -0.14,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
+        "quantScore": 0.0297,
+        "volumeTrend": "declining",
+        "recommendation": "hold",
+        "ret1h": 0.42,
+        "transferStats": {
+          "uniqueBuyers": 11,
+          "buyRatio": 0.55
+        }
       }
     ],
     "positionAssessments": [
@@ -89,15 +95,22 @@
         "currentPrice": 0.00039981,
         "pnlPct": -1.4,
         "pnlUSD": -0.14,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
+        "quantScore": 0.0297,
+        "volumeTrend": "declining",
+        "recommendation": "hold",
+        "ret1h": 0.42,
+        "transferStats": {
+          "uniqueBuyers": 11,
+          "buyRatio": 0.55
+        }
       }
     ],
     "checkrSustained": [],
-    "checkrTraded": null,
+    "checkrTraded": {
+      "sym": "DINO",
+      "velocity": 4.375,
+      "checkrSource": false
+    },
     "topScores": []
   },
   "performance": {
@@ -292,6 +305,185 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-25T11:35:00.010Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 71937.06,
+        "sma200": 70787.96345000002,
+        "pctFrom200": 0.01623293698527744,
+        "volRatio": 0.8807869151906796,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": 80,
+      "reasoning": "No high-conviction entry this cycle — holding current positions",
+      "seenCount": 4,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "BNKR",
+          "currentPrice": 0.00039981,
+          "pnlPct": -1.4,
+          "pnlUSD": -0.14,
+          "quantScore": 0.0297,
+          "volumeTrend": "declining",
+          "recommendation": "hold",
+          "ret1h": 0.42,
+          "transferStats": {
+            "uniqueBuyers": 11,
+            "buyRatio": 0.55
+          }
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "BNKR",
+          "currentPrice": 0.00039981,
+          "pnlPct": -1.4,
+          "pnlUSD": -0.14,
+          "quantScore": 0.0297,
+          "volumeTrend": "declining",
+          "recommendation": "hold",
+          "ret1h": 0.42,
+          "transferStats": {
+            "uniqueBuyers": 11,
+            "buyRatio": 0.55
+          }
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": {
+        "sym": "DINO",
+        "velocity": 4.375,
+        "checkrSource": false
+      },
+      "alchemyDiscovered": [],
+      "socialCandidates": [
+        {
+          "sym": "DINO",
+          "velocity": 4.375,
+          "score": 0.2916666666666667
+        },
+        {
+          "sym": "TREX",
+          "velocity": 4,
+          "score": 0.26666666666666666
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "velocity": 3.7733846427139017,
+          "score": 0.25155897618092676
+        },
+        {
+          "sym": "VIRTUAL",
+          "velocity": 4.375,
+          "score": 0.208
+        }
+      ],
+      "quantTop5": [
+        {
+          "sym": "DINO",
+          "score": 0.2916666666666667,
+          "source": "checkr"
+        },
+        {
+          "sym": "TREX",
+          "score": 0.26666666666666666,
+          "source": "checkr"
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "score": 0.25155897618092676,
+          "source": "checkr"
+        },
+        {
+          "sym": "VIRTUAL",
+          "score": 0.208,
+          "source": "checkr"
+        }
+      ],
+      "tradedEntry": {
+        "sym": "DINO",
+        "ret1h": null,
+        "score": 0.2916666666666667,
+        "source": "checkr",
+        "unusualActivity": false
+      },
+      "topSignal": "DINO score=0.34 ret1h=0.0%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "bankr-llm",
+      "dataSources": {
+        "checkrTokens": 24,
+        "checkrSustained": [],
+        "checkrTraded": {
+          "sym": "DINO",
+          "velocity": 4.375,
+          "checkrSource": false
+        },
+        "tradedEntry": {
+          "sym": "DINO",
+          "ret1h": null,
+          "score": 0.2916666666666667,
+          "source": "checkr",
+          "unusualActivity": false
+        },
+        "discoveryPassed": 4,
+        "alchemyDiscovered": [],
+        "socialCandidates": [
+          {
+            "sym": "DINO",
+            "velocity": 4.375,
+            "score": 0.2916666666666667
+          },
+          {
+            "sym": "TREX",
+            "velocity": 4,
+            "score": 0.26666666666666666
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "velocity": 3.7733846427139017,
+            "score": 0.25155897618092676
+          },
+          {
+            "sym": "VIRTUAL",
+            "velocity": 4.375,
+            "score": 0.208
+          }
+        ],
+        "quantTop5": [
+          {
+            "sym": "DINO",
+            "score": 0.2916666666666667,
+            "source": "checkr"
+          },
+          {
+            "sym": "TREX",
+            "score": 0.26666666666666666,
+            "source": "checkr"
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "score": 0.25155897618092676,
+            "source": "checkr"
+          },
+          {
+            "sym": "VIRTUAL",
+            "score": 0.208,
+            "source": "checkr"
+          }
+        ]
+      }
+    },
+    {
       "ts": "2026-03-25T11:05:00.019Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -311,32 +503,8 @@
       "reasoning": "Scanned 2 tokens [TORIVA(0.34), THENICKSHIRLEY(0.27)]. Both tokens are new (quant=n/a) with marginal velocity (4.4, 3.5) and weak attention scores (1.8, 1.4); no sustained momentum or onchain confirmation to justify deeper analysis in tight range conditions.",
       "seenCount": 2,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.00039981,
-          "pnlPct": -1.4,
-          "pnlUSD": -0.14,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.00039981,
-          "pnlPct": -1.4,
-          "pnlUSD": -0.14,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -14059,39 +14227,6 @@
       "layers": [],
       "screenLayer": "bankr-llm",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-24T12:35:00.017Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 70913.33,
-        "sma200": 71202.42810000002,
-        "pctFrom200": -0.004060228108990814,
-        "volRatio": 0.8613429175172775,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "Scanned 1 tokens [DINO(0.34)]. DINO has quant=n/a (new token, no historical data), velocity=4.4 is solid but single token with no comparative breadth signal, and insufficient onchain confirmation to warrant deeper analysis in tight range conditions.",
-      "seenCount": 1,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "DINO score=0.34 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": "bankr-llm",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -14150,7 +14285,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 34165,
+      "expCount": 34180,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
