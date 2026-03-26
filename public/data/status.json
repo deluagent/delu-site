@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-03-26T20:05:07.056Z",
+  "updatedAt": "2026-03-26T20:06:23.666Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 68427,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 68473,
+  "pctFrom200": "-2.4%",
   "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 29 min",
   "wallet": {
     "totalUSD": 46.82,
     "positionsUSD": 14.68,
     "liquidUSDC": 0,
-    "ethUSD": 22.63,
+    "ethUSD": 22.62,
     "yieldUSD": 0,
     "unrealPnlUSD": 3.51,
     "unrealPnlPct": 50.83
@@ -23,20 +23,23 @@
       "currentUSD": 10.41,
       "pnlUSD": 3.51,
       "pnlPct": 50.85,
-      "peakPct": 0.98,
+      "peakPct": 50.85,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": false,
+      "trailActivated": true,
       "openedAt": "2026-03-26T12:37:04.264Z",
       "entryTx": null,
       "contractAddress": "0x00000e7efa313f4e11bfff432471ed9423ac6b30",
       "source": "universe",
       "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
-      "quantScore": null,
-      "ret1h": null,
-      "transferStats": null
+      "volumeTrend": "stable",
+      "recommendation": "hold",
+      "quantScore": 0.0055,
+      "ret1h": 0.06,
+      "transferStats": {
+        "uniqueBuyers": 30,
+        "buyRatio": 0.5357142857142857
+      }
     }
   ],
   "yield": {
@@ -48,39 +51,42 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-26T19:35:00.009Z",
-    "ago": "30m ago",
+    "ts": "2026-03-26T20:05:00.006Z",
+    "ago": "1m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 68427.17,
-      "sma200": 70178.4766,
-      "pctFrom200": -0.024955038707693982,
-      "volRatio": 0.8465196062991259,
+      "btcNow": 68472.8,
+      "sma200": 70159.57034999998,
+      "pctFrom200": -0.024041913905477295,
+      "volRatio": 0.8463587685764024,
       "btcState": "RANGE",
       "ethState": "BEAR",
       "breadthFraction": "BTC:RANGE ETH:BEAR",
       "breadth": 0.5
     },
-    "seenCount": 1,
-    "screened": 1,
+    "seenCount": 3,
+    "screened": 3,
     "traded": [],
-    "action": "smart_yield",
-    "asset": "USDC",
-    "confidence": null,
-    "reasoning": "RANGE_TIGHT regime — monitoring market",
-    "topSignal": "THENICKSHIRLEY score=0.29 ret1h=0.0%",
+    "action": "hold",
+    "asset": "GIZA",
+    "confidence": 80,
+    "reasoning": "No high-conviction entry this cycle — holding current positions",
+    "topSignal": "GIZA score=0.58 ret1h=0.9%",
     "positionUpdates": [
       {
         "sym": "HYDX",
         "currentPrice": 0.09374086,
         "pnlPct": 50.85,
         "pnlUSD": 3.51,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
+        "quantScore": 0.0055,
+        "volumeTrend": "stable",
+        "recommendation": "hold",
+        "ret1h": 0.06,
+        "transferStats": {
+          "uniqueBuyers": 30,
+          "buyRatio": 0.5357142857142857
+        }
       }
     ],
     "positionAssessments": [
@@ -89,15 +95,22 @@
         "currentPrice": 0.09374086,
         "pnlPct": 50.85,
         "pnlUSD": 3.51,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
+        "quantScore": 0.0055,
+        "volumeTrend": "stable",
+        "recommendation": "hold",
+        "ret1h": 0.06,
+        "transferStats": {
+          "uniqueBuyers": 30,
+          "buyRatio": 0.5357142857142857
+        }
       }
     ],
     "checkrSustained": [],
-    "checkrTraded": null,
+    "checkrTraded": {
+      "sym": "GIZA",
+      "velocity": 3.289707959921107,
+      "checkrSource": false
+    },
     "topScores": []
   },
   "performance": {
@@ -316,6 +329,145 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-26T20:05:00.006Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 68472.8,
+        "sma200": 70159.57034999998,
+        "pctFrom200": -0.024041913905477295,
+        "volRatio": 0.8463587685764024,
+        "btcState": "RANGE",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:RANGE ETH:BEAR",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": 80,
+      "reasoning": "No high-conviction entry this cycle — holding current positions",
+      "seenCount": 2,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "HYDX",
+          "currentPrice": 0.09374086,
+          "pnlPct": 50.85,
+          "pnlUSD": 3.51,
+          "quantScore": 0.0055,
+          "volumeTrend": "stable",
+          "recommendation": "hold",
+          "ret1h": 0.06,
+          "transferStats": {
+            "uniqueBuyers": 30,
+            "buyRatio": 0.5357142857142857
+          }
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "HYDX",
+          "currentPrice": 0.09374086,
+          "pnlPct": 50.85,
+          "pnlUSD": 3.51,
+          "quantScore": 0.0055,
+          "volumeTrend": "stable",
+          "recommendation": "hold",
+          "ret1h": 0.06,
+          "transferStats": {
+            "uniqueBuyers": 30,
+            "buyRatio": 0.5357142857142857
+          }
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": {
+        "sym": "GIZA",
+        "velocity": 3.289707959921107,
+        "checkrSource": false
+      },
+      "alchemyDiscovered": [],
+      "socialCandidates": [
+        {
+          "sym": "TREX",
+          "velocity": 4.125,
+          "score": 0.275
+        }
+      ],
+      "quantTop5": [
+        {
+          "sym": "GIZA",
+          "score": 0.5482846599868512,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "TREX",
+          "score": 0.275,
+          "source": "checkr"
+        }
+      ],
+      "tradedEntry": {
+        "sym": "GIZA",
+        "liq": 287370.1568,
+        "ret1h": 0.009378606888394394,
+        "ret24h": 0.7037257292503261,
+        "buyers": 2,
+        "buyRatio": 0.5,
+        "address": "0x590830dfdf9a3f68afcdde2694773debdf267774",
+        "score": 0.5482846599868512,
+        "source": "bankr_trending",
+        "unusualActivity": false
+      },
+      "topSignal": "GIZA score=0.58 ret1h=0.9%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "bankr-llm",
+      "dataSources": {
+        "checkrTokens": 19,
+        "checkrSustained": [],
+        "checkrTraded": {
+          "sym": "GIZA",
+          "velocity": 3.289707959921107,
+          "checkrSource": false
+        },
+        "tradedEntry": {
+          "sym": "GIZA",
+          "liq": 287370.1568,
+          "ret1h": 0.009378606888394394,
+          "ret24h": 0.7037257292503261,
+          "buyers": 2,
+          "buyRatio": 0.5,
+          "address": "0x590830dfdf9a3f68afcdde2694773debdf267774",
+          "score": 0.5482846599868512,
+          "source": "bankr_trending",
+          "unusualActivity": false
+        },
+        "discoveryPassed": 2,
+        "alchemyDiscovered": [],
+        "socialCandidates": [
+          {
+            "sym": "TREX",
+            "velocity": 4.125,
+            "score": 0.275
+          }
+        ],
+        "quantTop5": [
+          {
+            "sym": "GIZA",
+            "score": 0.5482846599868512,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "TREX",
+            "score": 0.275,
+            "source": "checkr"
+          }
+        ]
+      }
+    },
+    {
       "ts": "2026-03-26T19:35:00.009Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -335,32 +487,8 @@
       "reasoning": "Scanned 1 tokens [THENICKSHIRLEY(0.29)]. THENICKSHIRLEY lacks quant score (new token), velocity of 3.8 is marginal without quant confirmation, and attention of 1.5 is insufficient to signal genuine strength against BEAR regime; no tokens meet the threshold of meaningful onchain signals required for deeper analysis.",
       "seenCount": 1,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "HYDX",
-          "currentPrice": 0.09374086,
-          "pnlPct": 50.85,
-          "pnlUSD": 3.51,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "HYDX",
-          "currentPrice": 0.09374086,
-          "pnlPct": 50.85,
-          "pnlUSD": 3.51,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -6209,149 +6337,6 @@
       "layers": [],
       "screenLayer": "bankr-llm",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-25T19:05:00.024Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 71004,
-        "sma200": 70670.52130000001,
-        "pctFrom200": 0.004718780813634558,
-        "volRatio": 0.8610198535399296,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "buy",
-      "asset": "TREX",
-      "confidence": 80,
-      "reasoning": "TREX has a high quant score of 0.292 and strong social velocity, indicating a potential buying opportunity. The token's onchain activity and unusual transfer activity detected by Alchemy also support this decision.",
-      "seenCount": 2,
-      "traded": [
-        "TREX"
-      ],
-      "positionUpdates": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.0003925293,
-          "entryPrice": 0.0004196,
-          "pnlPct": -6.45,
-          "quantScore": -0.0399,
-          "volumeTrend": "stable",
-          "recommendation": "hold",
-          "ret1h": 0.0010527483541244447,
-          "ret6h": -0.004665425190405308,
-          "transferStats": {
-            "uniqueBuyers": 5,
-            "buyRatio": 0.5
-          }
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.0003925293,
-          "entryPrice": 0.0004196,
-          "pnlPct": -6.45,
-          "quantScore": -0.0399,
-          "volumeTrend": "stable",
-          "recommendation": "hold",
-          "ret1h": 0.0010527483541244447,
-          "ret6h": -0.004665425190405308,
-          "transferStats": {
-            "uniqueBuyers": 5,
-            "buyRatio": 0.5
-          }
-        }
-      ],
-      "checkrSustained": [],
-      "checkrTraded": {
-        "sym": "TREX",
-        "velocity": 4.375,
-        "checkrSource": false
-      },
-      "alchemyDiscovered": [],
-      "socialCandidates": [
-        {
-          "sym": "TREX",
-          "velocity": 4.375,
-          "score": 0.2916666666666667
-        },
-        {
-          "sym": "THENICKSHIRLEY",
-          "velocity": 3.486458117267624,
-          "score": 0.151
-        }
-      ],
-      "quantTop5": [
-        {
-          "sym": "TREX",
-          "score": 0.2916666666666667,
-          "source": "checkr"
-        },
-        {
-          "sym": "THENICKSHIRLEY",
-          "score": 0.151,
-          "source": "checkr"
-        }
-      ],
-      "tradedEntry": {
-        "sym": "TREX",
-        "ret1h": null,
-        "score": 0.2916666666666667,
-        "source": "checkr",
-        "unusualActivity": false
-      },
-      "topSignal": "TREX score=0.34 ret1h=0.0%",
-      "layers": [
-        "bankr-screen",
-        "venice-e2ee"
-      ],
-      "screenLayer": "bankr-llm",
-      "dataSources": {
-        "checkrTokens": 22,
-        "checkrSustained": [],
-        "checkrTraded": {
-          "sym": "TREX",
-          "velocity": 4.375,
-          "checkrSource": false
-        },
-        "tradedEntry": {
-          "sym": "TREX",
-          "ret1h": null,
-          "score": 0.2916666666666667,
-          "source": "checkr",
-          "unusualActivity": false
-        },
-        "discoveryPassed": 2,
-        "alchemyDiscovered": [],
-        "socialCandidates": [
-          {
-            "sym": "TREX",
-            "velocity": 4.375,
-            "score": 0.2916666666666667
-          },
-          {
-            "sym": "THENICKSHIRLEY",
-            "velocity": 3.486458117267624,
-            "score": 0.151
-          }
-        ],
-        "quantTop5": [
-          {
-            "sym": "TREX",
-            "score": 0.2916666666666667,
-            "source": "checkr"
-          },
-          {
-            "sym": "THENICKSHIRLEY",
-            "score": 0.151,
-            "source": "checkr"
-          }
-        ]
-      }
     }
   ],
   "reasoningTraces": [
