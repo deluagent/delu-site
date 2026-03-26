@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-03-26T22:30:29.044Z",
+  "updatedAt": "2026-03-26T22:35:10.555Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 68931,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "in 5 min",
+  "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 47.08,
-    "positionsUSD": 14.7,
+    "totalUSD": 47.11,
+    "positionsUSD": 14.76,
     "liquidUSDC": 0,
-    "ethUSD": 22.79,
+    "ethUSD": 22.76,
     "yieldUSD": 0,
     "unrealPnlUSD": 3.73,
     "unrealPnlPct": 54.01
@@ -23,10 +23,10 @@
       "currentUSD": 10.63,
       "pnlUSD": 3.73,
       "pnlPct": 54.04,
-      "peakPct": 54.04,
+      "peakPct": 0.98,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": true,
+      "trailActivated": false,
       "openedAt": "2026-03-26T12:37:04.264Z",
       "entryTx": null,
       "contractAddress": "0x00000e7efa313f4e11bfff432471ed9423ac6b30",
@@ -49,7 +49,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-26T22:05:00.003Z",
-    "ago": "25m ago",
+    "ago": "30m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -6358,7 +6358,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 36690,
+      "expCount": 36695,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
