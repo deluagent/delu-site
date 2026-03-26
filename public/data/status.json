@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-26T12:06:57.112Z",
+  "updatedAt": "2026-03-26T12:07:47.450Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 69367,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 69334,
+  "pctFrom200": "-1.4%",
   "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 28 min",
   "wallet": {
     "totalUSD": 60.19,
     "positionsUSD": 0,
@@ -24,34 +24,34 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-26T11:35:00.003Z",
-    "ago": "32m ago",
+    "ts": "2026-03-26T12:05:00.001Z",
+    "ago": "3m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 69366.99,
-      "sma200": 70374.4271,
-      "pctFrom200": -0.014315386163903784,
-      "volRatio": 0.8641271484667358,
+      "btcNow": 69333.77,
+      "sma200": 70349.76359999999,
+      "pctFrom200": -0.014442032894052072,
+      "volRatio": 0.8550525079149588,
       "btcState": "RANGE",
       "ethState": "BEAR",
       "breadthFraction": "BTC:RANGE ETH:BEAR",
       "breadth": 0.5
     },
-    "seenCount": 8,
-    "screened": 8,
+    "seenCount": 7,
+    "screened": 7,
     "traded": [],
     "action": "hold",
     "asset": "DRB",
     "confidence": 80,
     "reasoning": "No high-conviction entry this cycle — holding current positions",
-    "topSignal": "DRB score=0.60 ret1h=-0.2%",
+    "topSignal": "DRB score=0.58 ret1h=-0.6%",
     "positionUpdates": [],
     "positionAssessments": [],
     "checkrSustained": [],
     "checkrTraded": {
       "sym": "DRB",
-      "velocity": 3.4106743554952503,
+      "velocity": 3.295590991659927,
       "checkrSource": false
     },
     "topScores": []
@@ -271,6 +271,155 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-26T12:05:00.001Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 69333.77,
+        "sma200": 70349.76359999999,
+        "pctFrom200": -0.014442032894052072,
+        "volRatio": 0.8550525079149588,
+        "btcState": "RANGE",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:RANGE ETH:BEAR",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": 80,
+      "reasoning": "No high-conviction entry this cycle — holding current positions",
+      "seenCount": 5,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": {
+        "sym": "DRB",
+        "velocity": 3.295590991659927,
+        "checkrSource": false
+      },
+      "alchemyDiscovered": [],
+      "socialCandidates": [
+        {
+          "sym": "OWB",
+          "velocity": 3.75868595875,
+          "score": 0.2505790639166667
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "velocity": 3.585084462282904,
+          "score": 0.23900563081886028
+        }
+      ],
+      "quantTop5": [
+        {
+          "sym": "DRB",
+          "score": 0.5492651652766545,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "GIZA",
+          "score": 0.5053845300274729,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "HYDX",
+          "score": 0.40027753709448777,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "OWB",
+          "score": 0.2505790639166667,
+          "source": "checkr"
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "score": 0.23900563081886028,
+          "source": "checkr"
+        }
+      ],
+      "tradedEntry": {
+        "sym": "DRB",
+        "liq": 903000.8519,
+        "ret1h": -0.006435846188192994,
+        "ret24h": 0.10048705384675405,
+        "buyers": 49,
+        "buyRatio": 0.5975609756097561,
+        "address": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
+        "score": 0.5492651652766545,
+        "source": "bankr_trending",
+        "unusualActivity": false
+      },
+      "topSignal": "DRB score=0.58 ret1h=-0.6%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "bankr-llm",
+      "dataSources": {
+        "checkrTokens": 21,
+        "checkrSustained": [],
+        "checkrTraded": {
+          "sym": "DRB",
+          "velocity": 3.295590991659927,
+          "checkrSource": false
+        },
+        "tradedEntry": {
+          "sym": "DRB",
+          "liq": 903000.8519,
+          "ret1h": -0.006435846188192994,
+          "ret24h": 0.10048705384675405,
+          "buyers": 49,
+          "buyRatio": 0.5975609756097561,
+          "address": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
+          "score": 0.5492651652766545,
+          "source": "bankr_trending",
+          "unusualActivity": false
+        },
+        "discoveryPassed": 5,
+        "alchemyDiscovered": [],
+        "socialCandidates": [
+          {
+            "sym": "OWB",
+            "velocity": 3.75868595875,
+            "score": 0.2505790639166667
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "velocity": 3.585084462282904,
+            "score": 0.23900563081886028
+          }
+        ],
+        "quantTop5": [
+          {
+            "sym": "DRB",
+            "score": 0.5492651652766545,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "GIZA",
+            "score": 0.5053845300274729,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "HYDX",
+            "score": 0.40027753709448777,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "OWB",
+            "score": 0.2505790639166667,
+            "source": "checkr"
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "score": 0.23900563081886028,
+            "source": "checkr"
+          }
+        ]
+      }
+    },
     {
       "ts": "2026-03-26T11:35:00.003Z",
       "regime": "RANGE_TIGHT",
@@ -5889,39 +6038,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-25T11:05:00.019Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 71503.31,
-        "sma200": 70785.79470000003,
-        "pctFrom200": 0.010136430664385403,
-        "volRatio": 0.8775907148790592,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "Scanned 2 tokens [TORIVA(0.34), THENICKSHIRLEY(0.27)]. Both tokens are new (quant=n/a) with marginal velocity (4.4, 3.5) and weak attention scores (1.8, 1.4); no sustained momentum or onchain confirmation to justify deeper analysis in tight range conditions.",
-      "seenCount": 2,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "TORIVA score=0.34 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": "bankr-llm",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
