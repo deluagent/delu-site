@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-26T13:45:43.520Z",
+  "updatedAt": "2026-03-26T13:50:19.849Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 69254,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "in 20 min",
+  "nextCycle": "in 15 min",
   "wallet": {
-    "totalUSD": 79.55,
-    "positionsUSD": 21.32,
-    "liquidUSDC": 0,
-    "ethUSD": 0,
+    "totalUSD": 58.33,
+    "positionsUSD": 28.14,
+    "liquidUSDC": 0.63,
+    "ethUSD": 19,
     "yieldUSD": 0,
-    "unrealPnlUSD": 14.42,
-    "unrealPnlPct": 208.9
+    "unrealPnlUSD": 14.4,
+    "unrealPnlPct": 208.61
   },
   "positions": [
     {
       "sym": "HYDX",
       "entryPrice": 0.1018398951,
-      "currentPrice": 0.10211758,
+      "currentPrice": 0.10201673,
       "sizeUSD": 6.902000000000001,
-      "currentUSD": 21.32,
-      "pnlUSD": 14.42,
-      "pnlPct": 208.92,
+      "currentUSD": 21.3,
+      "pnlUSD": 14.4,
+      "pnlPct": 208.64,
       "peakPct": 208.92,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -46,13 +46,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 0,
+    "amountUSD": 19.63,
     "apy": 0,
-    "note": "Liquid USDC available for next trade entry"
+    "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
     "ts": "2026-03-26T13:35:00.027Z",
-    "ago": "11m ago",
+    "ago": "15m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -76,9 +76,9 @@
     "positionUpdates": [
       {
         "sym": "HYDX",
-        "currentPrice": 0.10211758,
-        "pnlPct": 208.92,
-        "pnlUSD": 14.42,
+        "currentPrice": 0.10201673,
+        "pnlPct": 208.64,
+        "pnlUSD": 14.4,
         "quantScore": -0.0265,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -92,9 +92,9 @@
     "positionAssessments": [
       {
         "sym": "HYDX",
-        "currentPrice": 0.10211758,
-        "pnlPct": 208.92,
-        "pnlUSD": 14.42,
+        "currentPrice": 0.10201673,
+        "pnlPct": 208.64,
+        "pnlUSD": 14.4,
         "quantScore": -0.0265,
         "volumeTrend": "stable",
         "recommendation": "hold",
@@ -351,9 +351,9 @@
       "positionUpdates": [
         {
           "sym": "HYDX",
-          "currentPrice": 0.10211758,
-          "pnlPct": 208.92,
-          "pnlUSD": 14.42,
+          "currentPrice": 0.10201673,
+          "pnlPct": 208.64,
+          "pnlUSD": 14.4,
           "quantScore": -0.0265,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -367,9 +367,9 @@
       "positionAssessments": [
         {
           "sym": "HYDX",
-          "currentPrice": 0.10211758,
-          "pnlPct": 208.92,
-          "pnlUSD": 14.42,
+          "currentPrice": 0.10201673,
+          "pnlPct": 208.64,
+          "pnlUSD": 14.4,
           "quantScore": -0.0265,
           "volumeTrend": "stable",
           "recommendation": "hold",
@@ -6239,7 +6239,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 36215,
+      "expCount": 36220,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
