@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-26T17:05:29.566Z",
+  "updatedAt": "2026-03-26T17:10:30.084Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 68966,
+  "btcPrice": 69008,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 25 min",
   "wallet": {
-    "totalUSD": 53.83,
-    "positionsUSD": 14.71,
+    "totalUSD": 54.01,
+    "positionsUSD": 14.89,
     "liquidUSDC": 0.63,
     "ethUSD": 28.13,
     "yieldUSD": 0,
-    "unrealPnlUSD": 3.61,
-    "unrealPnlPct": 52.27
+    "unrealPnlUSD": 3.32,
+    "unrealPnlPct": 48.07
   },
   "positions": [
     {
       "sym": "HYDX",
       "entryPrice": 0.1018398951,
-      "currentPrice": 0.09462845,
+      "currentPrice": 0.09202944,
       "sizeUSD": 6.902000000000001,
-      "currentUSD": 10.51,
-      "pnlUSD": 3.61,
-      "pnlPct": 52.3,
+      "currentUSD": 10.22,
+      "pnlUSD": 3.32,
+      "pnlPct": 48.1,
       "peakPct": 200.38,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -32,14 +32,11 @@
       "contractAddress": "0x00000e7efa313f4e11bfff432471ed9423ac6b30",
       "source": "universe",
       "chain": "base",
-      "volumeTrend": "stable",
-      "recommendation": "hold",
-      "quantScore": -0.0151,
-      "ret1h": -2.63,
-      "transferStats": {
-        "uniqueBuyers": 21,
-        "buyRatio": 0.5526315789473685
-      }
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
     }
   ],
   "yield": {
@@ -51,66 +48,56 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-26T16:35:00.016Z",
-    "ago": "30m ago",
+    "ts": "2026-03-26T17:05:00.017Z",
+    "ago": "6m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 68966.32,
-      "sma200": 70256.99059999999,
-      "pctFrom200": -0.018370707156363502,
-      "volRatio": 0.8503744199082176,
+      "btcNow": 69007.61,
+      "sma200": 70230.95425,
+      "pctFrom200": -0.0174188755238221,
+      "volRatio": 0.8472545671635017,
       "btcState": "RANGE",
       "ethState": "BEAR",
       "breadthFraction": "BTC:RANGE ETH:BEAR",
       "breadth": 0.5
     },
-    "seenCount": 3,
-    "screened": 3,
+    "seenCount": 1,
+    "screened": 1,
     "traded": [],
-    "action": "hold",
-    "asset": "VIRTUAL",
-    "confidence": 80,
-    "reasoning": "No high-conviction entry this cycle — holding current positions",
-    "topSignal": "VIRTUAL score=0.31 ret1h=0.0%",
+    "action": "smart_yield",
+    "asset": "USDC",
+    "confidence": null,
+    "reasoning": "RANGE_TIGHT regime — monitoring market",
+    "topSignal": "THENICKSHIRLEY score=0.29 ret1h=0.0%",
     "positionUpdates": [
       {
         "sym": "HYDX",
-        "currentPrice": 0.09462845,
-        "pnlPct": 52.3,
-        "pnlUSD": 3.61,
-        "quantScore": -0.0151,
-        "volumeTrend": "stable",
-        "recommendation": "hold",
-        "ret1h": -2.63,
-        "transferStats": {
-          "uniqueBuyers": 21,
-          "buyRatio": 0.5526315789473685
-        }
+        "currentPrice": 0.09202944,
+        "pnlPct": 48.1,
+        "pnlUSD": 3.32,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
       }
     ],
     "positionAssessments": [
       {
         "sym": "HYDX",
-        "currentPrice": 0.09462845,
-        "pnlPct": 52.3,
-        "pnlUSD": 3.61,
-        "quantScore": -0.0151,
-        "volumeTrend": "stable",
-        "recommendation": "hold",
-        "ret1h": -2.63,
-        "transferStats": {
-          "uniqueBuyers": 21,
-          "buyRatio": 0.5526315789473685
-        }
+        "currentPrice": 0.09202944,
+        "pnlPct": 48.1,
+        "pnlUSD": 3.32,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
       }
     ],
     "checkrSustained": [],
-    "checkrTraded": {
-      "sym": "VIRTUAL",
-      "velocity": 4,
-      "checkrSource": false
-    },
+    "checkrTraded": null,
     "topScores": []
   },
   "performance": {
@@ -329,6 +316,63 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-26T17:05:00.017Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 69007.61,
+        "sma200": 70230.95425,
+        "pctFrom200": -0.0174188755238221,
+        "volRatio": 0.8472545671635017,
+        "btcState": "RANGE",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:RANGE ETH:BEAR",
+        "breadth": 0.5
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "Scanned 1 tokens [THENICKSHIRLEY(0.29)]. THENICKSHIRLEY lacks quant score (new token), velocity of 3.8 is marginal without quant confirmation, and attention of 1.5 is insufficient to demonstrate genuine strength against BEAR regime — no sustained momentum signal present.",
+      "seenCount": 1,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "HYDX",
+          "currentPrice": 0.09202944,
+          "pnlPct": 48.1,
+          "pnlUSD": 3.32,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "HYDX",
+          "currentPrice": 0.09202944,
+          "pnlPct": 48.1,
+          "pnlUSD": 3.32,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "THENICKSHIRLEY score=0.29 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": "bankr-llm",
+      "dataSources": null
+    },
+    {
       "ts": "2026-03-26T16:35:00.016Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -351,13 +395,14 @@
       "positionUpdates": [
         {
           "sym": "HYDX",
-          "currentPrice": 0.09462845,
-          "pnlPct": 52.3,
-          "pnlUSD": 3.61,
+          "currentPrice": 0.0987394344,
+          "entryPrice": 0.1018398951,
+          "pnlPct": -3.04,
           "quantScore": -0.0151,
           "volumeTrend": "stable",
           "recommendation": "hold",
-          "ret1h": -2.63,
+          "ret1h": -0.026329568001786804,
+          "ret6h": 0.00707928572566974,
           "transferStats": {
             "uniqueBuyers": 21,
             "buyRatio": 0.5526315789473685
@@ -367,13 +412,14 @@
       "positionAssessments": [
         {
           "sym": "HYDX",
-          "currentPrice": 0.09462845,
-          "pnlPct": 52.3,
-          "pnlUSD": 3.61,
+          "currentPrice": 0.0987394344,
+          "entryPrice": 0.1018398951,
+          "pnlPct": -3.04,
           "quantScore": -0.0151,
           "volumeTrend": "stable",
           "recommendation": "hold",
-          "ret1h": -2.63,
+          "ret1h": -0.026329568001786804,
+          "ret6h": 0.00707928572566974,
           "transferStats": {
             "uniqueBuyers": 21,
             "buyRatio": 0.5526315789473685
@@ -6276,39 +6322,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-25T16:05:00.003Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 70862.74,
-        "sma200": 70713.74685000001,
-        "pctFrom200": 0.0021069898942852406,
-        "volRatio": 0.8569663367578659,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "Scanned 2 tokens [VIRTUAL(0.32), SELFCLAW(0.32)]. Both candidates are new tokens (quant=n/a) with identical marginal scores (0.316) and no 1h return data provided; velocity and attention metrics alone are insufficient to differentiate signal from noise in a tight range without established quant history or price action confirmation.",
-      "seenCount": 2,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "VIRTUAL score=0.32 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": "bankr-llm",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -6367,7 +6380,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 36400,
+      "expCount": 36405,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
