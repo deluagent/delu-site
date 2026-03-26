@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-03-26T19:35:26.845Z",
+  "updatedAt": "2026-03-26T19:37:17.599Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 68470,
+  "btcPrice": 68427,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 58.72,
-    "positionsUSD": 10.47,
+    "totalUSD": 48.29,
+    "positionsUSD": 14.63,
     "liquidUSDC": 0.88,
     "ethUSD": 22.54,
     "yieldUSD": 0,
@@ -48,15 +48,15 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-26T19:05:00.011Z",
-    "ago": "30m ago",
+    "ts": "2026-03-26T19:35:00.009Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 68469.59,
-      "sma200": 70178.6887,
-      "pctFrom200": -0.024353528566286854,
-      "volRatio": 0.8464381663993391,
+      "btcNow": 68427.17,
+      "sma200": 70178.4766,
+      "pctFrom200": -0.024955038707693982,
+      "volRatio": 0.8465196062991259,
       "btcState": "RANGE",
       "ethState": "BEAR",
       "breadthFraction": "BTC:RANGE ETH:BEAR",
@@ -69,7 +69,7 @@
     "asset": "USDC",
     "confidence": null,
     "reasoning": "RANGE_TIGHT regime — monitoring market",
-    "topSignal": "THENICKSHIRLEY score=0.27 ret1h=0.0%",
+    "topSignal": "THENICKSHIRLEY score=0.29 ret1h=0.0%",
     "positionUpdates": [
       {
         "sym": "HYDX",
@@ -316,14 +316,14 @@
   },
   "cycleHistory": [
     {
-      "ts": "2026-03-26T19:05:00.011Z",
+      "ts": "2026-03-26T19:35:00.009Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
         "state": "RANGE_TIGHT",
-        "btcNow": 68469.59,
-        "sma200": 70178.6887,
-        "pctFrom200": -0.024353528566286854,
-        "volRatio": 0.8464381663993391,
+        "btcNow": 68427.17,
+        "sma200": 70178.4766,
+        "pctFrom200": -0.024955038707693982,
+        "volRatio": 0.8465196062991259,
         "btcState": "RANGE",
         "ethState": "BEAR",
         "breadthFraction": "BTC:RANGE ETH:BEAR",
@@ -332,7 +332,7 @@
       "action": "smart_yield",
       "asset": "USDC",
       "confidence": null,
-      "reasoning": "Scanned 1 tokens [THENICKSHIRLEY(0.27)]. THENICKSHIRLEY lacks quant score (new token), velocity of 3.6 is marginal without quant confirmation, and attention of 1.4 is insufficient to demonstrate genuine strength against BEAR regime; no token meets the threshold of meaningful signal strength required for deeper analysis.",
+      "reasoning": "Scanned 1 tokens [THENICKSHIRLEY(0.29)]. THENICKSHIRLEY lacks quant score (new token), velocity of 3.8 is marginal without quant confirmation, and attention of 1.5 is insufficient to signal genuine strength against BEAR regime; no tokens meet the threshold of meaningful onchain signals required for deeper analysis.",
       "seenCount": 1,
       "traded": [],
       "positionUpdates": [
@@ -361,6 +361,39 @@
           "transferStats": null
         }
       ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "THENICKSHIRLEY score=0.29 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": "bankr-llm",
+      "dataSources": null
+    },
+    {
+      "ts": "2026-03-26T19:05:00.011Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 68469.59,
+        "sma200": 70178.6887,
+        "pctFrom200": -0.024353528566286854,
+        "volRatio": 0.8464381663993391,
+        "btcState": "RANGE",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:RANGE ETH:BEAR",
+        "breadth": 0.5
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "Scanned 1 tokens [THENICKSHIRLEY(0.27)]. THENICKSHIRLEY lacks quant score (new token), velocity of 3.6 is marginal without quant confirmation, and attention of 1.4 is insufficient to demonstrate genuine strength against BEAR regime; no token meets the threshold of meaningful signal strength required for deeper analysis.",
+      "seenCount": 1,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -6319,39 +6352,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-25T18:35:00.025Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 70921.18,
-        "sma200": 70686.22105000001,
-        "pctFrom200": 0.003323971015988916,
-        "volRatio": 0.8605658781683313,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "Scanned 2 tokens [LITCOIN(0.33), THENICKSHIRLEY(0.27)]. Both tokens lack quant scores (new/unproven), velocity signals are modest (4.2, 3.5) without sustained onchain confirmation, and social attention metrics (1.7, 1.4) are weak — insufficient signal strength to warrant deeper analysis even in a range-bound environment.",
-      "seenCount": 2,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "LITCOIN score=0.33 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": "bankr-llm",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
