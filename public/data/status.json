@@ -1,122 +1,20 @@
 {
-  "updatedAt": "2026-03-26T08:40:21.225Z",
+  "updatedAt": "2026-03-26T08:45:14.701Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 69872,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 25 min",
+  "nextCycle": "in 20 min",
   "wallet": {
-    "totalUSD": 62.95,
-    "positionsUSD": 50.03,
+    "totalUSD": 62.93,
+    "positionsUSD": 0,
     "liquidUSDC": 0,
     "ethUSD": 12.21,
     "yieldUSD": 0,
-    "unrealPnlUSD": 6.46,
-    "unrealPnlPct": 16.43
+    "unrealPnlUSD": 0,
+    "unrealPnlPct": 0
   },
-  "positions": [
-    {
-      "sym": "DRB",
-      "entryPrice": 0.00007820656255,
-      "currentPrice": 0.00007842,
-      "sizeUSD": 10,
-      "currentUSD": 9.93,
-      "pnlUSD": -0.07,
-      "pnlPct": -0.7,
-      "peakPct": 0.78,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": false,
-      "openedAt": "2026-03-26T02:06:50.165Z",
-      "entryTx": null,
-      "contractAddress": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": "declining",
-      "recommendation": "hold",
-      "quantScore": 0.0186,
-      "ret1h": 2.48,
-      "transferStats": {
-        "uniqueBuyers": 22,
-        "buyRatio": 0.3188405797101449
-      }
-    },
-    {
-      "sym": "VIRTUAL",
-      "entryPrice": 0.7098077078,
-      "currentPrice": 0.69235917,
-      "sizeUSD": 10,
-      "currentUSD": 9.71,
-      "pnlUSD": -0.29,
-      "pnlPct": -2.9,
-      "peakPct": 0.17,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": false,
-      "openedAt": "2026-03-26T04:06:59.294Z",
-      "entryTx": null,
-      "contractAddress": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": "declining",
-      "recommendation": "hold",
-      "quantScore": -0.0383,
-      "ret1h": -0.07,
-      "transferStats": {
-        "uniqueBuyers": 46,
-        "buyRatio": 0.5054945054945055
-      }
-    },
-    {
-      "sym": "LITCOIN",
-      "entryPrice": 0.00000421446933,
-      "currentPrice": 0.00000429,
-      "sizeUSD": 9.284,
-      "currentUSD": 15.02,
-      "pnlUSD": 5.74,
-      "pnlPct": 61.83,
-      "peakPct": 2.04,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": true,
-      "openedAt": "2026-03-26T06:08:29.444Z",
-      "entryTx": null,
-      "contractAddress": "0x316ffb9c875f900adcf04889e415cc86b564eba3",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": "increasing",
-      "recommendation": "hold",
-      "quantScore": -0.0338,
-      "ret1h": 1.17,
-      "transferStats": {
-        "uniqueBuyers": 94,
-        "buyRatio": 0.8952380952380953
-      }
-    },
-    {
-      "sym": "HYDX",
-      "entryPrice": 0.1003105679,
-      "currentPrice": 0.09972206,
-      "sizeUSD": 10,
-      "currentUSD": 11.08,
-      "pnlUSD": 1.08,
-      "pnlPct": 10.8,
-      "peakPct": 0,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": false,
-      "openedAt": "2026-03-26T08:37:13.519Z",
-      "entryTx": null,
-      "contractAddress": "0x00000e7efa313f4e11bfff432471ed9423ac6b30",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
-      "quantScore": null,
-      "ret1h": null,
-      "transferStats": null
-    }
-  ],
+  "positions": [],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
@@ -127,7 +25,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-26T08:35:00.011Z",
-    "ago": "5m ago",
+    "ago": "10m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -150,116 +48,8 @@
     "confidence": 85,
     "reasoning": "HYDX has a high quant score of 0.718, a strong social velocity signal, and a SAFE rug score, indicating a high conviction buy opportunity. The token's liquidity and buyer ratio also support this decision.",
     "topSignal": "HYDX score=0.76 ret1h=-6.1%",
-    "positionUpdates": [
-      {
-        "sym": "DRB",
-        "currentPrice": 0.00007842,
-        "pnlPct": -0.7,
-        "pnlUSD": -0.07,
-        "quantScore": 0.0186,
-        "volumeTrend": "declining",
-        "recommendation": "hold",
-        "ret1h": 2.48,
-        "transferStats": {
-          "uniqueBuyers": 22,
-          "buyRatio": 0.3188405797101449
-        }
-      },
-      {
-        "sym": "VIRTUAL",
-        "currentPrice": 0.69235917,
-        "pnlPct": -2.9,
-        "pnlUSD": -0.29,
-        "quantScore": -0.0383,
-        "volumeTrend": "declining",
-        "recommendation": "hold",
-        "ret1h": -0.07,
-        "transferStats": {
-          "uniqueBuyers": 46,
-          "buyRatio": 0.5054945054945055
-        }
-      },
-      {
-        "sym": "LITCOIN",
-        "currentPrice": 0.00000429,
-        "pnlPct": 61.83,
-        "pnlUSD": 5.74,
-        "quantScore": -0.0338,
-        "volumeTrend": "increasing",
-        "recommendation": "hold",
-        "ret1h": 1.17,
-        "transferStats": {
-          "uniqueBuyers": 94,
-          "buyRatio": 0.8952380952380953
-        }
-      },
-      {
-        "sym": "HYDX",
-        "currentPrice": 0.09972206,
-        "pnlPct": 10.8,
-        "pnlUSD": 1.08,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      }
-    ],
-    "positionAssessments": [
-      {
-        "sym": "DRB",
-        "currentPrice": 0.00007842,
-        "pnlPct": -0.7,
-        "pnlUSD": -0.07,
-        "quantScore": 0.0186,
-        "volumeTrend": "declining",
-        "recommendation": "hold",
-        "ret1h": 2.48,
-        "transferStats": {
-          "uniqueBuyers": 22,
-          "buyRatio": 0.3188405797101449
-        }
-      },
-      {
-        "sym": "VIRTUAL",
-        "currentPrice": 0.69235917,
-        "pnlPct": -2.9,
-        "pnlUSD": -0.29,
-        "quantScore": -0.0383,
-        "volumeTrend": "declining",
-        "recommendation": "hold",
-        "ret1h": -0.07,
-        "transferStats": {
-          "uniqueBuyers": 46,
-          "buyRatio": 0.5054945054945055
-        }
-      },
-      {
-        "sym": "LITCOIN",
-        "currentPrice": 0.00000429,
-        "pnlPct": 61.83,
-        "pnlUSD": 5.74,
-        "quantScore": -0.0338,
-        "volumeTrend": "increasing",
-        "recommendation": "hold",
-        "ret1h": 1.17,
-        "transferStats": {
-          "uniqueBuyers": 94,
-          "buyRatio": 0.8952380952380953
-        }
-      },
-      {
-        "sym": "HYDX",
-        "currentPrice": 0.09972206,
-        "pnlPct": 10.8,
-        "pnlUSD": 1.08,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      }
-    ],
+    "positionUpdates": [],
+    "positionAssessments": [],
     "checkrSustained": [],
     "checkrTraded": {
       "sym": "HYDX",
@@ -508,13 +298,14 @@
       "positionUpdates": [
         {
           "sym": "DRB",
-          "currentPrice": 0.00007842,
-          "pnlPct": -0.7,
-          "pnlUSD": -0.07,
+          "currentPrice": 0.0000781217,
+          "entryPrice": 0.00007820656255,
+          "pnlPct": -0.11,
           "quantScore": 0.0186,
           "volumeTrend": "declining",
           "recommendation": "hold",
-          "ret1h": 2.48,
+          "ret1h": 0.02480896753923954,
+          "ret6h": -0.008790260675383353,
           "transferStats": {
             "uniqueBuyers": 22,
             "buyRatio": 0.3188405797101449
@@ -522,13 +313,14 @@
         },
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.69235917,
-          "pnlPct": -2.9,
-          "pnlUSD": -0.29,
+          "currentPrice": 0.6995472368,
+          "entryPrice": 0.7098077078,
+          "pnlPct": -1.45,
           "quantScore": -0.0383,
           "volumeTrend": "declining",
           "recommendation": "hold",
-          "ret1h": -0.07,
+          "ret1h": -0.0007070182548489561,
+          "ret6h": -0.028839087268108084,
           "transferStats": {
             "uniqueBuyers": 46,
             "buyRatio": 0.5054945054945055
@@ -536,40 +328,31 @@
         },
         {
           "sym": "LITCOIN",
-          "currentPrice": 0.00000429,
-          "pnlPct": 61.83,
-          "pnlUSD": 5.74,
+          "currentPrice": 0.0000042812,
+          "entryPrice": 0.00000421446933,
+          "pnlPct": 1.58,
           "quantScore": -0.0338,
           "volumeTrend": "increasing",
           "recommendation": "hold",
-          "ret1h": 1.17,
+          "ret1h": 0.011745244003308451,
+          "ret6h": -0.14274844316293234,
           "transferStats": {
             "uniqueBuyers": 94,
             "buyRatio": 0.8952380952380953
           }
-        },
-        {
-          "sym": "HYDX",
-          "currentPrice": 0.09972206,
-          "pnlPct": 10.8,
-          "pnlUSD": 1.08,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
         }
       ],
       "positionAssessments": [
         {
           "sym": "DRB",
-          "currentPrice": 0.00007842,
-          "pnlPct": -0.7,
-          "pnlUSD": -0.07,
+          "currentPrice": 0.0000781217,
+          "entryPrice": 0.00007820656255,
+          "pnlPct": -0.11,
           "quantScore": 0.0186,
           "volumeTrend": "declining",
           "recommendation": "hold",
-          "ret1h": 2.48,
+          "ret1h": 0.02480896753923954,
+          "ret6h": -0.008790260675383353,
           "transferStats": {
             "uniqueBuyers": 22,
             "buyRatio": 0.3188405797101449
@@ -577,13 +360,14 @@
         },
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.69235917,
-          "pnlPct": -2.9,
-          "pnlUSD": -0.29,
+          "currentPrice": 0.6995472368,
+          "entryPrice": 0.7098077078,
+          "pnlPct": -1.45,
           "quantScore": -0.0383,
           "volumeTrend": "declining",
           "recommendation": "hold",
-          "ret1h": -0.07,
+          "ret1h": -0.0007070182548489561,
+          "ret6h": -0.028839087268108084,
           "transferStats": {
             "uniqueBuyers": 46,
             "buyRatio": 0.5054945054945055
@@ -591,28 +375,18 @@
         },
         {
           "sym": "LITCOIN",
-          "currentPrice": 0.00000429,
-          "pnlPct": 61.83,
-          "pnlUSD": 5.74,
+          "currentPrice": 0.0000042812,
+          "entryPrice": 0.00000421446933,
+          "pnlPct": 1.58,
           "quantScore": -0.0338,
           "volumeTrend": "increasing",
           "recommendation": "hold",
-          "ret1h": 1.17,
+          "ret1h": 0.011745244003308451,
+          "ret6h": -0.14274844316293234,
           "transferStats": {
             "uniqueBuyers": 94,
             "buyRatio": 0.8952380952380953
           }
-        },
-        {
-          "sym": "HYDX",
-          "currentPrice": 0.09972206,
-          "pnlPct": 10.8,
-          "pnlUSD": 1.08,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
         }
       ],
       "checkrSustained": [],
@@ -6094,7 +5868,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 35940,
+      "expCount": 35945,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
