@@ -1,24 +1,24 @@
 {
-  "updatedAt": "2026-03-26T02:07:34.546Z",
+  "updatedAt": "2026-03-26T02:10:11.103Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71262,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 28 min",
+  "nextCycle": "in 25 min",
   "wallet": {
-    "totalUSD": 87.55,
-    "positionsUSD": 29.59,
+    "totalUSD": 57.94,
+    "positionsUSD": 29.56,
     "liquidUSDC": 15.2,
-    "ethUSD": 12.49,
+    "ethUSD": 12.47,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.41,
-    "unrealPnlPct": -1.37
+    "unrealPnlUSD": -0.61,
+    "unrealPnlPct": -2.03
   },
   "positions": [
     {
       "sym": "BNKR",
       "entryPrice": 0.0004196,
-      "currentPrice": 0.00038464,
+      "currentPrice": 0.00038435,
       "sizeUSD": 10,
       "currentUSD": 9.48,
       "pnlUSD": -0.52,
@@ -44,11 +44,11 @@
     {
       "sym": "TREX",
       "entryPrice": 0.2426561449,
-      "currentPrice": 0.24536802,
+      "currentPrice": 0.24532833,
       "sizeUSD": 10,
-      "currentUSD": 10.11,
-      "pnlUSD": 0.11,
-      "pnlPct": 1.1,
+      "currentUSD": 10.02,
+      "pnlUSD": 0.02,
+      "pnlPct": 0.2,
       "peakPct": 3.96,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -67,11 +67,11 @@
     {
       "sym": "DRB",
       "entryPrice": 0.00007820656255,
-      "currentPrice": null,
+      "currentPrice": 0.00007813,
       "sizeUSD": 10,
-      "currentUSD": 10,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 9.89,
+      "pnlUSD": -0.11,
+      "pnlPct": -1.1,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -92,13 +92,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 27.69,
+    "amountUSD": 27.67,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-26T02:05:00.002Z",
-    "ago": "3m ago",
+    "ago": "5m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -124,7 +124,7 @@
     "positionUpdates": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.00038464,
+        "currentPrice": 0.00038435,
         "pnlPct": -5.2,
         "pnlUSD": -0.52,
         "quantScore": -0.0646,
@@ -138,9 +138,9 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": 0.24536802,
-        "pnlPct": 1.1,
-        "pnlUSD": 0.11,
+        "currentPrice": 0.24532833,
+        "pnlPct": 0.2,
+        "pnlUSD": 0.02,
         "quantScore": null,
         "volumeTrend": "unknown",
         "recommendation": "hold",
@@ -149,9 +149,9 @@
       },
       {
         "sym": "DRB",
-        "currentPrice": null,
-        "pnlPct": 0,
-        "pnlUSD": 0,
+        "currentPrice": 0.00007813,
+        "pnlPct": -1.1,
+        "pnlUSD": -0.11,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -162,7 +162,7 @@
     "positionAssessments": [
       {
         "sym": "BNKR",
-        "currentPrice": 0.00038464,
+        "currentPrice": 0.00038435,
         "pnlPct": -5.2,
         "pnlUSD": -0.52,
         "quantScore": -0.0646,
@@ -176,9 +176,9 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": 0.24536802,
-        "pnlPct": 1.1,
-        "pnlUSD": 0.11,
+        "currentPrice": 0.24532833,
+        "pnlPct": 0.2,
+        "pnlUSD": 0.02,
         "quantScore": null,
         "volumeTrend": "unknown",
         "recommendation": "hold",
@@ -187,9 +187,9 @@
       },
       {
         "sym": "DRB",
-        "currentPrice": null,
-        "pnlPct": 0,
-        "pnlUSD": 0,
+        "currentPrice": 0.00007813,
+        "pnlPct": -1.1,
+        "pnlUSD": -0.11,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -421,7 +421,7 @@
       "positionUpdates": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00038464,
+          "currentPrice": 0.00038435,
           "pnlPct": -5.2,
           "pnlUSD": -0.52,
           "quantScore": -0.0646,
@@ -435,9 +435,9 @@
         },
         {
           "sym": "TREX",
-          "currentPrice": 0.24536802,
-          "pnlPct": 1.1,
-          "pnlUSD": 0.11,
+          "currentPrice": 0.24532833,
+          "pnlPct": 0.2,
+          "pnlUSD": 0.02,
           "quantScore": null,
           "volumeTrend": "unknown",
           "recommendation": "hold",
@@ -446,9 +446,9 @@
         },
         {
           "sym": "DRB",
-          "currentPrice": null,
-          "pnlPct": 0,
-          "pnlUSD": 0,
+          "currentPrice": 0.00007813,
+          "pnlPct": -1.1,
+          "pnlUSD": -0.11,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -459,7 +459,7 @@
       "positionAssessments": [
         {
           "sym": "BNKR",
-          "currentPrice": 0.00038464,
+          "currentPrice": 0.00038435,
           "pnlPct": -5.2,
           "pnlUSD": -0.52,
           "quantScore": -0.0646,
@@ -473,9 +473,9 @@
         },
         {
           "sym": "TREX",
-          "currentPrice": 0.24536802,
-          "pnlPct": 1.1,
-          "pnlUSD": 0.11,
+          "currentPrice": 0.24532833,
+          "pnlPct": 0.2,
+          "pnlUSD": 0.02,
           "quantScore": null,
           "volumeTrend": "unknown",
           "recommendation": "hold",
@@ -484,9 +484,9 @@
         },
         {
           "sym": "DRB",
-          "currentPrice": null,
-          "pnlPct": 0,
-          "pnlUSD": 0,
+          "currentPrice": 0.00007813,
+          "pnlPct": -1.1,
+          "pnlUSD": -0.11,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -8049,7 +8049,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 35585,
+      "expCount": 35590,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
