@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-26T11:05:46.254Z",
+  "updatedAt": "2026-03-26T11:08:03.660Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 69617,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 69629,
+  "pctFrom200": "-1.1%",
   "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 27 min",
   "wallet": {
     "totalUSD": 61.95,
     "positionsUSD": 0,
@@ -24,15 +24,15 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-26T10:35:00.008Z",
-    "ago": "31m ago",
+    "ts": "2026-03-26T11:05:00.005Z",
+    "ago": "3m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 69616.68,
-      "sma200": 70400.31784999999,
-      "pctFrom200": -0.011131169203946986,
-      "volRatio": 0.8641307560111451,
+      "btcNow": 69628.55,
+      "sma200": 70375.7349,
+      "pctFrom200": -0.010617081314485754,
+      "volRatio": 0.8639336965889647,
       "btcState": "RANGE",
       "ethState": "BEAR",
       "breadthFraction": "BTC:RANGE ETH:BEAR",
@@ -42,16 +42,16 @@
     "screened": 7,
     "traded": [],
     "action": "hold",
-    "asset": "GIZA",
+    "asset": "DRB",
     "confidence": 80,
     "reasoning": "No high-conviction entry this cycle — holding current positions",
-    "topSignal": "GIZA score=0.53 ret1h=0.2%",
+    "topSignal": "DRB score=0.60 ret1h=-0.2%",
     "positionUpdates": [],
     "positionAssessments": [],
     "checkrSustained": [],
     "checkrTraded": {
-      "sym": "GIZA",
-      "velocity": 2.998210540546934,
+      "sym": "DRB",
+      "velocity": 3.4106743554952503,
       "checkrSource": false
     },
     "topScores": []
@@ -271,6 +271,159 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-26T11:05:00.005Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 69628.55,
+        "sma200": 70375.7349,
+        "pctFrom200": -0.010617081314485754,
+        "volRatio": 0.8639336965889647,
+        "btcState": "RANGE",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:RANGE ETH:BEAR",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": 80,
+      "reasoning": "No high-conviction entry this cycle — holding current positions",
+      "seenCount": 5,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": {
+        "sym": "DRB",
+        "velocity": 3.4106743554952503,
+        "checkrSource": false
+      },
+      "alchemyDiscovered": [
+        {
+          "sym": "TYSM",
+          "liq": 77803.8992,
+          "score": 0.46765596014078836,
+          "address": "0x0358795322c04de04ead2338a803a9d3518a9877"
+        },
+        {
+          "sym": "DEAD",
+          "liq": 47273.6353,
+          "score": 0.43958867638887317,
+          "address": "0xf0197f10ea542a67914ecc0ec5304dc9df1faf6f"
+        }
+      ],
+      "socialCandidates": [],
+      "quantTop5": [
+        {
+          "sym": "DRB",
+          "score": 0.568445725915875,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "GIZA",
+          "score": 0.5032093805292776,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "TYSM",
+          "score": 0.46765596014078836,
+          "source": "alchemy_discover"
+        },
+        {
+          "sym": "DEAD",
+          "score": 0.43958867638887317,
+          "source": "alchemy_discover"
+        },
+        {
+          "sym": "HYDX",
+          "score": 0.42811276055839803,
+          "source": "bankr_trending"
+        }
+      ],
+      "tradedEntry": {
+        "sym": "DRB",
+        "liq": 907050.2565,
+        "ret1h": -0.002317527828895433,
+        "ret24h": 0.09999926910736089,
+        "buyers": 48,
+        "buyRatio": 0.5647058823529412,
+        "address": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
+        "score": 0.568445725915875,
+        "source": "bankr_trending",
+        "unusualActivity": false
+      },
+      "topSignal": "DRB score=0.60 ret1h=-0.2%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "bankr-llm",
+      "dataSources": {
+        "checkrTokens": 21,
+        "checkrSustained": [],
+        "checkrTraded": {
+          "sym": "DRB",
+          "velocity": 3.4106743554952503,
+          "checkrSource": false
+        },
+        "tradedEntry": {
+          "sym": "DRB",
+          "liq": 907050.2565,
+          "ret1h": -0.002317527828895433,
+          "ret24h": 0.09999926910736089,
+          "buyers": 48,
+          "buyRatio": 0.5647058823529412,
+          "address": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
+          "score": 0.568445725915875,
+          "source": "bankr_trending",
+          "unusualActivity": false
+        },
+        "discoveryPassed": 5,
+        "alchemyDiscovered": [
+          {
+            "sym": "TYSM",
+            "liq": 77803.8992,
+            "score": 0.46765596014078836,
+            "address": "0x0358795322c04de04ead2338a803a9d3518a9877"
+          },
+          {
+            "sym": "DEAD",
+            "liq": 47273.6353,
+            "score": 0.43958867638887317,
+            "address": "0xf0197f10ea542a67914ecc0ec5304dc9df1faf6f"
+          }
+        ],
+        "socialCandidates": [],
+        "quantTop5": [
+          {
+            "sym": "DRB",
+            "score": 0.568445725915875,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "GIZA",
+            "score": 0.5032093805292776,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "TYSM",
+            "score": 0.46765596014078836,
+            "source": "alchemy_discover"
+          },
+          {
+            "sym": "DEAD",
+            "score": 0.43958867638887317,
+            "source": "alchemy_discover"
+          },
+          {
+            "sym": "HYDX",
+            "score": 0.42811276055839803,
+            "source": "bankr_trending"
+          }
+        ]
+      }
+    },
     {
       "ts": "2026-03-26T10:35:00.008Z",
       "regime": "RANGE_TIGHT",
@@ -5643,229 +5796,6 @@
       "layers": [],
       "screenLayer": "bankr-llm",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-25T10:05:00.022Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 71321.88,
-        "sma200": 70799.70050000002,
-        "pctFrom200": 0.007375447866477679,
-        "volRatio": 0.8963533327406085,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": 80,
-      "reasoning": "No high-conviction entry this cycle — holding current positions",
-      "seenCount": 4,
-      "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.0003950624,
-          "entryPrice": 0.0004196,
-          "pnlPct": -5.85,
-          "quantScore": -0.0129,
-          "volumeTrend": "stable",
-          "recommendation": "hold",
-          "ret1h": -0.00047514207456446264,
-          "ret6h": 0.0022050101320874676,
-          "transferStats": {
-            "uniqueBuyers": 2,
-            "buyRatio": 0.5
-          }
-        },
-        {
-          "sym": "CLAWD",
-          "currentPrice": 0.000040855,
-          "entryPrice": 0.00003887677489,
-          "pnlPct": 5.09,
-          "quantScore": -0.017,
-          "volumeTrend": "declining",
-          "recommendation": "hold",
-          "ret1h": -0.000026923764137928873,
-          "ret6h": -0.0011759499891205569,
-          "transferStats": {
-            "uniqueBuyers": 33,
-            "buyRatio": 0.515625
-          }
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.0003950624,
-          "entryPrice": 0.0004196,
-          "pnlPct": -5.85,
-          "quantScore": -0.0129,
-          "volumeTrend": "stable",
-          "recommendation": "hold",
-          "ret1h": -0.00047514207456446264,
-          "ret6h": 0.0022050101320874676,
-          "transferStats": {
-            "uniqueBuyers": 2,
-            "buyRatio": 0.5
-          }
-        },
-        {
-          "sym": "CLAWD",
-          "currentPrice": 0.000040855,
-          "entryPrice": 0.00003887677489,
-          "pnlPct": 5.09,
-          "quantScore": -0.017,
-          "volumeTrend": "declining",
-          "recommendation": "hold",
-          "ret1h": -0.000026923764137928873,
-          "ret6h": -0.0011759499891205569,
-          "transferStats": {
-            "uniqueBuyers": 33,
-            "buyRatio": 0.515625
-          }
-        }
-      ],
-      "checkrSustained": [],
-      "checkrTraded": {
-        "sym": "TOSHI",
-        "velocity": 2.4121504860889615,
-        "checkrSource": false
-      },
-      "alchemyDiscovered": [
-        {
-          "sym": "TOSHI",
-          "liq": 1444729.7493,
-          "score": 0.48243009721779234,
-          "address": "0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4"
-        }
-      ],
-      "socialCandidates": [
-        {
-          "sym": "MAG7.SSI",
-          "velocity": 4.125,
-          "score": 0.275
-        },
-        {
-          "sym": "VIRTUAL",
-          "velocity": 4,
-          "score": 0.26666666666666666
-        },
-        {
-          "sym": "RECALL",
-          "velocity": 3.75,
-          "score": 0.25
-        }
-      ],
-      "quantTop5": [
-        {
-          "sym": "TOSHI",
-          "score": 0.48243009721779234,
-          "source": "alchemy_discover"
-        },
-        {
-          "sym": "MAG7.SSI",
-          "score": 0.275,
-          "source": "checkr"
-        },
-        {
-          "sym": "VIRTUAL",
-          "score": 0.26666666666666666,
-          "source": "checkr"
-        },
-        {
-          "sym": "RECALL",
-          "score": 0.25,
-          "source": "checkr"
-        }
-      ],
-      "tradedEntry": {
-        "sym": "TOSHI",
-        "liq": 1444729.7493,
-        "vol24h": 8107.5243044481,
-        "ret1h": 0,
-        "ret24h": -0.26,
-        "address": "0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4",
-        "score": 0.48243009721779234,
-        "source": "alchemy_discover",
-        "unusualActivity": true
-      },
-      "topSignal": "TOSHI score=0.51 ret1h=0.0%",
-      "layers": [
-        "bankr-screen",
-        "venice-e2ee"
-      ],
-      "screenLayer": "bankr-llm",
-      "dataSources": {
-        "checkrTokens": 23,
-        "checkrSustained": [],
-        "checkrTraded": {
-          "sym": "TOSHI",
-          "velocity": 2.4121504860889615,
-          "checkrSource": false
-        },
-        "tradedEntry": {
-          "sym": "TOSHI",
-          "liq": 1444729.7493,
-          "vol24h": 8107.5243044481,
-          "ret1h": 0,
-          "ret24h": -0.26,
-          "address": "0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4",
-          "score": 0.48243009721779234,
-          "source": "alchemy_discover",
-          "unusualActivity": true
-        },
-        "discoveryPassed": 4,
-        "alchemyDiscovered": [
-          {
-            "sym": "TOSHI",
-            "liq": 1444729.7493,
-            "score": 0.48243009721779234,
-            "address": "0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4"
-          }
-        ],
-        "socialCandidates": [
-          {
-            "sym": "MAG7.SSI",
-            "velocity": 4.125,
-            "score": 0.275
-          },
-          {
-            "sym": "VIRTUAL",
-            "velocity": 4,
-            "score": 0.26666666666666666
-          },
-          {
-            "sym": "RECALL",
-            "velocity": 3.75,
-            "score": 0.25
-          }
-        ],
-        "quantTop5": [
-          {
-            "sym": "TOSHI",
-            "score": 0.48243009721779234,
-            "source": "alchemy_discover"
-          },
-          {
-            "sym": "MAG7.SSI",
-            "score": 0.275,
-            "source": "checkr"
-          },
-          {
-            "sym": "VIRTUAL",
-            "score": 0.26666666666666666,
-            "source": "checkr"
-          },
-          {
-            "sym": "RECALL",
-            "score": 0.25,
-            "source": "checkr"
-          }
-        ]
-      }
     }
   ],
   "reasoningTraces": [
