@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-26T22:03:26.297Z",
+  "updatedAt": "2026-03-26T22:05:10.206Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 69060,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 2 min",
+  "nextCycle": "< 1 min",
   "wallet": {
     "totalUSD": 47.32,
     "positionsUSD": 14.8,
@@ -23,10 +23,10 @@
       "currentUSD": 10.63,
       "pnlUSD": 3.73,
       "pnlPct": 54.04,
-      "peakPct": 54.04,
+      "peakPct": 0.98,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": true,
+      "trailActivated": false,
       "openedAt": "2026-03-26T12:37:04.264Z",
       "entryTx": null,
       "contractAddress": "0x00000e7efa313f4e11bfff432471ed9423ac6b30",
@@ -49,7 +49,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-26T21:35:00.000Z",
-    "ago": "28m ago",
+    "ago": "30m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
