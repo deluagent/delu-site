@@ -1,52 +1,29 @@
 {
-  "updatedAt": "2026-03-26T03:05:11.309Z",
+  "updatedAt": "2026-03-26T03:08:34.773Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 70803,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 70783,
+  "pctFrom200": "0.3%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 27 min",
   "wallet": {
-    "totalUSD": 58.09,
-    "positionsUSD": 29.81,
-    "liquidUSDC": 15.2,
+    "totalUSD": 57.84,
+    "positionsUSD": 30.07,
+    "liquidUSDC": 14.68,
     "ethUSD": 12.4,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.19,
-    "unrealPnlPct": -0.63
+    "unrealPnlUSD": 0.62,
+    "unrealPnlPct": 2.1
   },
   "positions": [
     {
-      "sym": "BNKR",
-      "entryPrice": 0.0004196,
-      "currentPrice": 0.00038211,
-      "sizeUSD": 10,
-      "currentUSD": 9.42,
-      "pnlUSD": -0.58,
-      "pnlPct": -5.8,
-      "peakPct": 0,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": false,
-      "openedAt": "2026-03-23T12:33:57.377Z",
-      "entryTx": null,
-      "contractAddress": "0x22af33fe49fd1fa80c7149773dde5890d3c76f3b",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
-      "quantScore": null,
-      "ret1h": null,
-      "transferStats": null
-    },
-    {
       "sym": "TREX",
       "entryPrice": 0.2426561449,
-      "currentPrice": 0.25349505,
+      "currentPrice": 0.25315757,
       "sizeUSD": 10,
-      "currentUSD": 10.35,
-      "pnlUSD": 0.35,
-      "pnlPct": 3.5,
-      "peakPct": 3.96,
+      "currentUSD": 10.34,
+      "pnlUSD": 0.34,
+      "pnlPct": 3.4,
+      "peakPct": 4.38,
       "trailStop": 5,
       "hardSlPct": 3,
       "trailActivated": true,
@@ -55,8 +32,8 @@
       "contractAddress": "0x6db171bc785386973994072729d8fc707c2948e4",
       "source": "universe",
       "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
+      "volumeTrend": "unknown",
+      "recommendation": "hold",
       "quantScore": null,
       "ret1h": null,
       "transferStats": null
@@ -78,6 +55,32 @@
       "contractAddress": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
       "source": "universe",
       "chain": "base",
+      "volumeTrend": "stable",
+      "recommendation": "hold",
+      "quantScore": 0.0626,
+      "ret1h": -0.39,
+      "transferStats": {
+        "uniqueBuyers": 44,
+        "buyRatio": 0.4782608695652174
+      }
+    },
+    {
+      "sym": "HYDX",
+      "entryPrice": 0.0937936165,
+      "currentPrice": null,
+      "sizeUSD": 9.520000000000001,
+      "currentUSD": 9.76,
+      "pnlUSD": 0.24,
+      "pnlPct": 2.52,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-03-26T03:08:02.146Z",
+      "entryTx": null,
+      "contractAddress": "0x00000e7efa313f4e11bfff432471ed9423ac6b30",
+      "source": "universe",
+      "chain": "base",
       "volumeTrend": null,
       "recommendation": null,
       "quantScore": null,
@@ -89,53 +92,44 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 27.6,
+    "amountUSD": 27.08,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-26T02:35:00.001Z",
-    "ago": "30m ago",
+    "ts": "2026-03-26T03:05:00.029Z",
+    "ago": "4m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 70802.78,
-      "sma200": 70565.37145,
-      "pctFrom200": 0.0033643775285475777,
-      "volRatio": 0.8683242706925056,
+      "btcNow": 70783.01,
+      "sma200": 70547.1768,
+      "pctFrom200": 0.003342914779829909,
+      "volRatio": 0.866923562014612,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 1,
-    "screened": 1,
-    "traded": [],
-    "action": "smart_yield",
-    "asset": "USDC",
-    "confidence": null,
-    "reasoning": "RANGE_TIGHT regime — monitoring market",
-    "topSignal": "LITCOIN score=0.52 ret1h=0.0%",
+    "seenCount": 5,
+    "screened": 5,
+    "traded": [
+      "HYDX"
+    ],
+    "action": "buy",
+    "asset": "HYDX",
+    "confidence": 85,
+    "reasoning": "HYDX has a high quant score of 0.474, a strong onchain signal from Bankr, and a SAFE rug score of 80/100, indicating a high conviction buy.",
+    "topSignal": "HYDX score=0.50 ret1h=-0.1%",
     "positionUpdates": [
       {
-        "sym": "BNKR",
-        "currentPrice": 0.00038211,
-        "pnlPct": -5.8,
-        "pnlUSD": -0.58,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
         "sym": "TREX",
-        "currentPrice": 0.25349505,
-        "pnlPct": 3.5,
-        "pnlUSD": 0.35,
+        "currentPrice": 0.25315757,
+        "pnlPct": 3.4,
+        "pnlUSD": 0.34,
         "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
+        "volumeTrend": "unknown",
+        "recommendation": "hold",
         "ret1h": null,
         "transferStats": null
       },
@@ -144,6 +138,20 @@
         "currentPrice": 0.00007931,
         "pnlPct": 0.4,
         "pnlUSD": 0.04,
+        "quantScore": 0.0626,
+        "volumeTrend": "stable",
+        "recommendation": "hold",
+        "ret1h": -0.39,
+        "transferStats": {
+          "uniqueBuyers": 44,
+          "buyRatio": 0.4782608695652174
+        }
+      },
+      {
+        "sym": "HYDX",
+        "currentPrice": null,
+        "pnlPct": 2.52,
+        "pnlUSD": 0.24,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -153,24 +161,13 @@
     ],
     "positionAssessments": [
       {
-        "sym": "BNKR",
-        "currentPrice": 0.00038211,
-        "pnlPct": -5.8,
-        "pnlUSD": -0.58,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
         "sym": "TREX",
-        "currentPrice": 0.25349505,
-        "pnlPct": 3.5,
-        "pnlUSD": 0.35,
+        "currentPrice": 0.25315757,
+        "pnlPct": 3.4,
+        "pnlUSD": 0.34,
         "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
+        "volumeTrend": "unknown",
+        "recommendation": "hold",
         "ret1h": null,
         "transferStats": null
       },
@@ -179,6 +176,20 @@
         "currentPrice": 0.00007931,
         "pnlPct": 0.4,
         "pnlUSD": 0.04,
+        "quantScore": 0.0626,
+        "volumeTrend": "stable",
+        "recommendation": "hold",
+        "ret1h": -0.39,
+        "transferStats": {
+          "uniqueBuyers": 44,
+          "buyRatio": 0.4782608695652174
+        }
+      },
+      {
+        "sym": "HYDX",
+        "currentPrice": null,
+        "pnlPct": 2.52,
+        "pnlUSD": 0.24,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -187,7 +198,11 @@
       }
     ],
     "checkrSustained": [],
-    "checkrTraded": null,
+    "checkrTraded": {
+      "sym": "HYDX",
+      "velocity": 2.8448437762587995,
+      "checkrSource": false
+    },
     "topScores": []
   },
   "performance": {
@@ -382,6 +397,211 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-26T03:05:00.029Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 70783.01,
+        "sma200": 70547.1768,
+        "pctFrom200": 0.003342914779829909,
+        "volRatio": 0.866923562014612,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "buy",
+      "asset": "HYDX",
+      "confidence": 85,
+      "reasoning": "HYDX has a high quant score of 0.474, a strong onchain signal from Bankr, and a SAFE rug score of 80/100, indicating a high conviction buy.",
+      "seenCount": 3,
+      "traded": [
+        "HYDX"
+      ],
+      "positionUpdates": [
+        {
+          "sym": "TREX",
+          "currentPrice": 0.25315757,
+          "pnlPct": 3.4,
+          "pnlUSD": 0.34,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "DRB",
+          "currentPrice": 0.00007931,
+          "pnlPct": 0.4,
+          "pnlUSD": 0.04,
+          "quantScore": 0.0626,
+          "volumeTrend": "stable",
+          "recommendation": "hold",
+          "ret1h": -0.39,
+          "transferStats": {
+            "uniqueBuyers": 44,
+            "buyRatio": 0.4782608695652174
+          }
+        },
+        {
+          "sym": "HYDX",
+          "currentPrice": null,
+          "pnlPct": 2.52,
+          "pnlUSD": 0.24,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "TREX",
+          "currentPrice": 0.25315757,
+          "pnlPct": 3.4,
+          "pnlUSD": 0.34,
+          "quantScore": null,
+          "volumeTrend": "unknown",
+          "recommendation": "hold",
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "DRB",
+          "currentPrice": 0.00007931,
+          "pnlPct": 0.4,
+          "pnlUSD": 0.04,
+          "quantScore": 0.0626,
+          "volumeTrend": "stable",
+          "recommendation": "hold",
+          "ret1h": -0.39,
+          "transferStats": {
+            "uniqueBuyers": 44,
+            "buyRatio": 0.4782608695652174
+          }
+        },
+        {
+          "sym": "HYDX",
+          "currentPrice": null,
+          "pnlPct": 2.52,
+          "pnlUSD": 0.24,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": {
+        "sym": "HYDX",
+        "velocity": 2.8448437762587995,
+        "checkrSource": false
+      },
+      "alchemyDiscovered": [],
+      "socialCandidates": [
+        {
+          "sym": "ZRO",
+          "velocity": 4.375,
+          "score": 0.2916666666666667
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "velocity": 3.8190966167987117,
+          "score": 0.2546064411199141
+        }
+      ],
+      "quantTop5": [
+        {
+          "sym": "HYDX",
+          "score": 0.4741406293764666,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "ZRO",
+          "score": 0.2916666666666667,
+          "source": "checkr"
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "score": 0.2546064411199141,
+          "source": "checkr"
+        }
+      ],
+      "tradedEntry": {
+        "sym": "HYDX",
+        "liq": 1970137.4662,
+        "ret1h": -0.0013359869059921376,
+        "ret24h": 0.08987992191311932,
+        "buyers": 37,
+        "buyRatio": 0.5362318840579711,
+        "address": "0x00000e7efa313f4e11bfff432471ed9423ac6b30",
+        "score": 0.4741406293764666,
+        "source": "bankr_trending",
+        "unusualActivity": false
+      },
+      "topSignal": "HYDX score=0.50 ret1h=-0.1%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "bankr-llm",
+      "dataSources": {
+        "checkrTokens": 19,
+        "checkrSustained": [],
+        "checkrTraded": {
+          "sym": "HYDX",
+          "velocity": 2.8448437762587995,
+          "checkrSource": false
+        },
+        "tradedEntry": {
+          "sym": "HYDX",
+          "liq": 1970137.4662,
+          "ret1h": -0.0013359869059921376,
+          "ret24h": 0.08987992191311932,
+          "buyers": 37,
+          "buyRatio": 0.5362318840579711,
+          "address": "0x00000e7efa313f4e11bfff432471ed9423ac6b30",
+          "score": 0.4741406293764666,
+          "source": "bankr_trending",
+          "unusualActivity": false
+        },
+        "discoveryPassed": 3,
+        "alchemyDiscovered": [],
+        "socialCandidates": [
+          {
+            "sym": "ZRO",
+            "velocity": 4.375,
+            "score": 0.2916666666666667
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "velocity": 3.8190966167987117,
+            "score": 0.2546064411199141
+          }
+        ],
+        "quantTop5": [
+          {
+            "sym": "HYDX",
+            "score": 0.4741406293764666,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "ZRO",
+            "score": 0.2916666666666667,
+            "source": "checkr"
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "score": 0.2546064411199141,
+            "source": "checkr"
+          }
+        ]
+      }
+    },
+    {
       "ts": "2026-03-26T02:35:00.001Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -401,76 +621,8 @@
       "reasoning": "Scanned 1 tokens [LITCOIN(0.52)]. LITCOIN shows quant=0.00 (well below 0.3 threshold), velocity=2.9 (below 3 requirement), negative 1h return (-0.1%), and modest social attention (1.5) — no genuine strength signals against tight range regime to warrant deeper analysis.",
       "seenCount": 1,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.00038211,
-          "pnlPct": -5.8,
-          "pnlUSD": -0.58,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "TREX",
-          "currentPrice": 0.25349505,
-          "pnlPct": 3.5,
-          "pnlUSD": 0.35,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "DRB",
-          "currentPrice": 0.00007931,
-          "pnlPct": 0.4,
-          "pnlUSD": 0.04,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.00038211,
-          "pnlPct": -5.8,
-          "pnlUSD": -0.58,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "TREX",
-          "currentPrice": 0.25349505,
-          "pnlPct": 3.5,
-          "pnlUSD": 0.35,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "DRB",
-          "currentPrice": 0.00007931,
-          "pnlPct": 0.4,
-          "pnlUSD": 0.04,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -7467,289 +7619,6 @@
           {
             "sym": "THENICKSHIRLEY",
             "score": 0.23563013365295557,
-            "source": "checkr"
-          }
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-25T02:05:00.014Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 70653.62,
-        "sma200": 70949.1187,
-        "pctFrom200": -0.004164938274279241,
-        "volRatio": 0.8907974239417231,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": 80,
-      "reasoning": "No high-conviction entry this cycle — holding current positions",
-      "seenCount": 6,
-      "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.0003967261,
-          "entryPrice": 0.0004196,
-          "pnlPct": -5.45,
-          "quantScore": 0.0742,
-          "volumeTrend": "declining",
-          "recommendation": "hold",
-          "ret1h": 0.003408379565403785,
-          "ret6h": 0.017380234887306955,
-          "transferStats": {
-            "uniqueBuyers": 6,
-            "buyRatio": 0.46153846153846156
-          }
-        },
-        {
-          "sym": "CLAWD",
-          "currentPrice": 0.0000410938,
-          "entryPrice": 0.00003887677489,
-          "pnlPct": 5.7,
-          "quantScore": 0.0636,
-          "volumeTrend": "stable",
-          "recommendation": "hold",
-          "ret1h": -0.012747330892457259,
-          "ret6h": 0.08806155491833015,
-          "transferStats": {
-            "uniqueBuyers": 9,
-            "buyRatio": 0.6428571428571429
-          }
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "BNKR",
-          "currentPrice": 0.0003967261,
-          "entryPrice": 0.0004196,
-          "pnlPct": -5.45,
-          "quantScore": 0.0742,
-          "volumeTrend": "declining",
-          "recommendation": "hold",
-          "ret1h": 0.003408379565403785,
-          "ret6h": 0.017380234887306955,
-          "transferStats": {
-            "uniqueBuyers": 6,
-            "buyRatio": 0.46153846153846156
-          }
-        },
-        {
-          "sym": "CLAWD",
-          "currentPrice": 0.0000410938,
-          "entryPrice": 0.00003887677489,
-          "pnlPct": 5.7,
-          "quantScore": 0.0636,
-          "volumeTrend": "stable",
-          "recommendation": "hold",
-          "ret1h": -0.012747330892457259,
-          "ret6h": 0.08806155491833015,
-          "transferStats": {
-            "uniqueBuyers": 9,
-            "buyRatio": 0.6428571428571429
-          }
-        }
-      ],
-      "checkrSustained": [
-        {
-          "sym": "VIRTUAL",
-          "att1h": 6.6,
-          "att4h": 0,
-          "velocity": 4.76,
-          "windows": 2
-        },
-        {
-          "sym": "VVV",
-          "att1h": 4.2,
-          "att4h": 0.4,
-          "velocity": 0,
-          "windows": 3
-        },
-        {
-          "sym": "TIBBIR",
-          "att1h": 1,
-          "att4h": 0.4,
-          "velocity": 3.24,
-          "windows": 4
-        }
-      ],
-      "checkrTraded": {
-        "sym": "ODAI",
-        "att1h": 0,
-        "att4h": 0.1,
-        "att8h": -3.1,
-        "velocity": 7.38,
-        "windows": 1,
-        "checkrSource": true
-      },
-      "alchemyDiscovered": [],
-      "socialCandidates": [
-        {
-          "sym": "ODAI",
-          "velocity": 7.38,
-          "score": 0.492
-        },
-        {
-          "sym": "KTA",
-          "velocity": 6,
-          "score": 0.4
-        },
-        {
-          "sym": "VIRTUAL",
-          "velocity": 4.76,
-          "score": 0.3173333333333333
-        },
-        {
-          "sym": "GITLAWB",
-          "velocity": 4,
-          "score": 0.26666666666666666
-        },
-        {
-          "sym": "TIBBIR",
-          "velocity": 3.24,
-          "score": 0.21600000000000003
-        }
-      ],
-      "quantTop5": [
-        {
-          "sym": "ODAI",
-          "score": 0.492,
-          "source": "checkr"
-        },
-        {
-          "sym": "KTA",
-          "score": 0.4,
-          "source": "checkr"
-        },
-        {
-          "sym": "VIRTUAL",
-          "score": 0.3173333333333333,
-          "source": "checkr"
-        },
-        {
-          "sym": "GITLAWB",
-          "score": 0.26666666666666666,
-          "source": "checkr"
-        },
-        {
-          "sym": "TIBBIR",
-          "score": 0.21600000000000003,
-          "source": "checkr"
-        }
-      ],
-      "tradedEntry": {
-        "sym": "ODAI",
-        "ret1h": null,
-        "score": 0.492,
-        "source": "checkr",
-        "unusualActivity": false
-      },
-      "topSignal": "ODAI score=0.58 ret1h=0.0%",
-      "layers": [
-        "bankr-screen",
-        "venice-e2ee"
-      ],
-      "screenLayer": "bankr-llm",
-      "dataSources": {
-        "checkrTokens": 31,
-        "checkrSustained": [
-          {
-            "sym": "VIRTUAL",
-            "att1h": 6.6,
-            "att4h": 0,
-            "velocity": 4.76,
-            "windows": 2
-          },
-          {
-            "sym": "VVV",
-            "att1h": 4.2,
-            "att4h": 0.4,
-            "velocity": 0,
-            "windows": 3
-          },
-          {
-            "sym": "TIBBIR",
-            "att1h": 1,
-            "att4h": 0.4,
-            "velocity": 3.24,
-            "windows": 4
-          }
-        ],
-        "checkrTraded": {
-          "sym": "ODAI",
-          "att1h": 0,
-          "att4h": 0.1,
-          "att8h": -3.1,
-          "velocity": 7.38,
-          "windows": 1,
-          "checkrSource": true
-        },
-        "tradedEntry": {
-          "sym": "ODAI",
-          "ret1h": null,
-          "score": 0.492,
-          "source": "checkr",
-          "unusualActivity": false
-        },
-        "discoveryPassed": 5,
-        "alchemyDiscovered": [],
-        "socialCandidates": [
-          {
-            "sym": "ODAI",
-            "velocity": 7.38,
-            "score": 0.492
-          },
-          {
-            "sym": "KTA",
-            "velocity": 6,
-            "score": 0.4
-          },
-          {
-            "sym": "VIRTUAL",
-            "velocity": 4.76,
-            "score": 0.3173333333333333
-          },
-          {
-            "sym": "GITLAWB",
-            "velocity": 4,
-            "score": 0.26666666666666666
-          },
-          {
-            "sym": "TIBBIR",
-            "velocity": 3.24,
-            "score": 0.21600000000000003
-          }
-        ],
-        "quantTop5": [
-          {
-            "sym": "ODAI",
-            "score": 0.492,
-            "source": "checkr"
-          },
-          {
-            "sym": "KTA",
-            "score": 0.4,
-            "source": "checkr"
-          },
-          {
-            "sym": "VIRTUAL",
-            "score": 0.3173333333333333,
-            "source": "checkr"
-          },
-          {
-            "sym": "GITLAWB",
-            "score": 0.26666666666666666,
-            "source": "checkr"
-          },
-          {
-            "sym": "TIBBIR",
-            "score": 0.21600000000000003,
             "source": "checkr"
           }
         ]
