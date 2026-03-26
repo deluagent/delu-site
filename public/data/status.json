@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-26T21:35:09.205Z",
+  "updatedAt": "2026-03-26T21:36:18.664Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 68929,
+  "btcPrice": 69060,
   "pctFrom200": "-4.2%",
-  "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "breadth": "BTC:RANGE ETH:RANGE",
+  "nextCycle": "in 29 min",
   "wallet": {
     "totalUSD": 47.48,
     "positionsUSD": 14.89,
@@ -23,7 +23,7 @@
       "currentUSD": 10.63,
       "pnlUSD": 3.73,
       "pnlPct": 54.04,
-      "peakPct": 53.46,
+      "peakPct": 54.04,
       "trailStop": 5,
       "hardSlPct": 3,
       "trailActivated": true,
@@ -48,28 +48,28 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-26T21:05:00.005Z",
-    "ago": "30m ago",
+    "ts": "2026-03-26T21:35:00.000Z",
+    "ago": "1m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 68928.98,
-      "sma200": 70146.20984999998,
-      "pctFrom200": -0.017352752951341234,
-      "volRatio": 0.850622500831008,
+      "btcNow": 69060.2,
+      "sma200": 70146.86594999998,
+      "pctFrom200": -0.015491297227370724,
+      "volRatio": 0.8505688113488032,
       "btcState": "RANGE",
-      "ethState": "BEAR",
-      "breadthFraction": "BTC:RANGE ETH:BEAR",
+      "ethState": "RANGE",
+      "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 0,
-    "screened": 0,
+    "seenCount": 2,
+    "screened": 2,
     "traded": [],
     "action": "smart_yield",
     "asset": "USDC",
     "confidence": null,
     "reasoning": "RANGE_TIGHT regime — monitoring market",
-    "topSignal": null,
+    "topSignal": "AVNT score=0.31 ret1h=0.0%",
     "positionUpdates": [
       {
         "sym": "HYDX",
@@ -316,24 +316,24 @@
   },
   "cycleHistory": [
     {
-      "ts": "2026-03-26T21:05:00.005Z",
+      "ts": "2026-03-26T21:35:00.000Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
         "state": "RANGE_TIGHT",
-        "btcNow": 68928.98,
-        "sma200": 70146.20984999998,
-        "pctFrom200": -0.017352752951341234,
-        "volRatio": 0.850622500831008,
+        "btcNow": 69060.2,
+        "sma200": 70146.86594999998,
+        "pctFrom200": -0.015491297227370724,
+        "volRatio": 0.8505688113488032,
         "btcState": "RANGE",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:RANGE ETH:BEAR",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
         "breadth": 0.5
       },
       "action": "smart_yield",
       "asset": "USDC",
       "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. No candidates passed screening criteria — zero tokens met quant > 0.3, velocity > 3, or sustained momentum thresholds required to override weak breadth signals.",
-      "seenCount": 0,
+      "reasoning": "Scanned 2 tokens [AVNT(0.31), THENICKSHIRLEY(0.15)]. Both candidates lack quant scores (new tokens), velocity alone (3.6-4.0) is insufficient without confirmed positive 1h returns or sustained onchain momentum to justify deeper analysis in a tight range regime.",
+      "seenCount": 2,
       "traded": [],
       "positionUpdates": [
         {
@@ -361,6 +361,39 @@
           "transferStats": null
         }
       ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "AVNT score=0.31 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": "bankr-llm",
+      "dataSources": null
+    },
+    {
+      "ts": "2026-03-26T21:05:00.005Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 68928.98,
+        "sma200": 70146.20984999998,
+        "pctFrom200": -0.017352752951341234,
+        "volRatio": 0.850622500831008,
+        "btcState": "RANGE",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:RANGE ETH:BEAR",
+        "breadth": 0.5
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. No candidates passed screening criteria — zero tokens met quant > 0.3, velocity > 3, or sustained momentum thresholds required to override weak breadth signals.",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -6355,39 +6388,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-25T20:35:00.021Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 70740.09,
-        "sma200": 70654.91960000002,
-        "pctFrom200": 0.001205441892541246,
-        "volRatio": 0.8604336377148941,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "Scanned 1 tokens [VVV(0.59)]. VVV shows weak quant (0.02), negative 1h return (-1.5%), and velocity (3.4) insufficient to overcome both poor quantitative score and price weakness in tight range conditions.",
-      "seenCount": 1,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "VVV score=0.59 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": "bankr-llm",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -6446,7 +6446,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 36640,
+      "expCount": 36645,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
