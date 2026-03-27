@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-27T17:46:21.170Z",
+  "updatedAt": "2026-03-27T17:47:36.667Z",
   "regime": "BEAR",
   "btcPrice": 65899,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 19 min",
+  "nextCycle": "in 18 min",
   "wallet": {
     "totalUSD": 60.97,
     "positionsUSD": 18.45,
     "liquidUSDC": 41.48,
     "ethUSD": 0,
     "yieldUSD": 0,
-    "unrealPnlUSD": 4.78,
-    "unrealPnlPct": 35.36
+    "unrealPnlUSD": 4.77,
+    "unrealPnlPct": 35.28
   },
   "positions": [
     {
       "sym": "VIRTUAL",
       "entryPrice": 0.6833,
-      "currentPrice": 0.65988422,
+      "currentPrice": 0.65897512,
       "sizeUSD": 10,
-      "currentUSD": 9.26,
-      "pnlUSD": -0.74,
-      "pnlPct": -7.4,
+      "currentUSD": 9.25,
+      "pnlUSD": -0.75,
+      "pnlPct": -7.5,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -75,7 +75,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-27T17:35:00.001Z",
-    "ago": "11m ago",
+    "ago": "13m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -99,9 +99,9 @@
     "positionUpdates": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.65988422,
-        "pnlPct": -7.4,
-        "pnlUSD": -0.74,
+        "currentPrice": 0.65897512,
+        "pnlPct": -7.5,
+        "pnlUSD": -0.75,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -126,9 +126,9 @@
     "positionAssessments": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.65988422,
-        "pnlPct": -7.4,
-        "pnlUSD": -0.74,
+        "currentPrice": 0.65897512,
+        "pnlPct": -7.5,
+        "pnlUSD": -0.75,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -155,12 +155,12 @@
     "topScores": []
   },
   "performance": {
-    "totalTrades": 31,
-    "winCount": 15,
-    "winRatePct": 48.4,
-    "avgPnlPct": 2.86,
-    "closedTrades": 31,
-    "winRate": "15/31 (48.4%)",
+    "totalTrades": 24,
+    "winCount": 10,
+    "winRatePct": 41.7,
+    "avgPnlPct": 3.06,
+    "closedTrades": 24,
+    "winRate": "10/24 (41.7%)",
     "recentTrades": [
       {
         "sym": "REKT",
@@ -186,32 +186,6 @@
         "exitTx": null,
         "openedAt": "2026-03-26T03:08:02.146Z",
         "closedAt": "2026-03-26T08:06:10.442Z",
-        "reason": "atr_stop"
-      },
-      {
-        "sym": "HYDX",
-        "pnlPct": 8.47,
-        "pnlUSD": 0.85,
-        "sizeUsd": 10,
-        "won": true,
-        "regime": "RANGE_TIGHT",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-26T03:08:02.146Z",
-        "closedAt": "2026-03-26T08:06:10.442Z",
-        "reason": "atr_stop"
-      },
-      {
-        "sym": "TREX",
-        "pnlPct": 9.11,
-        "pnlUSD": 0.91,
-        "sizeUsd": 10,
-        "won": true,
-        "regime": "RANGE_TIGHT",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-25T19:07:18.572Z",
-        "closedAt": "2026-03-26T06:06:19.356Z",
         "reason": "atr_stop"
       },
       {
@@ -293,32 +267,6 @@
         "reason": "atr_stop"
       },
       {
-        "sym": "SURGE",
-        "pnlPct": 4.08,
-        "pnlUSD": 0.41,
-        "sizeUsd": 10,
-        "won": true,
-        "regime": "RANGE_TIGHT",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-24T01:37:13.432Z",
-        "closedAt": "2026-03-24T16:06:08.942Z",
-        "reason": "atr_stop"
-      },
-      {
-        "sym": "MOLT",
-        "pnlPct": 1.77,
-        "pnlUSD": 0.18,
-        "sizeUsd": 10,
-        "won": true,
-        "regime": "RANGE_TIGHT",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-24T04:06:56.667Z",
-        "closedAt": "2026-03-24T14:07:13.292Z",
-        "reason": "atr_stop"
-      },
-      {
         "sym": "MOLT",
         "pnlPct": 1.77,
         "pnlUSD": 0.18,
@@ -342,32 +290,6 @@
         "exitTx": null,
         "openedAt": "2026-03-23T20:15:00.780Z",
         "closedAt": "2026-03-24T14:06:32.290Z",
-        "reason": "atr_stop"
-      },
-      {
-        "sym": "CLAWD",
-        "pnlPct": 6.85,
-        "pnlUSD": 0.68,
-        "sizeUsd": 10,
-        "won": true,
-        "regime": "RANGE_TIGHT",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-23T20:15:00.780Z",
-        "closedAt": "2026-03-24T14:06:32.290Z",
-        "reason": "atr_stop"
-      },
-      {
-        "sym": "VVV",
-        "pnlPct": -8.89,
-        "pnlUSD": -0.89,
-        "sizeUsd": 10,
-        "won": false,
-        "regime": "BEAR",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-23T02:36:13.686Z",
-        "closedAt": "2026-03-24T14:05:47.002Z",
         "reason": "atr_stop"
       },
       {
@@ -394,19 +316,6 @@
         "exitTx": null,
         "openedAt": "2026-03-23T17:22:14.513Z",
         "closedAt": "2026-03-24T03:06:02.464Z",
-        "reason": "atr_stop"
-      },
-      {
-        "sym": "ROBOTMONEY",
-        "pnlPct": -6.1,
-        "pnlUSD": -0.61,
-        "sizeUsd": 10,
-        "won": false,
-        "regime": "RANGE_TIGHT",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-03-23T16:33:37.000Z",
-        "closedAt": "2026-03-24T02:05:48.227Z",
         "reason": "atr_stop"
       },
       {
@@ -591,9 +500,9 @@
       "positionUpdates": [
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.65988422,
-          "pnlPct": -7.4,
-          "pnlUSD": -0.74,
+          "currentPrice": 0.65897512,
+          "pnlPct": -7.5,
+          "pnlUSD": -0.75,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -618,9 +527,9 @@
       "positionAssessments": [
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.65988422,
-          "pnlPct": -7.4,
-          "pnlUSD": -0.74,
+          "currentPrice": 0.65897512,
+          "pnlPct": -7.5,
+          "pnlUSD": -0.75,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
