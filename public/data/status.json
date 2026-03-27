@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-27T14:50:48.585Z",
+  "updatedAt": "2026-03-27T14:55:58.494Z",
   "regime": "BEAR",
   "btcPrice": 65900,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 15 min",
+  "nextCycle": "in 10 min",
   "wallet": {
-    "totalUSD": 27.49,
+    "totalUSD": 27.5,
     "positionsUSD": 9.4,
     "liquidUSDC": 1.49,
-    "ethUSD": 5.78,
+    "ethUSD": 5.79,
     "yieldUSD": 0,
-    "unrealPnlUSD": 5.69,
-    "unrealPnlPct": 161.4
+    "unrealPnlUSD": 5.86,
+    "unrealPnlPct": 166.22
   },
   "positions": [
     {
       "sym": "GIZA",
       "entryPrice": 0.01860443331,
-      "currentPrice": 0.01730849,
+      "currentPrice": 0.01764186,
       "sizeUSD": 3.5272,
-      "currentUSD": 9.22,
-      "pnlUSD": 5.69,
-      "pnlPct": 161.32,
+      "currentUSD": 9.39,
+      "pnlUSD": 5.86,
+      "pnlPct": 166.14,
       "peakPct": 166.99,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -46,13 +46,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 7.27,
+    "amountUSD": 7.28,
     "apy": 0,
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
     "ts": "2026-03-27T14:35:00.003Z",
-    "ago": "16m ago",
+    "ago": "21m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -76,9 +76,9 @@
     "positionUpdates": [
       {
         "sym": "GIZA",
-        "currentPrice": 0.01730849,
-        "pnlPct": 161.32,
-        "pnlUSD": 5.69,
+        "currentPrice": 0.01764186,
+        "pnlPct": 166.14,
+        "pnlUSD": 5.86,
         "quantScore": -0.051,
         "volumeTrend": "increasing",
         "recommendation": "hold",
@@ -92,9 +92,9 @@
     "positionAssessments": [
       {
         "sym": "GIZA",
-        "currentPrice": 0.01730849,
-        "pnlPct": 161.32,
-        "pnlUSD": 5.69,
+        "currentPrice": 0.01764186,
+        "pnlPct": 166.14,
+        "pnlUSD": 5.86,
         "quantScore": -0.051,
         "volumeTrend": "increasing",
         "recommendation": "hold",
@@ -363,9 +363,9 @@
       "positionUpdates": [
         {
           "sym": "GIZA",
-          "currentPrice": 0.01730849,
-          "pnlPct": 161.32,
-          "pnlUSD": 5.69,
+          "currentPrice": 0.01764186,
+          "pnlPct": 166.14,
+          "pnlUSD": 5.86,
           "quantScore": -0.051,
           "volumeTrend": "increasing",
           "recommendation": "hold",
@@ -379,9 +379,9 @@
       "positionAssessments": [
         {
           "sym": "GIZA",
-          "currentPrice": 0.01730849,
-          "pnlPct": 161.32,
-          "pnlUSD": 5.69,
+          "currentPrice": 0.01764186,
+          "pnlPct": 166.14,
+          "pnlUSD": 5.86,
           "quantScore": -0.051,
           "volumeTrend": "increasing",
           "recommendation": "hold",
@@ -7639,7 +7639,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 37575,
+      "expCount": 37580,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
