@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-27T17:50:44.203Z",
+  "updatedAt": "2026-03-27T17:55:41.316Z",
   "regime": "BEAR",
   "btcPrice": 65899,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 15 min",
+  "nextCycle": "in 10 min",
   "wallet": {
-    "totalUSD": 60.97,
+    "totalUSD": 60.99,
     "positionsUSD": 18.45,
     "liquidUSDC": 41.48,
     "ethUSD": 0,
     "yieldUSD": 0,
-    "unrealPnlUSD": 4.58,
-    "unrealPnlPct": 33.88
+    "unrealPnlUSD": 4.76,
+    "unrealPnlPct": 35.21
   },
   "positions": [
     {
       "sym": "VIRTUAL",
       "entryPrice": 0.6833,
-      "currentPrice": 0.64574539,
+      "currentPrice": 0.65827877,
       "sizeUSD": 10,
-      "currentUSD": 9.06,
-      "pnlUSD": -0.94,
-      "pnlPct": -9.4,
+      "currentUSD": 9.24,
+      "pnlUSD": -0.76,
+      "pnlPct": -7.6,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -75,7 +75,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-27T17:35:00.001Z",
-    "ago": "16m ago",
+    "ago": "21m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -99,9 +99,9 @@
     "positionUpdates": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.64574539,
-        "pnlPct": -9.4,
-        "pnlUSD": -0.94,
+        "currentPrice": 0.65827877,
+        "pnlPct": -7.6,
+        "pnlUSD": -0.76,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -126,9 +126,9 @@
     "positionAssessments": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.64574539,
-        "pnlPct": -9.4,
-        "pnlUSD": -0.94,
+        "currentPrice": 0.65827877,
+        "pnlPct": -7.6,
+        "pnlUSD": -0.76,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -155,13 +155,39 @@
     "topScores": []
   },
   "performance": {
-    "totalTrades": 24,
+    "totalTrades": 26,
     "winCount": 10,
-    "winRatePct": 41.7,
-    "avgPnlPct": 3.06,
-    "closedTrades": 24,
-    "winRate": "10/24 (41.7%)",
+    "winRatePct": 38.5,
+    "avgPnlPct": 2.31,
+    "closedTrades": 26,
+    "winRate": "10/26 (38.5%)",
     "recentTrades": [
+      {
+        "sym": "DRB",
+        "pnlPct": -10.4,
+        "pnlUSD": -0.35,
+        "sizeUsd": 3.4,
+        "won": false,
+        "regime": "BEAR",
+        "entryTx": null,
+        "exitTx": null,
+        "openedAt": "2026-03-27T11:36:55.132Z",
+        "closedAt": "2026-03-27T17:00:00.000Z",
+        "reason": "atr_stop"
+      },
+      {
+        "sym": "DRB",
+        "pnlPct": -2.9,
+        "pnlUSD": -0.29,
+        "sizeUsd": 10,
+        "won": false,
+        "regime": "RANGE_TIGHT",
+        "entryTx": null,
+        "exitTx": null,
+        "openedAt": "2026-03-26T02:06:50.165Z",
+        "closedAt": "2026-03-27T12:00:00.000Z",
+        "reason": "atr_stop"
+      },
       {
         "sym": "REKT",
         "pnlPct": 0.46,
@@ -500,9 +526,9 @@
       "positionUpdates": [
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.64574539,
-          "pnlPct": -9.4,
-          "pnlUSD": -0.94,
+          "currentPrice": 0.65827877,
+          "pnlPct": -7.6,
+          "pnlUSD": -0.76,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -527,9 +553,9 @@
       "positionAssessments": [
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.64574539,
-          "pnlPct": -9.4,
-          "pnlUSD": -0.94,
+          "currentPrice": 0.65827877,
+          "pnlPct": -7.6,
+          "pnlUSD": -0.76,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -7806,7 +7832,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 37730,
+      "expCount": 37735,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
