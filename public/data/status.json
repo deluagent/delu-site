@@ -1,58 +1,31 @@
 {
-  "updatedAt": "2026-03-27T01:05:33.135Z",
+  "updatedAt": "2026-03-27T01:07:05.892Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 68730,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:BEAR",
   "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 44.79,
-    "positionsUSD": 14.81,
-    "liquidUSDC": 1.13,
+    "totalUSD": 50.45,
+    "positionsUSD": 0,
+    "liquidUSDC": 11.35,
     "ethUSD": 17.55,
     "yieldUSD": 0,
-    "unrealPnlUSD": 3.4,
-    "unrealPnlPct": 49.23
+    "unrealPnlUSD": 0,
+    "unrealPnlPct": 0
   },
-  "positions": [
-    {
-      "sym": "HYDX",
-      "entryPrice": 0.1018398951,
-      "currentPrice": 0.09276261,
-      "sizeUSD": 6.902000000000001,
-      "currentUSD": 10.3,
-      "pnlUSD": 3.4,
-      "pnlPct": 49.26,
-      "peakPct": 49.12,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": true,
-      "openedAt": "2026-03-26T12:37:04.264Z",
-      "entryTx": null,
-      "contractAddress": "0x00000e7efa313f4e11bfff432471ed9423ac6b30",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": "stable",
-      "recommendation": "hold",
-      "quantScore": 0.0241,
-      "ret1h": -2.89,
-      "transferStats": {
-        "uniqueBuyers": 15,
-        "buyRatio": 0.5769230769230769
-      }
-    }
-  ],
+  "positions": [],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 18.68,
+    "amountUSD": 28.9,
     "apy": 0,
-    "note": "USDC low — using ETH reserve for high-conviction trades"
+    "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-27T00:35:00.023Z",
-    "ago": "31m ago",
+    "ago": "32m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -73,38 +46,8 @@
     "confidence": 85,
     "reasoning": "No high-conviction entry this cycle — holding current positions",
     "topSignal": "GIZA score=0.54 ret1h=0.2%",
-    "positionUpdates": [
-      {
-        "sym": "HYDX",
-        "currentPrice": 0.09276261,
-        "pnlPct": 49.26,
-        "pnlUSD": 3.4,
-        "quantScore": 0.0241,
-        "volumeTrend": "stable",
-        "recommendation": "hold",
-        "ret1h": -2.89,
-        "transferStats": {
-          "uniqueBuyers": 15,
-          "buyRatio": 0.5769230769230769
-        }
-      }
-    ],
-    "positionAssessments": [
-      {
-        "sym": "HYDX",
-        "currentPrice": 0.09276261,
-        "pnlPct": 49.26,
-        "pnlUSD": 3.4,
-        "quantScore": 0.0241,
-        "volumeTrend": "stable",
-        "recommendation": "hold",
-        "ret1h": -2.89,
-        "transferStats": {
-          "uniqueBuyers": 15,
-          "buyRatio": 0.5769230769230769
-        }
-      }
-    ],
+    "positionUpdates": [],
+    "positionAssessments": [],
     "checkrSustained": [],
     "checkrTraded": {
       "sym": "GIZA",
@@ -351,13 +294,14 @@
       "positionUpdates": [
         {
           "sym": "HYDX",
-          "currentPrice": 0.09276261,
-          "pnlPct": 49.26,
-          "pnlUSD": 3.4,
+          "currentPrice": 0.0924580272,
+          "entryPrice": 0.1018398951,
+          "pnlPct": -9.21,
           "quantScore": 0.0241,
           "volumeTrend": "stable",
           "recommendation": "hold",
-          "ret1h": -2.89,
+          "ret1h": -0.02886358214484978,
+          "ret6h": -0.011272939529364718,
           "transferStats": {
             "uniqueBuyers": 15,
             "buyRatio": 0.5769230769230769
@@ -367,13 +311,14 @@
       "positionAssessments": [
         {
           "sym": "HYDX",
-          "currentPrice": 0.09276261,
-          "pnlPct": 49.26,
-          "pnlUSD": 3.4,
+          "currentPrice": 0.0924580272,
+          "entryPrice": 0.1018398951,
+          "pnlPct": -9.21,
           "quantScore": 0.0241,
           "volumeTrend": "stable",
           "recommendation": "hold",
-          "ret1h": -2.89,
+          "ret1h": -0.02886358214484978,
+          "ret6h": -0.011272939529364718,
           "transferStats": {
             "uniqueBuyers": 15,
             "buyRatio": 0.5769230769230769
