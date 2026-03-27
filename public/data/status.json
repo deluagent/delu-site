@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-03-27T05:35:28.705Z",
+  "updatedAt": "2026-03-27T05:38:15.750Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 68583,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 68579,
+  "pctFrom200": "-2.1%",
   "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 27 min",
   "wallet": {
-    "totalUSD": 35.77,
+    "totalUSD": 35.79,
     "positionsUSD": 10.18,
     "liquidUSDC": 1.6,
-    "ethUSD": 12.25,
+    "ethUSD": 12.27,
     "yieldUSD": 0,
-    "unrealPnlUSD": 6.14,
-    "unrealPnlPct": 164.45
+    "unrealPnlUSD": 6.17,
+    "unrealPnlPct": 165.26
   },
   "positions": [
     {
@@ -20,9 +20,9 @@
       "entryPrice": 1.408469364e-7,
       "currentPrice": 1.4e-7,
       "sizeUSD": 3.736,
-      "currentUSD": 9.88,
-      "pnlUSD": 6.14,
-      "pnlPct": 164.35,
+      "currentUSD": 9.91,
+      "pnlUSD": 6.17,
+      "pnlPct": 165.15,
       "peakPct": 173.45,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -37,8 +37,8 @@
       "quantScore": -0.0236,
       "ret1h": -1.25,
       "transferStats": {
-        "uniqueBuyers": 13,
-        "buyRatio": 0.5
+        "uniqueBuyers": 11,
+        "buyRatio": 0.4583333333333333
       }
     }
   ],
@@ -46,46 +46,46 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 13.85,
+    "amountUSD": 13.87,
     "apy": 0,
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-27T05:05:00.002Z",
-    "ago": "30m ago",
+    "ts": "2026-03-27T05:35:00.001Z",
+    "ago": "3m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 68583.01,
-      "sma200": 70046.98829999997,
-      "pctFrom200": -0.020899946386416932,
-      "volRatio": 0.8607615500658303,
+      "btcNow": 68578.89,
+      "sma200": 70046.96769999996,
+      "pctFrom200": -0.020958476122585473,
+      "volRatio": 0.860761069164127,
       "btcState": "RANGE",
       "ethState": "BEAR",
       "breadthFraction": "BTC:RANGE ETH:BEAR",
       "breadth": 0.5
     },
-    "seenCount": 4,
-    "screened": 4,
+    "seenCount": 7,
+    "screened": 7,
     "traded": [],
     "action": "hold",
-    "asset": "GIZA",
-    "confidence": 80,
-    "reasoning": "No high-conviction entry this cycle — holding current positions",
-    "topSignal": "GIZA score=0.59 ret1h=0.1%",
+    "asset": "DRB",
+    "confidence": 85,
+    "reasoning": "[Execution Failed] DRB has a high quant score of 0.588, a strong rank of 9, and a safe rug score of 80/100, indicating a high conviction buy signal. The token also has a relatively high liquidity of $982K and a favorable buy ratio of 0.52.",
+    "topSignal": "DRB score=0.62 ret1h=-3.1%",
     "positionUpdates": [
       {
         "sym": "REKT",
         "currentPrice": 1.4e-7,
-        "pnlPct": 164.35,
-        "pnlUSD": 6.14,
+        "pnlPct": 165.15,
+        "pnlUSD": 6.17,
         "quantScore": -0.0236,
         "volumeTrend": "stable",
         "recommendation": "hold",
         "ret1h": -1.25,
         "transferStats": {
-          "uniqueBuyers": 13,
-          "buyRatio": 0.5
+          "uniqueBuyers": 11,
+          "buyRatio": 0.4583333333333333
         }
       }
     ],
@@ -93,22 +93,22 @@
       {
         "sym": "REKT",
         "currentPrice": 1.4e-7,
-        "pnlPct": 164.35,
-        "pnlUSD": 6.14,
+        "pnlPct": 165.15,
+        "pnlUSD": 6.17,
         "quantScore": -0.0236,
         "volumeTrend": "stable",
         "recommendation": "hold",
         "ret1h": -1.25,
         "transferStats": {
-          "uniqueBuyers": 13,
-          "buyRatio": 0.5
+          "uniqueBuyers": 11,
+          "buyRatio": 0.4583333333333333
         }
       }
     ],
     "checkrSustained": [],
     "checkrTraded": {
-      "sym": "GIZA",
-      "velocity": 3.318523057706607,
+      "sym": "DRB",
+      "velocity": 3.5253179215320785,
       "checkrSource": false
     },
     "topScores": []
@@ -329,6 +329,195 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-27T05:35:00.001Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 68578.89,
+        "sma200": 70046.96769999996,
+        "pctFrom200": -0.020958476122585473,
+        "volRatio": 0.860761069164127,
+        "btcState": "RANGE",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:RANGE ETH:BEAR",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": 85,
+      "reasoning": "[Execution Failed] DRB has a high quant score of 0.588, a strong rank of 9, and a safe rug score of 80/100, indicating a high conviction buy signal. The token also has a relatively high liquidity of $982K and a favorable buy ratio of 0.52.",
+      "seenCount": 5,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "REKT",
+          "currentPrice": 1.4e-7,
+          "pnlPct": 165.15,
+          "pnlUSD": 6.17,
+          "quantScore": -0.0236,
+          "volumeTrend": "stable",
+          "recommendation": "hold",
+          "ret1h": -1.25,
+          "transferStats": {
+            "uniqueBuyers": 11,
+            "buyRatio": 0.4583333333333333
+          }
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "REKT",
+          "currentPrice": 1.4e-7,
+          "pnlPct": 165.15,
+          "pnlUSD": 6.17,
+          "quantScore": -0.0236,
+          "volumeTrend": "stable",
+          "recommendation": "hold",
+          "ret1h": -1.25,
+          "transferStats": {
+            "uniqueBuyers": 11,
+            "buyRatio": 0.4583333333333333
+          }
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": {
+        "sym": "DRB",
+        "velocity": 3.5253179215320785,
+        "checkrSource": false
+      },
+      "alchemyDiscovered": [],
+      "socialCandidates": [
+        {
+          "sym": "VIRTUAL",
+          "velocity": 4,
+          "score": 0.26666666666666666
+        },
+        {
+          "sym": "ZRO",
+          "velocity": 3.8749999999999996,
+          "score": 0.2583333333333333
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "velocity": 3.43369272678453,
+          "score": 0.228912848452302
+        }
+      ],
+      "quantTop5": [
+        {
+          "sym": "DRB",
+          "score": 0.5875529869220131,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "GIZA",
+          "score": 0.5530871762844345,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "VIRTUAL",
+          "score": 0.26666666666666666,
+          "source": "checkr"
+        },
+        {
+          "sym": "ZRO",
+          "score": 0.2583333333333333,
+          "source": "checkr"
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "score": 0.228912848452302,
+          "source": "checkr"
+        }
+      ],
+      "tradedEntry": {
+        "sym": "DRB",
+        "liq": 981775.9791,
+        "ret1h": -0.03108152070269115,
+        "ret24h": 0.10434977177123421,
+        "buyers": 43,
+        "buyRatio": 0.524390243902439,
+        "address": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
+        "score": 0.5875529869220131,
+        "source": "bankr_trending",
+        "unusualActivity": false
+      },
+      "topSignal": "DRB score=0.62 ret1h=-3.1%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "bankr-llm",
+      "dataSources": {
+        "checkrTokens": 21,
+        "checkrSustained": [],
+        "checkrTraded": {
+          "sym": "DRB",
+          "velocity": 3.5253179215320785,
+          "checkrSource": false
+        },
+        "tradedEntry": {
+          "sym": "DRB",
+          "liq": 981775.9791,
+          "ret1h": -0.03108152070269115,
+          "ret24h": 0.10434977177123421,
+          "buyers": 43,
+          "buyRatio": 0.524390243902439,
+          "address": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
+          "score": 0.5875529869220131,
+          "source": "bankr_trending",
+          "unusualActivity": false
+        },
+        "discoveryPassed": 5,
+        "alchemyDiscovered": [],
+        "socialCandidates": [
+          {
+            "sym": "VIRTUAL",
+            "velocity": 4,
+            "score": 0.26666666666666666
+          },
+          {
+            "sym": "ZRO",
+            "velocity": 3.8749999999999996,
+            "score": 0.2583333333333333
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "velocity": 3.43369272678453,
+            "score": 0.228912848452302
+          }
+        ],
+        "quantTop5": [
+          {
+            "sym": "DRB",
+            "score": 0.5875529869220131,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "GIZA",
+            "score": 0.5530871762844345,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "VIRTUAL",
+            "score": 0.26666666666666666,
+            "source": "checkr"
+          },
+          {
+            "sym": "ZRO",
+            "score": 0.2583333333333333,
+            "source": "checkr"
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "score": 0.228912848452302,
+            "source": "checkr"
+          }
+        ]
+      }
+    },
+    {
       "ts": "2026-03-27T05:05:00.002Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -351,13 +540,14 @@
       "positionUpdates": [
         {
           "sym": "REKT",
-          "currentPrice": 1.4e-7,
-          "pnlPct": 164.35,
-          "pnlUSD": 6.14,
+          "currentPrice": 1.42e-7,
+          "entryPrice": 1.408469364e-7,
+          "pnlPct": 0.82,
           "quantScore": -0.0236,
           "volumeTrend": "stable",
           "recommendation": "hold",
-          "ret1h": -1.25,
+          "ret1h": -0.012517385257301828,
+          "ret6h": -0.002108222066057597,
           "transferStats": {
             "uniqueBuyers": 13,
             "buyRatio": 0.5
@@ -367,13 +557,14 @@
       "positionAssessments": [
         {
           "sym": "REKT",
-          "currentPrice": 1.4e-7,
-          "pnlPct": 164.35,
-          "pnlUSD": 6.14,
+          "currentPrice": 1.42e-7,
+          "entryPrice": 1.408469364e-7,
+          "pnlPct": 0.82,
           "quantScore": -0.0236,
           "volumeTrend": "stable",
           "recommendation": "hold",
-          "ret1h": -1.25,
+          "ret1h": -0.012517385257301828,
+          "ret6h": -0.002108222066057597,
           "transferStats": {
             "uniqueBuyers": 13,
             "buyRatio": 0.5
@@ -7248,39 +7439,6 @@
       "layers": [],
       "screenLayer": "bankr-llm",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-26T04:35:00.025Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 70836.04,
-        "sma200": 70529.51555000001,
-        "pctFrom200": 0.004346045022564777,
-        "volRatio": 0.8638833847171621,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "Scanned 1 tokens [THENICKSHIRLEY(0.29)]. THENICKSHIRLEY lacks quant score (new token), velocity of 3.8 is marginal without confirmation, and attention of 1.5 is insufficient to demonstrate genuine strength against tight range conditions.",
-      "seenCount": 1,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "THENICKSHIRLEY score=0.29 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": "bankr-llm",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -7339,7 +7497,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 37075,
+      "expCount": 37080,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
