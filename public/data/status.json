@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-03-27T06:35:29.762Z",
+  "updatedAt": "2026-03-27T06:38:01.152Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 68618,
+  "btcPrice": 68802,
   "pctFrom200": "-4.2%",
-  "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "breadth": "BTC:RANGE ETH:RANGE",
+  "nextCycle": "in 27 min",
   "wallet": {
     "totalUSD": 35.76,
     "positionsUSD": 10.22,
     "liquidUSDC": 1.6,
     "ethUSD": 12.3,
     "yieldUSD": 0,
-    "unrealPnlUSD": 6.22,
-    "unrealPnlPct": 166.6
+    "unrealPnlUSD": 6.23,
+    "unrealPnlPct": 166.86
   },
   "positions": [
     {
@@ -20,9 +20,9 @@
       "entryPrice": 1.408469364e-7,
       "currentPrice": 1.4e-7,
       "sizeUSD": 3.736,
-      "currentUSD": 9.96,
-      "pnlUSD": 6.22,
-      "pnlPct": 166.49,
+      "currentUSD": 9.97,
+      "pnlUSD": 6.23,
+      "pnlPct": 166.76,
       "peakPct": 173.45,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -37,8 +37,8 @@
       "quantScore": 0.0139,
       "ret1h": 1.48,
       "transferStats": {
-        "uniqueBuyers": 14,
-        "buyRatio": 0.5
+        "uniqueBuyers": 10,
+        "buyRatio": 0.47619047619047616
       }
     }
   ],
@@ -51,41 +51,41 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-27T06:05:00.000Z",
-    "ago": "30m ago",
+    "ts": "2026-03-27T06:35:00.030Z",
+    "ago": "3m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 68617.69,
-      "sma200": 70034.54724999996,
-      "pctFrom200": -0.020230833290636546,
-      "volRatio": 0.8606561028125932,
+      "btcNow": 68801.95,
+      "sma200": 70035.46854999996,
+      "pctFrom200": -0.01761276929445152,
+      "volRatio": 0.8612299832066519,
       "btcState": "RANGE",
-      "ethState": "BEAR",
-      "breadthFraction": "BTC:RANGE ETH:BEAR",
+      "ethState": "RANGE",
+      "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 7,
-    "screened": 7,
+    "seenCount": 8,
+    "screened": 8,
     "traded": [],
     "action": "hold",
-    "asset": "THENICKSHIRLEY",
+    "asset": "MAMO",
     "confidence": 80,
     "reasoning": "No high-conviction entry this cycle — holding current positions",
-    "topSignal": "GIZA score=0.57 ret1h=-0.4%",
+    "topSignal": "MAMO score=0.61 ret1h=0.0%",
     "positionUpdates": [
       {
         "sym": "REKT",
         "currentPrice": 1.4e-7,
-        "pnlPct": 166.49,
-        "pnlUSD": 6.22,
+        "pnlPct": 166.76,
+        "pnlUSD": 6.23,
         "quantScore": 0.0139,
         "volumeTrend": "increasing",
         "recommendation": "hold",
         "ret1h": 1.48,
         "transferStats": {
-          "uniqueBuyers": 14,
-          "buyRatio": 0.5
+          "uniqueBuyers": 10,
+          "buyRatio": 0.47619047619047616
         }
       }
     ],
@@ -93,22 +93,22 @@
       {
         "sym": "REKT",
         "currentPrice": 1.4e-7,
-        "pnlPct": 166.49,
-        "pnlUSD": 6.22,
+        "pnlPct": 166.76,
+        "pnlUSD": 6.23,
         "quantScore": 0.0139,
         "volumeTrend": "increasing",
         "recommendation": "hold",
         "ret1h": 1.48,
         "transferStats": {
-          "uniqueBuyers": 14,
-          "buyRatio": 0.5
+          "uniqueBuyers": 10,
+          "buyRatio": 0.47619047619047616
         }
       }
     ],
     "checkrSustained": [],
     "checkrTraded": {
-      "sym": "THENICKSHIRLEY",
-      "velocity": 2.6829722074542754,
+      "sym": "MAMO",
+      "velocity": 2.8906402942955642,
       "checkrSource": false
     },
     "topScores": []
@@ -329,6 +329,207 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-27T06:35:00.030Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 68801.95,
+        "sma200": 70035.46854999996,
+        "pctFrom200": -0.01761276929445152,
+        "volRatio": 0.8612299832066519,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": 80,
+      "reasoning": "No high-conviction entry this cycle — holding current positions",
+      "seenCount": 6,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "REKT",
+          "currentPrice": 1.4e-7,
+          "pnlPct": 166.76,
+          "pnlUSD": 6.23,
+          "quantScore": 0.0139,
+          "volumeTrend": "increasing",
+          "recommendation": "hold",
+          "ret1h": 1.48,
+          "transferStats": {
+            "uniqueBuyers": 10,
+            "buyRatio": 0.47619047619047616
+          }
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "REKT",
+          "currentPrice": 1.4e-7,
+          "pnlPct": 166.76,
+          "pnlUSD": 6.23,
+          "quantScore": 0.0139,
+          "volumeTrend": "increasing",
+          "recommendation": "hold",
+          "ret1h": 1.48,
+          "transferStats": {
+            "uniqueBuyers": 10,
+            "buyRatio": 0.47619047619047616
+          }
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": {
+        "sym": "MAMO",
+        "velocity": 2.8906402942955642,
+        "checkrSource": false
+      },
+      "alchemyDiscovered": [
+        {
+          "sym": "MAMO",
+          "liq": 546042.1948,
+          "score": 0.5781280588591129,
+          "address": "0x7300b37dfdfab110d83290a29dfb31b1740219fe"
+        }
+      ],
+      "socialCandidates": [
+        {
+          "sym": "MAG7.SSI",
+          "velocity": 3.75,
+          "score": 0.25
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "velocity": 3.646912562524796,
+          "score": 0.24312750416831974
+        },
+        {
+          "sym": "CLANKER",
+          "velocity": 3.024880047528064,
+          "score": 0.20165866983520428
+        }
+      ],
+      "quantTop5": [
+        {
+          "sym": "MAMO",
+          "score": 0.5781280588591129,
+          "source": "alchemy_discover"
+        },
+        {
+          "sym": "GIZA",
+          "score": 0.5365607088877241,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "DRB",
+          "score": 0.46234929843110517,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "MAG7.SSI",
+          "score": 0.25,
+          "source": "checkr"
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "score": 0.24312750416831974,
+          "source": "checkr"
+        }
+      ],
+      "tradedEntry": {
+        "sym": "MAMO",
+        "liq": 546042.1948,
+        "vol24h": 7032.0147147782,
+        "ret1h": 0,
+        "ret24h": -3.38,
+        "address": "0x7300b37dfdfab110d83290a29dfb31b1740219fe",
+        "score": 0.5781280588591129,
+        "source": "alchemy_discover",
+        "unusualActivity": true
+      },
+      "topSignal": "MAMO score=0.61 ret1h=0.0%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "bankr-llm",
+      "dataSources": {
+        "checkrTokens": 22,
+        "checkrSustained": [],
+        "checkrTraded": {
+          "sym": "MAMO",
+          "velocity": 2.8906402942955642,
+          "checkrSource": false
+        },
+        "tradedEntry": {
+          "sym": "MAMO",
+          "liq": 546042.1948,
+          "vol24h": 7032.0147147782,
+          "ret1h": 0,
+          "ret24h": -3.38,
+          "address": "0x7300b37dfdfab110d83290a29dfb31b1740219fe",
+          "score": 0.5781280588591129,
+          "source": "alchemy_discover",
+          "unusualActivity": true
+        },
+        "discoveryPassed": 6,
+        "alchemyDiscovered": [
+          {
+            "sym": "MAMO",
+            "liq": 546042.1948,
+            "score": 0.5781280588591129,
+            "address": "0x7300b37dfdfab110d83290a29dfb31b1740219fe"
+          }
+        ],
+        "socialCandidates": [
+          {
+            "sym": "MAG7.SSI",
+            "velocity": 3.75,
+            "score": 0.25
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "velocity": 3.646912562524796,
+            "score": 0.24312750416831974
+          },
+          {
+            "sym": "CLANKER",
+            "velocity": 3.024880047528064,
+            "score": 0.20165866983520428
+          }
+        ],
+        "quantTop5": [
+          {
+            "sym": "MAMO",
+            "score": 0.5781280588591129,
+            "source": "alchemy_discover"
+          },
+          {
+            "sym": "GIZA",
+            "score": 0.5365607088877241,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "DRB",
+            "score": 0.46234929843110517,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "MAG7.SSI",
+            "score": 0.25,
+            "source": "checkr"
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "score": 0.24312750416831974,
+            "source": "checkr"
+          }
+        ]
+      }
+    },
+    {
       "ts": "2026-03-27T06:05:00.000Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -351,13 +552,14 @@
       "positionUpdates": [
         {
           "sym": "REKT",
-          "currentPrice": 1.4e-7,
-          "pnlPct": 166.49,
-          "pnlUSD": 6.22,
+          "currentPrice": 1.441e-7,
+          "entryPrice": 1.408469364e-7,
+          "pnlPct": 2.31,
           "quantScore": 0.0139,
           "volumeTrend": "increasing",
           "recommendation": "hold",
-          "ret1h": 1.48,
+          "ret1h": 0.01478873239436619,
+          "ret6h": 0.01336146272855141,
           "transferStats": {
             "uniqueBuyers": 14,
             "buyRatio": 0.5
@@ -367,13 +569,14 @@
       "positionAssessments": [
         {
           "sym": "REKT",
-          "currentPrice": 1.4e-7,
-          "pnlPct": 166.49,
-          "pnlUSD": 6.22,
+          "currentPrice": 1.441e-7,
+          "entryPrice": 1.408469364e-7,
+          "pnlPct": 2.31,
           "quantScore": 0.0139,
           "volumeTrend": "increasing",
           "recommendation": "hold",
-          "ret1h": 1.48,
+          "ret1h": 0.01478873239436619,
+          "ret6h": 0.01336146272855141,
           "transferStats": {
             "uniqueBuyers": 14,
             "buyRatio": 0.5
@@ -7566,39 +7769,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-26T05:35:00.021Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 70579.94,
-        "sma200": 70508.668,
-        "pctFrom200": 0.0010108260731857422,
-        "volRatio": 0.8648158019527382,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. No candidates passed screening criteria — zero tokens met meaningful signal thresholds (quant > 0.3, velocity > 3, or sustained momentum) across quant score, social attention, and 1h return metrics.",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "bankr-llm",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -7657,7 +7827,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 37130,
+      "expCount": 37135,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
