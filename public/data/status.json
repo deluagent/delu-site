@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-27T18:34:59.721Z",
+  "updatedAt": "2026-03-27T18:35:42.858Z",
   "regime": "BEAR",
   "btcPrice": 65686,
   "pctFrom200": "-4.2%",
@@ -11,18 +11,18 @@
     "liquidUSDC": 41.48,
     "ethUSD": 0,
     "yieldUSD": 0,
-    "unrealPnlUSD": 4.72,
-    "unrealPnlPct": 34.91
+    "unrealPnlUSD": 4.85,
+    "unrealPnlPct": 35.87
   },
   "positions": [
     {
       "sym": "VIRTUAL",
       "entryPrice": 0.6833,
-      "currentPrice": 0.65913845,
+      "currentPrice": null,
       "sizeUSD": 10,
-      "currentUSD": 9.25,
-      "pnlUSD": -0.75,
-      "pnlPct": -7.5,
+      "currentUSD": 9.2,
+      "pnlUSD": -0.8,
+      "pnlPct": -8,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -41,15 +41,15 @@
     {
       "sym": "GIZA",
       "entryPrice": 0.01860443331,
-      "currentPrice": 0.01691332,
+      "currentPrice": null,
       "sizeUSD": 3.5272,
-      "currentUSD": 9,
-      "pnlUSD": 5.47,
-      "pnlPct": 155.08,
-      "peakPct": 160.47,
+      "currentUSD": 9.18,
+      "pnlUSD": 5.65,
+      "pnlPct": 160.18,
+      "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": true,
+      "trailActivated": false,
       "openedAt": "2026-03-27T08:08:44.964Z",
       "entryTx": null,
       "contractAddress": "0x590830dfdf9a3f68afcdde2694773debdf267774",
@@ -75,7 +75,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-27T18:05:00.028Z",
-    "ago": "30m ago",
+    "ago": "31m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -99,9 +99,9 @@
     "positionUpdates": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.65913845,
-        "pnlPct": -7.5,
-        "pnlUSD": -0.75,
+        "currentPrice": null,
+        "pnlPct": -8,
+        "pnlUSD": -0.8,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -110,9 +110,9 @@
       },
       {
         "sym": "GIZA",
-        "currentPrice": 0.01691332,
-        "pnlPct": 155.08,
-        "pnlUSD": 5.47,
+        "currentPrice": null,
+        "pnlPct": 160.18,
+        "pnlUSD": 5.65,
         "quantScore": -0.0342,
         "volumeTrend": "increasing",
         "recommendation": "hold",
@@ -126,9 +126,9 @@
     "positionAssessments": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.65913845,
-        "pnlPct": -7.5,
-        "pnlUSD": -0.75,
+        "currentPrice": null,
+        "pnlPct": -8,
+        "pnlUSD": -0.8,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -137,9 +137,9 @@
       },
       {
         "sym": "GIZA",
-        "currentPrice": 0.01691332,
-        "pnlPct": 155.08,
-        "pnlUSD": 5.47,
+        "currentPrice": null,
+        "pnlPct": 160.18,
+        "pnlUSD": 5.65,
         "quantScore": -0.0342,
         "volumeTrend": "increasing",
         "recommendation": "hold",
@@ -526,9 +526,9 @@
       "positionUpdates": [
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.65913845,
-          "pnlPct": -7.5,
-          "pnlUSD": -0.75,
+          "currentPrice": null,
+          "pnlPct": -8,
+          "pnlUSD": -0.8,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -537,9 +537,9 @@
         },
         {
           "sym": "GIZA",
-          "currentPrice": 0.01691332,
-          "pnlPct": 155.08,
-          "pnlUSD": 5.47,
+          "currentPrice": null,
+          "pnlPct": 160.18,
+          "pnlUSD": 5.65,
           "quantScore": -0.0342,
           "volumeTrend": "increasing",
           "recommendation": "hold",
@@ -553,9 +553,9 @@
       "positionAssessments": [
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.65913845,
-          "pnlPct": -7.5,
-          "pnlUSD": -0.75,
+          "currentPrice": null,
+          "pnlPct": -8,
+          "pnlUSD": -0.8,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -564,9 +564,9 @@
         },
         {
           "sym": "GIZA",
-          "currentPrice": 0.01691332,
-          "pnlPct": 155.08,
-          "pnlUSD": 5.47,
+          "currentPrice": null,
+          "pnlPct": 160.18,
+          "pnlUSD": 5.65,
           "quantScore": -0.0342,
           "volumeTrend": "increasing",
           "recommendation": "hold",
@@ -7792,7 +7792,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 37765,
+      "expCount": 37770,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
