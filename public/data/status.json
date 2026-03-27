@@ -1,45 +1,42 @@
 {
-  "updatedAt": "2026-03-27T15:05:52.055Z",
+  "updatedAt": "2026-03-27T15:08:52.861Z",
   "regime": "BEAR",
-  "btcPrice": 65900,
+  "btcPrice": 66229,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 27 min",
   "wallet": {
     "totalUSD": 27.55,
     "positionsUSD": 9.38,
     "liquidUSDC": 1.49,
     "ethUSD": 5.81,
     "yieldUSD": 0,
-    "unrealPnlUSD": 5.85,
-    "unrealPnlPct": 165.93
+    "unrealPnlUSD": 5.88,
+    "unrealPnlPct": 166.78
   },
   "positions": [
     {
       "sym": "GIZA",
       "entryPrice": 0.01860443331,
-      "currentPrice": null,
+      "currentPrice": 0.0176792,
       "sizeUSD": 3.5272,
-      "currentUSD": 9.38,
-      "pnlUSD": 5.85,
-      "pnlPct": 165.85,
-      "peakPct": 0,
+      "currentUSD": 9.41,
+      "pnlUSD": 5.88,
+      "pnlPct": 166.7,
+      "peakPct": 165.85,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": false,
+      "trailActivated": true,
       "openedAt": "2026-03-27T08:08:44.964Z",
       "entryTx": null,
       "contractAddress": "0x590830dfdf9a3f68afcdde2694773debdf267774",
       "source": "universe",
       "chain": "base",
-      "volumeTrend": "increasing",
-      "recommendation": "hold",
-      "quantScore": -0.051,
-      "ret1h": -1.93,
-      "transferStats": {
-        "uniqueBuyers": 32,
-        "buyRatio": 0.5
-      }
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
     }
   ],
   "yield": {
@@ -51,66 +48,56 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-27T14:35:00.003Z",
-    "ago": "31m ago",
+    "ts": "2026-03-27T15:05:00.005Z",
+    "ago": "4m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
-      "btcNow": 65900,
-      "sma200": 69875.75684999999,
-      "pctFrom200": -0.056897513948000855,
-      "volRatio": 0.8963739385461649,
+      "btcNow": 66229.21,
+      "sma200": 69857.47235,
+      "pctFrom200": -0.051938070874102994,
+      "volRatio": 0.8977966929605645,
       "btcState": "BEAR",
       "ethState": "BEAR",
       "breadthFraction": "BTC:BEAR ETH:BEAR",
       "breadth": 0
     },
-    "seenCount": 4,
-    "screened": 4,
+    "seenCount": 0,
+    "screened": 0,
     "traded": [],
-    "action": "hold",
+    "action": "smart_yield",
     "asset": "USDC",
     "confidence": null,
-    "reasoning": "Bankr reasoning engine failed — holding this cycle",
-    "topSignal": "DRB score=0.52 ret1h=0.5%",
+    "reasoning": "BEAR regime — monitoring market",
+    "topSignal": null,
     "positionUpdates": [
       {
         "sym": "GIZA",
-        "currentPrice": null,
-        "pnlPct": 165.85,
-        "pnlUSD": 5.85,
-        "quantScore": -0.051,
-        "volumeTrend": "increasing",
-        "recommendation": "hold",
-        "ret1h": -1.93,
-        "transferStats": {
-          "uniqueBuyers": 32,
-          "buyRatio": 0.5
-        }
+        "currentPrice": 0.0176792,
+        "pnlPct": 166.7,
+        "pnlUSD": 5.88,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
       }
     ],
     "positionAssessments": [
       {
         "sym": "GIZA",
-        "currentPrice": null,
-        "pnlPct": 165.85,
-        "pnlUSD": 5.85,
-        "quantScore": -0.051,
-        "volumeTrend": "increasing",
-        "recommendation": "hold",
-        "ret1h": -1.93,
-        "transferStats": {
-          "uniqueBuyers": 32,
-          "buyRatio": 0.5
-        }
+        "currentPrice": 0.0176792,
+        "pnlPct": 166.7,
+        "pnlUSD": 5.88,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
       }
     ],
     "checkrSustained": [],
-    "checkrTraded": {
-      "sym": "USDC",
-      "velocity": 0,
-      "checkrSource": false
-    },
+    "checkrTraded": null,
     "topScores": []
   },
   "performance": {
@@ -341,6 +328,63 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-27T15:05:00.005Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 66229.21,
+        "sma200": 69857.47235,
+        "pctFrom200": -0.051938070874102994,
+        "volRatio": 0.8977966929605645,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. BEAR regime — no signals above threshold across Alchemy, Checkr, onchain discovery",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "GIZA",
+          "currentPrice": 0.0176792,
+          "pnlPct": 166.7,
+          "pnlUSD": 5.88,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "GIZA",
+          "currentPrice": 0.0176792,
+          "pnlPct": 166.7,
+          "pnlUSD": 5.88,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "hardcoded",
+      "dataSources": null
+    },
+    {
       "ts": "2026-03-27T14:35:00.003Z",
       "regime": "BEAR",
       "regime_detail": {
@@ -363,13 +407,14 @@
       "positionUpdates": [
         {
           "sym": "GIZA",
-          "currentPrice": null,
-          "pnlPct": 165.85,
-          "pnlUSD": 5.85,
+          "currentPrice": 0.0176600651,
+          "entryPrice": 0.01860443331,
+          "pnlPct": -5.08,
           "quantScore": -0.051,
           "volumeTrend": "increasing",
           "recommendation": "hold",
-          "ret1h": -1.93,
+          "ret1h": -0.01927617239450865,
+          "ret6h": -0.05089833431336949,
           "transferStats": {
             "uniqueBuyers": 32,
             "buyRatio": 0.5
@@ -379,13 +424,14 @@
       "positionAssessments": [
         {
           "sym": "GIZA",
-          "currentPrice": null,
-          "pnlPct": 165.85,
-          "pnlUSD": 5.85,
+          "currentPrice": 0.0176600651,
+          "entryPrice": 0.01860443331,
+          "pnlPct": -5.08,
           "quantScore": -0.051,
           "volumeTrend": "increasing",
           "recommendation": "hold",
-          "ret1h": -1.93,
+          "ret1h": -0.01927617239450865,
+          "ret6h": -0.05089833431336949,
           "transferStats": {
             "uniqueBuyers": 32,
             "buyRatio": 0.5
@@ -7436,147 +7482,6 @@
           {
             "sym": "THENICKSHIRLEY",
             "score": 0.2378569823745791,
-            "source": "checkr"
-          }
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-26T15:05:00.021Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 69350,
-        "sma200": 70283.72024999998,
-        "pctFrom200": -0.013285014604786578,
-        "volRatio": 0.8474472944406243,
-        "btcState": "RANGE",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:RANGE ETH:BEAR",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": 80,
-      "reasoning": "No high-conviction entry this cycle — holding current positions",
-      "seenCount": 2,
-      "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "HYDX",
-          "currentPrice": 0.1014095028,
-          "entryPrice": 0.1018398951,
-          "pnlPct": -0.42,
-          "quantScore": 0.0368,
-          "volumeTrend": "declining",
-          "recommendation": "hold",
-          "ret1h": -0.013892031610912223,
-          "ret6h": 0.011642059033778409,
-          "transferStats": {
-            "uniqueBuyers": 32,
-            "buyRatio": 0.5333333333333333
-          }
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "HYDX",
-          "currentPrice": 0.1014095028,
-          "entryPrice": 0.1018398951,
-          "pnlPct": -0.42,
-          "quantScore": 0.0368,
-          "volumeTrend": "declining",
-          "recommendation": "hold",
-          "ret1h": -0.013892031610912223,
-          "ret6h": 0.011642059033778409,
-          "transferStats": {
-            "uniqueBuyers": 32,
-            "buyRatio": 0.5333333333333333
-          }
-        }
-      ],
-      "checkrSustained": [],
-      "checkrTraded": {
-        "sym": "DRB",
-        "velocity": 3.541241474654378,
-        "checkrSource": false
-      },
-      "alchemyDiscovered": [],
-      "socialCandidates": [
-        {
-          "sym": "VIRTUAL",
-          "velocity": 4,
-          "score": 0.26666666666666666
-        }
-      ],
-      "quantTop5": [
-        {
-          "sym": "DRB",
-          "score": 0.5902069124423963,
-          "source": "bankr_trending"
-        },
-        {
-          "sym": "VIRTUAL",
-          "score": 0.26666666666666666,
-          "source": "checkr"
-        }
-      ],
-      "tradedEntry": {
-        "sym": "DRB",
-        "liq": 882264.63,
-        "ret1h": -0.02293420870600037,
-        "ret24h": 0.05743574238226327,
-        "buyers": 44,
-        "buyRatio": 0.5238095238095238,
-        "address": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
-        "score": 0.5902069124423963,
-        "source": "bankr_trending",
-        "unusualActivity": false
-      },
-      "topSignal": "DRB score=0.63 ret1h=-2.3%",
-      "layers": [
-        "bankr-screen",
-        "venice-e2ee"
-      ],
-      "screenLayer": "bankr-llm",
-      "dataSources": {
-        "checkrTokens": 19,
-        "checkrSustained": [],
-        "checkrTraded": {
-          "sym": "DRB",
-          "velocity": 3.541241474654378,
-          "checkrSource": false
-        },
-        "tradedEntry": {
-          "sym": "DRB",
-          "liq": 882264.63,
-          "ret1h": -0.02293420870600037,
-          "ret24h": 0.05743574238226327,
-          "buyers": 44,
-          "buyRatio": 0.5238095238095238,
-          "address": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
-          "score": 0.5902069124423963,
-          "source": "bankr_trending",
-          "unusualActivity": false
-        },
-        "discoveryPassed": 2,
-        "alchemyDiscovered": [],
-        "socialCandidates": [
-          {
-            "sym": "VIRTUAL",
-            "velocity": 4,
-            "score": 0.26666666666666666
-          }
-        ],
-        "quantTop5": [
-          {
-            "sym": "DRB",
-            "score": 0.5902069124423963,
-            "source": "bankr_trending"
-          },
-          {
-            "sym": "VIRTUAL",
-            "score": 0.26666666666666666,
             "source": "checkr"
           }
         ]
