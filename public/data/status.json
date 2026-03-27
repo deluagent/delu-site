@@ -1,38 +1,62 @@
 {
-  "updatedAt": "2026-03-27T01:07:05.892Z",
+  "updatedAt": "2026-03-27T01:08:06.254Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 68730,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 68778,
+  "pctFrom200": "-1.9%",
   "breadth": "BTC:RANGE ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 27 min",
   "wallet": {
-    "totalUSD": 50.45,
-    "positionsUSD": 0,
-    "liquidUSDC": 11.35,
+    "totalUSD": 50.64,
+    "positionsUSD": 10.19,
+    "liquidUSDC": 1.35,
     "ethUSD": 17.55,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0,
-    "unrealPnlPct": 0
+    "unrealPnlUSD": 6.23,
+    "unrealPnlPct": 166.86
   },
-  "positions": [],
+  "positions": [
+    {
+      "sym": "REKT",
+      "entryPrice": 1.408469364e-7,
+      "currentPrice": 1.4e-7,
+      "sizeUSD": 3.736,
+      "currentUSD": 9.97,
+      "pnlUSD": 6.23,
+      "pnlPct": 166.76,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-03-27T01:07:28.904Z",
+      "entryTx": null,
+      "contractAddress": "0xb3e3c89b8d9c88b1fe96856e382959ee6291ebba",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
+    }
+  ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 28.9,
+    "amountUSD": 18.9,
     "apy": 0,
-    "note": "Liquid USDC available for next trade entry"
+    "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-27T00:35:00.023Z",
-    "ago": "32m ago",
+    "ts": "2026-03-27T01:05:00.001Z",
+    "ago": "3m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 68730.29,
-      "sma200": 70108.51114999998,
-      "pctFrom200": -0.019658399920249675,
-      "volRatio": 0.8595192826611183,
+      "btcNow": 68778.4,
+      "sma200": 70094.70069999999,
+      "pctFrom200": -0.018778890370524014,
+      "volRatio": 0.8582588716301798,
       "btcState": "RANGE",
       "ethState": "BEAR",
       "breadthFraction": "BTC:RANGE ETH:BEAR",
@@ -40,18 +64,44 @@
     },
     "seenCount": 5,
     "screened": 5,
-    "traded": [],
-    "action": "hold",
-    "asset": "GIZA",
-    "confidence": 85,
-    "reasoning": "No high-conviction entry this cycle — holding current positions",
-    "topSignal": "GIZA score=0.54 ret1h=0.2%",
-    "positionUpdates": [],
-    "positionAssessments": [],
+    "traded": [
+      "REKT"
+    ],
+    "action": "buy",
+    "asset": "REKT",
+    "confidence": 80,
+    "reasoning": "REKT has a high quant score of 0.592 and unusual activity detected on Base, indicating strong cross-sectional alpha and a high conviction buy signal.",
+    "topSignal": "REKT score=0.62 ret1h=52.0%",
+    "positionUpdates": [
+      {
+        "sym": "REKT",
+        "currentPrice": 1.4e-7,
+        "pnlPct": 166.76,
+        "pnlUSD": 6.23,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      }
+    ],
+    "positionAssessments": [
+      {
+        "sym": "REKT",
+        "currentPrice": 1.4e-7,
+        "pnlPct": 166.76,
+        "pnlUSD": 6.23,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      }
+    ],
     "checkrSustained": [],
     "checkrTraded": {
-      "sym": "GIZA",
-      "velocity": 3.081000935956566,
+      "sym": "REKT",
+      "velocity": 2.9585450970000005,
       "checkrSource": false
     },
     "topScores": []
@@ -271,6 +321,193 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-27T01:05:00.001Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 68778.4,
+        "sma200": 70094.70069999999,
+        "pctFrom200": -0.018778890370524014,
+        "volRatio": 0.8582588716301798,
+        "btcState": "RANGE",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:RANGE ETH:BEAR",
+        "breadth": 0.5
+      },
+      "action": "buy",
+      "asset": "REKT",
+      "confidence": 80,
+      "reasoning": "REKT has a high quant score of 0.592 and unusual activity detected on Base, indicating strong cross-sectional alpha and a high conviction buy signal.",
+      "seenCount": 4,
+      "traded": [
+        "REKT"
+      ],
+      "positionUpdates": [
+        {
+          "sym": "REKT",
+          "currentPrice": 1.4e-7,
+          "pnlPct": 166.76,
+          "pnlUSD": 6.23,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "REKT",
+          "currentPrice": 1.4e-7,
+          "pnlPct": 166.76,
+          "pnlUSD": 6.23,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": {
+        "sym": "REKT",
+        "velocity": 2.9585450970000005,
+        "checkrSource": false
+      },
+      "alchemyDiscovered": [
+        {
+          "sym": "REKT",
+          "liq": 94472.6796,
+          "score": 0.5917090194000001,
+          "address": "0xb3e3c89b8d9c88b1fe96856e382959ee6291ebba"
+        }
+      ],
+      "socialCandidates": [
+        {
+          "sym": "VIRTUAL",
+          "velocity": 4,
+          "score": 0.26666666666666666
+        },
+        {
+          "sym": "KELLYCLAUDE",
+          "velocity": 3.75,
+          "score": 0.25
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "velocity": 3.536661323952252,
+          "score": 0.2357774215968168
+        }
+      ],
+      "quantTop5": [
+        {
+          "sym": "REKT",
+          "score": 0.5917090194000001,
+          "source": "alchemy_discover"
+        },
+        {
+          "sym": "VIRTUAL",
+          "score": 0.26666666666666666,
+          "source": "checkr"
+        },
+        {
+          "sym": "KELLYCLAUDE",
+          "score": 0.25,
+          "source": "checkr"
+        },
+        {
+          "sym": "THENICKSHIRLEY",
+          "score": 0.2357774215968168,
+          "source": "checkr"
+        }
+      ],
+      "tradedEntry": {
+        "sym": "REKT",
+        "liq": 94472.6796,
+        "vol24h": 459796.440355991,
+        "ret1h": 0.52,
+        "ret24h": -2.45,
+        "address": "0xb3e3c89b8d9c88b1fe96856e382959ee6291ebba",
+        "score": 0.5917090194000001,
+        "source": "alchemy_discover",
+        "unusualActivity": true
+      },
+      "topSignal": "REKT score=0.62 ret1h=52.0%",
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "bankr-llm",
+      "dataSources": {
+        "checkrTokens": 22,
+        "checkrSustained": [],
+        "checkrTraded": {
+          "sym": "REKT",
+          "velocity": 2.9585450970000005,
+          "checkrSource": false
+        },
+        "tradedEntry": {
+          "sym": "REKT",
+          "liq": 94472.6796,
+          "vol24h": 459796.440355991,
+          "ret1h": 0.52,
+          "ret24h": -2.45,
+          "address": "0xb3e3c89b8d9c88b1fe96856e382959ee6291ebba",
+          "score": 0.5917090194000001,
+          "source": "alchemy_discover",
+          "unusualActivity": true
+        },
+        "discoveryPassed": 4,
+        "alchemyDiscovered": [
+          {
+            "sym": "REKT",
+            "liq": 94472.6796,
+            "score": 0.5917090194000001,
+            "address": "0xb3e3c89b8d9c88b1fe96856e382959ee6291ebba"
+          }
+        ],
+        "socialCandidates": [
+          {
+            "sym": "VIRTUAL",
+            "velocity": 4,
+            "score": 0.26666666666666666
+          },
+          {
+            "sym": "KELLYCLAUDE",
+            "velocity": 3.75,
+            "score": 0.25
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "velocity": 3.536661323952252,
+            "score": 0.2357774215968168
+          }
+        ],
+        "quantTop5": [
+          {
+            "sym": "REKT",
+            "score": 0.5917090194000001,
+            "source": "alchemy_discover"
+          },
+          {
+            "sym": "VIRTUAL",
+            "score": 0.26666666666666666,
+            "source": "checkr"
+          },
+          {
+            "sym": "KELLYCLAUDE",
+            "score": 0.25,
+            "source": "checkr"
+          },
+          {
+            "sym": "THENICKSHIRLEY",
+            "score": 0.2357774215968168,
+            "source": "checkr"
+          }
+        ]
+      }
+    },
     {
       "ts": "2026-03-27T00:35:00.023Z",
       "regime": "RANGE_TIGHT",
@@ -6364,39 +6601,6 @@
       "quantTop5": [],
       "tradedEntry": null,
       "topSignal": "DRB score=0.45 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": "bankr-llm",
-      "dataSources": null
-    },
-    {
-      "ts": "2026-03-26T00:05:00.009Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 71250.06,
-        "sma200": 70600.88490000002,
-        "pctFrom200": 0.009194999480806485,
-        "volRatio": 0.8639349474994217,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "Scanned 1 tokens [LITCOIN(0.45)]. LITCOIN shows negative quant (-0.01), weak velocity (2.6), negative 1h return (-2.6%), and modest attention (1.3) — no genuine strength against trend to warrant deeper analysis in tight range.",
-      "seenCount": 1,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "LITCOIN score=0.45 ret1h=0.0%",
       "layers": [],
       "screenLayer": "bankr-llm",
       "dataSources": null
