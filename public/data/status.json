@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-28T18:31:09.078Z",
+  "updatedAt": "2026-03-28T18:32:16.004Z",
   "regime": "BEAR",
   "btcPrice": 66921,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 4 min",
+  "nextCycle": "in 3 min",
   "wallet": {
     "totalUSD": 41.83,
     "positionsUSD": 9.39,
@@ -49,7 +49,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-28T18:05:00.009Z",
-    "ago": "26m ago",
+    "ago": "27m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -105,13 +105,26 @@
     "topScores": []
   },
   "performance": {
-    "totalTrades": 26,
-    "winCount": 10,
-    "winRatePct": 38.5,
-    "avgPnlPct": 2.31,
-    "closedTrades": 26,
-    "winRate": "10/26 (38.5%)",
+    "totalTrades": 27,
+    "winCount": 11,
+    "winRatePct": 40.7,
+    "avgPnlPct": 8.02,
+    "closedTrades": 27,
+    "winRate": "11/27 (40.7%)",
     "recentTrades": [
+      {
+        "sym": "GIZA",
+        "pnlPct": 156.54,
+        "pnlUSD": 5.52,
+        "sizeUsd": 3.5272,
+        "won": true,
+        "regime": "RANGE_TIGHT",
+        "entryTx": null,
+        "exitTx": null,
+        "openedAt": "2026-03-27T08:08:44.964Z",
+        "closedAt": "2026-03-28T18:31:43.499Z",
+        "reason": "atr_stop"
+      },
       {
         "sym": "DRB",
         "pnlPct": -10.4,
