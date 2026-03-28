@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-28T23:35:35.230Z",
+  "updatedAt": "2026-03-28T23:36:14.566Z",
   "regime": "BEAR",
-  "btcPrice": 66664,
+  "btcPrice": 66457,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 29 min",
   "wallet": {
     "totalUSD": 36.83,
     "positionsUSD": 9.23,
     "liquidUSDC": 20.36,
     "ethUSD": 5.82,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.77,
-    "unrealPnlPct": -7.7
+    "unrealPnlUSD": -0.84,
+    "unrealPnlPct": -8.4
   },
   "positions": [
     {
       "sym": "VIRTUAL",
       "entryPrice": 0.6833,
-      "currentPrice": null,
+      "currentPrice": 0.65297584,
       "sizeUSD": 10,
-      "currentUSD": 9.23,
-      "pnlUSD": -0.77,
-      "pnlPct": -7.7,
+      "currentUSD": 9.16,
+      "pnlUSD": -0.84,
+      "pnlPct": -8.4,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -48,15 +48,15 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-28T23:05:00.019Z",
-    "ago": "31m ago",
+    "ts": "2026-03-28T23:35:00.026Z",
+    "ago": "1m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
-      "btcNow": 66664.15,
-      "sma200": 69253.62759999999,
-      "pctFrom200": -0.03739121963338132,
-      "volRatio": 0.8676721218662697,
+      "btcNow": 66456.77,
+      "sma200": 69252.59069999999,
+      "pctFrom200": -0.040371351768071585,
+      "volRatio": 0.8693944073787734,
       "btcState": "BEAR",
       "ethState": "BEAR",
       "breadthFraction": "BTC:BEAR ETH:BEAR",
@@ -73,9 +73,9 @@
     "positionUpdates": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": null,
-        "pnlPct": -7.7,
-        "pnlUSD": -0.77,
+        "currentPrice": 0.65297584,
+        "pnlPct": -8.4,
+        "pnlUSD": -0.84,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -86,9 +86,9 @@
     "positionAssessments": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": null,
-        "pnlPct": -7.7,
-        "pnlUSD": -0.77,
+        "currentPrice": 0.65297584,
+        "pnlPct": -8.4,
+        "pnlUSD": -0.84,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -463,6 +463,63 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-28T23:35:00.026Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 66456.77,
+        "sma200": 69252.59069999999,
+        "pctFrom200": -0.040371351768071585,
+        "volRatio": 0.8693944073787734,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. BEAR regime — no signals above threshold across Alchemy, Checkr, onchain discovery",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "VIRTUAL",
+          "currentPrice": 0.65297584,
+          "pnlPct": -8.4,
+          "pnlUSD": -0.84,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "VIRTUAL",
+          "currentPrice": 0.65297584,
+          "pnlPct": -8.4,
+          "pnlUSD": -0.84,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "hardcoded",
+      "dataSources": null
+    },
+    {
       "ts": "2026-03-28T23:05:00.019Z",
       "regime": "BEAR",
       "regime_detail": {
@@ -482,32 +539,8 @@
       "reasoning": "No tokens passed discovery this cycle. BEAR regime — no signals above threshold across Alchemy, Checkr, onchain discovery",
       "seenCount": 0,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "VIRTUAL",
-          "currentPrice": null,
-          "pnlPct": -7.7,
-          "pnlUSD": -0.77,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "VIRTUAL",
-          "currentPrice": null,
-          "pnlPct": -7.7,
-          "pnlUSD": -0.77,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -5540,39 +5573,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-27T22:35:00.013Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 66005,
-        "sma200": 69718.64284999999,
-        "pctFrom200": -0.05326613798248928,
-        "volRatio": 0.8956233875230196,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. BEAR regime — no signals above threshold across Alchemy, Checkr, onchain discovery",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "hardcoded",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
