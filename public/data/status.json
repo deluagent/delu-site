@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-29T12:36:30.798Z",
+  "updatedAt": "2026-03-29T12:39:19.250Z",
   "regime": "BEAR",
   "btcPrice": 66723,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 29 min",
+  "nextCycle": "in 26 min",
   "wallet": {
-    "totalUSD": 26.81,
-    "positionsUSD": 9.21,
-    "liquidUSDC": 10.36,
+    "totalUSD": 21.77,
+    "positionsUSD": 9.16,
+    "liquidUSDC": 5.36,
     "ethUSD": 5.85,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.68,
-    "unrealPnlPct": -6.8
+    "unrealPnlUSD": -0.69,
+    "unrealPnlPct": -6.9
   },
   "positions": [
     {
       "sym": "VIRTUAL",
       "entryPrice": 0.6833,
-      "currentPrice": 0.66436876,
+      "currentPrice": 0.66378402,
       "sizeUSD": 10,
-      "currentUSD": 9.32,
-      "pnlUSD": -0.68,
-      "pnlPct": -6.8,
+      "currentUSD": 9.31,
+      "pnlUSD": -0.69,
+      "pnlPct": -6.9,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -43,13 +43,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 16.21,
+    "amountUSD": 11.21,
     "apy": 0,
-    "note": "Liquid USDC available for next trade entry"
+    "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
     "ts": "2026-03-29T12:35:00.013Z",
-    "ago": "2m ago",
+    "ago": "4m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -73,9 +73,9 @@
     "positionUpdates": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.66436876,
-        "pnlPct": -6.8,
-        "pnlUSD": -0.68,
+        "currentPrice": 0.66378402,
+        "pnlPct": -6.9,
+        "pnlUSD": -0.69,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -86,9 +86,9 @@
     "positionAssessments": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.66436876,
-        "pnlPct": -6.8,
-        "pnlUSD": -0.68,
+        "currentPrice": 0.66378402,
+        "pnlPct": -6.9,
+        "pnlUSD": -0.69,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -489,9 +489,9 @@
       "positionUpdates": [
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.66436876,
-          "pnlPct": -6.8,
-          "pnlUSD": -0.68,
+          "currentPrice": 0.66378402,
+          "pnlPct": -6.9,
+          "pnlUSD": -0.69,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -502,9 +502,9 @@
       "positionAssessments": [
         {
           "sym": "VIRTUAL",
-          "currentPrice": 0.66436876,
-          "pnlPct": -6.8,
-          "pnlUSD": -0.68,
+          "currentPrice": 0.66378402,
+          "pnlPct": -6.9,
+          "pnlUSD": -0.69,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -4593,7 +4593,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 39930,
+      "expCount": 39935,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
