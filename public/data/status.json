@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-29T21:04:05.053Z",
+  "updatedAt": "2026-03-29T21:06:40.333Z",
   "regime": "BEAR",
-  "btcPrice": 66660,
+  "btcPrice": 66602,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 7 min",
+  "nextCycle": "in 29 min",
   "wallet": {
     "totalUSD": 18.86,
     "positionsUSD": 9.19,
     "liquidUSDC": 0,
     "ethUSD": 5.82,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.9,
-    "unrealPnlPct": -9
+    "unrealPnlUSD": -0.71,
+    "unrealPnlPct": -7.1
   },
   "positions": [
     {
       "sym": "VIRTUAL",
       "entryPrice": 0.6833,
-      "currentPrice": 0.64885434,
+      "currentPrice": 0.66184422,
       "sizeUSD": 10,
-      "currentUSD": 9.1,
-      "pnlUSD": -0.9,
-      "pnlPct": -9,
+      "currentUSD": 9.29,
+      "pnlUSD": -0.71,
+      "pnlPct": -7.1,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -48,15 +48,15 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-29T20:40:34.180Z",
-    "ago": "24m ago",
+    "ts": "2026-03-29T21:05:00.021Z",
+    "ago": "2m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
-      "btcNow": 66659.94,
-      "sma200": 68847.04119999998,
-      "pctFrom200": -0.03176754094117811,
-      "volRatio": 0.8701227026094897,
+      "btcNow": 66601.69,
+      "sma200": 68826.11929999996,
+      "pctFrom200": -0.032319551394494515,
+      "volRatio": 0.8676867687014236,
       "btcState": "BEAR",
       "ethState": "BEAR",
       "breadthFraction": "BTC:BEAR ETH:BEAR",
@@ -73,9 +73,9 @@
     "positionUpdates": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.64885434,
-        "pnlPct": -9,
-        "pnlUSD": -0.9,
+        "currentPrice": 0.66184422,
+        "pnlPct": -7.1,
+        "pnlUSD": -0.71,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -86,9 +86,9 @@
     "positionAssessments": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.64885434,
-        "pnlPct": -9,
-        "pnlUSD": -0.9,
+        "currentPrice": 0.66184422,
+        "pnlPct": -7.1,
+        "pnlUSD": -0.71,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -463,6 +463,63 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-29T21:05:00.021Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 66601.69,
+        "sma200": 68826.11929999996,
+        "pctFrom200": -0.032319551394494515,
+        "volRatio": 0.8676867687014236,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "VIRTUAL",
+          "currentPrice": 0.66184422,
+          "pnlPct": -7.1,
+          "pnlUSD": -0.71,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "VIRTUAL",
+          "currentPrice": 0.66184422,
+          "pnlPct": -7.1,
+          "pnlUSD": -0.71,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "fallback",
+      "dataSources": null
+    },
+    {
       "ts": "2026-03-29T20:40:34.180Z",
       "regime": "BEAR",
       "regime_detail": {
@@ -482,32 +539,8 @@
       "reasoning": "No tokens passed discovery this cycle. screen parse failed",
       "seenCount": 0,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "VIRTUAL",
-          "currentPrice": 0.64885434,
-          "pnlPct": -9,
-          "pnlUSD": -0.9,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "VIRTUAL",
-          "currentPrice": 0.64885434,
-          "pnlPct": -9,
-          "pnlUSD": -0.9,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -4533,39 +4566,6 @@
         "sma200": 69285.68779999999,
         "pctFrom200": -0.03405303281120033,
         "volRatio": 0.9088431404262589,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. BEAR regime — no signals above threshold across Alchemy, Checkr, onchain discovery",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "hardcoded",
-      "dataSources": null
-    },
-    {
-      "ts": "2026-03-28T20:35:00.006Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 66947.66,
-        "sma200": 69300.58379999996,
-        "pctFrom200": -0.03395243836315217,
-        "volRatio": 0.9090977501664547,
         "btcState": "BEAR",
         "ethState": "BEAR",
         "breadthFraction": "BTC:BEAR ETH:BEAR",
