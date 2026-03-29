@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-03-29T03:03:13.173Z",
+  "updatedAt": "2026-03-29T03:06:19.255Z",
   "regime": "BEAR",
-  "btcPrice": 66601,
+  "btcPrice": 66822,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "in 2 min",
+  "nextCycle": "in 29 min",
   "wallet": {
     "totalUSD": 31.87,
     "positionsUSD": 9.23,
     "liquidUSDC": 15.36,
     "ethUSD": 5.85,
     "yieldUSD": 0,
-    "unrealPnlUSD": -0.59,
-    "unrealPnlPct": -5.9
+    "unrealPnlUSD": -0.78,
+    "unrealPnlPct": -7.8
   },
   "positions": [
     {
       "sym": "VIRTUAL",
       "entryPrice": 0.6833,
-      "currentPrice": 0.67046489,
+      "currentPrice": 0.65697908,
       "sizeUSD": 10,
-      "currentUSD": 9.41,
-      "pnlUSD": -0.59,
-      "pnlPct": -5.9,
+      "currentUSD": 9.22,
+      "pnlUSD": -0.78,
+      "pnlPct": -7.8,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -48,15 +48,15 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-29T02:35:00.014Z",
-    "ago": "28m ago",
+    "ts": "2026-03-29T03:05:00.014Z",
+    "ago": "1m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
-      "btcNow": 66601.14,
-      "sma200": 69202.48714999999,
-      "pctFrom200": -0.037590370767475914,
-      "volRatio": 0.8691498185139929,
+      "btcNow": 66822,
+      "sma200": 69186.79214999998,
+      "pctFrom200": -0.03417982069284275,
+      "volRatio": 0.8704407218477607,
       "btcState": "BEAR",
       "ethState": "BEAR",
       "breadthFraction": "BTC:BEAR ETH:BEAR",
@@ -73,9 +73,9 @@
     "positionUpdates": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.67046489,
-        "pnlPct": -5.9,
-        "pnlUSD": -0.59,
+        "currentPrice": 0.65697908,
+        "pnlPct": -7.8,
+        "pnlUSD": -0.78,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -86,9 +86,9 @@
     "positionAssessments": [
       {
         "sym": "VIRTUAL",
-        "currentPrice": 0.67046489,
-        "pnlPct": -5.9,
-        "pnlUSD": -0.59,
+        "currentPrice": 0.65697908,
+        "pnlPct": -7.8,
+        "pnlUSD": -0.78,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -463,6 +463,63 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-03-29T03:05:00.014Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 66822,
+        "sma200": 69186.79214999998,
+        "pctFrom200": -0.03417982069284275,
+        "volRatio": 0.8704407218477607,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. BEAR regime — no signals above threshold across Alchemy, Checkr, onchain discovery",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "VIRTUAL",
+          "currentPrice": 0.65697908,
+          "pnlPct": -7.8,
+          "pnlUSD": -0.78,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "VIRTUAL",
+          "currentPrice": 0.65697908,
+          "pnlPct": -7.8,
+          "pnlUSD": -0.78,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "hardcoded",
+      "dataSources": null
+    },
+    {
       "ts": "2026-03-29T02:35:00.014Z",
       "regime": "BEAR",
       "regime_detail": {
@@ -482,32 +539,8 @@
       "reasoning": "No tokens passed discovery this cycle. BEAR regime — no signals above threshold across Alchemy, Checkr, onchain discovery",
       "seenCount": 0,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "VIRTUAL",
-          "currentPrice": 0.67046489,
-          "pnlPct": -5.9,
-          "pnlUSD": -0.59,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "VIRTUAL",
-          "currentPrice": 0.67046489,
-          "pnlPct": -5.9,
-          "pnlUSD": -0.59,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -4884,143 +4917,6 @@
           {
             "sym": "$MAMO",
             "score": 0.22500306800277295,
-            "source": "checkr"
-          }
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-28T02:05:00.002Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 66234.48,
-        "sma200": 69652.26389999999,
-        "pctFrom200": -0.04906924353394916,
-        "volRatio": 0.8957684182352503,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "Bankr reasoning engine failed — holding this cycle",
-      "seenCount": 5,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": {
-        "sym": "USDC",
-        "velocity": 0,
-        "checkrSource": false
-      },
-      "alchemyDiscovered": [],
-      "socialCandidates": [
-        {
-          "sym": "TIBBIR",
-          "velocity": 4,
-          "score": 0.26666666666666666
-        },
-        {
-          "sym": "OVPP",
-          "velocity": 4,
-          "score": 0.26666666666666666
-        },
-        {
-          "sym": "$MAMO",
-          "velocity": 3.625046020041594,
-          "score": 0.24166973466943958
-        }
-      ],
-      "quantTop5": [
-        {
-          "sym": "B3",
-          "score": 0.8627611675949673,
-          "source": "bankr_trending"
-        },
-        {
-          "sym": "FAI",
-          "score": 0.5405218658203695,
-          "source": "bankr_trending"
-        },
-        {
-          "sym": "TIBBIR",
-          "score": 0.26666666666666666,
-          "source": "checkr"
-        },
-        {
-          "sym": "OVPP",
-          "score": 0.26666666666666666,
-          "source": "checkr"
-        },
-        {
-          "sym": "$MAMO",
-          "score": 0.24166973466943958,
-          "source": "checkr"
-        }
-      ],
-      "tradedEntry": null,
-      "topSignal": "B3 score=0.86 ret1h=-2.6%",
-      "layers": [
-        "bankr-screen",
-        "engine-failed"
-      ],
-      "screenLayer": "fallback",
-      "dataSources": {
-        "checkrTokens": 21,
-        "checkrSustained": [],
-        "checkrTraded": {
-          "sym": "USDC",
-          "velocity": 0,
-          "checkrSource": false
-        },
-        "tradedEntry": null,
-        "discoveryPassed": 5,
-        "alchemyDiscovered": [],
-        "socialCandidates": [
-          {
-            "sym": "TIBBIR",
-            "velocity": 4,
-            "score": 0.26666666666666666
-          },
-          {
-            "sym": "OVPP",
-            "velocity": 4,
-            "score": 0.26666666666666666
-          },
-          {
-            "sym": "$MAMO",
-            "velocity": 3.625046020041594,
-            "score": 0.24166973466943958
-          }
-        ],
-        "quantTop5": [
-          {
-            "sym": "B3",
-            "score": 0.8627611675949673,
-            "source": "bankr_trending"
-          },
-          {
-            "sym": "FAI",
-            "score": 0.5405218658203695,
-            "source": "bankr_trending"
-          },
-          {
-            "sym": "TIBBIR",
-            "score": 0.26666666666666666,
-            "source": "checkr"
-          },
-          {
-            "sym": "OVPP",
-            "score": 0.26666666666666666,
-            "source": "checkr"
-          },
-          {
-            "sym": "$MAMO",
-            "score": 0.24166973466943958,
             "source": "checkr"
           }
         ]
