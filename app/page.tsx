@@ -60,12 +60,7 @@ function Hero({ status }: { status: any }) {
   const winStr = perf.winRate ?? '0/0';
   const wins = parseInt(winStr.split('/')[0]) || 0;
   const closed = perf.closedTrades ?? 0;
-  const integrations = [
-    { name: 'Bankr',       live: true },
-    { name: 'Venice AI',   live: true },
-    { name: 'Checkr x402', live: true },
-    { name: 'Alchemy',     live: true },
-  ];
+  const integrations: { name: string; live: boolean }[] = [];
 
   return (
     <section className="mb-10">
@@ -90,19 +85,7 @@ function Hero({ status }: { status: any }) {
             and pays for its own AI compute via Bankr LLM Gateway. Fully self-funding.
           </p>
         </div>
-        {/* Live integrations */}
-        <div className="flex flex-wrap gap-1.5">
-          {integrations.map(i => (
-            <span key={i.name}
-              className={`flex items-center gap-1.5 text-[10px] px-2.5 py-1 rounded-full border font-medium
-                ${i.live
-                  ? 'border-[#22c55e]/20 text-[#22c55e] bg-[#22c55e]/5'
-                  : 'border-[#f59e0b]/20 text-[#f59e0b] bg-[#f59e0b]/5'}`}>
-              <span className={`w-1.5 h-1.5 rounded-full ${i.live ? 'bg-[#22c55e]' : 'bg-[#f59e0b]'}`} />
-              {i.name}
-            </span>
-          ))}
-        </div>
+
       </div>
 
       {/* Last updated */}
