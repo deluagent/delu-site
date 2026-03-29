@@ -1,55 +1,31 @@
 {
-  "updatedAt": "2026-03-29T22:53:24.104Z",
+  "updatedAt": "2026-03-29T22:56:47.391Z",
   "regime": "BEAR",
   "btcPrice": 66397,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
   "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 87.74,
-    "positionsUSD": 8.81,
-    "liquidUSDC": 70.34,
+    "totalUSD": 87.82,
+    "positionsUSD": 0,
+    "liquidUSDC": 79.2,
     "ethUSD": 5.69,
     "yieldUSD": 0,
-    "unrealPnlUSD": -1.16,
-    "unrealPnlPct": -11.6
+    "unrealPnlUSD": 0,
+    "unrealPnlPct": 0
   },
-  "positions": [
-    {
-      "sym": "VIRTUAL",
-      "entryPrice": 0.6833,
-      "currentPrice": 0.62990696,
-      "sizeUSD": 10,
-      "currentUSD": 8.84,
-      "pnlUSD": -1.16,
-      "pnlPct": -11.6,
-      "peakPct": 0,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": false,
-      "openedAt": "2026-03-24T03:08:40.888Z",
-      "entryTx": null,
-      "contractAddress": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
-      "quantScore": null,
-      "ret1h": null,
-      "transferStats": null
-    }
-  ],
+  "positions": [],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 76.03,
+    "amountUSD": 84.89,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
     "ts": "2026-03-29T22:05:00.026Z",
-    "ago": "48m ago",
+    "ago": "52m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
@@ -70,32 +46,8 @@
     "confidence": null,
     "reasoning": "BEAR regime — monitoring market",
     "topSignal": null,
-    "positionUpdates": [
-      {
-        "sym": "VIRTUAL",
-        "currentPrice": 0.62990696,
-        "pnlPct": -11.6,
-        "pnlUSD": -1.16,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      }
-    ],
-    "positionAssessments": [
-      {
-        "sym": "VIRTUAL",
-        "currentPrice": 0.62990696,
-        "pnlPct": -11.6,
-        "pnlUSD": -1.16,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      }
-    ],
+    "positionUpdates": [],
+    "positionAssessments": [],
     "checkrSustained": [],
     "checkrTraded": null,
     "topScores": []
@@ -482,32 +434,8 @@
       "reasoning": "No tokens passed discovery this cycle. screen parse failed",
       "seenCount": 0,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "VIRTUAL",
-          "currentPrice": 0.62990696,
-          "pnlPct": -11.6,
-          "pnlUSD": -1.16,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "VIRTUAL",
-          "currentPrice": 0.62990696,
-          "pnlPct": -11.6,
-          "pnlUSD": -1.16,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -4579,7 +4507,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 40455,
+      "expCount": 40460,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
