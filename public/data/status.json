@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-03-29T21:06:40.333Z",
+  "updatedAt": "2026-03-29T21:10:02.357Z",
   "regime": "BEAR",
-  "btcPrice": 66602,
+  "btcPrice": 66588,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:BEAR ETH:BEAR",
   "nextCycle": "in 29 min",
   "wallet": {
-    "totalUSD": 18.86,
+    "totalUSD": 88.99,
     "positionsUSD": 9.19,
-    "liquidUSDC": 0,
+    "liquidUSDC": 70.34,
     "ethUSD": 5.82,
     "yieldUSD": 0,
     "unrealPnlUSD": -0.71,
@@ -43,20 +43,20 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 5.82,
+    "amountUSD": 76.16,
     "apy": 0,
-    "note": "USDC low — using ETH reserve for high-conviction trades"
+    "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-29T21:05:00.021Z",
+    "ts": "2026-03-29T21:08:30.492Z",
     "ago": "2m ago",
     "regime": "BEAR",
     "regime_detail": {
       "state": "BEAR",
-      "btcNow": 66601.69,
-      "sma200": 68826.11929999996,
-      "pctFrom200": -0.032319551394494515,
-      "volRatio": 0.8676867687014236,
+      "btcNow": 66588.18,
+      "sma200": 68826.05174999997,
+      "pctFrom200": -0.03251489360640214,
+      "volRatio": 0.8676979703231917,
       "btcState": "BEAR",
       "ethState": "BEAR",
       "breadthFraction": "BTC:BEAR ETH:BEAR",
@@ -463,14 +463,14 @@
   },
   "cycleHistory": [
     {
-      "ts": "2026-03-29T21:05:00.021Z",
+      "ts": "2026-03-29T21:08:30.492Z",
       "regime": "BEAR",
       "regime_detail": {
         "state": "BEAR",
-        "btcNow": 66601.69,
-        "sma200": 68826.11929999996,
-        "pctFrom200": -0.032319551394494515,
-        "volRatio": 0.8676867687014236,
+        "btcNow": 66588.18,
+        "sma200": 68826.05174999997,
+        "pctFrom200": -0.03251489360640214,
+        "volRatio": 0.8676979703231917,
         "btcState": "BEAR",
         "ethState": "BEAR",
         "breadthFraction": "BTC:BEAR ETH:BEAR",
@@ -508,6 +508,39 @@
           "transferStats": null
         }
       ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "fallback",
+      "dataSources": null
+    },
+    {
+      "ts": "2026-03-29T21:05:00.021Z",
+      "regime": "BEAR",
+      "regime_detail": {
+        "state": "BEAR",
+        "btcNow": 66601.69,
+        "sma200": 68826.11929999996,
+        "pctFrom200": -0.032319551394494515,
+        "volRatio": 0.8676867687014236,
+        "btcState": "BEAR",
+        "ethState": "BEAR",
+        "breadthFraction": "BTC:BEAR ETH:BEAR",
+        "breadth": 0
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -4556,39 +4589,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-28T21:05:00.001Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 66926.3,
-        "sma200": 69285.68779999999,
-        "pctFrom200": -0.03405303281120033,
-        "volRatio": 0.9088431404262589,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. BEAR regime — no signals above threshold across Alchemy, Checkr, onchain discovery",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "hardcoded",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -4647,7 +4647,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 40365,
+      "expCount": 40370,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
