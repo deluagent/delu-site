@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-30T03:01:44.734Z",
-  "regime": "BEAR",
-  "btcPrice": 66643,
+  "updatedAt": "2026-03-30T03:06:45.227Z",
+  "regime": "RANGE_TIGHT",
+  "btcPrice": 67005,
   "pctFrom200": "-4.2%",
-  "breadth": "BTC:BEAR ETH:BEAR",
-  "nextCycle": "< 1 min",
+  "breadth": "BTC:RANGE ETH:RANGE",
+  "nextCycle": "in 28 min",
   "wallet": {
     "totalUSD": 83.35,
     "positionsUSD": 0,
@@ -24,27 +24,27 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-30T02:05:00.013Z",
-    "ago": "57m ago",
-    "regime": "BEAR",
+    "ts": "2026-03-30T03:05:00.007Z",
+    "ago": "2m ago",
+    "regime": "RANGE_TIGHT",
     "regime_detail": {
-      "state": "BEAR",
-      "btcNow": 66642.7,
-      "sma200": 68722.63084999996,
-      "pctFrom200": -0.030265588268001558,
-      "volRatio": 0.8721818068591937,
-      "btcState": "BEAR",
-      "ethState": "BEAR",
-      "breadthFraction": "BTC:BEAR ETH:BEAR",
-      "breadth": 0
+      "state": "RANGE_TIGHT",
+      "btcNow": 67004.92,
+      "sma200": 68708.06699999997,
+      "pctFrom200": -0.024788166431752023,
+      "volRatio": 0.8756543077004083,
+      "btcState": "RANGE",
+      "ethState": "RANGE",
+      "breadthFraction": "BTC:RANGE ETH:RANGE",
+      "breadth": 0.5
     },
     "seenCount": 0,
     "screened": 0,
     "traded": [],
-    "action": "smart_yield",
+    "action": "hold",
     "asset": "USDC",
     "confidence": null,
-    "reasoning": "BEAR regime — monitoring market",
+    "reasoning": "RANGE_TIGHT regime — monitoring market",
     "topSignal": null,
     "positionUpdates": [],
     "positionAssessments": [],
@@ -414,6 +414,39 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-30T03:05:00.007Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 67004.92,
+        "sma200": 68708.06699999997,
+        "pctFrom200": -0.024788166431752023,
+        "volRatio": 0.8756543077004083,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "fallback",
+      "dataSources": null
+    },
     {
       "ts": "2026-03-30T02:05:00.013Z",
       "regime": "BEAR",
@@ -4342,39 +4375,6 @@
       "layers": [],
       "screenLayer": "hardcoded",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-29T00:05:00.018Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 66459.55,
-        "sma200": 69235.34344999999,
-        "pctFrom200": -0.04009214530732545,
-        "volRatio": 0.8707260429240251,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "smart_yield",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. BEAR regime — no signals above threshold across Alchemy, Checkr, onchain discovery",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "hardcoded",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -4433,7 +4433,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 40670,
+      "expCount": 40675,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
