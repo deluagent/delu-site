@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-30T13:06:58.558Z",
+  "updatedAt": "2026-03-30T13:09:30.226Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 67911,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 28 min",
+  "nextCycle": "in 26 min",
   "wallet": {
     "totalUSD": 63.11,
     "positionsUSD": 0,
@@ -14,7 +14,21 @@
     "unrealPnlUSD": 0,
     "unrealPnlPct": 0
   },
-  "positions": [],
+  "positions": [
+    {
+      "sym": "BTC",
+      "exchange": "hyperliquid",
+      "direction": "long",
+      "leverage": 3,
+      "entryPrice": 67754.88,
+      "sizeUSD": 10,
+      "currentUSD": 10,
+      "pnlPct": 0,
+      "tp": 69445.9414592857,
+      "sl": 66846.01257142858,
+      "openedAt": "2026-03-30T08:36:19.734Z"
+    }
+  ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
@@ -25,7 +39,7 @@
   },
   "lastCycle": {
     "ts": "2026-03-30T13:05:00.008Z",
-    "ago": "2m ago",
+    "ago": "5m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
