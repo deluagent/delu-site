@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-03-30T20:34:01.710Z",
+  "updatedAt": "2026-03-30T20:37:07.397Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 66555,
+  "btcPrice": 66573,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 1 min",
+  "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 58.04,
+    "totalUSD": 58.06,
     "positionsUSD": 0,
     "liquidUSDC": 49.21,
     "ethUSD": 5.9,
@@ -38,15 +38,15 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-30T20:05:00.013Z",
-    "ago": "29m ago",
+    "ts": "2026-03-30T20:35:00.013Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 66554.84,
-      "sma200": 68553.39389999997,
-      "pctFrom200": -0.02915324517580115,
-      "volRatio": 0.7471571537755927,
+      "btcNow": 66573.1,
+      "sma200": 68553.48519999997,
+      "pctFrom200": -0.028888176789587373,
+      "volRatio": 0.7471721326810925,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
@@ -428,6 +428,39 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-30T20:35:00.013Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 66573.1,
+        "sma200": 68553.48519999997,
+        "pctFrom200": -0.028888176789587373,
+        "volRatio": 0.7471721326810925,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "fallback",
+      "dataSources": null
+    },
     {
       "ts": "2026-03-30T20:05:00.013Z",
       "regime": "RANGE_TIGHT",
@@ -2406,113 +2439,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-29T17:35:00.026Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 66295.77,
-        "sma200": 68909.31659999998,
-        "pctFrom200": -0.037927333036415184,
-        "volRatio": 0.8726668141413861,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "Bankr reasoning engine failed — holding this cycle",
-      "seenCount": 3,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": {
-        "sym": "USDC",
-        "velocity": 0,
-        "checkrSource": false
-      },
-      "alchemyDiscovered": [],
-      "socialCandidates": [
-        {
-          "sym": "THENICKSHIRLEY",
-          "velocity": 3.6316335181558856,
-          "score": 0.24210890121039239
-        },
-        {
-          "sym": "ICNT",
-          "velocity": 3,
-          "score": 0.2
-        }
-      ],
-      "quantTop5": [
-        {
-          "sym": "PLAY",
-          "score": 0.7033861474260326,
-          "source": "bankr_trending"
-        },
-        {
-          "sym": "THENICKSHIRLEY",
-          "score": 0.24210890121039239,
-          "source": "checkr"
-        },
-        {
-          "sym": "ICNT",
-          "score": 0.2,
-          "source": "checkr"
-        }
-      ],
-      "tradedEntry": null,
-      "topSignal": "PLAY score=0.70 ret1h=0.5%",
-      "layers": [
-        "bankr-screen",
-        "engine-failed"
-      ],
-      "screenLayer": "fallback",
-      "dataSources": {
-        "checkrTokens": 20,
-        "checkrSustained": [],
-        "checkrTraded": {
-          "sym": "USDC",
-          "velocity": 0,
-          "checkrSource": false
-        },
-        "tradedEntry": null,
-        "discoveryPassed": 3,
-        "alchemyDiscovered": [],
-        "socialCandidates": [
-          {
-            "sym": "THENICKSHIRLEY",
-            "velocity": 3.6316335181558856,
-            "score": 0.24210890121039239
-          },
-          {
-            "sym": "ICNT",
-            "velocity": 3,
-            "score": 0.2
-          }
-        ],
-        "quantTop5": [
-          {
-            "sym": "PLAY",
-            "score": 0.7033861474260326,
-            "source": "bankr_trending"
-          },
-          {
-            "sym": "THENICKSHIRLEY",
-            "score": 0.24210890121039239,
-            "source": "checkr"
-          },
-          {
-            "sym": "ICNT",
-            "score": 0.2,
-            "source": "checkr"
-          }
-        ]
-      }
     }
   ],
   "reasoningTraces": [
@@ -2571,7 +2497,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 41570,
+      "expCount": 41575,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
