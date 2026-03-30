@@ -578,15 +578,29 @@ function CapitalSection({ status }: { status: any }) {
               return (
                 <div key={i} className="bg-[#0a0a0f] border border-[#1c1c28] rounded px-3 py-2.5">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-semibold text-white">{p.sym}</span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs font-semibold text-white">{p.sym}</span>
+                      {p.exchange === 'hyperliquid' && (
+                        <span className="text-[8px] font-bold px-1.5 py-0.5 rounded border border-[#818cf8]/30 bg-[#818cf8]/10 text-[#818cf8] uppercase tracking-wider">
+                          HL {p.leverage}×{p.direction === 'long' ? ' ↑' : ' ↓'}
+                        </span>
+                      )}
+                    </div>
                     <span className={mono('text-xs font-bold', pnlColor(pnl))}>
                       {pnl != null ? `${pnl >= 0 ? '+' : ''}${pnl.toFixed(2)}%` : '—'}
                     </span>
                   </div>
                   <div className="flex items-center justify-between text-[9px]">
-                    <span className={dim}>entry ${p.entryPrice?.toFixed(6) ?? '—'} · size ${(p.sizeUSD ?? 0).toFixed(2)}</span>
+                    <span className={dim}>
+                      entry ${p.exchange === 'hyperliquid' ? (p.entryPrice?.toFixed(2) ?? '—') : (p.entryPrice?.toFixed(6) ?? '—')} · size ${(p.sizeUSD ?? 0).toFixed(2)}
+                    </span>
                     <span className={mono('', pnlColor(pnl))}>${currentVal.toFixed(2)}</span>
                   </div>
+                  {p.exchange === 'hyperliquid' && p.tp && (
+                    <div className={`text-[9px] ${dim} mt-0.5`}>
+                      tp ${p.tp.toFixed(2)} · sl ${p.sl?.toFixed(2)}
+                    </div>
+                  )}
                   {p.openedAt && <div className={`text-[9px] ${dim} mt-0.5`}>opened {fmtDate(p.openedAt)}</div>}
                 </div>
               );
