@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-03-30T13:33:19.698Z",
+  "updatedAt": "2026-03-30T13:36:58.068Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 67911,
+  "btcPrice": 67912,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 2 min",
+  "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 63.17,
+    "totalUSD": 63.16,
     "positionsUSD": 0,
     "liquidUSDC": 54.21,
     "ethUSD": 6.04,
@@ -38,15 +38,15 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-30T13:05:00.008Z",
-    "ago": "28m ago",
+    "ts": "2026-03-30T13:35:00.006Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 67911.23,
-      "sma200": 68614.56219999997,
-      "pctFrom200": -0.01025048003585419,
-      "volRatio": 0.7929022571889425,
+      "btcNow": 67911.6,
+      "sma200": 68614.56404999997,
+      "pctFrom200": -0.010245114280515001,
+      "volRatio": 0.7929024808456188,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
@@ -428,6 +428,39 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-30T13:35:00.006Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 67911.6,
+        "sma200": 68614.56404999997,
+        "pctFrom200": -0.010245114280515001,
+        "volRatio": 0.7929024808456188,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "fallback",
+      "dataSources": null
+    },
     {
       "ts": "2026-03-30T13:05:00.008Z",
       "regime": "RANGE_TIGHT",
@@ -3320,117 +3353,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-29T10:35:00.021Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 66422.29,
-        "sma200": 69051.91979999997,
-        "pctFrom200": -0.038081921655710164,
-        "volRatio": 0.8744028117691524,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "Bankr reasoning engine failed — holding this cycle",
-      "seenCount": 3,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": {
-        "sym": "USDC",
-        "velocity": 0,
-        "checkrSource": false
-      },
-      "alchemyDiscovered": [
-        {
-          "sym": "SHEKEL",
-          "liq": 84038.8904,
-          "score": 0.30244709126502434,
-          "address": "0x5f6a682a58854c7fbe228712aeeffccde0008ac0"
-        }
-      ],
-      "socialCandidates": [
-        {
-          "sym": "THENICKSHIRLEY",
-          "velocity": 3.642604647385544,
-          "score": 0.24284030982570293
-        }
-      ],
-      "quantTop5": [
-        {
-          "sym": "PLAY",
-          "score": 0.5904424553604009,
-          "source": "bankr_trending"
-        },
-        {
-          "sym": "SHEKEL",
-          "score": 0.30244709126502434,
-          "source": "alchemy_discover"
-        },
-        {
-          "sym": "THENICKSHIRLEY",
-          "score": 0.24284030982570293,
-          "source": "checkr"
-        }
-      ],
-      "tradedEntry": null,
-      "topSignal": "PLAY score=0.59 ret1h=6.8%",
-      "layers": [
-        "bankr-screen",
-        "engine-failed"
-      ],
-      "screenLayer": "fallback",
-      "dataSources": {
-        "checkrTokens": 21,
-        "checkrSustained": [],
-        "checkrTraded": {
-          "sym": "USDC",
-          "velocity": 0,
-          "checkrSource": false
-        },
-        "tradedEntry": null,
-        "discoveryPassed": 3,
-        "alchemyDiscovered": [
-          {
-            "sym": "SHEKEL",
-            "liq": 84038.8904,
-            "score": 0.30244709126502434,
-            "address": "0x5f6a682a58854c7fbe228712aeeffccde0008ac0"
-          }
-        ],
-        "socialCandidates": [
-          {
-            "sym": "THENICKSHIRLEY",
-            "velocity": 3.642604647385544,
-            "score": 0.24284030982570293
-          }
-        ],
-        "quantTop5": [
-          {
-            "sym": "PLAY",
-            "score": 0.5904424553604009,
-            "source": "bankr_trending"
-          },
-          {
-            "sym": "SHEKEL",
-            "score": 0.30244709126502434,
-            "source": "alchemy_discover"
-          },
-          {
-            "sym": "THENICKSHIRLEY",
-            "score": 0.24284030982570293,
-            "source": "checkr"
-          }
-        ]
-      }
     }
   ],
   "reasoningTraces": [
@@ -3489,7 +3411,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 41210,
+      "expCount": 41215,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
