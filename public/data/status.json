@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-03-30T13:03:45.437Z",
+  "updatedAt": "2026-03-30T13:06:58.558Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 67926,
+  "btcPrice": 67911,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 1 min",
+  "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 68.11,
+    "totalUSD": 63.11,
     "positionsUSD": 0,
-    "liquidUSDC": 59.21,
+    "liquidUSDC": 54.21,
     "ethUSD": 6.04,
     "yieldUSD": 0,
     "unrealPnlUSD": 0,
@@ -19,20 +19,20 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 65.25,
+    "amountUSD": 60.25,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-30T12:35:00.005Z",
-    "ago": "29m ago",
+    "ts": "2026-03-30T13:05:00.008Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 67925.79,
-      "sma200": 68620.90409999997,
-      "pctFrom200": -0.010129771811035894,
-      "volRatio": 0.805381939996448,
+      "btcNow": 67911.23,
+      "sma200": 68614.56219999997,
+      "pctFrom200": -0.01025048003585419,
+      "volRatio": 0.7929022571889425,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
@@ -414,6 +414,39 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-30T13:05:00.008Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 67911.23,
+        "sma200": 68614.56219999997,
+        "pctFrom200": -0.01025048003585419,
+        "volRatio": 0.7929022571889425,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "fallback",
+      "dataSources": null
+    },
     {
       "ts": "2026-03-30T12:35:00.005Z",
       "regime": "RANGE_TIGHT",
@@ -3384,133 +3417,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-29T10:05:00.017Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 66550.74,
-        "sma200": 69052.56204999998,
-        "pctFrom200": -0.03623069116810524,
-        "volRatio": 0.8735940240470011,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "Bankr reasoning engine failed — holding this cycle",
-      "seenCount": 4,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": {
-        "sym": "USDC",
-        "velocity": 0,
-        "checkrSource": false
-      },
-      "alchemyDiscovered": [],
-      "socialCandidates": [
-        {
-          "sym": "TREX",
-          "velocity": 3.948667505481984,
-          "score": 0.2632445003654656
-        },
-        {
-          "sym": "CLANKER",
-          "velocity": 3.803917206405952,
-          "score": 0.25359448042706345
-        },
-        {
-          "sym": "THENICKSHIRLEY",
-          "velocity": 3.3926046473855442,
-          "score": 0.2261736431590363
-        }
-      ],
-      "quantTop5": [
-        {
-          "sym": "PLAY",
-          "score": 0.5904424553604009,
-          "source": "bankr_trending"
-        },
-        {
-          "sym": "TREX",
-          "score": 0.2632445003654656,
-          "source": "checkr"
-        },
-        {
-          "sym": "CLANKER",
-          "score": 0.25359448042706345,
-          "source": "checkr"
-        },
-        {
-          "sym": "THENICKSHIRLEY",
-          "score": 0.2261736431590363,
-          "source": "checkr"
-        }
-      ],
-      "tradedEntry": null,
-      "topSignal": "PLAY score=0.59 ret1h=6.8%",
-      "layers": [
-        "bankr-screen",
-        "engine-failed"
-      ],
-      "screenLayer": "fallback",
-      "dataSources": {
-        "checkrTokens": 22,
-        "checkrSustained": [],
-        "checkrTraded": {
-          "sym": "USDC",
-          "velocity": 0,
-          "checkrSource": false
-        },
-        "tradedEntry": null,
-        "discoveryPassed": 4,
-        "alchemyDiscovered": [],
-        "socialCandidates": [
-          {
-            "sym": "TREX",
-            "velocity": 3.948667505481984,
-            "score": 0.2632445003654656
-          },
-          {
-            "sym": "CLANKER",
-            "velocity": 3.803917206405952,
-            "score": 0.25359448042706345
-          },
-          {
-            "sym": "THENICKSHIRLEY",
-            "velocity": 3.3926046473855442,
-            "score": 0.2261736431590363
-          }
-        ],
-        "quantTop5": [
-          {
-            "sym": "PLAY",
-            "score": 0.5904424553604009,
-            "source": "bankr_trending"
-          },
-          {
-            "sym": "TREX",
-            "score": 0.2632445003654656,
-            "source": "checkr"
-          },
-          {
-            "sym": "CLANKER",
-            "score": 0.25359448042706345,
-            "source": "checkr"
-          },
-          {
-            "sym": "THENICKSHIRLEY",
-            "score": 0.2261736431590363,
-            "source": "checkr"
-          }
-        ]
-      }
     }
   ],
   "reasoningTraces": [
@@ -3569,7 +3475,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 41185,
+      "expCount": 41190,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
