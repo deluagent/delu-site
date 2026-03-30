@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-30T22:32:07.555Z",
+  "updatedAt": "2026-03-30T22:36:40.407Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 66983,
+  "btcPrice": 66804,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 3 min",
+  "nextCycle": "in 28 min",
   "wallet": {
     "totalUSD": 58.32,
     "positionsUSD": 0,
@@ -24,15 +24,15 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-30T22:05:00.005Z",
-    "ago": "27m ago",
+    "ts": "2026-03-30T22:35:00.006Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 66982.96,
-      "sma200": 68535.77959999997,
-      "pctFrom200": -0.02265706480706553,
-      "volRatio": 0.7494606957620134,
+      "btcNow": 66804.34,
+      "sma200": 68534.88649999996,
+      "pctFrom200": -0.025250592630659256,
+      "volRatio": 0.7485995987102011,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
@@ -414,6 +414,39 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-30T22:35:00.006Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 66804.34,
+        "sma200": 68534.88649999996,
+        "pctFrom200": -0.025250592630659256,
+        "volRatio": 0.7485995987102011,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "fallback",
+      "dataSources": null
+    },
     {
       "ts": "2026-03-30T22:05:00.005Z",
       "regime": "RANGE_TIGHT",
@@ -2158,71 +2191,6 @@
           }
         ]
       }
-    },
-    {
-      "ts": "2026-03-29T19:35:00.012Z",
-      "regime": "BEAR",
-      "regime_detail": {
-        "state": "BEAR",
-        "btcNow": 66477.81,
-        "sma200": 68868.00049999998,
-        "pctFrom200": -0.03470683746655289,
-        "volRatio": 0.8679322514750017,
-        "btcState": "BEAR",
-        "ethState": "BEAR",
-        "breadthFraction": "BTC:BEAR ETH:BEAR",
-        "breadth": 0
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "Bankr reasoning engine failed — holding this cycle",
-      "seenCount": 1,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": {
-        "sym": "USDC",
-        "velocity": 0,
-        "checkrSource": false
-      },
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [
-        {
-          "sym": "PLAY",
-          "score": 0.5806493288394736,
-          "source": "bankr_trending"
-        }
-      ],
-      "tradedEntry": null,
-      "topSignal": "PLAY score=0.58 ret1h=-1.0%",
-      "layers": [
-        "bankr-screen",
-        "engine-failed"
-      ],
-      "screenLayer": "fallback",
-      "dataSources": {
-        "checkrTokens": 17,
-        "checkrSustained": [],
-        "checkrTraded": {
-          "sym": "USDC",
-          "velocity": 0,
-          "checkrSource": false
-        },
-        "tradedEntry": null,
-        "discoveryPassed": 1,
-        "alchemyDiscovered": [],
-        "socialCandidates": [],
-        "quantTop5": [
-          {
-            "sym": "PLAY",
-            "score": 0.5806493288394736,
-            "source": "bankr_trending"
-          }
-        ]
-      }
     }
   ],
   "reasoningTraces": [
@@ -2281,7 +2249,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 41670,
+      "expCount": 41675,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
