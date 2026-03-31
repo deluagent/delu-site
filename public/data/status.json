@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-03-31T23:27:45.496Z",
+  "updatedAt": "2026-03-31T23:31:05.889Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 68235,
-  "pctFrom200": "-0.2%",
+  "btcPrice": 68259,
+  "pctFrom200": "-0.1%",
   "breadth": "3/17",
   "nextCycle": "in 29 min",
   "wallet": {
-    "totalUSD": 37.83,
-    "positionsUSD": 29.21,
-    "liquidUSDC": 4.88,
-    "ethUSD": 0.87,
+    "totalUSD": 37.8,
+    "positionsUSD": 34.07,
+    "liquidUSDC": 0,
+    "ethUSD": 0.86,
     "yieldUSD": 0,
     "unrealPnlUSD": -3.58,
-    "unrealPnlPct": -10.93
+    "unrealPnlPct": -9.51
   },
   "positions": [
     {
@@ -79,29 +79,50 @@
       "quantScore": null,
       "ret1h": null,
       "transferStats": null
+    },
+    {
+      "sym": "WIRE",
+      "currentPrice": null,
+      "sizeUSD": 4.867655331382489,
+      "currentUSD": 4.87,
+      "pnlUSD": 0,
+      "pnlPct": 0,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "entryTx": null,
+      "contractAddress": "0x0b3ae50babe7ffa4e1a50569cee6bdefd4ccaee0",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
     }
   ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 5.75,
+    "amountUSD": 0.86,
     "apy": 0,
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-31T23:26:59.025Z",
-    "ago": "46s ago",
+    "ts": "2026-03-31T23:30:00.417Z",
+    "ago": "1m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 68234.61,
-      "pctFrom200": -0.0017915125009250782,
-      "volRatio": 0.7942280046611546,
+      "btcNow": 68258.91,
+      "pctFrom200": -0.0014378011175834452,
+      "volRatio": 0.79431933916791,
       "btcState": "RANGE"
     },
-    "seenCount": 14,
-    "screened": 14,
+    "seenCount": 15,
+    "screened": 15,
     "traded": [],
     "action": "hold",
     "asset": "USDC",
@@ -141,6 +162,17 @@
         "recommendation": null,
         "ret1h": null,
         "transferStats": null
+      },
+      {
+        "sym": "WIRE",
+        "currentPrice": null,
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
       }
     ],
     "positionAssessments": [
@@ -171,6 +203,17 @@
         "currentPrice": null,
         "pnlPct": -35.9,
         "pnlUSD": -3.59,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "WIRE",
+        "currentPrice": null,
+        "pnlPct": 0,
+        "pnlUSD": 0,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -285,13 +328,13 @@
   },
   "cycleHistory": [
     {
-      "ts": "2026-03-31T23:26:59.025Z",
+      "ts": "2026-03-31T23:30:00.417Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
         "state": "RANGE_TIGHT",
-        "btcNow": 68234.61,
-        "pctFrom200": -0.0017915125009250782,
-        "volRatio": 0.7942280046611546,
+        "btcNow": 68258.91,
+        "pctFrom200": -0.0014378011175834452,
+        "volRatio": 0.79431933916791,
         "btcState": "RANGE"
       },
       "action": "hold",
@@ -333,6 +376,17 @@
           "recommendation": null,
           "ret1h": null,
           "transferStats": null
+        },
+        {
+          "sym": "WIRE",
+          "currentPrice": null,
+          "pnlPct": 0,
+          "pnlUSD": 0,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
         }
       ],
       "positionAssessments": [
@@ -368,8 +422,48 @@
           "recommendation": null,
           "ret1h": null,
           "transferStats": null
+        },
+        {
+          "sym": "WIRE",
+          "currentPrice": null,
+          "pnlPct": 0,
+          "pnlUSD": 0,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
         }
       ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "VVV score=0.83 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": null,
+      "dataSources": null
+    },
+    {
+      "ts": "2026-03-31T23:26:59.025Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 68234.61,
+        "pctFrom200": -0.0017915125009250782,
+        "volRatio": 0.7942280046611546,
+        "btcState": "RANGE"
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "no decision",
+      "seenCount": 13,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -2051,39 +2145,6 @@
         "sma200": 68504.11394999997,
         "pctFrom200": -0.013292106086717255,
         "volRatio": 0.7679733014397444,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "fallback",
-      "dataSources": null
-    },
-    {
-      "ts": "2026-03-31T04:05:00.014Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 67658.11,
-        "sma200": 68504.43674999996,
-        "pctFrom200": -0.01235433484532612,
-        "volRatio": 0.7676980576966395,
         "btcState": "RANGE",
         "ethState": "RANGE",
         "breadthFraction": "BTC:RANGE ETH:RANGE",
