@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-31T06:05:04.008Z",
+  "updatedAt": "2026-03-31T06:07:18.722Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 67683,
+  "btcPrice": 67705,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 28 min",
   "wallet": {
     "totalUSD": 23.69,
     "positionsUSD": 0,
@@ -38,15 +38,15 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-31T05:35:00.013Z",
-    "ago": "30m ago",
+    "ts": "2026-03-31T06:05:00.013Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 67682.97,
-      "sma200": 68502.78124999999,
-      "pctFrom200": -0.011967561536050544,
-      "volRatio": 0.7692171493283659,
+      "btcNow": 67705.27,
+      "sma200": 68499.60429999998,
+      "pctFrom200": -0.011596188154914254,
+      "volRatio": 0.7675067538627756,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
@@ -428,6 +428,39 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-31T06:05:00.013Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 67705.27,
+        "sma200": 68499.60429999998,
+        "pctFrom200": -0.011596188154914254,
+        "volRatio": 0.7675067538627756,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "fallback",
+      "dataSources": null
+    },
     {
       "ts": "2026-03-31T05:35:00.013Z",
       "regime": "RANGE_TIGHT",
@@ -2044,39 +2077,6 @@
       "layers": [],
       "screenLayer": "fallback",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-30T05:05:00.002Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 67627.26,
-        "sma200": 68681.08989999996,
-        "pctFrom200": -0.015343814455104745,
-        "volRatio": 0.9000782084138865,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "fallback",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -2135,7 +2135,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 42060,
+      "expCount": 42065,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
