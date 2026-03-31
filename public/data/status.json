@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-31T12:05:40.278Z",
+  "updatedAt": "2026-03-31T12:07:24.672Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 66729,
+  "btcPrice": 66713,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 10 min",
+  "nextCycle": "in 29 min",
   "wallet": {
     "totalUSD": 18.1,
     "positionsUSD": 0,
@@ -24,28 +24,28 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-31T11:45:15.398Z",
-    "ago": "20m ago",
+    "ts": "2026-03-31T12:05:52.078Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 66728.72,
-      "sma200": 68466.21119999999,
-      "pctFrom200": -0.02537735285109496,
-      "volRatio": 0.7743363814602696,
+      "btcNow": 66713.03,
+      "sma200": 68456.85619999998,
+      "pctFrom200": -0.025473360840663054,
+      "volRatio": 0.7742271988866855,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 7,
-    "screened": 7,
+    "seenCount": 9,
+    "screened": 9,
     "traded": [],
     "action": "hold",
     "asset": "USDC",
     "confidence": null,
     "reasoning": "Bankr reasoning engine failed — holding this cycle",
-    "topSignal": "VVV score=0.57 ret1h=5.0%",
+    "topSignal": "KTA score=1.05 ret1h=6.5%",
     "positionUpdates": [],
     "positionAssessments": [],
     "checkrSustained": [],
@@ -414,6 +414,147 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-31T12:05:52.078Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 66713.03,
+        "sma200": 68456.85619999998,
+        "pctFrom200": -0.025473360840663054,
+        "volRatio": 0.7742271988866855,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "Bankr reasoning engine failed — holding this cycle",
+      "seenCount": 8,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [
+        {
+          "sym": "ODAI",
+          "liq": 482784.0601,
+          "score": 0.47357000000000005
+        },
+        {
+          "sym": "MARTY",
+          "liq": 160501.5386,
+          "score": 0.465075
+        },
+        {
+          "sym": "DOTA",
+          "liq": 128245.9294,
+          "score": 0.379495
+        }
+      ],
+      "socialCandidates": [
+        {
+          "sym": "THENICKSHIRLEY",
+          "velocity": 3.424751738598176,
+          "score": 0.22831678257321172
+        }
+      ],
+      "quantTop5": [
+        {
+          "sym": "KTA",
+          "score": 0.9934034181907494,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "RUSH",
+          "score": 0.9020302977913266,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "WIRE",
+          "score": 0.5089481476537561,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "ODAI",
+          "score": 0.47357000000000005,
+          "source": "gainers"
+        },
+        {
+          "sym": "MARTY",
+          "score": 0.465075,
+          "source": "gainers"
+        }
+      ],
+      "tradedEntry": null,
+      "topSignal": "KTA score=1.05 ret1h=6.5%",
+      "layers": [
+        "bankr-screen",
+        "engine-failed"
+      ],
+      "screenLayer": "bankr-screen",
+      "dataSources": {
+        "checkrTokens": 21,
+        "checkrSustained": [],
+        "checkrTraded": null,
+        "tradedEntry": null,
+        "discoveryPassed": 7,
+        "alchemyDiscovered": [
+          {
+            "sym": "ODAI",
+            "liq": 482784.0601,
+            "score": 0.47357000000000005
+          },
+          {
+            "sym": "MARTY",
+            "liq": 160501.5386,
+            "score": 0.465075
+          },
+          {
+            "sym": "DOTA",
+            "liq": 128245.9294,
+            "score": 0.379495
+          }
+        ],
+        "socialCandidates": [
+          {
+            "sym": "THENICKSHIRLEY",
+            "velocity": 3.424751738598176,
+            "score": 0.22831678257321172
+          }
+        ],
+        "quantTop5": [
+          {
+            "sym": "KTA",
+            "score": 0.9934034181907494,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "RUSH",
+            "score": 0.9020302977913266,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "WIRE",
+            "score": 0.5089481476537561,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "ODAI",
+            "score": 0.47357000000000005,
+            "source": "gainers"
+          },
+          {
+            "sym": "MARTY",
+            "score": 0.465075,
+            "source": "gainers"
+          }
+        ]
+      }
+    },
     {
       "ts": "2026-03-31T11:45:15.398Z",
       "regime": "RANGE_TIGHT",
@@ -2117,39 +2258,6 @@
         "sma200": 68614.56404999997,
         "pctFrom200": -0.010245114280515001,
         "volRatio": 0.7929024808456188,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "fallback",
-      "dataSources": null
-    },
-    {
-      "ts": "2026-03-30T13:05:00.008Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 67911.23,
-        "sma200": 68614.56219999997,
-        "pctFrom200": -0.01025048003585419,
-        "volRatio": 0.7929022571889425,
         "btcState": "RANGE",
         "ethState": "RANGE",
         "breadthFraction": "BTC:RANGE ETH:RANGE",
