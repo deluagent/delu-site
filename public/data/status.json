@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-31T18:27:31.425Z",
+  "updatedAt": "2026-03-31T18:30:57.636Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 67527,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 67778,
+  "pctFrom200": "-0.9%",
   "breadth": "3/17",
-  "nextCycle": "in 3 min",
+  "nextCycle": "in 29 min",
   "wallet": {
     "totalUSD": 38.23,
     "positionsUSD": 0,
@@ -24,24 +24,24 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-31T18:00:00.668Z",
-    "ago": "28m ago",
+    "ts": "2026-03-31T18:30:01.008Z",
+    "ago": "57s ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 67526.75,
-      "pctFrom200": -0.013072037652378382,
-      "volRatio": 0.7971584025300917,
+      "btcNow": 67777.77,
+      "pctFrom200": -0.00942146015349981,
+      "volRatio": 0.7987419314085127,
       "btcState": "RANGE"
     },
-    "seenCount": 7,
-    "screened": 7,
+    "seenCount": 6,
+    "screened": 6,
     "traded": [],
     "action": "hold",
     "asset": "USDC",
     "confidence": null,
     "reasoning": "no decision",
-    "topSignal": "TIBBIR score=0.52 ret1h=0.0%",
+    "topSignal": "KTA score=0.54 ret1h=0.0%",
     "positionUpdates": [],
     "positionAssessments": [],
     "checkrSustained": [],
@@ -410,6 +410,35 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-31T18:30:01.008Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 67777.77,
+        "pctFrom200": -0.00942146015349981,
+        "volRatio": 0.7987419314085127,
+        "btcState": "RANGE"
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "no decision",
+      "seenCount": 4,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "KTA score=0.54 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": null,
+      "dataSources": null
+    },
     {
       "ts": "2026-03-31T18:00:00.668Z",
       "regime": "RANGE_TIGHT",
@@ -2212,39 +2241,6 @@
       "layers": [],
       "screenLayer": "fallback",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-30T18:05:00.018Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 66836.44,
-        "sma200": 68573.14824999995,
-        "pctFrom200": -0.02532636016168258,
-        "volRatio": 0.7504460292596632,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "fallback",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -2317,7 +2313,7 @@
   },
   "stack": {
     "execution": "Bankr API (Base mainnet)",
-    "reasoning": "Private Inference (Llama 3.3 70B)",
+    "reasoning": "Venice llama-3.3-70b (private inference)",
     "socialData": "Checkr (x402 micropayments)",
     "onchainData": "Alchemy — Base token prices, transfer stats, wallet signals",
     "rugDetection": "Alchemy transfers — liquidity, bot ratio, whale concentration, dev dumps",
