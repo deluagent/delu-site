@@ -110,14 +110,14 @@ export async function POST(req: Request) {
         }
         send({ step: 4, status: "done", detail: detail4 });
 
-        // Step 5: Final Reasoning (Venice)
+        // Step 5: Final Reasoning
         send({ step: 5, status: "running" });
         let finalVerdict = "";
         let verdictType: "buy" | "pass" | "watch" = "watch";
 
         if (process.env.VENICE_API_KEY) {
           try {
-            const veniceRes = await fetch("https://api.venice.ai/api/v1/chat/completions", {
+            const infRes = await fetch("https://api.venice.ai/api/v1/chat/completions", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -131,8 +131,8 @@ export async function POST(req: Request) {
                 ]
               })
             });
-            const veniceJson = await veniceRes.json();
-            finalVerdict = veniceJson.choices[0].message.content;
+            const infJson = await infRes.json();
+            finalVerdict = infJson.choices[0].message.content;
             
             const upper = finalVerdict.toUpperCase();
             if (upper.includes("BUY")) verdictType = "buy";
