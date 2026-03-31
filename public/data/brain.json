@@ -1,11 +1,9 @@
 {
-  "generatedAt": "2026-03-31T22:18:57.716Z",
-  "updatedAt": "2026-03-31T22:18:57.716Z",
-  "totalExp": 110337,
+  "generatedAt": "2026-03-31T23:21:14.876Z",
+  "totalExp": 16618,
   "totalAccepted": 45,
   "topScore": 28.012,
   "topLoop": "5m",
-  "note": "totalExp includes full 2-week evolution (Synthesis hackathon); loops show current active set",
   "loops": [
     {
       "name": "5m",
@@ -45,16 +43,12 @@
         28.012,
         28.012
       ],
-      "latestDescription": null,
-      "peakExpCount": 1945,
-      "currentExpCount": 1945,
-      "peakBestScore": 28.012,
-      "currentBestScore": 28.012
+      "latestDescription": null
     },
     {
       "name": "Onchain",
       "color": "indigo",
-      "expCount": 42330,
+      "expCount": 13017,
       "acceptedCount": 4,
       "acceptRate": 0,
       "bestScore": 24.642,
@@ -91,11 +85,7 @@
         24.642,
         24.642
       ],
-      "latestDescription": "Implement dual-regime detection (momentum vs mean-reversion) with adaptive weighting based on recent",
-      "peakExpCount": 42330,
-      "currentExpCount": 13017,
-      "peakBestScore": 24.642,
-      "currentBestScore": 24.642
+      "latestDescription": "Implement dual-regime detection (momentum vs mean-reversion) with adaptive weighting based on recent"
     },
     {
       "name": "Hourly",
@@ -137,16 +127,12 @@
         11.012,
         11.012
       ],
-      "latestDescription": "Replace fixed 1.3x volume spike threshold with momentum-adaptive scaling (1.2x + 0.3x * momentum str",
-      "peakExpCount": 656,
-      "currentExpCount": 656,
-      "peakBestScore": 11.012,
-      "currentBestScore": 11.012
+      "latestDescription": "Replace fixed 1.3x volume spike threshold with momentum-adaptive scaling (1.2x + 0.3x * momentum str"
     },
     {
       "name": "Fusion",
       "color": "purple",
-      "expCount": 62685,
+      "expCount": 500,
       "acceptedCount": 2,
       "acceptRate": 0.4,
       "bestScore": 0.767,
@@ -197,19 +183,15 @@
         "minScore": 0.058,
         "onchainVeto": 0.4,
         "whaleVeto": 0.5
-      },
-      "peakExpCount": 62685,
-      "currentExpCount": 500,
-      "peakBestScore": 0.767,
-      "currentBestScore": 0.767
+      }
     },
     {
       "name": "Stops",
       "color": "rose",
-      "expCount": 2721,
+      "expCount": 500,
       "acceptedCount": 8,
       "acceptRate": 1.6,
-      "bestScore": 7.534,
+      "bestScore": 6.383,
       "breakthroughCount": 0,
       "signals": [
         "Evolves blend weights: 5m + Onchain + Hourly + 4h",
@@ -242,18 +224,288 @@
       ],
       "latestDescription": null,
       "bestParams": {
-        "atrMult": 2.06,
-        "hardSlAtrMult": 1.42,
-        "hardSlMinPct": 8.3,
-        "hardSlMaxPct": 10.32,
-        "activateAt": 1.99
+        "atrMult": 2.7,
+        "hardSlAtrMult": 2.4,
+        "hardSlMinPct": 10,
+        "hardSlMaxPct": 14.98,
+        "activateAt": 0.69
       },
-      "bestWinRate": 0.6580882352941176,
-      "bestAvgPnl": 0.40076941387454224,
-      "peakExpCount": 2721,
-      "currentExpCount": 500,
-      "peakBestScore": 7.534,
-      "currentBestScore": 6.383
+      "bestWinRate": 0.5723849372384937,
+      "bestAvgPnl": 0.4195738971507442
+    }
+  ],
+  "breakthroughs": [
+    {
+      "n": 2,
+      "score": 8,
+      "ts": "2026-03-21T13:50:09.994Z",
+      "description": null,
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 29,
+      "score": 8.075,
+      "ts": "2026-03-21T14:38:39.794Z",
+      "description": null,
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 30,
+      "score": 0.544,
+      "ts": "2026-03-21T15:58:06.050Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 32,
+      "score": 0.978,
+      "ts": "2026-03-21T16:01:28.416Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 37,
+      "score": 1.798,
+      "ts": "2026-03-21T16:28:56.912Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 39,
+      "score": 2.043,
+      "ts": "2026-03-21T16:32:18.191Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 41,
+      "score": 2.878,
+      "ts": "2026-03-21T16:38:48.059Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 102,
+      "score": 8.172,
+      "ts": "2026-03-21T16:51:06.277Z",
+      "description": null,
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 48,
+      "score": 5.524,
+      "ts": "2026-03-21T16:55:16.441Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 71,
+      "score": 9.245,
+      "ts": "2026-03-21T18:15:29.274Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 73,
+      "score": 16.972,
+      "ts": "2026-03-21T18:18:52.821Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 84,
+      "score": 19.88,
+      "ts": "2026-03-21T18:52:42.588Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 89,
+      "score": 28.012,
+      "ts": "2026-03-21T19:01:21.642Z",
+      "description": null,
+      "loop": "5m",
+      "color": "orange"
+    },
+    {
+      "n": 212,
+      "score": 8.215,
+      "ts": "2026-03-21T20:22:28.658Z",
+      "description": null,
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 219,
+      "score": 8.457,
+      "ts": "2026-03-21T20:34:33.918Z",
+      "description": null,
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 1748,
+      "score": 13.637,
+      "ts": "2026-03-22T05:34:20.627Z",
+      "description": null,
+      "loop": "Onchain",
+      "color": "indigo"
+    },
+    {
+      "n": 1984,
+      "score": 17.931,
+      "ts": "2026-03-22T06:37:28.442Z",
+      "description": "Implement dual-regime detection (momentum vs mean-reversion) with adaptive weighting based on recent",
+      "loop": "Onchain",
+      "color": "indigo"
+    },
+    {
+      "n": 2302,
+      "score": 20.402,
+      "ts": "2026-03-22T07:57:30.329Z",
+      "description": null,
+      "loop": "Onchain",
+      "color": "indigo"
+    },
+    {
+      "n": 269,
+      "score": 9.306,
+      "ts": "2026-03-22T17:05:29.438Z",
+      "description": "Add 4h close above 20-SMA filter to avoid mean-reversion traps and prioritize uptrend alignment in b",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 333,
+      "score": 9.378,
+      "ts": "2026-03-22T17:27:36.722Z",
+      "description": "Replace OBV microstructure with hourly close-above-open ratio (last 4 bars) weighted by volume momen",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 334,
+      "score": 9.491,
+      "ts": "2026-03-22T17:28:00.965Z",
+      "description": "Replace close-above-open ratio with hourly close-above-midpoint ratio (high+low)/2 to capture true d",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 335,
+      "score": 9.505,
+      "ts": "2026-03-22T17:28:22.610Z",
+      "description": "Add hourly close-above-open momentum (last 4 bars) as dedicated signal to capture intraday direction",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 408,
+      "score": 9.668,
+      "ts": "2026-03-22T17:57:50.193Z",
+      "description": "Replace close-above-midpoint and close-above-open signals with hourly oversold zScore bounce on 4h m",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 428,
+      "score": 9.749,
+      "ts": "2026-03-22T18:04:57.790Z",
+      "description": "Add intraday volume-weighted momentum confirmation to oversold bounce signal, requiring both negativ",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 433,
+      "score": 9.965,
+      "ts": "2026-03-22T18:06:42.358Z",
+      "description": "Replace hourly oversold zScore bounce with 4h close pullback from recent 4h high (range compression ",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 456,
+      "score": 10.172,
+      "ts": "2026-03-22T18:14:49.117Z",
+      "description": "Reduce coilBreakout pullback upper bound from 0.08 to 0.05 to filter out weak signals and require ti",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 467,
+      "score": 10.354,
+      "ts": "2026-03-22T18:18:34.882Z",
+      "description": "Add 4h volume confirmation (vol4h > vol24h) to coilBreakout signal to filter false breakouts in low-",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 474,
+      "score": 10.497,
+      "ts": "2026-03-22T18:21:02.545Z",
+      "description": "Add 1h oversold bounce filter (z-score < -1.5 on last 1h return) with volume spike confirmation to c",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 476,
+      "score": 10.597,
+      "ts": "2026-03-22T18:21:45.637Z",
+      "description": "Increase 1h oversold bounce z-score threshold from -1.5 to -1.2 to catch earlier mean reversion sign",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 499,
+      "score": 10.667,
+      "ts": "2026-03-22T18:30:26.205Z",
+      "description": "Replace fixed 1h z-score threshold -1.2 with adaptive threshold scaled by 4h momentum strength and v",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 501,
+      "score": 10.705,
+      "ts": "2026-03-22T18:31:10.818Z",
+      "description": "Replace adaptive threshold scaling with fixed -1.5 and boost oversoldBounce weight from 0.15 to 0.22",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 503,
+      "score": 10.887,
+      "ts": "2026-03-22T18:31:55.898Z",
+      "description": "Replace fixed -1.5 z-score threshold with dynamic threshold scaled by 4h momentum strength to reduce",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 512,
+      "score": 11.012,
+      "ts": "2026-03-22T18:35:49.968Z",
+      "description": "Replace fixed 1.3x volume spike threshold with momentum-adaptive scaling (1.2x + 0.3x * momentum str",
+      "loop": "Hourly",
+      "color": "emerald"
+    },
+    {
+      "n": 9305,
+      "score": 24.642,
+      "ts": "2026-03-23T09:07:57.595Z",
+      "description": null,
+      "loop": "Onchain",
+      "color": "indigo"
     }
   ]
 }
