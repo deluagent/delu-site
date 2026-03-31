@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "delu — autonomous onchain trader",
-  description: "An AI agent that trades onchain using Bankr execution, Venice private reasoning, and x402 for real-time intelligence.",
+  description: "An AI agent that trades onchain using Bankr execution and x402 for real-time intelligence.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

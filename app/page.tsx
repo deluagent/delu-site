@@ -142,7 +142,7 @@ function HowItWorks() {
     {
       n: '03', icon: <Zap size={14}/>, title: 'Decide',
       color: 'text-[#f59e0b]', border: 'border-[#f59e0b]/15', bg: 'bg-[#f59e0b]/3',
-      body: 'Venice AI (private inference) synthesises all signals into a conviction score. ≥65% confidence → Kelly-sized buy executed via Bankr. <65% → hold USDC liquid for the next opportunity.',
+      body: 'Deep inference synthesises all signals into a conviction score. ≥65% confidence → Kelly-sized buy executed via Bankr. <65% → hold USDC liquid for the next opportunity.',
     },
     {
       n: '04', icon: <RefreshCw size={14}/>, title: 'Learn & Self-Fund',
@@ -633,8 +633,8 @@ function CycleRow({ cycle }: { cycle: any }) {
   const isCollapsedHold = holdCount > 1;
 
   // For collapsed HOLDs show top tokens screened instead of long reason
-  const rawReason = cycle.reasoning?.includes('"error"') || cycle.reasoning?.startsWith('Venice unavailable')
-    ? 'Private inference temporarily unavailable — held this cycle'
+  const rawReason = cycle.reasoning?.includes('"error"') || cycle.reasoning?.startsWith('Engine unavailable')
+    ? 'Inference temporarily unavailable — held this cycle'
     : cycle.reasoning;
   const holdSummary = isCollapsedHold
     ? `${holdCount} cycles — no entry signal`
@@ -660,15 +660,15 @@ function CycleRow({ cycle }: { cycle: any }) {
         <div className="px-4 pb-3">
           <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3 text-[10px] space-y-3">
 
-            {/* Venice AI reasoning — shown only for the asset that was bought/held */}
-            {cycle.reasoning && !cycle.reasoning.startsWith('Venice unavailable') && !cycle.reasoning.includes('"error"') && (
+            {/* Inference reasoning — shown only for the asset that was bought/held */}
+            {cycle.reasoning && !cycle.reasoning.startsWith('Engine unavailable') && !cycle.reasoning.includes('"error"') && (
               <div>
                 <div className="flex items-center gap-1.5 mb-1">
                   <span className="w-1 h-1 rounded-full bg-[#a855f7]" />
-                  <span className={`${label} text-[#a855f7]`}>Venice AI · Private Inference (E2EE)</span>
+                  <span className={`${label} text-[#a855f7]`}>Private Inference</span>
                 </div>
                 <div className={`text-[9px] ${dim} mb-1.5`}>
-                  Full model weights and reasoning are encrypted end-to-end — only the summary is visible.
+                  All model weights and reasoning are private — only the summary is visible.
                 </div>
                 <div className="text-[#d1d5db] leading-relaxed italic">&ldquo;{cycle.reasoning}&rdquo;</div>
               </div>
@@ -979,7 +979,7 @@ function Footer({ stack }: { stack: any }) {
     { label: 'Basescan', href: `https://basescan.org/address/${wallet}` },
     { label: 'Moltbook @delu_agent', href: 'https://www.moltbook.com/u/delu_agent' },
   ];
-  const sources = ['Alchemy', 'Checkr x402', 'Bankr API', 'Venice AI'];
+  const sources = ['Alchemy', 'Checkr x402', 'Bankr API'];
 
   return (
     <footer className="border-t border-[#1c1c28] pt-6 pb-10">

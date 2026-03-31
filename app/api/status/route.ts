@@ -79,7 +79,7 @@ export async function GET() {
           hourly: { expCount: 0, bestValSharpe: 0, bestScore: 0, spend: 0 },
         },
         performance: { closedTrades: raw.performance?.closedTrades || 0, winRate: raw.performance?.winRate || null, recentTrades: [] },
-        stack: { execution: "Bankr API", reasoning: "Venice llama-3.3-70b (E2EE)", screening: "Bankr LLM", socialData: "Checkr (x402)", onchainData: "GeckoTerminal" },
+        stack: { execution: "Bankr API", reasoning: "Private Inference", screening: "Bankr LLM", socialData: "Checkr (x402)", onchainData: "GeckoTerminal" },
       });
     }
   } catch {}
@@ -100,6 +100,6 @@ export async function GET() {
       hourly: { expCount: 31,  bestValSharpe: 5.455, bestScore: 8.075, spend: 0.003 },
     },
     performance: { closedTrades: 0, winRate: null, recentTrades: [] },
-    stack: { execution: "Bankr API (Base)", reasoning: "Venice llama-3.3-70b (E2EE private inference)", screening: "Bankr LLM gemini-2.5-flash", socialData: "Checkr (x402 micropayments)", onchainData: "GeckoTerminal DEX flows" },
+    stack: { execution: "Bankr API (Base)", reasoning: "Private Inference", screening: "Bankr LLM gemini-2.5-flash", socialData: "Checkr (x402 micropayments)", onchainData: "GeckoTerminal DEX flows" },
   });
 }
