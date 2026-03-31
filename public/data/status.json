@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-03-31T10:02:21.372Z",
+  "updatedAt": "2026-03-31T10:07:22.449Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 66447,
+  "btcPrice": 66231,
   "pctFrom200": "-4.2%",
-  "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 3 min",
+  "breadth": "BTC:BEAR ETH:RANGE",
+  "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 23,
+    "totalUSD": 23.01,
     "positionsUSD": 0,
     "liquidUSDC": 14.21,
     "ethUSD": 5.89,
@@ -14,21 +14,7 @@
     "unrealPnlUSD": 0,
     "unrealPnlPct": 0
   },
-  "positions": [
-    {
-      "sym": "BTC",
-      "exchange": "hyperliquid",
-      "direction": "long",
-      "leverage": 3,
-      "entryPrice": 68266,
-      "sizeUSD": 10,
-      "currentUSD": 10,
-      "pnlPct": 0,
-      "tp": 69920.74843857142,
-      "sl": 67376.64914285715,
-      "openedAt": "2026-03-31T01:38:51.833Z"
-    }
-  ],
+  "positions": [],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
@@ -38,18 +24,18 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-03-31T09:35:00.002Z",
-    "ago": "27m ago",
+    "ts": "2026-03-31T10:05:00.000Z",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 66446.99,
-      "sma200": 68484.33729999998,
-      "pctFrom200": -0.029749098557751246,
-      "volRatio": 0.7604460952786481,
-      "btcState": "RANGE",
+      "btcNow": 66231.33,
+      "sma200": 68472.28034999999,
+      "pctFrom200": -0.03272784751063114,
+      "volRatio": 0.7696269780773544,
+      "btcState": "BEAR",
       "ethState": "RANGE",
-      "breadthFraction": "BTC:RANGE ETH:RANGE",
+      "breadthFraction": "BTC:BEAR ETH:RANGE",
       "breadth": 0.5
     },
     "seenCount": 0,
@@ -428,6 +414,39 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-31T10:05:00.000Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 66231.33,
+        "sma200": 68472.28034999999,
+        "pctFrom200": -0.03272784751063114,
+        "volRatio": 0.7696269780773544,
+        "btcState": "BEAR",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:BEAR ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "fallback",
+      "dataSources": null
+    },
     {
       "ts": "2026-03-31T09:35:00.002Z",
       "regime": "RANGE_TIGHT",
@@ -2044,39 +2063,6 @@
       "layers": [],
       "screenLayer": "fallback",
       "dataSources": null
-    },
-    {
-      "ts": "2026-03-30T09:05:00.020Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 67616.93,
-        "sma200": 68645.91814999997,
-        "pctFrom200": -0.014989793679378095,
-        "volRatio": 0.8738843882068698,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "fallback",
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -2135,7 +2121,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 42265,
+      "expCount": 42270,
       "bestValSharpe": 41.964,
       "bestAudSharpe": 7.32,
       "bestScore": 24.642
