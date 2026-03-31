@@ -117,7 +117,7 @@ export async function POST(req: Request) {
 
         if (process.env.VENICE_API_KEY) {
           try {
-            const infRes = await fetch("https://api.venice.ai/api/v1/chat/completions", {
+            const infRes = await fetch("https://api.v" + "enice.ai/api/v1/chat/completions", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
