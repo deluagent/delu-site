@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-31T11:42:25.861Z",
+  "updatedAt": "2026-03-31T11:46:40.133Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 66780,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 66729,
+  "pctFrom200": "-2.5%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 26 min",
+  "nextCycle": "in 29 min",
   "wallet": {
     "totalUSD": 18.1,
     "positionsUSD": 0,
@@ -24,28 +24,28 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-03-31T11:38:44.295Z",
-    "ago": "4m ago",
+    "ts": "2026-03-31T11:45:15.398Z",
+    "ago": "1m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 66780,
-      "sma200": 68466.46759999999,
-      "pctFrom200": -0.024632022932054833,
-      "volRatio": 0.7754321311199882,
+      "btcNow": 66728.72,
+      "sma200": 68466.21119999999,
+      "pctFrom200": -0.02537735285109496,
+      "volRatio": 0.7743363814602696,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 2,
-    "screened": 2,
+    "seenCount": 7,
+    "screened": 7,
     "traded": [],
-    "action": "smart_yield",
+    "action": "hold",
     "asset": "USDC",
     "confidence": null,
-    "reasoning": "RANGE_TIGHT regime — monitoring market",
-    "topSignal": "WIRE score=0.58 ret1h=0.0%",
+    "reasoning": "Bankr reasoning engine failed — holding this cycle",
+    "topSignal": "VVV score=0.57 ret1h=5.0%",
     "positionUpdates": [],
     "positionAssessments": [],
     "checkrSustained": [],
@@ -414,6 +414,182 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-03-31T11:45:15.398Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 66728.72,
+        "sma200": 68466.21119999999,
+        "pctFrom200": -0.02537735285109496,
+        "volRatio": 0.7743363814602696,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "Bankr reasoning engine failed — holding this cycle",
+      "seenCount": 5,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [
+        {
+          "sym": "VVV",
+          "liq": 6341971.2112,
+          "score": 0.544254125336193,
+          "address": "0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf"
+        },
+        {
+          "sym": "ODAI",
+          "liq": 485288.7465,
+          "score": 0.48707
+        },
+        {
+          "sym": "RUSH",
+          "liq": 110457.4913,
+          "score": 0.47928000000000004
+        },
+        {
+          "sym": "WIRE",
+          "liq": 421705.2908,
+          "score": 0.41448529921355315,
+          "address": "0x0b3ae50babe7ffa4e1a50569cee6bdefd4ccaee0"
+        }
+      ],
+      "socialCandidates": [],
+      "quantTop5": [
+        {
+          "sym": "VVV",
+          "score": 0.544254125336193,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "ODAI",
+          "score": 0.48707,
+          "source": "gainers"
+        },
+        {
+          "sym": "RUSH",
+          "score": 0.47928000000000004,
+          "source": "gainers"
+        },
+        {
+          "sym": "KTA",
+          "score": 0.4474099064024749,
+          "source": "bankr_trending"
+        },
+        {
+          "sym": "WIRE",
+          "score": 0.41448529921355315,
+          "source": "bankr_trending"
+        }
+      ],
+      "tradedEntry": null,
+      "topSignal": "VVV score=0.57 ret1h=5.0%",
+      "layers": [
+        "bankr-screen",
+        "engine-failed"
+      ],
+      "screenLayer": "bankr-screen",
+      "dataSources": {
+        "checkrTokens": 6,
+        "checkrSustained": [],
+        "checkrTraded": null,
+        "tradedEntry": null,
+        "discoveryPassed": 5,
+        "alchemyDiscovered": [
+          {
+            "sym": "VVV",
+            "liq": 6341971.2112,
+            "score": 0.544254125336193,
+            "address": "0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf"
+          },
+          {
+            "sym": "ODAI",
+            "liq": 485288.7465,
+            "score": 0.48707
+          },
+          {
+            "sym": "RUSH",
+            "liq": 110457.4913,
+            "score": 0.47928000000000004
+          },
+          {
+            "sym": "WIRE",
+            "liq": 421705.2908,
+            "score": 0.41448529921355315,
+            "address": "0x0b3ae50babe7ffa4e1a50569cee6bdefd4ccaee0"
+          }
+        ],
+        "socialCandidates": [],
+        "quantTop5": [
+          {
+            "sym": "VVV",
+            "score": 0.544254125336193,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "ODAI",
+            "score": 0.48707,
+            "source": "gainers"
+          },
+          {
+            "sym": "RUSH",
+            "score": 0.47928000000000004,
+            "source": "gainers"
+          },
+          {
+            "sym": "KTA",
+            "score": 0.4474099064024749,
+            "source": "bankr_trending"
+          },
+          {
+            "sym": "WIRE",
+            "score": 0.41448529921355315,
+            "source": "bankr_trending"
+          }
+        ]
+      }
+    },
+    {
+      "ts": "2026-03-31T11:41:23.039Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 66716.25,
+        "sma200": 68466.14884999998,
+        "pctFrom200": -0.025558599094477674,
+        "volRatio": 0.7740911174486664,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "Scanned 5 tokens [WIRE(0.58), VVV(0.57), ODAI(0.51)]. No tokens clear the bar: WIRE's -279% 1h return is a data error or catastrophic dump, VVV shows negative 1h return with no quant history, KTA is flagged LIKELY_RUG, and ODAI/DOTA have sub-2.0 velocity with no return data — none demonstrate genuine strength or sustained momentum against the range regime.",
+      "seenCount": 5,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "WIRE score=0.58 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": "bankr-screen",
+      "dataSources": null
+    },
     {
       "ts": "2026-03-31T11:38:44.295Z",
       "regime": "RANGE_TIGHT",
@@ -1974,72 +2150,6 @@
         "sma200": 68614.56219999997,
         "pctFrom200": -0.01025048003585419,
         "volRatio": 0.7929022571889425,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "fallback",
-      "dataSources": null
-    },
-    {
-      "ts": "2026-03-30T12:35:00.005Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 67925.79,
-        "sma200": 68620.90409999997,
-        "pctFrom200": -0.010129771811035894,
-        "volRatio": 0.805381939996448,
-        "btcState": "RANGE",
-        "ethState": "RANGE",
-        "breadthFraction": "BTC:RANGE ETH:RANGE",
-        "breadth": 0.5
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "No tokens passed discovery this cycle. screen parse failed",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": "fallback",
-      "dataSources": null
-    },
-    {
-      "ts": "2026-03-30T12:05:00.010Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 67788.74,
-        "sma200": 68620.21884999998,
-        "pctFrom200": -0.012117111602595402,
-        "volRatio": 0.8041711090414336,
         "btcState": "RANGE",
         "ethState": "RANGE",
         "breadthFraction": "BTC:RANGE ETH:RANGE",
