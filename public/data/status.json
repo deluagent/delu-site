@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-04-01T07:30:54.382Z",
+  "updatedAt": "2026-04-01T07:31:53.878Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 68897,
-  "pctFrom200": "0.9%",
+  "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 29 min",
+  "nextCycle": "in 28 min",
   "wallet": {
     "totalUSD": 49.05,
     "positionsUSD": 41.89,
     "liquidUSDC": 2.76,
     "ethUSD": 0.88,
     "yieldUSD": 0,
-    "unrealPnlUSD": 4.69,
-    "unrealPnlPct": 12.6
+    "unrealPnlUSD": 4.75,
+    "unrealPnlPct": 12.76
   },
   "positions": [
     {
       "sym": "TREX",
-      "currentPrice": null,
+      "currentPrice": 0.18855694,
       "sizeUSD": 15.05785822886795,
-      "currentUSD": 15.06,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 15.11,
+      "pnlUSD": 0.05,
+      "pnlPct": 0.33,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -61,11 +61,11 @@
     },
     {
       "sym": "AERO",
-      "currentPrice": null,
+      "currentPrice": 0.33053012,
       "sizeUSD": 8.105623426620692,
-      "currentUSD": 8.11,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 8.12,
+      "pnlUSD": 0.01,
+      "pnlPct": 0.12,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -112,7 +112,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-01T07:30:00.606Z",
-    "ago": "54s ago",
+    "ago": "2m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -132,9 +132,9 @@
     "positionUpdates": [
       {
         "sym": "TREX",
-        "currentPrice": null,
-        "pnlPct": 0,
-        "pnlUSD": 0,
+        "currentPrice": 0.18855694,
+        "pnlPct": 0.33,
+        "pnlUSD": 0.05,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -154,9 +154,9 @@
       },
       {
         "sym": "AERO",
-        "currentPrice": null,
-        "pnlPct": 0,
-        "pnlUSD": 0,
+        "currentPrice": 0.33053012,
+        "pnlPct": 0.12,
+        "pnlUSD": 0.01,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -178,9 +178,9 @@
     "positionAssessments": [
       {
         "sym": "TREX",
-        "currentPrice": null,
-        "pnlPct": 0,
-        "pnlUSD": 0,
+        "currentPrice": 0.18855694,
+        "pnlPct": 0.33,
+        "pnlUSD": 0.05,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -200,9 +200,9 @@
       },
       {
         "sym": "AERO",
-        "currentPrice": null,
-        "pnlPct": 0,
-        "pnlUSD": 0,
+        "currentPrice": 0.33053012,
+        "pnlPct": 0.12,
+        "pnlUSD": 0.01,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -619,9 +619,9 @@
       "positionUpdates": [
         {
           "sym": "TREX",
-          "currentPrice": null,
-          "pnlPct": 0,
-          "pnlUSD": 0,
+          "currentPrice": 0.18855694,
+          "pnlPct": 0.33,
+          "pnlUSD": 0.05,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -641,9 +641,9 @@
         },
         {
           "sym": "AERO",
-          "currentPrice": null,
-          "pnlPct": 0,
-          "pnlUSD": 0,
+          "currentPrice": 0.33053012,
+          "pnlPct": 0.12,
+          "pnlUSD": 0.01,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -665,9 +665,9 @@
       "positionAssessments": [
         {
           "sym": "TREX",
-          "currentPrice": null,
-          "pnlPct": 0,
-          "pnlUSD": 0,
+          "currentPrice": 0.18855694,
+          "pnlPct": 0.33,
+          "pnlUSD": 0.05,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -687,9 +687,9 @@
         },
         {
           "sym": "AERO",
-          "currentPrice": null,
-          "pnlPct": 0,
-          "pnlUSD": 0,
+          "currentPrice": 0.33053012,
+          "pnlPct": 0.12,
+          "pnlUSD": 0.01,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -2427,7 +2427,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 10310,
+      "expCount": 10315,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
