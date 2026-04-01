@@ -979,7 +979,7 @@ function Footer({ stack }: { stack: any }) {
     { label: 'Basescan', href: `https://basescan.org/address/${wallet}` },
     { label: 'Moltbook @delu_agent', href: 'https://www.moltbook.com/u/delu_agent' },
   ];
-  const sources = ['Alchemy', 'Checkr x402', 'Bankr API'];
+    const sources = ['Alchemy', 'Checkr x402', 'Bankr API'];
 
   return (
     <footer className="border-t border-[#1c1c28] pt-6 pb-10">

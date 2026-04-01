@@ -6,7 +6,7 @@ Delu is an AI agent that trades onchain using a sophisticated stack for executio
 
 - **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Reasoning**: [Venice AI](https://venice.ai/) (Llama 3.3 70B)
+- **Reasoning**: Private Inference (Llama 3.3 70B)
 - **Execution**: [Bankr](https://bankr.xyz/)
 - **Intelligence**: [x402 / checkr](https://checkr.social/) & [GeckoTerminal](https://www.geckoterminal.com/dex-api)
 
