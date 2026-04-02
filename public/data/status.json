@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-04-02T08:30:46.894Z",
+  "updatedAt": "2026-04-02T08:30:51.659Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 66931,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 66683,
+  "pctFrom200": "-1.9%",
   "breadth": "3/17",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 30 min",
   "wallet": {
     "totalUSD": 90.73,
     "positionsUSD": 87.09,
     "liquidUSDC": 0,
     "ethUSD": 0.84,
     "yieldUSD": 0,
-    "unrealPnlUSD": -4.78,
-    "unrealPnlPct": -5.28
+    "unrealPnlUSD": -3.48,
+    "unrealPnlPct": -3.85
   },
   "positions": [
     {
       "sym": "BEAN",
-      "currentPrice": 17.33979703,
+      "currentPrice": null,
       "sizeUSD": 34.18826833653067,
-      "currentUSD": 32.89,
-      "pnlUSD": -1.3,
-      "pnlPct": -3.8,
+      "currentUSD": 34.19,
+      "pnlUSD": 0,
+      "pnlPct": 0,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -159,14 +159,14 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-04-02T08:00:00.445Z",
-    "ago": "31m ago",
+    "ts": "2026-04-02T08:30:00.229Z",
+    "ago": "51s ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 66930.79,
-      "pctFrom200": -0.014918427333608967,
-      "volRatio": 0.8986854559847353,
+      "btcNow": 66683.49,
+      "pctFrom200": -0.01854030603305253,
+      "volRatio": 0.9001525113696169,
       "btcState": "RANGE"
     },
     "seenCount": 10,
@@ -180,9 +180,9 @@
     "positionUpdates": [
       {
         "sym": "BEAN",
-        "currentPrice": 17.33979703,
-        "pnlPct": -3.8,
-        "pnlUSD": -1.3,
+        "currentPrice": null,
+        "pnlPct": 0,
+        "pnlUSD": 0,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -248,9 +248,9 @@
     "positionAssessments": [
       {
         "sym": "BEAN",
-        "currentPrice": 17.33979703,
-        "pnlPct": -3.8,
-        "pnlUSD": -1.3,
+        "currentPrice": null,
+        "pnlPct": 0,
+        "pnlUSD": 0,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -693,13 +693,13 @@
   },
   "cycleHistory": [
     {
-      "ts": "2026-04-02T08:00:00.445Z",
+      "ts": "2026-04-02T08:30:00.229Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
         "state": "RANGE_TIGHT",
-        "btcNow": 66930.79,
-        "pctFrom200": -0.014918427333608967,
-        "volRatio": 0.8986854559847353,
+        "btcNow": 66683.49,
+        "pctFrom200": -0.01854030603305253,
+        "volRatio": 0.9001525113696169,
         "btcState": "RANGE"
       },
       "action": "hold",
@@ -711,9 +711,9 @@
       "positionUpdates": [
         {
           "sym": "BEAN",
-          "currentPrice": 17.33979703,
-          "pnlPct": -3.8,
-          "pnlUSD": -1.3,
+          "currentPrice": null,
+          "pnlPct": 0,
+          "pnlUSD": 0,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -779,9 +779,9 @@
       "positionAssessments": [
         {
           "sym": "BEAN",
-          "currentPrice": 17.33979703,
-          "pnlPct": -3.8,
-          "pnlUSD": -1.3,
+          "currentPrice": null,
+          "pnlPct": 0,
+          "pnlUSD": 0,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -844,6 +844,35 @@
           "transferStats": null
         }
       ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "ICNT score=0.50 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": null,
+      "dataSources": null
+    },
+    {
+      "ts": "2026-04-02T08:00:00.445Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 66930.79,
+        "pctFrom200": -0.014918427333608967,
+        "volRatio": 0.8986854559847353,
+        "btcState": "RANGE"
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "no decision",
+      "seenCount": 10,
+      "traded": [],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -2233,35 +2262,6 @@
       "confidence": null,
       "reasoning": "no decision",
       "seenCount": 14,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "VVV score=0.83 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": null,
-      "dataSources": null
-    },
-    {
-      "ts": "2026-04-01T08:30:00.798Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 68740.68,
-        "pctFrom200": 0.007250105453603251,
-        "volRatio": 0.8176479529331547,
-        "btcState": "RANGE"
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "no decision",
-      "seenCount": 13,
       "traded": [],
       "positionUpdates": [],
       "positionAssessments": [],
