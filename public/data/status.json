@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-04-03T22:38:16.214Z",
+  "updatedAt": "2026-04-03T22:39:43.799Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 66918,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 27 min",
+  "nextCycle": "in 21 min",
   "wallet": {
-    "totalUSD": 75.86,
-    "positionsUSD": 52.67,
+    "totalUSD": 75.48,
+    "positionsUSD": 52.24,
     "liquidUSDC": 17.93,
     "ethUSD": 0.81,
     "yieldUSD": 0,
-    "unrealPnlUSD": 1.49,
-    "unrealPnlPct": 2.93
+    "unrealPnlUSD": 1.62,
+    "unrealPnlPct": 3.22
   },
   "positions": [
     {
       "sym": "BEAN",
-      "currentPrice": 22.4740134134,
-      "sizeUSD": 37.65052339909559,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentPrice": 22.86748186,
+      "sizeUSD": 37.216322069901956,
+      "currentUSD": 36.96,
+      "pnlUSD": -0.26,
+      "pnlPct": -0.7,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -39,11 +39,11 @@
     {
       "sym": "VVV",
       "entryPrice": 6.2889,
-      "currentPrice": 7.161167263,
+      "currentPrice": 7.19063899,
       "sizeUSD": 13.14,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 13.87,
+      "currentUSD": 15.02,
+      "pnlUSD": 1.88,
+      "pnlPct": 14.31,
       "peakPct": 14.31,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -70,7 +70,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-03T22:30:00.745Z",
-    "ago": "3m ago",
+    "ago": "10m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -90,9 +90,9 @@
     "positionUpdates": [
       {
         "sym": "BEAN",
-        "currentPrice": 23.04846639,
-        "pnlPct": -1.04,
-        "pnlUSD": -0.39,
+        "currentPrice": 22.86748186,
+        "pnlPct": -0.7,
+        "pnlUSD": -0.26,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -101,7 +101,7 @@
       },
       {
         "sym": "VVV",
-        "currentPrice": 7.18813137,
+        "currentPrice": 7.19063899,
         "pnlPct": 14.31,
         "pnlUSD": 1.88,
         "quantScore": null,
@@ -114,9 +114,9 @@
     "positionAssessments": [
       {
         "sym": "BEAN",
-        "currentPrice": 23.04846639,
-        "pnlPct": -1.04,
-        "pnlUSD": -0.39,
+        "currentPrice": 22.86748186,
+        "pnlPct": -0.7,
+        "pnlUSD": -0.26,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -125,7 +125,7 @@
       },
       {
         "sym": "VVV",
-        "currentPrice": 7.18813137,
+        "currentPrice": 7.19063899,
         "pnlPct": 14.31,
         "pnlUSD": 1.88,
         "quantScore": null,
@@ -569,9 +569,9 @@
       "positionUpdates": [
         {
           "sym": "BEAN",
-          "currentPrice": 23.04846639,
-          "pnlPct": -1.04,
-          "pnlUSD": -0.39,
+          "currentPrice": 22.86748186,
+          "pnlPct": -0.7,
+          "pnlUSD": -0.26,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -580,7 +580,7 @@
         },
         {
           "sym": "VVV",
-          "currentPrice": 7.18813137,
+          "currentPrice": 7.19063899,
           "pnlPct": 14.31,
           "pnlUSD": 1.88,
           "quantScore": null,
@@ -593,9 +593,9 @@
       "positionAssessments": [
         {
           "sym": "BEAN",
-          "currentPrice": 23.04846639,
-          "pnlPct": -1.04,
-          "pnlUSD": -0.39,
+          "currentPrice": 22.86748186,
+          "pnlPct": -0.7,
+          "pnlUSD": -0.26,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -604,7 +604,7 @@
         },
         {
           "sym": "VVV",
-          "currentPrice": 7.18813137,
+          "currentPrice": 7.19063899,
           "pnlPct": 14.31,
           "pnlUSD": 1.88,
           "quantScore": null,
@@ -2103,7 +2103,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 45340,
+      "expCount": 45395,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
