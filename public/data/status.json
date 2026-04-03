@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-04-03T23:08:16.826Z",
+  "updatedAt": "2026-04-03T23:10:44.306Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 66889,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 26 min",
+  "nextCycle": "in 20 min",
   "wallet": {
-    "totalUSD": 74.4,
-    "positionsUSD": 63.05,
+    "totalUSD": 74.97,
+    "positionsUSD": 63.63,
     "liquidUSDC": 6.05,
     "ethUSD": 0.81,
     "yieldUSD": 0,
-    "unrealPnlUSD": 1.56,
-    "unrealPnlPct": 2.55
+    "unrealPnlUSD": 2.37,
+    "unrealPnlPct": 3.83
   },
   "positions": [
     {
       "sym": "BEAN",
-      "currentPrice": 22.4740134134,
-      "sizeUSD": 48.028214763650354,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentPrice": 23.12110065,
+      "sizeUSD": 48.602225741870335,
+      "currentUSD": 49.07,
+      "pnlUSD": 0.47,
+      "pnlPct": 0.97,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -39,11 +39,11 @@
     {
       "sym": "VVV",
       "entryPrice": 6.2889,
-      "currentPrice": 7.1811251059,
+      "currentPrice": 7.19954881,
       "sizeUSD": 13.14,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 14.19,
+      "currentUSD": 15.04,
+      "pnlUSD": 1.9,
+      "pnlPct": 14.46,
       "peakPct": 14.46,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -70,7 +70,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-03T23:00:00.033Z",
-    "ago": "5m ago",
+    "ago": "11m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -90,9 +90,9 @@
     "positionUpdates": [
       {
         "sym": "BEAN",
-        "currentPrice": 22.4698374,
-        "pnlPct": -0.71,
-        "pnlUSD": -0.34,
+        "currentPrice": 23.12110065,
+        "pnlPct": 0.97,
+        "pnlUSD": 0.47,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -101,7 +101,7 @@
       },
       {
         "sym": "VVV",
-        "currentPrice": 7.20016982,
+        "currentPrice": 7.19954881,
         "pnlPct": 14.46,
         "pnlUSD": 1.9,
         "quantScore": null,
@@ -114,9 +114,9 @@
     "positionAssessments": [
       {
         "sym": "BEAN",
-        "currentPrice": 22.4698374,
-        "pnlPct": -0.71,
-        "pnlUSD": -0.34,
+        "currentPrice": 23.12110065,
+        "pnlPct": 0.97,
+        "pnlUSD": 0.47,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -125,7 +125,7 @@
       },
       {
         "sym": "VVV",
-        "currentPrice": 7.20016982,
+        "currentPrice": 7.19954881,
         "pnlPct": 14.46,
         "pnlUSD": 1.9,
         "quantScore": null,
@@ -569,9 +569,9 @@
       "positionUpdates": [
         {
           "sym": "BEAN",
-          "currentPrice": 22.4698374,
-          "pnlPct": -0.71,
-          "pnlUSD": -0.34,
+          "currentPrice": 23.12110065,
+          "pnlPct": 0.97,
+          "pnlUSD": 0.47,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -580,7 +580,7 @@
         },
         {
           "sym": "VVV",
-          "currentPrice": 7.20016982,
+          "currentPrice": 7.19954881,
           "pnlPct": 14.46,
           "pnlUSD": 1.9,
           "quantScore": null,
@@ -593,9 +593,9 @@
       "positionAssessments": [
         {
           "sym": "BEAN",
-          "currentPrice": 22.4698374,
-          "pnlPct": -0.71,
-          "pnlUSD": -0.34,
+          "currentPrice": 23.12110065,
+          "pnlPct": 0.97,
+          "pnlUSD": 0.47,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -604,7 +604,7 @@
         },
         {
           "sym": "VVV",
-          "currentPrice": 7.20016982,
+          "currentPrice": 7.19954881,
           "pnlPct": 14.46,
           "pnlUSD": 1.9,
           "quantScore": null,
@@ -2103,7 +2103,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 45600,
+      "expCount": 45650,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
