@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-04-04T03:43:22.393Z",
+  "updatedAt": "2026-04-04T03:46:57.122Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 66852,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 19 min",
+  "nextCycle": "in 13 min",
   "wallet": {
-    "totalUSD": 73.16,
-    "positionsUSD": 68.06,
+    "totalUSD": 73.19,
+    "positionsUSD": 68.09,
     "liquidUSDC": 0,
     "ethUSD": 0.8,
     "yieldUSD": 0,
-    "unrealPnlUSD": 1.56,
-    "unrealPnlPct": 2.35
+    "unrealPnlUSD": 1.52,
+    "unrealPnlPct": 2.29
   },
   "positions": [
     {
       "sym": "BEAN",
-      "currentPrice": 21.9545191925,
-      "sizeUSD": 46.98968895879723,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentPrice": 21.93015624,
+      "sizeUSD": 47.01788802859584,
+      "currentUSD": 46.54,
+      "pnlUSD": -0.48,
+      "pnlPct": -1.02,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -39,11 +39,11 @@
     {
       "sym": "VVV",
       "entryPrice": 6.2889,
-      "currentPrice": 7.1929289923,
+      "currentPrice": 7.19851383,
       "sizeUSD": 13.14,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 14.37,
+      "currentUSD": 15.04,
+      "pnlUSD": 1.9,
+      "pnlPct": 14.46,
       "peakPct": 15.45,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -61,11 +61,11 @@
     },
     {
       "sym": "VIRTUAL",
-      "currentPrice": 0.6351873708,
+      "currentPrice": 0.64492859,
       "sizeUSD": 6.044731858752085,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 6.14,
+      "pnlUSD": 0.1,
+      "pnlPct": 1.65,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -91,7 +91,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-04T03:30:00.381Z",
-    "ago": "11m ago",
+    "ago": "17m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -111,9 +111,9 @@
     "positionUpdates": [
       {
         "sym": "BEAN",
-        "currentPrice": 21.93417274,
-        "pnlPct": -0.94,
-        "pnlUSD": -0.44,
+        "currentPrice": 21.93015624,
+        "pnlPct": -1.02,
+        "pnlUSD": -0.48,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -122,7 +122,7 @@
       },
       {
         "sym": "VVV",
-        "currentPrice": 7.19911978,
+        "currentPrice": 7.19851383,
         "pnlPct": 14.46,
         "pnlUSD": 1.9,
         "quantScore": null,
@@ -146,9 +146,9 @@
     "positionAssessments": [
       {
         "sym": "BEAN",
-        "currentPrice": 21.93417274,
-        "pnlPct": -0.94,
-        "pnlUSD": -0.44,
+        "currentPrice": 21.93015624,
+        "pnlPct": -1.02,
+        "pnlUSD": -0.48,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -157,7 +157,7 @@
       },
       {
         "sym": "VVV",
-        "currentPrice": 7.19911978,
+        "currentPrice": 7.19851383,
         "pnlPct": 14.46,
         "pnlUSD": 1.9,
         "quantScore": null,
@@ -612,9 +612,9 @@
       "positionUpdates": [
         {
           "sym": "BEAN",
-          "currentPrice": 21.93417274,
-          "pnlPct": -0.94,
-          "pnlUSD": -0.44,
+          "currentPrice": 21.93015624,
+          "pnlPct": -1.02,
+          "pnlUSD": -0.48,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -623,7 +623,7 @@
         },
         {
           "sym": "VVV",
-          "currentPrice": 7.19911978,
+          "currentPrice": 7.19851383,
           "pnlPct": 14.46,
           "pnlUSD": 1.9,
           "quantScore": null,
@@ -647,9 +647,9 @@
       "positionAssessments": [
         {
           "sym": "BEAN",
-          "currentPrice": 21.93417274,
-          "pnlPct": -0.94,
-          "pnlUSD": -0.44,
+          "currentPrice": 21.93015624,
+          "pnlPct": -1.02,
+          "pnlUSD": -0.48,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -658,7 +658,7 @@
         },
         {
           "sym": "VVV",
-          "currentPrice": 7.19911978,
+          "currentPrice": 7.19851383,
           "pnlPct": 14.46,
           "pnlUSD": 1.9,
           "quantScore": null,
@@ -2168,7 +2168,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 47865,
+      "expCount": 47915,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
