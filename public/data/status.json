@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-05T09:37:34.562Z",
+  "updatedAt": "2026-04-05T09:37:54.977Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 67016,
   "pctFrom200": "-4.2%",
@@ -16,27 +16,18 @@
   },
   "positions": [
     {
+      "status": "open",
       "sym": "VVV",
+      "qty": 2.0889,
       "entryPrice": 6.2889,
-      "currentPrice": 7.16878444,
-      "sizeUSD": 13.14,
-      "currentUSD": 14.98,
-      "pnlUSD": 1.84,
-      "pnlPct": 14,
+      "currentPrice": 7.16,
+      "sizeUsd": 13.14,
+      "pnlPct": 13.83,
+      "pnlUsd": 1.82,
       "peakPct": 15.28,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": true,
       "openedAt": "2026-03-22T20:37:26.831Z",
-      "entryTx": null,
-      "contractAddress": "0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
-      "quantScore": null,
-      "ret1h": null,
-      "transferStats": null
+      "regime": "BEAR",
+      "confidence": 80
     }
   ],
   "yield": {
@@ -97,13 +88,35 @@
     "topScores": []
   },
   "performance": {
-    "totalTrades": 31,
+    "totalTrades": 33,
     "winCount": 11,
     "winRatePct": 35.5,
     "avgPnlPct": 4.3,
-    "closedTrades": 31,
-    "winRate": "11/31 (35.5%)",
+    "closedTrades": 33,
+    "winRate": "11/33 (33.3%)",
     "recentTrades": [
+      {
+        "sym": "VIRTUAL",
+        "pnlPct": -9.8,
+        "pnlUsd": -0.64,
+        "sizeUsd": 6.49,
+        "won": false,
+        "openedAt": "2026-04-04T00:00:00.000Z",
+        "closedAt": "2026-04-05T09:37:54.977Z",
+        "reason": "near_stop_loss",
+        "exitTx": "0x8868ddfaee1ed04d71de4f61f446dbde5ec419ad21d66c23c9c54edbe0d6947e"
+      },
+      {
+        "sym": "BEAN",
+        "pnlPct": -28.25,
+        "pnlUsd": -10.35,
+        "sizeUsd": 36.69,
+        "won": false,
+        "openedAt": "2026-04-04T00:00:00.000Z",
+        "closedAt": "2026-04-05T09:37:54.977Z",
+        "reason": "hard_stop_loss",
+        "exitTx": "0xa15210ffde96126aca8c6258c57b9863a961abd10437d2aa30928979e37e648a"
+      },
       {
         "sym": "BEAN",
         "pnlPct": -14.69,
