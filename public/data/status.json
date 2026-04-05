@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-04-05T22:00:32.270Z",
+  "updatedAt": "2026-04-05T22:00:48.356Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 67476,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 67553,
+  "pctFrom200": "0.6%",
   "breadth": "3/17",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 30 min",
   "wallet": {
     "totalUSD": 59.57,
     "positionsUSD": 53.01,
     "liquidUSDC": 0,
     "ethUSD": 0.8,
     "yieldUSD": 0,
-    "unrealPnlUSD": 2.42,
-    "unrealPnlPct": 4.82
+    "unrealPnlUSD": 2.7,
+    "unrealPnlPct": 5.37
   },
   "positions": [
     {
       "sym": "AGNT",
       "entryPrice": 0.00000206,
-      "currentPrice": 0.00000211,
+      "currentPrice": null,
       "sizeUSD": 17.04,
-      "currentUSD": 17.5,
-      "pnlUSD": 0.46,
-      "pnlPct": 2.7,
+      "currentUSD": 17.67,
+      "pnlUSD": 0.63,
+      "pnlPct": 3.7,
       "peakPct": 30.31,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -41,7 +41,7 @@
     {
       "sym": "VVV",
       "entryPrice": 6.29,
-      "currentPrice": 7.35031649,
+      "currentPrice": null,
       "sizeUSD": 13.14,
       "currentUSD": 15.35,
       "pnlUSD": 2.21,
@@ -64,11 +64,11 @@
     {
       "sym": "FAI",
       "entryPrice": 0.004,
-      "currentPrice": 0.00396592,
+      "currentPrice": null,
       "sizeUSD": 9.61,
-      "currentUSD": 9.53,
-      "pnlUSD": -0.08,
-      "pnlPct": -0.83,
+      "currentUSD": 9.54,
+      "pnlUSD": -0.07,
+      "pnlPct": -0.73,
       "peakPct": 3.23,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -86,11 +86,11 @@
     },
     {
       "sym": "SAVE OIL FROM WAR",
-      "currentPrice": 0.00040679,
+      "currentPrice": null,
       "sizeUSD": 7.757326016378425,
-      "currentUSD": 7.66,
-      "pnlUSD": -0.1,
-      "pnlPct": -1.29,
+      "currentUSD": 7.76,
+      "pnlUSD": 0,
+      "pnlPct": 0,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -108,7 +108,7 @@
     {
       "sym": "KTA",
       "entryPrice": 0.168,
-      "currentPrice": 0.16408617,
+      "currentPrice": null,
       "sizeUSD": 2.76,
       "currentUSD": 2.69,
       "pnlUSD": -0.07,
@@ -138,18 +138,18 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-04-05T21:30:00.789Z",
-    "ago": "31m ago",
+    "ts": "2026-04-05T22:00:00.367Z",
+    "ago": "48s ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 67476.37,
-      "pctFrom200": 0.004680008953270182,
-      "volRatio": 0.8966395185603023,
+      "btcNow": 67553.43,
+      "pctFrom200": 0.005760864279277195,
+      "volRatio": 0.8698458650425412,
       "btcState": "RANGE"
     },
-    "seenCount": 12,
-    "screened": 12,
+    "seenCount": 4,
+    "screened": 4,
     "traded": [],
     "action": "hold",
     "asset": "USDC",
@@ -159,9 +159,9 @@
     "positionUpdates": [
       {
         "sym": "AGNT",
-        "currentPrice": 0.00000211,
-        "pnlPct": 2.7,
-        "pnlUSD": 0.46,
+        "currentPrice": null,
+        "pnlPct": 3.7,
+        "pnlUSD": 0.63,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -170,7 +170,7 @@
       },
       {
         "sym": "VVV",
-        "currentPrice": 7.35031649,
+        "currentPrice": null,
         "pnlPct": 16.82,
         "pnlUSD": 2.21,
         "quantScore": null,
@@ -181,9 +181,9 @@
       },
       {
         "sym": "FAI",
-        "currentPrice": 0.00396592,
-        "pnlPct": -0.83,
-        "pnlUSD": -0.08,
+        "currentPrice": null,
+        "pnlPct": -0.73,
+        "pnlUSD": -0.07,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -192,9 +192,9 @@
       },
       {
         "sym": "SAVE OIL FROM WAR",
-        "currentPrice": 0.00040679,
-        "pnlPct": -1.29,
-        "pnlUSD": -0.1,
+        "currentPrice": null,
+        "pnlPct": 0,
+        "pnlUSD": 0,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -203,7 +203,7 @@
       },
       {
         "sym": "KTA",
-        "currentPrice": 0.16408617,
+        "currentPrice": null,
         "pnlPct": -2.54,
         "pnlUSD": -0.07,
         "quantScore": null,
@@ -216,9 +216,9 @@
     "positionAssessments": [
       {
         "sym": "AGNT",
-        "currentPrice": 0.00000211,
-        "pnlPct": 2.7,
-        "pnlUSD": 0.46,
+        "currentPrice": null,
+        "pnlPct": 3.7,
+        "pnlUSD": 0.63,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -227,7 +227,7 @@
       },
       {
         "sym": "VVV",
-        "currentPrice": 7.35031649,
+        "currentPrice": null,
         "pnlPct": 16.82,
         "pnlUSD": 2.21,
         "quantScore": null,
@@ -238,9 +238,9 @@
       },
       {
         "sym": "FAI",
-        "currentPrice": 0.00396592,
-        "pnlPct": -0.83,
-        "pnlUSD": -0.08,
+        "currentPrice": null,
+        "pnlPct": -0.73,
+        "pnlUSD": -0.07,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -249,9 +249,9 @@
       },
       {
         "sym": "SAVE OIL FROM WAR",
-        "currentPrice": 0.00040679,
-        "pnlPct": -1.29,
-        "pnlUSD": -0.1,
+        "currentPrice": null,
+        "pnlPct": 0,
+        "pnlUSD": 0,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -260,7 +260,7 @@
       },
       {
         "sym": "KTA",
-        "currentPrice": 0.16408617,
+        "currentPrice": null,
         "pnlPct": -2.54,
         "pnlUSD": -0.07,
         "quantScore": null,
@@ -723,6 +723,147 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-04-05T22:00:00.367Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 67553.43,
+        "pctFrom200": 0.005760864279277195,
+        "volRatio": 0.8698458650425412,
+        "btcState": "RANGE"
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "no decision",
+      "seenCount": 4,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "AGNT",
+          "currentPrice": null,
+          "pnlPct": 3.7,
+          "pnlUSD": 0.63,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "VVV",
+          "currentPrice": null,
+          "pnlPct": 16.82,
+          "pnlUSD": 2.21,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "FAI",
+          "currentPrice": null,
+          "pnlPct": -0.73,
+          "pnlUSD": -0.07,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "SAVE OIL FROM WAR",
+          "currentPrice": null,
+          "pnlPct": 0,
+          "pnlUSD": 0,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "KTA",
+          "currentPrice": null,
+          "pnlPct": -2.54,
+          "pnlUSD": -0.07,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "AGNT",
+          "currentPrice": null,
+          "pnlPct": 3.7,
+          "pnlUSD": 0.63,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "VVV",
+          "currentPrice": null,
+          "pnlPct": 16.82,
+          "pnlUSD": 2.21,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "FAI",
+          "currentPrice": null,
+          "pnlPct": -0.73,
+          "pnlUSD": -0.07,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "SAVE OIL FROM WAR",
+          "currentPrice": null,
+          "pnlPct": 0,
+          "pnlUSD": 0,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "KTA",
+          "currentPrice": null,
+          "pnlPct": -2.54,
+          "pnlUSD": -0.07,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "VVV score=0.73 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": null,
+      "dataSources": null
+    },
+    {
       "ts": "2026-04-05T21:30:00.789Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -738,120 +879,8 @@
       "reasoning": "no decision",
       "seenCount": 12,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "AGNT",
-          "currentPrice": 0.00000211,
-          "pnlPct": 2.7,
-          "pnlUSD": 0.46,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "VVV",
-          "currentPrice": 7.35031649,
-          "pnlPct": 16.82,
-          "pnlUSD": 2.21,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "FAI",
-          "currentPrice": 0.00396592,
-          "pnlPct": -0.83,
-          "pnlUSD": -0.08,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "SAVE OIL FROM WAR",
-          "currentPrice": 0.00040679,
-          "pnlPct": -1.29,
-          "pnlUSD": -0.1,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "KTA",
-          "currentPrice": 0.16408617,
-          "pnlPct": -2.54,
-          "pnlUSD": -0.07,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "AGNT",
-          "currentPrice": 0.00000211,
-          "pnlPct": 2.7,
-          "pnlUSD": 0.46,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "VVV",
-          "currentPrice": 7.35031649,
-          "pnlPct": 16.82,
-          "pnlUSD": 2.21,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "FAI",
-          "currentPrice": 0.00396592,
-          "pnlPct": -0.83,
-          "pnlUSD": -0.08,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "SAVE OIL FROM WAR",
-          "currentPrice": 0.00040679,
-          "pnlPct": -1.29,
-          "pnlUSD": -0.1,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "KTA",
-          "currentPrice": 0.16408617,
-          "pnlPct": -2.54,
-          "pnlUSD": -0.07,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -2254,35 +2283,6 @@
       "layers": [],
       "screenLayer": null,
       "dataSources": null
-    },
-    {
-      "ts": "2026-04-04T22:00:00.953Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 67359.21,
-        "pctFrom200": 0.004495259974199272,
-        "volRatio": 0.8888846831302477,
-        "btcState": "RANGE"
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "no decision",
-      "seenCount": 8,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "AGNT score=0.99 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": null,
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -2341,7 +2341,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 69240,
+      "expCount": 69245,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
