@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-04-06T18:59:49.145Z",
+  "updatedAt": "2026-04-06T19:00:55.894Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 69854,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 69881,
+  "pctFrom200": "3.6%",
   "breadth": "3/17",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 29 min",
   "wallet": {
     "totalUSD": 43.61,
     "positionsUSD": 31.75,
     "liquidUSDC": 6.57,
     "ethUSD": 0.83,
     "yieldUSD": 0,
-    "unrealPnlUSD": 1.76,
-    "unrealPnlPct": 5.87
+    "unrealPnlUSD": 1.72,
+    "unrealPnlPct": 5.74
   },
   "positions": [
     {
       "sym": "VVV",
       "entryPrice": 6.29,
-      "currentPrice": 7.09582981,
+      "currentPrice": null,
       "sizeUSD": 13.14,
-      "currentUSD": 14.82,
-      "pnlUSD": 1.68,
-      "pnlPct": 12.79,
+      "currentUSD": 14.84,
+      "pnlUSD": 1.7,
+      "pnlPct": 12.94,
       "peakPct": 16.02,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -40,11 +40,11 @@
     },
     {
       "sym": "AERO",
-      "currentPrice": 0.31736258,
+      "currentPrice": null,
       "sizeUSD": 14.127067566318761,
-      "currentUSD": 14.19,
-      "pnlUSD": 0.06,
-      "pnlPct": 0.42,
+      "currentUSD": 14.13,
+      "pnlUSD": 0,
+      "pnlPct": 0,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -62,7 +62,7 @@
     {
       "sym": "KTA",
       "entryPrice": 0.168,
-      "currentPrice": 0.16927147,
+      "currentPrice": null,
       "sizeUSD": 2.76,
       "currentUSD": 2.78,
       "pnlUSD": 0.02,
@@ -92,18 +92,18 @@
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
-    "ts": "2026-04-06T18:30:00.652Z",
-    "ago": "30m ago",
+    "ts": "2026-04-06T19:00:00.609Z",
+    "ago": "55s ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 69854,
-      "pctFrom200": 0.03588233979068578,
-      "volRatio": 0.8767049698798991,
+      "btcNow": 69880.74,
+      "pctFrom200": 0.03604078023855628,
+      "volRatio": 0.8775342375717381,
       "btcState": "RANGE"
     },
-    "seenCount": 19,
-    "screened": 19,
+    "seenCount": 14,
+    "screened": 14,
     "traded": [],
     "action": "hold",
     "asset": "USDC",
@@ -113,9 +113,9 @@
     "positionUpdates": [
       {
         "sym": "VVV",
-        "currentPrice": 7.09582981,
-        "pnlPct": 12.79,
-        "pnlUSD": 1.68,
+        "currentPrice": null,
+        "pnlPct": 12.94,
+        "pnlUSD": 1.7,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -124,9 +124,9 @@
       },
       {
         "sym": "AERO",
-        "currentPrice": 0.31736258,
-        "pnlPct": 0.42,
-        "pnlUSD": 0.06,
+        "currentPrice": null,
+        "pnlPct": 0,
+        "pnlUSD": 0,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -135,7 +135,7 @@
       },
       {
         "sym": "KTA",
-        "currentPrice": 0.16927147,
+        "currentPrice": null,
         "pnlPct": 0.72,
         "pnlUSD": 0.02,
         "quantScore": null,
@@ -148,9 +148,9 @@
     "positionAssessments": [
       {
         "sym": "VVV",
-        "currentPrice": 7.09582981,
-        "pnlPct": 12.79,
-        "pnlUSD": 1.68,
+        "currentPrice": null,
+        "pnlPct": 12.94,
+        "pnlUSD": 1.7,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -159,9 +159,9 @@
       },
       {
         "sym": "AERO",
-        "currentPrice": 0.31736258,
-        "pnlPct": 0.42,
-        "pnlUSD": 0.06,
+        "currentPrice": null,
+        "pnlPct": 0,
+        "pnlUSD": 0,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -170,7 +170,7 @@
       },
       {
         "sym": "KTA",
-        "currentPrice": 0.16927147,
+        "currentPrice": null,
         "pnlPct": 0.72,
         "pnlUSD": 0.02,
         "quantScore": null,
@@ -633,6 +633,103 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-04-06T19:00:00.609Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 69880.74,
+        "pctFrom200": 0.03604078023855628,
+        "volRatio": 0.8775342375717381,
+        "btcState": "RANGE"
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "no decision",
+      "seenCount": 12,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "VVV",
+          "currentPrice": null,
+          "pnlPct": 12.94,
+          "pnlUSD": 1.7,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "AERO",
+          "currentPrice": null,
+          "pnlPct": 0,
+          "pnlUSD": 0,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "KTA",
+          "currentPrice": null,
+          "pnlPct": 0.72,
+          "pnlUSD": 0.02,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "VVV",
+          "currentPrice": null,
+          "pnlPct": 12.94,
+          "pnlUSD": 1.7,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "AERO",
+          "currentPrice": null,
+          "pnlPct": 0,
+          "pnlUSD": 0,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "KTA",
+          "currentPrice": null,
+          "pnlPct": 0.72,
+          "pnlUSD": 0.02,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": "ODAI score=0.73 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": null,
+      "dataSources": null
+    },
+    {
       "ts": "2026-04-06T18:30:00.652Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -648,76 +745,8 @@
       "reasoning": "no decision",
       "seenCount": 17,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "VVV",
-          "currentPrice": 7.09582981,
-          "pnlPct": 12.79,
-          "pnlUSD": 1.68,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "AERO",
-          "currentPrice": 0.31736258,
-          "pnlPct": 0.42,
-          "pnlUSD": 0.06,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "KTA",
-          "currentPrice": 0.16927147,
-          "pnlPct": 0.72,
-          "pnlUSD": 0.02,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "VVV",
-          "currentPrice": 7.09582981,
-          "pnlPct": 12.79,
-          "pnlUSD": 1.68,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "AERO",
-          "currentPrice": 0.31736258,
-          "pnlPct": 0.42,
-          "pnlUSD": 0.06,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "KTA",
-          "currentPrice": 0.16927147,
-          "pnlPct": 0.72,
-          "pnlUSD": 0.02,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -2120,35 +2149,6 @@
       "layers": [],
       "screenLayer": null,
       "dataSources": null
-    },
-    {
-      "ts": "2026-04-05T21:30:00.789Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 67476.37,
-        "pctFrom200": 0.004680008953270182,
-        "volRatio": 0.8966395185603023,
-        "btcState": "RANGE"
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "no decision",
-      "seenCount": 12,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": "VVV score=0.73 ret1h=0.0%",
-      "layers": [],
-      "screenLayer": null,
-      "dataSources": null
     }
   ],
   "reasoningTraces": [
@@ -2207,7 +2207,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 79885,
+      "expCount": 79895,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
