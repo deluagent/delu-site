@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-04-07T05:19:48.087Z",
+  "updatedAt": "2026-04-07T05:23:07.803Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 68855,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 13 min",
+  "nextCycle": "in 7 min",
   "wallet": {
-    "totalUSD": 31.95,
+    "totalUSD": 31.94,
     "positionsUSD": 25.19,
     "liquidUSDC": 0,
     "ethUSD": 2.8,
     "yieldUSD": 0,
     "unrealPnlUSD": -0.11,
-    "unrealPnlPct": -0.43
+    "unrealPnlPct": -0.42
   },
   "positions": [
     {
       "sym": "AERO",
-      "currentPrice": 0.3109392658,
-      "sizeUSD": 13.898233578423474,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentPrice": 0.30953734,
+      "sizeUSD": 13.896370820878577,
+      "currentUSD": 13.84,
+      "pnlUSD": -0.06,
+      "pnlPct": -0.43,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -38,11 +38,11 @@
     },
     {
       "sym": "VIRTUAL",
-      "currentPrice": 0.631426868,
+      "currentPrice": 0.62580628,
       "sizeUSD": 6.29315795268715,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 6.24,
+      "pnlUSD": -0.05,
+      "pnlPct": -0.79,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -59,9 +59,9 @@
     },
     {
       "sym": "RUSH",
-      "currentPrice": 0.0000015128,
+      "currentPrice": 0.00000149,
       "sizeUSD": 4.9962377575830885,
-      "currentUSD": null,
+      "currentUSD": 5,
       "pnlUSD": 0,
       "pnlPct": 0,
       "peakPct": 0,
@@ -89,7 +89,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-07T05:00:00.366Z",
-    "ago": "17m ago",
+    "ago": "23m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -2216,7 +2216,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 84945,
+      "expCount": 84995,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
