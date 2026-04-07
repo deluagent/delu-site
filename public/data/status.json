@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-04-07T01:30:45.290Z",
+  "updatedAt": "2026-04-07T01:33:00.678Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 68728,
-  "pctFrom200": "1.8%",
+  "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 29 min",
+  "nextCycle": "in 27 min",
   "wallet": {
-    "totalUSD": 31.82,
-    "positionsUSD": 20.08,
-    "liquidUSDC": 3.33,
-    "ethUSD": 4.55,
+    "totalUSD": 31.73,
+    "positionsUSD": 25.07,
+    "liquidUSDC": 0,
+    "ethUSD": 2.8,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0,
-    "unrealPnlPct": 0
+    "unrealPnlUSD": 0.08,
+    "unrealPnlPct": 0.31
   },
   "positions": [
     {
       "sym": "AERO",
-      "currentPrice": null,
+      "currentPrice": 0.30797561,
       "sizeUSD": 13.803272562202968,
-      "currentUSD": 13.8,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 13.77,
+      "pnlUSD": -0.03,
+      "pnlPct": -0.22,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -38,11 +38,11 @@
     },
     {
       "sym": "VIRTUAL",
-      "currentPrice": null,
+      "currentPrice": 0.6406299,
       "sizeUSD": 6.276629545422138,
-      "currentUSD": 6.28,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 6.39,
+      "pnlUSD": 0.11,
+      "pnlPct": 1.75,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -56,19 +56,40 @@
       "quantScore": null,
       "ret1h": null,
       "transferStats": null
+    },
+    {
+      "sym": "RUSH",
+      "currentPrice": 0.00000148,
+      "sizeUSD": 4.991378133545073,
+      "currentUSD": 4.99,
+      "pnlUSD": 0,
+      "pnlPct": 0,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "entryTx": null,
+      "contractAddress": "0xb36a127dba73f3aa7c70b4e00b7395b86a60e73b",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
     }
   ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 7.88,
+    "amountUSD": 2.8,
     "apy": 0,
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
     "ts": "2026-04-07T01:30:00.257Z",
-    "ago": "45s ago",
+    "ago": "3m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -88,9 +109,9 @@
     "positionUpdates": [
       {
         "sym": "AERO",
-        "currentPrice": null,
-        "pnlPct": 0,
-        "pnlUSD": 0,
+        "currentPrice": 0.30797561,
+        "pnlPct": -0.22,
+        "pnlUSD": -0.03,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -99,7 +120,18 @@
       },
       {
         "sym": "VIRTUAL",
-        "currentPrice": null,
+        "currentPrice": 0.6406299,
+        "pnlPct": 1.75,
+        "pnlUSD": 0.11,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "RUSH",
+        "currentPrice": 0.00000148,
         "pnlPct": 0,
         "pnlUSD": 0,
         "quantScore": null,
@@ -112,9 +144,9 @@
     "positionAssessments": [
       {
         "sym": "AERO",
-        "currentPrice": null,
-        "pnlPct": 0,
-        "pnlUSD": 0,
+        "currentPrice": 0.30797561,
+        "pnlPct": -0.22,
+        "pnlUSD": -0.03,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -123,7 +155,18 @@
       },
       {
         "sym": "VIRTUAL",
-        "currentPrice": null,
+        "currentPrice": 0.6406299,
+        "pnlPct": 1.75,
+        "pnlUSD": 0.11,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "RUSH",
+        "currentPrice": 0.00000148,
         "pnlPct": 0,
         "pnlUSD": 0,
         "quantScore": null,
@@ -617,9 +660,9 @@
       "positionUpdates": [
         {
           "sym": "AERO",
-          "currentPrice": null,
-          "pnlPct": 0,
-          "pnlUSD": 0,
+          "currentPrice": 0.30797561,
+          "pnlPct": -0.22,
+          "pnlUSD": -0.03,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -628,7 +671,18 @@
         },
         {
           "sym": "VIRTUAL",
-          "currentPrice": null,
+          "currentPrice": 0.6406299,
+          "pnlPct": 1.75,
+          "pnlUSD": 0.11,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "RUSH",
+          "currentPrice": 0.00000148,
           "pnlPct": 0,
           "pnlUSD": 0,
           "quantScore": null,
@@ -641,9 +695,9 @@
       "positionAssessments": [
         {
           "sym": "AERO",
-          "currentPrice": null,
-          "pnlPct": 0,
-          "pnlUSD": 0,
+          "currentPrice": 0.30797561,
+          "pnlPct": -0.22,
+          "pnlUSD": -0.03,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -652,7 +706,18 @@
         },
         {
           "sym": "VIRTUAL",
-          "currentPrice": null,
+          "currentPrice": 0.6406299,
+          "pnlPct": 1.75,
+          "pnlUSD": 0.11,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "RUSH",
+          "currentPrice": 0.00000148,
           "pnlPct": 0,
           "pnlUSD": 0,
           "quantScore": null,
@@ -2151,7 +2216,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 83080,
+      "expCount": 83100,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
