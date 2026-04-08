@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-04-08T13:45:50.844Z",
+  "updatedAt": "2026-04-08T13:52:35.054Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 72078,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
   "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 0,
+    "totalUSD": 8.92,
     "positionsUSD": 0,
     "liquidUSDC": 0,
-    "ethUSD": 0,
+    "ethUSD": 8.92,
     "yieldUSD": 0,
     "unrealPnlUSD": 0,
     "unrealPnlPct": 0
@@ -19,13 +19,13 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 0,
+    "amountUSD": 8.92,
     "apy": 0,
-    "note": "Liquid USDC available for next trade entry"
+    "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
     "ts": "2026-04-08T13:00:00.941Z",
-    "ago": "46m ago",
+    "ago": "53m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -49,13 +49,39 @@
     "topScores": []
   },
   "performance": {
-    "totalTrades": 36,
+    "totalTrades": 38,
     "winCount": 11,
-    "winRatePct": 30.6,
-    "avgPnlPct": 2.64,
-    "closedTrades": 36,
-    "winRate": "11/36 (30.6%)",
+    "winRatePct": 28.9,
+    "avgPnlPct": 2.5,
+    "closedTrades": 38,
+    "winRate": "11/38 (28.9%)",
     "recentTrades": [
+      {
+        "sym": "AERO",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 14.29,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": null,
+        "exitTx": null,
+        "openedAt": "2026-04-06T16:01:00.000Z",
+        "closedAt": "2026-04-08T13:52:27.049Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "ELSA",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": null,
+        "exitTx": null,
+        "openedAt": "2026-04-07T17:31:00.000Z",
+        "closedAt": "2026-04-08T13:52:27.049Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "RUSH",
         "pnlPct": 0,
@@ -2029,7 +2055,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 100800,
+      "expCount": 101040,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
