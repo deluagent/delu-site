@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-04-08T15:10:27.383Z",
+  "updatedAt": "2026-04-08T15:14:54.135Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70921,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 22 min",
+  "nextCycle": "in 15 min",
   "wallet": {
-    "totalUSD": 168.18,
+    "totalUSD": 168.19,
     "positionsUSD": 20.76,
     "liquidUSDC": 135.55,
     "ethUSD": 8.75,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0.04,
-    "unrealPnlPct": 0.19
+    "unrealPnlUSD": -0.03,
+    "unrealPnlPct": -0.16
   },
   "positions": [
     {
       "sym": "AERO",
-      "currentPrice": 0.3331640872,
-      "sizeUSD": 14.922581627386633,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
-      "peakPct": 0.2,
+      "currentPrice": 0.33273538,
+      "sizeUSD": 14.897194756897884,
+      "currentUSD": 14.87,
+      "pnlUSD": -0.03,
+      "pnlPct": -0.2,
+      "peakPct": 0.27,
       "trailStop": 5,
       "hardSlPct": 3,
       "trailActivated": false,
@@ -38,11 +38,11 @@
     },
     {
       "sym": "ELSA",
-      "currentPrice": 0.065874944,
-      "sizeUSD": 5.838584523602331,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentPrice": 0.06624894,
+      "sizeUSD": 5.865910192199535,
+      "currentUSD": 5.86,
+      "pnlUSD": -0.01,
+      "pnlPct": -0.17,
       "peakPct": 0.34,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -68,7 +68,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-08T15:00:00.694Z",
-    "ago": "8m ago",
+    "ago": "15m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -88,9 +88,9 @@
     "positionUpdates": [
       {
         "sym": "AERO",
-        "currentPrice": 0.33475207,
-        "pnlPct": 0.27,
-        "pnlUSD": 0.04,
+        "currentPrice": 0.33273538,
+        "pnlPct": -0.2,
+        "pnlUSD": -0.03,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -99,9 +99,9 @@
       },
       {
         "sym": "ELSA",
-        "currentPrice": 0.06602219,
-        "pnlPct": 0,
-        "pnlUSD": 0,
+        "currentPrice": 0.06624894,
+        "pnlPct": -0.17,
+        "pnlUSD": -0.01,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -112,9 +112,9 @@
     "positionAssessments": [
       {
         "sym": "AERO",
-        "currentPrice": 0.33475207,
-        "pnlPct": 0.27,
-        "pnlUSD": 0.04,
+        "currentPrice": 0.33273538,
+        "pnlPct": -0.2,
+        "pnlUSD": -0.03,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -123,9 +123,9 @@
       },
       {
         "sym": "ELSA",
-        "currentPrice": 0.06602219,
-        "pnlPct": 0,
-        "pnlUSD": 0,
+        "currentPrice": 0.06624894,
+        "pnlPct": -0.17,
+        "pnlUSD": -0.01,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -656,9 +656,9 @@
       "positionUpdates": [
         {
           "sym": "AERO",
-          "currentPrice": 0.33475207,
-          "pnlPct": 0.27,
-          "pnlUSD": 0.04,
+          "currentPrice": 0.33273538,
+          "pnlPct": -0.2,
+          "pnlUSD": -0.03,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -667,9 +667,9 @@
         },
         {
           "sym": "ELSA",
-          "currentPrice": 0.06602219,
-          "pnlPct": 0,
-          "pnlUSD": 0,
+          "currentPrice": 0.06624894,
+          "pnlPct": -0.17,
+          "pnlUSD": -0.01,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -680,9 +680,9 @@
       "positionAssessments": [
         {
           "sym": "AERO",
-          "currentPrice": 0.33475207,
-          "pnlPct": 0.27,
-          "pnlUSD": 0.04,
+          "currentPrice": 0.33273538,
+          "pnlPct": -0.2,
+          "pnlUSD": -0.03,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -691,9 +691,9 @@
         },
         {
           "sym": "ELSA",
-          "currentPrice": 0.06602219,
-          "pnlPct": 0,
-          "pnlUSD": 0,
+          "currentPrice": 0.06624894,
+          "pnlPct": -0.17,
+          "pnlUSD": -0.01,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -2190,7 +2190,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 101760,
+      "expCount": 102000,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
