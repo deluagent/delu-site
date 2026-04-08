@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-04-08T10:05:21.771Z",
+  "updatedAt": "2026-04-08T10:06:32.535Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71690,
-  "pctFrom200": "5.5%",
+  "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 29 min",
+  "nextCycle": "in 24 min",
   "wallet": {
-    "totalUSD": 38.94,
-    "positionsUSD": 33.59,
+    "totalUSD": 38.98,
+    "positionsUSD": 33.62,
     "liquidUSDC": 0,
     "ethUSD": 2.19,
     "yieldUSD": 0,
-    "unrealPnlUSD": 3.08,
-    "unrealPnlPct": 10.1
+    "unrealPnlUSD": 3.17,
+    "unrealPnlPct": 10.39
   },
   "positions": [
     {
       "sym": "AERO",
       "entryPrice": 0.3196,
-      "currentPrice": 0.3415085168,
+      "currentPrice": 0.34155114,
       "sizeUSD": 14.29,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 6.85,
+      "currentUSD": 15.27,
+      "pnlUSD": 0.98,
+      "pnlPct": 6.86,
       "peakPct": 7.51,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -41,11 +41,11 @@
     {
       "sym": "VIRTUAL",
       "entryPrice": 0.6506,
-      "currentPrice": 0.6933109107,
+      "currentPrice": 0.69525967,
       "sizeUSD": 6.49,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 6.56,
+      "currentUSD": 6.93,
+      "pnlUSD": 0.44,
+      "pnlPct": 6.78,
       "peakPct": 7.09,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -64,11 +64,11 @@
     {
       "sym": "ELSA",
       "entryPrice": 0.056563,
-      "currentPrice": 0.0675945412,
+      "currentPrice": 0.06783949,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 19.5,
+      "currentUSD": 6,
+      "pnlUSD": 1,
+      "pnlPct": 20,
       "peakPct": 19.6,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -87,11 +87,11 @@
     {
       "sym": "RUSH",
       "entryPrice": 0.000001402,
-      "currentPrice": 0.0000016168,
+      "currentPrice": 0.00000163,
       "sizeUSD": 4.72,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 15.32,
+      "currentUSD": 5.47,
+      "pnlUSD": 0.75,
+      "pnlPct": 15.89,
       "peakPct": 22.96,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -118,7 +118,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-08T10:00:00.405Z",
-    "ago": "49s ago",
+    "ago": "7m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -138,30 +138,8 @@
     "positionUpdates": [
       {
         "sym": "AERO",
-        "currentPrice": null,
-        "pnlPct": 6.44,
-        "pnlUSD": 0.92,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
-        "sym": "VIRTUAL",
-        "currentPrice": null,
-        "pnlPct": 6.47,
-        "pnlUSD": 0.42,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
-        "sym": "ELSA",
-        "currentPrice": null,
-        "pnlPct": 19.6,
+        "currentPrice": 0.34155114,
+        "pnlPct": 6.86,
         "pnlUSD": 0.98,
         "quantScore": null,
         "volumeTrend": null,
@@ -170,10 +148,32 @@
         "transferStats": null
       },
       {
+        "sym": "VIRTUAL",
+        "currentPrice": 0.69525967,
+        "pnlPct": 6.78,
+        "pnlUSD": 0.44,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "ELSA",
+        "currentPrice": 0.06783949,
+        "pnlPct": 20,
+        "pnlUSD": 1,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
         "sym": "RUSH",
-        "currentPrice": null,
-        "pnlPct": 16.1,
-        "pnlUSD": 0.76,
+        "currentPrice": 0.00000163,
+        "pnlPct": 15.89,
+        "pnlUSD": 0.75,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -184,30 +184,8 @@
     "positionAssessments": [
       {
         "sym": "AERO",
-        "currentPrice": null,
-        "pnlPct": 6.44,
-        "pnlUSD": 0.92,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
-        "sym": "VIRTUAL",
-        "currentPrice": null,
-        "pnlPct": 6.47,
-        "pnlUSD": 0.42,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
-        "sym": "ELSA",
-        "currentPrice": null,
-        "pnlPct": 19.6,
+        "currentPrice": 0.34155114,
+        "pnlPct": 6.86,
         "pnlUSD": 0.98,
         "quantScore": null,
         "volumeTrend": null,
@@ -216,10 +194,32 @@
         "transferStats": null
       },
       {
+        "sym": "VIRTUAL",
+        "currentPrice": 0.69525967,
+        "pnlPct": 6.78,
+        "pnlUSD": 0.44,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "ELSA",
+        "currentPrice": 0.06783949,
+        "pnlPct": 20,
+        "pnlUSD": 1,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
         "sym": "RUSH",
-        "currentPrice": null,
-        "pnlPct": 16.1,
-        "pnlUSD": 0.76,
+        "currentPrice": 0.00000163,
+        "pnlPct": 15.89,
+        "pnlUSD": 0.75,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -711,30 +711,8 @@
       "positionUpdates": [
         {
           "sym": "AERO",
-          "currentPrice": null,
-          "pnlPct": 6.44,
-          "pnlUSD": 0.92,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "VIRTUAL",
-          "currentPrice": null,
-          "pnlPct": 6.47,
-          "pnlUSD": 0.42,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "ELSA",
-          "currentPrice": null,
-          "pnlPct": 19.6,
+          "currentPrice": 0.34155114,
+          "pnlPct": 6.86,
           "pnlUSD": 0.98,
           "quantScore": null,
           "volumeTrend": null,
@@ -743,10 +721,32 @@
           "transferStats": null
         },
         {
+          "sym": "VIRTUAL",
+          "currentPrice": 0.69525967,
+          "pnlPct": 6.78,
+          "pnlUSD": 0.44,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "ELSA",
+          "currentPrice": 0.06783949,
+          "pnlPct": 20,
+          "pnlUSD": 1,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
           "sym": "RUSH",
-          "currentPrice": null,
-          "pnlPct": 16.1,
-          "pnlUSD": 0.76,
+          "currentPrice": 0.00000163,
+          "pnlPct": 15.89,
+          "pnlUSD": 0.75,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -757,30 +757,8 @@
       "positionAssessments": [
         {
           "sym": "AERO",
-          "currentPrice": null,
-          "pnlPct": 6.44,
-          "pnlUSD": 0.92,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "VIRTUAL",
-          "currentPrice": null,
-          "pnlPct": 6.47,
-          "pnlUSD": 0.42,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "ELSA",
-          "currentPrice": null,
-          "pnlPct": 19.6,
+          "currentPrice": 0.34155114,
+          "pnlPct": 6.86,
           "pnlUSD": 0.98,
           "quantScore": null,
           "volumeTrend": null,
@@ -789,10 +767,32 @@
           "transferStats": null
         },
         {
+          "sym": "VIRTUAL",
+          "currentPrice": 0.69525967,
+          "pnlPct": 6.78,
+          "pnlUSD": 0.44,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "ELSA",
+          "currentPrice": 0.06783949,
+          "pnlPct": 20,
+          "pnlUSD": 1,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
           "sym": "RUSH",
-          "currentPrice": null,
-          "pnlPct": 16.1,
-          "pnlUSD": 0.76,
+          "currentPrice": 0.00000163,
+          "pnlPct": 15.89,
+          "pnlUSD": 0.75,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -2289,7 +2289,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 99200,
+      "expCount": 99245,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
