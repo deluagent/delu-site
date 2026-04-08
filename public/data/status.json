@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-04-08T03:25:14.112Z",
+  "updatedAt": "2026-04-08T03:26:40.764Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71365,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 10 min",
+  "nextCycle": "in 4 min",
   "wallet": {
-    "totalUSD": 38.38,
-    "positionsUSD": 32.89,
+    "totalUSD": 38.46,
+    "positionsUSD": 32.97,
     "liquidUSDC": 0,
     "ethUSD": 2.17,
     "yieldUSD": 0,
     "unrealPnlUSD": 0.2,
-    "unrealPnlPct": 0.61
+    "unrealPnlPct": 0.62
   },
   "positions": [
     {
       "sym": "AERO",
-      "currentPrice": 0.3291845855,
-      "sizeUSD": 14.691846662220176,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentPrice": 0.33112229,
+      "sizeUSD": 14.7783725239251,
+      "currentUSD": 14.8,
+      "pnlUSD": 0.02,
+      "pnlPct": 0.14,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -38,11 +38,11 @@
     },
     {
       "sym": "VIRTUAL",
-      "currentPrice": 0.681332641,
+      "currentPrice": 0.68850587,
       "sizeUSD": 6.758248558188073,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 6.87,
+      "pnlUSD": 0.11,
+      "pnlPct": 1.63,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -59,9 +59,9 @@
     },
     {
       "sym": "ELSA",
-      "currentPrice": 0.0671950812,
-      "sizeUSD": 5.948152495744514,
-      "currentUSD": null,
+      "currentPrice": 0.06715495,
+      "sizeUSD": 5.942846540677095,
+      "currentUSD": 5.94,
       "pnlUSD": 0,
       "pnlPct": 0,
       "peakPct": 0,
@@ -80,11 +80,11 @@
     },
     {
       "sym": "RUSH",
-      "currentPrice": 0.0000017047,
-      "sizeUSD": 5.490166251741837,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentPrice": 0.00000165,
+      "sizeUSD": 5.486881865914526,
+      "currentUSD": 5.56,
+      "pnlUSD": 0.07,
+      "pnlPct": 1.28,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -110,7 +110,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-08T03:00:00.255Z",
-    "ago": "20m ago",
+    "ago": "27m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -130,7 +130,7 @@
     "positionUpdates": [
       {
         "sym": "AERO",
-        "currentPrice": 0.32901809,
+        "currentPrice": 0.33112229,
         "pnlPct": 0.14,
         "pnlUSD": 0.02,
         "quantScore": null,
@@ -152,7 +152,7 @@
       },
       {
         "sym": "ELSA",
-        "currentPrice": 0.06725292,
+        "currentPrice": 0.06715495,
         "pnlPct": 0,
         "pnlUSD": 0,
         "quantScore": null,
@@ -176,7 +176,7 @@
     "positionAssessments": [
       {
         "sym": "AERO",
-        "currentPrice": 0.32901809,
+        "currentPrice": 0.33112229,
         "pnlPct": 0.14,
         "pnlUSD": 0.02,
         "quantScore": null,
@@ -198,7 +198,7 @@
       },
       {
         "sym": "ELSA",
-        "currentPrice": 0.06725292,
+        "currentPrice": 0.06715495,
         "pnlPct": 0,
         "pnlUSD": 0,
         "quantScore": null,
@@ -703,7 +703,7 @@
       "positionUpdates": [
         {
           "sym": "AERO",
-          "currentPrice": 0.32901809,
+          "currentPrice": 0.33112229,
           "pnlPct": 0.14,
           "pnlUSD": 0.02,
           "quantScore": null,
@@ -725,7 +725,7 @@
         },
         {
           "sym": "ELSA",
-          "currentPrice": 0.06725292,
+          "currentPrice": 0.06715495,
           "pnlPct": 0,
           "pnlUSD": 0,
           "quantScore": null,
@@ -749,7 +749,7 @@
       "positionAssessments": [
         {
           "sym": "AERO",
-          "currentPrice": 0.32901809,
+          "currentPrice": 0.33112229,
           "pnlPct": 0.14,
           "pnlUSD": 0.02,
           "quantScore": null,
@@ -771,7 +771,7 @@
         },
         {
           "sym": "ELSA",
-          "currentPrice": 0.06725292,
+          "currentPrice": 0.06715495,
           "pnlPct": 0,
           "pnlUSD": 0,
           "quantScore": null,
@@ -2281,7 +2281,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 95955,
+      "expCount": 96005,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
