@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-04-08T21:15:34.408Z",
+  "updatedAt": "2026-04-08T21:15:53.840Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71408,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
   "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 142.56,
-    "positionsUSD": 20.82,
+    "totalUSD": 142.6,
+    "positionsUSD": 20.86,
     "liquidUSDC": 110.55,
     "ethUSD": 8.8,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0.04,
-    "unrealPnlPct": 0.17
+    "unrealPnlUSD": 0,
+    "unrealPnlPct": 0
   },
   "positions": [
     {
       "sym": "AERO",
-      "currentPrice": 0.3353770162,
-      "sizeUSD": 14.988668381380458,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentPrice": 0.33615774,
+      "sizeUSD": 15.009712679228734,
+      "currentUSD": 15.03,
+      "pnlUSD": 0.02,
+      "pnlPct": 0.13,
       "peakPct": 0.53,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -38,11 +38,11 @@
     },
     {
       "sym": "ELSA",
-      "currentPrice": 0.0660665195,
-      "sizeUSD": 5.836196843821994,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentPrice": 0.06590755,
+      "sizeUSD": 5.85087665284185,
+      "currentUSD": 5.83,
+      "pnlUSD": -0.02,
+      "pnlPct": -0.34,
       "peakPct": 0.17,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -68,7 +68,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-08T20:10:14.080Z",
-    "ago": "59m ago",
+    "ago": "1h ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -88,9 +88,9 @@
     "positionUpdates": [
       {
         "sym": "AERO",
-        "currentPrice": 0.33636213,
-        "pnlPct": 0.33,
-        "pnlUSD": 0.05,
+        "currentPrice": 0.33615774,
+        "pnlPct": 0.13,
+        "pnlUSD": 0.02,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -99,7 +99,7 @@
       },
       {
         "sym": "ELSA",
-        "currentPrice": 0.06578533,
+        "currentPrice": 0.06590755,
         "pnlPct": -0.34,
         "pnlUSD": -0.02,
         "quantScore": null,
@@ -112,9 +112,9 @@
     "positionAssessments": [
       {
         "sym": "AERO",
-        "currentPrice": 0.33636213,
-        "pnlPct": 0.33,
-        "pnlUSD": 0.05,
+        "currentPrice": 0.33615774,
+        "pnlPct": 0.13,
+        "pnlUSD": 0.02,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -123,7 +123,7 @@
       },
       {
         "sym": "ELSA",
-        "currentPrice": 0.06578533,
+        "currentPrice": 0.06590755,
         "pnlPct": -0.34,
         "pnlUSD": -0.02,
         "quantScore": null,
@@ -656,9 +656,9 @@
       "positionUpdates": [
         {
           "sym": "AERO",
-          "currentPrice": 0.33636213,
-          "pnlPct": 0.33,
-          "pnlUSD": 0.05,
+          "currentPrice": 0.33615774,
+          "pnlPct": 0.13,
+          "pnlUSD": 0.02,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -667,7 +667,7 @@
         },
         {
           "sym": "ELSA",
-          "currentPrice": 0.06578533,
+          "currentPrice": 0.06590755,
           "pnlPct": -0.34,
           "pnlUSD": -0.02,
           "quantScore": null,
@@ -680,9 +680,9 @@
       "positionAssessments": [
         {
           "sym": "AERO",
-          "currentPrice": 0.33636213,
-          "pnlPct": 0.33,
-          "pnlUSD": 0.05,
+          "currentPrice": 0.33615774,
+          "pnlPct": 0.13,
+          "pnlUSD": 0.02,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -691,7 +691,7 @@
         },
         {
           "sym": "ELSA",
-          "currentPrice": 0.06578533,
+          "currentPrice": 0.06590755,
           "pnlPct": -0.34,
           "pnlUSD": -0.02,
           "quantScore": null,
@@ -2190,7 +2190,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 106080,
+      "expCount": 106320,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
