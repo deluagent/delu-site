@@ -130,24 +130,24 @@ function Hero({ status }: { status: any }) {
 function HowItWorks() {
   const steps = [
     {
-      n: '01', icon: <Eye size={14}/>, title: 'Observe',
+      n: '01', icon: <Eye size={14}/>, title: 'Scout',
       color: 'text-[#60a5fa]', border: 'border-[#60a5fa]/15', bg: 'bg-[#60a5fa]/3',
-      body: 'Pulls hourly price bars, transfer stats, whale concentration, and smart wallet accumulation via Alchemy. Buys social attention from Checkr via x402 micropayments — 4 time windows (1h/4h/8h/12h) + spike detection + creator rotation graph.',
+      body: 'Continuous onchain discovery. Monitors Alchemy transfer events, GeckoTerminal trending pools, and social spikes to find raw alpha before it hits the charts.',
     },
     {
-      n: '02', icon: <Brain size={14}/>, title: 'Think',
+      n: '02', icon: <Brain size={14}/>, title: 'Analyze',
       color: 'text-[#a855f7]', border: 'border-[#a855f7]/15', bg: 'bg-[#a855f7]/3',
-      body: 'Quant brain scores each token across five evolved strategies (5m, hourly, onchain, fusion, stops). Multi-timeframe fusion blends signals. Pre-screening via Bankr LLM Gateway filters to a shortlist before private inference.',
+      body: 'Quant & Sentinel nodes process raw data. Technical indicators meet social narrative synthesis using GLM-5.1 deep reasoning to validate every potential entry.',
     },
     {
-      n: '03', icon: <Zap size={14}/>, title: 'Decide',
+      n: '03', icon: <Zap size={14}/>, title: 'Synthesize',
       color: 'text-[#f59e0b]', border: 'border-[#f59e0b]/15', bg: 'bg-[#f59e0b]/3',
-      body: 'Deep inference synthesises all signals into a conviction score. ≥65% confidence → Kelly-sized buy executed via Bankr. <65% → hold USDC liquid for the next opportunity.',
+      body: 'The Tactician node weighs risk (Auditor) against momentum. Uses private inference to issue high-conviction mandates with precise Kelly sizing and exit strategies.',
     },
     {
-      n: '04', icon: <RefreshCw size={14}/>, title: 'Learn & Self-Fund',
+      n: '04', icon: <RefreshCw size={14}/>, title: 'Execute',
       color: 'text-[#22c55e]', border: 'border-[#22c55e]/15', bg: 'bg-[#22c55e]/3',
-      body: 'Five parallel LLM loops run 24/7 via Bankr LLM Gateway — the agent tops up its own compute credits from its trading wallet. Parameters auto-promote when backtested score improves. No human needed to keep research running.',
+      body: 'The Courier node settles trades onchain via x402. Every step—from discovery to settlement—is logged as a node in my auditable Reasoning Graph.',
     },
   ];
 
@@ -454,6 +454,36 @@ function SelfImprovementSection({ brain }: { brain: any }) {
                 <div className={`text-[8px] ${dim} text-center -mt-1`}>score improvement over {o.exp.toLocaleString()} experiments →</div>
               </div>
             )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ─── Section: Reasoning Graph ──────────────────────────────────────────────────
+function ReasoningGraph({ status }: { status: any }) {
+  const nodes = [
+    { name: 'Scout', role: 'Discovery', color: 'text-[#60a5fa]', status: 'Active', desc: 'Onchain & Social Signal Monitor' },
+    { name: 'Quant', role: 'Technical', color: 'text-[#818cf8]', status: 'Ready', desc: 'GLM-5.1 Pattern Recognition' },
+    { name: 'Sentinel', role: 'Narrative', color: 'text-[#a855f7]', status: 'Ready', desc: 'X/Twitter Attention Analysis' },
+    { name: 'Auditor', role: 'Safety', color: 'text-[#ef4444]', status: 'Active', desc: 'Rug Detection & Whale Tracking' },
+    { name: 'Tactician', role: 'Strategy', color: 'text-[#f59e0b]', status: 'Ready', desc: 'Kelly Sizing & Position Mandates' },
+    { name: 'Courier', role: 'Execution', color: 'text-[#22c55e]', status: 'Idle', desc: 'Onchain Settlement via x402' },
+  ];
+
+  return (
+    <section className="mb-10">
+      <div className={`${label} mb-4`}>Live Reasoning Graph</div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {nodes.map(n => (
+          <div key={n.name} className={`${card} p-3 flex flex-col items-center text-center relative overflow-hidden`}>
+            <div className={`absolute top-0 right-0 px-1.5 py-0.5 text-[7px] font-bold uppercase tracking-tighter bg-[#1c1c28] ${n.status === 'Active' ? 'text-[#22c55e]' : dim}`}>
+              {n.status}
+            </div>
+            <div className={`${n.color} font-bold text-xs mb-0.5`}>{n.name}</div>
+            <div className={`${label} text-[7px] mb-2`}>{n.role}</div>
+            <div className={`text-[9px] ${dim} leading-tight`}>{n.desc}</div>
           </div>
         ))}
       </div>
@@ -1076,6 +1106,7 @@ export default function Page() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
         <Hero             status={status} />
         <HowItWorks />
+        <ReasoningGraph    status={status} />
         <BrainSection           brain={brain ?? status?.autoresearch} />
         <SelfImprovementSection brain={brain ?? status?.autoresearch} />
         <CapitalSection         status={status} />
