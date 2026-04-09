@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-04-09T01:55:39.598Z",
+  "updatedAt": "2026-04-09T01:58:17.606Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 70618,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 8 min",
+  "nextCycle": "in 2 min",
   "wallet": {
     "totalUSD": 112.38,
-    "positionsUSD": 20.51,
+    "positionsUSD": 20.5,
     "liquidUSDC": 80.56,
     "ethUSD": 8.65,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0.01,
-    "unrealPnlPct": 0.07
+    "unrealPnlUSD": -0.08,
+    "unrealPnlPct": -0.4
   },
   "positions": [
     {
       "sym": "AERO",
-      "currentPrice": 0.3300273782,
-      "sizeUSD": 14.789912118415549,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
-      "peakPct": 0,
+      "currentPrice": 0.32879281,
+      "sizeUSD": 14.763948378600114,
+      "currentUSD": 14.7,
+      "pnlUSD": -0.06,
+      "pnlPct": -0.41,
+      "peakPct": 0.2,
       "trailStop": 5,
       "hardSlPct": 3,
       "trailActivated": false,
@@ -38,11 +38,11 @@
     },
     {
       "sym": "ELSA",
-      "currentPrice": 0.0647165463,
-      "sizeUSD": 5.715928528960519,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentPrice": 0.06473225,
+      "sizeUSD": 5.73892100091933,
+      "currentUSD": 5.72,
+      "pnlUSD": -0.02,
+      "pnlPct": -0.35,
       "peakPct": 0.18,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -68,7 +68,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-09T01:30:00.902Z",
-    "ago": "22m ago",
+    "ago": "28m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -88,9 +88,9 @@
     "positionUpdates": [
       {
         "sym": "AERO",
-        "currentPrice": 0.33143871,
-        "pnlPct": 0.2,
-        "pnlUSD": 0.03,
+        "currentPrice": 0.32879281,
+        "pnlPct": -0.41,
+        "pnlUSD": -0.06,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -99,7 +99,7 @@
       },
       {
         "sym": "ELSA",
-        "currentPrice": 0.06450298,
+        "currentPrice": 0.06473225,
         "pnlPct": -0.35,
         "pnlUSD": -0.02,
         "quantScore": null,
@@ -112,9 +112,9 @@
     "positionAssessments": [
       {
         "sym": "AERO",
-        "currentPrice": 0.33143871,
-        "pnlPct": 0.2,
-        "pnlUSD": 0.03,
+        "currentPrice": 0.32879281,
+        "pnlPct": -0.41,
+        "pnlUSD": -0.06,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -123,7 +123,7 @@
       },
       {
         "sym": "ELSA",
-        "currentPrice": 0.06450298,
+        "currentPrice": 0.06473225,
         "pnlPct": -0.35,
         "pnlUSD": -0.02,
         "quantScore": null,
@@ -656,9 +656,9 @@
       "positionUpdates": [
         {
           "sym": "AERO",
-          "currentPrice": 0.33143871,
-          "pnlPct": 0.2,
-          "pnlUSD": 0.03,
+          "currentPrice": 0.32879281,
+          "pnlPct": -0.41,
+          "pnlUSD": -0.06,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -667,7 +667,7 @@
         },
         {
           "sym": "ELSA",
-          "currentPrice": 0.06450298,
+          "currentPrice": 0.06473225,
           "pnlPct": -0.35,
           "pnlUSD": -0.02,
           "quantScore": null,
@@ -680,9 +680,9 @@
       "positionAssessments": [
         {
           "sym": "AERO",
-          "currentPrice": 0.33143871,
-          "pnlPct": 0.2,
-          "pnlUSD": 0.03,
+          "currentPrice": 0.32879281,
+          "pnlPct": -0.41,
+          "pnlUSD": -0.06,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -691,7 +691,7 @@
         },
         {
           "sym": "ELSA",
-          "currentPrice": 0.06450298,
+          "currentPrice": 0.06473225,
           "pnlPct": -0.35,
           "pnlUSD": -0.02,
           "quantScore": null,
@@ -2190,7 +2190,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 109440,
+      "expCount": 109680,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
