@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-04-12T06:50:16.305Z",
+  "updatedAt": "2026-04-12T06:53:41.689Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71710,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 13 min",
+  "nextCycle": "in 7 min",
   "wallet": {
-    "totalUSD": 36.35,
-    "positionsUSD": 28.76,
+    "totalUSD": 36.15,
+    "positionsUSD": 28.55,
     "liquidUSDC": 2.48,
     "ethUSD": 5.12,
     "yieldUSD": 0,
-    "unrealPnlUSD": 9.52,
-    "unrealPnlPct": 63.47
+    "unrealPnlUSD": 9.28,
+    "unrealPnlPct": 61.87
   },
   "positions": [
     {
       "sym": "BETR",
       "entryPrice": 0.000002283486,
-      "currentPrice": 0.000002273431869,
+      "currentPrice": 0.00000227,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": -0.44,
+      "currentUSD": 9.95,
+      "pnlUSD": 4.95,
+      "pnlPct": 99,
       "peakPct": 99,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -41,11 +41,11 @@
     {
       "sym": "TREX",
       "entryPrice": 0.0000022841,
-      "currentPrice": 0.1949812784,
+      "currentPrice": 0.19239911,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 8536359.8,
+      "currentUSD": 9.33,
+      "pnlUSD": 4.33,
+      "pnlPct": 86.6,
       "peakPct": 93.8,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -64,11 +64,11 @@
     {
       "sym": "ZORA",
       "entryPrice": 0.01431317,
-      "currentPrice": 0.01401596601,
+      "currentPrice": 0,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": -2.08,
+      "currentUSD": 0,
+      "pnlUSD": -5,
+      "pnlPct": -100,
       "peakPct": 86.4,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -95,7 +95,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-12T06:30:00.208Z",
-    "ago": "18m ago",
+    "ago": "24m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -126,9 +126,9 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": 0.19722074,
-        "pnlPct": 91.4,
-        "pnlUSD": 4.57,
+        "currentPrice": 0.19239911,
+        "pnlPct": 86.6,
+        "pnlUSD": 4.33,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -161,9 +161,9 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": 0.19722074,
-        "pnlPct": 91.4,
-        "pnlUSD": 4.57,
+        "currentPrice": 0.19239911,
+        "pnlPct": 86.6,
+        "pnlUSD": 4.33,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -194,6 +194,32 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "FETCHR",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T06:47:51.376Z",
+        "closedAt": "2026-04-12T06:53:26.403Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "MIROSHARK",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T06:48:45.472Z",
+        "closedAt": "2026-04-12T06:53:26.403Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "EDGE",
         "pnlPct": 0,
@@ -1467,32 +1493,6 @@
         "openedAt": "2026-04-07T17:31:00.000Z",
         "closedAt": "2026-04-08T13:52:27.049Z",
         "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "RUSH",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 4.72,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-04-07T01:31:00.000Z",
-        "closedAt": "2026-04-08T10:31:21.779Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "KTA",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 2.76,
-        "won": false,
-        "regime": "RANGE_TIGHT",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-04-04T00:00:00.000Z",
-        "closedAt": "2026-04-07T00:00:47.222Z",
-        "reason": "wallet_reconcile"
       }
     ]
   },
@@ -1527,9 +1527,9 @@
         },
         {
           "sym": "TREX",
-          "currentPrice": 0.19722074,
-          "pnlPct": 91.4,
-          "pnlUSD": 4.57,
+          "currentPrice": 0.19239911,
+          "pnlPct": 86.6,
+          "pnlUSD": 4.33,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -1562,9 +1562,9 @@
         },
         {
           "sym": "TREX",
-          "currentPrice": 0.19722074,
-          "pnlPct": 91.4,
-          "pnlUSD": 4.57,
+          "currentPrice": 0.19239911,
+          "pnlPct": 86.6,
+          "pnlUSD": 4.33,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -3072,7 +3072,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 157200,
+      "expCount": 157440,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
