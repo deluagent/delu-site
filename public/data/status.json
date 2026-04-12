@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-04-12T07:35:16.881Z",
+  "updatedAt": "2026-04-12T07:37:11.043Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71630,
-  "pctFrom200": "2.0%",
+  "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 29 min",
+  "nextCycle": "in 23 min",
   "wallet": {
     "totalUSD": 36.62,
-    "positionsUSD": 29.04,
+    "positionsUSD": 29.03,
     "liquidUSDC": 2.48,
     "ethUSD": 5.11,
     "yieldUSD": 0,
-    "unrealPnlUSD": 14.04,
-    "unrealPnlPct": 93.6
+    "unrealPnlUSD": 9.75,
+    "unrealPnlPct": 65
   },
   "positions": [
     {
       "sym": "TREX",
       "entryPrice": 0.0000022841,
-      "currentPrice": 0.203639998,
+      "currentPrice": 0.20365378,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 8915446.52,
+      "currentUSD": 9.88,
+      "pnlUSD": 4.88,
+      "pnlPct": 97.6,
       "peakPct": 8911423.82,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -41,11 +41,11 @@
     {
       "sym": "BETR",
       "entryPrice": 0.000002283486,
-      "currentPrice": 0.000002254896811,
+      "currentPrice": 0.00000225,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": -1.25,
+      "currentUSD": 9.87,
+      "pnlUSD": 4.87,
+      "pnlPct": 97.4,
       "peakPct": 97.6,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -64,11 +64,11 @@
     {
       "sym": "ZORA",
       "entryPrice": 0.01431317,
-      "currentPrice": null,
+      "currentPrice": 0,
       "sizeUSD": 5,
-      "currentUSD": 9.27,
-      "pnlUSD": 4.27,
-      "pnlPct": 85.4,
+      "currentUSD": 0,
+      "pnlUSD": -5,
+      "pnlPct": -100,
       "peakPct": 85.4,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -95,7 +95,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-12T07:30:00.745Z",
-    "ago": "49s ago",
+    "ago": "7m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -115,18 +115,7 @@
     "positionUpdates": [
       {
         "sym": "TREX",
-        "currentPrice": null,
-        "pnlPct": 97.8,
-        "pnlUSD": 4.89,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
-        "sym": "BETR",
-        "currentPrice": null,
+        "currentPrice": 0.20365378,
         "pnlPct": 97.6,
         "pnlUSD": 4.88,
         "quantScore": null,
@@ -136,10 +125,21 @@
         "transferStats": null
       },
       {
+        "sym": "BETR",
+        "currentPrice": 0.00000225,
+        "pnlPct": 97.4,
+        "pnlUSD": 4.87,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
         "sym": "ZORA",
-        "currentPrice": null,
-        "pnlPct": 85.4,
-        "pnlUSD": 4.27,
+        "currentPrice": 0,
+        "pnlPct": -100,
+        "pnlUSD": -5,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -150,18 +150,7 @@
     "positionAssessments": [
       {
         "sym": "TREX",
-        "currentPrice": null,
-        "pnlPct": 97.8,
-        "pnlUSD": 4.89,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
-        "sym": "BETR",
-        "currentPrice": null,
+        "currentPrice": 0.20365378,
         "pnlPct": 97.6,
         "pnlUSD": 4.88,
         "quantScore": null,
@@ -171,10 +160,21 @@
         "transferStats": null
       },
       {
+        "sym": "BETR",
+        "currentPrice": 0.00000225,
+        "pnlPct": 97.4,
+        "pnlUSD": 4.87,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
         "sym": "ZORA",
-        "currentPrice": null,
-        "pnlPct": 85.4,
-        "pnlUSD": 4.27,
+        "currentPrice": 0,
+        "pnlPct": -100,
+        "pnlUSD": -5,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -194,6 +194,58 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "SOL",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T07:33:38.747Z",
+        "closedAt": "2026-04-12T07:36:55.751Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "CHECK",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "job_KWKNVXDZR7XH7U8X",
+        "exitTx": null,
+        "openedAt": "2026-04-12T07:34:51.893Z",
+        "closedAt": "2026-04-12T07:36:55.751Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "WGOR",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "job_K49UE2X56MY5KNCQ",
+        "exitTx": null,
+        "openedAt": "2026-04-12T07:36:11.041Z",
+        "closedAt": "2026-04-12T07:36:55.751Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "CXK",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "job_V8TQMYZCTUNMVP9Y",
+        "exitTx": null,
+        "openedAt": "2026-04-12T07:32:05.604Z",
+        "closedAt": "2026-04-12T07:36:55.750Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "FETCHR",
         "pnlPct": 0,
@@ -1441,58 +1493,6 @@
         "openedAt": "2026-04-11T19:44:41.608Z",
         "closedAt": "2026-04-11T21:09:21.716Z",
         "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "CONWAY",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0x6a3d49f59d609596b843877042c2e994012e79561dcad90e8af93954693dbf24",
-        "exitTx": null,
-        "openedAt": "2026-04-11T19:48:50.961Z",
-        "closedAt": "2026-04-11T19:49:48.272Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "UP",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0x3ac01047b331e466d01ebad032f0cabfeeb910c40bf1576ba05e52008b55e28d",
-        "exitTx": null,
-        "openedAt": "2026-04-11T19:48:09.203Z",
-        "closedAt": "2026-04-11T19:48:31.712Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "AERO",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 14.29,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-04-06T16:01:00.000Z",
-        "closedAt": "2026-04-08T13:52:27.049Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "ELSA",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": null,
-        "exitTx": null,
-        "openedAt": "2026-04-07T17:31:00.000Z",
-        "closedAt": "2026-04-08T13:52:27.049Z",
-        "reason": "wallet_reconcile"
       }
     ]
   },
@@ -1516,18 +1516,7 @@
       "positionUpdates": [
         {
           "sym": "TREX",
-          "currentPrice": null,
-          "pnlPct": 97.8,
-          "pnlUSD": 4.89,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "BETR",
-          "currentPrice": null,
+          "currentPrice": 0.20365378,
           "pnlPct": 97.6,
           "pnlUSD": 4.88,
           "quantScore": null,
@@ -1537,10 +1526,21 @@
           "transferStats": null
         },
         {
+          "sym": "BETR",
+          "currentPrice": 0.00000225,
+          "pnlPct": 97.4,
+          "pnlUSD": 4.87,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
           "sym": "ZORA",
-          "currentPrice": null,
-          "pnlPct": 85.4,
-          "pnlUSD": 4.27,
+          "currentPrice": 0,
+          "pnlPct": -100,
+          "pnlUSD": -5,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -1551,18 +1551,7 @@
       "positionAssessments": [
         {
           "sym": "TREX",
-          "currentPrice": null,
-          "pnlPct": 97.8,
-          "pnlUSD": 4.89,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "BETR",
-          "currentPrice": null,
+          "currentPrice": 0.20365378,
           "pnlPct": 97.6,
           "pnlUSD": 4.88,
           "quantScore": null,
@@ -1572,10 +1561,21 @@
           "transferStats": null
         },
         {
+          "sym": "BETR",
+          "currentPrice": 0.00000225,
+          "pnlPct": 97.4,
+          "pnlUSD": 4.87,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
           "sym": "ZORA",
-          "currentPrice": null,
-          "pnlPct": 85.4,
-          "pnlUSD": 4.27,
+          "currentPrice": 0,
+          "pnlPct": -100,
+          "pnlUSD": -5,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -3072,7 +3072,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 157680,
+      "expCount": 157920,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
