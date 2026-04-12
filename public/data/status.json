@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-04-12T12:59:44.842Z",
+  "updatedAt": "2026-04-12T13:00:59.382Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 71415,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 71081,
+  "pctFrom200": "1.1%",
   "breadth": "3/17",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 29 min",
   "wallet": {
-    "totalUSD": 51.03,
+    "totalUSD": 41.03,
     "positionsUSD": 19.28,
-    "liquidUSDC": 26.68,
+    "liquidUSDC": 16.68,
     "ethUSD": 5.07,
     "yieldUSD": 0,
     "unrealPnlUSD": 9.32,
@@ -18,15 +18,15 @@
     {
       "sym": "BETR",
       "entryPrice": 0.000002283486,
-      "currentPrice": 0.00000224,
+      "currentPrice": null,
       "sizeUSD": 5,
       "currentUSD": 9.81,
       "pnlUSD": 4.81,
       "pnlPct": 96.2,
-      "peakPct": 97,
+      "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": true,
+      "trailActivated": false,
       "openedAt": "2026-04-12T01:59:12.626Z",
       "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
       "contractAddress": "0x051024b653e8ec69e72693f776c41c2a9401fb07",
@@ -41,15 +41,15 @@
     {
       "sym": "TREX",
       "entryPrice": 0.000002279067,
-      "currentPrice": 0.19602053,
+      "currentPrice": 0.19594918,
       "sizeUSD": 5,
       "currentUSD": 9.51,
       "pnlUSD": 4.51,
       "pnlPct": 90.2,
-      "peakPct": 9089423.58,
+      "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": true,
+      "trailActivated": false,
       "openedAt": "2026-04-12T10:18:05.328Z",
       "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
       "contractAddress": "0x6db171bc785386973994072729d8fc707c2948e4",
@@ -66,19 +66,19 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 31.75,
+    "amountUSD": 21.75,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-04-12T12:30:00.685Z",
-    "ago": "30m ago",
+    "ts": "2026-04-12T13:00:00.897Z",
+    "ago": "58s ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 71415.01,
-      "pctFrom200": 0.015688503189413602,
-      "volRatio": 1.038633866557522,
+      "btcNow": 71081.13,
+      "pctFrom200": 0.010664410230728037,
+      "volRatio": 1.0483576173413294,
       "btcState": "RANGE"
     },
     "seenCount": 0,
@@ -92,7 +92,7 @@
     "positionUpdates": [
       {
         "sym": "BETR",
-        "currentPrice": 0.00000224,
+        "currentPrice": null,
         "pnlPct": 96.2,
         "pnlUSD": 4.81,
         "quantScore": null,
@@ -103,7 +103,7 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": 0.19602053,
+        "currentPrice": 0.19594918,
         "pnlPct": 90.2,
         "pnlUSD": 4.51,
         "quantScore": null,
@@ -116,7 +116,7 @@
     "positionAssessments": [
       {
         "sym": "BETR",
-        "currentPrice": 0.00000224,
+        "currentPrice": null,
         "pnlPct": 96.2,
         "pnlUSD": 4.81,
         "quantScore": null,
@@ -127,7 +127,7 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": 0.19602053,
+        "currentPrice": 0.19594918,
         "pnlPct": 90.2,
         "pnlUSD": 4.51,
         "quantScore": null,
@@ -1453,6 +1453,81 @@
   },
   "cycleHistory": [
     {
+      "ts": "2026-04-12T13:00:00.897Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 71081.13,
+        "pctFrom200": 0.010664410230728037,
+        "volRatio": 1.0483576173413294,
+        "btcState": "RANGE"
+      },
+      "action": "hold",
+      "asset": null,
+      "confidence": null,
+      "reasoning": "no decision",
+      "seenCount": 0,
+      "traded": [],
+      "positionUpdates": [
+        {
+          "sym": "BETR",
+          "currentPrice": null,
+          "pnlPct": 96.2,
+          "pnlUSD": 4.81,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "TREX",
+          "currentPrice": 0.19594918,
+          "pnlPct": 90.2,
+          "pnlUSD": 4.51,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "BETR",
+          "currentPrice": null,
+          "pnlPct": 96.2,
+          "pnlUSD": 4.81,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "TREX",
+          "currentPrice": 0.19594918,
+          "pnlPct": 90.2,
+          "pnlUSD": 4.51,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "checkrSustained": [],
+      "checkrTraded": null,
+      "alchemyDiscovered": [],
+      "socialCandidates": [],
+      "quantTop5": [],
+      "tradedEntry": null,
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": null,
+      "dataSources": null
+    },
+    {
       "ts": "2026-04-12T12:30:00.685Z",
       "regime": "RANGE_TIGHT",
       "regime_detail": {
@@ -1468,54 +1543,8 @@
       "reasoning": "no decision",
       "seenCount": 0,
       "traded": [],
-      "positionUpdates": [
-        {
-          "sym": "BETR",
-          "currentPrice": 0.00000224,
-          "pnlPct": 96.2,
-          "pnlUSD": 4.81,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "TREX",
-          "currentPrice": 0.19602053,
-          "pnlPct": 90.2,
-          "pnlUSD": 4.51,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
-      "positionAssessments": [
-        {
-          "sym": "BETR",
-          "currentPrice": 0.00000224,
-          "pnlPct": 96.2,
-          "pnlUSD": 4.81,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "TREX",
-          "currentPrice": 0.19602053,
-          "pnlPct": 90.2,
-          "pnlUSD": 4.51,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        }
-      ],
+      "positionUpdates": [],
+      "positionAssessments": [],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
@@ -2898,35 +2927,6 @@
         "btcNow": 72695.04,
         "pctFrom200": 0.04647269836465888,
         "volRatio": 0.9526845311865489,
-        "btcState": "RANGE"
-      },
-      "action": "hold",
-      "asset": null,
-      "confidence": null,
-      "reasoning": "no decision",
-      "seenCount": 0,
-      "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
-      "checkrSustained": [],
-      "checkrTraded": null,
-      "alchemyDiscovered": [],
-      "socialCandidates": [],
-      "quantTop5": [],
-      "tradedEntry": null,
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": null,
-      "dataSources": null
-    },
-    {
-      "ts": "2026-04-11T06:00:00.999Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 72722.29,
-        "pctFrom200": 0.04686291917368508,
-        "volRatio": 0.9526671948553616,
         "btcState": "RANGE"
       },
       "action": "hold",
