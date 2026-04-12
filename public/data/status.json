@@ -1,28 +1,28 @@
 {
-  "updatedAt": "2026-04-12T05:05:32.699Z",
+  "updatedAt": "2026-04-12T05:11:17.558Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71467,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 25 min",
+  "nextCycle": "in 19 min",
   "wallet": {
     "totalUSD": 35.95,
     "positionsUSD": 28.38,
     "liquidUSDC": 2.48,
     "ethUSD": 5.1,
     "yieldUSD": 0,
-    "unrealPnlUSD": 13.39,
-    "unrealPnlPct": 89.27
+    "unrealPnlUSD": 13.38,
+    "unrealPnlPct": 89.2
   },
   "positions": [
     {
       "sym": "BETR",
       "entryPrice": 0.000002283486,
-      "currentPrice": 0.00000225,
+      "currentPrice": null,
       "sizeUSD": 5,
-      "currentUSD": 9.86,
-      "pnlUSD": 4.86,
-      "pnlPct": 97.2,
+      "currentUSD": 9.85,
+      "pnlUSD": 4.85,
+      "pnlPct": 97,
       "peakPct": 97.2,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -95,7 +95,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-12T05:00:00.698Z",
-    "ago": "6m ago",
+    "ago": "11m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -115,9 +115,9 @@
     "positionUpdates": [
       {
         "sym": "BETR",
-        "currentPrice": 0.00000225,
-        "pnlPct": 97.2,
-        "pnlUSD": 4.86,
+        "currentPrice": null,
+        "pnlPct": 97,
+        "pnlUSD": 4.85,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -150,9 +150,9 @@
     "positionAssessments": [
       {
         "sym": "BETR",
-        "currentPrice": 0.00000225,
-        "pnlPct": 97.2,
-        "pnlUSD": 4.86,
+        "currentPrice": null,
+        "pnlPct": 97,
+        "pnlUSD": 4.85,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -187,13 +187,39 @@
     "topScores": []
   },
   "performance": {
-    "totalTrades": 89,
+    "totalTrades": 91,
     "winCount": 11,
-    "winRatePct": 12.4,
-    "avgPnlPct": 1.07,
-    "closedTrades": 89,
-    "winRate": "11/89 (12.4%)",
+    "winRatePct": 12.1,
+    "avgPnlPct": 1.05,
+    "closedTrades": 91,
+    "winRate": "11/91 (12.1%)",
     "recentTrades": [
+      {
+        "sym": "VVV",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T05:10:00.424Z",
+        "closedAt": "2026-04-12T05:11:03.198Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "OVPP",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T05:10:51.369Z",
+        "closedAt": "2026-04-12T05:11:03.198Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "EAGLE DIGITAL RESERVE",
         "pnlPct": 0,
@@ -1368,9 +1394,9 @@
       "positionUpdates": [
         {
           "sym": "BETR",
-          "currentPrice": 0.00000225,
-          "pnlPct": 97.2,
-          "pnlUSD": 4.86,
+          "currentPrice": null,
+          "pnlPct": 97,
+          "pnlUSD": 4.85,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -1403,9 +1429,9 @@
       "positionAssessments": [
         {
           "sym": "BETR",
-          "currentPrice": 0.00000225,
-          "pnlPct": 97.2,
-          "pnlUSD": 4.86,
+          "currentPrice": null,
+          "pnlPct": 97,
+          "pnlUSD": 4.85,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
