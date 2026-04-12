@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-04-12T09:15:19.083Z",
+  "updatedAt": "2026-04-12T09:16:24.818Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71629,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
-  "nextCycle": "in 20 min",
+  "nextCycle": "in 14 min",
   "wallet": {
-    "totalUSD": 36.75,
-    "positionsUSD": 29.17,
+    "totalUSD": 36.76,
+    "positionsUSD": 29.18,
     "liquidUSDC": 2.48,
     "ethUSD": 5.1,
     "yieldUSD": 0,
@@ -18,11 +18,11 @@
     {
       "sym": "TREX",
       "entryPrice": 0.00000228156,
-      "currentPrice": 0.2072262434,
+      "currentPrice": 0.20722624,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 9082555.88,
+      "currentUSD": 10.05,
+      "pnlUSD": 5.05,
+      "pnlPct": 101,
       "peakPct": 101.2,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -41,11 +41,11 @@
     {
       "sym": "BETR",
       "entryPrice": 0.000002283486,
-      "currentPrice": 0.000002253108788,
+      "currentPrice": 0.00000225,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": -1.33,
+      "currentUSD": 9.86,
+      "pnlUSD": 4.86,
+      "pnlPct": 97.2,
       "peakPct": 97.8,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -64,11 +64,11 @@
     {
       "sym": "ZORA",
       "entryPrice": 0.01431317,
-      "currentPrice": 0.01399203555,
+      "currentPrice": 0,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": -2.24,
+      "currentUSD": 0,
+      "pnlUSD": -5,
+      "pnlPct": -100,
       "peakPct": 85.6,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -95,7 +95,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-12T09:00:00.692Z",
-    "ago": "10m ago",
+    "ago": "16m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -115,7 +115,7 @@
     "positionUpdates": [
       {
         "sym": "TREX",
-        "currentPrice": 0.20714668,
+        "currentPrice": 0.20722624,
         "pnlPct": 101,
         "pnlUSD": 5.05,
         "quantScore": null,
@@ -150,7 +150,7 @@
     "positionAssessments": [
       {
         "sym": "TREX",
-        "currentPrice": 0.20714668,
+        "currentPrice": 0.20722624,
         "pnlPct": 101,
         "pnlUSD": 5.05,
         "quantScore": null,
@@ -194,6 +194,84 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "AVNT",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T09:10:18.078Z",
+        "closedAt": "2026-04-12T09:16:09.524Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "CHECK",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T09:11:32.086Z",
+        "closedAt": "2026-04-12T09:16:09.524Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "SBTI",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T09:12:10.729Z",
+        "closedAt": "2026-04-12T09:16:09.524Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "OFC",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T09:13:14.301Z",
+        "closedAt": "2026-04-12T09:16:09.524Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "TUSD",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T09:14:30.327Z",
+        "closedAt": "2026-04-12T09:16:09.524Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "EVMNOW",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
+        "exitTx": null,
+        "openedAt": "2026-04-12T09:15:50.326Z",
+        "closedAt": "2026-04-12T09:16:09.524Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "FLETH",
         "pnlPct": 0,
@@ -1415,84 +1493,6 @@
         "openedAt": "2026-04-12T04:04:30.646Z",
         "closedAt": "2026-04-12T04:09:45.376Z",
         "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "WELL",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T04:05:18.714Z",
-        "closedAt": "2026-04-12T04:09:45.376Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "AERO",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T04:05:55.022Z",
-        "closedAt": "2026-04-12T04:09:45.376Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "ZEN",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T04:07:08.739Z",
-        "closedAt": "2026-04-12T04:09:45.376Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "SOSO",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T04:08:14.749Z",
-        "closedAt": "2026-04-12T04:09:45.376Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "AGENTCRAFT",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T04:09:11.124Z",
-        "closedAt": "2026-04-12T04:09:45.376Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "VIRTUAL",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T03:59:08.499Z",
-        "closedAt": "2026-04-12T04:03:37.747Z",
-        "reason": "wallet_reconcile"
       }
     ]
   },
@@ -1516,7 +1516,7 @@
       "positionUpdates": [
         {
           "sym": "TREX",
-          "currentPrice": 0.20714668,
+          "currentPrice": 0.20722624,
           "pnlPct": 101,
           "pnlUSD": 5.05,
           "quantScore": null,
@@ -1551,7 +1551,7 @@
       "positionAssessments": [
         {
           "sym": "TREX",
-          "currentPrice": 0.20714668,
+          "currentPrice": 0.20722624,
           "pnlPct": 101,
           "pnlUSD": 5.05,
           "quantScore": null,
@@ -3072,7 +3072,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 158880,
+      "expCount": 159120,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
