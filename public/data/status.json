@@ -1,32 +1,32 @@
 {
-  "updatedAt": "2026-04-13T02:39:05.829Z",
+  "updatedAt": "2026-04-13T02:41:22.947Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71081,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
   "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 41.17,
-    "positionsUSD": 29.36,
-    "liquidUSDC": 6.73,
-    "ethUSD": 5.08,
+    "totalUSD": 40.9,
+    "positionsUSD": 39.1,
+    "liquidUSDC": 0,
+    "ethUSD": 1.8,
     "yieldUSD": 0,
-    "unrealPnlUSD": 14.27,
-    "unrealPnlPct": 95.13
+    "unrealPnlUSD": 19.33,
+    "unrealPnlPct": 96.65
   },
   "positions": [
     {
       "sym": "ILV",
       "entryPrice": null,
-      "currentPrice": 4.2640195098,
+      "currentPrice": 4.26401951,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 0,
-      "peakPct": 0,
+      "currentUSD": 10,
+      "pnlUSD": 5,
+      "pnlPct": 100,
+      "peakPct": 100,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": false,
+      "trailActivated": true,
       "openedAt": "2026-04-13T02:34:07.506Z",
       "entryTx": "job_TSX8ZZ3MEWZAZG4U",
       "contractAddress": "0xe66d89731986f0647bc0367c3cd1aa23368527a1",
@@ -39,13 +39,36 @@
       "transferStats": null
     },
     {
+      "sym": "POD",
+      "entryPrice": null,
+      "currentPrice": 0.02186639,
+      "sizeUSD": 5,
+      "currentUSD": 9.97,
+      "pnlUSD": 4.97,
+      "pnlPct": 99.4,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-04-13T02:36:26.617Z",
+      "entryTx": "job_RPHKYVJSN2T739SW",
+      "contractAddress": "0xed664536023d8e4b1640c394777d34abaff1df8f",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
+    },
+    {
       "sym": "BETR",
       "entryPrice": 0.000002283486,
-      "currentPrice": 0.000002230501643,
+      "currentPrice": 0.00000223,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": -2.32,
+      "currentUSD": 9.76,
+      "pnlUSD": 4.76,
+      "pnlPct": 95.2,
       "peakPct": 96.2,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -64,11 +87,11 @@
     {
       "sym": "TREX",
       "entryPrice": 0.000002279067,
-      "currentPrice": 0.1981670798,
+      "currentPrice": 0.19789218,
       "sizeUSD": 5,
-      "currentUSD": null,
-      "pnlUSD": 0,
-      "pnlPct": 8694996.71,
+      "currentUSD": 9.6,
+      "pnlUSD": 4.6,
+      "pnlPct": 92,
       "peakPct": 97.2,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -89,7 +112,7 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 11.81,
+    "amountUSD": 1.8,
     "apy": 0,
     "note": "USDC low — using ETH reserve for high-conviction trades"
   },
@@ -125,6 +148,17 @@
         "transferStats": null
       },
       {
+        "sym": "POD",
+        "currentPrice": 0.02186639,
+        "pnlPct": 99.4,
+        "pnlUSD": 4.97,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
         "sym": "BETR",
         "currentPrice": 0.00000223,
         "pnlPct": 95.2,
@@ -137,9 +171,9 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": null,
-        "pnlPct": 90.2,
-        "pnlUSD": 4.51,
+        "currentPrice": 0.19789218,
+        "pnlPct": 92,
+        "pnlUSD": 4.6,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -160,6 +194,17 @@
         "transferStats": null
       },
       {
+        "sym": "POD",
+        "currentPrice": 0.02186639,
+        "pnlPct": 99.4,
+        "pnlUSD": 4.97,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
         "sym": "BETR",
         "currentPrice": 0.00000223,
         "pnlPct": 95.2,
@@ -172,9 +217,9 @@
       },
       {
         "sym": "TREX",
-        "currentPrice": null,
-        "pnlPct": 90.2,
-        "pnlUSD": 4.51,
+        "currentPrice": 0.19789218,
+        "pnlPct": 92,
+        "pnlUSD": 4.6,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -194,6 +239,32 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "VEESA",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0x721d588c76f4c2167ef1b1a1d20856a8dda0e20aa78c333870139410262b4895",
+        "exitTx": null,
+        "openedAt": "2026-04-13T02:35:18.156Z",
+        "closedAt": "2026-04-13T02:41:05.479Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "CRP",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xf7b3738e83d508a5f727d93a3058fc5cebf5a7f7dfd89496c3333cc2dc1641ad",
+        "exitTx": null,
+        "openedAt": "2026-04-13T02:36:14.967Z",
+        "closedAt": "2026-04-13T02:41:05.479Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "STUPI",
         "pnlPct": 0,
@@ -1467,32 +1538,6 @@
         "openedAt": "2026-04-12T10:19:06.181Z",
         "closedAt": "2026-04-12T10:24:46.715Z",
         "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "PXLSYNPS",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T10:13:15.724Z",
-        "closedAt": "2026-04-12T10:18:36.021Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "VIRTUAL",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T10:14:35.136Z",
-        "closedAt": "2026-04-12T10:18:36.021Z",
-        "reason": "wallet_reconcile"
       }
     ]
   },
@@ -1526,6 +1571,17 @@
           "transferStats": null
         },
         {
+          "sym": "POD",
+          "currentPrice": 0.02186639,
+          "pnlPct": 99.4,
+          "pnlUSD": 4.97,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
           "sym": "BETR",
           "currentPrice": 0.00000223,
           "pnlPct": 95.2,
@@ -1538,9 +1594,9 @@
         },
         {
           "sym": "TREX",
-          "currentPrice": null,
-          "pnlPct": 90.2,
-          "pnlUSD": 4.51,
+          "currentPrice": 0.19789218,
+          "pnlPct": 92,
+          "pnlUSD": 4.6,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -1561,6 +1617,17 @@
           "transferStats": null
         },
         {
+          "sym": "POD",
+          "currentPrice": 0.02186639,
+          "pnlPct": 99.4,
+          "pnlUSD": 4.97,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
           "sym": "BETR",
           "currentPrice": 0.00000223,
           "pnlPct": 95.2,
@@ -1573,9 +1640,9 @@
         },
         {
           "sym": "TREX",
-          "currentPrice": null,
-          "pnlPct": 90.2,
-          "pnlUSD": 4.51,
+          "currentPrice": 0.19789218,
+          "pnlPct": 92,
+          "pnlUSD": 4.6,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -3072,7 +3139,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 167280,
+      "expCount": 167520,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
