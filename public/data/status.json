@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-13T16:51:41.614Z",
+  "updatedAt": "2026-04-13T16:57:27.977Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71081,
   "pctFrom200": "-4.2%",
@@ -56,6 +56,32 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "CRP",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0x17fe016daa058a600611816f94b29c6ac26aca0c94c2395726849417b594f78e",
+        "exitTx": null,
+        "openedAt": "2026-04-13T16:53:09.679Z",
+        "closedAt": "2026-04-13T16:57:19.970Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "POD",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0x17fe016daa058a600611816f94b29c6ac26aca0c94c2395726849417b594f78e",
+        "exitTx": null,
+        "openedAt": "2026-04-13T16:54:56.585Z",
+        "closedAt": "2026-04-13T16:57:19.970Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "GENΑ",
         "pnlPct": 0,
@@ -1327,32 +1353,6 @@
         "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
         "exitTx": null,
         "openedAt": "2026-04-12T11:23:58.523Z",
-        "closedAt": "2026-04-12T11:27:37.365Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "REI",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T11:24:43.600Z",
-        "closedAt": "2026-04-12T11:27:37.365Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "CBXRP",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T11:26:58.015Z",
         "closedAt": "2026-04-12T11:27:37.365Z",
         "reason": "wallet_reconcile"
       }
@@ -2866,7 +2866,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 175920,
+      "expCount": 176160,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
