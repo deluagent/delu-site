@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-13T17:52:09.148Z",
+  "updatedAt": "2026-04-13T17:57:09.373Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71081,
   "pctFrom200": "-4.2%",
@@ -56,6 +56,19 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "NPC",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0x17fe016daa058a600611816f94b29c6ac26aca0c94c2395726849417b594f78e",
+        "exitTx": null,
+        "openedAt": "2026-04-13T17:55:32.500Z",
+        "closedAt": "2026-04-13T17:57:01.365Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "CXK",
         "pnlPct": 0,
@@ -1341,19 +1354,6 @@
         "exitTx": null,
         "openedAt": "2026-04-12T18:28:41.678Z",
         "closedAt": "2026-04-12T18:30:54.180Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "AVNT",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T11:21:51.369Z",
-        "closedAt": "2026-04-12T11:27:37.365Z",
         "reason": "wallet_reconcile"
       }
     ]
@@ -2866,7 +2866,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 176640,
+      "expCount": 176880,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
