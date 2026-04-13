@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-13T14:38:17.405Z",
+  "updatedAt": "2026-04-13T16:39:19.356Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71081,
   "pctFrom200": "-4.2%",
@@ -25,7 +25,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-12T13:00:00.897Z",
-    "ago": "26h ago",
+    "ago": "28h ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -56,6 +56,32 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "STUPI",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0x17fe016daa058a600611816f94b29c6ac26aca0c94c2395726849417b594f78e",
+        "exitTx": null,
+        "openedAt": "2026-04-13T16:37:17.621Z",
+        "closedAt": "2026-04-13T16:39:11.349Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "CXK",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "job_PD9YBQDG55X7FAS5",
+        "exitTx": null,
+        "openedAt": "2026-04-13T16:38:01.251Z",
+        "closedAt": "2026-04-13T16:39:11.349Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "ILV",
         "pnlPct": 0,
@@ -1328,32 +1354,6 @@
         "exitTx": null,
         "openedAt": "2026-04-12T11:13:14.235Z",
         "closedAt": "2026-04-12T11:15:17.337Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "FLETH",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T11:07:33.951Z",
-        "closedAt": "2026-04-12T11:09:19.913Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "WRP",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0xaace284222803baf5b98178414c3ac215e8e59cd86d04af847a91a59003c277b",
-        "exitTx": null,
-        "openedAt": "2026-04-12T10:19:08.288Z",
-        "closedAt": "2026-04-12T10:24:46.716Z",
         "reason": "wallet_reconcile"
       }
     ]
