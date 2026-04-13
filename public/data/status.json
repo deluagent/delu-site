@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-04-13T22:55:16.644Z",
+  "updatedAt": "2026-04-13T23:00:21.996Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71081,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
   "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 38.1,
+    "totalUSD": 38.12,
     "positionsUSD": 0,
     "liquidUSDC": 36.23,
-    "ethUSD": 1.87,
+    "ethUSD": 1.89,
     "yieldUSD": 0,
     "unrealPnlUSD": 0,
     "unrealPnlPct": 0
@@ -19,7 +19,7 @@
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 38.1,
+    "amountUSD": 38.12,
     "apy": 0,
     "note": "Liquid USDC available for next trade entry"
   },
@@ -56,6 +56,32 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "STUPI",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0x17fe016daa058a600611816f94b29c6ac26aca0c94c2395726849417b594f78e",
+        "exitTx": null,
+        "openedAt": "2026-04-13T22:55:47.990Z",
+        "closedAt": "2026-04-13T23:00:13.987Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "CXK",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0x17fe016daa058a600611816f94b29c6ac26aca0c94c2395726849417b594f78e",
+        "exitTx": null,
+        "openedAt": "2026-04-13T22:58:25.251Z",
+        "closedAt": "2026-04-13T23:00:13.987Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "POD",
         "pnlPct": 0,
@@ -1327,32 +1353,6 @@
         "entryTx": "0x721d588c76f4c2167ef1b1a1d20856a8dda0e20aa78c333870139410262b4895",
         "exitTx": null,
         "openedAt": "2026-04-12T18:02:33.602Z",
-        "closedAt": "2026-04-12T18:30:54.180Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "OFC",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0x721d588c76f4c2167ef1b1a1d20856a8dda0e20aa78c333870139410262b4895",
-        "exitTx": null,
-        "openedAt": "2026-04-12T18:03:18.291Z",
-        "closedAt": "2026-04-12T18:30:54.180Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "VEESA",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "job_QPSL259HXVKF3U7J",
-        "exitTx": null,
-        "openedAt": "2026-04-12T18:04:31.132Z",
         "closedAt": "2026-04-12T18:30:54.180Z",
         "reason": "wallet_reconcile"
       }
@@ -2866,7 +2866,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 180240,
+      "expCount": 180480,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
