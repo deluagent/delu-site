@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-04-13T23:14:11.184Z",
+  "updatedAt": "2026-04-13T23:18:11.053Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71081,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
   "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 38.02,
-    "positionsUSD": 29.77,
+    "totalUSD": 38.05,
+    "positionsUSD": 29.8,
     "liquidUSDC": 6.38,
     "ethUSD": 1.87,
     "yieldUSD": 0,
@@ -15,6 +15,29 @@
     "unrealPnlPct": 98.67
   },
   "positions": [
+    {
+      "sym": "OFC",
+      "entryPrice": 0.0504710549,
+      "currentPrice": 0.05067885,
+      "sizeUSD": 5,
+      "currentUSD": 9.98,
+      "pnlUSD": 4.98,
+      "pnlPct": 99.6,
+      "peakPct": 99.6,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": true,
+      "openedAt": "2026-04-13T23:06:54.459Z",
+      "entryTx": "0x4a3c200f8af19eb95604dd9a0a71ad1700f83c2a81a9f48dce5ef85deb6bdebf",
+      "contractAddress": "0x752c5a95d202972e124390f30a50154409d3c858",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
+    },
     {
       "sym": "BOOMER",
       "entryPrice": 0.000403832729,
@@ -60,29 +83,6 @@
       "quantScore": null,
       "ret1h": null,
       "transferStats": null
-    },
-    {
-      "sym": "OFC",
-      "entryPrice": 0.0504710549,
-      "currentPrice": 0.05067885,
-      "sizeUSD": 5,
-      "currentUSD": 9.98,
-      "pnlUSD": 4.98,
-      "pnlPct": 99.6,
-      "peakPct": 99.6,
-      "trailStop": 5,
-      "hardSlPct": 3,
-      "trailActivated": true,
-      "openedAt": "2026-04-13T23:06:54.459Z",
-      "entryTx": "0x4a3c200f8af19eb95604dd9a0a71ad1700f83c2a81a9f48dce5ef85deb6bdebf",
-      "contractAddress": "0x752c5a95d202972e124390f30a50154409d3c858",
-      "source": "universe",
-      "chain": "base",
-      "volumeTrend": null,
-      "recommendation": null,
-      "quantScore": null,
-      "ret1h": null,
-      "transferStats": null
     }
   ],
   "yield": {
@@ -114,6 +114,17 @@
     "topSignal": null,
     "positionUpdates": [
       {
+        "sym": "OFC",
+        "currentPrice": 0.05067885,
+        "pnlPct": 99.6,
+        "pnlUSD": 4.98,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
         "sym": "BOOMER",
         "currentPrice": 0.0004014,
         "pnlPct": 98.4,
@@ -129,17 +140,6 @@
         "currentPrice": 4.38236337,
         "pnlPct": 98,
         "pnlUSD": 4.9,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
-        "sym": "OFC",
-        "currentPrice": 0.05067885,
-        "pnlPct": 99.6,
-        "pnlUSD": 4.98,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -149,6 +149,17 @@
     ],
     "positionAssessments": [
       {
+        "sym": "OFC",
+        "currentPrice": 0.05067885,
+        "pnlPct": 99.6,
+        "pnlUSD": 4.98,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
         "sym": "BOOMER",
         "currentPrice": 0.0004014,
         "pnlPct": 98.4,
@@ -164,17 +175,6 @@
         "currentPrice": 4.38236337,
         "pnlPct": 98,
         "pnlUSD": 4.9,
-        "quantScore": null,
-        "volumeTrend": null,
-        "recommendation": null,
-        "ret1h": null,
-        "transferStats": null
-      },
-      {
-        "sym": "OFC",
-        "currentPrice": 0.05067885,
-        "pnlPct": 99.6,
-        "pnlUSD": 4.98,
         "quantScore": null,
         "volumeTrend": null,
         "recommendation": null,
@@ -1515,6 +1515,17 @@
       "traded": [],
       "positionUpdates": [
         {
+          "sym": "OFC",
+          "currentPrice": 0.05067885,
+          "pnlPct": 99.6,
+          "pnlUSD": 4.98,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
           "sym": "BOOMER",
           "currentPrice": 0.0004014,
           "pnlPct": 98.4,
@@ -1530,17 +1541,6 @@
           "currentPrice": 4.38236337,
           "pnlPct": 98,
           "pnlUSD": 4.9,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "OFC",
-          "currentPrice": 0.05067885,
-          "pnlPct": 99.6,
-          "pnlUSD": 4.98,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
@@ -1550,6 +1550,17 @@
       ],
       "positionAssessments": [
         {
+          "sym": "OFC",
+          "currentPrice": 0.05067885,
+          "pnlPct": 99.6,
+          "pnlUSD": 4.98,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
           "sym": "BOOMER",
           "currentPrice": 0.0004014,
           "pnlPct": 98.4,
@@ -1565,17 +1576,6 @@
           "currentPrice": 4.38236337,
           "pnlPct": 98,
           "pnlUSD": 4.9,
-          "quantScore": null,
-          "volumeTrend": null,
-          "recommendation": null,
-          "ret1h": null,
-          "transferStats": null
-        },
-        {
-          "sym": "OFC",
-          "currentPrice": 0.05067885,
-          "pnlPct": 99.6,
-          "pnlUSD": 4.98,
           "quantScore": null,
           "volumeTrend": null,
           "recommendation": null,
