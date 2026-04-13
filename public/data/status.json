@@ -1,27 +1,95 @@
 {
-  "updatedAt": "2026-04-13T23:02:00.505Z",
+  "updatedAt": "2026-04-13T23:06:23.632Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71081,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
   "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 28.17,
-    "positionsUSD": 0,
-    "liquidUSDC": 26.3,
-    "ethUSD": 1.87,
+    "totalUSD": 38.05,
+    "positionsUSD": 29.81,
+    "liquidUSDC": 6.38,
+    "ethUSD": 1.86,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0,
-    "unrealPnlPct": 0
+    "unrealPnlUSD": 9.87,
+    "unrealPnlPct": 49.6
   },
-  "positions": [],
+  "positions": [
+    {
+      "sym": "BOOMER",
+      "entryPrice": 0.000403832729,
+      "currentPrice": 0.00040254,
+      "sizeUSD": 5,
+      "currentUSD": 9.95,
+      "pnlUSD": 4.95,
+      "pnlPct": 99,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-04-13T23:03:46.678Z",
+      "entryTx": "0xb3cb382a3be3beccfa19b04d3f40c5e30eb2bc0d5abf71c6cb8b17c16ce05e94",
+      "contractAddress": "0xcde172dc5ffc46d228838446c57c1227e0b82049",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
+    },
+    {
+      "sym": "ILV",
+      "entryPrice": 4.397640830155092,
+      "currentPrice": 4.38236337,
+      "sizeUSD": 5,
+      "currentUSD": 9.9,
+      "pnlUSD": 4.9,
+      "pnlPct": 98,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-04-13T23:02:38.527Z",
+      "entryTx": "0x01e384d99184f160492323b2ae8d36677b6ff73755413fc96e2b75ee6e958194",
+      "contractAddress": "0xe66d89731986f0647bc0367c3cd1aa23368527a1",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
+    },
+    {
+      "sym": "OFC",
+      "currentPrice": 0.05043013,
+      "sizeUSD": 9.905763732751971,
+      "currentUSD": 9.93,
+      "pnlUSD": 0.02,
+      "pnlPct": 0.2,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "entryTx": null,
+      "contractAddress": "0x752c5a95d202972e124390f30a50154409d3c858",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
+    }
+  ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 28.17,
+    "amountUSD": 8.24,
     "apy": 0,
-    "note": "Liquid USDC available for next trade entry"
+    "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
     "ts": "2026-04-12T13:00:00.897Z",
@@ -42,8 +110,76 @@
     "confidence": null,
     "reasoning": "no decision",
     "topSignal": null,
-    "positionUpdates": [],
-    "positionAssessments": [],
+    "positionUpdates": [
+      {
+        "sym": "BOOMER",
+        "currentPrice": 0.00040254,
+        "pnlPct": 99,
+        "pnlUSD": 4.95,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "ILV",
+        "currentPrice": 4.38236337,
+        "pnlPct": 98,
+        "pnlUSD": 4.9,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "OFC",
+        "currentPrice": 0.05043013,
+        "pnlPct": 0.2,
+        "pnlUSD": 0.02,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      }
+    ],
+    "positionAssessments": [
+      {
+        "sym": "BOOMER",
+        "currentPrice": 0.00040254,
+        "pnlPct": 99,
+        "pnlUSD": 4.95,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "ILV",
+        "currentPrice": 4.38236337,
+        "pnlPct": 98,
+        "pnlUSD": 4.9,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "OFC",
+        "currentPrice": 0.05043013,
+        "pnlPct": 0.2,
+        "pnlUSD": 0.02,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      }
+    ],
     "checkrSustained": [],
     "checkrTraded": null,
     "topScores": []
@@ -56,6 +192,19 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "GENΑ",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xb3cb382a3be3beccfa19b04d3f40c5e30eb2bc0d5abf71c6cb8b17c16ce05e94",
+        "exitTx": null,
+        "openedAt": "2026-04-13T23:04:40.251Z",
+        "closedAt": "2026-04-13T23:06:08.731Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "NPC",
         "pnlPct": 0,
@@ -1342,19 +1491,6 @@
         "openedAt": "2026-04-12T18:36:31.438Z",
         "closedAt": "2026-04-12T18:36:50.757Z",
         "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "BOOMER",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0x721d588c76f4c2167ef1b1a1d20856a8dda0e20aa78c333870139410262b4895",
-        "exitTx": null,
-        "openedAt": "2026-04-12T18:01:45.797Z",
-        "closedAt": "2026-04-12T18:30:54.180Z",
-        "reason": "wallet_reconcile"
       }
     ]
   },
@@ -1375,8 +1511,76 @@
       "reasoning": "no decision",
       "seenCount": 0,
       "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
+      "positionUpdates": [
+        {
+          "sym": "BOOMER",
+          "currentPrice": 0.00040254,
+          "pnlPct": 99,
+          "pnlUSD": 4.95,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "ILV",
+          "currentPrice": 4.38236337,
+          "pnlPct": 98,
+          "pnlUSD": 4.9,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "OFC",
+          "currentPrice": 0.05043013,
+          "pnlPct": 0.2,
+          "pnlUSD": 0.02,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "BOOMER",
+          "currentPrice": 0.00040254,
+          "pnlPct": 99,
+          "pnlUSD": 4.95,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "ILV",
+          "currentPrice": 4.38236337,
+          "pnlPct": 98,
+          "pnlUSD": 4.9,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "OFC",
+          "currentPrice": 0.05043013,
+          "pnlPct": 0.2,
+          "pnlUSD": 0.02,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
