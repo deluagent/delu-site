@@ -7,4 +7,4 @@ const nextConfig = {
   },
 };
 module.exports = nextConfig;
-// rebuilt at Tue Apr 14 20:31:57 UTC 2026
+// rebuild v2: 2026-04-14 20:50 Tue Apr 14 20:31:57 UTC 2026
