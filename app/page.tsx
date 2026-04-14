@@ -37,17 +37,8 @@ const wallet = '0xed2ceca9de162c4f2337d7c1ab44ee9c427709da';
 const walletShort = `${wallet.slice(0, 6)}…${wallet.slice(-4)}`;
 
 // ─── learnings map (real post-trade insights from our autoresearch) ────────────
-// key = SYM or SYM_win / SYM_loss for trades that appear multiple times
-const LEARNINGS: Record<string, string> = {
-  'BLUEAGENT_win':  'Real winner: onchain trend + social spike both sustained. Bought ~$20, sold ~$44. +121% in 90 min. Strongest signal combination confirmed.',
-  'BLUEAGENT_loss': 'Mass ATR stop at 14:37 UTC — price data delay caused -21% reading instead of catching at -3%. All positions stopped simultaneously.',
-  KTA:       'RANGE_TIGHT regime + marginal signal = weak entry. ATR hard SL -3% fired at noise level. Regime filter now stricter.',
-  BNKR:      'ATR hard SL -3% fired at noise level for micro-cap. Widened to 3×ATR (min -8%) after this trade.',
-  MOLT:      'Stale OHLCV data caused ATR stop to fire too early. Price freshness check added to pipeline.',
-  CLAWNCH:   'Social signal decayed mid-hold. Checkr multi-window (1h/4h/8h/12h) now required to sustain before entry.',
-  FELIX:     'Whale concentration flag present at entry — rug gate threshold raised to 65. Hard SL fired at -14.98% max, contained loss.',
-  MOLTEN:    'Volume burst confirmed by onchain flow but social lagging. Multi-TF cross-validation added.',
-};
+// archived — kept empty, trade history now tracks orchestrator v7 only
+const LEARNINGS: Record<string, string> = {};
 
 // ─── Section: Hero ────────────────────────────────────────────────────────────
 function Hero({ status }: { status: any }) {
@@ -293,7 +284,7 @@ function LegacySection() {
           <div>
             <div className="text-[11px] text-[#9ca3af] mb-4 leading-relaxed">
               Before orchestrator v7, delu ran continuous autoresearch loops (5m scalp, hourly trend, onchain detection, stop optimization).
-              The system evolved trading parameters via backtesting on historical OHLCV bars. This section archives that phase.
+              The system evolved trading parameters via backtesting on historical OHLCV bars and onchain trades. This section archives that phase.
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3">
@@ -790,6 +781,7 @@ function TradeHistory({ status }: { status: any }) {
   const perf   = status?.performance ?? {};
   // Sort by closedAt descending (most recent first)
   const allTrades: Trade[] = [...(perf.recentTrades ?? [])]
+    .filter((t: any) => t.closedAt && new Date(t.closedAt).getTime() > new Date('2026-04-14').getTime()) // only show orchestrator v7 era trades (after April 14)
     .sort((a, b) => new Date(b.closedAt ?? 0).getTime() - new Date(a.closedAt ?? 0).getTime());
 
   const trades = showAll ? allTrades : allTrades.slice(0, 10);
