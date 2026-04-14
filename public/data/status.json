@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-14T11:26:07.970Z",
+  "updatedAt": "2026-04-14T11:28:01.427Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71081,
   "pctFrom200": "-4.2%",
@@ -56,6 +56,19 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "SPIKE",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xd4578c5db1ebfe7ed9f97ff564a039dcc477d648cac89f664cb1444854b0da19",
+        "exitTx": null,
+        "openedAt": "2026-04-14T11:27:49.564Z",
+        "closedAt": "2026-04-14T11:27:53.419Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "BOOMER",
         "pnlPct": 0,
@@ -1340,19 +1353,6 @@
         "entryTx": "job_D5YRQWPKXFNVP8LY",
         "exitTx": null,
         "openedAt": "2026-04-12T20:28:27.258Z",
-        "closedAt": "2026-04-12T20:34:15.106Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "NPC",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "job_8EUH7MTDSZS6NSJK",
-        "exitTx": null,
-        "openedAt": "2026-04-12T20:29:50.088Z",
         "closedAt": "2026-04-12T20:34:15.106Z",
         "reason": "wallet_reconcile"
       }
