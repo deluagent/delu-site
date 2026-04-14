@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-14T01:26:14.432Z",
+  "updatedAt": "2026-04-14T01:28:36.941Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71081,
   "pctFrom200": "-4.2%",
@@ -7,7 +7,7 @@
   "nextCycle": "< 1 min",
   "wallet": {
     "totalUSD": 37.74,
-    "positionsUSD": 29.5,
+    "positionsUSD": 29.49,
     "liquidUSDC": 6.38,
     "ethUSD": 1.87,
     "yieldUSD": 0,
@@ -69,10 +69,10 @@
       "currentUSD": 9.78,
       "pnlUSD": 4.78,
       "pnlPct": 95.6,
-      "peakPct": 0,
+      "peakPct": 95.6,
       "trailStop": 5,
       "hardSlPct": 3,
-      "trailActivated": false,
+      "trailActivated": true,
       "openedAt": "2026-04-14T01:23:00.392Z",
       "entryTx": "job_4467YWL47BXT5624",
       "contractAddress": "0x752c5a95d202972e124390f30a50154409d3c858",
@@ -194,6 +194,19 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "POD",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0x4a3c200f8af19eb95604dd9a0a71ad1700f83c2a81a9f48dce5ef85deb6bdebf",
+        "exitTx": null,
+        "openedAt": "2026-04-14T01:26:23.366Z",
+        "closedAt": "2026-04-14T01:28:21.697Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "VEESA",
         "pnlPct": 0,
@@ -1478,19 +1491,6 @@
         "entryTx": "0x721d588c76f4c2167ef1b1a1d20856a8dda0e20aa78c333870139410262b4895",
         "exitTx": null,
         "openedAt": "2026-04-12T19:15:58.483Z",
-        "closedAt": "2026-04-12T19:19:15.898Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "CXK",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0x721d588c76f4c2167ef1b1a1d20856a8dda0e20aa78c333870139410262b4895",
-        "exitTx": null,
-        "openedAt": "2026-04-12T19:16:49.447Z",
         "closedAt": "2026-04-12T19:19:15.898Z",
         "reason": "wallet_reconcile"
       }
