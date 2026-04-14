@@ -170,17 +170,7 @@ function HowItWorks() {
   );
 }
 
-// ─── Section: Brain ───────────────────────────────────────────────────────────
-const LOOP_COLORS: Record<string, { text: string; bar: string; badge: string }> = {
-  orange:  { text: 'text-[#f97316]', bar: '#f97316', badge: 'border-[#f97316]/20 bg-[#f97316]/5 text-[#f97316]' },
-  indigo:  { text: 'text-[#818cf8]', bar: '#818cf8', badge: 'border-[#818cf8]/20 bg-[#818cf8]/5 text-[#818cf8]' },
-  emerald: { text: 'text-[#34d399]', bar: '#34d399', badge: 'border-[#34d399]/20 bg-[#34d399]/5 text-[#34d399]' },
-  blue:    { text: 'text-[#60a5fa]', bar: '#60a5fa', badge: 'border-[#60a5fa]/20 bg-[#60a5fa]/5 text-[#60a5fa]' },
-  purple:  { text: 'text-[#a855f7]', bar: '#a855f7', badge: 'border-[#a855f7]/20 bg-[#a855f7]/5 text-[#a855f7]' },
-  rose:    { text: 'text-[#fb7185]', bar: '#fb7185', badge: 'border-[#fb7185]/20 bg-[#fb7185]/5 text-[#fb7185]' },
-};
-
-// ─── Legacy Autoresearch (archived) ────────────────────────────────────────────
+// ─── Legacy Autoresearch (archived static numbers) ────────────────────────────
 interface LegacyBrain {
   totalExperiments: number;
   peakWinRate: number;
@@ -197,286 +187,100 @@ const LEGACY_BRAIN: LegacyBrain = {
   tradeClosed: 68,
 };
 
-function BrainSection({ brain }: { brain: any }) {
-  const loops     = brain?.loops ?? [];
-  const topScore  = brain?.topScore ?? 0;
-  const totalExp  = brain?.totalExp ?? 0;
-  const TARGET    = 35;
-  const progress  = Math.min(100, (topScore / TARGET) * 100);
+// ─── Section: Brain (Loop Colors) ─────────────────────────────────────────────
+const LOOP_COLORS: Record<string, { text: string; bar: string; badge: string }> = {
+  orange:  { text: 'text-[#f97316]', bar: '#f97316', badge: 'border-[#f97316]/20 bg-[#f97316]/5 text-[#f97316]' },
+  indigo:  { text: 'text-[#818cf8]', bar: '#818cf8', badge: 'border-[#818cf8]/20 bg-[#818cf8]/5 text-[#818cf8]' },
+  emerald: { text: 'text-[#34d399]', bar: '#34d399', badge: 'border-[#34d399]/20 bg-[#34d399]/5 text-[#34d399]' },
+  blue:    { text: 'text-[#60a5fa]', bar: '#60a5fa', badge: 'border-[#60a5fa]/20 bg-[#60a5fa]/5 text-[#60a5fa]' },
+  purple:  { text: 'text-[#a855f7]', bar: '#a855f7', badge: 'border-[#a855f7]/20 bg-[#a855f7]/5 text-[#a855f7]' },
+  rose:    { text: 'text-[#fb7185]', bar: '#fb7185', badge: 'border-[#fb7185]/20 bg-[#fb7185]/5 text-[#fb7185]' },
+};
 
-  // Recharts data for bar chart
-  const barData = loops.map((l: any) => ({
-    name: l.name,
-    score: +(l.bestScore ?? 0).toFixed(1),
-    color: LOOP_COLORS[l.color]?.bar ?? '#818cf8',
-  }));
+// ─── Section: Orchestrator Brain (Live Cycles + Positions) ──────────────────────
+function OrchestratorBrain({ status }: { status: any }) {
+  const cycles = status?.cycleHistory ?? [];
+  const positions = status?.positions ?? [];
+  const confirmed = cycles.filter((c: any) => (c.traded ?? []).length > 0).length;
+  const holds = cycles.filter((c: any) => c.action === 'hold' || c.action === 'smart_yield').length;
+  const perf = status?.performance ?? {};
+  const winRate = perf.winRate ?? '0/0';
+  const closed = parseInt(winRate.split('/')[0]) || 0;
+  const total = parseInt(winRate.split('/')[1]) || closed;
 
-  return (
-    <section className="mb-10">
-      <div className={`${label} mb-4`}>Self-Improving Brain</div>
-
-      {/* Top card — score + chart */}
-      <div className={`${card} p-5 mb-3`}>
-        <div className="flex flex-col sm:flex-row sm:items-start gap-6">
-          {/* Score + progress */}
-          <div className="flex-1">
-            <div className="flex items-end gap-2 mb-1">
-              <span className={mono('text-[2.5rem] font-bold text-[#a855f7] leading-none')}>
-                {topScore.toFixed(1)}
-              </span>
-              <span className={`text-sm ${dim} mb-1`}>/ {TARGET}</span>
-            </div>
-            <div className="text-[11px] text-[#9ca3af] mb-3 max-w-xs">
-              Brain score = combined Sharpe across all evolved strategies. Higher means more refined signal extraction.
-            </div>
-            {/* Progress bar */}
-            <div className="mb-1">
-              <div className="h-1 bg-[#1c1c28] rounded-full overflow-hidden">
-                <div className="h-full bg-[#a855f7] rounded-full transition-all duration-700"
-                     style={{ width: `${progress}%` }} />
-              </div>
-              <div className="flex justify-between mt-1">
-                <span className={`text-[9px] ${dim}`}>0</span>
-                <span className={`text-[9px] ${dim}`}>Target {TARGET}</span>
-              </div>
-            </div>
-            <div className={`text-[10px] ${dim} mt-2`}>
-              <span className="text-white font-semibold">{totalExp.toLocaleString()}</span> experiments run ·{' '}
-              <span className="text-[#22c55e] font-semibold">{brain?.totalAccepted ?? 0}</span> improvements accepted
-            </div>
-            <div className={`text-[9px] ${dim} mt-1`}>
-              ~2,600 tests/hour · running continuously until deadline
-            </div>
-          </div>
-
-          {/* Bar chart */}
-          <div className="w-full sm:w-56 h-28">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={barData} barSize={18} margin={{ top: 4, right: 0, bottom: 0, left: -24 }}>
-                <XAxis dataKey="name" tick={{ fill: '#6b7280', fontSize: 9 }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fill: '#6b7280', fontSize: 9 }} axisLine={false} tickLine={false} />
-                <Tooltip
-                  contentStyle={{ background: '#0f0f17', border: '1px solid #1c1c28', borderRadius: 6, fontSize: 10 }}
-                  labelStyle={{ color: '#9ca3af' }}
-                  itemStyle={{ color: '#a855f7' }}
-                />
-                <Bar dataKey="score" radius={[3, 3, 0, 0]}>
-                  {barData.map((entry: any, i: number) => (
-                    <Cell key={i} fill={entry.color} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </div>
-
-      {/* Strategy cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {loops.map((loop: any) => {
-          const c = LOOP_COLORS[loop.color] ?? LOOP_COLORS.blue;
-          const barPct = topScore > 0 ? Math.min(100, (loop.bestScore / topScore) * 100) : 0;
-          return (
-            <div key={loop.name} className={`${card} p-4`}>
-              <div className="flex items-center justify-between mb-2.5">
-                <span className={`text-[9px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${c.badge}`}>
-                  {loop.name}
-                </span>
-                <span className={mono('text-sm font-bold', c.text)}>{loop.bestScore?.toFixed(1)}</span>
-              </div>
-              <div className="h-0.5 bg-[#1c1c28] rounded-full mb-2.5">
-                <div className="h-full rounded-full transition-all" style={{ width: `${barPct}%`, backgroundColor: c.bar }} />
-              </div>
-              <div className={`text-[10px] ${dim} mb-1.5`}>
-                {(loop.expCount ?? 0).toLocaleString()} experiments
-              </div>
-              <div className="flex items-center gap-2 mb-2.5">
-                <span className={`text-[9px] font-semibold ${loop.acceptedCount > 0 ? 'text-[#22c55e]' : dim}`}>
-                  ↑ {loop.acceptedCount ?? 0} param improvements found
-                </span>
-                <span className={`text-[9px] ${dim}`}>
-                  ({loop.acceptRate ?? 0}% acceptance rate)
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {(loop.signals ?? []).map((sig: string) => (
-                  <span key={sig} className="text-[9px] px-1.5 py-0.5 rounded bg-[#0a0a0f] border border-[#1c1c28] text-[#9ca3af]">
-                    {sig}
-                  </span>
-                ))}
-              </div>
-              {loop.latestDescription && (
-                <div className={`mt-2.5 text-[9px] ${dim} italic leading-relaxed line-clamp-2 border-t border-[#1c1c28] pt-2`}>
-                  Latest: {loop.latestDescription}
-                </div>
-              )}
-              {/* Stops loop — show evolved ATR params */}
-              {loop.name === 'Stops' && loop.bestParams && (
-                <div className="mt-2.5 border-t border-[#1c1c28] pt-2 space-y-1">
-                  <div className={`text-[9px] ${dim} mb-1`}>Evolved stop parameters:</div>
-                  <div className="grid grid-cols-2 gap-x-3 gap-y-0.5">
-                    {[
-                      ['ATR trail ×', loop.bestParams.atrMult?.toFixed(1)],
-                      ['Hard SL ×', loop.bestParams.hardSlAtrMult?.toFixed(1)],
-                      ['Min SL', `${loop.bestParams.hardSlMinPct?.toFixed(0)}%`],
-                      ['Max SL', `${loop.bestParams.hardSlMaxPct?.toFixed(0)}%`],
-                      ['Activate at', `+${loop.bestParams.activateAt?.toFixed(1)}%`],
-                      ['Win rate', `${((loop.bestWinRate ?? 0) * 100).toFixed(0)}%`],
-                    ].map(([k, v]) => (
-                      <div key={k} className="flex justify-between">
-                        <span className={`text-[9px] ${dim}`}>{k}</span>
-                        <span className={mono('text-[9px] text-white')}>{v}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
-// ─── Section: Self-Improvement Results ────────────────────────────────────────
-function SelfImprovementSection({ brain }: { brain: any }) {
-  const loops = brain?.loops ?? [];
-  const stopsLoop = loops.find((l: any) => l.name === 'Stops');
-  const winRatePct = stopsLoop?.bestWinRate != null
-    ? Math.round(stopsLoop.bestWinRate * 100)
-    : 57;
-  const totalExp = brain?.totalExp ?? 9500;
-  const totalAccepted = brain?.totalAccepted ?? 51;
-
-  // Human-readable loop outcomes
-  const l5m     = loops.find((l:any)=>l.name==='5m');
-  const lHourly = loops.find((l:any)=>l.name==='Hourly');
-  const lOnchain= loops.find((l:any)=>l.name==='Onchain');
-
-  const outcomes = [
-    {
-      loop: '5m Scalp',
-      color: '#f97316',
-      before: 'Random entry timing',
-      after: 'Momentum confirmation + volume burst',
-      metric: `${l5m?.bestScore?.toFixed(0) ?? 28} combined score`,
-      exp: l5m?.expCount ?? 1945,
-      curve: l5m?.scoreCurve ?? [],
-    },
-    {
-      loop: 'Hourly Trend',
-      color: '#818cf8',
-      before: 'Equal weight all signals',
-      after: 'OBV + RSI divergence weighted 3×',
-      metric: `${lHourly?.bestScore?.toFixed(0) ?? 11} combined score`,
-      exp: lHourly?.expCount ?? 656,
-      curve: lHourly?.scoreCurve ?? [],
-    },
-    {
-      loop: 'Onchain',
-      color: '#34d399',
-      before: 'Raw transfer count only',
-      after: 'Unique buyers + whale filter',
-      metric: `${lOnchain?.bestScore?.toFixed(0) ?? 20} combined score`,
-      exp: lOnchain?.expCount ?? 5825,
-      curve: lOnchain?.scoreCurve ?? [],
-    },
-    {
-      loop: 'Exit Stops',
-      color: '#fb7185',
-      before: 'Fixed −3% stop loss',
-      after: `ATR trail (${stopsLoop?.bestParams?.atrMult?.toFixed(1) ?? '2.7'}×) · ${winRatePct}% win rate`,
-      metric: `${winRatePct}% win rate`,
-      exp: stopsLoop?.expCount ?? 500,
-      curve: stopsLoop?.scoreCurve ?? [],
-    },
+  // Reasoning graph nodes
+  const nodes = [
+    { name: 'Scout', role: 'Discovery', color: 'text-[#60a5fa]', status: 'Active', desc: 'Onchain & Social Signal Monitor' },
+    { name: 'Quant', role: 'Technical', color: 'text-[#818cf8]', status: 'Ready', desc: 'GLM-5.1 Pattern Recognition' },
+    { name: 'Sentinel', role: 'Narrative', color: 'text-[#a855f7]', status: 'Ready', desc: 'X/Twitter Attention Analysis' },
+    { name: 'Auditor', role: 'Safety', color: 'text-[#ef4444]', status: 'Active', desc: 'Rug Detection & Whale Tracking' },
+    { name: 'Tactician', role: 'Strategy', color: 'text-[#f59e0b]', status: 'Ready', desc: 'Kelly Sizing & Position Mandates' },
+    { name: 'Courier', role: 'Execution', color: 'text-[#22c55e]', status: 'Idle', desc: 'Onchain Settlement via x402' },
   ];
 
   return (
     <section className="mb-10">
-      <div className={`${label} mb-4`}>What the Brain Learned</div>
+      <div className={`${label} mb-4`}>Orchestrator v7: Live Brain</div>
 
-      {/* Headline stat */}
-      <div className={`${card} p-5 mb-3`}>
-        <div className="flex flex-col sm:flex-row gap-6 items-center">
-          {/* Win rate before/after */}
-          <div className="flex items-center gap-6">
-            <div className="text-center">
-              <div className={mono('text-3xl font-bold text-[#ef4444]')}>50%</div>
-              <div className={`text-[10px] ${dim} mt-1`}>default win rate</div>
-              <div className={`text-[9px] ${dim}`}>fixed stop loss</div>
-            </div>
-            <div className="flex flex-col items-center gap-1">
-              <div className="text-[#22c55e] text-lg">→</div>
-              <div className={`text-[9px] ${dim}`}>{totalExp.toLocaleString()} experiments</div>
-            </div>
-            <div className="text-center">
-              <div className={mono('text-3xl font-bold text-[#22c55e]')}>{winRatePct}%</div>
-              <div className={`text-[10px] ${dim} mt-1`}>evolved win rate</div>
-              <div className={`text-[9px] ${dim}`}>ATR-based exits</div>
-            </div>
-          </div>
-          <div className="flex-1 border-l border-[#1c1c28] pl-6">
-            <div className={`text-[11px] text-white mb-1`}>
-              The agent ran <span className="text-[#a855f7] font-semibold">{totalExp.toLocaleString()} backtests</span> across 4 strategy loops and accepted{' '}
-              <span className="text-[#22c55e] font-semibold">{totalAccepted} improvements</span> — each one making it slightly better at finding entries, sizing positions, and cutting losses.
-            </div>
-            <div className={`text-[10px] ${dim}`}>
-              All simulated on 730 bars of historical data. Live trades reflect the evolved params.
-            </div>
-          </div>
+      {/* Top stats row */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+        <div className={`${card} p-4`}>
+          <div className={`${label} mb-2`}>Confirmed Trades</div>
+          <div className={mono('text-[2rem] font-bold text-[#22c55e]')}>{confirmed}</div>
+          <div className={`text-[9px] ${dim}`}>on-chain executions</div>
+        </div>
+        <div className={`${card} p-4`}>
+          <div className={`${label} mb-2`}>Hold Cycles</div>
+          <div className={mono('text-[2rem] font-bold text-[#6b7280]')}>{holds}</div>
+          <div className={`text-[9px] ${dim}`}>awaiting signal</div>
+        </div>
+        <div className={`${card} p-4`}>
+          <div className={`${label} mb-2`}>Closed Trades</div>
+          <div className={mono('text-[2rem] font-bold text-[#60a5fa]')}>{closed}/{total}</div>
+          <div className={`text-[9px] ${dim}`}>win/total</div>
+        </div>
+        <div className={`${card} p-4`}>
+          <div className={`${label} mb-2`}>Open Positions</div>
+          <div className={mono('text-[2rem] font-bold text-[#f59e0b]')}>{positions.length}</div>
+          <div className={`text-[9px] ${dim}`}>active trades</div>
         </div>
       </div>
 
-      {/* Loop outcome cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {outcomes.map(o => (
-          <div key={o.loop} className={`${card} p-4`}>
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: o.color }}>
-                {o.loop}
-              </span>
-              <span className={`text-[9px] px-2 py-0.5 rounded-full border`}
-                    style={{ color: o.color, borderColor: o.color + '40', background: o.color + '10' }}>
-                {o.metric}
-              </span>
-            </div>
-            <div className="space-y-2">
-              <div className="flex gap-2 items-start">
-                <span className="text-[#ef4444] text-[10px] mt-0.5 shrink-0">before</span>
-                <span className={`text-[10px] ${dim}`}>{o.before}</span>
+      {/* Brief description */}
+      <div className={`${card} p-4 mb-4`}>
+        <div className={`text-[11px] text-[#9ca3af] leading-relaxed`}>
+          Orchestrator v7 runs every hour at <span className="text-white font-mono">:10 UTC</span>. Four-phase pipeline:
+          <span className="block mt-2">
+            <span className="text-[#60a5fa] font-semibold">Scout</span> discovers candidates (Alchemy, Bankr, Zerion, Checkr) →
+            <span className="text-[#a855f7] font-semibold"> Intelligence</span> scores risk/momentum/social →
+            <span className="text-[#f59e0b] font-semibold"> Tactician</span> synthesizes mandate →
+            <span className="text-[#22c55e] font-semibold"> Courier</span> executes onchain.
+          </span>
+          <div className={`text-[9px] ${dim} mt-2`}>No backtesting. Real-time inference with live market + social data.</div>
+        </div>
+      </div>
+
+      {/* Reasoning graph nodes */}
+      <div>
+        <div className={`${label} mb-3`}>Reasoning Graph Nodes</div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          {nodes.map(n => (
+            <div key={n.name} className={`${card} p-3 flex flex-col items-center text-center relative overflow-hidden`}>
+              <div className={`absolute top-0 right-0 px-1.5 py-0.5 text-[7px] font-bold uppercase tracking-tighter bg-[#1c1c28] ${n.status === 'Active' ? 'text-[#22c55e]' : dim}`}>
+                {n.status}
               </div>
-              <div className="flex gap-2 items-start">
-                <span className="text-[#22c55e] text-[10px] mt-0.5 shrink-0">after</span>
-                <span className="text-[10px] text-white">{o.after}</span>
-              </div>
+              <div className={`${n.color} font-bold text-xs mb-0.5`}>{n.name}</div>
+              <div className={`${label} text-[7px] mb-2`}>{n.role}</div>
+              <div className={`text-[9px] ${dim} leading-tight`}>{n.desc}</div>
             </div>
-            <div className={`text-[9px] ${dim} mt-2.5 pt-2 border-t border-[#1c1c28]`}>
-              {o.exp.toLocaleString()} experiments run for this strategy
-            </div>
-            {/* Score improvement sparkline */}
-            {o.curve && o.curve.length > 2 && (
-              <div className="mt-2 h-10">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={o.curve.map((v: number, i: number) => ({ i, v }))}>
-                    <Line type="monotone" dataKey="v" stroke={o.color} strokeWidth={1.5} dot={false} />
-                    <Tooltip
-                      contentStyle={{ background: '#0f0f17', border: '1px solid #1c1c28', borderRadius: 4, fontSize: 9, padding: '2px 6px' }}
-                      formatter={(v: any) => [v, 'score']}
-                      labelFormatter={() => ''}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-                <div className={`text-[8px] ${dim} text-center -mt-1`}>score improvement over {o.exp.toLocaleString()} experiments →</div>
-              </div>
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+
+
 
 // ─── Section: Legacy (Autoresearch Archive) ────────────────────────────────────
 function LegacySection() {
@@ -554,35 +358,7 @@ function LegacySection() {
   );
 }
 
-// ─── Section: Reasoning Graph ──────────────────────────────────────────────────
-function ReasoningGraph({ status }: { status: any }) {
-  const nodes = [
-    { name: 'Scout', role: 'Discovery', color: 'text-[#60a5fa]', status: 'Active', desc: 'Onchain & Social Signal Monitor' },
-    { name: 'Quant', role: 'Technical', color: 'text-[#818cf8]', status: 'Ready', desc: 'GLM-5.1 Pattern Recognition' },
-    { name: 'Sentinel', role: 'Narrative', color: 'text-[#a855f7]', status: 'Ready', desc: 'X/Twitter Attention Analysis' },
-    { name: 'Auditor', role: 'Safety', color: 'text-[#ef4444]', status: 'Active', desc: 'Rug Detection & Whale Tracking' },
-    { name: 'Tactician', role: 'Strategy', color: 'text-[#f59e0b]', status: 'Ready', desc: 'Kelly Sizing & Position Mandates' },
-    { name: 'Courier', role: 'Execution', color: 'text-[#22c55e]', status: 'Idle', desc: 'Onchain Settlement via x402' },
-  ];
 
-  return (
-    <section className="mb-10">
-      <div className={`${label} mb-4`}>Live Reasoning Graph</div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {nodes.map(n => (
-          <div key={n.name} className={`${card} p-3 flex flex-col items-center text-center relative overflow-hidden`}>
-            <div className={`absolute top-0 right-0 px-1.5 py-0.5 text-[7px] font-bold uppercase tracking-tighter bg-[#1c1c28] ${n.status === 'Active' ? 'text-[#22c55e]' : dim}`}>
-              {n.status}
-            </div>
-            <div className={`${n.color} font-bold text-xs mb-0.5`}>{n.name}</div>
-            <div className={`${label} text-[7px] mb-2`}>{n.role}</div>
-            <div className={`text-[9px] ${dim} leading-tight`}>{n.desc}</div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 // ─── Section: Capital Allocation ──────────────────────────────────────────────
 function CapitalSection({ status }: { status: any }) {
@@ -1200,13 +976,11 @@ export default function Page() {
         <Hero             status={status} />
         <HowItWorks />
         <LegacySection />
-        <ReasoningGraph    status={status} />
-        <BrainSection           brain={brain ?? status?.autoresearch} />
-        <SelfImprovementSection brain={brain ?? status?.autoresearch} />
-        <CapitalSection         status={status} />
-        <CyclesSection    cycles={status?.cycleHistory ?? []} />
-        <TradeHistory     status={status} />
-        <Footer           stack={status?.stack} />
+        <OrchestratorBrain status={status} />
+        <CapitalSection    status={status} />
+        <CyclesSection     cycles={status?.cycleHistory ?? []} />
+        <TradeHistory      status={status} />
+        <Footer            stack={status?.stack} />
       </div>
     </main>
   );
