@@ -1,31 +1,101 @@
 {
-  "updatedAt": "2026-04-14T11:28:01.427Z",
+  "updatedAt": "2026-04-14T11:32:02.208Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 71081,
   "pctFrom200": "-4.2%",
   "breadth": "3/17",
   "nextCycle": "< 1 min",
   "wallet": {
-    "totalUSD": 32.1,
-    "positionsUSD": 0,
-    "liquidUSDC": 30.26,
-    "ethUSD": 1.84,
+    "totalUSD": 31.67,
+    "positionsUSD": 29.85,
+    "liquidUSDC": 0,
+    "ethUSD": 1.82,
     "yieldUSD": 0,
-    "unrealPnlUSD": 0,
-    "unrealPnlPct": 0
+    "unrealPnlUSD": 9.79,
+    "unrealPnlPct": 65.27
   },
-  "positions": [],
+  "positions": [
+    {
+      "sym": "EDEL",
+      "entryPrice": 0.0082472203,
+      "currentPrice": 0.00818649,
+      "sizeUSD": 5,
+      "currentUSD": 9.91,
+      "pnlUSD": 4.91,
+      "pnlPct": 98.2,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-04-14T11:30:10.320Z",
+      "entryTx": "0x2162ff64b71e2c0d76a9e1b1712dbbc1f56444f6c84ca3fa8b99990ba74b08f8",
+      "contractAddress": "0xfb31f85a8367210b2e4ed2360d2da9dc2d2ccc95",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
+    },
+    {
+      "sym": "ZORA",
+      "entryPrice": 0.0139913323,
+      "currentPrice": 0,
+      "sizeUSD": 5,
+      "currentUSD": 0,
+      "pnlUSD": -5,
+      "pnlPct": -100,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-04-14T11:29:35.244Z",
+      "entryTx": "0x8e9984fb36a4ede9e56278819915832a7fd3e8ff428fccce29696ce56715b301",
+      "contractAddress": "0x1111111111166b7fe7bd91427724b487980afc69",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
+    },
+    {
+      "sym": "PLAY",
+      "entryPrice": 0.1118590031,
+      "currentPrice": 0.1108357,
+      "sizeUSD": 5,
+      "currentUSD": 9.88,
+      "pnlUSD": 4.88,
+      "pnlPct": 97.6,
+      "peakPct": 0,
+      "trailStop": 5,
+      "hardSlPct": 3,
+      "trailActivated": false,
+      "openedAt": "2026-04-14T11:30:45.570Z",
+      "entryTx": "0xf92c6aa16a4c3c553f6561dc19a17bdf0c7db9cdfba724d27debc742e784abb2",
+      "contractAddress": "0x853a7c99227499dba9db8c3a02aa691afdebf841",
+      "source": "universe",
+      "chain": "base",
+      "volumeTrend": null,
+      "recommendation": null,
+      "quantScore": null,
+      "ret1h": null,
+      "transferStats": null
+    }
+  ],
   "yield": {
     "protocol": "Bankr Wallet",
     "vault": "Liquid Capital",
     "chain": "Base",
-    "amountUSD": 32.1,
+    "amountUSD": 1.82,
     "apy": 0,
-    "note": "Liquid USDC available for next trade entry"
+    "note": "USDC low — using ETH reserve for high-conviction trades"
   },
   "lastCycle": {
     "ts": "2026-04-12T13:00:00.897Z",
-    "ago": "46h ago",
+    "ago": "47h ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -42,8 +112,76 @@
     "confidence": null,
     "reasoning": "no decision",
     "topSignal": null,
-    "positionUpdates": [],
-    "positionAssessments": [],
+    "positionUpdates": [
+      {
+        "sym": "EDEL",
+        "currentPrice": 0.00818649,
+        "pnlPct": 98.2,
+        "pnlUSD": 4.91,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "ZORA",
+        "currentPrice": 0,
+        "pnlPct": -100,
+        "pnlUSD": -5,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "PLAY",
+        "currentPrice": 0.1108357,
+        "pnlPct": 97.6,
+        "pnlUSD": 4.88,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      }
+    ],
+    "positionAssessments": [
+      {
+        "sym": "EDEL",
+        "currentPrice": 0.00818649,
+        "pnlPct": 98.2,
+        "pnlUSD": 4.91,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "ZORA",
+        "currentPrice": 0,
+        "pnlPct": -100,
+        "pnlUSD": -5,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      },
+      {
+        "sym": "PLAY",
+        "currentPrice": 0.1108357,
+        "pnlPct": 97.6,
+        "pnlUSD": 4.88,
+        "quantScore": null,
+        "volumeTrend": null,
+        "recommendation": null,
+        "ret1h": null,
+        "transferStats": null
+      }
+    ],
     "checkrSustained": [],
     "checkrTraded": null,
     "topScores": []
@@ -56,6 +194,32 @@
     "closedTrades": 100,
     "winRate": "0/100 (0%)",
     "recentTrades": [
+      {
+        "sym": "LIMINAL",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "0xd4578c5db1ebfe7ed9f97ff564a039dcc477d648cac89f664cb1444854b0da19",
+        "exitTx": null,
+        "openedAt": "2026-04-14T11:29:05.437Z",
+        "closedAt": "2026-04-14T11:31:46.560Z",
+        "reason": "wallet_reconcile"
+      },
+      {
+        "sym": "CXK",
+        "pnlPct": 0,
+        "pnlUSD": 0,
+        "sizeUsd": 5,
+        "won": false,
+        "regime": "UNKNOWN",
+        "entryTx": "job_CXLGL5WJGYUM92YT",
+        "exitTx": null,
+        "openedAt": "2026-04-14T11:28:30.412Z",
+        "closedAt": "2026-04-14T11:31:46.559Z",
+        "reason": "wallet_reconcile"
+      },
       {
         "sym": "SPIKE",
         "pnlPct": 0,
@@ -1329,32 +1493,6 @@
         "openedAt": "2026-04-12T20:34:39.818Z",
         "closedAt": "2026-04-12T20:40:20.300Z",
         "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "POD",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "0x721d588c76f4c2167ef1b1a1d20856a8dda0e20aa78c333870139410262b4895",
-        "exitTx": null,
-        "openedAt": "2026-04-12T20:35:27.602Z",
-        "closedAt": "2026-04-12T20:40:20.300Z",
-        "reason": "wallet_reconcile"
-      },
-      {
-        "sym": "CXK",
-        "pnlPct": 0,
-        "pnlUSD": 0,
-        "sizeUsd": 5,
-        "won": false,
-        "regime": "UNKNOWN",
-        "entryTx": "job_D5YRQWPKXFNVP8LY",
-        "exitTx": null,
-        "openedAt": "2026-04-12T20:28:27.258Z",
-        "closedAt": "2026-04-12T20:34:15.106Z",
-        "reason": "wallet_reconcile"
       }
     ]
   },
@@ -1375,8 +1513,76 @@
       "reasoning": "no decision",
       "seenCount": 0,
       "traded": [],
-      "positionUpdates": [],
-      "positionAssessments": [],
+      "positionUpdates": [
+        {
+          "sym": "EDEL",
+          "currentPrice": 0.00818649,
+          "pnlPct": 98.2,
+          "pnlUSD": 4.91,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "ZORA",
+          "currentPrice": 0,
+          "pnlPct": -100,
+          "pnlUSD": -5,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "PLAY",
+          "currentPrice": 0.1108357,
+          "pnlPct": 97.6,
+          "pnlUSD": 4.88,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
+      "positionAssessments": [
+        {
+          "sym": "EDEL",
+          "currentPrice": 0.00818649,
+          "pnlPct": 98.2,
+          "pnlUSD": 4.91,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "ZORA",
+          "currentPrice": 0,
+          "pnlPct": -100,
+          "pnlUSD": -5,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        },
+        {
+          "sym": "PLAY",
+          "currentPrice": 0.1108357,
+          "pnlPct": 97.6,
+          "pnlUSD": 4.88,
+          "quantScore": null,
+          "volumeTrend": null,
+          "recommendation": null,
+          "ret1h": null,
+          "transferStats": null
+        }
+      ],
       "checkrSustained": [],
       "checkrTraded": null,
       "alchemyDiscovered": [],
