@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-04-14T19:37:24.471Z",
+  "updatedAt": "2026-04-14T19:37:54.386Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 74338,
-  "pctFrom200": "-4.2%",
+  "btcPrice": 74107,
+  "pctFrom200": "3.4%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 14 min",
+  "nextCycle": "in 28 min",
   "wallet": {
     "totalUSD": 5.06,
     "positionsUSD": 0,
@@ -23,15 +23,15 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-04-14T19:20:07.078Z",
-    "ago": "17m ago",
+    "ts": "2026-04-14T19:35:00.022Z",
+    "ago": "3m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 74338.39,
-      "sma200": 71680.84345,
-      "pctFrom200": 0.037074710928223585,
-      "volRatio": 1.06874275599126,
+      "btcNow": 74106.79,
+      "sma200": 71679.68544999999,
+      "pctFrom200": 0.03386042411825349,
+      "volRatio": 1.0676612333382498,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
@@ -41,10 +41,10 @@
     "screened": 0,
     "flagged": [],
     "traded": [],
-    "action": "smart_yield",
+    "action": "hold",
     "asset": "USDC",
     "confidence": null,
-    "reasoning": "RANGE_TIGHT regime — monitoring market",
+    "reasoning": "Liquid USDC ($3.15) at or below 25% reserve — keeping capital available for trades",
     "topSignal": null,
     "trendingEntries": [],
     "positionUpdates": [],
@@ -117,6 +117,41 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-04-14T19:35:00.022Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 74106.79,
+        "sma200": 71679.68544999999,
+        "pctFrom200": 0.03386042411825349,
+        "volRatio": 1.0676612333382498,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "hold",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "Liquid USDC ($3.15) at or below 25% reserve — keeping capital available for trades",
+      "seenCount": 0,
+      "flagged": [],
+      "traded": [],
+      "trendingEntries": [],
+      "positionUpdates": [],
+      "topSignal": null,
+      "layers": [
+        "bankr-screen",
+        "venice-e2ee"
+      ],
+      "screenLayer": "fallback",
+      "dataSources": {
+        "checkrTokens": 19,
+        "checkrSustained": [],
+        "discoveryPassed": 0
+      }
+    },
     {
       "ts": "2026-04-14T19:20:07.078Z",
       "regime": "RANGE_TIGHT",
@@ -2102,30 +2137,6 @@
         "btcNow": 72843.71,
         "pctFrom200": 0.04630541106328746,
         "volRatio": 0.9544444255936132,
-        "btcState": "RANGE"
-      },
-      "action": "hold",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "no decision",
-      "seenCount": 0,
-      "flagged": [],
-      "traded": [],
-      "trendingEntries": [],
-      "positionUpdates": [],
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": null,
-      "dataSources": null
-    },
-    {
-      "ts": "2026-04-11T10:30:00.227Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 72872.85,
-        "pctFrom200": 0.047192860139801014,
-        "volRatio": 0.9543674998403645,
         "btcState": "RANGE"
       },
       "action": "hold",
