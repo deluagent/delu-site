@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-04-14T17:08:07.541Z",
+  "updatedAt": "2026-04-14T17:09:19.743Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 74705,
+  "btcPrice": 74732,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:BULL",
-  "nextCycle": "in 21 min",
+  "nextCycle": "in 28 min",
   "wallet": {
-    "totalUSD": 25.22,
+    "totalUSD": 25.24,
     "positionsUSD": 0,
     "liquidUSDC": 23.3,
     "yieldUSD": 23.3,
@@ -23,15 +23,15 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-04-14T16:58:32.900Z",
-    "ago": "10m ago",
+    "ts": "2026-04-14T17:05:43.958Z",
+    "ago": "4m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 74704.67,
-      "sma200": 71610.77235,
-      "pctFrom200": 0.04320436085898463,
-      "volRatio": 1.0746975080642185,
+      "btcNow": 74732.01,
+      "sma200": 71635.53004999999,
+      "pctFrom200": 0.04322547690843824,
+      "volRatio": 1.0707629683285103,
       "btcState": "RANGE",
       "ethState": "BULL",
       "breadthFraction": "BTC:RANGE ETH:BULL",
@@ -141,6 +141,34 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-04-14T17:05:43.958Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 74732.01,
+        "sma200": 71635.53004999999,
+        "pctFrom200": 0.04322547690843824,
+        "volRatio": 1.0707629683285103,
+        "btcState": "RANGE",
+        "ethState": "BULL",
+        "breadthFraction": "BTC:RANGE ETH:BULL",
+        "breadth": 0.5
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "No tokens passed discovery this cycle. No candidates passed screening criteria — zero tokens met quant > 0.3, velocity > 3, or sustained momentum thresholds required to override tight range regime.",
+      "seenCount": 0,
+      "flagged": [],
+      "traded": [],
+      "trendingEntries": [],
+      "positionUpdates": [],
+      "topSignal": null,
+      "layers": [],
+      "screenLayer": "bankr-llm",
+      "dataSources": null
+    },
     {
       "ts": "2026-04-14T16:58:32.900Z",
       "regime": "RANGE_TIGHT",
@@ -1305,30 +1333,6 @@
         "btcNow": 72799.12,
         "pctFrom200": 0.04752129299464461,
         "volRatio": 0.9527925603584888,
-        "btcState": "RANGE"
-      },
-      "action": "hold",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "no decision",
-      "seenCount": 0,
-      "flagged": [],
-      "traded": [],
-      "trendingEntries": [],
-      "positionUpdates": [],
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": null,
-      "dataSources": null
-    },
-    {
-      "ts": "2026-04-11T07:00:01.017Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 72762.01,
-        "pctFrom200": 0.04699010505920948,
-        "volRatio": 0.9527604333253925,
         "btcState": "RANGE"
       },
       "action": "hold",
