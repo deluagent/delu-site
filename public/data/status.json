@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-04-14T20:08:02.795Z",
+  "updatedAt": "2026-04-14T20:08:08.978Z",
   "regime": "RANGE_TIGHT",
-  "btcPrice": 74107,
+  "btcPrice": 74294,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "< 1 min",
+  "nextCycle": "in 28 min",
   "wallet": {
     "totalUSD": 5.04,
     "positionsUSD": 0,
@@ -23,30 +23,38 @@
     "note": "Liquid USDC available for next trade entry"
   },
   "lastCycle": {
-    "ts": "2026-04-14T19:35:00.022Z",
-    "ago": "33m ago",
+    "ts": "2026-04-14T20:05:00.020Z",
+    "ago": "3m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
-      "btcNow": 74106.79,
-      "sma200": 71679.68544999999,
-      "pctFrom200": 0.03386042411825349,
-      "volRatio": 1.0676612333382498,
+      "btcNow": 74294.25,
+      "sma200": 71704.9049,
+      "pctFrom200": 0.03611112940755056,
+      "volRatio": 1.0663619434265497,
       "btcState": "RANGE",
       "ethState": "RANGE",
       "breadthFraction": "BTC:RANGE ETH:RANGE",
       "breadth": 0.5
     },
-    "seenCount": 0,
-    "screened": 0,
-    "flagged": [],
+    "seenCount": 1,
+    "screened": 1,
+    "flagged": [
+      "SAIRI"
+    ],
     "traded": [],
-    "action": "hold",
+    "action": "smart_yield",
     "asset": "USDC",
     "confidence": null,
-    "reasoning": "Liquid USDC ($3.15) at or below 25% reserve — keeping capital available for trades",
-    "topSignal": null,
-    "trendingEntries": [],
+    "reasoning": "RANGE_TIGHT regime — monitoring market",
+    "topSignal": "SAIRI score=0.84 ret1h=0.0%",
+    "trendingEntries": [
+      {
+        "symbol": "SAIRI",
+        "score": 0.8373337062922999,
+        "source": "bankr_trending"
+      }
+    ],
     "positionUpdates": [],
     "topScores": []
   },
@@ -117,6 +125,42 @@
     ]
   },
   "cycleHistory": [
+    {
+      "ts": "2026-04-14T20:05:00.020Z",
+      "regime": "RANGE_TIGHT",
+      "regime_detail": {
+        "state": "RANGE_TIGHT",
+        "btcNow": 74294.25,
+        "sma200": 71704.9049,
+        "pctFrom200": 0.03611112940755056,
+        "volRatio": 1.0663619434265497,
+        "btcState": "RANGE",
+        "ethState": "RANGE",
+        "breadthFraction": "BTC:RANGE ETH:RANGE",
+        "breadth": 0.5
+      },
+      "action": "smart_yield",
+      "asset": "USDC",
+      "confidence": null,
+      "reasoning": "Scanned 1 tokens [SAIRI(0.84)]. SAIRI's quant score of 0.10 is well below the 0.3 threshold, velocity of 5.0 is modest, 1h return of 1.7% is marginal, and CAUTION rug flag combined with tight range regime offers insufficient conviction for deeper analysis.",
+      "seenCount": 1,
+      "flagged": [
+        "SAIRI"
+      ],
+      "traded": [],
+      "trendingEntries": [
+        {
+          "symbol": "SAIRI",
+          "score": 0.8373337062922999,
+          "source": "bankr_trending"
+        }
+      ],
+      "positionUpdates": [],
+      "topSignal": "SAIRI score=0.84 ret1h=0.0%",
+      "layers": [],
+      "screenLayer": "bankr-llm",
+      "dataSources": null
+    },
     {
       "ts": "2026-04-14T19:35:00.022Z",
       "regime": "RANGE_TIGHT",
@@ -2113,30 +2157,6 @@
         "btcNow": 72833.03,
         "pctFrom200": 0.046152809137895136,
         "volRatio": 0.9544470793610808,
-        "btcState": "RANGE"
-      },
-      "action": "hold",
-      "asset": "USDC",
-      "confidence": null,
-      "reasoning": "no decision",
-      "seenCount": 0,
-      "flagged": [],
-      "traded": [],
-      "trendingEntries": [],
-      "positionUpdates": [],
-      "topSignal": null,
-      "layers": [],
-      "screenLayer": null,
-      "dataSources": null
-    },
-    {
-      "ts": "2026-04-11T11:00:00.798Z",
-      "regime": "RANGE_TIGHT",
-      "regime_detail": {
-        "state": "RANGE_TIGHT",
-        "btcNow": 72843.71,
-        "pctFrom200": 0.04630541106328746,
-        "volRatio": 0.9544444255936132,
         "btcState": "RANGE"
       },
       "action": "hold",
