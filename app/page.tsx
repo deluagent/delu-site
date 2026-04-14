@@ -109,11 +109,11 @@ function Hero({ status }: { status: any }) {
               const now = new Date();
               const m = now.getUTCMinutes();
               const s2 = now.getUTCSeconds();
-              const nextMin = m < 5 ? 5 : m < 35 ? 35 : 65;
+              const nextMin = m < 10 ? 10 : 70;
               const diffSec = (nextMin - m) * 60 - s2;
               const diffMin = Math.ceil(diffSec / 60);
               return diffMin <= 1 ? 'any moment' : `in ${diffMin} min`;
-            })(), s: 'runs every 30 min · :05 and :35 UTC' },
+            })(), s: 'orchestrator v7 runs every hour at :10 UTC' },
         ].map(s => (
           <div key={s.l} className="bg-[#0a0a0f] px-4 py-3">
             <div className={`${label} mb-1`}>{s.l}</div>
@@ -178,6 +178,23 @@ const LOOP_COLORS: Record<string, { text: string; bar: string; badge: string }> 
   blue:    { text: 'text-[#60a5fa]', bar: '#60a5fa', badge: 'border-[#60a5fa]/20 bg-[#60a5fa]/5 text-[#60a5fa]' },
   purple:  { text: 'text-[#a855f7]', bar: '#a855f7', badge: 'border-[#a855f7]/20 bg-[#a855f7]/5 text-[#a855f7]' },
   rose:    { text: 'text-[#fb7185]', bar: '#fb7185', badge: 'border-[#fb7185]/20 bg-[#fb7185]/5 text-[#fb7185]' },
+};
+
+// ─── Legacy Autoresearch (archived) ────────────────────────────────────────────
+interface LegacyBrain {
+  totalExperiments: number;
+  peakWinRate: number;
+  acceptedImprovements: number;
+  cyclesRun: number;
+  tradeClosed: number;
+}
+
+const LEGACY_BRAIN: LegacyBrain = {
+  totalExperiments: 110000,
+  peakWinRate: 65.8,
+  acceptedImprovements: 51,
+  cyclesRun: 2847,
+  tradeClosed: 68,
 };
 
 function BrainSection({ brain }: { brain: any }) {
@@ -456,6 +473,82 @@ function SelfImprovementSection({ brain }: { brain: any }) {
             )}
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+// ─── Section: Legacy (Autoresearch Archive) ────────────────────────────────────
+function LegacySection() {
+  return (
+    <section className="mb-10">
+      <div className={`${label} mb-4`}>Legacy: Autoresearch Brain (Archived)</div>
+      <div className={`${card} p-5`}>
+        <div className="flex flex-col gap-6">
+          {/* Summary */}
+          <div>
+            <div className="text-[11px] text-[#9ca3af] mb-4 leading-relaxed">
+              Before orchestrator v7, delu ran continuous autoresearch loops (5m scalp, hourly trend, onchain detection, stop optimization).
+              The system evolved trading parameters via backtesting on historical OHLCV bars. This section archives that phase.
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3">
+                <div className={label}>Total Experiments</div>
+                <div className={mono('text-[2rem] font-bold text-[#a855f7] mt-2')}>
+                  110K
+                </div>
+                <div className={`text-[9px] ${dim} mt-1`}>backtests run</div>
+              </div>
+              <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3">
+                <div className={label}>Peak Win Rate</div>
+                <div className={mono('text-[2rem] font-bold text-[#22c55e] mt-2')}>
+                  65.8%
+                </div>
+                <div className={`text-[9px] ${dim} mt-1`}>historical best</div>
+              </div>
+              <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3">
+                <div className={label}>Accepted Improvements</div>
+                <div className={mono('text-[2rem] font-bold text-[#f59e0b] mt-2')}>
+                  51
+                </div>
+                <div className={`text-[9px] ${dim} mt-1`}>param upgrades</div>
+              </div>
+              <div className="bg-[#0a0a0f] border border-[#1c1c28] rounded-lg p-3">
+                <div className={label}>Trades Closed</div>
+                <div className={mono('text-[2rem] font-bold text-[#60a5fa] mt-2')}>
+                  68
+                </div>
+                <div className={`text-[9px] ${dim} mt-1`}>live trades</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Transition note */}
+          <div className="border-t border-[#1c1c28] pt-4">
+            <div className={`text-[11px] text-white font-semibold mb-2`}>Transition to Orchestrator v7</div>
+            <div className={`text-[10px] ${dim} leading-relaxed`}>
+              April 14, 2026: Autoresearch loops archived. New 4-phase reasoning graph deployed:
+              <span className="block mt-2 text-white">
+                • <span className="text-[#60a5fa]">Scout</span> — Alchemy + Bankr + Zerion + Checkr discovery (no brute-force backtest)
+              </span>
+              <span className="block text-white">
+                • <span className="text-[#a855f7]">Quant</span> — Live OHLCV scoring (evolved 5m/hourly models frozen)
+              </span>
+              <span className="block text-white">
+                • <span className="text-[#a855f7]">Sentinel</span> — Social narrative via Checkr (X attention spikes)
+              </span>
+              <span className="block text-white">
+                • <span className="text-[#f59e0b]">Tactician</span> — Bankr LLM synthesis + rule-based gates
+              </span>
+              <span className="block text-white">
+                • <span className="text-[#22c55e]">Courier</span> — Onchain execution via x402
+              </span>
+              <div className={`mt-2 text-[9px] ${dim}`}>
+                No more 110K backtests/session. Now live inference at :10 each hour with real market data and social signals.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -1106,6 +1199,7 @@ export default function Page() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
         <Hero             status={status} />
         <HowItWorks />
+        <LegacySection />
         <ReasoningGraph    status={status} />
         <BrainSection           brain={brain ?? status?.autoresearch} />
         <SelfImprovementSection brain={brain ?? status?.autoresearch} />
