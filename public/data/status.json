@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-04-15T14:39:54.080Z",
+  "updatedAt": "2026-04-15T14:44:35.467Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 74307,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 28 min",
+  "nextCycle": "in 21 min",
   "wallet": {
-    "totalUSD": 19.4,
+    "totalUSD": 19.39,
     "positionsUSD": 0,
     "liquidUSDC": 17.5,
     "yieldUSD": 17.5,
-    "unrealPnlUSD": 0.01,
-    "unrealPnlPct": 0.53
+    "unrealPnlUSD": 0,
+    "unrealPnlPct": 0
   },
   "positions": [
     {
       "sym": "ETH",
       "entryPrice": 2329.884191050504,
-      "currentPrice": 2336.35,
+      "currentPrice": 2329.88419105,
       "sizeUSD": 1.7,
-      "currentUSD": null,
+      "currentUSD": 1.7,
       "pnlUSD": 0,
-      "pnlPct": 0.28,
+      "pnlPct": 0,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -40,11 +40,11 @@
     {
       "sym": "SKITTEN",
       "entryPrice": 0.00039999999999999996,
-      "currentPrice": 0.00004609649101,
+      "currentPrice": 0.0004,
       "sizeUSD": 0.03,
-      "currentUSD": null,
+      "currentUSD": 0.03,
       "pnlUSD": 0,
-      "pnlPct": -88.48,
+      "pnlPct": 0,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -370,7 +370,7 @@
   },
   "lastCycle": {
     "ts": "2026-04-15T14:35:00.021Z",
-    "ago": "4m ago",
+    "ago": "10m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -7085,7 +7085,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 206630,
+      "expCount": 206685,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
