@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-04-15T16:04:55.581Z",
+  "updatedAt": "2026-04-15T16:05:15.000Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 73654,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
-  "nextCycle": "in 6 min",
+  "nextCycle": "in 2 min",
   "wallet": {
-    "totalUSD": 19.56,
+    "totalUSD": 14.57,
     "positionsUSD": 0.17,
-    "liquidUSDC": 17.5,
-    "yieldUSD": 17.5,
+    "liquidUSDC": 12.5,
+    "yieldUSD": 0,
     "unrealPnlUSD": 0,
     "unrealPnlPct": 0
   },
@@ -17,11 +17,11 @@
     {
       "sym": "ETH",
       "entryPrice": 2331.96159122085,
-      "currentPrice": 2336.44,
+      "currentPrice": 2331.96159122,
       "sizeUSD": 1.7,
-      "currentUSD": null,
+      "currentUSD": 1.7,
       "pnlUSD": 0,
-      "pnlPct": 0.19,
+      "pnlPct": 0,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -40,11 +40,11 @@
     {
       "sym": "SKITTEN",
       "entryPrice": 0.0005333333333333334,
-      "currentPrice": 0.00004633189916,
+      "currentPrice": null,
       "sizeUSD": 0.04,
-      "currentUSD": null,
+      "currentUSD": 0.04,
       "pnlUSD": 0,
-      "pnlPct": -91.31,
+      "pnlPct": 0,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -361,16 +361,16 @@
     }
   ],
   "yield": {
-    "protocol": "Bankr Wallet",
-    "vault": "Liquid USDC",
+    "protocol": "Aave v3",
+    "vault": "Aave v3",
     "chain": "Base",
-    "amountUSD": 17.5,
-    "apy": 0,
-    "note": "Liquid USDC available for next trade entry"
+    "amountUSD": 0,
+    "apy": 3.86,
+    "note": "Active yield position — 3.86% APY"
   },
   "lastCycle": {
     "ts": "2026-04-15T15:35:00.021Z",
-    "ago": "26m ago",
+    "ago": "30m ago",
     "regime": "RANGE_TIGHT",
     "regime_detail": {
       "state": "RANGE_TIGHT",
@@ -7347,7 +7347,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 207305,
+      "expCount": 207340,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
