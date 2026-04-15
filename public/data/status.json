@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-04-15T14:50:30.922Z",
+  "updatedAt": "2026-04-15T14:51:09.846Z",
   "regime": "RANGE_TIGHT",
   "btcPrice": 74307,
   "pctFrom200": "-4.2%",
   "breadth": "BTC:RANGE ETH:RANGE",
   "nextCycle": "in 15 min",
   "wallet": {
-    "totalUSD": 19.56,
-    "positionsUSD": 0.16,
+    "totalUSD": 19.4,
+    "positionsUSD": 0,
     "liquidUSDC": 17.5,
     "yieldUSD": 17.5,
-    "unrealPnlUSD": 0,
-    "unrealPnlPct": 0
+    "unrealPnlUSD": 0.01,
+    "unrealPnlPct": 0.53
   },
   "positions": [
     {
@@ -40,11 +40,11 @@
     {
       "sym": "SKITTEN",
       "entryPrice": 0.00039999999999999996,
-      "currentPrice": null,
+      "currentPrice": 0.00053333,
       "sizeUSD": 0.03,
-      "currentUSD": 0.03,
-      "pnlUSD": 0,
-      "pnlPct": 0,
+      "currentUSD": 0.04,
+      "pnlUSD": 0.01,
+      "pnlPct": 33.33,
       "peakPct": 0,
       "trailStop": 5,
       "hardSlPct": 3,
@@ -86,7 +86,7 @@
     {
       "sym": "AEOIL",
       "entryPrice": 0.0006666666666666666,
-      "currentPrice": null,
+      "currentPrice": 0.00066667,
       "sizeUSD": 0.02,
       "currentUSD": 0.02,
       "pnlUSD": 0,
@@ -109,7 +109,7 @@
     {
       "sym": "OIL",
       "entryPrice": 0.00036363636363636367,
-      "currentPrice": null,
+      "currentPrice": 0.00036364,
       "sizeUSD": 0.02,
       "currentUSD": 0.02,
       "pnlUSD": 0,
@@ -132,7 +132,7 @@
     {
       "sym": "CTRL",
       "entryPrice": 0.0004,
-      "currentPrice": null,
+      "currentPrice": 0.0004,
       "sizeUSD": 0.02,
       "currentUSD": 0.02,
       "pnlUSD": 0,
@@ -155,7 +155,7 @@
     {
       "sym": "VDOR",
       "entryPrice": 0.0002,
-      "currentPrice": null,
+      "currentPrice": 0.0002,
       "sizeUSD": 0.01,
       "currentUSD": 0.01,
       "pnlUSD": 0,
@@ -178,7 +178,7 @@
     {
       "sym": "CLAWCASH",
       "entryPrice": 0.0004,
-      "currentPrice": null,
+      "currentPrice": 0.0004,
       "sizeUSD": 0.01,
       "currentUSD": 0.01,
       "pnlUSD": 0,
@@ -201,7 +201,7 @@
     {
       "sym": "WOLFY",
       "entryPrice": 0.0002,
-      "currentPrice": null,
+      "currentPrice": 0.0002,
       "sizeUSD": 0.01,
       "currentUSD": 0.01,
       "pnlUSD": 0,
@@ -224,7 +224,7 @@
     {
       "sym": "IRVUS",
       "entryPrice": 0.0004,
-      "currentPrice": null,
+      "currentPrice": 0.0004,
       "sizeUSD": 0.01,
       "currentUSD": 0.01,
       "pnlUSD": 0,
@@ -247,7 +247,7 @@
     {
       "sym": "VIRTUAL",
       "entryPrice": 0.0004,
-      "currentPrice": null,
+      "currentPrice": 0.0004,
       "sizeUSD": 0.01,
       "currentUSD": 0.01,
       "pnlUSD": 0,
@@ -270,7 +270,7 @@
     {
       "sym": "BT",
       "entryPrice": 0.0004,
-      "currentPrice": null,
+      "currentPrice": 0.0004,
       "sizeUSD": 0.01,
       "currentUSD": 0.01,
       "pnlUSD": 0,
@@ -293,7 +293,7 @@
     {
       "sym": "TGOR",
       "entryPrice": 0.0004,
-      "currentPrice": null,
+      "currentPrice": 0.0004,
       "sizeUSD": 0.01,
       "currentUSD": 0.01,
       "pnlUSD": 0,
@@ -7085,7 +7085,7 @@
       "spend": 0
     },
     "onchain": {
-      "expCount": 206735,
+      "expCount": 206740,
       "bestValSharpe": 10.319,
       "bestAudSharpe": 30.485,
       "bestScore": 20.402
